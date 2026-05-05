@@ -1,0 +1,2298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<script data-website-id='10ab3030-014b-484e-8b92-1d1471f8528f' defer='defer' src='https://cloud.umami.is/script.js'></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#0b0f14;
+--sidebar1:#162030;
+--sidebar2:#0d1622;
+--sidebar3:#070d16;
+--card:#141a22;
+--text:#e7edf3;
+--muted:#8f9aa6;
+--accent:#1e2630;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+html,body{height:100%;overflow-x:hidden;}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+}
+
+.sidebar h1,
+.project-info h5,
+.panel span,
+.info-block h4,
+.btn{
+font-family:'Sora',sans-serif;
+}
+
+/* ===== LAYOUT ===== */
+
+.layout{display:flex;width:100%;flex:1;}
+.page{min-height:100vh;display:flex;flex-direction:column;}
+
+/* ===== SIDEBAR ===== */
+
+.sidebar{
+
+width:360px;
+
+background:linear-gradient(
+180deg,
+var(--sidebar1) 0%,
+var(--sidebar2) 40%,
+var(--sidebar3) 100%
+);
+
+border-right:1px solid rgba(255,255,255,0.06);
+
+box-shadow:
+8px 0 40px rgba(0,0,0,0.45),
+inset 0 1px 0 rgba(255,255,255,0.03);
+
+padding:20px 45px 20px 45px;
+
+}
+
+.sidebar h1{
+font-size:40px;
+font-weight:600;
+letter-spacing:-0.02em;
+position:relative;
+z-index:2;
+margin-bottom:6px;
+}
+
+
+.intro-text{
+margin-top:18px;
+padding-top:18px;
+position:relative;
+}
+
+.intro-text::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+
+width:270px;
+height:1px;
+
+background:linear-gradient(
+to right,
+rgba(255,255,255,0.8),
+rgba(255,255,255,0.15)
+);
+}
+/* glow detrás del nombre */
+
+.sidebar h1::before{
+content:"";
+position:absolute;
+
+width:220px;
+height:220px;
+
+left:-40px;
+top:-60px;
+
+background:radial-gradient(
+circle,
+rgba(70,130,200,0.25) 0%,
+rgba(70,130,200,0.12) 40%,
+rgba(70,130,200,0.04) 65%,
+transparent 80%
+);
+
+filter:blur(35px);
+z-index:-1;
+}
+
+.sidebar p{
+font-size:14px;
+color:var(--muted);
+line-height:1.6;
+margin-bottom:0px; /*Poner 5 si se quiere mas espacio*/
+}
+
+.buttons{
+display:flex;
+gap:12px;
+margin-bottom:25px;
+padding-bottom:25px;
+border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.btn{
+padding:8px 18px;
+font-size:10px;
+letter-spacing:2px;
+text-transform:uppercase;
+margin-top: 10px;
+border:1px solid rgba(255,255,255,0.15);
+
+color:#e8f0ff;
+text-decoration:none;
+
+background:linear-gradient(
+180deg,
+rgba(255,255,255,0.05),
+rgba(255,255,255,0.02)
+);
+
+box-shadow:
+0 2px 10px rgba(0,0,0,0.35),
+0 0 8px rgba(120,160,220,0.15);
+
+transition:all .25s ease;
+}
+
+.btn:hover{
+
+border-color:#7fa7e6;
+
+background:linear-gradient(
+180deg,
+rgba(120,160,220,0.15),
+rgba(120,160,220,0.05)
+);
+
+box-shadow:
+0 6px 18px rgba(0,0,0,0.45),
+0 0 14px rgba(120,160,220,0.35);
+
+transform:translateY(-2px);
+}
+
+.info-block{
+margin-top:26px;
+padding-bottom:18px;
+
+border-bottom:1px solid rgba(255,255,255,0.05);
+
+}
+.info-block:last-child{
+border-bottom:none;
+}
+
+.info-block h4{
+font-size:11px;
+letter-spacing:3px;
+font-weight:600;
+color:#c8d6e6;
+text-transform:uppercase;
+margin-bottom:10px;
+
+text-shadow:
+0 0 6px rgba(120,160,220,0.7),
+0 0 14px rgba(120,160,220,0.45),
+0 0 26px rgba(120,160,220,0.25);
+
+position:relative;
+padding-left:14px;
+}
+
+.info-block h4::before{
+content:"";
+position:absolute;
+
+left:0;
+top:50%;
+
+width:8px;
+height:1px;
+
+background:linear-gradient(
+to right,
+rgba(255,255,255,0.9),
+rgba(255,255,255,0.15)
+);
+
+box-shadow:0 0 6px rgba(120,160,220,0.35);
+
+transform:translateY(-50%);
+}
+
+.info-block h4::after{
+content:"";
+position:absolute;
+
+left:-6px;
+right:-6px;
+top:50%;
+
+height:14px;
+
+background:radial-gradient(
+ellipse,
+rgba(120,160,220,0.18) 0%,
+rgba(120,160,220,0.10) 40%,
+transparent 70%
+);
+
+transform:translateY(-50%);
+filter:blur(6px);
+z-index:-1;
+}
+
+.info-block p{
+font-size:13px;
+line-height:1.55;
+color:var(--muted);
+}
+
+/* ===== MAIN CONTENT ===== */
+
+.content{
+flex:1;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:60px 60px 0 60px;
+}
+
+.main-wrapper{width:100%;max-width:1600px;position:relative;padding-left:40px;}
+
+.section-block{
+position:relative;
+}
+
+.section-label{
+position:absolute;
+left:-90px;
+top:-4px;
+
+font-family:'Sora',sans-serif;
+font-size:11px;
+letter-spacing:4px;
+text-transform:uppercase;
+
+color:#7f93a8;
+
+padding-left:18px;
+
+opacity:.9;
+}
+/*----------------*/
+
+.section-label::before{
+content:"";
+position:absolute;
+
+left:0;
+top:50%;
+
+width:10px;
+height:1px;
+
+background:linear-gradient(
+to right,
+rgba(255,255,255,0.8),
+rgba(255,255,255,0.1)
+);
+box-shadow:0 0 6px rgba(120,160,220,0.4);
+transform:translateY(-50%);
+}
+
+
+
+
+
+
+/*--------------------*/
+@media (max-width:1200px){
+
+.section-label{
+position:static;
+margin-bottom:10px;
+}
+
+}
+@media (max-width:1400px){
+
+.section-label{
+left:-60px;
+font-size:12px;
+letter-spacing:2px;
+}
+
+}
+/* ===== EXPERIENCE TIMELINE ===== */
+
+.experience{
+position:relative;
+margin-top:26px;
+
+}
+
+/* timeline line (fuera del contenido) */
+
+.experience::before{
+content:"";
+position:absolute;
+
+left:-20px;
+top:6px;
+bottom:6px;
+
+width:2px;
+
+background:linear-gradient(
+to bottom,
+rgba(200,225,255,1),
+rgba(160,190,240,0.6),
+rgba(120,160,220,0.25),
+rgba(255,255,255,0.05)
+);
+
+box-shadow:
+0 0 8px rgba(120,160,220,0.6),
+0 0 20px rgba(120,160,220,0.35);
+
+animation:timelinePulse 3.5s ease-in-out infinite;
+}
+
+@keyframes timelinePulse{
+
+0%{
+opacity:0.6;
+box-shadow:
+0 0 6px rgba(120,160,220,0.35),
+0 0 14px rgba(120,160,220,0.2);
+}
+
+50%{
+opacity:1;
+box-shadow:
+0 0 14px rgba(150,200,255,0.9),
+0 0 36px rgba(150,200,255,0.45);
+}
+
+100%{
+opacity:0.6;
+box-shadow:
+0 0 6px rgba(120,160,220,0.35),
+0 0 14px rgba(120,160,220,0.2);
+}
+
+}
+
+.experience::after{
+content:"";
+position:absolute;
+
+left:-60px;
+top:-20px;
+bottom:-20px;
+
+width:120px;
+
+background:radial-gradient(
+ellipse at center,
+rgba(120,160,220,0.18) 0%,
+rgba(120,160,220,0.10) 30%,
+rgba(120,160,220,0.05) 50%,
+transparent 75%
+);
+
+filter:blur(40px);
+pointer-events:none;
+z-index:-1;
+}
+
+/*--------- job ----------------*/
+
+.job{
+display:flex;
+gap:12px;
+align-items:flex-start;
+position:relative;
+margin-bottom:15px;
+}
+
+/* timeline dot */
+
+.job::before{
+content:"";
+position:absolute;
+
+left:-19px;
+top:10px;
+
+width:var(--size);
+height:var(--size);
+
+border-radius:50%;
+
+background:radial-gradient(
+circle,
+#eaf3ff 0%,
+#b9d4ff 40%,
+#6fa8ff 70%
+);
+
+transform:translate(-50%, -50%);
+
+box-shadow:
+0 0 6px rgba(120,160,220,0.9),
+0 0 16px rgba(120,160,220,0.45),
+0 0 28px rgba(120,160,220,0.25);
+}
+
+.job:nth-of-type(1){ --size:8px; }
+.job:nth-of-type(2){ --size:7px; }
+.job:nth-of-type(3){ --size:6px; }
+.job:nth-of-type(4){ --size:5px; }
+
+.job::before{
+width:var(--size);
+height:var(--size);
+}
+
+/* company logo */
+
+.job img{
+width:28px;
+height:28px;
+border-radius:4px;
+object-fit:contain;
+opacity:.65;
+
+}
+
+
+/* trabajos más antiguos */
+
+.job:nth-child(3){
+margin-bottom:12px;
+}
+
+.job:nth-child(4){
+margin-bottom:9px;
+}
+
+.job:nth-child(5){
+margin-bottom:6px;
+}
+
+
+.job:nth-child(3) .job-title{
+font-size:13px;
+}
+
+.job:nth-child(4) .job-title{
+font-size:12.5px;
+}
+
+.job:nth-child(5) .job-title{
+font-size:12px;
+}
+
+
+.job:nth-child(4) .job-company,
+.job:nth-child(5) .job-company{
+font-size:11.5px;
+}
+
+.job:nth-child(5) .job-time{
+font-size:10.5px;
+}
+/* text */
+
+.job div{
+display:flex;
+flex-direction:column;
+}
+
+.job-title{
+font-size:14px;
+font-weight:600;
+color:#e6c36a !important;
+
+}
+
+.job-company{
+font-size:12px;
+color:var(--muted);
+margin-top:1px;
+}
+
+.job-time{
+font-size:11px;
+color:var(--muted);
+margin-top:1px;
+}
+
+
+.experience .job:first-of-type .job-title{
+color:#ffd76a !important;
+text-shadow:
+0 0 8px rgba(255,215,106,0.9),
+0 0 18px rgba(255,215,106,0.45),
+0 0 30px rgba(255,215,106,0.2);
+}
+
+.experience .job:first-of-type::before{
+box-shadow:
+0 0 6px rgba(255,215,106,.9),
+0 0 14px rgba(255,215,106,.45),
+0 0 24px rgba(255,215,106,.25);
+}
+/* ===== TOOL ICONS ===== */
+
+.tool-icons{ display:flex; gap:10px; margin-top:6px; }
+
+.tool-icons img{
+width:18px;
+height:18px;
+opacity:.8;
+
+
+}
+
+
+
+/* ===== PROJECT CARD ===== */
+
+.project-card{
+width:100%;
+background:var(--card);
+border-radius:22px;
+display:flex;
+gap:50px;
+padding:24px 28px;
+
+position:relative;
+overflow:visible;
+}
+
+.video-wrapper{flex:4;display:flex;}
+
+.video-wrapper iframe{
+width:100%;
+aspect-ratio:16/9;
+border-radius:16px;
+border:0;
+position:relative;
+z-index:2;
+}
+
+.project-info{
+flex:0.6;
+display:flex;
+flex-direction:column;
+padding-top:4px;
+border-left:1px solid rgba(255,255,255,0.08);
+padding-left:30px;
+
+}
+
+.project-info h5{
+font-size:13px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#a9b7c6;
+margin-bottom:6px;
+}
+
+.project-info p{
+font-size:14px;
+color:var(--muted);
+margin-bottom:22px;
+}
+
+
+.effect-info{
+  margin-top:14px;
+  font-size:13px;
+  color:#cfd6de;
+}
+
+.effect-info h4{
+  font-family:'Sora',sans-serif;
+  font-size:13px;
+  letter-spacing:1px;
+  color:#f2d27a;
+  margin-bottom:4px;
+}
+
+.effect-info p{
+  font-size:13px;
+  color:#9aa6b2;
+}
+/* ===== PROJECT ACCORDION ===== */
+
+.accordion{
+margin-top:15px;
+display:flex;
+height:clamp(180px,22vh,260px);
+overflow:visible;
+
+}
+
+
+
+.panel{
+position:relative;
+flex:1;
+cursor:pointer;
+overflow:hidden;
+transition:flex .5s cubic-bezier(.4,0,.2,1);
+clip-path:polygon(70px 0%,100% 0%,calc(100% - 70px) 100%,0% 100%);
+box-shadow:
+0 25px 50px rgba(0,0,0,0.35);
+cursor:pointer;
+}
+
+.panel:not(:first-child){margin-left:-70px;}
+.panel:hover,.panel.active{flex:2.5;}
+
+
+
+.panel-bg{
+position:absolute;
+inset:0;
+background-size:cover;
+background-position:center;
+transition:transform .5s ease;
+filter:brightness(.85) contrast(1.05);
+}
+
+.panel:hover .panel-bg{
+transform:scale(1.05);
+filter:brightness(1);
+}
+
+
+
+
+/*--------------------------*/
+.panel span{
+position:absolute;
+top:18px;
+left:85px;
+font-size:14px;
+font-weight:600;
+color:white;
+letter-spacing:.02em;
+text-shadow:0 2px 6px rgba(0,0,0,.6);
+}
+
+/* hover overlay */
+
+.panel::after{
+content:"";
+position:absolute;
+inset:0;
+opacity:0;
+transition:opacity .35s ease;
+pointer-events:none;
+}
+
+.panel:hover:not(.active)::after{
+opacity:1;
+background:linear-gradient(
+to bottom,
+rgba(0,0,0,.45) 0%,
+rgba(0,0,0,.2) 35%,
+rgba(0,0,0,0) 70%
+);
+}
+
+.panel:hover{
+box-shadow:
+0 18px 45px rgba(0,0,0,0.55);
+}
+
+.panel.active::after{
+opacity:1;
+background:linear-gradient(
+to bottom,
+rgba(212,175,55,.35) 0%,
+rgba(212,175,55,.18) 30%,
+rgba(0,0,0,0) 70%
+);
+}
+
+.panel.active span{color:#f2d27a;}
+
+.section-title{
+font-family:'Sora',sans-serif;
+font-size:22px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:#9fb2c7;
+
+margin-top:10px;
+margin-bottom:16px;
+}
+
+/* ===== BREAKDOWN GALLERY ===== */
+
+.project-gallery{
+margin-top:0px;
+opacity:0;
+transform:translateY(10px);
+transition:opacity .25s ease,transform .25s ease;
+pointer-events:none;
+}
+
+.project-gallery.visible{
+opacity:1;
+transform:translateY(0);
+pointer-events:auto;
+}
+
+.project-gallery h3{
+font-family:'Sora',sans-serif;
+font-size:14px;
+letter-spacing:2px;
+color:var(--muted);
+margin-bottom:20px;
+}
+
+.gallery-grid{
+display:flex;
+height:clamp(160px,18vh,220px);
+overflow:hidden;
+margin-top:10px;
+}
+
+.video-thumb{
+position:relative;
+transform:translateZ(0);
+backface-visibility:hidden;
+will-change:transform;
+flex:1;
+cursor:pointer;
+overflow:hidden;
+transition:flex .45s cubic-bezier(.4,0,.2,1);
+clip-path:polygon(60px 0%,100% 0%,calc(100% - 60px) 100%,0% 100%);
+background-size:cover;
+background-position:center;
+}
+
+
+/*PLACEHOLDE LETRAS EN EL VIDEO*/
+
+.video-thumb.placeholder{
+
+background:linear-gradient(
+135deg,
+rgba(120,120,120,0.15),
+rgba(120,120,120,0.05)
+);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-family:'Sora',sans-serif;
+font-size:13px;
+letter-spacing:2px;
+text-transform:uppercase;
+
+color:#cfd6de;
+
+}
+
+.video-thumb.placeholder::before{
+content:"Coming soon";
+font-size:12px;
+opacity:.8;
+}
+
+.video-thumb.placeholder::after{
+display:none;
+}
+
+.video-thumb.active::after{
+  opacity:1;
+  background:linear-gradient(
+    to bottom,
+    rgba(212,175,55,0.35) 0%,
+    rgba(212,175,55,0.18) 30%,
+    rgba(0,0,0,0) 70%
+  );
+
+
+}
+
+.video-thumb.active::before{
+  opacity:1;
+}
+
+.video-thumb:not(:first-child){margin-left:-60px;}
+.video-thumb:hover,
+.video-thumb.active{
+  flex:2.2;
+  
+}
+
+.video-thumb::after{
+content:"";
+position:absolute;
+
+top:0;
+left:0;
+right:0;
+bottom:0;
+
+background:linear-gradient(
+to bottom,
+rgba(0,0,0,.55),
+rgba(0,0,0,.25),
+rgba(0,0,0,0)
+);
+
+pointer-events:none;
+/*mix-blend-mode:multiply;*/
+}
+
+.video-thumb:hover::after{opacity:1;}
+
+.video-thumb::before{
+content:"\25B6";
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-45%,-50%);
+font-size:22px;
+color:white;
+opacity:.85;
+pointer-events:none;
+}
+
+
+
+/* ===== BACK BUTTON ===== */
+
+.gallery-back{
+font-family:'Sora',sans-serif;
+font-size:12px;
+letter-spacing:2px;
+text-transform:uppercase;
+
+color:#c8d6e6;
+
+margin-bottom:14px;
+cursor:pointer;
+
+opacity:.85;
+transition:.2s;
+display:none;
+
+/* glow igual que los h4 */
+text-shadow:
+0 0 6px rgba(120,160,220,0.7),
+0 0 14px rgba(120,160,220,0.45),
+0 0 26px rgba(120,160,220,0.25);
+}
+
+.gallery-back:hover{
+opacity:1;
+color:#e6f0ff;
+
+text-shadow:
+0 0 10px rgba(150,200,255,0.9),
+0 0 24px rgba(150,200,255,0.55),
+0 0 40px rgba(150,200,255,0.35);
+}
+
+.accordion.hidden{
+display:none;
+}
+
+.project-gallery.visible .gallery-back{
+display:block;
+}
+
+.section-block.projects-hidden .section-label{
+display:none;
+}
+
+.section-block.breakdown-hidden .section-label{
+display:none;
+}
+
+.gallery-back{
+margin-top:20px;
+text-align:center;
+}
+
+.breakdown-block{
+display:none;
+}
+
+.breakdown-block.visible{
+display:block;
+}
+
+/* ===== GLOW DINAMICO ===== */
+
+.panel.active{
+box-shadow:
+0 0 0 2px rgba(255,215,120,0.6),
+0 20px 60px rgba(0,0,0,0.8),
+0 0 60px rgba(255,200,120,0.45);
+}
+
+/* ===== AMBILIGHT ===== */
+
+
+.video-wrapper{
+position:relative;
+overflow:visible;
+}
+
+.video-ambilight{
+position:absolute;
+
+top:-40px;
+left: 10px;
+right: 10px;
+bottom:-40px;
+
+background-size:cover;
+background-position:center;
+
+filter:blur(120px) saturate(160%) brightness(1.2);
+opacity:.85;
+
+z-index:-1;
+
+transform:scale(1.1);
+
+transition:background-image .4s ease;
+
+
+}
+
+
+
+/* ===== VIDEO INFO OVERLAY ===== */
+
+.video-info{
+position:absolute;
+
+bottom:0;
+left:0;
+right:0;
+
+background:rgba(0,0,0,.55);
+/* backdrop-filter:blur(6px); */
+
+padding:12px 16px;
+
+opacity:0;
+transform:translateY(8px);
+transition:all .25s ease;
+pointer-events:none;
+}
+
+.video-info h4{
+font-family:'Sora',sans-serif;
+font-size:12px;
+color:#f2d27a;
+margin-bottom:3px;
+}
+
+.video-info p{
+font-size:11px;
+color:#cfd6de;
+line-height:1.3;
+}
+
+/* aparece en hover o activo */
+
+.video-thumb:hover .video-info,
+.video-thumb.active .video-info{
+opacity:1;
+transform:translateY(0);
+}
+/* ===== FOOTER ===== */
+
+footer{
+padding:25px 0;
+border-top:1px solid rgba(255,255,255,0.06);
+text-align:center;
+font-size:11px;
+color:#6b7a90;
+margin-top:40px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width:1200px){
+.project-card{flex-direction:column;}
+.project-info{width:100%;}
+.accordion{height:180px;}
+}
+
+@media (max-width:900px){
+.layout{flex-direction:column;}
+.sidebar{width:100%;padding:40px 30px;}
+.content{width:100%;padding:30px;}
+.video-wrapper{height:280px;}
+.accordion{height:140px;}
+/* menos padding general */
+
+.content{
+padding:20px 12px;
+}
+
+/* card más compacta */
+
+.project-card{
+padding:14px;
+gap:18px;
+border-radius:16px;
+}
+
+.breakdown-block{
+margin-top:26px;
+}
+/* vídeo más grande */
+
+.video-wrapper iframe{
+width:100%;
+aspect-ratio:16/9;
+border-radius:12px;
+}
+
+/* quitar espacio lateral innecesario */
+
+.main-wrapper{
+padding-left:0;
+}
+
+.video-wrapper{
+margin-left:-6px;
+margin-right:-6px;
+}
+/* info más compacta */
+.projects-block{
+
+margin-top:28px;
+}
+
+.project-info{
+border-left:none;
+padding-left:0;
+margin-top:6px;
+}
+
+.project-info p{
+margin-bottom:14px;
+}
+
+
+.section-label{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:12px;
+font-size:12px;
+letter-spacing:3px;
+}
+
+.section-label::before{
+position:static;
+transform:none;
+}
+/* thumbnails más grandes */
+
+.gallery-grid{
+height:160px;
+}
+}
+
+
+
+
+/* ===== THEME SWITCHER ===== */
+
+.theme-buttons{
+display:flex;
+gap:8px;
+margin-top:8px;
+}
+
+.theme-btn{
+width:22px;
+height:22px;
+border-radius:4px;
+cursor:pointer;
+border:1px solid rgba(255,255,255,0.2);
+transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.theme-btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 6px rgba(255,255,255,0.5);
+}
+
+/* colores de los botones */
+
+.theme-btn[data-theme="light"]{
+background:#f5f6f7;
+}
+
+.theme-btn[data-theme="blue"]{
+background:#1e2630;
+}
+
+
+/*===== HERO PLACEHOLDER============*/
+
+.hero-placeholder{
+background-size:cover;
+background-position:center 35%;
+position:absolute;
+inset:0;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-family:'Sora',sans-serif;
+font-size:22px;
+letter-spacing:6px;
+text-transform:uppercase;
+font-weight:500;
+color:#cfd6de;
+background-size:cover;
+background-position:center;
+border-radius:16px;
+pointer-events:none;
+opacity:0;
+transition:opacity .3s ease;
+
+/* imagen cinematográfica */
+filter:brightness(.75) contrast(1.05) saturate(.95);
+
+}
+
+.hero-placeholder::after{
+
+content:"";
+position:absolute;
+inset:0;
+
+background:linear-gradient(
+to bottom,
+rgba(0,0,0,.15),
+rgba(0,0,0,.35)
+);
+
+border-radius:16px;
+
+}
+
+
+
+
+/* texto encima */
+
+.hero-placeholder span{
+position:relative;
+z-index:2;
+
+text-shadow:
+0 0 10px rgba(255,255,255,0.35),
+0 0 30px rgba(120,160,220,0.35),
+0 0 60px rgba(120,160,220,0.25);
+}
+
+
+
+
+/* ===== THEMES ===== */
+
+.theme-blue{
+--bg:#0b0f14;
+--sidebar:#10161d;
+--card:#141a22;
+--text:#e7edf3;
+--muted:#8f9aa6;
+--accent:#1e2630;
+}
+
+
+.theme-light{
+--bg:#f5f6f7;
+--sidebar1:#e8ebee;
+--sidebar2:#dde2e6;
+--sidebar3:#d3d9df;
+--card:#ffffff;
+--text:#1c1f24;
+--muted:#6b7380;
+--accent:#9aa6b2;
+}
+
+
+/* ===== LIGHT THEME FIXES ===== */
+
+body.theme-light .btn{
+
+color:#1c1f24;
+
+border:1px solid rgba(0,0,0,0.15);
+
+background:linear-gradient(
+180deg,
+rgba(255,255,255,0.9),
+rgba(240,240,240,0.7)
+);
+
+box-shadow:
+0 2px 6px rgba(0,0,0,0.08);
+
+}
+
+body.theme-light .btn:hover{
+
+border-color:#7a8794;
+
+background:linear-gradient(
+180deg,
+rgba(255,255,255,1),
+rgba(235,235,235,0.9)
+);
+
+box-shadow:
+0 4px 10px rgba(0,0,0,0.15);
+
+}
+
+/* títulos sidebar */
+
+body.theme-light .info-block h4{
+
+color:#4c5663;
+
+text-shadow:none;
+
+}
+
+/* línea decorativa títulos */
+
+body.theme-light .info-block h4::before{
+
+background:linear-gradient(
+to right,
+rgba(0,0,0,0.4),
+rgba(0,0,0,0.05)
+);
+
+box-shadow:none;
+
+}
+
+/* glow detrás del nombre */
+
+body.theme-light .sidebar h1::before{
+
+background:radial-gradient(
+circle,
+rgba(120,140,160,0.25) 0%,
+rgba(120,140,160,0.12) 40%,
+rgba(120,140,160,0.05) 65%,
+transparent 80%
+);
+
+}
+
+/* línea timeline */
+
+body.theme-light .experience::before{
+
+background:linear-gradient(
+to bottom,
+rgba(120,140,160,0.8),
+rgba(120,140,160,0.4),
+rgba(120,140,160,0.15),
+rgba(0,0,0,0.03)
+);
+
+box-shadow:none;
+
+}
+
+/* ===== EXPERIENCE FIX LIGHT THEME ===== */
+
+body.theme-light .experience::before{
+
+background:linear-gradient(
+to bottom,
+rgba(120,130,140,0.7),
+rgba(120,130,140,0.45),
+rgba(120,130,140,0.25),
+rgba(120,130,140,0.1)
+);
+
+box-shadow:none;
+
+}
+
+body.theme-light .job::before{
+
+background:radial-gradient(
+circle,
+#ffffff 0%,
+#c9d2da 40%,
+#7f8a94 70%
+);
+
+box-shadow:
+0 0 3px rgba(0,0,0,0.15);
+
+}
+
+body.theme-light .job-title{
+color:#c28a2c !important;
+}
+
+
+/* ===== TOP THEME SWITCHER ===== */
+
+.top-theme-switcher{
+position:absolute;
+top:-34px;
+right:20px;
+display:flex;
+gap:8px;
+z-index:5;
+
+}
+
+.top-theme-switcher .theme-btn{
+width:20px;
+height:20px;
+border-radius:4px;
+cursor:pointer;
+border:1px solid rgba(0,0,0,0.25);
+box-shadow:
+0 2px 6px rgba(0,0,0,0.25);
+}
+
+body.theme-light .gallery-back{
+color:#3a4653;
+text-shadow:none;
+}
+
+body.theme-light .gallery-back:hover{
+color:#1f2329;
+}
+
+/* COOKIE BANNER BLOGGER */
+
+.cookie-choices-info{
+position:fixed !important;
+
+bottom:12px !important;
+top:auto !important;
+
+left:12px !important;
+right:12px !important;
+
+width:auto !important;
+
+background:#141a22 !important;
+color:#8f9aa6 !important;
+
+padding:8px 16px !important;
+
+font-size:11px;
+line-height:1.4;
+
+border-radius:10px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.55);
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+z-index:999999;
+}
+
+/* botones */
+
+.cookie-choices-info .cookie-choices-button{
+background:#1e2630 !important;
+color:#e7edf3 !important;
+
+padding:4px 10px !important;
+font-size:10px;
+
+border-radius:4px;
+margin-left:8px;
+}
+.cookie-choices-info .cookie-choices-text {
+max-width: 2080px !important;
+}
+</style>
+</head>
+
+<body>
+
+<div class='page'>
+<div class='layout'>
+
+<aside class='sidebar'>
+
+<h1>Yago Fernández</h1>
+
+<p class='intro-text'>
+Senior Real Time VFX Artist with 9+ years of experience creating gameplay driven and cinematic effects for PC and console games. Strong technical background and production experience.
+</p>
+
+<div class='buttons'>
+<a class='btn' href='https://www.artstation.com/yofernandez' target='_blank'>ArtStation</a>
+<a class='btn' href='https://www.linkedin.com/in/yago-87a4709a/' target='_blank'>LinkedIn</a>
+</div>
+
+<div class='info-block'>
+<h4>Focus</h4>
+<p>
+&#183; Real time VFX for PC and console titles<br/>
+&#183; Focused on gameplay readability and &#160;&#160;cinematic impact<br/>
+</p>
+</div>
+  
+  
+<div class='info-block tools'>
+
+<h4>Core Tools</h4>
+
+<div class='tool-icons'>
+
+<img class='tool unreal' src='https://cdn.simpleicons.org/unrealengine/white'/>
+<img class='tool unity' src='https://cdn.simpleicons.org/unity'/>
+<img class='tool photoshop' src='https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg'/>
+<img class='tool substance' src='https://www.adobe.com/cc-shared/assets/img/product-icons/svg/substance-3d-designer-64.svg'/>
+<img class='tool embergen' src='https://jangafx.com/media/images/logos/embergen.svg'/>
+<img class='tool houdini' src='https://cdn.simpleicons.org/houdini'/>
+<img class='tool maya' src='https://damassets.autodesk.net/content/dam/autodesk/www/product-imagery/badge-75x75/simplified-badges/maya-2023-simplified-badge-75x75.png'/>
+<img class='tool blender' src='https://imgs.search.brave.com/vdHRoYYk0a-cIi8aD7kQvnzuuwUwwi5g9Gi7XvRjhgc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8wLzBjL0Js/ZW5kZXJfbG9nb19u/b190ZXh0LnN2Zy8y/NTBweC1CbGVuZGVy/X2xvZ29fbm9fdGV4/dC5zdmcucG5n'/>
+</div>
+
+</div>
+
+<div class='info-block'>
+<h4>Background</h4>
+<p>
+&#183; Programming background<br/>
+&#183; Spain<br/>
+&#183; Fully remote availability<br/>
+&#183; Permanent contract<br/>
+&#183; Max 3 months trial period
+</p>
+</div>
+
+  
+
+
+
+<!-- EXPERIENCE -->
+
+<div class='info-block experience'>
+
+<h4>Experience</h4>
+
+<div class='job'>
+
+<img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQ6-1tDzvXK5D9UKz50sjnRiilfYu5mVedF7z7USDugs_lw3X7ALPJmpXFbm7coB5vr8pfu-IstslFtHltCypfGcivM9EZhOhEOPwpkKstnZ7_pcYSe0rksyEOV5tnvuWVxfXz67Xkja56a1H9vx4KksD_1cHnXVVQuETrDCgZ0T_KKit1zmylTabfkxQ/s100/estudio_alkimia-interactive.jpg'/>
+
+<div>
+<p class='job-title'>Senior VFX Artist</p>
+<p class='job-company'>Alkimia Interactive</p>
+<p class='job-time'>2025 &#8211; 2026</p>
+</div>
+
+</div>
+
+<div class='job'>
+
+<img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFGsaldFNBjBGETfk0RmArpCoNjz-MDSUX1WgKpTaXKRCIM-1DdOSD-6T2XR8RZ6I_uI2J8jVIhHOMX9GaVm7BBm4ktSUH8LcL0ojzD2puSTEoOS2FPs1Xz-iSpP8IsOxYhkWea47CWr_WfAfp-8DKpz7zJNrFuS1pZCBvkU7d0FzkAImVcWN9kyB433s/s100/magic_media_entertainment_logo.jpg'/>
+
+<div>
+<p class='job-title'>Senior VFX Artist</p>
+<p class='job-company'>Magic Media</p>
+<p class='job-time'>2023 &#8211; 2025</p>
+</div>
+
+</div>
+
+<div class='job'>
+
+<img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjA0QYffIFIK8yagpztE8Gd2iA4YptezptniWX2EusolhkD9I58W_mrWJq9jbIKZFM422O2-oYQmcvaBNmZg0qk3OL5Wc6prMtOl73eHhftv4FfA0TLRB5gAphx7dDmKfXxXDQrjUFkqGe3JXesoYhcZvSrsdXxjX0QSQEVNL-lNAzFiK4-ye5Nc2f7PZA/s320/estudio_starloop-studios.jpg'/>
+
+<div>
+<p class='job-title'>Mid VFX Artist</p>
+<p class='job-company'>Starloop Studios</p>
+<p class='job-time'>2022 &#8211; 2023</p>
+</div>
+
+</div>
+
+<div class='job'>
+
+<img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjt40lZ8MuGXG-aZKkCbO2f898bmybHeBxpK9EucUxdxeWfZbF2DYMQI2eN_qyoxrxIU1meKw0BGMMwM4chvqpkwdTw4_nSIVOqp8pQBjKOBSSeWE85xPFCOyz50TOkBQ8JhgYoO8hOnE1gnSeg6cmo3UQ1Vh2g_rZqbgN_vgBdKVk0sGKmcs_sp01ySLQ/s320/estudio_gato-studio.jpg'/>
+
+<div>
+<p class='job-title'>Lead VFX Artist</p>
+<p class='job-company'>Gato Salvaje Studio</p>
+<p class='job-time'>2016 &#8211; 2022</p>
+</div>
+
+</div>  
+  
+  
+</div>  
+  
+</aside>
+
+<div class='content'>
+<div class='main-wrapper'>
+
+<div class='top-theme-switcher'>
+<div class='theme-btn' data-theme='light'></div>
+<div class='theme-btn' data-theme='blue'></div>
+</div>   
+  
+  
+<div class='project-card'>
+  <div class='video-ambilight'></div>
+<div class='video-wrapper'>
+  <div class='hero-placeholder'><span>Coming soon</span></div>
+  <iframe allow='autoplay; fullscreen' allowfullscreen='1' loading='lazy' src=''></iframe>
+</div>
+
+
+<div class='project-info'></div>
+</div>
+<div class='section-block projects-block'>
+
+<div class='section-label'>Projects</div>
+
+<section class='accordion'></section>
+
+</div>
+
+  
+<div class='section-block breakdown-block'>
+
+<div class='section-label'>Breakdown</div>
+
+<section class='project-gallery'>
+
+
+
+  <div class='gallery-grid'></div>
+  <div class='gallery-back'>&#8592; Back to projects</div>
+
+</section>
+
+</div>
+
+<footer>Yago Fernández &#8212; 2026</footer>
+
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+if (location.hash.includes("project-")) {
+  history.replaceState(null, "", location.pathname);
+  history.pushState(null, "", location.hash);
+}
+
+/* =========================================================
+   PROJECT DATA
+   Para añadir nuevos vídeos solo copia uno de los bloques
+   dentro de "gallery"
+========================================================= */
+
+const projects = [
+
+{
+  title: "Alkimia Interactive",
+  role: "Sr VFX Artist",
+  engine: "Unreal Engine",
+  tools: "Niagara, Embergen",
+  summary: "Working in different effects for the game in animations and different attacks, also in set dressing.",
+
+  hero: "",
+
+  thumbnail:
+    "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgk00OO8A6MSqiVFWV1UUjNgKF-PpclmV3GWjny8nRveOubjnS1mwlWAAmj501p8xIfZHKEemrGrQJqM0t3XLcMj2sDDMNwQ6p_7Qq-Yx-Fm257n1s1wVhJ33tWmz_lz7FxvK0utQGBSJwwkejEemiXotNYBW4dl-47fEekDNDnK-WpxIWrtp17rmebqd8/s1177/GothicRemake.png",
+
+  gallery: [
+
+    {
+      video:
+        "",
+
+      thumb:
+        "",
+
+      title:
+        "",
+
+      tools:
+        "Unreal Engine 5 • Niagara",
+
+      description:
+        ""
+    },
+
+    
+
+  ]
+},
+
+{
+  title: "Magic Media",
+  role: "Sr VFX Artist",
+  engine: "Unreal Engine 5",
+  tools: "Niagara, Embergen",
+  summary: "Working overall in weapons and different attacks for Remnant 2.",
+
+  hero: "https://player.vimeo.com/video/973385372?autoplay=1&muted=1&playsinline=1",
+
+  thumbnail:
+    "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimInA0UsM9CrACgKUg30Y53gh_HwUxB30YJah_J-e7gnrmHfOsbf-Vxh7KHxnnMpjrxpDi_HCUXFR0-ITThJHyD-NWTJ1CGKsyky-BA_NGqTQjIh1Dmm9lePyj2g7vtRLktado1Pu4mWm0z5kPW1jZNLFGHO0Njx7r84x-xOzz7fGrykTKtJZHy6xbqr0/s3840/3840x2160.jpg",
+
+  gallery: [
+
+    {
+      video:
+        "https://www.youtube.com/embed/PIiBLIhHVhU?mute=1",
+
+      thumb:
+        "https://img.youtube.com/vi/PIiBLIhHVhU/maxresdefault.jpg",
+
+      title:
+        "World’s Edge Sword effect",
+
+      tools:
+        "Unreal Engine 5 • Niagara ",
+
+      description:
+        "Heavy sword attack VFX using GPU particles and emissive flipbooks."
+    },
+
+    {
+      video:
+        "https://player.vimeo.com/video/973385372",
+
+      thumb:
+        "https://i.vimeocdn.com/video/1907304284-bac8296ab76b31c57712941ffb2fede66f0b0d95d608d5c1c99f701dd11099a4-d?mw=1800&mh=983&q=70",
+
+      title:
+        "All the weapons I've been working",
+
+      tools:
+        "Unrean Engine 5 • Niagara",
+
+      description:
+        "Heavy sword attack VFX using GPU particles and emissive flipbooks."
+    }
+
+  ]
+},
+
+{
+  title: "Gato Salvaje Studio",
+  role: "Sr VFX Artist",
+  engine: "Unreal Engine",
+  tools: "Niagara, Embergen",
+  summary: "More than 5 years working in effects, textures and set dressing into the game.",
+
+  hero: "https://player.vimeo.com/video/973385372?autoplay=1&muted=1&playsinline=1",
+
+  thumbnail:
+    "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivhSwmxjBniV_up1nXlHTXzrWcGcZUyiPCggUV0Nd8q0MRn0RTGqCC8yVDeNj7HQxwBlBq3qxwnQRNLrQ0oYCGbw4SW1Y1Cibbohudcebqg1fyP0fdAPdRCbTP-Z5fgYEuBTUkIgNkvFUyT5iBnGnalpc3NTqJpdSvSZKNgiXZejcNtYHhruMStpjl0Eo/s1536/ChatGPT%20Image%2011%20mar%202026,%2012_48_53.png",
+
+  gallery: [
+
+    {
+      video:
+        "https://www.youtube.com/embed/PIiBLIhHVhU?mute=1",
+
+      thumb:
+        "https://img.youtube.com/vi/PIiBLIhHVhU/maxresdefault.jpg",
+
+      title:
+        "Corrupted Sword Impact",
+
+      tools:
+        "Unreal Engine 4 • Cascade",
+
+      description:
+        "Heavy sword attack VFX using GPU particles and emissive flipbooks."
+    },
+
+    {
+      video:
+        "https://player.vimeo.com/video/973385372",
+
+      thumb:
+        "https://i.vimeocdn.com/video/1907304284-bac8296ab76b31c57712941ffb2fede66f0b0d95d608d5c1c99f701dd11099a4-d?mw=1800&mh=983&q=70",
+
+      title:
+        "Corrupted Sword Impact",
+
+      tools:
+        "Unreal Engine 4 • Cascade",
+
+      description:
+        "Heavy sword attack VFX using GPU particles and emissive flipbooks."
+    }
+
+  ]
+},
+
+{
+  title: "Training",
+  role: "Sr VFX Artist",
+  engine: "Unreal Engine 5",
+  tools: "Niagara, Embergen, Maya, Photoshop",
+  summary: "Some training effects I've made for fun.",
+
+  hero:
+    "https://www.youtube.com/embed/j5OlWnyUmAE?autoplay=1&muted=1&playsinline=1",
+
+  thumbnail:
+    "https://img.youtube.com/vi/j5OlWnyUmAE/maxresdefault.jpg",
+
+  gallery: [
+
+    {
+      video:
+        "https://www.youtube.com/embed/JEV7K3sp-Zg?mute=1",
+
+      thumb:
+        "https://img.youtube.com/vi/JEV7K3sp-Zg/maxresdefault.jpg",
+
+      title:
+        "Parallax cards I've been working for a TCG game for fun.",
+
+      tools:
+        "Unreal Engine 5 • Niagara",
+
+      description:
+        "Practice VFX made to explore particle motion and impact timing."
+    },
+
+    {
+      video:
+        "https://www.youtube.com/embed/w9vBV4JKTYg?mute=1",
+
+      thumb:
+        "https://img.youtube.com/vi/w9vBV4JKTYg/maxresdefault.jpg",
+
+      title:
+        "Redefine course car fire and smokes effects",
+
+      tools:
+        "Unreal Engine 5 • Embergen",
+
+      description:
+        "Experiment with timing and energy burst behaviour."
+    },
+
+    {
+      video:
+        "https://www.youtube.com/embed/tJMIfuvf4Ls?mute=1",
+
+      thumb:
+        "https://img.youtube.com/vi/tJMIfuvf4Ls/maxresdefault.jpg",
+
+      title:
+        "Redefine course fire effect",
+
+      tools:
+        "Unreal Engine 5 • Embergen",
+
+      description:
+        "Small VFX experiment focusing on readability and timing."
+    },
+
+    {
+      video:
+        "https://www.youtube.com/embed/ba-zKCGV8oA?mute=1",
+
+      thumb:
+        "https://img.youtube.com/vi/ba-zKCGV8oA/maxresdefault.jpg",
+
+      title:
+        "Coloso course made for fun",
+
+      tools:
+        "Unreal Engine 5 • Niagara",
+
+      description:
+        "Test effect exploring motion and particle flow."
+    },
+
+    {
+      video:
+        "https://www.youtube.com/embed/j5OlWnyUmAE?mute=1",
+
+      thumb:
+        "https://img.youtube.com/vi/j5OlWnyUmAE/maxresdefault.jpg",
+
+      title:
+        "Coloso course ",
+
+      tools:
+        "Unreal Engine 5 • Niagara",
+
+      description:
+        "Another training effect exploring burst energy behaviour."
+    }
+
+  ]
+}
+
+];
+
+
+/* =========================================================
+   DOM ELEMENTS
+========================================================= */
+
+const accordion = document.querySelector(".accordion");
+const iframe = document.querySelector(".video-wrapper iframe");
+const info = document.querySelector(".project-info");
+const gallery = document.querySelector(".gallery-grid");
+
+const galleryWrapper = document.querySelector(".project-gallery");
+const projectsBlock = document.querySelector(".projects-block");
+const breakdownBlock = document.querySelector(".breakdown-block");
+const backBtn = document.querySelector(".gallery-back");
+
+const projectsLabel = document.querySelector(".projects-block .section-label");
+
+let activeProject = null;
+
+/* =========================================================
+   VIDEO PRINCIPAL DEMO REEL
+========================================================= */
+const MAIN_REEL = "https://player.vimeo.com/video/973385372?autoplay=1&muted=1&playsinline=1";
+
+/* =========================================================
+   CREATE VIDEO THUMBNAIL
+========================================================= */
+
+function buildThumb(item){
+
+  const thumb = document.createElement("div");
+  thumb.className = "video-thumb";
+
+  if(item.thumb){
+    thumb.dataset.bg = item.thumb;
+  }else{
+    thumb.classList.add("placeholder");
+  }
+
+  thumb.innerHTML =
+    "<div class='video-info'>" +
+      "<h4>"+item.title+"</h4>" +
+      "<p>"+item.tools+"</p>" +
+    "</div>";
+
+  thumb.addEventListener("click", function(){
+
+    if(!item.video) return;
+
+    document.querySelectorAll(".video-thumb")
+    .forEach(t => t.classList.remove("active"));
+
+    thumb.classList.add("active");
+
+    iframe.src = item.video.includes("?")
+      ? item.video + "&autoplay=1"
+      : item.video + "?autoplay=1";
+
+    updateAmbilight(item.thumb);
+
+    if(window.innerWidth < 900){
+
+      setTimeout(() => {
+
+        document.querySelector(".video-wrapper").scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        });
+
+      },120);
+
+    }
+
+  });
+
+  return thumb;
+
+}
+/* =========================================================
+   LAZY LOAD THUMBNAILS
+========================================================= */
+
+const thumbObserver = new IntersectionObserver((entries, observer) => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+
+      const el = entry.target;
+
+      if(el.dataset.bg){
+        el.style.backgroundImage = "url(" + el.dataset.bg + ")";
+      }
+
+      observer.unobserve(el);
+
+    }
+
+  });
+
+},{
+  rootMargin: "100px"
+});
+
+
+
+/* =========================================================
+   GET DOMINANT COLOR
+========================================================= */
+function updateAmbilight(image){
+
+const ambi = document.querySelector(".video-ambilight")
+
+ambi.style.backgroundImage = `url(${image})`
+
+}
+
+/* =========================================================
+   LOAD PROJECT
+========================================================= */
+
+function loadProject(index){
+
+  const data = projects[index];
+  updateAmbilight(data.thumbnail)
+  const first = data.gallery[0];
+
+const placeholder = document.querySelector(".hero-placeholder");
+
+if(data.hero){
+
+  iframe.src = data.hero;
+  placeholder.style.opacity = "0";
+
+}else{
+
+  iframe.src = "about:blank";
+
+  placeholder.style.backgroundImage =
+  `url(${data.thumbnail})`;
+
+  placeholder.style.opacity = "1";
+
+}
+
+
+  info.innerHTML =
+    "<h5>Project</h5><p>" + data.title + "</p>" +
+    "<h5>Role</h5><p>" + data.role + "</p>" +
+    "<h5>Engine</h5><p>" + data.engine + "</p>" +
+    "<h5>Tools</h5><p>" + data.tools + "</p>" +
+    "<h5>Summary</h5><p>" + data.summary + "</p>";
+
+  gallery.innerHTML = "";
+
+  data.gallery.forEach(item => {
+    gallery.appendChild(buildThumb(item));
+document.querySelectorAll(".video-thumb").forEach(el=>{
+  thumbObserver.observe(el);
+});
+  });
+
+const firstThumb = gallery.querySelector(".video-thumb");
+
+if(firstThumb){
+firstThumb.classList.add("active");
+
+const firstVideo = data.gallery[0].video;
+
+if(firstVideo){
+
+iframe.src = firstVideo.includes("?")
+? firstVideo + "&autoplay=1"
+: firstVideo + "?autoplay=1";
+
+placeholder.style.opacity = "0";
+
+}
+
+}
+
+}
+
+
+/* =========================================================
+   PREVIEW PROJECT
+========================================================= */
+
+
+
+
+/* =========================================================
+   ACCORDION PROJECTS
+========================================================= */
+
+projects.forEach((project, index) => {
+
+  const panel = document.createElement("div");
+  panel.className = "panel";
+
+  panel.innerHTML =
+    "<div class='panel-bg' data-bg='"+project.thumbnail+"'></div>" +
+    "<span>" + project.title + "</span>";
+
+  panel.addEventListener("click", () => {
+
+    document.querySelectorAll(".panel")
+    .forEach(p => p.classList.remove("active"));
+
+    if(activeProject === index){
+      activeProject = null;
+      galleryWrapper.classList.remove("visible");
+      return;
+    }
+
+    activeProject = index;
+    panel.classList.add("active");
+
+    loadProject(index);
+    location.hash = "project-" + index;
+    galleryWrapper.classList.add("visible");
+
+    accordion.classList.add("hidden");
+    projectsBlock.style.display = "none";
+    breakdownBlock.classList.add("visible");
+
+    projectsLabel.textContent = "Breakdown";
+    galleryWrapper.scrollIntoView({behavior:"smooth"});
+
+  });
+
+  accordion.appendChild(panel);
+
+});
+
+
+/* =========================================================
+   LAZY LOAD PANEL IMAGES
+========================================================= */
+
+function lazyLoadPanels(){
+
+  document.querySelectorAll(".panel-bg").forEach(bg => {
+
+    if(!bg.style.backgroundImage){
+
+      const url = bg.dataset.bg;
+      bg.style.backgroundImage = "url(" + url + ")";
+
+    }
+
+  });
+
+}
+
+/* ejecutarlo una vez creados los panels */
+
+lazyLoadPanels();
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+backBtn.addEventListener("click", () => {
+location.hash = "";
+
+
+});
+/* =========================================================
+   PARALLAX
+========================================================= */
+
+document.querySelectorAll(".panel").forEach(panel => {
+
+const bg = panel.querySelector(".panel-bg");
+
+panel.addEventListener("mousemove", e => {
+
+const rect = panel.getBoundingClientRect();
+
+const x = (e.clientX - rect.left) / rect.width - 0.5;
+const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+bg.style.transform =
+`scale(1.2) translate(${x * 60}px, ${y * 60}px)`;
+
+});
+
+panel.addEventListener("mouseleave", () => {
+bg.style.transform = "scale(1)";
+});
+
+});
+
+
+/* =========================================================
+   THEME SWITCHER
+========================================================= */
+
+
+const themeButtons = document.querySelectorAll(".theme-btn")
+
+themeButtons.forEach(btn => {
+
+btn.addEventListener("click", () => {
+
+const theme = btn.dataset.theme
+
+/* elimina cualquier tema activo */
+document.body.className =
+document.body.className.replace(/theme-\w+/g, "")
+
+/* añade el nuevo tema */
+document.body.classList.add("theme-" + theme)
+
+/* guardar en navegador */
+localStorage.setItem("siteTheme", theme)
+
+})
+
+})
+
+/* cargar tema guardado */
+
+const savedTheme = localStorage.getItem("siteTheme")
+
+if(savedTheme){
+
+document.body.className =
+document.body.className.replace(/theme-\w+/g, "")
+
+document.body.classList.add("theme-" + savedTheme)
+
+}else{
+
+document.body.classList.add("theme-blue")
+
+}
+/* =========================================================
+   DETECTAR PRESS BACK 
+========================================================= */
+window.addEventListener("hashchange", function(){
+
+if(location.hash.includes("project-")){
+
+const index = parseInt(location.hash.replace("#project-",""));
+
+if(!isNaN(index) && projects[index]){
+
+loadProject(index);
+
+galleryWrapper.classList.add("visible");
+accordion.classList.add("hidden");
+projectsBlock.style.display = "none";
+breakdownBlock.classList.add("visible");
+
+}
+
+}else{
+
+activeProject = null;
+
+galleryWrapper.classList.remove("visible");
+accordion.classList.remove("hidden");
+projectsBlock.style.display = "block";
+breakdownBlock.classList.remove("visible");
+
+document.querySelectorAll(".panel")
+.forEach(p => p.classList.remove("active"));
+
+iframe.src = MAIN_REEL;
+updateAmbilight(projects[0].thumbnail);
+
+}
+
+});
+
+
+
+/* =========================================================
+   INIT
+========================================================= */
+
+/* si se entra directamente a un proyecto (#project-x)
+   creamos primero el estado base "/" en el historial */
+
+
+/* estado inicial del hero */
+iframe.src = MAIN_REEL;
+updateAmbilight(projects[0].thumbnail);
+
+
+/* cargar proyecto si la URL tiene hash */
+
+if(location.hash.includes("project-")){
+
+const index = parseInt(location.hash.replace("#project-",""));
+
+if(!isNaN(index) && projects[index]){
+
+loadProject(index);
+
+accordion.classList.add("hidden");
+projectsBlock.style.display = "none";
+breakdownBlock.classList.add("visible");
+galleryWrapper.classList.add("visible");
+
+}
+
+}
+});
+
+</script>
+
+</body>
+</html>
