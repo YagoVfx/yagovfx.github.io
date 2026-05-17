@@ -454,6 +454,147 @@ option{background:var(--bg2);}
   }
 }
 
+
+/* ══ POSTS / DEVLOG SYSTEM ══ */
+
+/* Topbar devlog button highlight */
+.tbtn.devlog-btn{border-color:var(--accent);color:var(--accent);}
+.tbtn.devlog-btn:hover{background:var(--accent);color:#fff;}
+
+/* ── Post overlay (full screen) ── */
+#postOverlay{display:none;position:fixed;inset:0;z-index:85;background:var(--bg);overflow-y:auto;overflow-x:hidden;}
+#postOverlay.open{display:block;}
+#postOverlay .page-header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;z-index:5;}
+
+/* ── Post list (index) ── */
+#postListView{max-width:1100px;margin:0 auto;padding:40px 32px;}
+@media(max-width:768px){#postListView{padding:20px 14px;}}
+.posts-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
+.posts-header-title{font-size:22px;font-weight:800;letter-spacing:-.02em;}
+.posts-cats{display:flex;flex-wrap:wrap;gap:6px;}
+.cat-btn{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);border-radius:20px;background:transparent;color:var(--sub);cursor:pointer;transition:all .18s;}
+.cat-btn:hover,.cat-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(124,92,252,.08);}
+.posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
+@media(max-width:600px){.posts-grid{grid-template-columns:1fr;}}
+
+/* Post card */
+.post-card{background:var(--bg2);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;transition:border-color .22s,transform .22s;position:relative;}
+.post-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.post-card-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:brightness(.72);transition:filter .25s;}
+.post-card:hover .post-card-thumb{filter:brightness(.9);}
+.post-card-premium-blur{position:absolute;top:0;left:0;right:0;aspect-ratio:16/9;backdrop-filter:blur(12px);background:rgba(0,0,0,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+.post-card-lock{font-size:22px;}
+.post-card-unlock{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,.3);border-radius:20px;color:#fff;background:transparent;cursor:pointer;transition:all .2s;}
+.post-card-unlock:hover{background:var(--accent);border-color:var(--accent);}
+.post-card-body{padding:14px 16px 16px;}
+.post-card-cats{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;}
+.post-cat-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--line);border-radius:12px;color:var(--accent);}
+.post-card-title{font-size:14px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-bottom:5px;}
+.post-card-desc{font-size:11px;color:var(--sub);line-height:1.55;}
+.post-card-meta{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--line2);}
+.post-card-date{font-family:var(--mono);font-size:8px;color:var(--sub);}
+.post-card-badge{font-family:var(--mono);font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:10px;}
+.post-card-badge.free{background:rgba(46,204,113,.15);color:var(--green);border:1px solid rgba(46,204,113,.25);}
+.post-card-badge.premium{background:rgba(124,92,252,.15);color:var(--accent2);border:1px solid rgba(124,92,252,.3);}
+
+/* ── Single post view ── */
+#postSingleView{display:none;max-width:860px;margin:0 auto;padding:48px 32px 80px;}
+@media(max-width:768px){#postSingleView{padding:24px 14px 60px;}}
+#postSingleView.visible{display:block;}
+.ps-cats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
+.ps-title{font-size:32px;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:10px;}
+@media(max-width:600px){.ps-title{font-size:22px;}}
+.ps-meta{display:flex;align-items:center;gap:10px;margin-bottom:36px;flex-wrap:wrap;}
+.ps-date{font-family:var(--mono);font-size:9px;color:var(--sub);}
+.ps-badge{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:10px;}
+.ps-badge.free{background:rgba(46,204,113,.15);color:var(--green);border:1px solid rgba(46,204,113,.25);}
+.ps-badge.premium{background:rgba(124,92,252,.15);color:var(--accent2);border:1px solid rgba(124,92,252,.3);}
+
+/* Post blocks */
+.pb{margin-bottom:36px;}
+.pb-label{font-family:var(--mono);font-size:7.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--sub);margin-bottom:10px;opacity:.6;}
+
+/* Hero video */
+.pb-hero-video iframe{width:100%;aspect-ratio:16/9;border:none;border-radius:8px;display:block;}
+
+/* Hero gif/image */
+.pb-hero-img img{width:100%;border-radius:8px;display:block;}
+
+/* Before / After */
+.pb-compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media(max-width:600px){.pb-compare{grid-template-columns:1fr;}}
+.pb-compare-side{position:relative;border-radius:8px;overflow:hidden;}
+.pb-compare-side img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;}
+.pb-compare-label{position:absolute;bottom:8px;left:10px;font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.7);color:#fff;padding:3px 8px;border-radius:3px;}
+
+/* Intent block */
+.pb-intent{border-left:3px solid var(--accent);padding:14px 18px;background:rgba(124,92,252,.06);border-radius:0 6px 6px 0;font-size:14px;color:var(--txt);line-height:1.7;font-style:italic;}
+
+/* Text block */
+.pb-text p{font-size:14px;color:var(--sub);line-height:1.8;margin-bottom:12px;}
+.pb-text strong{color:var(--txt);font-weight:700;}
+.pb-text em{color:var(--accent2);}
+.pb-text ul,.pb-text ol{margin:10px 0 10px 20px;font-size:14px;color:var(--sub);line-height:1.8;}
+.pb-text h3{font-size:16px;font-weight:800;color:var(--txt);margin:18px 0 6px;letter-spacing:-.01em;}
+
+/* Image block */
+.pb-image img{width:100%;border-radius:8px;display:block;}
+.pb-image figcaption{font-family:var(--mono);font-size:8.5px;color:var(--sub);text-align:center;margin-top:8px;letter-spacing:.07em;}
+
+/* Video block */
+.pb-video iframe{width:100%;aspect-ratio:16/9;border:none;border-radius:8px;display:block;}
+
+/* Breakdown grid (images) */
+.pb-breakdown{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
+.pb-breakdown-item{position:relative;border-radius:6px;overflow:hidden;}
+.pb-breakdown-item img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;filter:brightness(.8);}
+.pb-breakdown-label{position:absolute;bottom:0;left:0;right:0;padding:6px 8px;background:linear-gradient(to top,rgba(0,0,0,.85),transparent);font-family:var(--mono);font-size:8px;color:#fff;letter-spacing:.1em;}
+
+/* Params block */
+.pb-params{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px;}
+.pb-param-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--bg2);border:1px solid var(--line);border-radius:5px;font-size:11px;}
+.pb-param-key{font-family:var(--mono);font-size:8px;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;}
+.pb-param-val{font-weight:700;color:var(--accent2);font-size:11px;}
+
+/* Metrics block */
+.pb-metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}
+.pb-metric{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center;}
+.pb-metric-val{font-size:22px;font-weight:800;color:var(--accent);margin-bottom:4px;}
+.pb-metric-label{font-family:var(--mono);font-size:8px;color:var(--sub);letter-spacing:.1em;text-transform:uppercase;line-height:1.4;}
+
+/* Divider */
+.pb-divider{border:none;border-top:1px solid var(--line);margin:12px 0;}
+
+/* Premium gate on single post */
+.premium-gate{text-align:center;padding:60px 20px;border:1px solid rgba(124,92,252,.25);border-radius:12px;background:rgba(124,92,252,.05);margin-top:40px;}
+.premium-gate-icon{font-size:40px;margin-bottom:16px;}
+.premium-gate-title{font-size:18px;font-weight:800;margin-bottom:8px;}
+.premium-gate-desc{font-size:13px;color:var(--sub);margin-bottom:20px;line-height:1.6;}
+.premium-gate-btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:6px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+.premium-gate-btn:hover{background:var(--accent2);}
+
+/* ══ ADMIN — POSTS SECTION ══ */
+.posts-admin-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin-bottom:16px;}
+.post-admin-card{background:var(--bg2);border:1px solid var(--line);border-radius:7px;overflow:hidden;transition:border-color .2s;position:relative;}
+.post-admin-card:hover{border-color:var(--accent);}
+.post-admin-card img{width:100%;height:80px;object-fit:cover;display:block;filter:brightness(.55);}
+.post-admin-card-body{padding:10px 12px;}
+.post-admin-badge{position:absolute;top:8px;right:8px;font-family:var(--mono);font-size:7px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:10px;}
+.post-admin-badge.free{background:rgba(46,204,113,.9);color:#fff;}
+.post-admin-badge.premium{background:rgba(124,92,252,.9);color:#fff;}
+
+/* block editor */
+.block-editor{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+.block-row{background:var(--bg3);border:1px solid var(--line);border-radius:6px;padding:10px 12px;display:flex;align-items:flex-start;gap:10px;}
+.block-drag{cursor:grab;color:var(--sub);font-size:14px;padding-top:2px;flex-shrink:0;user-select:none;}
+.block-content{flex:1;min-width:0;}
+.block-type-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.block-remove{font-family:var(--mono);font-size:8px;padding:3px 7px;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--sub);cursor:pointer;flex-shrink:0;transition:all .15s;}
+.block-remove:hover{border-color:var(--red);color:var(--red);}
+.block-add-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
+.block-add-btn{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border:1px dashed var(--line);border-radius:4px;background:transparent;color:var(--sub);cursor:pointer;transition:all .15s;}
+.block-add-btn:hover{border-color:var(--accent);color:var(--accent);}
+
 </style>
 </head>
 <body>
@@ -489,6 +630,31 @@ option{background:var(--bg2);}
   <div class="page-body" id="pageBody"></div>
 </div>
 
+
+<!-- POST OVERLAY -->
+<div id="postOverlay">
+  <div class="page-header">
+    <button class="page-back" id="postBackBtn">Back</button>
+    <div class="page-title-bar" id="postOverlayTitle">Devlog</div>
+    <div style="width:60px;"></div>
+  </div>
+  <!-- Post list -->
+  <div id="postListView">
+    <div class="posts-header">
+      <div class="posts-header-title">Devlog</div>
+      <div class="posts-cats" id="postCatsFilter"></div>
+    </div>
+    <div class="posts-grid" id="postsGrid"></div>
+  </div>
+  <!-- Single post -->
+  <div id="postSingleView">
+    <div class="ps-cats" id="psCats"></div>
+    <div class="ps-title" id="psTitle"></div>
+    <div class="ps-meta" id="psMeta"></div>
+    <div id="psBlocks"></div>
+  </div>
+</div>
+
 <!-- CV print frame — completely isolated from admin -->
 <div id="cvPrintFrame">
   <button class="cvf-close-btn" onclick="document.getElementById('cvPrintFrame').style.display='none'">✕ Close</button>
@@ -513,6 +679,7 @@ option{background:var(--bg2);}
       <div class="adm-nav-item" onclick="showSec('videos')" data-s="videos"><span class="adm-icon">🎬</span>Videos</div>
       <div class="adm-nav-item" onclick="showSec('tools')" data-s="tools"><span class="adm-icon">🔧</span>Core Tools</div>
       <div class="adm-nav-item" onclick="showSec('pages')" data-s="pages"><span class="adm-icon">📄</span>Custom Pages</div>
+      <div class="adm-nav-item" onclick="showSec('posts')" data-s="posts"><span class="adm-icon">✍️</span>Devlog Posts</div>
       <div class="adm-nav-sec">Identity</div>
       <div class="adm-nav-item" onclick="showSec('profile')" data-s="profile"><span class="adm-icon">👤</span>Profile</div>
       <div class="adm-nav-item" onclick="showSec('cv')" data-s="cv"><span class="adm-icon">📋</span>CV / Resume</div>
@@ -722,7 +889,7 @@ option{background:var(--bg2);}
       <!-- SETTINGS -->
       <div class="adm-sec" id="sec-settings">
         <div class="a-title">Settings</div>
-        <div class="fb-notice" style="background:rgba(46,204,113,.07);border-color:rgba(46,204,113,.25);"><strong style="color:var(--green);">☁ Firebase connected.</strong> Todos los cambios se sincronizan en Firestore en tiempo real desde cualquier dispositivo.</div>
+        <div class="fb-notice" style="background:rgba(46,204,113,.07);border-color:rgba(46,204,113,.25);"><strong style="color:var(--green);">☁ Firebase connected.</strong> Todos los cambios se sincronizan en Firestore en tiempo real.</div>
         <div class="a-form">
           <div class="fg"><label class="fl">New admin password</label><input class="fi" type="password" id="newPw" placeholder="Leave blank to keep current"></div>
           <div class="fg"><label class="fl">Language</label>
@@ -736,6 +903,14 @@ option{background:var(--bg2);}
             <button class="ab danger" onclick="resetData()">Reset all</button>
           </div>
         </div>
+
+      <!-- POSTS / DEVLOG -->
+      <div class="adm-sec" id="sec-posts">
+        <div class="a-title">Devlog Posts</div>
+        <div class="a-sub">Breakdowns, devlogs y artículos técnicos. Free = público · Premium = bloqueado con enlace de pago.</div>
+        <button class="a-add-btn" onclick="openAddPost()">＋ New Post</button>
+        <div class="posts-admin-grid" id="postsAdminGrid"></div>
+      </div>
       </div>
     </div>
   </div>
@@ -746,6 +921,7 @@ option{background:var(--bg2);}
   <header class="topbar">
     <span class="t-logo"><span class="t-dot"></span><span id="topName">YAGO FX</span></span>
     <div class="t-right">
+      <button class="tbtn devlog-btn" id="devlogBtn">Devlog</button>
       <div id="pageNavLinks"></div>
       <button class="lang-btn" id="langBtn" onclick="toggleLang()">ES</button>
       <div id="hdrLinks"></div>
@@ -809,78 +985,17 @@ option{background:var(--bg2);}
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCQWuMtoQrIMuP99jemn5BpjX18LEChaWY",
-  authDomain: "portfolio-44b20.firebaseapp.com",
-  projectId: "portfolio-44b20",
-  storageBucket: "portfolio-44b20.firebasestorage.app",
-  messagingSenderId: "1074424066814",
-  appId: "1:1074424066814:web:34862ef3ebbdc824a26baf",
-  measurementId: "G-QYRZSTTX7X"
+const firebaseConfig={apiKey:"AIzaSyCQWuMtoQrIMuP99jemn5BpjX18LEChaWY",authDomain:"portfolio-44b20.firebaseapp.com",projectId:"portfolio-44b20",storageBucket:"portfolio-44b20.firebasestorage.app",messagingSenderId:"1074424066814",appId:"1:1074424066814:web:34862ef3ebbdc824a26baf",measurementId:"G-QYRZSTTX7X"};
+const _fbApp=initializeApp(firebaseConfig);const _db=getFirestore(_fbApp);
+try{getAnalytics(_fbApp);}catch(e){}
+const PORTFOLIO_DOC=doc(_db,'portfolio','main');
+const DB={
+  _saveTimer:null,_remoteListener:null,_ignoreNext:false,
+  get(){return JSON.parse(localStorage.getItem('vfx-v6')||'null');},
+  set(d){localStorage.setItem('vfx-v6',JSON.stringify(d));clearTimeout(this._saveTimer);this._saveTimer=setTimeout(async()=>{try{this._ignoreNext=true;await setDoc(PORTFOLIO_DOC,{data:JSON.stringify(d)});}catch(err){console.warn('[Firebase] write failed:',err);}},300);},
+  startSync(){if(this._remoteListener)return;this._remoteListener=onSnapshot(PORTFOLIO_DOC,(snap)=>{if(!snap.exists())return;if(this._ignoreNext){this._ignoreNext=false;return;}try{const remote=JSON.parse(snap.data().data||'null');if(!remote)return;if(JSON.stringify(remote)===JSON.stringify(D))return;Object.assign(D,remote);localStorage.setItem('vfx-v6',JSON.stringify(D));renderVisitor();if(document.getElementById('admin-overlay').classList.contains('on'))openAdmin();showToastSync();}catch(e){console.warn('[Firebase] sync error',e);}},err=>{console.warn('[Firebase] listener error:',err);});},
+  async loadRemote(){try{const snap=await getDoc(PORTFOLIO_DOC);if(snap.exists()){const remote=JSON.parse(snap.data().data||'null');if(remote){localStorage.setItem('vfx-v6',JSON.stringify(remote));return remote;}}}catch(e){console.warn('[Firebase] loadRemote failed:',e);}return null;}
 };
-const _fbApp = initializeApp(firebaseConfig);
-const _db = getFirestore(_fbApp);
-try { getAnalytics(_fbApp); } catch(e) {}
-
-const PORTFOLIO_DOC = doc(_db, 'portfolio', 'main');
-
-/* ══ DB — Firestore-backed, localStorage como fallback offline ══ */
-const DB = {
-  _saveTimer: null,
-  _remoteListener: null,
-  _ignoreNext: false,
-
-  get() {
-    return JSON.parse(localStorage.getItem('vfx-v6') || 'null');
-  },
-
-  set(d) {
-    localStorage.setItem('vfx-v6', JSON.stringify(d));
-    clearTimeout(this._saveTimer);
-    this._saveTimer = setTimeout(async () => {
-      try {
-        this._ignoreNext = true;
-        await setDoc(PORTFOLIO_DOC, { data: JSON.stringify(d) });
-      } catch (err) {
-        console.warn('[Firebase] write failed:', err);
-      }
-    }, 300);
-  },
-
-  startSync() {
-    if (this._remoteListener) return;
-    this._remoteListener = onSnapshot(PORTFOLIO_DOC, (snap) => {
-      if (!snap.exists()) return;
-      if (this._ignoreNext) { this._ignoreNext = false; return; }
-      try {
-        const remote = JSON.parse(snap.data().data || 'null');
-        if (!remote) return;
-        if (JSON.stringify(remote) === JSON.stringify(D)) return;
-        Object.assign(D, remote);
-        localStorage.setItem('vfx-v6', JSON.stringify(D));
-        renderVisitor();
-        if (document.getElementById('admin-overlay').classList.contains('on')) openAdmin();
-        showToastSync();
-      } catch(e) { console.warn('[Firebase] sync error', e); }
-    }, (err) => { console.warn('[Firebase] listener error:', err); });
-  },
-
-  async loadRemote() {
-    try {
-      const snap = await getDoc(PORTFOLIO_DOC);
-      if (snap.exists()) {
-        const remote = JSON.parse(snap.data().data || 'null');
-        if (remote) {
-          localStorage.setItem('vfx-v6', JSON.stringify(remote));
-          return remote;
-        }
-      }
-    } catch(e) { console.warn('[Firebase] loadRemote failed, usando localStorage:', e); }
-    return null;
-  }
-};
-
 
 /* ══ THEMES ══ */
 const COLOR_THEMES=[
@@ -926,6 +1041,8 @@ const DEFAULTS={
     {id:'l3',label:'Email',url:'mailto:yago@example.com',showInHeader:true},
   ],
   customPages:[],
+  posts:[],
+  premiumUrl:'',
   companies:[
     {id:'c1',name:'Alkimia Interactive',role:'Senior VFX Artist',period:'2025–2026',engine:'Unreal Engine 5',tools:'Niagara · Embergen',desc:'Effects for the Gothic Remake — gameplay attacks, animation-driven FX, set dressing.',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQ6-1tDzvXK5D9UKz50sjnRiilfYu5mVedF7z7USDugs_lw3X7ALPJmpXFbm7coB5vr8pfu-IstslFtHltCypfGcivM9EZhOhEOPwpkKstnZ7_pcYSe0rksyEOV5tnvuWVxfXz67Xkja56a1H9vx4KksD_1cHnXVVQuETrDCgZ0T_KKit1zmylTabfkxQ/s100/estudio_alkimia-interactive.jpg',thumb:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgk00OO8A6MSqiVFWV1UUjNgKF-PpclmV3GWjny8nRveOubjnS1mwlWAAmj501p8xIfZHKEemrGrQJqM0t3XLcMj2sDDMNwQ6p_7Qq-Yx-Fm257n1s1wVhJ33tWmz_lz7FxvK0utQGBSJwwkejEemiXotNYBW4dl-47fEekDNDnK-WpxIWrtp17rmebqd8/s1177/GothicRemake.png',clips:[]},
     {id:'c2',name:'Magic Media',role:'Senior VFX Artist',period:'2023–2025',engine:'Unreal Engine 5',tools:'Niagara · Embergen',desc:'Weapons and combat VFX for Remnant 2 — GPU particles, emissive flipbooks, shader work.',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFGsaldFNBjBGETfk0RmArpCoNjz-MDSUX1WgKpTaXKRCIM-1DdOSD-6T2XR8RZ6I_uI2J8jVIhHOMX9GaVm7BBm4ktSUH8LcL0ojzD2puSTEoOS2FPs1Xz-iSpP8IsOxYhkWea47CWr_WfAfp-8DKpz7zJNrFuS1pZCBvkU7d0FzkAImVcWN9kyB433s/s100/magic_media_entertainment_logo.jpg',thumb:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimInA0UsM9CrACgKUg30Y53gh_HwUxB30YJah_J-e7gnrmHfOsbf-Vxh7KHxnnMpjrxpDi_HCUXFR0-ITThJHyD-NWTJ1CGKsyky-BA_NGqTQjIh1Dmm9lePyj2g7vtRLktado1Pu4mWm0z5kPW1jZNLFGHO0Njx7r84x-xOzz7fGrykTKtJZHy6xbqr0/s3840/3840x2160.jpg',clips:[{id:'v1',title:"World's Edge Sword",tools:'UE5 · Niagara',video:'https://www.youtube.com/embed/PIiBLIhHVhU?mute=1',thumb:'https://img.youtube.com/vi/PIiBLIhHVhU/maxresdefault.jpg'},{id:'v2',title:'Weapons Reel',tools:'UE5 · Niagara',video:'https://player.vimeo.com/video/973385372',thumb:'https://i.vimeocdn.com/video/1907304284-bac8296ab76b31c57712941ffb2fede66f0b0d95d608d5c1c99f701dd11099a4-d?mw=1800&mh=983&q=70'}]},
@@ -949,6 +1066,8 @@ let D=DB.get()||JSON.parse(JSON.stringify(DEFAULTS));
 if(!D.reel){D.reel=JSON.parse(JSON.stringify(DEFAULTS.reel));}
 if(D.reel.enabled===undefined)D.reel.enabled=true;
 if(!D.customPages)D.customPages=[];
+if(!D.posts)D.posts=[];
+if(!D.premiumUrl)D.premiumUrl='';
 if(!D.cv)D.cv=JSON.parse(JSON.stringify(DEFAULTS.cv));
 if(!D.cv.artstation)D.cv.artstation='';
 if(!D.cv.skills)D.cv.skills=[];
@@ -1645,7 +1764,7 @@ function checkPw(){
 function openAdmin(){
   document.getElementById('admin-overlay').classList.add('on');showSec('reel');
   renderAdminCos();renderVidCoSel();renderProfileForm();renderLayGrid();renderThemeGrid();
-  renderSizeGrid();renderToolsAdmin();renderLinksAdmin();renderPagesAdmin();renderCvForm();
+  renderSizeGrid();renderToolsAdmin();renderLinksAdmin();renderPagesAdmin();renderCvForm();renderPostsAdmin();
   const te=document.getElementById('togExpCards');if(te)te.checked=!!D.expCards;
   renderCurrentCompanyInfo();syncMobileBlocks();
   const ls=document.getElementById('langSel');if(ls)ls.value=D.lang;
@@ -1665,6 +1784,7 @@ function showSec(name){
   if(name==='links')renderLinksAdmin();
   if(name==='pages')renderPagesAdmin();
   if(name==='cv')renderCvForm();
+  if(name==='posts')renderPostsAdmin();
 }
 
 /* drag helper */
@@ -1781,66 +1901,506 @@ function syncMobileBlocks(){
 }
 window.addEventListener('resize', syncMobileBlocks);
 
-/* ══ INIT ══ */
-(async () => {
-  const loadEl = document.createElement('div');
-  loadEl.id = 'fb-loading';
-  loadEl.style.cssText = 'position:fixed;inset:0;z-index:99999;background:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--sub);';
-  loadEl.textContent = 'Connecting…';
-  document.body.appendChild(loadEl);
 
-  const remote = await DB.loadRemote();
-  if (remote) {
-    Object.assign(D, remote);
+/* ══════════════════════════════════════════════
+   POSTS / DEVLOG SYSTEM
+══════════════════════════════════════════════ */
+const POST_CATS = ['Niagara','Shuriken','Embergen','Liquidgen','Material','Pipeline','3D','TechArt','Houdini','Photoshop'];
+
+const POST_TEMPLATES = {
+  niagara: {
+    label: '🎨 Niagara / Gameplay VFX',
+    blocks: [
+      {type:'hero-video', label:'Hero Shot', url:'', autoplay:true},
+      {type:'compare',    label:'Before / After', leftUrl:'', leftLabel:'Without FX', rightUrl:'', rightLabel:'With FX'},
+      {type:'intent',     label:'Intent / Goal', text:'Impact effect focused on readability and strong directional energy for third-person combat.'},
+      {type:'breakdown',  label:'Breakdown Visual', items:[{url:'',caption:'Emissive pass'},{url:'',caption:'Distortion'},{url:'',caption:'Sparks'},{url:'',caption:'Smoke'}]},
+      {type:'image',      label:'Niagara Graph', url:'', caption:'Key modules — spawn logic and custom behavior'},
+      {type:'params',     label:'Parameters / Controls', items:[{key:'Color',val:'Exposed'},{key:'Intensity',val:'0–1'},{key:'Hit Size',val:'Scalar'},{key:'Lifetime',val:'0.4s'},{key:'Randomization',val:'±20%'}]},
+      {type:'metrics',    label:'Optimization', items:[{val:'GPU',label:'Particle type'},{val:'<200',label:'Particle count'},{val:'48',label:'Instructions'},{val:'LOD 3',label:'Scalability'}]},
+      {type:'image',      label:'Final Cinematic Shots', url:'', caption:''},
+    ]
+  },
+  material: {
+    label: '🧱 Material / Shader Breakdown',
+    blocks: [
+      {type:'hero-video', label:'Final Result', url:''},
+      {type:'intent',     label:'Material Purpose', text:'Stylized wet surface with dynamic puddles and edge wear for environment props.'},
+      {type:'breakdown',  label:'Texture Inputs', items:[{url:'',caption:'Albedo'},{url:'',caption:'Normal'},{url:'',caption:'Mask'},{url:'',caption:'Noise'}]},
+      {type:'text',       label:'Shader Features', html:'<ul><li><strong>Triplanar</strong> mapping</li><li><strong>Vertex paint</strong> blending</li><li><strong>Fresnel</strong> edge glow</li><li><strong>Depth fade</strong> intersections</li><li><strong>World aligned</strong> textures</li></ul>'},
+      {type:'image',      label:'Graph Breakdown — UVs & Masks', url:'', caption:''},
+      {type:'params',     label:'Parameters', items:[{key:'Roughness',val:'0.0–1.0'},{key:'Edge Wear',val:'0–1'},{key:'Dissolve',val:'0–1'},{key:'Glow',val:'0–5'}]},
+      {type:'metrics',    label:'Performance', items:[{val:'Med',label:'Shader complexity'},{val:'42',label:'Instructions'},{val:'6',label:'Tex samplers'},{val:'LOD 2',label:'LOD behavior'}]},
+      {type:'image',      label:'Final Beauty Shots', url:'', caption:''},
+    ]
+  },
+  scene: {
+    label: '🌍 Environment / Scene',
+    blocks: [
+      {type:'hero-video', label:'Hero Shot', url:''},
+      {type:'compare',    label:'Blockout vs Final', leftUrl:'', leftLabel:'Blockout', rightUrl:'', rightLabel:'Final'},
+      {type:'image',      label:'Concept / References', url:'', caption:'Moodboard'},
+      {type:'compare',    label:'Lighting Passes', leftUrl:'', leftLabel:'Flat lit', rightUrl:'', rightLabel:'Final lighting'},
+      {type:'breakdown',  label:'Asset Breakdown', items:[{url:'',caption:'Trim sheet'},{url:'',caption:'Hero props'},{url:'',caption:'Foliage'},{url:'',caption:'Modular kit'}]},
+      {type:'text',       label:'Materials / Shaders', html:'<p>Key materials used and their technical approach.</p>'},
+      {type:'metrics',    label:'Optimization / Technical', items:[{val:'2048',label:'Texel density'},{val:'GPU',label:'Instancing'},{val:'LOD 3',label:'LOD levels'},{val:'✓',label:'Streaming'}]},
+      {type:'image',      label:'Cinematic Shots', url:'', caption:''},
+    ]
+  },
+  techArt: {
+    label: '⚙️ Tech Art / Pipeline',
+    blocks: [
+      {type:'intent',     label:'Problem Statement', text:'Artists needed a faster way to generate impact decals consistently across weapons.'},
+      {type:'hero-video', label:'Final Result', url:''},
+      {type:'image',      label:'Workflow Overview', url:'', caption:'Input → Processing → Output'},
+      {type:'breakdown',  label:'System Breakdown', items:[{url:'',caption:'Tools'},{url:'',caption:'Blueprints'},{url:'',caption:'Scripts'},{url:'',caption:'Data flow'}]},
+      {type:'text',       label:'Key Features', html:'<ul><li><strong>Auto setup</strong> on import</li><li><strong>Batch processing</strong></li><li><strong>Artist friendly</strong> UI</li><li><strong>Reusable</strong> across projects</li></ul>'},
+      {type:'text',       label:'Technical Details', html:'<p>Blueprint snippets, HLSL, editor tools.</p>'},
+      {type:'metrics',    label:'Metrics / Improvements', items:[{val:'-70%',label:'Setup time'},{val:'-30%',label:'Shader instructions'},{val:'-25%',label:'Memory usage'},{val:'✓',label:'Scalable'}]},
+      {type:'hero-video', label:'Final Demo', url:''},
+    ]
+  },
+  free: {
+    label: '📝 Devlog libre',
+    blocks: [
+      {type:'hero-video', label:'Hero Shot', url:''},
+      {type:'intent',     label:'Intro', text:''},
+      {type:'text',       label:'Content', html:'<p>Write your devlog here.</p>'},
+      {type:'image',      label:'Image', url:'', caption:''},
+    ]
+  }
+};
+
+/* ── helpers ── */
+function uid(){return 'x'+Math.random().toString(36).slice(2,9);}
+function postDateFmt(iso){if(!iso)return '';const d=new Date(iso);return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
+
+/* ── render markdown-lite for text blocks ── */
+function renderTextHtml(html){return html||'';}
+
+/* ── Open devlog overlay ── */
+function openDevlog(){
+  const ov=document.getElementById('postOverlay');
+  ov.classList.add('open');
+  document.getElementById('postListView').style.display='block';
+  document.getElementById('postSingleView').classList.remove('visible');
+  document.getElementById('postOverlayTitle').textContent='Devlog';
+  renderPostList();
+}
+function closeDevlog(){
+  document.getElementById('postOverlay').classList.remove('open');
+}
+
+/* ── Category filter ── */
+let _activeCat='all';
+function renderCatFilter(){
+  const el=document.getElementById('postCatsFilter');if(!el)return;
+  const cats=['all',...POST_CATS];
+  el.innerHTML=cats.map(c=>`<button class="cat-btn${_activeCat===c?' active':''}" onclick="filterCat('${c}')">${c==='all'?'All':c}</button>`).join('');
+}
+function filterCat(c){_activeCat=c;renderCatFilter();renderPostGrid();}
+
+/* ── Post list ── */
+function renderPostList(){renderCatFilter();renderPostGrid();}
+function renderPostGrid(){
+  const grid=document.getElementById('postsGrid');if(!grid)return;
+  const posts=(D.posts||[]).filter(p=>_activeCat==='all'||((p.cats||[]).includes(_activeCat)));
+  if(!posts.length){grid.innerHTML=`<div style="color:var(--sub);font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:20px 0;">No posts yet.</div>`;return;}
+  grid.innerHTML='';
+  posts.forEach(p=>{
+    const isPrem=p.premium;
+    const card=document.createElement('div');
+    card.className='post-card';
+    const catsHtml=(p.cats||[]).map(c=>`<span class="post-cat-tag">${c}</span>`).join('');
+    card.innerHTML=`
+      <div style="position:relative;">
+        <img class="post-card-thumb" src="${p.thumb||''}" alt="${p.title||''}" onerror="this.style.display='none'">
+        ${isPrem?`<div class="post-card-premium-blur"><div class="post-card-lock">🔒</div><button class="post-card-unlock" onclick="window.open('${D.premiumUrl||'#'}','_blank')">Unlock on Patreon</button></div>`:''}
+      </div>
+      <div class="post-card-body">
+        <div class="post-card-cats">${catsHtml}</div>
+        <div class="post-card-title">${p.title||'Untitled'}</div>
+        <div class="post-card-desc">${p.desc||''}</div>
+        <div class="post-card-meta">
+          <span class="post-card-date">${postDateFmt(p.date)}</span>
+          <span class="post-card-badge ${isPrem?'premium':'free'}">${isPrem?'Premium':'Free'}</span>
+        </div>
+      </div>`;
+    card.addEventListener('click',()=>openPost(p.id));
+    grid.appendChild(card);
+  });
+}
+
+/* ── Open single post ── */
+function openPost(id){
+  const p=(D.posts||[]).find(x=>x.id===id);if(!p)return;
+  document.getElementById('postListView').style.display='none';
+  const sv=document.getElementById('postSingleView');
+  sv.classList.add('visible');
+  document.getElementById('postOverlayTitle').textContent=p.title||'Post';
+
+  // cats
+  document.getElementById('psCats').innerHTML=(p.cats||[]).map(c=>`<span class="post-cat-tag">${c}</span>`).join('');
+  document.getElementById('psTitle').textContent=p.title||'';
+  const isPrem=p.premium;
+  document.getElementById('psMeta').innerHTML=`
+    <span class="ps-date">${postDateFmt(p.date)}</span>
+    <span class="ps-badge ${isPrem?'premium':'free'}">${isPrem?'Premium':'Free'}</span>`;
+
+  // blocks — if premium show preview blocks + gate
+  const blocksEl=document.getElementById('psBlocks');
+  const blocks=p.blocks||[];
+  const previewCount=isPrem?Math.min(2,blocks.length):blocks.length;
+  let html='';
+  for(let i=0;i<previewCount;i++) html+=renderBlock(blocks[i]);
+  if(isPrem){
+    html+=`<div class="premium-gate">
+      <div class="premium-gate-icon">🔒</div>
+      <div class="premium-gate-title">Premium Content</div>
+      <div class="premium-gate-desc">Full breakdown available for supporters. Access the complete step-by-step process, parameters, graphs and all assets.</div>
+      <a class="premium-gate-btn" href="${D.premiumUrl||'#'}" target="_blank" rel="noopener">Unlock on Patreon ↗</a>
+    </div>`;
+  }
+  blocksEl.innerHTML=html;
+}
+
+function renderBlock(b){
+  if(!b)return'';
+  switch(b.type){
+    case 'hero-video': return b.url?`<div class="pb pb-hero-video"><div class="pb-label">${b.label||''}</div><iframe src="${embedUrl(b.url)}" allowfullscreen allow="autoplay"></iframe></div>`:'';
+    case 'hero-img':   return b.url?`<div class="pb pb-hero-img"><div class="pb-label">${b.label||''}</div><img src="${b.url}" alt="${b.label||''}"></div>`:'';
+    case 'compare':    return `<div class="pb"><div class="pb-label">${b.label||''}</div><div class="pb-compare">
+      <div class="pb-compare-side">${b.leftUrl?`<img src="${b.leftUrl}" alt="${b.leftLabel||''}"><span class="pb-compare-label">${b.leftLabel||'Before'}</span>`:''}</div>
+      <div class="pb-compare-side">${b.rightUrl?`<img src="${b.rightUrl}" alt="${b.rightLabel||''}"><span class="pb-compare-label">${b.rightLabel||'After'}</span>`:''}</div>
+    </div></div>`;
+    case 'intent':     return `<div class="pb"><div class="pb-label">${b.label||''}</div><div class="pb-intent">${b.text||''}</div></div>`;
+    case 'text':       return `<div class="pb pb-text"><div class="pb-label">${b.label||''}</div>${renderTextHtml(b.html)}</div>`;
+    case 'image':      return b.url?`<div class="pb"><div class="pb-label">${b.label||''}</div><figure class="pb-image"><img src="${b.url}" alt="${b.caption||b.label||''}"><figcaption>${b.caption||''}</figcaption></figure></div>`:'';
+    case 'video':      return b.url?`<div class="pb pb-video"><div class="pb-label">${b.label||''}</div><iframe src="${embedUrl(b.url)}" allowfullscreen allow="autoplay"></iframe></div>`:'';
+    case 'breakdown':  return `<div class="pb"><div class="pb-label">${b.label||''}</div><div class="pb-breakdown">${(b.items||[]).filter(i=>i.url).map(i=>`<div class="pb-breakdown-item"><img src="${i.url}" alt="${i.caption||''}"><div class="pb-breakdown-label">${i.caption||''}</div></div>`).join('')}</div></div>`;
+    case 'params':     return `<div class="pb"><div class="pb-label">${b.label||''}</div><div class="pb-params">${(b.items||[]).map(i=>`<div class="pb-param-row"><span class="pb-param-key">${i.key}</span><span class="pb-param-val">${i.val}</span></div>`).join('')}</div></div>`;
+    case 'metrics':    return `<div class="pb"><div class="pb-label">${b.label||''}</div><div class="pb-metrics">${(b.items||[]).map(i=>`<div class="pb-metric"><div class="pb-metric-val">${i.val}</div><div class="pb-metric-label">${i.label}</div></div>`).join('')}</div></div>`;
+    case 'divider':    return `<div class="pb"><hr class="pb-divider"></div>`;
+    default: return '';
+  }
+}
+
+function embedUrl(url){
+  if(!url)return'';
+  // YouTube
+  const ytMatch=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/);
+  if(ytMatch)return`https://www.youtube.com/embed/${ytMatch[1]}?autoplay=0`;
+  // Vimeo
+  const viMatch=url.match(/vimeo\.com\/(\d+)/);
+  if(viMatch)return`https://player.vimeo.com/video/${viMatch[1]}`;
+  return url;
+}
+
+/* ─────────────────────────────────────────
+   ADMIN — POST EDITOR
+───────────────────────────────────────── */
+let _editingPost=null;   // full post object being edited
+let _editingBlocks=[];   // live blocks array
+
+function renderPostsAdmin(){
+  const g=document.getElementById('postsAdminGrid');if(!g)return;
+  const posts=D.posts||[];
+  if(!posts.length){g.innerHTML=`<div style="color:var(--sub);font-size:11px;padding:8px 0;">No posts yet. Create your first one.</div>`;return;}
+  g.innerHTML='';
+  posts.forEach(p=>{
+    const card=document.createElement('div');card.className='post-admin-card';
+    card.innerHTML=`
+      ${p.thumb?`<img src="${p.thumb}" alt="${p.title||''}">`:
+        `<div style="height:80px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:24px;">✍️</div>`}
+      <span class="post-admin-badge ${p.premium?'premium':'free'}">${p.premium?'Premium':'Free'}</span>
+      <div class="post-admin-card-body">
+        <div class="a-card-title">${p.title||'Untitled'}</div>
+        <div class="a-card-sub">${(p.cats||[]).join(' · ')||'No category'} · ${postDateFmt(p.date)}</div>
+        <div class="a-card-actions" style="margin-top:8px;">
+          <button class="ab primary" onclick="openEditPost('${p.id}')">Edit</button>
+          <button class="ab danger" onclick="deletePost('${p.id}')">Delete</button>
+        </div>
+      </div>`;
+    g.appendChild(card);
+  });
+}
+
+function openAddPost(){
+  _editingPost={id:uid(),title:'',desc:'',thumb:'',cats:[],date:new Date().toISOString().slice(0,10),premium:false,blocks:[],premiumUrl:''};
+  _editingBlocks=[];
+  renderPostEditor(true);
+}
+function openEditPost(id){
+  const p=(D.posts||[]).find(x=>x.id===id);if(!p)return;
+  _editingPost=JSON.parse(JSON.stringify(p));
+  _editingBlocks=JSON.parse(JSON.stringify(p.blocks||[]));
+  renderPostEditor(false);
+}
+
+function renderPostEditor(isNew){
+  const p=_editingPost;
+  const catsCheckboxes=POST_CATS.map(c=>`
+    <label style="display:flex;align-items:center;gap:5px;font-size:11px;cursor:pointer;">
+      <input type="checkbox" value="${c}" ${(p.cats||[]).includes(c)?'checked':''} onchange="togglePostCat('${c}',this.checked)"> ${c}
+    </label>`).join('');
+
+  const templateBtns=Object.entries(POST_TEMPLATES).map(([k,v])=>
+    `<button class="block-add-btn" onclick="applyTemplate('${k}')">${v.label}</button>`).join('');
+
+  const blockAddBtns=[
+    ['hero-video','🎬 Hero Video'],['compare','⚡ Before/After'],['intent','💬 Intent'],
+    ['text','📝 Text'],['image','🖼 Image'],['video','▶ Video'],
+    ['breakdown','🔲 Breakdown Grid'],['params','⚙ Parameters'],['metrics','📊 Metrics'],['divider','— Divider']
+  ].map(([t,l])=>`<button class="block-add-btn" onclick="addBlock('${t}')">${l}</button>`).join('');
+
+  const body=`
+<div style="display:grid;gap:12px;max-width:680px;">
+  <div class="fg"><label class="fl">Title</label><input class="fi" id="pe-title" value="${p.title||''}" oninput="_editingPost.title=this.value"></div>
+  <div class="fg"><label class="fl">Short description (card)</label><textarea class="fta" id="pe-desc" oninput="_editingPost.desc=this.value">${p.desc||''}</textarea></div>
+  <div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="pe-thumb" value="${p.thumb||''}" oninput="_editingPost.thumb=this.value"></div>
+  <div class="fg"><label class="fl">Date</label><input class="fi" type="date" id="pe-date" value="${p.date||''}" oninput="_editingPost.date=this.value"></div>
+  <div class="fg"><label class="fl">Categories</label><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">${catsCheckboxes}</div></div>
+  <div class="toggle-row">
+    <div><div class="toggle-lbl">Premium</div><div class="toggle-sub">Locked — shows gate with Patreon link</div></div>
+    <label class="tog"><input type="checkbox" id="pe-prem" ${p.premium?'checked':''} onchange="_editingPost.premium=this.checked"><span class="tog-sl"></span></label>
+  </div>
+  <div class="fg"><label class="fl">Premium URL (Patreon / Ko-fi)</label><input class="fi" id="pe-premurl" value="${D.premiumUrl||''}" placeholder="https://patreon.com/yourpage" oninput="D.premiumUrl=this.value"></div>
+
+  <div style="border-top:1px solid var(--line);padding-top:14px;">
+    <div class="fl" style="margin-bottom:8px;">Start from template</div>
+    <div class="block-add-row">${templateBtns}</div>
+  </div>
+
+  <div style="border-top:1px solid var(--line);padding-top:14px;">
+    <div class="fl" style="margin-bottom:8px;">Add block</div>
+    <div class="block-add-row">${blockAddBtns}</div>
+    <div class="block-editor" id="blockEditor"></div>
+  </div>
+
+  <div class="f-actions" style="padding-top:6px;">
+    <button class="ab primary" onclick="savePost()">Save Post</button>
+    <button class="ab" onclick="showSec('posts')">Cancel</button>
+  </div>
+</div>`;
+
+  // Swap content into posts section
+  const sec=document.getElementById('sec-posts');
+  sec.innerHTML=`<div class="a-title">${isNew?'New Post':'Edit Post'}</div>` + body;
+  renderBlockEditor();
+}
+
+function togglePostCat(c,on){
+  if(!_editingPost.cats)_editingPost.cats=[];
+  if(on){if(!_editingPost.cats.includes(c))_editingPost.cats.push(c);}
+  else{_editingPost.cats=_editingPost.cats.filter(x=>x!==c);}
+}
+
+function applyTemplate(key){
+  if(!POST_TEMPLATES[key])return;
+  if(_editingBlocks.length>0&&!confirm('Replace current blocks with template?'))return;
+  _editingBlocks=JSON.parse(JSON.stringify(POST_TEMPLATES[key].blocks)).map(b=>({...b,id:uid()}));
+  renderBlockEditor();
+  toast('Template applied');
+}
+
+function addBlock(type){
+  const defaults={
+    'hero-video':{type:'hero-video',label:'Hero Shot',url:''},
+    'hero-img':  {type:'hero-img', label:'Image',url:''},
+    'compare':   {type:'compare',  label:'Before / After',leftUrl:'',leftLabel:'Before',rightUrl:'',rightLabel:'After'},
+    'intent':    {type:'intent',   label:'Intent / Goal',text:''},
+    'text':      {type:'text',     label:'Text Block',html:'<p></p>'},
+    'image':     {type:'image',    label:'Image',url:'',caption:''},
+    'video':     {type:'video',    label:'Video',url:''},
+    'breakdown': {type:'breakdown',label:'Breakdown Grid',items:[{url:'',caption:''},{url:'',caption:''},{url:'',caption:''},{url:'',caption:''}]},
+    'params':    {type:'params',   label:'Parameters',items:[{key:'',val:''},{key:'',val:''}]},
+    'metrics':   {type:'metrics',  label:'Metrics',items:[{val:'',label:''},{val:'',label:''},{val:'',label:''},{val:'',label:''}]},
+    'divider':   {type:'divider',  label:'Divider'},
+  };
+  const b={...defaults[type],id:uid()};
+  _editingBlocks.push(b);
+  renderBlockEditor();
+}
+
+function removeBlock(id){_editingBlocks=_editingBlocks.filter(b=>b.id!==id);renderBlockEditor();}
+function moveBlock(id,dir){
+  const i=_editingBlocks.findIndex(b=>b.id===id);if(i<0)return;
+  const ni=i+dir;if(ni<0||ni>=_editingBlocks.length)return;
+  [_editingBlocks[i],_editingBlocks[ni]]=[_editingBlocks[ni],_editingBlocks[i]];
+  renderBlockEditor();
+}
+
+function renderBlockEditor(){
+  const el=document.getElementById('blockEditor');if(!el)return;
+  if(!_editingBlocks.length){el.innerHTML=`<div style="color:var(--sub);font-size:11px;padding:8px 0;">No blocks yet — choose a template or add blocks above.</div>`;return;}
+  el.innerHTML='';
+  _editingBlocks.forEach((b,i)=>{
+    const row=document.createElement('div');row.className='block-row';
+    row.innerHTML=`
+      <div style="display:flex;flex-direction:column;gap:3px;align-items:center;flex-shrink:0;">
+        <button onclick="moveBlock('${b.id}',-1)" style="background:none;border:none;color:var(--sub);cursor:pointer;font-size:11px;" title="Up">▲</button>
+        <span class="block-drag">⠿</span>
+        <button onclick="moveBlock('${b.id}',1)" style="background:none;border:none;color:var(--sub);cursor:pointer;font-size:11px;" title="Down">▼</button>
+      </div>
+      <div class="block-content">
+        <div class="block-type-tag">${b.type.toUpperCase()}</div>
+        ${blockEditorFields(b)}
+      </div>
+      <button class="block-remove" onclick="removeBlock('${b.id}')">✕</button>`;
+    el.appendChild(row);
+  });
+}
+
+function blockEditorFields(b){
+  const fi=(id,val,ph,ev)=>`<input class="fi" style="margin-bottom:4px;" placeholder="${ph||''}" value="${(val||'').replace(/"/g,'&quot;')}" oninput="${ev}">`;
+  const fta=(val,ph,ev)=>`<textarea class="fta" style="min-height:54px;margin-bottom:4px;" placeholder="${ph||''}" oninput="${ev}">${val||''}</textarea>`;
+  const lbl=`<div class="fl" style="margin-bottom:4px;">Label</div>${fi('',b.label,'Section label',`updateBlock('${b.id}','label',this.value)`)}`;
+
+  switch(b.type){
+    case 'hero-video':
+    case 'video':
+      return lbl+`<div class="fl">Video URL (YouTube / Vimeo)</div>`+fi('',b.url,'https://youtu.be/…',`updateBlock('${b.id}','url',this.value)`);
+    case 'hero-img':
+    case 'image':
+      return lbl+`<div class="fl">Image URL</div>`+fi('',b.url,'https://…',`updateBlock('${b.id}','url',this.value)`)+
+        `<div class="fl">Caption</div>`+fi('',b.caption,'Optional caption',`updateBlock('${b.id}','caption',this.value)`);
+    case 'compare':
+      return lbl+
+        `<div class="fl">Left image URL</div>`+fi('',b.leftUrl,'Before URL',`updateBlock('${b.id}','leftUrl',this.value)`)+
+        `<div class="fl">Left label</div>`+fi('',b.leftLabel,'Before',`updateBlock('${b.id}','leftLabel',this.value)`)+
+        `<div class="fl">Right image URL</div>`+fi('',b.rightUrl,'After URL',`updateBlock('${b.id}','rightUrl',this.value)`)+
+        `<div class="fl">Right label</div>`+fi('',b.rightLabel,'After',`updateBlock('${b.id}','rightLabel',this.value)`);
+    case 'intent':
+      return lbl+`<div class="fl">Text</div>`+fta(b.text,'2-3 lines max…',`updateBlock('${b.id}','text',this.value)`);
+    case 'text':
+      return lbl+`<div class="fl">HTML (use &lt;p&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;ul&gt;&lt;li&gt;, &lt;h3&gt;)</div>`+fta(b.html,'<p>Your text</p>',`updateBlock('${b.id}','html',this.value)`);
+    case 'breakdown':
+      return lbl+`<div class="fl">Items (URL · Caption pairs)</div>`+
+        (b.items||[]).map((it,idx)=>`
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:3px;">
+            <input class="fi" placeholder="Image URL" value="${(it.url||'').replace(/"/g,'&quot;')}" oninput="updateBlockItem('${b.id}',${idx},'url',this.value)">
+            <input class="fi" placeholder="Caption" value="${(it.caption||'').replace(/"/g,'&quot;')}" oninput="updateBlockItem('${b.id}',${idx},'caption',this.value)">
+          </div>`).join('')+
+        `<button class="ab" style="margin-top:4px;" onclick="addBlockItem('${b.id}')">+ Item</button>`;
+    case 'params':
+      return lbl+
+        (b.items||[]).map((it,idx)=>`
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:3px;">
+            <input class="fi" placeholder="Param name" value="${(it.key||'').replace(/"/g,'&quot;')}" oninput="updateBlockItem('${b.id}',${idx},'key',this.value)">
+            <input class="fi" placeholder="Value" value="${(it.val||'').replace(/"/g,'&quot;')}" oninput="updateBlockItem('${b.id}',${idx},'val',this.value)">
+          </div>`).join('')+
+        `<button class="ab" style="margin-top:4px;" onclick="addBlockItem('${b.id}')">+ Param</button>`;
+    case 'metrics':
+      return lbl+
+        (b.items||[]).map((it,idx)=>`
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:3px;">
+            <input class="fi" placeholder="Value (e.g. GPU)" value="${(it.val||'').replace(/"/g,'&quot;')}" oninput="updateBlockItem('${b.id}',${idx},'val',this.value)">
+            <input class="fi" placeholder="Label" value="${(it.label||'').replace(/"/g,'&quot;')}" oninput="updateBlockItem('${b.id}',${idx},'label',this.value)">
+          </div>`).join('')+
+        `<button class="ab" style="margin-top:4px;" onclick="addBlockItem('${b.id}')">+ Metric</button>`;
+    case 'divider':
+      return `<div style="color:var(--sub);font-size:10px;">Horizontal rule separator</div>`;
+    default: return '';
+  }
+}
+
+function updateBlock(id,key,val){
+  const b=_editingBlocks.find(x=>x.id===id);if(b)b[key]=val;
+}
+function updateBlockItem(blockId,idx,key,val){
+  const b=_editingBlocks.find(x=>x.id===blockId);if(b&&b.items&&b.items[idx])b.items[idx][key]=val;
+}
+function addBlockItem(blockId){
+  const b=_editingBlocks.find(x=>x.id===blockId);if(!b)return;
+  if(!b.items)b.items=[];
+  if(b.type==='params')b.items.push({key:'',val:''});
+  else if(b.type==='metrics')b.items.push({val:'',label:''});
+  else b.items.push({url:'',caption:''});
+  renderBlockEditor();
+}
+
+function savePost(){
+  if(!D.posts)D.posts=[];
+  _editingPost.blocks=JSON.parse(JSON.stringify(_editingBlocks));
+  const idx=D.posts.findIndex(x=>x.id===_editingPost.id);
+  if(idx>=0)D.posts[idx]=_editingPost;
+  else D.posts.unshift(_editingPost);
+  save();
+  toast('Post saved');
+  // reset admin section
+  const sec=document.getElementById('sec-posts');
+  sec.innerHTML=`<div class="a-title">Devlog Posts</div>
+    <div class="a-sub">Breakdowns, devlogs y artículos técnicos. Free = público · Premium = bloqueado con enlace de pago.</div>
+    <button class="a-add-btn" onclick="openAddPost()">＋ New Post</button>
+    <div class="posts-admin-grid" id="postsAdminGrid"></div>`;
+  renderPostsAdmin();
+}
+
+function deletePost(id){
+  if(!confirm('Delete this post?'))return;
+  D.posts=(D.posts||[]).filter(x=>x.id!==id);
+  save();renderPostsAdmin();toast('Deleted');
+}
+
+/* ══ INIT ══ */
+(async()=>{
+  const loadEl=document.createElement('div');loadEl.id='fb-loading';
+  loadEl.style.cssText='position:fixed;inset:0;z-index:99999;background:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--sub);';
+  loadEl.textContent='Connecting…';document.body.appendChild(loadEl);
+  const remote=await DB.loadRemote();
+  if(remote){
+    Object.assign(D,remote);
     if(!D.reel){D.reel=JSON.parse(JSON.stringify(DEFAULTS.reel));}
     if(D.reel.enabled===undefined)D.reel.enabled=true;
     if(!D.customPages)D.customPages=[];
+    if(!D.posts)D.posts=[];
+    if(!D.premiumUrl)D.premiumUrl='';
     if(!D.cv)D.cv=JSON.parse(JSON.stringify(DEFAULTS.cv));
-    if(!D.cv.artstation)D.cv.artstation='';
-    if(!D.cv.skills)D.cv.skills=[];
+    if(!D.cv.artstation)D.cv.artstation='';if(!D.cv.skills)D.cv.skills=[];
     if(D.expCards===undefined)D.expCards=true;
-    if(!D.profile.bio_en)D.profile.bio_en=D.profile.bio;
-    if(!D.profile.bio_es)D.profile.bio_es='';
-    if(!D.profile.availTags_en)D.profile.availTags_en=D.profile.availTags;
-    if(!D.profile.availTags_es)D.profile.availTags_es='';
-    if(!D.profile.role_en)D.profile.role_en=D.profile.role;
-    if(!D.profile.role_es)D.profile.role_es='';
-    if(!D.profile.s1l_en)D.profile.s1l_en=D.profile.s1l;
-    if(!D.profile.s1l_es)D.profile.s1l_es='';
-    if(!D.profile.s2l_en)D.profile.s2l_en=D.profile.s2l;
-    if(!D.profile.s2l_es)D.profile.s2l_es='';
-    if(!D.profile.s3l_en)D.profile.s3l_en=D.profile.s3l;
-    if(!D.profile.s3l_es)D.profile.s3l_es='';
+    if(!D.profile.bio_en)D.profile.bio_en=D.profile.bio;if(!D.profile.bio_es)D.profile.bio_es='';
+    if(!D.profile.availTags_en)D.profile.availTags_en=D.profile.availTags;if(!D.profile.availTags_es)D.profile.availTags_es='';
+    if(!D.profile.role_en)D.profile.role_en=D.profile.role;if(!D.profile.role_es)D.profile.role_es='';
+    if(!D.profile.s1l_en)D.profile.s1l_en=D.profile.s1l;if(!D.profile.s1l_es)D.profile.s1l_es='';
+    if(!D.profile.s2l_en)D.profile.s2l_en=D.profile.s2l;if(!D.profile.s2l_es)D.profile.s2l_es='';
+    if(!D.profile.s3l_en)D.profile.s3l_en=D.profile.s3l;if(!D.profile.s3l_es)D.profile.s3l_es='';
   }
-
   loadEl.remove();
-  detectLang();
-  renderVisitor();
-  setTimeout(autoplayOnLoad, 350);
+  detectLang();renderVisitor();setTimeout(autoplayOnLoad,350);
+
+  // Devlog button
+  const devBtn=document.getElementById('devlogBtn');
+  if(devBtn)devBtn.addEventListener('click',openDevlog);
+  // Post back button
+  const postBack=document.getElementById('postBackBtn');
+  if(postBack)postBack.addEventListener('click',()=>{
+    const sv=document.getElementById('postSingleView');
+    if(sv.classList.contains('visible')){sv.classList.remove('visible');document.getElementById('postListView').style.display='block';document.getElementById('postOverlayTitle').textContent='Devlog';renderPostList();}
+    else{closeDevlog();}
+  });
+
   DB.startSync();
 })();
 
-/* ══ EXPOSE GLOBALS (requerido para onclick en ES module) ══ */
-Object.assign(window, {
-  checkPw, openGate, closeAdmin, openAdmin, showSec, closePage, openPage,
-  saveReel, clearReel, setReelEnabled,
-  openAddCo, openEditCo, deleteCo, confirmAddCo, confirmEditCo,
-  openAddVid, openEditVid, deleteVid, confirmAddVid, confirmEditVid,
-  renderVidMgr,
-  openAddTool, openEditTool, deleteTool, confirmAddTool, confirmEditTool,
-  applyToolSize,
-  openAddPage, openEditPage, deletePage, confirmAddPage, confirmEditPage,
-  openAddLink, openEditLink, deleteLink, confirmAddLink, confirmEditLink,
-  saveProfile, renderProfileForm,
-  saveCvData, generateCvPdf,
-  openAddEdu, openEditEdu, deleteEdu, confirmAddEdu, confirmEditEdu,
-  openAddSkill, openEditSkill, deleteSkill, confirmAddSkill, confirmEditSkill,
-  openAddLang, confirmAddLang, deleteLang,
-  saveSettings, exportData, resetData,
-  openModal, closeModal, toast,
-  setExpCards, setCoverBg,
-  applyFont, applyFontSize, applyAnimSpd, applyAnimEase,
-  setLang, toggleLang,
+/* ══ EXPOSE GLOBALS ══ */
+Object.assign(window,{
+  checkPw,openGate,closeAdmin,openAdmin,showSec,closePage,openPage,
+  saveReel,clearReel,setReelEnabled,
+  openAddCo,openEditCo,deleteCo,confirmAddCo,confirmEditCo,
+  openAddVid,openEditVid,deleteVid,confirmAddVid,confirmEditVid,renderVidMgr,
+  openAddTool,openEditTool,deleteTool,confirmAddTool,confirmEditTool,applyToolSize,
+  openAddPage,openEditPage,deletePage,confirmAddPage,confirmEditPage,
+  openAddLink,openEditLink,deleteLink,confirmAddLink,confirmEditLink,
+  saveProfile,renderProfileForm,saveCvData,generateCvPdf,
+  openAddEdu,openEditEdu,deleteEdu,confirmAddEdu,confirmEditEdu,
+  openAddSkill,openEditSkill,deleteSkill,confirmAddSkill,confirmEditSkill,
+  openAddLang,confirmAddLang,deleteLang,
+  saveSettings,exportData,resetData,openModal,closeModal,toast,
+  setExpCards,setCoverBg,applyFont,applyFontSize,applyAnimSpd,applyAnimEase,setLang,toggleLang,
+  openDevlog,closeDevlog,openPost,filterCat,
+  openAddPost,openEditPost,deletePost,savePost,
+  applyTemplate,addBlock,removeBlock,moveBlock,
+  updateBlock,updateBlockItem,addBlockItem,togglePostCat,
 });
 </script>
 </body>
