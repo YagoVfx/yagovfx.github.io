@@ -454,119 +454,6 @@ option{background:var(--bg2);}
   }
 }
 
-
-/* ══ DEVLOG BUTTON ══ */
-.tbtn.devlog-btn{border-color:var(--accent);color:var(--accent);}
-.tbtn.devlog-btn:hover{background:var(--accent);color:#fff;}
-
-/* ══ POST OVERLAY ══ */
-#postOverlay{display:none;position:fixed;inset:0;z-index:85;background:var(--bg);overflow-y:auto;}
-#postOverlay.open{display:block;}
-
-/* ── Post list ── */
-#postListView{max-width:1100px;margin:0 auto;padding:40px 32px;}
-@media(max-width:768px){#postListView{padding:20px 14px;}}
-.posts-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
-.posts-header-title{font-size:22px;font-weight:800;letter-spacing:-.02em;}
-.posts-cats{display:flex;flex-wrap:wrap;gap:6px;}
-.cat-btn{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);border-radius:20px;background:transparent;color:var(--sub);cursor:pointer;transition:all .18s;}
-.cat-btn:hover,.cat-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(124,92,252,.08);}
-.posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
-@media(max-width:600px){.posts-grid{grid-template-columns:1fr;}}
-
-/* ── Post card ── */
-.post-card{background:var(--bg2);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;transition:border-color .22s,transform .22s;position:relative;}
-.post-card:hover{border-color:var(--accent);transform:translateY(-2px);}
-.post-card-thumb-wrap{position:relative;}
-.post-card-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:brightness(.72);transition:filter .25s;}
-.post-card:hover .post-card-thumb{filter:brightness(.9);}
-.post-card-blur{position:absolute;inset:0;backdrop-filter:blur(10px);background:rgba(0,0,0,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
-.post-card-lock{font-size:24px;}
-.post-card-unlock{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,.3);border-radius:20px;color:#fff;background:transparent;cursor:pointer;transition:all .2s;}
-.post-card-unlock:hover{background:var(--accent);border-color:var(--accent);}
-.post-card-body{padding:14px 16px 16px;}
-.post-card-cats{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;}
-.post-cat-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--line);border-radius:12px;color:var(--accent);}
-.post-card-title{font-size:14px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-bottom:5px;}
-.post-card-desc{font-size:11px;color:var(--sub);line-height:1.55;}
-.post-card-meta{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);}
-.post-card-date{font-family:var(--mono);font-size:8px;color:var(--sub);}
-.post-card-badge{font-family:var(--mono);font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:10px;}
-.post-card-badge.free{background:rgba(46,204,113,.15);color:var(--green);border:1px solid rgba(46,204,113,.25);}
-.post-card-badge.premium{background:rgba(124,92,252,.15);color:var(--accent2);border:1px solid rgba(124,92,252,.3);}
-
-/* ── Single post ── */
-#postSingleView{display:none;max-width:860px;margin:0 auto;padding:48px 32px 80px;}
-@media(max-width:768px){#postSingleView{padding:24px 14px 60px;}}
-#postSingleView.visible{display:block;}
-.ps-back{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);cursor:pointer;background:none;border:none;margin-bottom:24px;display:flex;align-items:center;gap:6px;transition:color .2s;padding:0;}
-.ps-back:hover{color:var(--accent);}
-.ps-back::before{content:'←';font-size:14px;}
-.ps-cats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
-.ps-title{font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:10px;}
-@media(max-width:600px){.ps-title{font-size:22px;}}
-.ps-meta{display:flex;align-items:center;gap:10px;margin-bottom:36px;flex-wrap:wrap;}
-.ps-date{font-family:var(--mono);font-size:9px;color:var(--sub);}
-.ps-badge{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:10px;}
-.ps-badge.free{background:rgba(46,204,113,.15);color:var(--green);border:1px solid rgba(46,204,113,.25);}
-.ps-badge.premium{background:rgba(124,92,252,.15);color:var(--accent2);border:1px solid rgba(124,92,252,.3);}
-
-/* ── Post blocks ── */
-.pb{margin-bottom:36px;}
-.pb-label{font-family:var(--mono);font-size:7.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--sub);margin-bottom:10px;opacity:.6;}
-.pb-hero-video iframe,.pb-video iframe{width:100%;aspect-ratio:16/9;border:none;border-radius:8px;display:block;}
-.pb-hero-img img,.pb-image img{width:100%;border-radius:8px;display:block;}
-.pb-image figcaption{font-family:var(--mono);font-size:8.5px;color:var(--sub);text-align:center;margin-top:8px;}
-.pb-compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-@media(max-width:600px){.pb-compare{grid-template-columns:1fr;}}
-.pb-compare-side{position:relative;border-radius:8px;overflow:hidden;}
-.pb-compare-side img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;}
-.pb-compare-lbl{position:absolute;bottom:8px;left:10px;font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.72);color:#fff;padding:3px 8px;border-radius:3px;}
-.pb-intent{border-left:3px solid var(--accent);padding:14px 18px;background:rgba(124,92,252,.06);border-radius:0 6px 6px 0;font-size:15px;color:var(--txt);line-height:1.7;font-style:italic;}
-.pb-text p{font-size:14px;color:var(--sub);line-height:1.8;margin-bottom:12px;}
-.pb-text strong{color:var(--txt);font-weight:700;}
-.pb-text em{color:var(--accent2);}
-.pb-text ul,.pb-text ol{margin:10px 0 10px 20px;font-size:14px;color:var(--sub);line-height:1.8;}
-.pb-text h3{font-size:16px;font-weight:800;color:var(--txt);margin:18px 0 6px;}
-.pb-breakdown{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;}
-.pb-breakdown-item{position:relative;border-radius:6px;overflow:hidden;}
-.pb-breakdown-item img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;filter:brightness(.8);}
-.pb-breakdown-lbl{position:absolute;bottom:0;left:0;right:0;padding:6px 8px;background:linear-gradient(to top,rgba(0,0,0,.85),transparent);font-family:var(--mono);font-size:8px;color:#fff;letter-spacing:.1em;}
-.pb-params{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:6px;}
-.pb-param-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--bg2);border:1px solid var(--line);border-radius:5px;}
-.pb-param-key{font-family:var(--mono);font-size:8px;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;}
-.pb-param-val{font-weight:700;color:var(--accent2);font-size:11px;}
-.pb-metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;}
-.pb-metric{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center;}
-.pb-metric-val{font-size:22px;font-weight:800;color:var(--accent);margin-bottom:4px;}
-.pb-metric-lbl{font-family:var(--mono);font-size:8px;color:var(--sub);letter-spacing:.1em;text-transform:uppercase;line-height:1.4;}
-.pb-divider{border:none;border-top:1px solid var(--line);margin:4px 0;}
-.premium-gate{text-align:center;padding:60px 20px;border:1px solid rgba(124,92,252,.25);border-radius:12px;background:rgba(124,92,252,.05);margin-top:40px;}
-.premium-gate-icon{font-size:40px;margin-bottom:16px;}
-.premium-gate-title{font-size:18px;font-weight:800;margin-bottom:8px;}
-.premium-gate-desc{font-size:13px;color:var(--sub);margin-bottom:20px;line-height:1.6;}
-.premium-gate-btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:6px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
-.premium-gate-btn:hover{background:var(--accent2);}
-
-/* ══ ADMIN — POSTS ══ */
-.posts-admin-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:16px;}
-.post-adm-card{background:var(--bg2);border:1px solid var(--line);border-radius:7px;overflow:hidden;position:relative;transition:border-color .2s;}
-.post-adm-card:hover{border-color:var(--accent);}
-.post-adm-thumb{width:100%;height:80px;object-fit:cover;display:block;filter:brightness(.55);}
-.post-adm-body{padding:10px 12px;}
-.post-adm-badge{position:absolute;top:8px;right:8px;font-family:var(--mono);font-size:7px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:10px;}
-.post-adm-badge.free{background:rgba(46,204,113,.9);color:#fff;}
-.post-adm-badge.premium{background:rgba(124,92,252,.9);color:#fff;}
-.block-editor{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
-.block-row{background:var(--bg3);border:1px solid var(--line);border-radius:6px;padding:10px 12px;display:flex;align-items:flex-start;gap:10px;}
-.block-content{flex:1;min-width:0;}
-.block-type-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
-.block-remove{font-family:var(--mono);font-size:8px;padding:3px 7px;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--sub);cursor:pointer;flex-shrink:0;transition:all .15s;}
-.block-remove:hover{border-color:var(--red);color:var(--red);}
-.block-add-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
-.block-add-btn{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border:1px dashed var(--line);border-radius:4px;background:transparent;color:var(--sub);cursor:pointer;transition:all .15s;}
-.block-add-btn:hover{border-color:var(--accent);color:var(--accent);}
-
 </style>
 </head>
 <body>
@@ -602,30 +489,6 @@ option{background:var(--bg2);}
   <div class="page-body" id="pageBody"></div>
 </div>
 
-
-<!-- POST OVERLAY -->
-<div id="postOverlay">
-  <div class="page-header">
-    <button class="page-back" id="postBackBtn">Back</button>
-    <div class="page-title-bar" id="postOverlayTitle">Devlog</div>
-    <div style="width:60px;"></div>
-  </div>
-  <div id="postListView">
-    <div class="posts-header">
-      <div class="posts-header-title">Devlog</div>
-      <div class="posts-cats" id="postCatsFilter"></div>
-    </div>
-    <div class="posts-grid" id="postsGrid"></div>
-  </div>
-  <div id="postSingleView">
-    <button class="ps-back" id="psSingleBack">Back to list</button>
-    <div class="ps-cats" id="psCats"></div>
-    <div class="ps-title" id="psTitle"></div>
-    <div class="ps-meta" id="psMeta"></div>
-    <div id="psBlocks"></div>
-  </div>
-</div>
-
 <!-- CV print frame — completely isolated from admin -->
 <div id="cvPrintFrame">
   <button class="cvf-close-btn" onclick="document.getElementById('cvPrintFrame').style.display='none'">✕ Close</button>
@@ -650,7 +513,6 @@ option{background:var(--bg2);}
       <div class="adm-nav-item" onclick="showSec('videos')" data-s="videos"><span class="adm-icon">🎬</span>Videos</div>
       <div class="adm-nav-item" onclick="showSec('tools')" data-s="tools"><span class="adm-icon">🔧</span>Core Tools</div>
       <div class="adm-nav-item" onclick="showSec('pages')" data-s="pages"><span class="adm-icon">📄</span>Custom Pages</div>
-      <div class="adm-nav-item" onclick="showSec('posts')" data-s="posts"><span class="adm-icon">✍️</span>Devlog Posts</div>
       <div class="adm-nav-sec">Identity</div>
       <div class="adm-nav-item" onclick="showSec('profile')" data-s="profile"><span class="adm-icon">👤</span>Profile</div>
       <div class="adm-nav-item" onclick="showSec('cv')" data-s="cv"><span class="adm-icon">📋</span>CV / Resume</div>
@@ -860,7 +722,7 @@ option{background:var(--bg2);}
       <!-- SETTINGS -->
       <div class="adm-sec" id="sec-settings">
         <div class="a-title">Settings</div>
-        <div class="fb-notice" style="background:rgba(46,204,113,.07);border-color:rgba(46,204,113,.25);"><strong style="color:var(--green);">☁ Firebase connected.</strong> Todos los cambios se sincronizan en Firestore en tiempo real.</div>
+        <div class="fb-notice" style="background:rgba(46,204,113,.07);border-color:rgba(46,204,113,.25);"><strong style="color:var(--green);">☁ Firebase connected.</strong> Todos los cambios se sincronizan en Firestore en tiempo real desde cualquier dispositivo.</div>
         <div class="a-form">
           <div class="fg"><label class="fl">New admin password</label><input class="fi" type="password" id="newPw" placeholder="Leave blank to keep current"></div>
           <div class="fg"><label class="fl">Language</label>
@@ -874,14 +736,6 @@ option{background:var(--bg2);}
             <button class="ab danger" onclick="resetData()">Reset all</button>
           </div>
         </div>
-
-      <!-- POSTS / DEVLOG -->
-      <div class="adm-sec" id="sec-posts">
-        <div class="a-title">Devlog Posts</div>
-        <div class="a-sub">Breakdowns, devlogs y artículos técnicos. <span style="color:var(--green);">Free</span> = visible · <span style="color:var(--accent2);">Premium</span> = bloqueado con enlace de pago.</div>
-        <button class="a-add-btn" onclick="openAddPost()">＋ New Post</button>
-        <div class="posts-admin-grid" id="postsAdminGrid"></div>
-      </div>
       </div>
     </div>
   </div>
@@ -892,7 +746,6 @@ option{background:var(--bg2);}
   <header class="topbar">
     <span class="t-logo"><span class="t-dot"></span><span id="topName">YAGO FX</span></span>
     <div class="t-right">
-      <button class="tbtn devlog-btn" id="devlogBtn">Devlog</button>
       <div id="pageNavLinks"></div>
       <button class="lang-btn" id="langBtn" onclick="toggleLang()">ES</button>
       <div id="hdrLinks"></div>
@@ -956,41 +809,78 @@ option{background:var(--bg2);}
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
-const firebaseConfig={apiKey:"AIzaSyCQWuMtoQrIMuP99jemn5BpjX18LEChaWY",authDomain:"portfolio-44b20.firebaseapp.com",projectId:"portfolio-44b20",storageBucket:"portfolio-44b20.firebasestorage.app",messagingSenderId:"1074424066814",appId:"1:1074424066814:web:34862ef3ebbdc824a26baf",measurementId:"G-QYRZSTTX7X"};
-const _fbApp=initializeApp(firebaseConfig);const _db=getFirestore(_fbApp);
-try{getAnalytics(_fbApp);}catch(e){}
-const PORTFOLIO_DOC=doc(_db,'portfolio','main');
-const DB={
-  _t:null,_l:null,_skip:false,
-  get(){return JSON.parse(localStorage.getItem('vfx-v6')||'null');},
-  set(d){
-    localStorage.setItem('vfx-v6',JSON.stringify(d));
-    clearTimeout(this._t);
-    this._t=setTimeout(async()=>{try{this._skip=true;await setDoc(PORTFOLIO_DOC,{data:JSON.stringify(d)});}catch(e){console.warn('[FB] write failed:',e);}},300);
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCQWuMtoQrIMuP99jemn5BpjX18LEChaWY",
+  authDomain: "portfolio-44b20.firebaseapp.com",
+  projectId: "portfolio-44b20",
+  storageBucket: "portfolio-44b20.firebasestorage.app",
+  messagingSenderId: "1074424066814",
+  appId: "1:1074424066814:web:34862ef3ebbdc824a26baf",
+  measurementId: "G-QYRZSTTX7X"
+};
+const _fbApp = initializeApp(firebaseConfig);
+const _db = getFirestore(_fbApp);
+try { getAnalytics(_fbApp); } catch(e) {}
+
+const PORTFOLIO_DOC = doc(_db, 'portfolio', 'main');
+
+/* ══ DB — Firestore-backed, localStorage como fallback offline ══ */
+const DB = {
+  _saveTimer: null,
+  _remoteListener: null,
+  _ignoreNext: false,
+
+  get() {
+    return JSON.parse(localStorage.getItem('vfx-v6') || 'null');
   },
-  startSync(){
-    if(this._l)return;
-    this._l=onSnapshot(PORTFOLIO_DOC,snap=>{
-      if(!snap.exists())return;
-      if(this._skip){this._skip=false;return;}
-      try{
-        const r=JSON.parse(snap.data().data||'null');if(!r)return;
-        if(JSON.stringify(r)===JSON.stringify(D))return;
-        Object.assign(D,r);localStorage.setItem('vfx-v6',JSON.stringify(D));
+
+  set(d) {
+    localStorage.setItem('vfx-v6', JSON.stringify(d));
+    clearTimeout(this._saveTimer);
+    this._saveTimer = setTimeout(async () => {
+      try {
+        this._ignoreNext = true;
+        await setDoc(PORTFOLIO_DOC, { data: JSON.stringify(d) });
+      } catch (err) {
+        console.warn('[Firebase] write failed:', err);
+      }
+    }, 300);
+  },
+
+  startSync() {
+    if (this._remoteListener) return;
+    this._remoteListener = onSnapshot(PORTFOLIO_DOC, (snap) => {
+      if (!snap.exists()) return;
+      if (this._ignoreNext) { this._ignoreNext = false; return; }
+      try {
+        const remote = JSON.parse(snap.data().data || 'null');
+        if (!remote) return;
+        if (JSON.stringify(remote) === JSON.stringify(D)) return;
+        Object.assign(D, remote);
+        localStorage.setItem('vfx-v6', JSON.stringify(D));
         renderVisitor();
-        if(document.getElementById('admin-overlay').classList.contains('on'))openAdmin();
-        _showSyncToast();
-      }catch(e){console.warn('[FB] sync error',e);}
-    },e=>console.warn('[FB] listener error',e));
+        if (document.getElementById('admin-overlay').classList.contains('on')) openAdmin();
+        showToastSync();
+      } catch(e) { console.warn('[Firebase] sync error', e); }
+    }, (err) => { console.warn('[Firebase] listener error:', err); });
   },
-  async loadRemote(){
-    try{
-      const snap=await getDoc(PORTFOLIO_DOC);
-      if(snap.exists()){const r=JSON.parse(snap.data().data||'null');if(r){localStorage.setItem('vfx-v6',JSON.stringify(r));return r;}}
-    }catch(e){console.warn('[FB] load failed, using localStorage:',e);}
+
+  async loadRemote() {
+    try {
+      const snap = await getDoc(PORTFOLIO_DOC);
+      if (snap.exists()) {
+        const remote = JSON.parse(snap.data().data || 'null');
+        if (remote) {
+          localStorage.setItem('vfx-v6', JSON.stringify(remote));
+          return remote;
+        }
+      }
+    } catch(e) { console.warn('[Firebase] loadRemote failed, usando localStorage:', e); }
     return null;
   }
 };
+
 
 /* ══ THEMES ══ */
 const COLOR_THEMES=[
@@ -1036,8 +926,6 @@ const DEFAULTS={
     {id:'l3',label:'Email',url:'mailto:yago@example.com',showInHeader:true},
   ],
   customPages:[],
-  posts:[],
-  premiumUrl:'',
   companies:[
     {id:'c1',name:'Alkimia Interactive',role:'Senior VFX Artist',period:'2025–2026',engine:'Unreal Engine 5',tools:'Niagara · Embergen',desc:'Effects for the Gothic Remake — gameplay attacks, animation-driven FX, set dressing.',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQ6-1tDzvXK5D9UKz50sjnRiilfYu5mVedF7z7USDugs_lw3X7ALPJmpXFbm7coB5vr8pfu-IstslFtHltCypfGcivM9EZhOhEOPwpkKstnZ7_pcYSe0rksyEOV5tnvuWVxfXz67Xkja56a1H9vx4KksD_1cHnXVVQuETrDCgZ0T_KKit1zmylTabfkxQ/s100/estudio_alkimia-interactive.jpg',thumb:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgk00OO8A6MSqiVFWV1UUjNgKF-PpclmV3GWjny8nRveOubjnS1mwlWAAmj501p8xIfZHKEemrGrQJqM0t3XLcMj2sDDMNwQ6p_7Qq-Yx-Fm257n1s1wVhJ33tWmz_lz7FxvK0utQGBSJwwkejEemiXotNYBW4dl-47fEekDNDnK-WpxIWrtp17rmebqd8/s1177/GothicRemake.png',clips:[]},
     {id:'c2',name:'Magic Media',role:'Senior VFX Artist',period:'2023–2025',engine:'Unreal Engine 5',tools:'Niagara · Embergen',desc:'Weapons and combat VFX for Remnant 2 — GPU particles, emissive flipbooks, shader work.',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFGsaldFNBjBGETfk0RmArpCoNjz-MDSUX1WgKpTaXKRCIM-1DdOSD-6T2XR8RZ6I_uI2J8jVIhHOMX9GaVm7BBm4ktSUH8LcL0ojzD2puSTEoOS2FPs1Xz-iSpP8IsOxYhkWea47CWr_WfAfp-8DKpz7zJNrFuS1pZCBvkU7d0FzkAImVcWN9kyB433s/s100/magic_media_entertainment_logo.jpg',thumb:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimInA0UsM9CrACgKUg30Y53gh_HwUxB30YJah_J-e7gnrmHfOsbf-Vxh7KHxnnMpjrxpDi_HCUXFR0-ITThJHyD-NWTJ1CGKsyky-BA_NGqTQjIh1Dmm9lePyj2g7vtRLktado1Pu4mWm0z5kPW1jZNLFGHO0Njx7r84x-xOzz7fGrykTKtJZHy6xbqr0/s3840/3840x2160.jpg',clips:[{id:'v1',title:"World's Edge Sword",tools:'UE5 · Niagara',video:'https://www.youtube.com/embed/PIiBLIhHVhU?mute=1',thumb:'https://img.youtube.com/vi/PIiBLIhHVhU/maxresdefault.jpg'},{id:'v2',title:'Weapons Reel',tools:'UE5 · Niagara',video:'https://player.vimeo.com/video/973385372',thumb:'https://i.vimeocdn.com/video/1907304284-bac8296ab76b31c57712941ffb2fede66f0b0d95d608d5c1c99f701dd11099a4-d?mw=1800&mh=983&q=70'}]},
@@ -1061,8 +949,6 @@ let D=DB.get()||JSON.parse(JSON.stringify(DEFAULTS));
 if(!D.reel){D.reel=JSON.parse(JSON.stringify(DEFAULTS.reel));}
 if(D.reel.enabled===undefined)D.reel.enabled=true;
 if(!D.customPages)D.customPages=[];
-if(!D.posts)D.posts=[];
-if(!D.premiumUrl)D.premiumUrl='';
 if(!D.cv)D.cv=JSON.parse(JSON.stringify(DEFAULTS.cv));
 if(!D.cv.artstation)D.cv.artstation='';
 if(!D.cv.skills)D.cv.skills=[];
@@ -1082,7 +968,7 @@ if(!D.profile.s3l_en)D.profile.s3l_en=D.profile.s3l;
 if(!D.profile.s3l_es)D.profile.s3l_es='';
 
 function save(){DB.set(D);const s=document.getElementById('saveStatus');if(s){s.textContent='☁ Syncing…';setTimeout(()=>{s.textContent='✓ Synced';setTimeout(()=>s.textContent='',1800);},320);}}
-function _showSyncToast(){const t=document.getElementById('toast');t.textContent='☁ Synced from another device';t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2800);}
+function showToastSync(){const t=document.getElementById('toast');t.textContent='☁ Synced from another session';t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2800);}
 function uid(){return 'x'+Math.random().toString(36).slice(2,9);}
 function gv(id){const e=document.getElementById(id);return e?e.value:'';}
 function $el(id,txt){const e=document.getElementById(id);if(e)e.textContent=txt;}
@@ -1759,7 +1645,7 @@ function checkPw(){
 function openAdmin(){
   document.getElementById('admin-overlay').classList.add('on');showSec('reel');
   renderAdminCos();renderVidCoSel();renderProfileForm();renderLayGrid();renderThemeGrid();
-  renderSizeGrid();renderToolsAdmin();renderLinksAdmin();renderPagesAdmin();renderCvForm();renderPostsAdmin();
+  renderSizeGrid();renderToolsAdmin();renderLinksAdmin();renderPagesAdmin();renderCvForm();
   const te=document.getElementById('togExpCards');if(te)te.checked=!!D.expCards;
   renderCurrentCompanyInfo();syncMobileBlocks();
   const ls=document.getElementById('langSel');if(ls)ls.value=D.lang;
@@ -1778,7 +1664,6 @@ function showSec(name){
   if(name==='tools'){renderToolsAdmin();['small','medium','large'].forEach(s=>{const b=document.getElementById('tsz-'+s);if(b){b.style.borderColor=s===D.toolSize?'var(--accent)':'';b.style.color=s===D.toolSize?'var(--accent)':'';}});}
   if(name==='links')renderLinksAdmin();
   if(name==='pages')renderPagesAdmin();
-  if(name==='posts'){const sec=document.getElementById('sec-posts');if(sec&&!sec.querySelector('.posts-admin-grid').children.length)renderPostsAdmin();}
   if(name==='cv')renderCvForm();
 }
 
@@ -1896,325 +1781,23 @@ function syncMobileBlocks(){
 }
 window.addEventListener('resize', syncMobileBlocks);
 
-
-/* ══════════════════════════════════════════════
-   DEVLOG / POSTS SYSTEM
-══════════════════════════════════════════════ */
-const POST_CATS=['Niagara','Shuriken','Embergen','Liquidgen','Material','Pipeline','3D','TechArt','Houdini','Photoshop'];
-
-const POST_TEMPLATES={
-  niagara:{label:'🎨 Niagara / Gameplay VFX',blocks:[
-    {type:'hero-video',label:'Hero Shot',url:''},
-    {type:'compare',label:'Before / After',leftUrl:'',leftLabel:'Without FX',rightUrl:'',rightLabel:'With FX'},
-    {type:'intent',label:'Intent / Goal',text:'Impact effect focused on readability and strong directional energy for third-person combat.'},
-    {type:'breakdown',label:'Breakdown Visual',items:[{url:'',caption:'Emissive pass'},{url:'',caption:'Distortion'},{url:'',caption:'Sparks'},{url:'',caption:'Smoke'}]},
-    {type:'image',label:'Niagara Graph',url:'',caption:'Key modules — spawn logic and custom behavior'},
-    {type:'params',label:'Parameters / Controls',items:[{key:'Color',val:'Exposed'},{key:'Intensity',val:'0–1'},{key:'Hit Size',val:'Scalar'},{key:'Lifetime',val:'0.4s'},{key:'Randomization',val:'±20%'}]},
-    {type:'metrics',label:'Optimization',items:[{val:'GPU',label:'Particle type'},{val:'<200',label:'Particle count'},{val:'48',label:'Instructions'},{val:'LOD 3',label:'Scalability'}]},
-    {type:'image',label:'Final Cinematic Shots',url:'',caption:''},
-  ]},
-  material:{label:'🧱 Material / Shader',blocks:[
-    {type:'hero-video',label:'Final Result',url:''},
-    {type:'intent',label:'Material Purpose',text:'Stylized wet surface with dynamic puddles and edge wear.'},
-    {type:'breakdown',label:'Texture Inputs',items:[{url:'',caption:'Albedo'},{url:'',caption:'Normal'},{url:'',caption:'Mask'},{url:'',caption:'Noise'}]},
-    {type:'text',label:'Shader Features',html:'<ul><li><strong>Triplanar</strong> mapping</li><li><strong>Vertex paint</strong> blending</li><li><strong>Fresnel</strong> edge glow</li><li><strong>Depth fade</strong> intersections</li></ul>'},
-    {type:'image',label:'Graph Breakdown',url:'',caption:''},
-    {type:'params',label:'Parameters',items:[{key:'Roughness',val:'0.0–1.0'},{key:'Edge Wear',val:'0–1'},{key:'Dissolve',val:'0–1'},{key:'Glow',val:'0–5'}]},
-    {type:'metrics',label:'Performance',items:[{val:'Med',label:'Shader complexity'},{val:'42',label:'Instructions'},{val:'6',label:'Tex samplers'},{val:'LOD 2',label:'LOD'}]},
-    {type:'image',label:'Final Beauty Shots',url:'',caption:''},
-  ]},
-  scene:{label:'🌍 Environment / Scene',blocks:[
-    {type:'hero-video',label:'Hero Shot',url:''},
-    {type:'compare',label:'Blockout vs Final',leftUrl:'',leftLabel:'Blockout',rightUrl:'',rightLabel:'Final'},
-    {type:'image',label:'Concept / References',url:'',caption:'Moodboard'},
-    {type:'compare',label:'Lighting Passes',leftUrl:'',leftLabel:'Flat lit',rightUrl:'',rightLabel:'Final lighting'},
-    {type:'breakdown',label:'Asset Breakdown',items:[{url:'',caption:'Trim sheet'},{url:'',caption:'Hero props'},{url:'',caption:'Foliage'},{url:'',caption:'Modular kit'}]},
-    {type:'text',label:'Materials / Shaders',html:'<p>Key materials used and technical approach.</p>'},
-    {type:'metrics',label:'Optimization',items:[{val:'2048',label:'Texel density'},{val:'GPU',label:'Instancing'},{val:'LOD 3',label:'LOD levels'},{val:'✓',label:'Streaming'}]},
-    {type:'image',label:'Cinematic Shots',url:'',caption:''},
-  ]},
-  techArt:{label:'⚙️ Tech Art / Pipeline',blocks:[
-    {type:'intent',label:'Problem Statement',text:'Artists needed a faster way to generate impact decals consistently across weapons.'},
-    {type:'hero-video',label:'Final Result',url:''},
-    {type:'image',label:'Workflow Overview',url:'',caption:'Input → Processing → Output'},
-    {type:'breakdown',label:'System Breakdown',items:[{url:'',caption:'Tools'},{url:'',caption:'Blueprints'},{url:'',caption:'Scripts'},{url:'',caption:'Data flow'}]},
-    {type:'text',label:'Key Features',html:'<ul><li><strong>Auto setup</strong> on import</li><li><strong>Batch processing</strong></li><li><strong>Artist friendly</strong> UI</li><li><strong>Reusable</strong> across projects</li></ul>'},
-    {type:'text',label:'Technical Details',html:'<p>Blueprint snippets, HLSL, editor tools and data structures.</p>'},
-    {type:'metrics',label:'Metrics / Improvements',items:[{val:'-70%',label:'Setup time'},{val:'-30%',label:'Shader instructions'},{val:'-25%',label:'Memory usage'},{val:'✓',label:'Scalable'}]},
-    {type:'hero-video',label:'Final Demo',url:''},
-  ]},
-  devlog:{label:'📝 Devlog libre',blocks:[
-    {type:'hero-video',label:'Hero Shot',url:''},
-    {type:'intent',label:'Intro',text:''},
-    {type:'text',label:'Content',html:'<p>Write your devlog here.</p>'},
-    {type:'image',label:'Image',url:'',caption:''},
-  ]},
-};
-
-function _uid(){return 'p'+Math.random().toString(36).slice(2,9);}
-function _dateFmt(iso){if(!iso)return'';const d=new Date(iso);return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
-function _embedUrl(url){
-  if(!url)return'';
-  const yt=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/);
-  if(yt)return'https://www.youtube.com/embed/'+yt[1];
-  const vi=url.match(/vimeo\.com\/(\d+)/);
-  if(vi)return'https://player.vimeo.com/video/'+vi[1];
-  return url;
-}
-
-/* ── Open / close devlog overlay ── */
-let _postActiveCat='all';
-function openDevlog(){
-  document.getElementById('postOverlay').classList.add('open');
-  _showPostList();
-}
-function _showPostList(){
-  document.getElementById('postListView').style.display='block';
-  document.getElementById('postSingleView').classList.remove('visible');
-  document.getElementById('postOverlayTitle').textContent='Devlog';
-  _renderCatFilter();
-  _renderPostGrid();
-}
-function _filterCat(c){_postActiveCat=c;_renderCatFilter();_renderPostGrid();}
-
-function _renderCatFilter(){
-  const el=document.getElementById('postCatsFilter');if(!el)return;
-  const cats=['all',...POST_CATS];
-  el.innerHTML=cats.map(c=>`<button class="cat-btn${_postActiveCat===c?' active':''}" onclick="_filterCat('${c}')">${c==='all'?'All':c}</button>`).join('');
-}
-
-function _renderPostGrid(){
-  const grid=document.getElementById('postsGrid');if(!grid)return;
-  const posts=(D.posts||[]).filter(p=>_postActiveCat==='all'||(p.cats||[]).includes(_postActiveCat));
-  if(!posts.length){grid.innerHTML='<div style="color:var(--sub);font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:20px 0;">No posts yet.</div>';return;}
-  grid.innerHTML='';
-  posts.forEach(p=>{
-    const isPrem=p.premium;
-    const card=document.createElement('div');
-    card.className='post-card';
-    const catsHtml=(p.cats||[]).map(c=>`<span class="post-cat-tag">${c}</span>`).join('');
-    card.innerHTML=`
-      <div class="post-card-thumb-wrap">
-        ${p.thumb?`<img class="post-card-thumb" src="${p.thumb}" alt="">`:`<div style="width:100%;aspect-ratio:16/9;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:32px;">✍️</div>`}
-        ${isPrem?`<div class="post-card-blur"><div class="post-card-lock">🔒</div><button class="post-card-unlock" onclick="event.stopPropagation();window.open('${(D.premiumUrl||'#').replace(/'/g,"\\'")}','_blank')">Unlock on Patreon</button></div>`:''}
-      </div>
-      <div class="post-card-body">
-        <div class="post-card-cats">${catsHtml}</div>
-        <div class="post-card-title">${p.title||'Untitled'}</div>
-        <div class="post-card-desc">${p.desc||''}</div>
-        <div class="post-card-meta">
-          <span class="post-card-date">${_dateFmt(p.date)}</span>
-          <span class="post-card-badge ${isPrem?'premium':'free'}">${isPrem?'Premium':'Free'}</span>
-        </div>
-      </div>`;
-    card.addEventListener('click',()=>_openPost(p.id));
-    grid.appendChild(card);
-  });
-}
-
-function _openPost(id){
-  const p=(D.posts||[]).find(x=>x.id===id);if(!p)return;
-  document.getElementById('postListView').style.display='none';
-  const sv=document.getElementById('postSingleView');sv.classList.add('visible');
-  document.getElementById('postOverlayTitle').textContent=p.title||'Post';
-  document.getElementById('psCats').innerHTML=(p.cats||[]).map(c=>`<span class="post-cat-tag">${c}</span>`).join('');
-  document.getElementById('psTitle').textContent=p.title||'';
-  const isPrem=p.premium;
-  document.getElementById('psMeta').innerHTML=`<span class="ps-date">${_dateFmt(p.date)}</span><span class="ps-badge ${isPrem?'premium':'free'}">${isPrem?'Premium':'Free'}</span>`;
-  const blocks=p.blocks||[];
-  const showCount=isPrem?Math.min(2,blocks.length):blocks.length;
-  let html='';
-  for(let i=0;i<showCount;i++)html+=_renderBlock(blocks[i]);
-  if(isPrem)html+=`<div class="premium-gate"><div class="premium-gate-icon">🔒</div><div class="premium-gate-title">Premium Content</div><div class="premium-gate-desc">Full breakdown available for supporters. Access the complete step-by-step process, parameters, graphs and all assets.</div><a class="premium-gate-btn" href="${D.premiumUrl||'#'}" target="_blank" rel="noopener">Unlock on Patreon ↗</a></div>`;
-  document.getElementById('psBlocks').innerHTML=html;
-}
-
-function _renderBlock(b){
-  if(!b)return'';
-  const lbl=`<div class="pb-label">${b.label||''}</div>`;
-  switch(b.type){
-    case 'hero-video':return b.url?`<div class="pb pb-hero-video">${lbl}<iframe src="${_embedUrl(b.url)}" allowfullscreen allow="autoplay"></iframe></div>`:'';
-    case 'video':     return b.url?`<div class="pb pb-video">${lbl}<iframe src="${_embedUrl(b.url)}" allowfullscreen allow="autoplay"></iframe></div>`:'';
-    case 'image':     return b.url?`<div class="pb"><figure class="pb-image">${lbl}<img src="${b.url}" alt="${b.caption||''}"><figcaption>${b.caption||''}</figcaption></figure></div>`:'';
-    case 'compare':   return `<div class="pb"><div class="pb-label">${b.label||''}</div><div class="pb-compare"><div class="pb-compare-side">${b.leftUrl?`<img src="${b.leftUrl}" alt=""><span class="pb-compare-lbl">${b.leftLabel||'Before'}</span>`:''}</div><div class="pb-compare-side">${b.rightUrl?`<img src="${b.rightUrl}" alt=""><span class="pb-compare-lbl">${b.rightLabel||'After'}</span>`:''}</div></div></div>`;
-    case 'intent':    return `<div class="pb">${lbl}<div class="pb-intent">${b.text||''}</div></div>`;
-    case 'text':      return `<div class="pb pb-text">${lbl}${b.html||''}</div>`;
-    case 'breakdown': return `<div class="pb">${lbl}<div class="pb-breakdown">${(b.items||[]).filter(i=>i.url).map(i=>`<div class="pb-breakdown-item"><img src="${i.url}" alt="${i.caption||''}"><div class="pb-breakdown-lbl">${i.caption||''}</div></div>`).join('')}</div></div>`;
-    case 'params':    return `<div class="pb">${lbl}<div class="pb-params">${(b.items||[]).map(i=>`<div class="pb-param-row"><span class="pb-param-key">${i.key}</span><span class="pb-param-val">${i.val}</span></div>`).join('')}</div></div>`;
-    case 'metrics':   return `<div class="pb">${lbl}<div class="pb-metrics">${(b.items||[]).map(i=>`<div class="pb-metric"><div class="pb-metric-val">${i.val}</div><div class="pb-metric-lbl">${i.label}</div></div>`).join('')}</div></div>`;
-    case 'divider':   return `<div class="pb"><hr class="pb-divider"></div>`;
-    default:return'';
-  }
-}
-
-/* ═══════════════════════════
-   ADMIN — POST EDITOR
-═══════════════════════════ */
-let _ep=null,_eb=[];
-
-function renderPostsAdmin(){
-  const g=document.getElementById('postsAdminGrid');if(!g)return;
-  const posts=D.posts||[];
-  if(!posts.length){g.innerHTML='<div style="color:var(--sub);font-size:11px;padding:8px 0;">No posts yet. Create your first breakdown.</div>';return;}
-  g.innerHTML='';
-  posts.forEach(p=>{
-    const d=document.createElement('div');d.className='post-adm-card';
-    d.innerHTML=`${p.thumb?`<img class="post-adm-thumb" src="${p.thumb}" alt="">`:`<div style="height:80px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:28px;">✍️</div>`}<span class="post-adm-badge ${p.premium?'premium':'free'}">${p.premium?'Premium':'Free'}</span><div class="post-adm-body"><div class="a-card-title">${p.title||'Untitled'}</div><div class="a-card-sub">${(p.cats||[]).join(' · ')||'No category'} · ${_dateFmt(p.date)}</div><div class="a-card-actions" style="margin-top:8px;"><button class="ab primary" onclick="openEditPost('${p.id}')">Edit</button><button class="ab danger" onclick="deletePost('${p.id}')">Delete</button></div></div>`;
-    g.appendChild(d);
-  });
-}
-
-function openAddPost(){
-  _ep={id:_uid(),title:'',desc:'',thumb:'',cats:[],date:new Date().toISOString().slice(0,10),premium:false,blocks:[]};
-  _eb=[];
-  _renderPostEditor(true);
-}
-function openEditPost(id){
-  const p=(D.posts||[]).find(x=>x.id===id);if(!p)return;
-  _ep=JSON.parse(JSON.stringify(p));_eb=JSON.parse(JSON.stringify(p.blocks||[]));
-  _renderPostEditor(false);
-}
-
-function _renderPostEditor(isNew){
-  const p=_ep;
-  const sec=document.getElementById('sec-posts');
-  const catsHtml=POST_CATS.map(c=>`<label style="display:flex;align-items:center;gap:5px;font-size:11px;cursor:pointer;"><input type="checkbox" value="${c}" ${(p.cats||[]).includes(c)?'checked':''} onchange="_toggleCat('${c}',this.checked)"> ${c}</label>`).join('');
-  const tplBtns=Object.entries(POST_TEMPLATES).map(([k,v])=>`<button class="block-add-btn" onclick="_applyTpl('${k}')">${v.label}</button>`).join('');
-  const addBtns=[['hero-video','🎬 Hero Video'],['compare','⚡ Before/After'],['intent','💬 Intent'],['text','📝 Text'],['image','🖼 Image'],['video','▶ Video'],['breakdown','🔲 Breakdown Grid'],['params','⚙ Parameters'],['metrics','📊 Metrics'],['divider','— Divider']].map(([t,l])=>`<button class="block-add-btn" onclick="_addBlock('${t}')">${l}</button>`).join('');
-
-  sec.innerHTML=`
-<div class="a-title">${isNew?'New Post':'Edit Post'}</div>
-<div style="display:grid;gap:12px;max-width:660px;">
-  <div class="fg"><label class="fl">Title</label><input class="fi" id="pe-title" value="${(p.title||'').replace(/"/g,'&quot;')}" oninput="_ep.title=this.value"></div>
-  <div class="fg"><label class="fl">Short description (card preview)</label><textarea class="fta" oninput="_ep.desc=this.value">${p.desc||''}</textarea></div>
-  <div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="pe-thumb" value="${(p.thumb||'').replace(/"/g,'&quot;')}" oninput="_ep.thumb=this.value"></div>
-  <div class="fg"><label class="fl">Date</label><input class="fi" type="date" value="${p.date||''}" oninput="_ep.date=this.value"></div>
-  <div class="fg"><label class="fl">Categories</label><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">${catsHtml}</div></div>
-  <div class="toggle-row">
-    <div><div class="toggle-lbl">Premium</div><div class="toggle-sub">Bloqueado — muestra gate con enlace de pago</div></div>
-    <label class="tog"><input type="checkbox" ${p.premium?'checked':''} onchange="_ep.premium=this.checked"><span class="tog-sl"></span></label>
-  </div>
-  <div class="fg"><label class="fl">Premium URL (Patreon / Ko-fi / etc.)</label><input class="fi" value="${(D.premiumUrl||'').replace(/"/g,'&quot;')}" placeholder="https://patreon.com/yourpage" oninput="D.premiumUrl=this.value"></div>
-  <div style="border-top:1px solid var(--line);padding-top:14px;">
-    <div class="fl" style="margin-bottom:8px;">Plantilla</div>
-    <div class="block-add-row">${tplBtns}</div>
-  </div>
-  <div style="border-top:1px solid var(--line);padding-top:14px;">
-    <div class="fl" style="margin-bottom:8px;">Añadir bloque</div>
-    <div class="block-add-row">${addBtns}</div>
-    <div class="block-editor" id="blockEditor"></div>
-  </div>
-  <div class="f-actions" style="padding-top:6px;">
-    <button class="ab primary" onclick="savePost()">Guardar Post</button>
-    <button class="ab" onclick="_cancelPostEditor()">Cancelar</button>
-  </div>
-</div>`;
-  _renderBlockEditor();
-}
-
-function _cancelPostEditor(){
-  const sec=document.getElementById('sec-posts');
-  sec.innerHTML=`<div class="a-title">Devlog Posts</div><div class="a-sub">Breakdowns, devlogs y artículos técnicos. <span style="color:var(--green);">Free</span> = visible · <span style="color:var(--accent2);">Premium</span> = bloqueado con enlace de pago.</div><button class="a-add-btn" onclick="openAddPost()">＋ New Post</button><div class="posts-admin-grid" id="postsAdminGrid"></div>`;
-  renderPostsAdmin();
-}
-
-function _toggleCat(c,on){if(!_ep.cats)_ep.cats=[];if(on){if(!_ep.cats.includes(c))_ep.cats.push(c);}else{_ep.cats=_ep.cats.filter(x=>x!==c);}}
-
-function _applyTpl(key){
-  if(!POST_TEMPLATES[key])return;
-  if(_eb.length>0&&!confirm('Replace current blocks with template?'))return;
-  _eb=JSON.parse(JSON.stringify(POST_TEMPLATES[key].blocks)).map(b=>({...b,id:_uid()}));
-  _renderBlockEditor();toast('Template applied');
-}
-
-function _addBlock(type){
-  const defs={'hero-video':{type:'hero-video',label:'Hero Shot',url:''},'video':{type:'video',label:'Video',url:''},'image':{type:'image',label:'Image',url:'',caption:''},'compare':{type:'compare',label:'Before / After',leftUrl:'',leftLabel:'Before',rightUrl:'',rightLabel:'After'},'intent':{type:'intent',label:'Intent / Goal',text:''},'text':{type:'text',label:'Text Block',html:'<p></p>'},'breakdown':{type:'breakdown',label:'Breakdown Grid',items:[{url:'',caption:''},{url:'',caption:''},{url:'',caption:''},{url:'',caption:''}]},'params':{type:'params',label:'Parameters',items:[{key:'',val:''},{key:'',val:''}]},'metrics':{type:'metrics',label:'Metrics',items:[{val:'',label:''},{val:'',label:''},{val:'',label:''},{val:'',label:''}]},'divider':{type:'divider',label:'Divider'}};
-  _eb.push({...defs[type],id:_uid()});_renderBlockEditor();
-}
-
-function _removeBlock(id){_eb=_eb.filter(b=>b.id!==id);_renderBlockEditor();}
-function _moveBlock(id,dir){const i=_eb.findIndex(b=>b.id===id);if(i<0)return;const ni=i+dir;if(ni<0||ni>=_eb.length)return;[_eb[i],_eb[ni]]=[_eb[ni],_eb[i]];_renderBlockEditor();}
-
-function _renderBlockEditor(){
-  const el=document.getElementById('blockEditor');if(!el)return;
-  if(!_eb.length){el.innerHTML='<div style="color:var(--sub);font-size:11px;padding:8px 0;">Sin bloques. Elige una plantilla o añade bloques arriba.</div>';return;}
-  el.innerHTML='';
-  _eb.forEach((b,i)=>{
-    const row=document.createElement('div');row.className='block-row';
-    row.innerHTML=`<div style="display:flex;flex-direction:column;gap:2px;align-items:center;flex-shrink:0;"><button onclick="_moveBlock('${b.id}',-1)" style="background:none;border:none;color:var(--sub);cursor:pointer;font-size:11px;">▲</button><span style="color:var(--sub);font-size:14px;">⠿</span><button onclick="_moveBlock('${b.id}',1)" style="background:none;border:none;color:var(--sub);cursor:pointer;font-size:11px;">▼</button></div><div class="block-content"><div class="block-type-tag">${b.type.toUpperCase()}</div>${_blockFields(b)}</div><button class="block-remove" onclick="_removeBlock('${b.id}')">✕</button>`;
-    el.appendChild(row);
-  });
-}
-
-function _blockFields(b){
-  const fi=(key,val,ph)=>`<input class="fi" style="margin-bottom:4px;" placeholder="${ph||''}" value="${(val||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}" oninput="_upd('${b.id}','${key}',this.value)">`;
-  const fta=(key,val,ph)=>`<textarea class="fta" style="min-height:54px;margin-bottom:4px;" placeholder="${ph||''}" oninput="_upd('${b.id}','${key}',this.value)">${val||''}</textarea>`;
-  const lbl=`<div class="fl" style="margin-bottom:3px;">Label</div>${fi('label',b.label,'Section label')}`;
-  switch(b.type){
-    case 'hero-video':case 'video':
-      return lbl+`<div class="fl">Video URL (YouTube / Vimeo)</div>`+fi('url',b.url,'https://youtu.be/…');
-    case 'image':
-      return lbl+`<div class="fl">Image URL</div>`+fi('url',b.url,'https://…')+`<div class="fl">Caption</div>`+fi('caption',b.caption,'Optional caption');
-    case 'compare':
-      return lbl+`<div class="fl">Left URL</div>`+fi('leftUrl',b.leftUrl,'Before URL')+`<div class="fl">Left label</div>`+fi('leftLabel',b.leftLabel,'Before')+`<div class="fl">Right URL</div>`+fi('rightUrl',b.rightUrl,'After URL')+`<div class="fl">Right label</div>`+fi('rightLabel',b.rightLabel,'After');
-    case 'intent':
-      return lbl+`<div class="fl">Text (2–3 lines max)</div>`+fta('text',b.text,'Short goal or purpose statement…');
-    case 'text':
-      return lbl+`<div class="fl">HTML — usa &lt;p&gt; &lt;strong&gt; &lt;em&gt; &lt;ul&gt;&lt;li&gt; &lt;h3&gt;</div>`+fta('html',b.html,'<p>Tu texto aquí</p>');
-    case 'breakdown':
-      return lbl+`<div class="fl">Items (imagen + caption)</div>`+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:3px;"><input class="fi" placeholder="Image URL" value="${(it.url||'').replace(/"/g,'&quot;')}" oninput="_updItem('${b.id}',${idx},'url',this.value)"><input class="fi" placeholder="Caption" value="${(it.caption||'').replace(/"/g,'&quot;')}" oninput="_updItem('${b.id}',${idx},'caption',this.value)"></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addItem('${b.id}')">+ Imagen</button>`;
-    case 'params':
-      return lbl+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:3px;"><input class="fi" placeholder="Param" value="${(it.key||'').replace(/"/g,'&quot;')}" oninput="_updItem('${b.id}',${idx},'key',this.value)"><input class="fi" placeholder="Value" value="${(it.val||'').replace(/"/g,'&quot;')}" oninput="_updItem('${b.id}',${idx},'val',this.value)"></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addItem('${b.id}')">+ Param</button>`;
-    case 'metrics':
-      return lbl+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:3px;"><input class="fi" placeholder="Value (ej. GPU)" value="${(it.val||'').replace(/"/g,'&quot;')}" oninput="_updItem('${b.id}',${idx},'val',this.value)"><input class="fi" placeholder="Label" value="${(it.label||'').replace(/"/g,'&quot;')}" oninput="_updItem('${b.id}',${idx},'label',this.value)"></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addItem('${b.id}')">+ Métrica</button>`;
-    case 'divider':
-      return `<div style="color:var(--sub);font-size:10px;">Línea separadora horizontal</div>`;
-    default:return'';
-  }
-}
-
-function _upd(id,key,val){const b=_eb.find(x=>x.id===id);if(b)b[key]=val;}
-function _updItem(bid,idx,key,val){const b=_eb.find(x=>x.id===bid);if(b&&b.items&&b.items[idx])b.items[idx][key]=val;}
-function _addItem(bid){
-  const b=_eb.find(x=>x.id===bid);if(!b)return;if(!b.items)b.items=[];
-  if(b.type==='params')b.items.push({key:'',val:''});
-  else if(b.type==='metrics')b.items.push({val:'',label:''});
-  else b.items.push({url:'',caption:''});
-  _renderBlockEditor();
-}
-
-function savePost(){
-  if(!D.posts)D.posts=[];
-  _ep.blocks=JSON.parse(JSON.stringify(_eb));
-  const idx=D.posts.findIndex(x=>x.id===_ep.id);
-  if(idx>=0)D.posts[idx]=_ep;else D.posts.unshift(_ep);
-  save();toast('Post guardado ✓');
-  _cancelPostEditor();
-}
-
-function deletePost(id){
-  if(!confirm('Delete this post?'))return;
-  D.posts=(D.posts||[]).filter(x=>x.id!==id);
-  save();renderPostsAdmin();toast('Deleted');
-}
-
-
 /* ══ INIT ══ */
-(async()=>{
-  const ld=document.createElement('div');
-  ld.style.cssText='position:fixed;inset:0;z-index:99999;background:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--sub);';
-  ld.textContent='Connecting…';document.body.appendChild(ld);
+(async () => {
+  const loadEl = document.createElement('div');
+  loadEl.id = 'fb-loading';
+  loadEl.style.cssText = 'position:fixed;inset:0;z-index:99999;background:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--sub);';
+  loadEl.textContent = 'Connecting…';
+  document.body.appendChild(loadEl);
 
-  const remote=await DB.loadRemote();
-  if(remote){
-    Object.assign(D,remote);
+  const remote = await DB.loadRemote();
+  if (remote) {
+    Object.assign(D, remote);
     if(!D.reel){D.reel=JSON.parse(JSON.stringify(DEFAULTS.reel));}
     if(D.reel.enabled===undefined)D.reel.enabled=true;
     if(!D.customPages)D.customPages=[];
-    if(!D.posts)D.posts=[];
-    if(!D.premiumUrl)D.premiumUrl='';
     if(!D.cv)D.cv=JSON.parse(JSON.stringify(DEFAULTS.cv));
-    if(!D.cv.artstation)D.cv.artstation='';if(!D.cv.skills)D.cv.skills=[];
+    if(!D.cv.artstation)D.cv.artstation='';
+    if(!D.cv.skills)D.cv.skills=[];
     if(D.expCards===undefined)D.expCards=true;
     if(!D.profile.bio_en)D.profile.bio_en=D.profile.bio;
     if(!D.profile.bio_es)D.profile.bio_es='';
@@ -2230,44 +1813,34 @@ function deletePost(id){
     if(!D.profile.s3l_es)D.profile.s3l_es='';
   }
 
-  ld.remove();
-  detectLang();renderVisitor();setTimeout(autoplayOnLoad,350);
-
-  // Devlog button
-  const db=document.getElementById('devlogBtn');
-  if(db)db.addEventListener('click',openDevlog);
-
-  // Post overlay — back button
-  const pb=document.getElementById('postBackBtn');
-  if(pb)pb.addEventListener('click',()=>{
-    const sv=document.getElementById('postSingleView');
-    if(sv.classList.contains('visible')){_showPostList();}
-    else{document.getElementById('postOverlay').classList.remove('open');}
-  });
-  const psb=document.getElementById('psSingleBack');
-  if(psb)psb.addEventListener('click',_showPostList);
-
+  loadEl.remove();
+  detectLang();
+  renderVisitor();
+  setTimeout(autoplayOnLoad, 350);
   DB.startSync();
 })();
 
-/* ══ EXPOSE TO HTML onclick attrs (required for ES module) ══ */
-Object.assign(window,{
-  checkPw,openGate,closeAdmin,openAdmin,showSec,closePage,openPage,
-  saveReel,clearReel,setReelEnabled,
-  openAddCo,openEditCo,deleteCo,confirmAddCo,confirmEditCo,
-  openAddVid,openEditVid,deleteVid,confirmAddVid,confirmEditVid,renderVidMgr,
-  openAddTool,openEditTool,deleteTool,confirmAddTool,confirmEditTool,applyToolSize,
-  openAddPage,openEditPage,deletePage,confirmAddPage,confirmEditPage,
-  openAddLink,openEditLink,deleteLink,confirmAddLink,confirmEditLink,
-  saveProfile,renderProfileForm,saveCvData,generateCvPdf,
-  openAddEdu,openEditEdu,deleteEdu,confirmAddEdu,confirmEditEdu,
-  openAddSkill,openEditSkill,deleteSkill,confirmAddSkill,confirmEditSkill,
-  openAddLang,confirmAddLang,deleteLang,
-  saveSettings,exportData,resetData,openModal,closeModal,toast,
-  setExpCards,setCoverBg,applyFont,applyFontSize,applyAnimSpd,applyAnimEase,setLang,toggleLang,
-  openDevlog,openAddPost,openEditPost,deletePost,savePost,renderPostsAdmin,
-  _filterCat,_openPost,_applyTpl,_addBlock,_removeBlock,_moveBlock,
-  _upd,_updItem,_addItem,_toggleCat,_cancelPostEditor,
+/* ══ EXPOSE GLOBALS (requerido para onclick en ES module) ══ */
+Object.assign(window, {
+  checkPw, openGate, closeAdmin, openAdmin, showSec, closePage, openPage,
+  saveReel, clearReel, setReelEnabled,
+  openAddCo, openEditCo, deleteCo, confirmAddCo, confirmEditCo,
+  openAddVid, openEditVid, deleteVid, confirmAddVid, confirmEditVid,
+  renderVidMgr,
+  openAddTool, openEditTool, deleteTool, confirmAddTool, confirmEditTool,
+  applyToolSize,
+  openAddPage, openEditPage, deletePage, confirmAddPage, confirmEditPage,
+  openAddLink, openEditLink, deleteLink, confirmAddLink, confirmEditLink,
+  saveProfile, renderProfileForm,
+  saveCvData, generateCvPdf,
+  openAddEdu, openEditEdu, deleteEdu, confirmAddEdu, confirmEditEdu,
+  openAddSkill, openEditSkill, deleteSkill, confirmAddSkill, confirmEditSkill,
+  openAddLang, confirmAddLang, deleteLang,
+  saveSettings, exportData, resetData,
+  openModal, closeModal, toast,
+  setExpCards, setCoverBg,
+  applyFont, applyFontSize, applyAnimSpd, applyAnimEase,
+  setLang, toggleLang,
 });
 </script>
 </body>
