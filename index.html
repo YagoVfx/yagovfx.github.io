@@ -1938,7 +1938,9 @@ function _openPost(id){
   document.getElementById('psMeta').innerHTML=`<span class="ps-date">${_fmt(p.date)}</span><span class="post-badge ${isPrem?'premium':'free'}" style="margin-left:8px;">${isPrem?'Premium':'Free'}</span>`;
   const blocks=p.blocks||[];
   const showN=isPrem?Math.min(2,blocks.length):blocks.length;
-  let html='';for(let i=0;i<showN;i++)html+=_renderBlock(blocks[i]);
+  /* Always show cover image at top if present */
+  let html=p.thumb?`<div class="pb pb-img" style="margin-bottom:32px;"><img src="${p.thumb}" alt="${p.title||''}" style="width:100%;border-radius:10px;display:block;max-height:480px;object-fit:cover;"></div>`:'';
+  for(let i=0;i<showN;i++)html+=_renderBlock(blocks[i]);
   if(isPrem){const pu=D.premiumUrl||'#';html+=`<div class="prem-gate"><div class="prem-gate-icon">🔒</div><div class="prem-gate-title">Premium Content</div><div class="prem-gate-desc">Full breakdown available for supporters. Access the complete step-by-step process, parameters, graphs and all assets.</div><a class="prem-gate-btn" href="${pu}" target="_blank" rel="noopener">Unlock on Patreon ↗</a></div>`;}
   document.getElementById('psBlocks').innerHTML=html;
 }
@@ -2027,7 +2029,7 @@ function _addBlock(type){
   window._eb.push({...defs[type],id:_uid()});_renderBlockEditor();
 }
 function _rmBlock(id){window._eb=window._eb.filter(b=>b.id!==id);_renderBlockEditor();}
-function _mvBlock(id,dir){const i=window._eb.findIndex(b=>b.id===id);if(i<0)return;const ni=i+dir;if(ni<0||ni>=_eb.length)return;[window._eb[i],window._eb[ni]]=[window._eb[ni],window._eb[i]];_renderBlockEditor();}
+function _mvBlock(id,dir){const eb=window._eb;const i=eb.findIndex(b=>b.id===id);if(i<0)return;const ni=i+dir;if(ni<0||ni>=eb.length)return;[eb[i],eb[ni]]=[eb[ni],eb[i]];window._eb=eb;_renderBlockEditor();}
 function _renderBlockEditor(){
   const el=document.getElementById('blockEditor');if(!el)return;
   if(!window._eb.length){el.innerHTML='<div style="color:var(--sub);font-size:11px;padding:8px 0;">Sin bloques. Elige plantilla o añade bloques arriba.</div>';return;}
