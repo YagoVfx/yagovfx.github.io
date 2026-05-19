@@ -913,10 +913,10 @@ const DB={
   set(d){
     localStorage.setItem('vfx-v6',JSON.stringify(d));
     clearTimeout(this._t);
-    this._skip++;
+    this._skip=1; /* reset to 1: expect exactly 1 echo from our own write */
     this._t=setTimeout(async()=>{
       try{await setDoc(PORTFOLIO_DOC,{data:JSON.stringify(d)});}
-      catch(e){console.warn('[FB] write failed:',e);this._skip=Math.max(0,this._skip-1);}
+      catch(e){console.warn('[FB] write failed:',e);this._skip=0;}
     },300);
   },
   startSync(){
@@ -1700,7 +1700,7 @@ function showSec(name){
   if(name==='tools'){renderToolsAdmin();['small','medium','large'].forEach(s=>{const b=document.getElementById('tsz-'+s);if(b){b.style.borderColor=s===D.toolSize?'var(--accent)':'';b.style.color=s===D.toolSize?'var(--accent)':'';}});}
   if(name==='links')renderLinksAdmin();
   if(name==='cv')renderCvForm();
-  if(name==='posts')renderPostsAdmin();
+  if(name==='posts'&&!document.getElementById('pe-title'))renderPostsAdmin();
 }
 
 /* drag helper */
@@ -1982,27 +1982,27 @@ function renderPostsAdmin(){
   });
 }
 function openAddPost(){
-  _ep={id:_uid(),title:'',desc:'',thumb:'',cats:[],date:new Date().toISOString().slice(0,10),premium:false,blocks:[]};
-  _eb=[];_renderPostEditor(true);
+  window._ep={id:_uid(),title:'',desc:'',thumb:'',cats:[],date:new Date().toISOString().slice(0,10),premium:false,blocks:[]};
+  window._eb=[];_renderPostEditor(true);
 }
 function openEditPost(id){
   const p=(D.posts||[]).find(x=>x.id===id);if(!p)return;
-  _ep=JSON.parse(JSON.stringify(p));_eb=JSON.parse(JSON.stringify(p.blocks||[]));_renderPostEditor(false);
+  window._ep=JSON.parse(JSON.stringify(p));window._eb=JSON.parse(JSON.stringify(p.blocks||[]));_renderPostEditor(false);
 }
 function _renderPostEditor(isNew){
-  const p=_ep;const sec=document.getElementById('sec-posts');
+  const p=window._ep;const sec=document.getElementById('sec-posts');
   const catsHtml=POST_CATS.map(ct=>`<label style="display:flex;align-items:center;gap:5px;font-size:11px;cursor:pointer;"><input type="checkbox" value="${ct}" ${(p.cats||[]).includes(ct)?'checked':''} onchange="_toggleCat('${ct}',this.checked)"> ${ct}</label>`).join('');
   const tplBtns=Object.entries(POST_TPLS).map(([k,v])=>`<button class="block-add-btn" onclick="_applyTpl('${k}')">${v.label}</button>`).join('');
   const addBtns=[['hero-video','🎬 Hero Video'],['compare','⚡ Before/After'],['intent','💬 Intent'],['text','📝 Text'],['image','🖼 Image'],['video','▶ Video'],['breakdown','🔲 Breakdown Grid'],['params','⚙ Parameters'],['metrics','📊 Metrics'],['divider','— Divider']].map(([t,l])=>`<button class="block-add-btn" onclick="_addBlock('${t}')">${l}</button>`).join('');
   sec.innerHTML=`<div class="a-title">${isNew?'New Post':'Edit Post'}</div>
 <div style="display:grid;gap:12px;max-width:660px;">
-  <div class="fg"><label class="fl">Título</label><input class="fi" value="${(p.title||'').replace(/"/g,'&quot;')}" oninput="_ep.title=this.value"></div>
-  <div class="fg"><label class="fl">Descripción corta</label><textarea class="fta" oninput="_ep.desc=this.value">${p.desc||''}</textarea></div>
-  <div class="fg"><label class="fl">URL imagen de portada</label><input class="fi" value="${(p.thumb||'').replace(/"/g,'&quot;')}" oninput="_ep.thumb=this.value"></div>
-  <div class="fg"><label class="fl">Fecha</label><input class="fi" type="date" value="${p.date||''}" oninput="_ep.date=this.value"></div>
+  <div class="fg"><label class="fl">Título</label><input id="pe-title" class="fi" value="${(p.title||'').replace(/"/g,'&quot;')}"></div>
+  <div class="fg"><label class="fl">Descripción corta</label><textarea id="pe-desc" class="fta">${p.desc||''}</textarea></div>
+  <div class="fg"><label class="fl">URL imagen de portada</label><input id="pe-thumb" class="fi" value="${(p.thumb||'').replace(/"/g,'&quot;')}"></div>
+  <div class="fg"><label class="fl">Fecha</label><input id="pe-date" class="fi" type="date" value="${p.date||''}"></div>
   <div class="fg"><label class="fl">Categorías</label><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">${catsHtml}</div></div>
-  <div class="toggle-row"><div><div class="toggle-lbl">Premium</div><div class="toggle-sub">Bloqueado — muestra gate con enlace de pago</div></div><label class="tog"><input type="checkbox" ${p.premium?'checked':''} onchange="_ep.premium=this.checked"><span class="tog-sl"></span></label></div>
-  <div class="fg"><label class="fl">Premium URL (Patreon / Ko-fi)</label><input class="fi" value="${(D.premiumUrl||'').replace(/"/g,'&quot;')}" placeholder="https://patreon.com/yourpage" oninput="D.premiumUrl=this.value"></div>
+  <div class="toggle-row"><div><div class="toggle-lbl">Premium</div><div class="toggle-sub">Bloqueado — muestra gate con enlace de pago</div></div><label class="tog"><input id="pe-prem" type="checkbox" ${p.premium?'checked':''}><span class="tog-sl"></span></label></div>
+  <div class="fg"><label class="fl">Premium URL (Patreon / Ko-fi)</label><input id="pe-premurl" class="fi" value="${(D.premiumUrl||'').replace(/"/g,'&quot;')}" placeholder="https://patreon.com/yourpage"></div>
   <div style="border-top:1px solid var(--line);padding-top:14px;"><div class="fl" style="margin-bottom:8px;">Plantilla</div><div class="block-add-row">${tplBtns}</div></div>
   <div style="border-top:1px solid var(--line);padding-top:14px;"><div class="fl" style="margin-bottom:8px;">Añadir bloque</div><div class="block-add-row">${addBtns}</div><div class="block-editor" id="blockEditor"></div></div>
   <div class="f-actions" style="padding-top:6px;"><button class="ab primary" onclick="savePost()">Guardar Post</button><button class="ab" onclick="_cancelPostEditor()">Cancelar</button></div>
@@ -2015,24 +2015,24 @@ function _cancelPostEditor(){
   document.getElementById('newPostBtn').addEventListener('click',openAddPost);
   renderPostsAdmin();
 }
-function _toggleCat(ct,on){if(!_ep.cats)_ep.cats=[];if(on){if(!_ep.cats.includes(ct))_ep.cats.push(ct);}else _ep.cats=_ep.cats.filter(x=>x!==ct);}
+function _toggleCat(ct,on){if(!window._ep.cats)window._ep.cats=[];if(on){if(!window._ep.cats.includes(ct))window._ep.cats.push(ct);}else window._ep.cats=window._ep.cats.filter(x=>x!==ct);}
 function _applyTpl(key){
   if(!POST_TPLS[key])return;
-  if(_eb.length>0&&!confirm('Reemplazar bloques con la plantilla?'))return;
-  _eb=JSON.parse(JSON.stringify(POST_TPLS[key].blocks)).map(b=>({...b,id:_uid()}));
+  if(window._eb.length>0&&!confirm('Reemplazar bloques con la plantilla?'))return;
+  window._eb=JSON.parse(JSON.stringify(POST_TPLS[key].blocks)).map(b=>({...b,id:_uid()}));
   _renderBlockEditor();toast('Plantilla aplicada');
 }
 function _addBlock(type){
   const defs={'hero-video':{type:'hero-video',label:'Hero Shot',url:''},'video':{type:'video',label:'Video',url:''},'image':{type:'image',label:'Image',url:'',caption:''},'compare':{type:'compare',label:'Before / After',leftUrl:'',leftLabel:'Before',rightUrl:'',rightLabel:'After'},'intent':{type:'intent',label:'Intent / Goal',text:''},'text':{type:'text',label:'Text Block',html:'<p></p>'},'breakdown':{type:'breakdown',label:'Breakdown Grid',items:[{url:'',caption:''},{url:'',caption:''},{url:'',caption:''},{url:'',caption:''}]},'params':{type:'params',label:'Parameters',items:[{key:'',val:''},{key:'',val:''}]},'metrics':{type:'metrics',label:'Metrics',items:[{val:'',label:''},{val:'',label:''},{val:'',label:''},{val:'',label:''}]},'divider':{type:'divider',label:'Divider'}};
-  _eb.push({...defs[type],id:_uid()});_renderBlockEditor();
+  window._eb.push({...defs[type],id:_uid()});_renderBlockEditor();
 }
-function _rmBlock(id){_eb=_eb.filter(b=>b.id!==id);_renderBlockEditor();}
-function _mvBlock(id,dir){const i=_eb.findIndex(b=>b.id===id);if(i<0)return;const ni=i+dir;if(ni<0||ni>=_eb.length)return;[_eb[i],_eb[ni]]=[_eb[ni],_eb[i]];_renderBlockEditor();}
+function _rmBlock(id){window._eb=window._eb.filter(b=>b.id!==id);_renderBlockEditor();}
+function _mvBlock(id,dir){const i=window._eb.findIndex(b=>b.id===id);if(i<0)return;const ni=i+dir;if(ni<0||ni>=_eb.length)return;[window._eb[i],window._eb[ni]]=[window._eb[ni],window._eb[i]];_renderBlockEditor();}
 function _renderBlockEditor(){
   const el=document.getElementById('blockEditor');if(!el)return;
-  if(!_eb.length){el.innerHTML='<div style="color:var(--sub);font-size:11px;padding:8px 0;">Sin bloques. Elige plantilla o añade bloques arriba.</div>';return;}
+  if(!window._eb.length){el.innerHTML='<div style="color:var(--sub);font-size:11px;padding:8px 0;">Sin bloques. Elige plantilla o añade bloques arriba.</div>';return;}
   el.innerHTML='';
-  _eb.forEach(b=>{
+  window._eb.forEach(b=>{
     const row=document.createElement('div');row.className='block-row';
     row.innerHTML=`<div style="display:flex;flex-direction:column;gap:2px;align-items:center;flex-shrink:0;"><button onclick="_mvBlock('${b.id}',-1)" style="background:none;border:none;color:var(--sub);cursor:pointer;">▲</button><span style="color:var(--sub);font-size:14px;user-select:none;">⠿</span><button onclick="_mvBlock('${b.id}',1)" style="background:none;border:none;color:var(--sub);cursor:pointer;">▼</button></div><div class="block-content"><div class="block-type-tag">${b.type.toUpperCase()}</div>${_blockFields(b)}</div><button class="block-rm-btn" onclick="_rmBlock('${b.id}')">✕</button>`;
     el.appendChild(row);
@@ -2055,15 +2055,27 @@ function _blockFields(b){
     default:return'';
   }
 }
-function _upd(id,k,v){const b=_eb.find(x=>x.id===id);if(b)b[k]=v;}
-function _updIt(bid,idx,k,v){const b=_eb.find(x=>x.id===bid);if(b&&b.items&&b.items[idx])b.items[idx][k]=v;}
-function _addIt(bid){const b=_eb.find(x=>x.id===bid);if(!b)return;if(!b.items)b.items=[];if(b.type==='params')b.items.push({key:'',val:''});else if(b.type==='metrics')b.items.push({val:'',label:''});else b.items.push({url:'',caption:''});_renderBlockEditor();}
+function _upd(id,k,v){const b=window._eb.find(x=>x.id===id);if(b)b[k]=v;}
+function _updIt(bid,idx,k,v){const b=window._eb.find(x=>x.id===bid);if(b&&b.items&&b.items[idx])b.items[idx][k]=v;}
+function _addIt(bid){const b=window._eb.find(x=>x.id===bid);if(!b)return;if(!b.items)b.items=[];if(b.type==='params')b.items.push({key:'',val:''});else if(b.type==='metrics')b.items.push({val:'',label:''});else b.items.push({url:'',caption:''});_renderBlockEditor();}
 function savePost(){
+  if(!window._ep){toast('Error: no post en edición');return;}
   if(!D.posts)D.posts=[];
-  _ep.blocks=JSON.parse(JSON.stringify(_eb));
-  const idx=D.posts.findIndex(x=>x.id===_ep.id);
-  if(idx>=0)D.posts[idx]=_ep;else D.posts.unshift(_ep);
-  save();toast('Post guardado ✓');_cancelPostEditor();
+  /* Read all fields directly from DOM */
+  const g=id=>document.getElementById(id);
+  if(g('pe-title'))window._ep.title=g('pe-title').value;
+  if(g('pe-desc'))window._ep.desc=g('pe-desc').value;
+  if(g('pe-thumb'))window._ep.thumb=g('pe-thumb').value;
+  if(g('pe-date'))window._ep.date=g('pe-date').value;
+  if(g('pe-prem'))window._ep.premium=g('pe-prem').checked;
+  if(g('pe-premurl'))D.premiumUrl=g('pe-premurl').value;
+  window._ep.blocks=JSON.parse(JSON.stringify(window._eb||[]));
+  const idx=D.posts.findIndex(x=>x.id===window._ep.id);
+  if(idx>=0)D.posts[idx]=JSON.parse(JSON.stringify(window._ep));
+  else D.posts.unshift(JSON.parse(JSON.stringify(window._ep)));
+  save();
+  toast('Post guardado ✓');
+  _cancelPostEditor();
 }
 function deletePost(id){if(!confirm('Delete this post?'))return;D.posts=(D.posts||[]).filter(x=>x.id!==id);save();renderPostsAdmin();toast('Deleted');}
 
