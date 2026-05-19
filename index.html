@@ -533,6 +533,27 @@ option{background:var(--bg2);}
 .block-add-btn{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border:1px dashed var(--line);border-radius:4px;background:transparent;color:var(--sub);cursor:pointer;transition:all .15s;}
 .block-add-btn:hover{border-color:var(--accent);color:var(--accent);}
 
+
+/* ══ PROJECT SEPARATORS IN CLIPS BAR ══ */
+.clip-proj-sep{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 10px 0 14px;border-left:1px solid var(--line);min-width:fit-content;flex-shrink:0;gap:3px;cursor:default;}
+.clip-proj-sep:first-child{border-left:none;}
+.clip-proj-thumb{width:40px;height:40px;border-radius:4px;object-fit:cover;display:block;opacity:.7;}
+.clip-proj-name{font-family:var(--mono);font-size:6.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sub);white-space:nowrap;max-width:80px;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+.clip-proj-sep.no-proj .clip-proj-name{color:var(--sub);opacity:.5;}
+
+/* ══ ADMIN — PROJECTS ══ */
+.proj-section{background:var(--bg3);border:1px solid var(--line);border-radius:6px;margin-bottom:10px;overflow:hidden;}
+.proj-section-hd{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;gap:8px;}
+.proj-section-name{font-size:12px;font-weight:700;}
+.proj-section-actions{display:flex;gap:5px;flex-shrink:0;}
+.proj-clips-area{padding:0 12px 12px;display:flex;flex-direction:column;gap:6px;}
+.proj-clip-row{display:flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--line);border-radius:5px;padding:6px 8px;}
+.proj-clip-thumb{width:48px;height:30px;object-fit:cover;border-radius:3px;flex-shrink:0;}
+.proj-clip-info{flex:1;min-width:0;}
+.proj-clip-title{font-size:11px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.proj-clip-sub{font-family:var(--mono);font-size:8px;color:var(--sub);}
+.proj-clip-actions{display:flex;gap:4px;flex-shrink:0;}
+
 </style>
 </head>
 <body>
@@ -1011,6 +1032,7 @@ let D=DB.get()||JSON.parse(JSON.stringify(DEFAULTS));
 if(!D.reel){D.reel=JSON.parse(JSON.stringify(DEFAULTS.reel));}
 if(D.reel.enabled===undefined)D.reel.enabled=true;
 if(!D.customPages)D.customPages=[];
+D.companies.forEach(co=>{if(!co.projects)co.projects=[];});
 if(!D.posts)D.posts=[];
 if(!D.premiumUrl)D.premiumUrl='';
 if(!D.cv)D.cv=JSON.parse(JSON.stringify(DEFAULTS.cv));
@@ -1222,7 +1244,7 @@ function autoplayOnLoad(){
     }
     return;
   }
-  const co=D.companies.find(c=>c.clips&&c.clips.length>0);if(co)selectCo(co.id);
+  const co=D.companies.find(c=>(c.clips&&c.clips.length>0)||((c.projects||[]).some(p=>(p.clips||[]).length>0)));if(co)selectCo(co.id);
 }
 
 /* ══ VISITOR ══ */
@@ -1383,8 +1405,8 @@ function selectCo(id){
   $el('clipsLbl',c.name);
   document.getElementById('ambi').style.backgroundImage=`url(${c.thumb})`;
   buildClips(c);
-  if(c.clips[0]) playClip(c.clips[0],0);
-  else{
+  /* buildClips handles first clip autoplay */
+  if(false){/* placeholder */} else if(!(c.clips.length||(c.projects||[]).some(p=>(p.clips||[]).length))){
     document.getElementById('mainFrame').classList.remove('on');
     document.getElementById('mainFrame').src='about:blank';
     document.getElementById('ph').classList.remove('off');
@@ -1393,23 +1415,70 @@ function selectCo(id){
   }
 }
 
-function buildClips(c){
+function buildClips(co){
   const scroll=document.getElementById('clipsScroll');scroll.innerHTML='';
-  if(!c.clips.length){scroll.innerHTML=`<div style="display:flex;align-items:center;padding:0 16px;font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);">${t('no_clips')}</div>`;return;}
-  c.clips.forEach((cl,ci)=>{
-    const d=document.createElement('div');d.className='clip';d.setAttribute('role','listitem');
-    d.innerHTML=`<div class="clip-bg" style="background-image:url(${cl.thumb})"></div><div class="clip-grad"></div><div class="clip-play">▶</div><div class="clip-body"><div class="clip-title">${cl.title}</div><div class="clip-tools">${cl.tools}</div></div>`;
-    d.addEventListener('click',()=>playClip(cl,ci));scroll.appendChild(d);
+  const projects=co.projects||[];
+  const looseClips=co.clips||[];
+  const totalClips=looseClips.length+projects.reduce((s,p)=>s+(p.clips||[]).length,0);
+  if(!totalClips){
+    scroll.innerHTML=`<div style="display:flex;align-items:center;padding:0 16px;font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);">${t('no_clips')}</div>`;
+    return;
+  }
+  let globalIdx=0;
+  /* ── loose clips (no project) ── */
+  if(looseClips.length){
+    looseClips.forEach(cl=>{
+      const d=_makeClipEl(cl,globalIdx,null);
+      scroll.appendChild(d);globalIdx++;
+    });
+  }
+  /* ── projects ── */
+  projects.forEach(proj=>{
+    if(!(proj.clips||[]).length)return;
+    /* separator */
+    const sep=document.createElement('div');sep.className='clip-proj-sep';
+    sep.innerHTML=`${proj.thumb?`<img class="clip-proj-thumb" src="${proj.thumb}" alt="${proj.name}">`:''}
+      <span class="clip-proj-name">${proj.name}</span>`;
+    scroll.appendChild(sep);
+    proj.clips.forEach(cl=>{
+      const d=_makeClipEl(cl,globalIdx,proj);
+      scroll.appendChild(d);globalIdx++;
+    });
   });
+  /* auto-play first clip */
+  const firstCo=looseClips[0]||(projects[0]&&(projects[0].clips||[])[0]);
+  const firstProj=looseClips.length?null:projects[0];
+  if(firstCo)playClip(firstCo,0,firstProj,co);
 }
 
-function playClip(cl,ci){
+function _makeClipEl(cl,idx,proj){
+  const d=document.createElement('div');d.className='clip';d.setAttribute('role','listitem');
+  d.innerHTML=`<div class="clip-bg" style="background-image:url(${cl.thumb})"></div><div class="clip-grad"></div><div class="clip-play">▶</div><div class="clip-body"><div class="clip-title">${cl.title}</div><div class="clip-tools">${cl.tools}</div></div>`;
+  d.addEventListener('click',()=>playClip(cl,idx,proj,D.companies.find(x=>x.id===activeCompany)));
+  return d;
+}
+
+function playClip(cl,ci,proj,co){
   const iframe=document.getElementById('mainFrame');
   document.getElementById('ph').classList.add('off');
   iframe.classList.remove('on');
   setTimeout(()=>{iframe.src=cl.video.includes('?')?cl.video+'&autoplay=1':cl.video+'?autoplay=1';setTimeout(()=>iframe.classList.add('on'),150);},100);
-  if(cl.thumb){document.getElementById('ambi').style.backgroundImage=`url(${cl.thumb})`;document.getElementById('ambi').classList.add('on');}
+  const thumb=cl.thumb||(proj&&proj.thumb)||(co&&co.thumb)||'';
+  if(thumb){document.getElementById('ambi').style.backgroundImage=`url(${thumb})`;document.getElementById('ambi').classList.add('on');}
   const np=document.getElementById('nowP');np.textContent=cl.title+(cl.tools?' · '+cl.tools:'');np.classList.add('on');
+  /* update right panel with project info if available, else company info */
+  if(proj){
+    const cover=document.getElementById('riCover');
+    const ph=proj.thumb||(co&&co.thumb)||'';
+    if(cover){cover.style.backgroundImage=`url(${ph})`;cover.dataset.url=ph;}
+    refreshCover();
+    document.getElementById('riInner').innerHTML=`
+      <div class="ri-tag">${co?co.role+' · '+co.period:''}</div>
+      <div class="ri-title">${proj.name}</div>
+      <div class="ri-desc">${proj.desc||co&&co.desc||''}</div>
+      ${proj.engine||co&&co.engine?`<div class="ri-row"><span class="ri-key">Engine</span><span class="ri-val">${proj.engine||co.engine}</span></div>`:''}
+      ${cl.tools?`<div class="ri-row"><span class="ri-key">Tools</span><span class="ri-val">${cl.tools}</span></div>`:''}`;
+  }
   let vi=0;document.querySelectorAll('#clipsScroll .clip').forEach(d=>{d.classList.toggle('active',vi===ci);vi++;});
   if(window.innerWidth<=768){const ctr=document.querySelector('.center');if(ctr)ctr.scrollIntoView({behavior:'smooth',block:'start'});}
 }
@@ -1713,17 +1782,73 @@ function addDragCard(card,arr,id,cb){
 }
 
 /* companies */
-function renderAdminCos(){const g=document.getElementById('coCards');if(!g)return;g.innerHTML='';D.companies.forEach(c=>{const card=document.createElement('div');card.className='a-card';card.draggable=true;card.dataset.id=c.id;card.innerHTML=`<img class="a-card-img" src="${c.thumb}" alt="${c.name}"><div class="a-card-body"><div class="a-card-title"><span class="drag-h">⠿</span>${c.name}</div><div class="a-card-sub">${c.role} · ${c.period}</div><div class="a-card-desc">${c.desc}</div><div class="a-card-actions"><button class="ab primary" onclick="openEditCo('${c.id}')">Edit</button><button class="ab" onclick="showSec('videos');setTimeout(()=>{document.getElementById('vidCoSel').value='${c.id}';renderVidMgr();},80)">Clips (${c.clips.length})</button><button class="ab danger" onclick="deleteCo('${c.id}')">Delete</button></div></div>`;addDragCard(card,D.companies,c.id,()=>{save();renderAdminCos();renderExpList();renderMobSidebar();renderCurrentCompanyInfo();renderVidCoSel();});g.appendChild(card);});}
+function renderAdminCos(){const g=document.getElementById('coCards');if(!g)return;g.innerHTML='';D.companies.forEach(c=>{const card=document.createElement('div');card.className='a-card';card.draggable=true;card.dataset.id=c.id;card.innerHTML=`<img class="a-card-img" src="${c.thumb}" alt="${c.name}"><div class="a-card-body"><div class="a-card-title"><span class="drag-h">⠿</span>${c.name}</div><div class="a-card-sub">${c.role} · ${c.period}</div><div class="a-card-desc">${c.desc}</div><div class="a-card-actions"><button class="ab primary" onclick="openEditCo('${c.id}')">Edit</button><button class="ab" onclick="showSec('videos');setTimeout(()=>{document.getElementById('vidCoSel').value='${c.id}';renderVidMgr();},80)">Clips &amp; Proyectos</button><button class="ab danger" onclick="deleteCo('${c.id}')">Delete</button></div></div>`;addDragCard(card,D.companies,c.id,()=>{save();renderAdminCos();renderExpList();renderMobSidebar();renderCurrentCompanyInfo();renderVidCoSel();});g.appendChild(card);});}
 function openAddCo(){openModal('Add Company','',`<div class="a-form"><div class="frow"><div class="fg"><label class="fl">Name</label><input class="fi" id="mc-n"></div><div class="fg"><label class="fl">Role</label><input class="fi" id="mc-r" value="Senior VFX Artist"></div></div><div class="frow"><div class="fg"><label class="fl">Period</label><input class="fi" id="mc-p"></div><div class="fg"><label class="fl">Engine</label><input class="fi" id="mc-e"></div></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="mc-t"></div><div class="fg"><label class="fl">Description</label><textarea class="fta" id="mc-d"></textarea></div><div class="fg"><label class="fl">Logo URL</label><input class="fi" id="mc-l"></div><div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="mc-th"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:'confirmAddCo()'}]);}
-function confirmAddCo(){D.companies.push({id:uid(),name:gv('mc-n')||'New Company',role:gv('mc-r'),period:gv('mc-p'),engine:gv('mc-e'),tools:gv('mc-t'),desc:gv('mc-d'),logo:gv('mc-l'),thumb:gv('mc-th'),clips:[]});save();closeModal();renderAdminCos();renderVidCoSel();toast('Added');}
+function confirmAddCo(){D.companies.push({id:uid(),name:gv('mc-n')||'New Company',role:gv('mc-r'),period:gv('mc-p'),engine:gv('mc-e'),tools:gv('mc-t'),desc:gv('mc-d'),logo:gv('mc-l'),thumb:gv('mc-th'),clips:[],projects:[]});save();closeModal();renderAdminCos();renderVidCoSel();toast('Added');}
 function openEditCo(id){const c=D.companies.find(x=>x.id===id);openModal('Edit — '+c.name,'',`<div class="a-form"><div class="frow"><div class="fg"><label class="fl">Name</label><input class="fi" id="ec-n" value="${c.name}"></div><div class="fg"><label class="fl">Role</label><input class="fi" id="ec-r" value="${c.role}"></div></div><div class="frow"><div class="fg"><label class="fl">Period</label><input class="fi" id="ec-p" value="${c.period}"></div><div class="fg"><label class="fl">Engine</label><input class="fi" id="ec-e" value="${c.engine}"></div></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="ec-t" value="${c.tools}"></div><div class="fg"><label class="fl">Description</label><textarea class="fta" id="ec-d">${c.desc}</textarea></div><div class="fg"><label class="fl">Logo URL</label><input class="fi" id="ec-l" value="${c.logo}"></div><div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="ec-th" value="${c.thumb}"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditCo('${id}')`}]);}
 function confirmEditCo(id){const c=D.companies.find(x=>x.id===id);c.name=gv('ec-n');c.role=gv('ec-r');c.period=gv('ec-p');c.engine=gv('ec-e');c.tools=gv('ec-t');c.desc=gv('ec-d');c.logo=gv('ec-l');c.thumb=gv('ec-th');save();closeModal();renderAdminCos();toast('Updated');}
 function deleteCo(id){if(!confirm('Delete?'))return;D.companies=D.companies.filter(x=>x.id!==id);save();renderAdminCos();renderVidCoSel();toast('Deleted');}
 
 /* videos */
 function renderVidCoSel(){const sel=document.getElementById('vidCoSel');if(!sel)return;sel.innerHTML=D.companies.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');}
-function renderVidMgr(){const id=document.getElementById('vidCoSel')?.value;const c=D.companies.find(x=>x.id===id);const area=document.getElementById('vidMgrArea');if(!area)return;if(!c){area.innerHTML='';return;}area.innerHTML=`<button class="a-add-btn" onclick="openAddVid('${c.id}')">＋ Add clip to ${c.name}</button><div class="a-cards" id="vidCards"></div>`;const g=document.getElementById('vidCards');if(!c.clips.length){g.innerHTML=`<div style="color:var(--sub);font-size:11px;padding:8px 0;">No clips yet.</div>`;return;}c.clips.forEach(cl=>{const card=document.createElement('div');card.className='a-card';card.draggable=true;card.dataset.id=cl.id;card.innerHTML=`<img class="a-card-img" src="${cl.thumb||c.thumb}" style="height:70px;" alt="${cl.title}"><div class="a-card-body"><div class="a-card-title"><span class="drag-h">⠿</span>${cl.title}</div><div class="a-card-sub">${cl.tools}</div><div class="a-card-actions"><button class="ab primary" onclick="openEditVid('${c.id}','${cl.id}')">Edit</button><button class="ab danger" onclick="deleteVid('${c.id}','${cl.id}')">Delete</button></div></div>`;addDragCard(card,c.clips,cl.id,()=>{save();renderVidMgr();});g.appendChild(card);});}
-function openAddVid(cid){openModal('Add Clip','',`<div class="a-form">
+function renderVidMgr(){
+  const id=document.getElementById('vidCoSel')?.value;
+  const co=D.companies.find(x=>x.id===id);
+  const area=document.getElementById('vidMgrArea');if(!area)return;if(!co){area.innerHTML='';return;}
+  if(!co.projects)co.projects=[];
+
+  let html=`<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+    <button class="a-add-btn" style="margin:0;" onclick="openAddVid('${co.id}',null)">＋ Clip suelto</button>
+    <button class="a-add-btn" style="margin:0;background:rgba(124,92,252,.12);border-color:var(--accent);color:var(--accent);" onclick="openAddProject('${co.id}')">＋ Nuevo Proyecto</button>
+  </div>`;
+
+  /* ── Loose clips ── */
+  if(co.clips.length){
+    html+=`<div class="proj-section"><div class="proj-section-hd"><span class="proj-section-name" style="color:var(--sub);font-size:10px;">Sin proyecto</span></div><div class="proj-clips-area" id="loose-clips-${co.id}">`;
+    co.clips.forEach(cl=>{
+      html+=`<div class="proj-clip-row" draggable="true" data-id="${cl.id}">
+        <img class="proj-clip-thumb" src="${cl.thumb||co.thumb||''}" alt="">
+        <div class="proj-clip-info"><div class="proj-clip-title">${cl.title}</div><div class="proj-clip-sub">${cl.tools||''}</div></div>
+        <div class="proj-clip-actions">
+          <button class="ab primary" onclick="openEditVid('${co.id}','${cl.id}',null)">Edit</button>
+          <button class="ab danger" onclick="deleteVid('${co.id}','${cl.id}',null)">✕</button>
+        </div></div>`;
+    });
+    html+=`</div></div>`;
+  }
+
+  /* ── Projects ── */
+  co.projects.forEach(proj=>{
+    html+=`<div class="proj-section">
+      <div class="proj-section-hd">
+        ${proj.thumb?`<img src="${proj.thumb}" style="width:32px;height:32px;object-fit:cover;border-radius:4px;flex-shrink:0;" alt="">`:''}
+        <span class="proj-section-name">${proj.name}</span>
+        <div class="proj-section-actions">
+          <button class="ab primary" onclick="openAddVid('${co.id}','${proj.id}')">＋ Clip</button>
+          <button class="ab" onclick="openEditProject('${co.id}','${proj.id}')">Edit</button>
+          <button class="ab danger" onclick="deleteProject('${co.id}','${proj.id}')">✕</button>
+        </div>
+      </div>
+      <div class="proj-clips-area">`;
+    if(!(proj.clips||[]).length){
+      html+=`<div style="color:var(--sub);font-size:10px;padding:4px 0;">Sin clips en este proyecto.</div>`;
+    } else {
+      proj.clips.forEach(cl=>{
+        html+=`<div class="proj-clip-row">
+          <img class="proj-clip-thumb" src="${cl.thumb||proj.thumb||co.thumb||''}" alt="">
+          <div class="proj-clip-info"><div class="proj-clip-title">${cl.title}</div><div class="proj-clip-sub">${cl.tools||''}</div></div>
+          <div class="proj-clip-actions">
+            <button class="ab primary" onclick="openEditVid('${co.id}','${cl.id}','${proj.id}')">Edit</button>
+            <button class="ab danger" onclick="deleteVid('${co.id}','${cl.id}','${proj.id}')">✕</button>
+          </div></div>`;
+      });
+    }
+    html+=`</div></div>`;
+  });
+
+  area.innerHTML=html;
+}
+function openAddVid(cid,projId){openModal('Add Clip','',`<div class="a-form">
   <div class="fg">
     <label class="fl">Video URL <span style="color:var(--sub);font-size:9px;">(YouTube o Vimeo)</span></label>
     <div style="display:flex;gap:6px;">
@@ -1734,13 +1859,29 @@ function openAddVid(cid){openModal('Add Clip','',`<div class="a-form">
   </div>
   <div class="fg"><label class="fl">Title</label><input class="fi" id="av-t" placeholder="Se rellena automáticamente"></div>
   <div class="fg"><label class="fl">Tools / descripción</label><input class="fi" id="av-to"></div>
-  <div class="fg"><label class="fl">Embed URL <span style="color:var(--sub);font-size:9px;">(se rellena automáticamente)</span></label><input class="fi" id="av-v" placeholder="https://www.youtube.com/embed/…"></div>
-  <div class="fg"><label class="fl">Thumbnail URL <span style="color:var(--sub);font-size:9px;">(se rellena automáticamente)</span></label><input class="fi" id="av-th"></div>
-</div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:`confirmAddVid('${cid}')`}]);}
-function confirmAddVid(cid){const c=D.companies.find(x=>x.id===cid);c.clips.push({id:uid(),title:gv('av-t')||'Clip',tools:gv('av-to'),video:gv('av-v'),thumb:gv('av-th')});save();closeModal();renderVidMgr();toast('Added');}
-function openEditVid(cid,vid){const co=D.companies.find(x=>x.id===cid);const cl=co.clips.find(x=>x.id===vid);openModal('Edit Clip','',`<div class="a-form">
+  <div class="fg"><label class="fl">Embed URL</label><input class="fi" id="av-v" placeholder="https://www.youtube.com/embed/…"></div>
+  <div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="av-th"></div>
+</div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:`confirmAddVid('${cid}','${projId||''}')`}]);}
+function confirmAddVid(cid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  const clip={id:uid(),title:gv('av-t')||'Clip',tools:gv('av-to'),video:gv('av-v'),thumb:gv('av-th')};
+  if(projId){
+    const proj=co.projects.find(x=>x.id===projId);
+    if(proj){if(!proj.clips)proj.clips=[];proj.clips.push(clip);}
+  } else {
+    co.clips.push(clip);
+  }
+  save();closeModal();renderVidMgr();toast('Added');
+}
+function openEditVid(cid,vid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  const cl=projId
+    ?(co.projects.find(x=>x.id===projId)||{clips:[]}).clips.find(x=>x.id===vid)
+    :co.clips.find(x=>x.id===vid);
+  if(!cl)return;
+  openModal('Edit Clip','',`<div class="a-form">
   <div class="fg">
-    <label class="fl">Video URL <span style="color:var(--sub);font-size:9px;">(para re-fetch de meta)</span></label>
+    <label class="fl">Video URL <span style="color:var(--sub);font-size:9px;">(para re-fetch)</span></label>
     <div style="display:flex;gap:6px;">
       <input class="fi" id="av-url" placeholder="https://youtu.be/…" style="flex:1;" oninput="document.getElementById('vf-status').textContent=''">
       <button class="ab primary" onclick="fetchVideoMeta(document.getElementById('av-url').value)" style="flex-shrink:0;white-space:nowrap;">⬇ Auto-fill</button>
@@ -1751,9 +1892,23 @@ function openEditVid(cid,vid){const co=D.companies.find(x=>x.id===cid);const cl=
   <div class="fg"><label class="fl">Tools / descripción</label><input class="fi" id="ev-to" value="${cl.tools}"></div>
   <div class="fg"><label class="fl">Embed URL</label><input class="fi" id="ev-v" value="${cl.video}"></div>
   <div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="ev-th" value="${cl.thumb}"></div>
-</div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditVid('${cid}','${vid}')`}]);}
-function confirmEditVid(cid,vid){const c=D.companies.find(x=>x.id===cid);const cl=c.clips.find(x=>x.id===vid);cl.title=gv('ev-t');cl.tools=gv('ev-to');cl.video=gv('ev-v');cl.thumb=gv('ev-th');save();closeModal();renderVidMgr();toast('Updated');}
-function deleteVid(cid,vid){const c=D.companies.find(x=>x.id===cid);c.clips=c.clips.filter(x=>x.id!==vid);save();renderVidMgr();toast('Deleted');}
+</div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditVid('${cid}','${vid}','${projId||''}')`}]);
+}
+function confirmEditVid(cid,vid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  const cl=projId
+    ?(co.projects.find(x=>x.id===projId)||{clips:[]}).clips.find(x=>x.id===vid)
+    :co.clips.find(x=>x.id===vid);
+  if(!cl)return;
+  cl.title=gv('ev-t');cl.tools=gv('ev-to');cl.video=gv('ev-v');cl.thumb=gv('ev-th');
+  save();closeModal();renderVidMgr();toast('Updated');
+}
+function deleteVid(cid,vid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  if(projId){const proj=co.projects.find(x=>x.id===projId);if(proj)proj.clips=(proj.clips||[]).filter(x=>x.id!==vid);}
+  else{co.clips=co.clips.filter(x=>x.id!==vid);}
+  save();renderVidMgr();toast('Deleted');
+}
 
 /* tools */
 function renderToolsAdmin(){const g=document.getElementById('toolsAGrid');if(!g)return;g.innerHTML='';D.tools.forEach(tool=>{const card=document.createElement('div');card.className='tool-a-card';card.draggable=true;card.dataset.id=tool.id;card.innerHTML=`<span class="drag-h" style="font-size:12px;">⠿</span><img class="tool-a-img" src="${tool.img}" alt="${tool.n}"><span class="tool-a-name">${tool.n}</span><div class="tool-a-btns"><button class="ab" onclick="openEditTool('${tool.id}')">Edit</button><button class="ab danger" onclick="deleteTool('${tool.id}')">Del</button></div>`;addDragCard(card,D.tools,tool.id,()=>{save();renderToolsAdmin();});g.appendChild(card);});}
@@ -2124,10 +2279,50 @@ Object.assign(window,{
   setLang,toggleLang,
   openDevlog,openAddPost,openEditPost,deletePost,savePost,renderPostsAdmin,
   fetchVideoMeta,
+  openAddProject,confirmAddProject,openEditProject,confirmEditProject,deleteProject,
   _setCat,_openPost,_applyTpl,_addBlock,_rmBlock,_mvBlock,
   _upd,_updIt,_addIt,_toggleCat,_cancelPostEditor,
 });
 
+
+
+/* ══ PROJECT CRUD ══ */
+function openAddProject(cid){
+  openModal('New Project','',`<div class="a-form">
+    <div class="fg"><label class="fl">Project name</label><input class="fi" id="pj-name" placeholder="Gothic Remake"></div>
+    <div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="pj-thumb" placeholder="https://…"></div>
+    <div class="fg"><label class="fl">Description (optional)</label><textarea class="fta" id="pj-desc"></textarea></div>
+    <div class="fg"><label class="fl">Engine (optional)</label><input class="fi" id="pj-engine"></div>
+  </div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Create',c:'primary',f:`confirmAddProject('${cid}')`}]);
+}
+function confirmAddProject(cid){
+  const co=D.companies.find(x=>x.id===cid);
+  if(!co.projects)co.projects=[];
+  co.projects.push({id:uid(),name:gv('pj-name')||'Project',thumb:gv('pj-thumb'),desc:gv('pj-desc'),engine:gv('pj-engine'),clips:[]});
+  save();closeModal();renderVidMgr();toast('Project created');
+}
+function openEditProject(cid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  const proj=co.projects.find(x=>x.id===projId);if(!proj)return;
+  openModal('Edit Project','',`<div class="a-form">
+    <div class="fg"><label class="fl">Project name</label><input class="fi" id="pj-name" value="${proj.name}"></div>
+    <div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="pj-thumb" value="${proj.thumb||''}"></div>
+    <div class="fg"><label class="fl">Description</label><textarea class="fta" id="pj-desc">${proj.desc||''}</textarea></div>
+    <div class="fg"><label class="fl">Engine</label><input class="fi" id="pj-engine" value="${proj.engine||''}"></div>
+  </div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditProject('${cid}','${projId}')`}]);
+}
+function confirmEditProject(cid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  const proj=co.projects.find(x=>x.id===projId);if(!proj)return;
+  proj.name=gv('pj-name')||proj.name;proj.thumb=gv('pj-thumb');proj.desc=gv('pj-desc');proj.engine=gv('pj-engine');
+  save();closeModal();renderVidMgr();toast('Updated');
+}
+function deleteProject(cid,projId){
+  if(!confirm('Delete this project and all its clips?'))return;
+  const co=D.companies.find(x=>x.id===cid);
+  co.projects=co.projects.filter(x=>x.id!==projId);
+  save();renderVidMgr();toast('Deleted');
+}
 
 /* ══ VIDEO META FETCH ══ */
 async function fetchVideoMeta(url){
