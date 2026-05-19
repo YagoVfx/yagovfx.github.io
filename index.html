@@ -910,12 +910,12 @@ option{background:var(--bg2);}
     <div class="clips-lbl"><span id="clipsLbl">Clips</span></div>
     <div class="clips-scroll" id="clipsScroll" role="list"></div>
   </div>
-</div>
 
-<!-- MOBILE ONLY — shown below clips on small screens -->
-<div id="mobInfo"></div>
-<div id="mobSidebar" style="background:var(--bg2);border-top:1px solid var(--line);">
-  <!-- populated by renderMobSidebar() -->
+  <!-- MOBILE ONLY — immediately after clips bar, inside #app -->
+  <div id="mobInfo"></div>
+  <div id="mobSidebar" style="background:var(--bg2);border-top:1px solid var(--line);">
+    <!-- populated by renderMobSidebar() -->
+  </div>
 </div>
 
 <script type="module">
