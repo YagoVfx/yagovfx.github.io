@@ -108,9 +108,7 @@ body.light .tbtn.admin-btn{border-color:rgba(0,0,0,.2);color:rgba(0,0,0,.45);bac
 .exp-period{font-family:var(--mono);font-size:8px;color:var(--sub);margin-top:1px;}
 .exp-card{margin:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg2);box-shadow:0 10px 24px rgba(0,0,0,.12);overflow:hidden;cursor:pointer;transition:transform .18s var(--aease),border-color .18s var(--aease),background .18s var(--aease);}
 .exp-card:hover,.exp-card.active{border-color:var(--accent);transform:translateY(-1px);}
-.exp-card-img-wrap{position:relative;width:100%;aspect-ratio:30/9;overflow:hidden;}
-.exp-card-img{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.72) saturate(.95);transition:filter .18s;}
-.exp-card-logo-badge{position:absolute;bottom:6px;left:8px;width:28px;height:28px;border-radius:4px;object-fit:cover;background:var(--bg2);border:1px solid rgba(255,255,255,.15);}
+.exp-card-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:brightness(.72) saturate(.95);transition:filter .18s;}
 .exp-card-body{padding:8px 11px 10px;}
 .exp-card-title{font-size:12px;font-weight:800;color:var(--txt);line-height:1.2;}
 .exp-card-sub{font-family:var(--mono);font-size:8px;color:var(--accent);letter-spacing:.07em;margin-top:3px;}
@@ -416,8 +414,8 @@ option{background:var(--bg2);}
     overflow: hidden !important;
   }
 
-  #mobSidebar .exp-card-img-wrap,
-  .exp-card-img-wrap{
+  #mobSidebar .exp-card-img,
+  .exp-card-img{
     display: block !important;
     width: 100% !important;
     height: auto !important;
@@ -1370,7 +1368,7 @@ function buildExpRowHtml(c){
   return `<img class="exp-logo" src="${c.logo}" alt="${c.name}"><div class="exp-info"><div class="exp-co">${c.name}</div><div class="exp-role-t">${c.role}</div><div class="exp-period">${c.period}</div></div>`;
 }
 function buildExpCardHtml(c){
-  return `<div class="exp-card-img-wrap"><div class="exp-card-img" style="background-image:url(${c.thumb||c.logo})"></div>${c.logo?`<img class="exp-card-logo-badge" src="${c.logo}" alt="${c.name}">`:''}</div><div class="exp-card-body"><div class="exp-card-title">${c.name}</div><div class="exp-card-sub">${c.role} · ${c.period}</div><div class="exp-card-desc">${c.desc||''}</div></div>`;
+  return `<img class="exp-card-img" src="${c.thumb||c.logo}" alt="${c.name}"><div class="exp-card-body"><div class="exp-card-title">${c.name}</div><div class="exp-card-sub">${c.role} · ${c.period}</div><div class="exp-card-desc">${c.desc||''}</div></div>`;
 }
 function renderExpList(){
   const el=document.getElementById('expList');if(!el)return;el.innerHTML='';
