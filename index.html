@@ -908,18 +908,32 @@ const _fdb=getFirestore(_fbApp);
 try{getAnalytics(_fbApp);}catch(e){}
 const PORTFOLIO_DOC=doc(_fdb,'portfolio','main');
 const DB={
-  _t:null,_l:null,_skip:false,
+  _t:null,_l:null,_skip:0,
   get(){return JSON.parse(localStorage.getItem('vfx-v6')||'null');},
   set(d){
     localStorage.setItem('vfx-v6',JSON.stringify(d));
     clearTimeout(this._t);
-    this._t=setTimeout(async()=>{try{this._skip=true;await setDoc(PORTFOLIO_DOC,{data:JSON.stringify(d)});}catch(e){console.warn('[FB] write failed:',e);}},300);
+    this._skip++;
+    this._t=setTimeout(async()=>{
+      try{await setDoc(PORTFOLIO_DOC,{data:JSON.stringify(d)});}
+      catch(e){console.warn('[FB] write failed:',e);this._skip=Math.max(0,this._skip-1);}
+    },300);
   },
   startSync(){
     if(this._l)return;
     this._l=onSnapshot(PORTFOLIO_DOC,snap=>{
-      if(!snap.exists())return;if(this._skip){this._skip=false;return;}
-      try{const r=JSON.parse(snap.data().data||'null');if(!r)return;if(JSON.stringify(r)===JSON.stringify(D))return;Object.assign(D,r);localStorage.setItem('vfx-v6',JSON.stringify(D));renderVisitor();if(document.getElementById('admin-overlay').classList.contains('on'))openAdmin();const t=document.getElementById('toast');t.textContent='☁ Synced from another device';t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2800);}catch(e){console.warn('[FB] sync error',e);}
+      if(!snap.exists())return;
+      if(this._skip>0){this._skip--;return;}
+      try{
+        const r=JSON.parse(snap.data().data||'null');if(!r)return;
+        if(JSON.stringify(r)===JSON.stringify(D))return;
+        Object.assign(D,r);
+        localStorage.setItem('vfx-v6',JSON.stringify(D));
+        renderVisitor();
+        const t=document.getElementById('toast');
+        t.textContent='☁ Synced from another device';
+        t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2800);
+      }catch(e){console.warn('[FB] sync error',e);}
     },e=>console.warn('[FB] listener error',e));
   },
   async loadRemote(){
