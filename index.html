@@ -1723,9 +1723,35 @@ function deleteCo(id){if(!confirm('Delete?'))return;D.companies=D.companies.filt
 /* videos */
 function renderVidCoSel(){const sel=document.getElementById('vidCoSel');if(!sel)return;sel.innerHTML=D.companies.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');}
 function renderVidMgr(){const id=document.getElementById('vidCoSel')?.value;const c=D.companies.find(x=>x.id===id);const area=document.getElementById('vidMgrArea');if(!area)return;if(!c){area.innerHTML='';return;}area.innerHTML=`<button class="a-add-btn" onclick="openAddVid('${c.id}')">＋ Add clip to ${c.name}</button><div class="a-cards" id="vidCards"></div>`;const g=document.getElementById('vidCards');if(!c.clips.length){g.innerHTML=`<div style="color:var(--sub);font-size:11px;padding:8px 0;">No clips yet.</div>`;return;}c.clips.forEach(cl=>{const card=document.createElement('div');card.className='a-card';card.draggable=true;card.dataset.id=cl.id;card.innerHTML=`<img class="a-card-img" src="${cl.thumb||c.thumb}" style="height:70px;" alt="${cl.title}"><div class="a-card-body"><div class="a-card-title"><span class="drag-h">⠿</span>${cl.title}</div><div class="a-card-sub">${cl.tools}</div><div class="a-card-actions"><button class="ab primary" onclick="openEditVid('${c.id}','${cl.id}')">Edit</button><button class="ab danger" onclick="deleteVid('${c.id}','${cl.id}')">Delete</button></div></div>`;addDragCard(card,c.clips,cl.id,()=>{save();renderVidMgr();});g.appendChild(card);});}
-function openAddVid(cid){openModal('Add Clip','',`<div class="a-form"><div class="fg"><label class="fl">Title</label><input class="fi" id="av-t"></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="av-to"></div><div class="fg"><label class="fl">Embed URL</label><input class="fi" id="av-v" placeholder="https://www.youtube.com/embed/…"></div><div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="av-th"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:`confirmAddVid('${cid}')`}]);}
+function openAddVid(cid){openModal('Add Clip','',`<div class="a-form">
+  <div class="fg">
+    <label class="fl">Video URL <span style="color:var(--sub);font-size:9px;">(YouTube o Vimeo)</span></label>
+    <div style="display:flex;gap:6px;">
+      <input class="fi" id="av-url" placeholder="https://youtu.be/… o https://vimeo.com/…" style="flex:1;" oninput="document.getElementById('vf-status').textContent=''">
+      <button class="ab primary" onclick="fetchVideoMeta(document.getElementById('av-url').value)" style="flex-shrink:0;white-space:nowrap;">⬇ Auto-fill</button>
+    </div>
+    <div id="vf-status" style="font-family:var(--mono);font-size:8px;margin-top:4px;height:12px;"></div>
+  </div>
+  <div class="fg"><label class="fl">Title</label><input class="fi" id="av-t" placeholder="Se rellena automáticamente"></div>
+  <div class="fg"><label class="fl">Tools / descripción</label><input class="fi" id="av-to"></div>
+  <div class="fg"><label class="fl">Embed URL <span style="color:var(--sub);font-size:9px;">(se rellena automáticamente)</span></label><input class="fi" id="av-v" placeholder="https://www.youtube.com/embed/…"></div>
+  <div class="fg"><label class="fl">Thumbnail URL <span style="color:var(--sub);font-size:9px;">(se rellena automáticamente)</span></label><input class="fi" id="av-th"></div>
+</div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:`confirmAddVid('${cid}')`}]);}
 function confirmAddVid(cid){const c=D.companies.find(x=>x.id===cid);c.clips.push({id:uid(),title:gv('av-t')||'Clip',tools:gv('av-to'),video:gv('av-v'),thumb:gv('av-th')});save();closeModal();renderVidMgr();toast('Added');}
-function openEditVid(cid,vid){const c=D.companies.find(x=>x.id===cid);const cl=c.clips.find(x=>x.id===vid);openModal('Edit Clip','',`<div class="a-form"><div class="fg"><label class="fl">Title</label><input class="fi" id="ev-t" value="${cl.title}"></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="ev-to" value="${cl.tools}"></div><div class="fg"><label class="fl">Embed URL</label><input class="fi" id="ev-v" value="${cl.video}"></div><div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="ev-th" value="${cl.thumb}"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditVid('${cid}','${vid}')`}]);}
+function openEditVid(cid,vid){const co=D.companies.find(x=>x.id===cid);const cl=co.clips.find(x=>x.id===vid);openModal('Edit Clip','',`<div class="a-form">
+  <div class="fg">
+    <label class="fl">Video URL <span style="color:var(--sub);font-size:9px;">(para re-fetch de meta)</span></label>
+    <div style="display:flex;gap:6px;">
+      <input class="fi" id="av-url" placeholder="https://youtu.be/…" style="flex:1;" oninput="document.getElementById('vf-status').textContent=''">
+      <button class="ab primary" onclick="fetchVideoMeta(document.getElementById('av-url').value)" style="flex-shrink:0;white-space:nowrap;">⬇ Auto-fill</button>
+    </div>
+    <div id="vf-status" style="font-family:var(--mono);font-size:8px;margin-top:4px;height:12px;"></div>
+  </div>
+  <div class="fg"><label class="fl">Title</label><input class="fi" id="ev-t" value="${cl.title}"></div>
+  <div class="fg"><label class="fl">Tools / descripción</label><input class="fi" id="ev-to" value="${cl.tools}"></div>
+  <div class="fg"><label class="fl">Embed URL</label><input class="fi" id="ev-v" value="${cl.video}"></div>
+  <div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="ev-th" value="${cl.thumb}"></div>
+</div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditVid('${cid}','${vid}')`}]);}
 function confirmEditVid(cid,vid){const c=D.companies.find(x=>x.id===cid);const cl=c.clips.find(x=>x.id===vid);cl.title=gv('ev-t');cl.tools=gv('ev-to');cl.video=gv('ev-v');cl.thumb=gv('ev-th');save();closeModal();renderVidMgr();toast('Updated');}
 function deleteVid(cid,vid){const c=D.companies.find(x=>x.id===cid);c.clips=c.clips.filter(x=>x.id!==vid);save();renderVidMgr();toast('Deleted');}
 
@@ -2097,9 +2123,59 @@ Object.assign(window,{
   setExpCards,setCoverBg,applyFont,applyFontSize,applyAnimSpd,applyAnimEase,
   setLang,toggleLang,
   openDevlog,openAddPost,openEditPost,deletePost,savePost,renderPostsAdmin,
+  fetchVideoMeta,
   _setCat,_openPost,_applyTpl,_addBlock,_rmBlock,_mvBlock,
   _upd,_updIt,_addIt,_toggleCat,_cancelPostEditor,
 });
+
+
+/* ══ VIDEO META FETCH ══ */
+async function fetchVideoMeta(url){
+  if(!url)return;
+  const status=document.getElementById('vf-status');
+  if(status){status.textContent='Fetching…';status.style.color='var(--sub)';}
+  try{
+    // YouTube
+    const yt=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+    if(yt){
+      const id=yt[1];
+      // Thumbnail — try maxres first, fall back to hq
+      const thumb=`https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+      // Title via oEmbed (no API key needed)
+      const oe=await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}&format=json`);
+      const tj=await oe.json();
+      const title=tj.title||'';
+      const embed=`https://www.youtube.com/embed/${id}`;
+      _applyVideoMeta(title,thumb,embed);
+      if(status){status.textContent='✓ Found';status.style.color='var(--green)';}
+      return;
+    }
+    // Vimeo
+    const vi=url.match(/vimeo\.com\/(\d+)/);
+    if(vi){
+      const oe=await fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${vi[1]}`);
+      const vj=await oe.json();
+      const title=vj.title||'';
+      const thumb=(vj.thumbnail_url||'').replace(/_\d+x\d+/,'');
+      const embed=`https://player.vimeo.com/video/${vi[1]}`;
+      _applyVideoMeta(title,thumb,embed);
+      if(status){status.textContent='✓ Found';status.style.color='var(--green)';}
+      return;
+    }
+    if(status){status.textContent='URL not recognized (use YouTube or Vimeo)';status.style.color='var(--red)';}
+  }catch(e){
+    if(status){status.textContent='Could not fetch — fill manually';status.style.color='var(--red)';}
+    console.warn('[fetchVideoMeta]',e);
+  }
+}
+function _applyVideoMeta(title,thumb,embed){
+  const t=document.getElementById('av-t')||document.getElementById('ev-t');
+  const th=document.getElementById('av-th')||document.getElementById('ev-th');
+  const v=document.getElementById('av-v')||document.getElementById('ev-v');
+  if(t&&!t.value)t.value=title;
+  if(th&&!th.value)th.value=thumb;
+  if(v&&!v.value)v.value=embed;
+}
 
 /* ══ INIT ══ */
 (async()=>{
