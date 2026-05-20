@@ -203,6 +203,14 @@ body.light .tbtn.admin-btn{border-color:rgba(0,0,0,.2);color:rgba(0,0,0,.45);bac
   #mobSidebar{display:block!important;order:4;}
   /* topbar order */
   .topbar{order:0;}
+  /* admin panel — nav becomes horizontal scrollable top bar */
+  .adm-body{flex-direction:column!important;}
+  .adm-nav{width:100%!important;min-width:0!important;border-right:none!important;border-bottom:1px solid rgba(255,255,255,.07)!important;padding:4px 0!important;display:flex!important;flex-direction:row!important;overflow-x:auto!important;overflow-y:hidden!important;flex-shrink:0!important;height:auto!important;}
+  .adm-nav-sec{display:none!important;}
+  .adm-nav-item{padding:8px 12px!important;font-size:10px!important;white-space:nowrap!important;flex-shrink:0!important;}
+  .adm-nav-item::before{top:auto!important;bottom:0!important;left:0!important;right:0!important;width:100%!important;height:3px!important;}
+  .adm-content{padding:14px 14px!important;}
+  .adm-icon{display:none!important;}
 }
 @media(min-width:769px){
   #mobInfo{display:none!important;}
@@ -938,17 +946,20 @@ const DB={
   set(d){
     localStorage.setItem('vfx-v6',JSON.stringify(d));
     clearTimeout(this._t);
-    this._skip=1; /* reset to 1: expect exactly 1 echo from our own write */
+    this._skip=1;
+    this._lastWrite=Date.now();
     this._t=setTimeout(async()=>{
       try{await setDoc(PORTFOLIO_DOC,{data:JSON.stringify(d)});}
       catch(e){console.warn('[FB] write failed:',e);this._skip=0;}
-    },300);
+    },600);
   },
   startSync(){
     if(this._l)return;
     this._l=onSnapshot(PORTFOLIO_DOC,snap=>{
       if(!snap.exists())return;
       if(this._skip>0){this._skip--;return;}
+      /* ignore snapshots within 5s of our own write */
+      if(this._lastWrite&&Date.now()-this._lastWrite<5000){return;}
       try{
         const r=JSON.parse(snap.data().data||'null');if(!r)return;
         if(JSON.stringify(r)===JSON.stringify(D))return;
@@ -1121,6 +1132,8 @@ function applyLang(){
   const tagsSrc=isEs?(p.availTags_es||p.availTags_en||p.availTags):(p.availTags_en||p.availTags);
   const tagsHtml=tagsSrc.split(',').map(tg=>`<span class="avail-tag">${tg.trim()}</span>`).join('');
   ['availTags','mavailTags'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML=tagsHtml;});
+  // refresh mobInfo so company info re-renders with correct lang
+  renderCurrentCompanyInfo();
 }
 
 /* ══ COLOR THEME ══ */
