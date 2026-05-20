@@ -3,9 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Yago Fernández — Senior Real-Time VFX Artist</title>
-<meta name="description" content="Senior Real-Time VFX Artist. 9+ years shipping gameplay and cinematic VFX for PC and console.">
+<title id="seo-title">Yago Fernández — Senior Real-Time VFX Artist</title>
+<meta name="description" id="seo-desc" content="Senior Real-Time VFX Artist. 9+ years shipping gameplay and cinematic VFX for PC and console.">
+<meta name="keywords" id="seo-kw" content="VFX Artist, Real-Time VFX, Niagara, Unreal Engine, Embergen">
+<meta name="author" id="seo-author" content="Yago Fernández">
 <meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a0b0f">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" id="og-title" content="Yago Fernández — Senior Real-Time VFX Artist">
+<meta property="og:description" id="og-desc" content="Senior Real-Time VFX Artist. 9+ years shipping gameplay and cinematic VFX for PC and console.">
+<meta property="og:url" id="og-url" content="https://yagovfx.github.io">
+<meta property="og:image" id="og-image" content="">
+<meta property="og:locale" id="og-locale" content="en_GB">
+<meta property="og:site_name" id="og-site" content="Yago Fernández Portfolio">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="tw-title" content="Yago Fernández — Senior Real-Time VFX Artist">
+<meta name="twitter:description" id="tw-desc" content="Senior Real-Time VFX Artist. 9+ years shipping gameplay and cinematic VFX for PC and console.">
+<meta name="twitter:image" id="tw-image" content="">
+<meta name="twitter:creator" id="tw-handle" content="">
+<!-- Canonical -->
+<link rel="canonical" id="seo-canonical" href="https://yagovfx.github.io">
+<!-- Schema.org JSON-LD (injected dynamically) -->
+<script id="seo-jsonld" type="application/ld+json"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Space+Mono&family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600;700&family=DM+Sans:wght@300;400;600;700&family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
@@ -646,6 +667,7 @@ option{background:var(--bg2);}
       <div class="adm-nav-sec">System</div>
       <div class="adm-nav-item" onclick="showSec('posts')" data-s="posts"><span class="adm-icon">✍️</span>Devlog Posts</div>
       <div class="adm-nav-item" onclick="showSec('links')" data-s="links"><span class="adm-icon">🔗</span>Links</div>
+      <div class="adm-nav-item" onclick="showSec('seo')" data-s="seo"><span class="adm-icon">🔍</span>SEO</div>
       <div class="adm-nav-item" onclick="showSec('settings')" data-s="settings"><span class="adm-icon">⚙️</span>Settings</div>
     </nav>
     <div class="adm-content">
@@ -844,6 +866,44 @@ option{background:var(--bg2);}
       </div>
 
       <!-- SETTINGS -->
+      <!-- SEO -->
+      <div class="adm-sec" id="sec-seo">
+        <div class="a-title">SEO &amp; Discoverability</div>
+        <div class="a-sub">Optimiza cómo te encuentran recruiters y estudios en Google, LinkedIn y redes sociales.</div>
+
+        <div style="display:grid;gap:0;margin-bottom:20px;">
+          <div style="background:rgba(124,92,252,.07);border:1px solid rgba(124,92,252,.2);border-radius:8px;padding:12px 14px;margin-bottom:12px;">
+            <div style="font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;">💡 Tips para recruiters de videojuegos</div>
+            <div style="font-size:10px;color:var(--sub);line-height:1.7;">Incluye términos como <strong style="color:var(--txt);">Niagara VFX, UE5, Real-Time VFX, Gameplay FX, Tech Art</strong> en keywords. Los ATS (Applicant Tracking Systems) de estudios AAA buscan exactamente estos términos.</div>
+          </div>
+        </div>
+
+        <div style="display:grid;gap:12px;max-width:660px;">
+          <div style="font-family:var(--mono);font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);opacity:.7;padding-bottom:4px;border-bottom:1px solid var(--line);">BÁSICO</div>
+          <div class="fg"><label class="fl">Page title <span style="color:var(--sub);font-size:9px;">— aparece en Google y pestañas del navegador</span></label><input class="fi" id="seo-f-title" placeholder="Nombre — Cargo | Especialidad"></div>
+          <div class="fg"><label class="fl">Meta description <span style="color:var(--sub);font-size:9px;">— 150-160 chars, texto que ve el recruiter en Google</span></label><textarea class="fta" id="seo-f-desc" style="min-height:70px;" placeholder="Senior Real-Time VFX Artist con X años..."></textarea></div>
+          <div class="fg"><label class="fl">Keywords <span style="color:var(--sub);font-size:9px;">— separadas por coma, mezcla ES e EN</span></label><textarea class="fta" id="seo-f-kw" style="min-height:54px;" placeholder="VFX Artist, Niagara, UE5, Real-Time VFX, Tech Art..."></textarea></div>
+
+          <div style="font-family:var(--mono);font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);opacity:.7;padding-bottom:4px;border-bottom:1px solid var(--line);margin-top:6px;">IDENTIDAD PROFESIONAL</div>
+          <div class="fg"><label class="fl">Tu nombre completo</label><input class="fi" id="seo-f-author" placeholder="Yago Fernández"></div>
+          <div class="fg"><label class="fl">Job title <span style="color:var(--sub);font-size:9px;">— para Schema.org, exactamente como en LinkedIn</span></label><input class="fi" id="seo-f-jobtitle" placeholder="Senior Real-Time VFX Artist"></div>
+          <div class="fg"><label class="fl">Skills / specializations <span style="color:var(--sub);font-size:9px;">— separadas por coma</span></label><textarea class="fta" id="seo-f-skills" style="min-height:54px;" placeholder="Niagara, Embergen, Houdini, UE5, HLSL, Blueprint..."></textarea></div>
+          <div class="frow">
+            <div class="fg"><label class="fl">Availability</label><input class="fi" id="seo-f-avail" placeholder="Open to work"></div>
+            <div class="fg"><label class="fl">Location</label><input class="fi" id="seo-f-location" placeholder="Spain / Remote"></div>
+          </div>
+
+          <div style="font-family:var(--mono);font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);opacity:.7;padding-bottom:4px;border-bottom:1px solid var(--line);margin-top:6px;">REDES SOCIALES &amp; OG</div>
+          <div class="fg"><label class="fl">URL de tu portfolio <span style="color:var(--sub);font-size:9px;">— sin barra al final</span></label><input class="fi" id="seo-f-url" placeholder="https://yagovfx.github.io"></div>
+          <div class="fg"><label class="fl">Imagen OG <span style="color:var(--sub);font-size:9px;">— 1200×630px, aparece al compartir en LinkedIn/Twitter</span></label><input class="fi" id="seo-f-image" placeholder="https://…/og-image.jpg"></div>
+          <div class="fg"><label class="fl">Twitter / X handle <span style="color:var(--sub);font-size:9px;">— sin @</span></label><input class="fi" id="seo-f-twitter" placeholder="yagovfx"></div>
+
+          <div class="f-actions" style="padding-top:6px;">
+            <button class="ab primary" onclick="saveSeo()">Guardar SEO</button>
+          </div>
+        </div>
+      </div>
+
       <div class="adm-sec" id="sec-settings">
         <div class="a-title">Settings</div>
         <div class="fb-notice" style="background:rgba(46,204,113,.07);border-color:rgba(46,204,113,.25);"><strong style="color:var(--green);">☁ Firebase connected.</strong> Todos los cambios se sincronizan en Firestore en tiempo real.</div>
@@ -1024,6 +1084,21 @@ const DEFAULTS={
   customPages:[],
   posts:[],
   premiumUrl:'',
+  seo:{
+    title:'Yago Fernández — Senior Real-Time VFX Artist',
+    description:'Senior Real-Time VFX Artist with 9+ years shipping gameplay and cinematic VFX for PC and console. Specialist in Niagara, Embergen, Houdini and Unreal Engine 5.',
+    keywords:'VFX Artist, Real-Time VFX, Niagara, Unreal Engine, Embergen, Houdini, Technical Artist, Game VFX, Gameplay FX, Cinematic VFX, UE5, Particle Systems, Tech Art',
+    author:'Yago Fernández',
+    siteUrl:'https://yagovfx.github.io',
+    image:'',
+    twitterHandle:'',
+    locale:'en_GB',
+    jobTitle:'Senior Real-Time VFX Artist',
+    yearsExp:'9+',
+    skills:'Niagara, Embergen, Houdini, Unreal Engine 5, HLSL, Blueprint, Maya, Photoshop',
+    availability:'Open to work',
+    location:'Spain',
+  },
   companies:[
     {id:'c1',name:'Alkimia Interactive',role:'Senior VFX Artist',period:'2025–2026',engine:'Unreal Engine 5',tools:'Niagara · Embergen',desc:'Effects for the Gothic Remake — gameplay attacks, animation-driven FX, set dressing.',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQ6-1tDzvXK5D9UKz50sjnRiilfYu5mVedF7z7USDugs_lw3X7ALPJmpXFbm7coB5vr8pfu-IstslFtHltCypfGcivM9EZhOhEOPwpkKstnZ7_pcYSe0rksyEOV5tnvuWVxfXz67Xkja56a1H9vx4KksD_1cHnXVVQuETrDCgZ0T_KKit1zmylTabfkxQ/s100/estudio_alkimia-interactive.jpg',thumb:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgk00OO8A6MSqiVFWV1UUjNgKF-PpclmV3GWjny8nRveOubjnS1mwlWAAmj501p8xIfZHKEemrGrQJqM0t3XLcMj2sDDMNwQ6p_7Qq-Yx-Fm257n1s1wVhJ33tWmz_lz7FxvK0utQGBSJwwkejEemiXotNYBW4dl-47fEekDNDnK-WpxIWrtp17rmebqd8/s1177/GothicRemake.png',clips:[]},
     {id:'c2',name:'Magic Media',role:'Senior VFX Artist',period:'2023–2025',engine:'Unreal Engine 5',tools:'Niagara · Embergen',desc:'Weapons and combat VFX for Remnant 2 — GPU particles, emissive flipbooks, shader work.',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFGsaldFNBjBGETfk0RmArpCoNjz-MDSUX1WgKpTaXKRCIM-1DdOSD-6T2XR8RZ6I_uI2J8jVIhHOMX9GaVm7BBm4ktSUH8LcL0ojzD2puSTEoOS2FPs1Xz-iSpP8IsOxYhkWea47CWr_WfAfp-8DKpz7zJNrFuS1pZCBvkU7d0FzkAImVcWN9kyB433s/s100/magic_media_entertainment_logo.jpg',thumb:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimInA0UsM9CrACgKUg30Y53gh_HwUxB30YJah_J-e7gnrmHfOsbf-Vxh7KHxnnMpjrxpDi_HCUXFR0-ITThJHyD-NWTJ1CGKsyky-BA_NGqTQjIh1Dmm9lePyj2g7vtRLktado1Pu4mWm0z5kPW1jZNLFGHO0Njx7r84x-xOzz7fGrykTKtJZHy6xbqr0/s3840/3840x2160.jpg',clips:[{id:'v1',title:"World's Edge Sword",tools:'UE5 · Niagara',video:'https://www.youtube.com/embed/PIiBLIhHVhU?mute=1',thumb:'https://img.youtube.com/vi/PIiBLIhHVhU/maxresdefault.jpg'},{id:'v2',title:'Weapons Reel',tools:'UE5 · Niagara',video:'https://player.vimeo.com/video/973385372',thumb:'https://i.vimeocdn.com/video/1907304284-bac8296ab76b31c57712941ffb2fede66f0b0d95d608d5c1c99f701dd11099a4-d?mw=1800&mh=983&q=70'}]},
@@ -1050,6 +1125,11 @@ if(!D.customPages)D.customPages=[];
 D.companies.forEach(co=>{if(!co.projects)co.projects=[];if(!co.desc_es)co.desc_es='';});
 if(!D.posts)D.posts=[];
 if(!D.premiumUrl)D.premiumUrl='';
+if(!D.seo)D.seo=JSON.parse(JSON.stringify(DEFAULTS.seo));
+if(!D.seo.jobTitle)D.seo.jobTitle=DEFAULTS.seo.jobTitle;
+if(!D.seo.skills)D.seo.skills=DEFAULTS.seo.skills;
+if(!D.seo.availability)D.seo.availability=DEFAULTS.seo.availability;
+if(!D.seo.location)D.seo.location=DEFAULTS.seo.location;
 if(!D.cv)D.cv=JSON.parse(JSON.stringify(DEFAULTS.cv));
 if(!D.cv.artstation)D.cv.artstation='';
 if(!D.cv.skills)D.cv.skills=[];
@@ -1783,7 +1863,7 @@ function checkPw(){
 function openAdmin(){
   document.getElementById('admin-overlay').classList.add('on');showSec('reel');
   renderAdminCos();renderVidCoSel();renderProfileForm();renderLayGrid();renderThemeGrid();
-  renderSizeGrid();renderToolsAdmin();renderLinksAdmin();renderPostsAdmin();renderCvForm();
+  renderSizeGrid();renderToolsAdmin();renderLinksAdmin();renderPostsAdmin();renderCvForm();renderSeoAdmin();
   const te=document.getElementById('togExpCards');if(te)te.checked=!!D.expCards;
   renderCurrentCompanyInfo();syncMobileBlocks();
   const ls=document.getElementById('langSel');if(ls)ls.value=D.lang;
@@ -2031,6 +2111,51 @@ function syncMobileBlocks(){
 }
 window.addEventListener('resize', syncMobileBlocks);
 
+
+
+/* ══ SEO ══ */
+function applySEO(){
+  const s=D.seo||{};
+  const title=s.title||document.title;
+  const desc=s.description||'';
+  const url=s.siteUrl||location.href;
+  const img=s.image||'';
+  document.title=title;
+  const sm=(name,val)=>{const m=document.querySelector('meta[name="'+name+'"]');if(m)m.setAttribute('content',val);};
+  const sp=(prop,val)=>{const m=document.querySelector('meta[property="'+prop+'"]');if(m)m.setAttribute('content',val);};
+  sm('description',desc);sm('keywords',s.keywords||'');sm('author',s.author||'');
+  sp('og:title',title);sp('og:description',desc);sp('og:url',url);sp('og:image',img);sp('og:locale',s.locale||'en_GB');sp('og:site_name',s.author||'Portfolio');
+  sm('twitter:title',title);sm('twitter:description',desc);sm('twitter:image',img);sm('twitter:creator',s.twitterHandle?'@'+s.twitterHandle.replace('@',''):'');
+  const can=document.getElementById('seo-canonical');if(can)can.href=url;
+  const sameAs=[];
+  (D.links||[]).forEach(l=>{if(l.url&&(l.url.includes('artstation')||l.url.includes('linkedin')||l.url.includes('twitter')||l.url.includes('x.com')))sameAs.push(l.url);});
+  const schema={'@context':'https://schema.org','@graph':[
+    {'@type':'Person','@id':url+'#person',name:s.author||'',jobTitle:s.jobTitle||'',description:desc,url:url,image:img||undefined,sameAs:sameAs,
+     knowsAbout:(s.skills||'').split(',').map(x=>x.trim()).filter(Boolean),
+     workLocation:{'@type':'Place',name:s.location||''},
+     availableFor:{'@type':'Offer',description:s.availability||''}},
+    {'@type':'CreativeWork','@id':url+'#portfolio',name:title,description:desc,url:url,author:{'@id':url+'#person'},keywords:s.keywords||''}
+  ]};
+  const jld=document.getElementById('seo-jsonld');if(jld)jld.textContent=JSON.stringify(schema);
+}
+function renderSeoAdmin(){
+  const sec=document.getElementById('sec-seo');if(!sec)return;
+  const s=D.seo||{};
+  const sf=(id,val)=>{const e=sec.querySelector('#'+id);if(e)e.value=val||'';};
+  sf('seo-f-title',s.title);sf('seo-f-desc',s.description);sf('seo-f-kw',s.keywords);
+  sf('seo-f-author',s.author);sf('seo-f-url',s.siteUrl);sf('seo-f-image',s.image);
+  sf('seo-f-twitter',s.twitterHandle);sf('seo-f-jobtitle',s.jobTitle);
+  sf('seo-f-skills',s.skills);sf('seo-f-avail',s.availability);sf('seo-f-location',s.location);
+}
+function saveSeo(){
+  const gf=id=>{const e=document.querySelector('#sec-seo #'+id);return e?e.value:'';};
+  D.seo={title:gf('seo-f-title'),description:gf('seo-f-desc'),keywords:gf('seo-f-kw'),
+    author:gf('seo-f-author'),siteUrl:gf('seo-f-url'),image:gf('seo-f-image'),
+    twitterHandle:gf('seo-f-twitter'),locale:D.seo&&D.seo.locale||'en_GB',
+    jobTitle:gf('seo-f-jobtitle'),skills:gf('seo-f-skills'),
+    availability:gf('seo-f-avail'),location:gf('seo-f-location')};
+  save();applySEO();toast('SEO guardado ✓');
+}
 
 /* ══════════════════════════════════════════════
    DEVLOG SYSTEM
@@ -2310,6 +2435,7 @@ Object.assign(window,{
   saveSettings,exportData,resetData,openModal,closeModal,toast,
   setExpCards,setCoverBg,applyFont,applyFontSize,applyAnimSpd,applyAnimEase,
   setLang,toggleLang,
+  saveSeo,applySEO,renderSeoAdmin,
   openDevlog,openAddPost,openEditPost,deletePost,savePost,renderPostsAdmin,
   fetchVideoMeta,
   openAddProject,confirmAddProject,openEditProject,confirmEditProject,deleteProject,
@@ -2429,7 +2555,7 @@ function _applyVideoMeta(title,thumb,embed){
     if(!D.profile.s3l_en)D.profile.s3l_en=D.profile.s3l;if(!D.profile.s3l_es)D.profile.s3l_es='';
   }
   ld.remove();
-  detectLang();renderVisitor();setTimeout(autoplayOnLoad,350);
+  detectLang();renderVisitor();applySEO();setTimeout(autoplayOnLoad,350);
   document.getElementById('devlogBtn').addEventListener('click',openDevlog);
   document.getElementById('newPostBtn').addEventListener('click',openAddPost);
   document.getElementById('postBackBtn').addEventListener('click',()=>{
