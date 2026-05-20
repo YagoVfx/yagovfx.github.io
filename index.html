@@ -186,20 +186,23 @@ body.light .tbtn.admin-btn{border-color:rgba(0,0,0,.2);color:rgba(0,0,0,.45);bac
     overflow:visible!important;
     min-height:100dvh;
   }
-  /* hide desktop panels */
+  /* hide desktop panels — use visibility+height:0 so they don't push flex items */
   #app .left,#app .right{display:none!important;}
-  .topbar{position:sticky;top:0;z-index:100;height:48px;padding:0 14px;}
+  /* topbar — compact, hide links that appear in mobSidebar */
+  .topbar{position:sticky;top:0;z-index:100;height:48px;padding:0 10px;}
+  #hdrLinks{display:none!important;}
   #pageNavLinks{display:none;}
   /* video */
-  .center{width:100%;height:56vw;min-height:220px;max-height:320px;flex-shrink:0;position:relative;}
+  .center{width:100%;height:56vw;min-height:220px;max-height:320px;flex-shrink:0;position:relative;order:1;}
   /* clips */
-  .clips{height:130px;flex-shrink:0;}
+  .clips{height:130px;flex-shrink:0;order:2;}
   .clip{flex:0 0 140px;}
   .clip:hover,.clip.active{flex:0 0 190px;}
-  /* mobile info block shown below clips */
-  #mobInfo{display:block;}
-  /* mobile sidebar shown below mobInfo */
-  #mobSidebar{display:block;}
+  /* mobInfo and mobSidebar right after clips */
+  #mobInfo{display:block!important;order:3;}
+  #mobSidebar{display:block!important;order:4;}
+  /* topbar order */
+  .topbar{order:0;}
 }
 @media(min-width:769px){
   #mobInfo{display:none!important;}
