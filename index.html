@@ -1047,7 +1047,7 @@ let D=DB.get()||JSON.parse(JSON.stringify(DEFAULTS));
 if(!D.reel){D.reel=JSON.parse(JSON.stringify(DEFAULTS.reel));}
 if(D.reel.enabled===undefined)D.reel.enabled=true;
 if(!D.customPages)D.customPages=[];
-D.companies.forEach(co=>{if(!co.projects)co.projects=[];});
+D.companies.forEach(co=>{if(!co.projects)co.projects=[];if(!co.desc_es)co.desc_es='';});
 if(!D.posts)D.posts=[];
 if(!D.premiumUrl)D.premiumUrl='';
 if(!D.cv)D.cv=JSON.parse(JSON.stringify(DEFAULTS.cv));
@@ -1380,7 +1380,7 @@ function renderCurrentCompanyInfo(){
     <div class="ri-inner">
       <div class="ri-tag">${c.role} · ${c.period}</div>
       <div class="ri-title">${c.name}</div>
-      <div class="ri-desc">${c.desc}</div>
+      <div class="ri-desc">${D.lang==='es'&&c.desc_es?c.desc_es:c.desc}</div>
       <div class="ri-row"><span class="ri-key">${t('engine')}</span><span class="ri-val">${c.engine}</span></div>
       <div class="ri-row"><span class="ri-key">${t('tools')}</span><span class="ri-val">${c.tools}</span></div>
     </div>`;
@@ -1390,7 +1390,7 @@ function buildExpRowHtml(c){
   return `<img class="exp-logo" src="${c.logo}" alt="${c.name}"><div class="exp-info"><div class="exp-co">${c.name}</div><div class="exp-role-t">${c.role}</div><div class="exp-period">${c.period}</div></div>`;
 }
 function buildExpCardHtml(c){
-  return `<div class="exp-card-img-wrap"><div class="exp-card-img" style="background-image:url(${c.thumb||c.logo})"></div>${c.logo?`<img class="exp-card-logo-badge" src="${c.logo}" alt="${c.name}">`:''}</div><div class="exp-card-body"><div class="exp-card-title">${c.name}</div><div class="exp-card-sub">${c.role} · ${c.period}</div><div class="exp-card-desc">${c.desc||''}</div></div>`;
+  return `<div class="exp-card-img-wrap"><div class="exp-card-img" style="background-image:url(${c.thumb||c.logo})"></div>${c.logo?`<img class="exp-card-logo-badge" src="${c.logo}" alt="${c.name}">`:''}</div><div class="exp-card-body"><div class="exp-card-title">${c.name}</div><div class="exp-card-sub">${c.role} · ${c.period}</div><div class="exp-card-desc">${D.lang==='es'&&c.desc_es?c.desc_es:(c.desc||'')}</div></div>`;
 }
 function renderExpList(){
   const el=document.getElementById('expList');if(!el)return;el.innerHTML='';
@@ -1420,7 +1420,7 @@ function selectCo(id){
   const infoHtml=`
     <div class="ri-tag">${c.role} · ${c.period}</div>
     <div class="ri-title">${c.name}</div>
-    <div class="ri-desc">${c.desc}</div>
+    <div class="ri-desc">${D.lang==='es'&&c.desc_es?c.desc_es:c.desc}</div>
     <div class="ri-row"><span class="ri-key">Engine</span><span class="ri-val">${c.engine}</span></div>
     <div class="ri-row"><span class="ri-key">Tools</span><span class="ri-val">${c.tools}</span></div>`;
   document.getElementById('riInner').innerHTML=infoHtml;
@@ -1804,10 +1804,10 @@ function addDragCard(card,arr,id,cb){
 
 /* companies */
 function renderAdminCos(){const g=document.getElementById('coCards');if(!g)return;g.innerHTML='';D.companies.forEach(c=>{const card=document.createElement('div');card.className='a-card';card.draggable=true;card.dataset.id=c.id;card.innerHTML=`<img class="a-card-img" src="${c.thumb}" alt="${c.name}"><div class="a-card-body"><div class="a-card-title"><span class="drag-h">⠿</span>${c.name}</div><div class="a-card-sub">${c.role} · ${c.period}</div><div class="a-card-desc">${c.desc}</div><div class="a-card-actions"><button class="ab primary" onclick="openEditCo('${c.id}')">Edit</button><button class="ab" onclick="showSec('videos');setTimeout(()=>{document.getElementById('vidCoSel').value='${c.id}';renderVidMgr();},80)">Clips &amp; Proyectos</button><button class="ab danger" onclick="deleteCo('${c.id}')">Delete</button></div></div>`;addDragCard(card,D.companies,c.id,()=>{save();renderAdminCos();renderExpList();renderMobSidebar();renderCurrentCompanyInfo();renderVidCoSel();});g.appendChild(card);});}
-function openAddCo(){openModal('Add Company','',`<div class="a-form"><div class="frow"><div class="fg"><label class="fl">Name</label><input class="fi" id="mc-n"></div><div class="fg"><label class="fl">Role</label><input class="fi" id="mc-r" value="Senior VFX Artist"></div></div><div class="frow"><div class="fg"><label class="fl">Period</label><input class="fi" id="mc-p"></div><div class="fg"><label class="fl">Engine</label><input class="fi" id="mc-e"></div></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="mc-t"></div><div class="fg"><label class="fl">Description</label><textarea class="fta" id="mc-d"></textarea></div><div class="fg"><label class="fl">Logo URL</label><input class="fi" id="mc-l"></div><div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="mc-th"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:'confirmAddCo()'}]);}
-function confirmAddCo(){D.companies.push({id:uid(),name:gv('mc-n')||'New Company',role:gv('mc-r'),period:gv('mc-p'),engine:gv('mc-e'),tools:gv('mc-t'),desc:gv('mc-d'),logo:gv('mc-l'),thumb:gv('mc-th'),clips:[],projects:[]});save();closeModal();renderAdminCos();renderVidCoSel();toast('Added');}
-function openEditCo(id){const c=D.companies.find(x=>x.id===id);openModal('Edit — '+c.name,'',`<div class="a-form"><div class="frow"><div class="fg"><label class="fl">Name</label><input class="fi" id="ec-n" value="${c.name}"></div><div class="fg"><label class="fl">Role</label><input class="fi" id="ec-r" value="${c.role}"></div></div><div class="frow"><div class="fg"><label class="fl">Period</label><input class="fi" id="ec-p" value="${c.period}"></div><div class="fg"><label class="fl">Engine</label><input class="fi" id="ec-e" value="${c.engine}"></div></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="ec-t" value="${c.tools}"></div><div class="fg"><label class="fl">Description</label><textarea class="fta" id="ec-d">${c.desc}</textarea></div><div class="fg"><label class="fl">Logo URL</label><input class="fi" id="ec-l" value="${c.logo}"></div><div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="ec-th" value="${c.thumb}"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditCo('${id}')`}]);}
-function confirmEditCo(id){const c=D.companies.find(x=>x.id===id);c.name=gv('ec-n');c.role=gv('ec-r');c.period=gv('ec-p');c.engine=gv('ec-e');c.tools=gv('ec-t');c.desc=gv('ec-d');c.logo=gv('ec-l');c.thumb=gv('ec-th');save();closeModal();renderAdminCos();toast('Updated');}
+function openAddCo(){openModal('Add Company','',`<div class="a-form"><div class="frow"><div class="fg"><label class="fl">Name</label><input class="fi" id="mc-n"></div><div class="fg"><label class="fl">Role</label><input class="fi" id="mc-r" value="Senior VFX Artist"></div></div><div class="frow"><div class="fg"><label class="fl">Period</label><input class="fi" id="mc-p"></div><div class="fg"><label class="fl">Engine</label><input class="fi" id="mc-e"></div></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="mc-t"></div><div class="fg"><label class="fl">Description (EN)</label><textarea class="fta" id="mc-d"></textarea></div><div class="fg"><label class="fl">Description (ES)</label><textarea class="fta" id="mc-des"></textarea></div><div class="fg"><label class="fl">Logo URL</label><input class="fi" id="mc-l"></div><div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="mc-th"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:'confirmAddCo()'}]);}
+function confirmAddCo(){D.companies.push({id:uid(),name:gv('mc-n')||'New Company',role:gv('mc-r'),period:gv('mc-p'),engine:gv('mc-e'),tools:gv('mc-t'),desc:gv('mc-d'),desc_es:gv('mc-des'),logo:gv('mc-l'),thumb:gv('mc-th'),clips:[],projects:[]});save();closeModal();renderAdminCos();renderVidCoSel();toast('Added');}
+function openEditCo(id){const c=D.companies.find(x=>x.id===id);openModal('Edit — '+c.name,'',`<div class="a-form"><div class="frow"><div class="fg"><label class="fl">Name</label><input class="fi" id="ec-n" value="${c.name}"></div><div class="fg"><label class="fl">Role</label><input class="fi" id="ec-r" value="${c.role}"></div></div><div class="frow"><div class="fg"><label class="fl">Period</label><input class="fi" id="ec-p" value="${c.period}"></div><div class="fg"><label class="fl">Engine</label><input class="fi" id="ec-e" value="${c.engine}"></div></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="ec-t" value="${c.tools}"></div><div class="fg"><label class="fl">Description (EN)</label><textarea class="fta" id="ec-d">${c.desc}</textarea></div><div class="fg"><label class="fl">Description (ES)</label><textarea class="fta" id="ec-des">${c.desc_es||''}</textarea></div><div class="fg"><label class="fl">Logo URL</label><input class="fi" id="ec-l" value="${c.logo}"></div><div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="ec-th" value="${c.thumb}"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditCo('${id}')`}]);}
+function confirmEditCo(id){const c=D.companies.find(x=>x.id===id);c.name=gv('ec-n');c.role=gv('ec-r');c.period=gv('ec-p');c.engine=gv('ec-e');c.tools=gv('ec-t');c.desc=gv('ec-d');c.desc_es=gv('ec-des');c.logo=gv('ec-l');c.thumb=gv('ec-th');save();closeModal();renderAdminCos();toast('Updated');}
 function deleteCo(id){if(!confirm('Delete?'))return;D.companies=D.companies.filter(x=>x.id!==id);save();renderAdminCos();renderVidCoSel();toast('Deleted');}
 
 /* videos */
