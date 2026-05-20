@@ -1139,6 +1139,18 @@ function applyLang(){
   // refresh mobile blocks with correct lang
   renderMobSidebar();
   renderCurrentCompanyInfo();
+  // refresh desktop right panel if a company is selected
+  if(typeof activeCompany!=='undefined'&&activeCompany){
+    const ac=D.companies.find(x=>x.id===activeCompany);
+    if(ac){
+      const ri=document.getElementById('riInner');
+      if(ri&&!ri.querySelector('.ri-empty')){
+        const isEs=L==='es';
+        ri.querySelector('.ri-desc').textContent=isEs&&ac.desc_es?ac.desc_es:ac.desc;
+        ri.querySelectorAll('.ri-key').forEach((k,i)=>{if(i===0)k.textContent=t('engine');if(i===1)k.textContent=t('tools');});
+      }
+    }
+  }
 }
 
 /* ══ COLOR THEME ══ */
