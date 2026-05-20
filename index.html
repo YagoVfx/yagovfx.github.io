@@ -1132,7 +1132,8 @@ function applyLang(){
   const tagsSrc=isEs?(p.availTags_es||p.availTags_en||p.availTags):(p.availTags_en||p.availTags);
   const tagsHtml=tagsSrc.split(',').map(tg=>`<span class="avail-tag">${tg.trim()}</span>`).join('');
   ['availTags','mavailTags'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML=tagsHtml;});
-  // refresh mobInfo so company info re-renders with correct lang
+  // refresh mobile blocks with correct lang
+  renderMobSidebar();
   renderCurrentCompanyInfo();
 }
 
