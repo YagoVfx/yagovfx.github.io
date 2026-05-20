@@ -1084,6 +1084,8 @@ const TX={
     select_proj:'Select a project',
     no_clips:'No clips yet',
     clips:'Clips',
+    engine:'Engine',
+    tools:'Tools',
   },
   es:{
     open_to_work:'Disponible',
@@ -1093,6 +1095,8 @@ const TX={
     select_proj:'Selecciona un proyecto',
     no_clips:'Sin clips aún',
     clips:'Clips',
+    engine:'Motor',
+    tools:'Herramientas',
   }
 };
 function t(k){return(TX[D.lang]||TX.en)[k]||k;}
@@ -1377,8 +1381,8 @@ function renderCurrentCompanyInfo(){
       <div class="ri-tag">${c.role} · ${c.period}</div>
       <div class="ri-title">${c.name}</div>
       <div class="ri-desc">${c.desc}</div>
-      <div class="ri-row"><span class="ri-key">Engine</span><span class="ri-val">${c.engine}</span></div>
-      <div class="ri-row"><span class="ri-key">Tools</span><span class="ri-val">${c.tools}</span></div>
+      <div class="ri-row"><span class="ri-key">${t('engine')}</span><span class="ri-val">${c.engine}</span></div>
+      <div class="ri-row"><span class="ri-key">${t('tools')}</span><span class="ri-val">${c.tools}</span></div>
     </div>`;
 }
 
