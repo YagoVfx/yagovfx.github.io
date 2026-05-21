@@ -2389,6 +2389,7 @@ function _renderPostEditor(isNew){
   <div class="fg"><label class="fl">URL imagen de portada</label><input id="pe-thumb" class="fi" value="${(p.thumb||'').replace(/"/g,'&quot;')}"></div>
   <div class="fg"><label class="fl">Fecha</label><input id="pe-date" class="fi" type="date" value="${p.date||''}"></div>
   <div class="fg"><label class="fl">Categorías</label><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">${catsHtml}</div></div>
+  <div class="toggle-row"><div><div class="toggle-lbl">Visible</div><div class="toggle-sub">Público — aparece en el Devlog para visitantes. Desactívalo para mantenerlo oculto.</div></div><label class="tog"><input id="pe-vis" type="checkbox" ${p.visible!==false?'checked':''}><span class="tog-sl"></span></label></div>
   <div class="toggle-row"><div><div class="toggle-lbl">Premium</div><div class="toggle-sub">Bloqueado — muestra gate con enlace de pago</div></div><label class="tog"><input id="pe-prem" type="checkbox" ${p.premium?'checked':''}><span class="tog-sl"></span></label></div>
   <div class="fg"><label class="fl">Premium URL (Patreon / Ko-fi)</label><input id="pe-premurl" class="fi" value="${(D.premiumUrl||'').replace(/"/g,'&quot;')}" placeholder="https://patreon.com/yourpage"></div>
   <div style="border-top:1px solid var(--line);padding-top:14px;"><div class="fl" style="margin-bottom:8px;">Plantilla</div><div class="block-add-row">${tplBtns}</div></div>
