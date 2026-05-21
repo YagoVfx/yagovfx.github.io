@@ -480,7 +480,7 @@ option{background:var(--bg2);}
 @media(max-width:768px){#postListView{padding:20px 14px;}}
 .pl-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
 .pl-title{font-size:22px;font-weight:800;letter-spacing:-.02em;}
-.pl-cats{display:flex;flex-wrap:wrap;gap:6px;}
+.pl-cats{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin;}
 .cat-pill{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);border-radius:20px;background:transparent;color:var(--sub);cursor:pointer;transition:all .18s;}
 .cat-pill:hover,.cat-pill.active{border-color:var(--accent);color:var(--accent);background:rgba(124,92,252,.08);}
 .posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
@@ -2182,6 +2182,19 @@ function applySEO(){
      availableFor:{'@type':'Offer',description:s.availability||''}},
     {'@type':'CreativeWork','@id':url+'#portfolio',name:title,description:desc,url:url,author:{'@id':url+'#person'},keywords:s.keywords||''}
   ]};
+  // Add CreativeWork entries for each visible post
+  const visiblePosts=(D.posts||[]).filter(p=>p.visible!==false);
+  visiblePosts.forEach(p=>{
+    schema['@graph'].push({
+      '@type':'Article',
+      headline:p.title,
+      description:p.desc||'',
+      author:{'@id':url+'#person'},
+      keywords:(p.cats||[]).join(', '),
+      url:url+'#post-'+p.id,
+      datePublished:p.date||'',
+    });
+  });
   const jld=document.getElementById('seo-jsonld');if(jld)jld.textContent=JSON.stringify(schema);
 }
 function renderSeoAdmin(){
@@ -2282,7 +2295,11 @@ function _showPostList(){
 }
 function _renderCats(){
   const el=document.getElementById('postCatsFilter');if(!el)return;
-  el.innerHTML=['all',...POST_CATS].map(c=>`<button class="cat-pill${_activeCat===c?' active':''}" onclick="_setCat('${c}')">${c==='all'?'All':c}</button>`).join('');
+  // Build category list dynamically from visible posts
+  const catSet=new Set();
+  (D.posts||[]).filter(p=>p.visible!==false).forEach(p=>(p.cats||[]).forEach(c=>catSet.add(c)));
+  const cats=['all',...Array.from(catSet).sort()];
+  el.innerHTML=cats.map(c=>`<button class="cat-pill${_activeCat===c?' active':''}" onclick="_setCat('${c}')">${c==='all'?'All':c}</button>`).join('');
 }
 function _setCat(c){_activeCat=c;_renderCats();_renderGrid();}
 function _renderGrid(){
@@ -2351,6 +2368,17 @@ let _ep=null,_eb=[];
 function renderPostsAdmin(){
   const g=document.getElementById('postsAdminGrid');if(!g)return;
   const posts=D.posts||[];
+  const hiddenCount=(posts||[]).filter(p=>p.visible===false).length;
+  const visibleCount=posts.length-hiddenCount;
+  // Global toggle bar
+  const globalBar=document.createElement('div');
+  globalBar.style.cssText='display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding:10px 14px;background:var(--bg3);border:1px solid var(--line);border-radius:6px;flex-wrap:wrap;gap:8px;';
+  globalBar.innerHTML=`<span style="font-family:var(--mono);font-size:9px;color:var(--sub);">${visibleCount} visible · ${hiddenCount} hidden</span>
+    <div style="display:flex;gap:8px;">
+      <button class="ab primary" onclick="_setAllVisible(true)" style="font-size:9px;padding:5px 12px;">Publicar todos</button>
+      <button class="ab" onclick="_setAllVisible(false)" style="font-size:9px;padding:5px 12px;">Ocultar todos</button>
+    </div>`;
+  g.parentElement.insertBefore(globalBar,g);
   if(!posts.length){g.innerHTML='<div style="color:var(--sub);font-size:11px;padding:8px 0;">Sin posts todavía. Crea el primero.</div>';return;}
   g.innerHTML='';
   posts.forEach(p=>{
@@ -2361,7 +2389,11 @@ function renderPostsAdmin(){
       <div class="post-adm-body">
         <div class="a-card-title">${p.title||'Untitled'}</div>
         <div class="a-card-sub">${(p.cats||[]).join(' · ')||'Sin categoría'} · ${_fmt(p.date)}</div>
-        <div class="a-card-actions" style="margin-top:8px;">
+        <div class="a-card-actions" style="margin-top:8px;flex-wrap:wrap;gap:4px;">
+          <label style="display:flex;align-items:center;gap:5px;font-size:10px;cursor:pointer;width:100%;margin-bottom:2px;">
+            <input type="checkbox" ${p.visible!==false?'checked':''} onchange="togglePostVisible('${p.id}',this.checked)">
+            <span style="color:${p.visible!==false?'var(--green)':'var(--sub)'};">${p.visible!==false?'Visible':'Hidden'}</span>
+          </label>
           <button class="ab primary" onclick="openEditPost('${p.id}')">Edit</button>
           <button class="ab danger" onclick="deletePost('${p.id}')">Delete</button>
         </div>
@@ -2379,7 +2411,9 @@ function openEditPost(id){
 }
 function _renderPostEditor(isNew){
   const p=window._ep;const sec=document.getElementById('sec-posts');
-  const catsHtml=POST_CATS.map(ct=>`<label style="display:flex;align-items:center;gap:5px;font-size:11px;cursor:pointer;"><input type="checkbox" value="${ct}" ${(p.cats||[]).includes(ct)?'checked':''} onchange="_toggleCat('${ct}',this.checked)"> ${ct}</label>`).join('');
+  const allCats=[...new Set([...POST_CATS,...(D.posts||[]).flatMap(p=>p.cats||[]),...(window._ep.cats||[])].filter(Boolean))].sort();
+  const catsHtml=allCats.map(ct=>`<label style="display:flex;align-items:center;gap:5px;font-size:11px;cursor:pointer;"><input type="checkbox" value="${ct}" ${(p.cats||[]).includes(ct)?'checked':''} onchange="_toggleCat('${ct}',this.checked)"> ${ct}</label>`).join('')
+    +`<div style="margin-top:8px;display:flex;gap:6px;align-items:center;"><input class="fi" id="new-cat-input" placeholder="Nueva categoría…" style="flex:1;"><button class="ab" onclick="_addNewCat()">+ Añadir</button></div>`;
   const tplBtns=Object.entries(POST_TPLS).map(([k,v])=>`<button class="block-add-btn" onclick="_applyTpl('${k}')">${v.label}</button>`).join('');
   const addBtns=[['hero-video','🎬 Hero Video'],['compare','⚡ Before/After'],['intent','💬 Intent'],['text','📝 Text'],['image','🖼 Image'],['video','▶ Video'],['breakdown','🔲 Breakdown Grid'],['params','⚙ Parameters'],['metrics','📊 Metrics'],['divider','— Divider']].map(([t,l])=>`<button class="block-add-btn" onclick="_addBlock('${t}')">${l}</button>`).join('');
   sec.innerHTML=`<div class="a-title">${isNew?'New Post':'Edit Post'}</div>
@@ -2403,6 +2437,16 @@ function _cancelPostEditor(){
   sec.innerHTML=`<div class="a-title">Devlog Posts</div><div class="a-sub">Breakdowns, devlogs y artículos técnicos.</div><button class="a-add-btn" id="newPostBtn">＋ New Post</button><div class="posts-adm-grid" id="postsAdminGrid"></div>`;
   document.getElementById('newPostBtn').addEventListener('click',openAddPost);
   renderPostsAdmin();
+}
+function _addNewCat(){
+  const inp=document.getElementById('new-cat-input');
+  if(!inp)return;
+  const val=inp.value.trim();
+  if(!val)return;
+  _toggleCat(val,true);
+  inp.value='';
+  // Re-render editor to show new cat checked
+  _renderPostEditor(window._ep.id===window._ep.id);
 }
 function _toggleCat(ct,on){if(!window._ep.cats)window._ep.cats=[];if(on){if(!window._ep.cats.includes(ct))window._ep.cats.push(ct);}else window._ep.cats=window._ep.cats.filter(x=>x!==ct);}
 function _applyTpl(key){
@@ -2467,6 +2511,15 @@ function savePost(){
   toast('Post guardado ✓');
   _cancelPostEditor();
 }
+function togglePostVisible(id,on){
+  const p=(D.posts||[]).find(x=>x.id===id);if(!p)return;
+  p.visible=on;save();renderPostsAdmin();applySEO();
+}
+function _setAllVisible(on){
+  (D.posts||[]).forEach(p=>p.visible=on);
+  save();renderPostsAdmin();applySEO();
+  toast(on?'Todos los posts publicados ✓':'Todos los posts ocultados');
+}
 function deletePost(id){if(!confirm('Delete this post?'))return;D.posts=(D.posts||[]).filter(x=>x.id!==id);save();renderPostsAdmin();toast('Deleted');}
 
 /* ══ EXPOSE GLOBALS — must run synchronously before any onclick fires ══ */
@@ -2485,7 +2538,7 @@ Object.assign(window,{
   setExpCards,setCoverBg,applyFont,applyFontSize,applyAnimSpd,applyAnimEase,
   setLang,toggleLang,
   saveSeo,applySEO,renderSeoAdmin,importPosts,
-  openDevlog,openAddPost,openEditPost,deletePost,savePost,renderPostsAdmin,
+  openDevlog,openAddPost,togglePostVisible,_setAllVisible,_addNewCat,openEditPost,deletePost,savePost,renderPostsAdmin,
   fetchVideoMeta,
   openAddProject,confirmAddProject,openEditProject,confirmEditProject,deleteProject,
   _setCat,_openPost,_applyTpl,_addBlock,_rmBlock,_mvBlock,
