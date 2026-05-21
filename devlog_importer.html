@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Devlog Post Importer</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0b0f;color:#e0e0e0;min-height:100vh;padding:40px 24px;}
+  h1{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px;}
+  .sub{font-size:12px;color:#666;margin-bottom:32px;line-height:1.6;}
+  .card{background:#111318;border:1px solid #1e2030;border-radius:10px;padding:24px;margin-bottom:16px;}
+  .card h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7c5cfc;margin-bottom:14px;font-family:monospace;}
+  .drop-zone{border:2px dashed #2a2d3e;border-radius:8px;padding:40px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:16px;}
+  .drop-zone:hover,.drop-zone.over{border-color:#7c5cfc;background:rgba(124,92,252,.05);}
+  .drop-zone p{font-size:13px;color:#555;margin-bottom:8px;}
+  .drop-zone span{font-size:11px;color:#333;font-family:monospace;}
+  input[type=file]{display:none;}
+  table{width:100%;border-collapse:collapse;font-size:11px;margin-top:14px;}
+  th{background:#0d0e14;padding:8px 10px;text-align:left;font-family:monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#555;border-bottom:1px solid #1e2030;}
+  td{padding:8px 10px;border-bottom:1px solid #141620;vertical-align:top;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  tr:hover td{background:rgba(255,255,255,.02);}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:#7c5cfc;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;transition:background .2s;}
+  .btn:hover{background:#9b7ffd;}
+  .btn:disabled{background:#2a2d3e;color:#444;cursor:default;}
+  .btn-sec{background:#1a1d2e;border:1px solid #2a2d3e;color:#aaa;}
+  .btn-sec:hover{background:#222538;color:#fff;}
+  .output{background:#0d0e14;border:1px solid #1e2030;border-radius:6px;padding:16px;font-family:monospace;font-size:10px;color:#4ade80;max-height:300px;overflow-y:auto;white-space:pre-wrap;word-break:break-all;}
+  .tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:9px;font-family:monospace;letter-spacing:.08em;background:rgba(124,92,252,.15);color:#9b7ffd;border:1px solid rgba(124,92,252,.2);}
+  .row-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+  .info{background:rgba(124,92,252,.07);border:1px solid rgba(124,92,252,.2);border-radius:6px;padding:12px 14px;font-size:11px;color:#888;line-height:1.7;margin-bottom:14px;}
+  .info strong{color:#e0e0e0;}
+  #status{font-size:11px;font-family:monospace;color:#4ade80;margin-top:10px;min-height:16px;}
+  .col-map{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+  .col-map label{font-size:10px;color:#666;display:block;margin-bottom:3px;font-family:monospace;}
+  select{width:100%;background:#0d0e14;border:1px solid #2a2d3e;color:#e0e0e0;padding:6px 8px;border-radius:4px;font-size:11px;}
+</style>
+</head>
+<body>
+
+<h1>Devlog Post Importer</h1>
+<p class="sub">Convierte tu Excel/CSV a JSON listo para importar en el portfolio.<br>Los posts se crean con IDs estables — si reimportas el mismo archivo, no se duplican.</p>
+
+<div class="card">
+  <h2>1. Cargar archivo</h2>
+  <div class="info">
+    <strong>Formato esperado:</strong> columnas en este orden:
+    <code>Categoría | Idea/Post | Explicación ES | Explicación ENG | Nodos | Qué ocurre ES | Qué ocurre ENG | Conexiones</code><br>
+    También acepta CSV. La primera fila debe ser cabecera.
+  </div>
+  <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+    <p>Arrastra tu .xlsx o .csv aquí</p>
+    <span>o haz clic para seleccionar</span>
+  </div>
+  <input type="file" id="fileInput" accept=".xlsx,.xls,.csv">
+  <div id="preview"></div>
+</div>
+
+<div class="card" id="configCard" style="display:none;">
+  <h2>2. Configurar columnas</h2>
+  <p style="font-size:11px;color:#555;margin-bottom:14px;">Asigna qué columna de tu archivo corresponde a cada campo. Se detectan automáticamente si los nombres coinciden.</p>
+  <div class="col-map" id="colMap"></div>
+</div>
+
+<div class="card" id="generateCard" style="display:none;">
+  <h2>3. Generar JSON</h2>
+  <div class="info" id="summaryInfo"></div>
+  <div class="row-actions">
+    <button class="btn" onclick="generateJSON()">⚡ Generar JSON</button>
+  </div>
+  <div id="status"></div>
+</div>
+
+<div class="card" id="outputCard" style="display:none;">
+  <h2>4. Resultado</h2>
+  <div class="row-actions" style="margin-bottom:14px;">
+    <button class="btn btn-sec" onclick="copyJSON()">📋 Copiar JSON</button>
+    <button class="btn btn-sec" onclick="downloadJSON()">⬇ Descargar .json</button>
+  </div>
+  <div class="output" id="jsonOutput"></div>
+</div>
+
+<script>
+const CAT_MAP={'Fade/Depth':'Shader','Fresnel':'Shader','UVs':'Shader','Masks':'Shader','Emissive':'Shader','Transparency':'Shader','Niagara':'Niagara','Optimization':'Pipeline','Combat VFX':'Niagara','Post Process':'Shader','Tech Art':'TechArt','Pipeline':'Pipeline','Material':'Material','3D':'3D','Houdini':'Houdini','Photoshop':'Photoshop','Shuriken':'Shuriken','Embergen':'Embergen','Liquidgen':'Liquidgen'};
+let _rows=[], _headers=[], _jsonResult='';
+
+// Drag & drop
+const dz=document.getElementById('dropZone');
+dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('over');});
+dz.addEventListener('dragleave',()=>dz.classList.remove('over'));
+dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('over');handleFile(e.dataTransfer.files[0]);});
+document.getElementById('fileInput').addEventListener('change',e=>handleFile(e.target.files[0]));
+
+function handleFile(file){
+  if(!file)return;
+  const ext=file.name.split('.').pop().toLowerCase();
+  const reader=new FileReader();
+  reader.onload=e=>{
+    let wb;
+    if(ext==='csv'){
+      wb=XLSX.read(e.target.result,{type:'string'});
+    } else {
+      wb=XLSX.read(e.target.result,{type:'array'});
+    }
+    const ws=wb.Sheets[wb.SheetNames[0]];
+    const data=XLSX.utils.sheet_to_json(ws,{header:1,defval:''});
+    _headers=data[0].map(String);
+    _rows=data.slice(1).filter(r=>r.some(v=>v!==''));
+    showPreview(file.name);
+    showConfig();
+  };
+  if(ext==='csv') reader.readAsText(file);
+  else reader.readAsArrayBuffer(file);
+}
+
+function showPreview(name){
+  const p=document.getElementById('preview');
+  p.innerHTML=`<p style="font-size:11px;color:#4ade80;margin-top:10px;">✓ ${name} — ${_rows.length} filas, ${_headers.length} columnas</p>
+  <div style="overflow-x:auto;margin-top:10px;"><table><thead><tr>${_headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead>
+  <tbody>${_rows.slice(0,3).map(r=>`<tr>${_headers.map((_,i)=>`<td title="${r[i]||''}">${r[i]||''}</td>`).join('')}</tr>`).join('')}</tbody></table>
+  <p style="font-size:10px;color:#333;margin-top:6px;">(mostrando 3 de ${_rows.length} filas)</p></div>`;
+}
+
+const FIELD_NAMES={cat:'Categoría / Category',title:'Título / Title',desc_es:'Descripción ES',desc_en:'Descripción EN',nodes:'Nodos / Nodes',what_es:'Qué ocurre ES',what_en:'Qué ocurre EN / What happens',connections:'Conexiones / Connections'};
+const FIELD_HINTS={cat:'Categoría',title:'Idea/Post',desc_es:'Explicación ES',desc_en:'Explicación ENG',nodes:'Nodos',what_es:'ocurre realmente ES',what_en:'ocurre realmente ENG',connections:'Conexiones'};
+
+function showConfig(){
+  document.getElementById('configCard').style.display='block';
+  document.getElementById('generateCard').style.display='block';
+  const cm=document.getElementById('colMap');
+  cm.innerHTML='';
+  Object.entries(FIELD_NAMES).forEach(([key,label])=>{
+    const hint=FIELD_HINTS[key].toLowerCase();
+    const autoIdx=_headers.findIndex(h=>h.toLowerCase().includes(hint));
+    const opts=_headers.map((h,i)=>`<option value="${i}" ${autoIdx===i?'selected':''}>${h}</option>`).join('');
+    cm.innerHTML+=`<div><label>${label}</label><select id="col-${key}"><option value="-1">— ignorar —</option>${opts}</select></div>`;
+  });
+  document.getElementById('summaryInfo').innerHTML=`Se generarán hasta <strong>${_rows.length} posts</strong> ocultos por defecto. IDs basados en el título para evitar duplicados al reimportar.`;
+}
+
+function g(id){const e=document.getElementById(id);return e?parseInt(e.value):-1;}
+
+function generateJSON(){
+  const posts=[];
+  const seen=new Set();
+  _rows.forEach(row=>{
+    const title=(g('col-title')>=0?row[g('col-title')]:'').toString().trim();
+    if(!title||seen.has(title))return;
+    seen.add(title);
+    const cat=(g('col-cat')>=0?row[g('col-cat')]:'').toString().trim();
+    const desc_es=(g('col-desc_es')>=0?row[g('col-desc_es')]:'').toString().trim();
+    const desc_en=(g('col-desc_en')>=0?row[g('col-desc_en')]:'').toString().trim();
+    const nodes=(g('col-nodes')>=0?row[g('col-nodes')]:'').toString().trim();
+    const what_en=(g('col-what_en')>=0?row[g('col-what_en')]:'').toString().trim();
+    const connections=(g('col-connections')>=0?row[g('col-connections')]:'').toString().trim();
+    // Stable ID from title
+    const stableId='xl_'+simpleHash(title);
+    const mappedCat=CAT_MAP[cat]||'TechArt';
+    const blocks=[
+      {type:'intent',id:stableId+'_b0',label:'What this is',text:desc_en||desc_es},
+      {type:'text',id:stableId+'_b1',label:'How it works',html:`<p>${what_en}</p>`},
+    ];
+    if(nodes){
+      blocks.push({type:'params',id:stableId+'_b2',label:'Key Nodes / Math',
+        items:nodes.split(',').map(n=>({key:n.trim(),val:''})).filter(n=>n.key)});
+    }
+    if(connections){
+      blocks.push({type:'text',id:stableId+'_b3',label:'Node connections',
+        html:`<p><code>${connections}</code></p>`});
+    }
+    posts.push({id:stableId,title,desc:desc_en.slice(0,120),desc_es:desc_es.slice(0,120),
+      thumb:'',date:new Date().toISOString().slice(0,10),
+      cats:[mappedCat],premium:false,visible:false,blocks,
+      _source:'xlsx',_row_title:title});
+  });
+  _jsonResult=JSON.stringify(posts,null,2);
+  document.getElementById('jsonOutput').textContent=_jsonResult;
+  document.getElementById('outputCard').style.display='block';
+  document.getElementById('status').textContent=`✓ ${posts.length} posts generados.`;
+}
+
+function simpleHash(str){let h=0;for(let i=0;i<str.length;i++){h=((h<<5)-h)+str.charCodeAt(i);h|=0;}return(h>>>0).toString(36).slice(0,8);}
+
+function copyJSON(){navigator.clipboard.writeText(_jsonResult).then(()=>{document.getElementById('status').textContent='✓ Copiado al portapapeles';});}
+
+function downloadJSON(){
+  const a=document.createElement('a');
+  a.href='data:application/json;charset=utf-8,'+encodeURIComponent(_jsonResult);
+  a.download='devlog_posts_import.json';a.click();
+}
+</script>
+</body>
+</html>
