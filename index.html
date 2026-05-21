@@ -667,6 +667,7 @@ option{background:var(--bg2);}
       <div class="adm-nav-sec">System</div>
       <div class="adm-nav-item" onclick="showSec('posts')" data-s="posts"><span class="adm-icon">✍️</span>Devlog Posts</div>
       <div class="adm-nav-item" onclick="showSec('links')" data-s="links"><span class="adm-icon">🔗</span>Links</div>
+      <div class="adm-nav-item" onclick="showSec('import')" data-s="import"><span class="adm-icon">⬆</span>Import</div>
       <div class="adm-nav-item" onclick="showSec('seo')" data-s="seo"><span class="adm-icon">🔍</span>SEO</div>
       <div class="adm-nav-item" onclick="showSec('settings')" data-s="settings"><span class="adm-icon">⚙️</span>Settings</div>
     </nav>
@@ -900,6 +901,22 @@ option{background:var(--bg2);}
 
           <div class="f-actions" style="padding-top:6px;">
             <button class="ab primary" onclick="saveSeo()">Guardar SEO</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMPORT POSTS -->
+      <div class="adm-sec" id="sec-import">
+        <div class="a-title">Import Posts</div>
+        <div class="a-sub">Pega un JSON de posts (generado desde tu Excel/CSV). Los posts con IDs ya existentes se <strong>omiten</strong> — solo se añaden los nuevos. Los posts importados se crean como <strong>ocultos</strong> para que los termines tú.</div>
+        <div style="max-width:660px;display:grid;gap:10px;margin-top:14px;">
+          <div class="fg"><label class="fl">JSON de posts</label><textarea class="fta" id="import-json" style="min-height:140px;font-family:var(--mono);font-size:10px;" placeholder='[{"id":"xl_abc123","title":"Camera Fade...","cats":["Shader"],...}]'></textarea></div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <button class="ab primary" onclick="importPosts()">⬆ Importar</button>
+            <div id="import-status" style="font-family:var(--mono);font-size:9px;color:var(--sub);"></div>
+          </div>
+          <div class="hint-box" style="margin-top:4px;">
+            <strong>Identificadores estables:</strong> los posts del Excel tienen IDs basados en el título (ej. <code>xl_a1b2c3d4</code>). Si vuelves a importar el mismo JSON, solo se añadirán filas nuevas. Para forzar re-import de uno borra su ID de la base de datos primero.
           </div>
         </div>
       </div>
@@ -2113,6 +2130,35 @@ window.addEventListener('resize', syncMobileBlocks);
 
 
 
+
+/* ══ IMPORT POSTS ══ */
+function importPosts(){
+  const raw=document.getElementById('import-json').value.trim();
+  const status=document.getElementById('import-status');
+  if(!raw){status.textContent='Pega un JSON primero.';return;}
+  let incoming;
+  try{incoming=JSON.parse(raw);}
+  catch(e){status.textContent='JSON inválido: '+e.message;status.style.color='var(--red)';return;}
+  if(!Array.isArray(incoming)){status.textContent='El JSON debe ser un array []';status.style.color='var(--red)';return;}
+  if(!D.posts)D.posts=[];
+  const existingIds=new Set(D.posts.map(p=>p.id));
+  let added=0,skipped=0;
+  incoming.forEach(p=>{
+    if(!p.id||!p.title){skipped++;return;}
+    if(existingIds.has(p.id)){skipped++;return;}
+    // Ensure hidden by default on import
+    p.visible=p.visible===true?true:false;
+    D.posts.push(p);
+    existingIds.add(p.id);
+    added++;
+  });
+  save();
+  renderPostsAdmin();
+  status.textContent=`✓ ${added} posts añadidos, ${skipped} omitidos (ya existían o inválidos).`;
+  status.style.color='var(--green)';
+  if(added>0)document.getElementById('import-json').value='';
+}
+
 /* ══ SEO ══ */
 function applySEO(){
   const s=D.seo||{};
@@ -2241,7 +2287,7 @@ function _renderCats(){
 function _setCat(c){_activeCat=c;_renderCats();_renderGrid();}
 function _renderGrid(){
   const grid=document.getElementById('postsGrid');if(!grid)return;
-  const posts=(D.posts||[]).filter(p=>_activeCat==='all'||(p.cats||[]).includes(_activeCat));
+  const posts=(D.posts||[]).filter(p=>(p.visible!==false)&&(_activeCat==='all'||(p.cats||[]).includes(_activeCat)));
   if(!posts.length){grid.innerHTML='<div style="color:var(--sub);font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:20px 0;">No posts yet.</div>';return;}
   grid.innerHTML='';
   posts.forEach(p=>{
@@ -2311,6 +2357,7 @@ function renderPostsAdmin(){
     const d=document.createElement('div');d.className='post-adm-card';
     d.innerHTML=`${p.thumb?`<img class="post-adm-thumb" src="${p.thumb}" alt="">`:`<div class="post-adm-nothumb">✍️</div>`}
       <span class="post-adm-badge ${p.premium?'premium':'free'}">${p.premium?'Premium':'Free'}</span>
+      ${p.visible===false?'<span class="post-adm-badge free" style="top:28px;background:rgba(180,180,180,.8);color:#111;">Hidden</span>':''}
       <div class="post-adm-body">
         <div class="a-card-title">${p.title||'Untitled'}</div>
         <div class="a-card-sub">${(p.cats||[]).join(' · ')||'Sin categoría'} · ${_fmt(p.date)}</div>
@@ -2409,6 +2456,7 @@ function savePost(){
   if(g('pe-thumb'))window._ep.thumb=g('pe-thumb').value;
   if(g('pe-date'))window._ep.date=g('pe-date').value;
   if(g('pe-prem'))window._ep.premium=g('pe-prem').checked;
+  if(g('pe-vis'))window._ep.visible=g('pe-vis').checked;
   if(g('pe-premurl'))D.premiumUrl=g('pe-premurl').value;
   window._ep.blocks=JSON.parse(JSON.stringify(window._eb||[]));
   const idx=D.posts.findIndex(x=>x.id===window._ep.id);
@@ -2435,7 +2483,7 @@ Object.assign(window,{
   saveSettings,exportData,resetData,openModal,closeModal,toast,
   setExpCards,setCoverBg,applyFont,applyFontSize,applyAnimSpd,applyAnimEase,
   setLang,toggleLang,
-  saveSeo,applySEO,renderSeoAdmin,
+  saveSeo,applySEO,renderSeoAdmin,importPosts,
   openDevlog,openAddPost,openEditPost,deletePost,savePost,renderPostsAdmin,
   fetchVideoMeta,
   openAddProject,confirmAddProject,openEditProject,confirmEditProject,deleteProject,
