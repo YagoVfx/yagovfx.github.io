@@ -745,6 +745,13 @@ option{background:var(--bg2);}
         <div class="a-title">Devlog Posts</div>
         <div class="a-sub">Breakdowns, devlogs y artículos técnicos. <span style="color:var(--green);">Free</span> = visible · <span style="color:var(--accent2);">Premium</span> = bloqueado con enlace de pago.</div>
         <button class="a-add-btn" id="newPostBtn">＋ New Post</button>
+        <div id="posts-global-bar" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding:10px 14px;background:var(--bg3);border:1px solid var(--line);border-radius:6px;flex-wrap:wrap;gap:8px;">
+          <span id="posts-bar-count" style="font-family:var(--mono);font-size:9px;color:var(--sub);">0 visible · 0 hidden</span>
+          <div style="display:flex;gap:8px;">
+            <button class="ab primary" onclick="_setAllVisible(true)" style="font-size:9px;padding:5px 12px;">Publicar todos</button>
+            <button class="ab" onclick="_setAllVisible(false)" style="font-size:9px;padding:5px 12px;">Ocultar todos</button>
+          </div>
+        </div>
         <div class="posts-adm-grid" id="postsAdminGrid"></div>
       </div>
 
@@ -909,6 +916,7 @@ option{background:var(--bg2);}
       <div class="adm-sec" id="sec-import">
         <div class="a-title">Import Posts</div>
         <div class="a-sub">Pega un JSON de posts (generado desde tu Excel/CSV). Los posts con IDs ya existentes se <strong>omiten</strong> — solo se añaden los nuevos. Los posts importados se crean como <strong>ocultos</strong> para que los termines tú.</div>
+        <a href="devlog_importer.html" target="_blank" class="ab primary" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;text-decoration:none;">🔧 Abrir conversor Excel → JSON</a>
         <div style="max-width:660px;display:grid;gap:10px;margin-top:14px;">
           <div class="fg"><label class="fl">JSON de posts</label><textarea class="fta" id="import-json" style="min-height:140px;font-family:var(--mono);font-size:10px;" placeholder='[{"id":"xl_abc123","title":"Camera Fade...","cats":["Shader"],...}]'></textarea></div>
           <div style="display:flex;align-items:center;gap:10px;">
@@ -2370,15 +2378,11 @@ function renderPostsAdmin(){
   const posts=D.posts||[];
   const hiddenCount=(posts||[]).filter(p=>p.visible===false).length;
   const visibleCount=posts.length-hiddenCount;
-  // Global toggle bar
-  const globalBar=document.createElement('div');
-  globalBar.style.cssText='display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding:10px 14px;background:var(--bg3);border:1px solid var(--line);border-radius:6px;flex-wrap:wrap;gap:8px;';
-  globalBar.innerHTML=`<span style="font-family:var(--mono);font-size:9px;color:var(--sub);">${visibleCount} visible · ${hiddenCount} hidden</span>
-    <div style="display:flex;gap:8px;">
-      <button class="ab primary" onclick="_setAllVisible(true)" style="font-size:9px;padding:5px 12px;">Publicar todos</button>
-      <button class="ab" onclick="_setAllVisible(false)" style="font-size:9px;padding:5px 12px;">Ocultar todos</button>
-    </div>`;
-  g.parentElement.insertBefore(globalBar,g);
+  // Update fixed global bar (already in HTML)
+  const bar=document.getElementById('posts-global-bar');
+  if(bar){
+    bar.querySelector('#posts-bar-count').textContent=`${visibleCount} visible · ${hiddenCount} hidden`;
+  }
   if(!posts.length){g.innerHTML='<div style="color:var(--sub);font-size:11px;padding:8px 0;">Sin posts todavía. Crea el primero.</div>';return;}
   g.innerHTML='';
   posts.forEach(p=>{
