@@ -76,6 +76,8 @@ html,body{font-family:var(--sans);background:var(--bg);color:var(--txt);}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:var(--bg);border-bottom:1px solid var(--line);z-index:50;flex-shrink:0;}
 .t-logo{font-size:13px;font-weight:800;letter-spacing:-.01em;display:flex;align-items:center;gap:9px;color:var(--txt);text-decoration:none;}
 .t-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accentglow);animation:pulse 2.5s ease-in-out infinite;flex-shrink:0;}
+.t-logo-img{width:28px;height:28px;border-radius:50%;object-fit:cover;flex-shrink:0;opacity:.92;transition:opacity .2s;}
+.t-logo:hover .t-logo-img{opacity:1;}
 @keyframes pulse{0%,100%{box-shadow:0 0 6px var(--accentglow);}50%{box-shadow:0 0 18px var(--accent),0 0 36px var(--accentglow);}}
 .t-right{display:flex;align-items:center;gap:6px;flex-wrap:nowrap;}
 #hdrLinks{display:flex;align-items:center;gap:6px;}
@@ -953,7 +955,7 @@ option{background:var(--bg2);}
 <!-- ══ APP ══ -->
 <div id="app" class="la" data-tool-size="medium">
   <header class="topbar">
-    <span class="t-logo"><span class="t-dot"></span><span id="topName">YAGO FX</span></span>
+    <span class="t-logo"><img class="t-logo-img" src="https://yagovfx.github.io/YF_Logo.jpeg" alt="YF Logo"><span id="topName">YAGO FX</span></span>
     <div class="t-right">
       <button class="tbtn devlog-btn" id="devlogBtn">Devlog</button>
       <div id="pageNavLinks"></div>
@@ -1744,7 +1746,10 @@ function generateCvPdf(){
           <div class="cvf-role">${p.role_en||p.role}</div>
           ${summary?`<div class="cvf-summary cvf-summarybox">${summary}</div>`:''}
         </div>
-        <div class="cvf-contact">${contactParts.map(x=>`<div>${x}</div>`).join('')}</div>
+        <div class="cvf-head-right">
+          <img class="cvf-logo" src="https://yagovfx.github.io/YF_Logo.jpeg" alt="YF">
+          <div class="cvf-contact">${contactParts.map(x=>`<div>${x}</div>`).join('')}</div>
+        </div>
       </div>
 
       <div class="cvf-section cvf-exp-section">
@@ -1775,6 +1780,8 @@ function generateCvPdf(){
     a{color:#7c5cfc;text-decoration:none;}
     .cvf-inner{max-width:720px;margin:0 auto;padding:18mm 16mm 14mm;font-size:10.5px;line-height:1.45;color:#222;}
     .cvf-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #111;gap:16px;}
+    .cvf-head-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0;}
+    .cvf-logo{width:56px;height:56px;border-radius:50%;object-fit:cover;border:1.5px solid #ddd;}
     .cvf-head-left{flex:1;min-width:0;}
     .cvf-name{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:3px;}
     .cvf-role{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#7c5cfc;margin-bottom:8px;}
