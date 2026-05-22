@@ -2371,8 +2371,8 @@ function _renderBlock(b){
     case 'intent':return `<div class="pb">${lbl}<div class="pb-intent">${b.text||''}</div></div>`;
     case 'text':return `<div class="pb pb-text">${lbl}${b.html||''}</div>`;
     case 'breakdown':return `<div class="pb">${lbl}<div class="pb-breakdown-grid">${(b.items||[]).filter(i=>i.url).map(i=>`<div class="pb-bd-item"><img src="${i.url}" alt="${i.caption||''}"><div class="pb-bd-lbl">${i.caption||''}</div></div>`).join('')}</div></div>`;
-    case 'params':return `<div class="pb">${lbl}<div class="pb-params-grid">${(b.items||[]).map(i=>`<div class="pb-param-row"><span class="pb-param-key">${i.key}</span><span class="pb-param-val">${i.val}</span></div>`).join('')}</div></div>`;
-    case 'metrics':return `<div class="pb">${lbl}<div class="pb-metrics-grid">${(b.items||[]).map(i=>`<div class="pb-metric"><div class="pb-metric-val">${i.val}</div><div class="pb-metric-lbl">${i.label}</div></div>`).join('')}</div></div>`;
+    case 'params':return `<div class="pb">${lbl}<div class="pb-params-grid">${(b.items||[]).filter(i=>i.key||i.val).map(i=>`<div class="pb-param-row"><span class="pb-param-key">${i.key}</span><span class="pb-param-val">${i.val}</span></div>`).join('')}</div></div>`;
+    case 'metrics':return `<div class="pb">${lbl}<div class="pb-metrics-grid">${(b.items||[]).filter(i=>i.val||i.label).map(i=>`<div class="pb-metric"><div class="pb-metric-val">${i.val}</div><div class="pb-metric-lbl">${i.label}</div></div>`).join('')}</div></div>`;
     case 'divider':return `<div class="pb"><hr class="pb-divider"></div>`;
     default:return'';
   }
@@ -2492,15 +2492,16 @@ function _blockFields(b){
     case 'compare':return lbl+`<div class="fl">Left URL</div>`+fi('leftUrl',b.leftUrl,'')+`<div class="fl">Left label</div>`+fi('leftLabel',b.leftLabel,'Before')+`<div class="fl">Right URL</div>`+fi('rightUrl',b.rightUrl,'')+`<div class="fl">Right label</div>`+fi('rightLabel',b.rightLabel,'After');
     case 'intent':return lbl+`<div class="fl">Text (2–3 líneas)</div>`+fta('text',b.text,'');
     case 'text':return lbl+`<div class="fl">HTML — &lt;p&gt; &lt;strong&gt; &lt;em&gt; &lt;ul&gt;&lt;li&gt; &lt;h3&gt;</div>`+fta('html',b.html,'<p>Tu texto</p>');
-    case 'breakdown':return lbl+`<div class="fl">Items</div>`+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:3px;"><input class="fi" placeholder="Image URL" value="${(it.url||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'url',this.value)"><input class="fi" placeholder="Caption" value="${(it.caption||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'caption',this.value)"></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addIt('${b.id}')">+ Imagen</button>`;
-    case 'params':return lbl+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:3px;"><input class="fi" placeholder="Param" value="${(it.key||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'key',this.value)"><input class="fi" placeholder="Value" value="${(it.val||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'val',this.value)"></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addIt('${b.id}')">+ Param</button>`;
-    case 'metrics':return lbl+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:3px;"><input class="fi" placeholder="Valor" value="${(it.val||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'val',this.value)"><input class="fi" placeholder="Label" value="${(it.label||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'label',this.value)"></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addIt('${b.id}')">+ Métrica</button>`;
+    case 'breakdown':return lbl+`<div class="fl">Items</div>`+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr 20px;gap:4px;margin-bottom:3px;align-items:center;"><input class="fi" placeholder="Image URL" value="${(it.url||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'url',this.value)"><input class="fi" placeholder="Caption" value="${(it.caption||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'caption',this.value)"><button onclick="_rmIt('${b.id}',${idx})" style="background:none;border:none;color:var(--sub);cursor:pointer;font-size:13px;line-height:1;padding:0;" title="Eliminar">✕</button></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addIt('${b.id}')">+ Imagen</button>`;
+    case 'params':return lbl+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr 20px;gap:4px;margin-bottom:3px;align-items:center;"><input class="fi" placeholder="Param" value="${(it.key||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'key',this.value)"><input class="fi" placeholder="Value" value="${(it.val||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'val',this.value)"><button onclick="_rmIt('${b.id}',${idx})" style="background:none;border:none;color:var(--sub);cursor:pointer;font-size:13px;line-height:1;padding:0;" title="Eliminar">✕</button></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addIt('${b.id}')">+ Param</button>`;
+    case 'metrics':return lbl+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr 20px;gap:4px;margin-bottom:3px;align-items:center;"><input class="fi" placeholder="Valor" value="${(it.val||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'val',this.value)"><input class="fi" placeholder="Label" value="${(it.label||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'label',this.value)"><button onclick="_rmIt('${b.id}',${idx})" style="background:none;border:none;color:var(--sub);cursor:pointer;font-size:13px;line-height:1;padding:0;" title="Eliminar">✕</button></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addIt('${b.id}')">+ Métrica</button>`;
     case 'divider':return `<div style="color:var(--sub);font-size:10px;">Línea separadora</div>`;
     default:return'';
   }
 }
 function _upd(id,k,v){const b=window._eb.find(x=>x.id===id);if(b)b[k]=v;}
 function _updIt(bid,idx,k,v){const b=window._eb.find(x=>x.id===bid);if(b&&b.items&&b.items[idx])b.items[idx][k]=v;}
+function _rmIt(bid,idx){const b=window._eb.find(x=>x.id===bid);if(b&&b.items)b.items.splice(idx,1);_renderBlockEditor();}
 function _addIt(bid){const b=window._eb.find(x=>x.id===bid);if(!b)return;if(!b.items)b.items=[];if(b.type==='params')b.items.push({key:'',val:''});else if(b.type==='metrics')b.items.push({val:'',label:''});else b.items.push({url:'',caption:''});_renderBlockEditor();}
 function savePost(){
   if(!window._ep){toast('Error: no post en edición');return;}
@@ -2553,7 +2554,7 @@ Object.assign(window,{
   fetchVideoMeta,
   openAddProject,confirmAddProject,openEditProject,confirmEditProject,deleteProject,
   _setCat,_openPost,_applyTpl,_addBlock,_rmBlock,_mvBlock,
-  _upd,_updIt,_addIt,_toggleCat,_cancelPostEditor,
+  _upd,_updIt,_addIt,_rmIt,_toggleCat,_cancelPostEditor,
 });
 
 
