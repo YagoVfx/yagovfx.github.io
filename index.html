@@ -2355,8 +2355,8 @@ function _openPost(id){
   document.getElementById('psMeta').innerHTML=`<span class="ps-date">${_fmt(p.date)}</span><span class="post-badge ${isPrem?'premium':'free'}" style="margin-left:8px;">${isPrem?'Premium':'Free'}</span>`;
   const blocks=p.blocks||[];
   const showN=isPrem?Math.min(2,blocks.length):blocks.length;
-  /* Always show cover image at top if present */
-  let html=p.thumb?`<div class="pb pb-img" style="margin-bottom:32px;"><img src="${p.thumb}" alt="${p.title||''}" style="width:100%;border-radius:10px;display:block;max-height:480px;object-fit:cover;"></div>`:'';
+  // No cover image inside post — video block handles the hero
+  let html='';
   for(let i=0;i<showN;i++)html+=_renderBlock(blocks[i]);
   if(isPrem){const pu=D.premiumUrl||'#';html+=`<div class="prem-gate"><div class="prem-gate-icon">🔒</div><div class="prem-gate-title">Premium Content</div><div class="prem-gate-desc">Full breakdown available for supporters. Access the complete step-by-step process, parameters, graphs and all assets.</div><a class="prem-gate-btn" href="${pu}" target="_blank" rel="noopener">Unlock on Patreon ↗</a></div>`;}
   document.getElementById('psBlocks').innerHTML=html;
@@ -2516,6 +2516,14 @@ function savePost(){
   if(g('pe-vis'))window._ep.visible=g('pe-vis').checked;
   if(g('pe-premurl'))D.premiumUrl=g('pe-premurl').value;
   window._ep.blocks=JSON.parse(JSON.stringify(window._eb||[]));
+  // Auto-set thumb from first hero-video YouTube block if thumb is empty
+  if(!window._ep.thumb){
+    const heroVid=window._eb.find(b=>b.type==='hero-video'&&b.url);
+    if(heroVid){
+      const ytm=heroVid.url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+      if(ytm)window._ep.thumb=`https://img.youtube.com/vi/${ytm[1]}/maxresdefault.jpg`;
+    }
+  }
   const idx=D.posts.findIndex(x=>x.id===window._ep.id);
   if(idx>=0)D.posts[idx]=JSON.parse(JSON.stringify(window._ep));
   else D.posts.unshift(JSON.parse(JSON.stringify(window._ep)));
