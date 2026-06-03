@@ -1400,17 +1400,16 @@ function generateAtsCv(){
 
   /* ── Experience — linear, no columns, company FIRST then role ── */
   const expRows=D.companies.map(co=>{
-    const tools=[co.engine,co.tools].filter(Boolean).join(' | ');
+    const tools=[co.engine,co.tools].filter(Boolean).join(' · ');
     return `
-      <div class="ats-exp-block">
-        <div class="ats-exp-head">
-          <span class="ats-co">${co.name}</span>
-          <span class="ats-sep"> — </span>
-          <span class="ats-role">${co.role}</span>
-          <span class="ats-period"> | ${co.period}</span>
+      <div class="exp-block">
+        <div class="exp-header">
+          <span class="exp-co">${co.name}</span>
+          <span class="exp-period">${co.period}</span>
         </div>
-        ${tools?`<div class="ats-tools">${tools}</div>`:''}
-        ${co.desc?`<div class="ats-desc">${co.desc}</div>`:''}
+        <div class="exp-role">${co.role}</div>
+        ${tools?`<div class="exp-tools">${tools}</div>`:''}
+        ${co.desc?`<div class="exp-desc">${co.desc}</div>`:''}
       </div>`;
   }).join('');
 
@@ -1419,7 +1418,7 @@ function generateAtsCv(){
 
   /* ── Education ── */
   const eduRows=(cv.education||[]).map(e=>
-    `<div class="ats-edu-row"><strong>${e.title}</strong> — ${e.institution}${e.year?' ('+e.year+')':''}</div>`
+    `<div class="edu-block"><div class="edu-title">${e.title}</div><div class="edu-detail">${e.institution}${e.year?' · '+e.year:''}</div></div>`
   ).join('');
 
   /* ── Languages ── */
@@ -1442,70 +1441,65 @@ function generateAtsCv(){
 <meta charset="UTF-8">
 <title>${name} — CV</title>
 <style>
-/* ATS-SAFE: single column, system fonts only, no images, no columns, no flex/grid */
-@page{size:A4;margin:20mm 20mm 18mm 20mm;}
+/* ATS-SAFE + PROFESSIONAL: single column, system fonts, clean layout */
+@page{
+  size:A4;
+  margin:18mm 20mm 16mm 20mm;
+}
 *{box-sizing:border-box;}
-html,body{margin:0;padding:0;background:#fff;color:#000;font-family:Arial,Helvetica,sans-serif;font-size:11pt;line-height:1.5;}
-a{color:#000;text-decoration:underline;}
-h1{font-size:18pt;font-weight:bold;margin:0 0 2px 0;letter-spacing:0;}
-h2{font-size:10pt;font-weight:bold;margin:14px 0 4px 0;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #000;padding-bottom:2px;}
-.contact{font-size:9.5pt;color:#333;margin-bottom:12px;}
-.role-line{font-size:11pt;font-weight:bold;color:#000;margin-bottom:4px;}
-.summary{font-size:10pt;margin-bottom:14px;line-height:1.55;}
-.ats-exp-block{margin-bottom:10px;}
-.ats-exp-head{font-size:10.5pt;font-weight:bold;}
-.ats-co{font-size:10.5pt;}
-.ats-role{font-size:10.5pt;}
-.ats-period{font-size:9.5pt;color:#333;}
-.ats-tools{font-size:9pt;color:#333;margin-top:1px;}
-.ats-desc{font-size:10pt;margin-top:3px;line-height:1.45;}
-.ats-edu-row{margin-bottom:5px;font-size:10pt;}
-.skills-text{font-size:10pt;line-height:1.6;}
-.avail-text{font-size:10pt;}
-.kw-section{font-size:8.5pt;color:#444;line-height:1.6;margin-top:4px;}
-.page-break{page-break-before:always;}
+html,body{margin:0;padding:0;background:#fff;color:#111;font-family:Arial,Helvetica,sans-serif;font-size:10.5pt;line-height:1.5;}
+a{color:#111;text-decoration:none;}
+.cv-name{font-size:20pt;font-weight:bold;margin:0 0 2px 0;}
+.cv-role{font-size:11pt;font-weight:bold;color:#444;margin-bottom:5px;}
+.cv-contact{font-size:9pt;color:#555;margin-bottom:4px;line-height:1.7;}
+.cv-divider{border:none;border-top:2px solid #111;margin:10px 0 12px 0;}
+h2{font-size:9pt;font-weight:bold;letter-spacing:.15em;text-transform:uppercase;color:#111;border-bottom:1px solid #ccc;padding-bottom:3px;margin:14px 0 8px 0;}
+.exp-block{margin-bottom:11px;padding-bottom:11px;border-bottom:1px solid #eee;}
+.exp-block:last-child{border-bottom:none;padding-bottom:0;}
+.exp-header{overflow:hidden;}
+.exp-co{font-size:11pt;font-weight:bold;float:left;}
+.exp-period{font-size:9pt;color:#666;float:right;margin-top:2px;}
+.exp-role{font-size:10pt;color:#333;font-weight:bold;clear:both;margin-top:1px;}
+.exp-tools{font-size:9pt;color:#666;margin-top:2px;font-style:italic;}
+.exp-desc{font-size:10pt;color:#333;margin-top:4px;line-height:1.5;}
+.skills-line{font-size:10pt;line-height:1.7;color:#222;}
+.edu-block{margin-bottom:6px;}
+.edu-title{font-size:10.5pt;font-weight:bold;}
+.edu-detail{font-size:9.5pt;color:#555;}
+.avail-line{font-size:10pt;}
+.kw-block{font-size:8pt;color:#888;line-height:1.8;}
 @media print{
-  body{font-size:10pt;}
-  h1{font-size:16pt;}
-  h2{font-size:9.5pt;}
   .no-print{display:none!important;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 }
 </style>
 </head>
 <body>
 
-<div class="no-print" style="background:#f0fdf4;border:1px solid #86efac;padding:12px 16px;margin-bottom:20px;font-family:Arial;font-size:11px;border-radius:4px;">
-  <strong>ATS-Safe CV</strong> — single column, system fonts, no images, no decorative elements.<br>
-  Print as PDF: <strong>File → Print → Save as PDF</strong> (use A4, no margins extra).
-  <button onclick="window.print()" style="margin-left:12px;padding:4px 12px;cursor:pointer;">🖨 Print / Save PDF</button>
+<div class="no-print" style="background:#f0fdf4;border:1px solid #86efac;padding:10px 16px;margin-bottom:18px;font-family:Arial;font-size:11px;border-radius:4px;display:flex;align-items:center;gap:12px;">
+  <div><strong>ATS-Safe CV</strong> — columna única, fuentes del sistema.<br>Para guardar sin el encabezado del navegador: <strong>Imprimir → Guardar como PDF</strong> → desactiva <strong>"Encabezados y pies de página"</strong> en Más opciones.</div>
+  <button onclick="window.print()" style="flex-shrink:0;padding:6px 14px;cursor:pointer;font-weight:bold;background:#111;color:#fff;border:none;border-radius:4px;">🖨 Imprimir</button>
 </div>
 
-<!-- HEADER -->
-<h1>${name}</h1>
-<div class="role-line">${role}</div>
-<div class="contact">${contact}</div>
+<div class="cv-name">${name}</div>
+<div class="cv-role">${role}</div>
+<div class="cv-contact">${contact}</div>
+<hr class="cv-divider">
 
-${summary?`<h2>Professional Summary</h2><div class="summary">${summary}</div>`:''}
+${summary?`<h2>Professional Summary</h2><p style="font-size:10pt;line-height:1.55;margin:0 0 12px 0;">${summary}</p>`:''}
 
-<!-- EXPERIENCE -->
 <h2>Experience</h2>
 ${expRows}
 
-<!-- SKILLS — listed as plain text for ATS keyword matching -->
-${skillsText?`<h2>Technical Skills</h2><div class="skills-text">${skillsText}</div>`:''}
+${skillsText?`<h2>Technical Skills</h2><div class="skills-line">${skillsText}</div>`:''}
 
-<!-- EDUCATION -->
 ${eduRows?`<h2>Education</h2>${eduRows}`:''}
 
-<!-- LANGUAGES -->
-${langText?`<h2>Languages</h2><div class="skills-text">${langText}</div>`:''}
+${langText?`<h2>Languages</h2><div class="skills-line">${langText}</div>`:''}
 
-<!-- AVAILABILITY -->
-${avail?`<h2>Availability</h2><div class="avail-text">${avail}</div>`:''}
+${avail?`<h2>Availability</h2><div class="avail-line">${avail}</div>`:''}
 
-<!-- KEYWORDS — hidden visually but readable by ATS parsers -->
-<!-- This section lists all relevant technical keywords for ATS matching -->
-${allKw?`<h2>Keywords</h2><div class="kw-section">${allKw}</div>`:''}
+${allKw?`<h2>Keywords</h2><div class="kw-block">${allKw}</div>`:''}
 
 </body>
 </html>`;
