@@ -3,9 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Yago Fernández — Senior Real-Time VFX Artist</title>
-<meta name="description" content="Senior Real-Time VFX Artist. 9+ years shipping gameplay and cinematic VFX for PC and console.">
+<title id="seo-title">Yago Fernández — Senior Real-Time VFX Artist</title>
+<meta name="description" id="seo-desc" content="Senior Real-Time VFX Artist. 9+ years shipping gameplay and cinematic VFX for PC and console.">
+<meta name="keywords" id="seo-kw" content="VFX Artist, Real-Time VFX, Niagara, Unreal Engine, Embergen">
+<meta name="author" id="seo-author" content="Yago Fernández">
 <meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a0b0f">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" id="og-title" content="Yago Fernández — Senior Real-Time VFX Artist">
+<meta property="og:description" id="og-desc" content="Senior Real-Time VFX Artist. 9+ years shipping gameplay and cinematic VFX for PC and console.">
+<meta property="og:url" id="og-url" content="https://yagovfx.github.io">
+<meta property="og:image" id="og-image" content="">
+<meta property="og:locale" id="og-locale" content="en_GB">
+<meta property="og:site_name" id="og-site" content="Yago Fernández Portfolio">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="tw-title" content="Yago Fernández — Senior Real-Time VFX Artist">
+<meta name="twitter:description" id="tw-desc" content="Senior Real-Time VFX Artist. 9+ years shipping gameplay and cinematic VFX for PC and console.">
+<meta name="twitter:image" id="tw-image" content="">
+<meta name="twitter:creator" id="tw-handle" content="">
+<!-- Canonical -->
+<link rel="canonical" id="seo-canonical" href="https://yagovfx.github.io">
+<!-- Schema.org JSON-LD (injected dynamically) -->
+<script id="seo-jsonld" type="application/ld+json"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Space+Mono&family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;600;700&family=DM+Sans:wght@300;400;600;700&family=Unbounded:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
@@ -55,6 +76,8 @@ html,body{font-family:var(--sans);background:var(--bg);color:var(--txt);}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:var(--bg);border-bottom:1px solid var(--line);z-index:50;flex-shrink:0;}
 .t-logo{font-size:13px;font-weight:800;letter-spacing:-.01em;display:flex;align-items:center;gap:9px;color:var(--txt);text-decoration:none;}
 .t-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accentglow);animation:pulse 2.5s ease-in-out infinite;flex-shrink:0;}
+.t-logo-img{width:28px;height:28px;border-radius:50%;object-fit:cover;flex-shrink:0;opacity:.92;transition:opacity .2s;}
+.t-logo:hover .t-logo-img{opacity:1;}
 @keyframes pulse{0%,100%{box-shadow:0 0 6px var(--accentglow);}50%{box-shadow:0 0 18px var(--accent),0 0 36px var(--accentglow);}}
 .t-right{display:flex;align-items:center;gap:6px;flex-wrap:nowrap;}
 #hdrLinks{display:flex;align-items:center;gap:6px;}
@@ -108,12 +131,14 @@ body.light .tbtn.admin-btn{border-color:rgba(0,0,0,.2);color:rgba(0,0,0,.45);bac
 .exp-period{font-family:var(--mono);font-size:8px;color:var(--sub);margin-top:1px;}
 .exp-card{margin:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg2);box-shadow:0 10px 24px rgba(0,0,0,.12);overflow:hidden;cursor:pointer;transition:transform .18s var(--aease),border-color .18s var(--aease),background .18s var(--aease);}
 .exp-card:hover,.exp-card.active{border-color:var(--accent);transform:translateY(-1px);}
-.exp-card-img{width:100%;aspect-ratio:30/9;object-fit:cover;display:block;filter:brightness(.72) saturate(.95);}
+.exp-card-img-wrap{position:relative;width:100%;aspect-ratio:30/9;overflow:hidden;}
+.exp-card-img{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.72) saturate(.95);transition:filter .18s;}
+.exp-card-logo-badge{position:absolute;bottom:6px;left:8px;width:28px;height:28px;border-radius:4px;object-fit:cover;background:var(--bg2);border:1px solid rgba(255,255,255,.15);}
 .exp-card-body{padding:8px 11px 10px;}
 .exp-card-title{font-size:12px;font-weight:800;color:var(--txt);line-height:1.2;}
 .exp-card-sub{font-family:var(--mono);font-size:8px;color:var(--accent);letter-spacing:.07em;margin-top:3px;}
 .exp-card-desc{font-size:10px;color:var(--sub);line-height:1.45;margin-top:6px;}
-.exp-card:hover .exp-card-img,.exp-card.active .exp-card-img{filter:brightness(.84) saturate(1.05);}
+.exp-card:hover .exp-card-img,.exp-card.active .exp-card-img{filter:brightness(.9) saturate(1.1);}
 .sb-tools{padding:9px 18px;border-top:1px solid var(--line);flex-shrink:0;}
 .tools-lbl{font-family:var(--mono);font-size:7.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--sub);margin-bottom:6px;}
 .tools-grid{display:flex;flex-wrap:wrap;gap:4px;}
@@ -184,20 +209,31 @@ body.light .tbtn.admin-btn{border-color:rgba(0,0,0,.2);color:rgba(0,0,0,.45);bac
     overflow:visible!important;
     min-height:100dvh;
   }
-  /* hide desktop panels */
+  /* hide desktop panels — use visibility+height:0 so they don't push flex items */
   #app .left,#app .right{display:none!important;}
-  .topbar{position:sticky;top:0;z-index:100;height:48px;padding:0 14px;}
+  /* topbar — compact, hide links that appear in mobSidebar */
+  .topbar{position:sticky;top:0;z-index:100;height:48px;padding:0 10px;}
+  #hdrLinks{display:none!important;}
   #pageNavLinks{display:none;}
   /* video */
-  .center{width:100%;height:56vw;min-height:220px;max-height:320px;flex-shrink:0;position:relative;}
+  .center{width:100%;height:56vw;min-height:220px;max-height:320px;flex-shrink:0;position:relative;order:1;}
   /* clips */
-  .clips{height:130px;flex-shrink:0;}
+  .clips{height:130px;flex-shrink:0;order:2;}
   .clip{flex:0 0 140px;}
   .clip:hover,.clip.active{flex:0 0 190px;}
-  /* mobile info block shown below clips */
-  #mobInfo{display:block;}
-  /* mobile sidebar shown below mobInfo */
-  #mobSidebar{display:block;}
+  /* mobInfo and mobSidebar right after clips */
+  #mobInfo{display:block!important;order:3;}
+  #mobSidebar{display:block!important;order:4;}
+  /* topbar order */
+  .topbar{order:0;}
+  /* admin panel — nav becomes horizontal scrollable top bar */
+  .adm-body{flex-direction:column!important;}
+  .adm-nav{width:100%!important;min-width:0!important;border-right:none!important;border-bottom:1px solid rgba(255,255,255,.07)!important;padding:4px 0!important;display:flex!important;flex-direction:row!important;overflow-x:auto!important;overflow-y:hidden!important;flex-shrink:0!important;height:auto!important;}
+  .adm-nav-sec{display:none!important;}
+  .adm-nav-item{padding:8px 12px!important;font-size:10px!important;white-space:nowrap!important;flex-shrink:0!important;}
+  .adm-nav-item::before{top:auto!important;bottom:0!important;left:0!important;right:0!important;width:100%!important;height:3px!important;}
+  .adm-content{padding:14px 14px!important;}
+  .adm-icon{display:none!important;}
 }
 @media(min-width:769px){
   #mobInfo{display:none!important;}
@@ -228,29 +264,6 @@ body.light .tbtn.admin-btn{border-color:rgba(0,0,0,.2);color:rgba(0,0,0,.45);bac
 #mobSidebar .exp-card-desc{font-size:10px;}
 
 /* ══ CUSTOM PAGES OVERLAY ══ */
-.page-overlay{display:none;position:fixed;inset:0;z-index:80;background:var(--bg);overflow-y:auto;}
-.page-overlay.open{display:block;}
-.page-header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;z-index:5;}
-.page-back{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);cursor:pointer;background:none;border:none;display:flex;align-items:center;gap:6px;transition:color .2s;}
-.page-back:hover{color:var(--accent);}
-.page-back::before{content:'←';font-size:14px;}
-.page-title-bar{font-size:13px;font-weight:800;}
-.page-body{padding:40px 48px;max-width:1200px;margin:0 auto;}
-@media(max-width:768px){.page-body{padding:20px 16px;}}
-.page-section{margin-bottom:40px;}
-.page-sec-title{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:4px;}
-.page-sec-sub{font-size:13px;color:var(--sub);margin-bottom:20px;}
-.page-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.page-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-@media(max-width:768px){.page-grid-2,.page-grid-3{grid-template-columns:1fr;}}
-.page-card{background:var(--bg2);border:1px solid var(--line);border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color .2s;}
-.page-card:hover{border-color:var(--accent);}
-.page-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:brightness(.75);transition:filter .25s;}
-.page-card:hover img{filter:brightness(.95);}
-.page-card-body{padding:14px 16px;}
-.page-card-title{font-size:13px;font-weight:700;margin-bottom:4px;}
-.page-card-sub{font-family:var(--mono);font-size:9px;color:var(--sub);}
-.page-text-block{font-size:14px;color:var(--sub);line-height:1.75;max-width:720px;}
 
 /* ══ ADMIN ══ */
 #admin-overlay{display:none;position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.9);backdrop-filter:blur(14px);flex-direction:column;}
@@ -437,8 +450,8 @@ option{background:var(--bg2);}
     overflow: hidden !important;
   }
 
-  #mobSidebar .exp-card-img,
-  .exp-card-img{
+  #mobSidebar .exp-card-img-wrap,
+  .exp-card-img-wrap{
     display: block !important;
     width: 100% !important;
     height: auto !important;
@@ -453,6 +466,128 @@ option{background:var(--bg2);}
     padding: 9px 12px 11px !important;
   }
 }
+
+
+/* ══ DEVLOG ══ */
+.tbtn.devlog-btn{border-color:var(--accent);color:var(--accent);}
+.tbtn.devlog-btn:hover{background:var(--accent);color:#fff;}
+#postOverlay{display:none;position:fixed;inset:0;z-index:85;background:var(--bg);overflow-y:auto;}
+#postOverlay.open{display:block;}
+#postOverlay .po-header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;z-index:5;}
+#postOverlay .po-back{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);cursor:pointer;background:none;border:none;display:flex;align-items:center;gap:6px;transition:color .2s;padding:0;}
+#postOverlay .po-back:hover{color:var(--accent);}
+#postOverlay .po-back::before{content:'←';font-size:14px;}
+#postOverlay .po-title{font-size:13px;font-weight:800;}
+#postListView{max-width:1100px;margin:0 auto;padding:40px 32px;}
+@media(max-width:768px){#postListView{padding:20px 14px;}}
+.pl-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;}
+.pl-title{font-size:22px;font-weight:800;letter-spacing:-.02em;}
+.pl-cats{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin;}
+.cat-pill{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);border-radius:20px;background:transparent;color:var(--sub);cursor:pointer;transition:all .18s;}
+.cat-pill:hover,.cat-pill.active{border-color:var(--accent);color:var(--accent);background:rgba(124,92,252,.08);}
+.posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+@media(max-width:600px){.posts-grid{grid-template-columns:1fr;}}
+.post-card{background:var(--bg2);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;transition:border-color .22s,transform .22s;position:relative;}
+.post-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+.post-thumb-wrap{position:relative;}
+.post-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:brightness(.72);transition:filter .25s;}
+.post-card:hover .post-thumb{filter:brightness(.9);}
+.post-thumb-empty{width:100%;aspect-ratio:16/9;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:32px;}
+.post-blur-gate{position:absolute;inset:0;backdrop-filter:blur(10px);background:rgba(0,0,0,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+.post-lock{font-size:24px;}
+.post-unlock-btn{font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(255,255,255,.3);border-radius:20px;color:#fff;background:transparent;cursor:pointer;transition:all .2s;}
+.post-unlock-btn:hover{background:var(--accent);border-color:var(--accent);}
+.post-card-body{padding:14px 16px 16px;}
+.post-card-cats{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px;}
+.post-cat-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--line);border-radius:12px;color:var(--accent);}
+.post-card-title{font-size:14px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-bottom:5px;}
+.post-card-desc{font-size:11px;color:var(--sub);line-height:1.55;}
+.post-card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);}
+.post-card-date{font-family:var(--mono);font-size:8px;color:var(--sub);}
+.post-badge{font-family:var(--mono);font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:10px;}
+.post-badge.free{background:rgba(46,204,113,.15);color:var(--green);border:1px solid rgba(46,204,113,.25);}
+.post-badge.premium{background:rgba(124,92,252,.15);color:var(--accent2);border:1px solid rgba(124,92,252,.3);}
+#postSingleView{display:none;max-width:860px;margin:0 auto;padding:48px 32px 80px;}
+@media(max-width:768px){#postSingleView{padding:24px 14px 60px;}}
+#postSingleView.visible{display:block;}
+.ps-cats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
+.ps-title{font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:10px;}
+@media(max-width:600px){.ps-title{font-size:22px;}}
+.ps-meta{display:flex;align-items:center;gap:10px;margin-bottom:36px;flex-wrap:wrap;}
+.ps-date{font-family:var(--mono);font-size:9px;color:var(--sub);}
+.pb{margin-bottom:36px;}
+.pb-lbl{font-family:var(--mono);font-size:7.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--sub);margin-bottom:10px;opacity:.6;}
+.pb-video iframe{width:100%;aspect-ratio:16/9;border:none;border-radius:8px;display:block;}
+.pb-img img{width:100%;border-radius:8px;display:block;}
+.pb-img figcaption{font-family:var(--mono);font-size:8.5px;color:var(--sub);text-align:center;margin-top:8px;}
+.pb-compare{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media(max-width:600px){.pb-compare{grid-template-columns:1fr;}}
+.pb-compare-side{position:relative;border-radius:8px;overflow:hidden;}
+.pb-compare-side img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;}
+.pb-compare-lbl{position:absolute;bottom:8px;left:10px;font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.72);color:#fff;padding:3px 8px;border-radius:3px;}
+.pb-intent{border-left:3px solid var(--accent);padding:14px 18px;background:rgba(124,92,252,.06);border-radius:0 6px 6px 0;font-size:15px;color:var(--txt);line-height:1.7;font-style:italic;}
+.pb-text p{font-size:14px;color:var(--sub);line-height:1.8;margin-bottom:12px;}
+.pb-text strong{color:var(--txt);font-weight:700;}
+.pb-text em{color:var(--accent2);}
+.pb-text ul,.pb-text ol{margin:10px 0 10px 20px;font-size:14px;color:var(--sub);line-height:1.8;}
+.pb-text h3{font-size:16px;font-weight:800;color:var(--txt);margin:18px 0 6px;}
+.pb-breakdown-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;}
+.pb-bd-item{position:relative;border-radius:6px;overflow:hidden;}
+.pb-bd-item img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;filter:brightness(.8);}
+.pb-bd-lbl{position:absolute;bottom:0;left:0;right:0;padding:6px 8px;background:linear-gradient(to top,rgba(0,0,0,.85),transparent);font-family:var(--mono);font-size:8px;color:#fff;letter-spacing:.1em;}
+.pb-params-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:6px;}
+.pb-param-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--bg2);border:1px solid var(--line);border-radius:5px;}
+.pb-param-key{font-family:var(--mono);font-size:8px;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;}
+.pb-param-val{font-weight:700;color:var(--accent2);font-size:11px;}
+.pb-metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;}
+.pb-metric{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center;}
+.pb-metric-val{font-size:22px;font-weight:800;color:var(--accent);margin-bottom:4px;}
+.pb-metric-lbl{font-family:var(--mono);font-size:8px;color:var(--sub);letter-spacing:.1em;text-transform:uppercase;line-height:1.4;}
+.pb-divider{border:none;border-top:1px solid var(--line);margin:4px 0;}
+.prem-gate{text-align:center;padding:60px 20px;border:1px solid rgba(124,92,252,.25);border-radius:12px;background:rgba(124,92,252,.05);margin-top:40px;}
+.prem-gate-icon{font-size:40px;margin-bottom:16px;}
+.prem-gate-title{font-size:18px;font-weight:800;margin-bottom:8px;}
+.prem-gate-desc{font-size:13px;color:var(--sub);margin-bottom:20px;line-height:1.6;}
+.prem-gate-btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:6px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+.prem-gate-btn:hover{background:var(--accent2);}
+.posts-adm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:16px;}
+.post-adm-card{background:var(--bg2);border:1px solid var(--line);border-radius:7px;overflow:hidden;position:relative;transition:border-color .2s;}
+.post-adm-card:hover{border-color:var(--accent);}
+.post-adm-thumb{width:100%;height:80px;object-fit:cover;display:block;filter:brightness(.55);}
+.post-adm-nothumb{height:80px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:28px;}
+.post-adm-body{padding:10px 12px;}
+.post-adm-badge{position:absolute;top:8px;right:8px;font-family:var(--mono);font-size:7px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:10px;}
+.post-adm-badge.free{background:rgba(46,204,113,.9);color:#fff;}
+.post-adm-badge.premium{background:rgba(124,92,252,.9);color:#fff;}
+.block-editor{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+.block-row{background:var(--bg3);border:1px solid var(--line);border-radius:6px;padding:10px 12px;display:flex;align-items:flex-start;gap:10px;}
+.block-content{flex:1;min-width:0;}
+.block-type-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.block-rm-btn{font-family:var(--mono);font-size:8px;padding:3px 7px;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--sub);cursor:pointer;flex-shrink:0;transition:all .15s;}
+.block-rm-btn:hover{border-color:var(--red);color:var(--red);}
+.block-add-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.block-add-btn{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border:1px dashed var(--line);border-radius:4px;background:transparent;color:var(--sub);cursor:pointer;transition:all .15s;}
+.block-add-btn:hover{border-color:var(--accent);color:var(--accent);}
+
+
+/* ══ PROJECT SEPARATORS IN CLIPS BAR ══ */
+.clip-proj-sep{flex:0 0 80px;position:relative;overflow:hidden;cursor:default;background:var(--bg3);border-left:2px solid var(--accent);opacity:.85;}
+.clip-proj-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.45) saturate(.8);}
+.clip-proj-name{position:absolute;bottom:0;left:0;right:0;padding:6px 6px 5px;font-family:var(--mono);font-size:6.5px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:linear-gradient(to top,rgba(0,0,0,.85),transparent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+.clip-proj-sep.no-proj .clip-proj-name{opacity:.5;}
+
+/* ══ ADMIN — PROJECTS ══ */
+.proj-section{background:var(--bg3);border:1px solid var(--line);border-radius:6px;margin-bottom:10px;overflow:hidden;}
+.proj-section-hd{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;gap:8px;}
+.proj-section-name{font-size:12px;font-weight:700;}
+.proj-section-actions{display:flex;gap:5px;flex-shrink:0;}
+.proj-clips-area{padding:0 12px 12px;display:flex;flex-direction:column;gap:6px;}
+.proj-clip-row{display:flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--line);border-radius:5px;padding:6px 8px;}
+.proj-clip-thumb{width:48px;height:30px;object-fit:cover;border-radius:3px;flex-shrink:0;}
+.proj-clip-info{flex:1;min-width:0;}
+.proj-clip-title{font-size:11px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.proj-clip-sub{font-family:var(--mono);font-size:8px;color:var(--sub);}
+.proj-clip-actions{display:flex;gap:4px;flex-shrink:0;}
 
 </style>
 </head>
@@ -479,14 +614,26 @@ option{background:var(--bg2);}
   </div>
 </div>
 
-<!-- PAGE OVERLAY -->
-<div class="page-overlay" id="pageOverlay">
-  <div class="page-header">
-    <button class="page-back" onclick="closePage()">Back</button>
-    <div class="page-title-bar" id="pageTitleBar"></div>
+<!-- POST OVERLAY -->
+<div id="postOverlay">
+  <div class="po-header">
+    <button class="po-back" id="postBackBtn">Back</button>
+    <div class="po-title" id="postOverlayTitle">Devlog</div>
     <div style="width:60px;"></div>
   </div>
-  <div class="page-body" id="pageBody"></div>
+  <div id="postListView">
+    <div class="pl-header">
+      <div class="pl-title">Devlog</div>
+      <div class="pl-cats" id="postCatsFilter"></div>
+    </div>
+    <div class="posts-grid" id="postsGrid"></div>
+  </div>
+  <div id="postSingleView">
+    <div class="ps-cats" id="psCats"></div>
+    <div class="ps-title" id="psTitle"></div>
+    <div class="ps-meta" id="psMeta"></div>
+    <div id="psBlocks"></div>
+  </div>
 </div>
 
 <!-- CV print frame — completely isolated from admin -->
@@ -512,7 +659,6 @@ option{background:var(--bg2);}
       <div class="adm-nav-item" onclick="showSec('companies')" data-s="companies"><span class="adm-icon">🏢</span>Companies</div>
       <div class="adm-nav-item" onclick="showSec('videos')" data-s="videos"><span class="adm-icon">🎬</span>Videos</div>
       <div class="adm-nav-item" onclick="showSec('tools')" data-s="tools"><span class="adm-icon">🔧</span>Core Tools</div>
-      <div class="adm-nav-item" onclick="showSec('pages')" data-s="pages"><span class="adm-icon">📄</span>Custom Pages</div>
       <div class="adm-nav-sec">Identity</div>
       <div class="adm-nav-item" onclick="showSec('profile')" data-s="profile"><span class="adm-icon">👤</span>Profile</div>
       <div class="adm-nav-item" onclick="showSec('cv')" data-s="cv"><span class="adm-icon">📋</span>CV / Resume</div>
@@ -521,7 +667,10 @@ option{background:var(--bg2);}
       <div class="adm-nav-item" onclick="showSec('themes')" data-s="themes"><span class="adm-icon">🎨</span>Colors & Font</div>
       <div class="adm-nav-item" onclick="showSec('anim')" data-s="anim"><span class="adm-icon">⚡</span>Animations</div>
       <div class="adm-nav-sec">System</div>
+      <div class="adm-nav-item" onclick="showSec('posts')" data-s="posts"><span class="adm-icon">✍️</span>Devlog Posts</div>
       <div class="adm-nav-item" onclick="showSec('links')" data-s="links"><span class="adm-icon">🔗</span>Links</div>
+      <div class="adm-nav-item" onclick="showSec('import')" data-s="import"><span class="adm-icon">⬆</span>Import</div>
+      <div class="adm-nav-item" onclick="showSec('seo')" data-s="seo"><span class="adm-icon">🔍</span>SEO</div>
       <div class="adm-nav-item" onclick="showSec('settings')" data-s="settings"><span class="adm-icon">⚙️</span>Settings</div>
     </nav>
     <div class="adm-content">
@@ -593,12 +742,19 @@ option{background:var(--bg2);}
         <div class="tools-a-grid" id="toolsAGrid"></div>
       </div>
 
-      <!-- CUSTOM PAGES -->
-      <div class="adm-sec" id="sec-pages">
-        <div class="a-title">Custom Pages</div>
-        <div class="a-sub">Fullscreen panels (Tech Art, Textures…). Each becomes a button in the top bar.</div>
-        <button class="a-add-btn" onclick="openAddPage()">＋ Add page</button>
-        <div class="cp-list" id="pagesList"></div>
+      <!-- DEVLOG POSTS -->
+      <div class="adm-sec" id="sec-posts">
+        <div class="a-title">Devlog Posts</div>
+        <div class="a-sub">Breakdowns, devlogs y artículos técnicos. <span style="color:var(--green);">Free</span> = visible · <span style="color:var(--accent2);">Premium</span> = bloqueado con enlace de pago.</div>
+        <button class="a-add-btn" id="newPostBtn">＋ New Post</button>
+        <div id="posts-global-bar" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding:10px 14px;background:var(--bg3);border:1px solid var(--line);border-radius:6px;flex-wrap:wrap;gap:8px;">
+          <span id="posts-bar-count" style="font-family:var(--mono);font-size:9px;color:var(--sub);">0 visible · 0 hidden</span>
+          <div style="display:flex;gap:8px;">
+            <button class="ab primary" onclick="_setAllVisible(true)" style="font-size:9px;padding:5px 12px;">Publicar todos</button>
+            <button class="ab" onclick="_setAllVisible(false)" style="font-size:9px;padding:5px 12px;">Ocultar todos</button>
+          </div>
+        </div>
+        <div class="posts-adm-grid" id="postsAdminGrid"></div>
       </div>
 
       <!-- PROFILE -->
@@ -647,7 +803,6 @@ option{background:var(--bg2);}
         <div class="f-actions" style="margin-top:20px;">
           <button class="ab primary" onclick="saveCvData()">Save CV data</button>
           <button class="ab" onclick="generateCvPdf()" style="border-color:var(--accent);color:var(--accent);">⬇ Generate PDF</button>
-              <button class="ab" onclick="generateAtsCv()" style="border-color:var(--green);color:var(--green);">⬇ ATS-Safe CV</button>
         </div>
       </div>
 
@@ -721,9 +876,64 @@ option{background:var(--bg2);}
       </div>
 
       <!-- SETTINGS -->
+      <!-- SEO -->
+      <div class="adm-sec" id="sec-seo">
+        <div class="a-title">SEO &amp; Discoverability</div>
+        <div class="a-sub">Optimiza cómo te encuentran recruiters y estudios en Google, LinkedIn y redes sociales.</div>
+
+        <div style="display:grid;gap:0;margin-bottom:20px;">
+          <div style="background:rgba(124,92,252,.07);border:1px solid rgba(124,92,252,.2);border-radius:8px;padding:12px 14px;margin-bottom:12px;">
+            <div style="font-family:var(--mono);font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;">💡 Tips para recruiters de videojuegos</div>
+            <div style="font-size:10px;color:var(--sub);line-height:1.7;">Incluye términos como <strong style="color:var(--txt);">Niagara VFX, UE5, Real-Time VFX, Gameplay FX, Tech Art</strong> en keywords. Los ATS (Applicant Tracking Systems) de estudios AAA buscan exactamente estos términos.</div>
+          </div>
+        </div>
+
+        <div style="display:grid;gap:12px;max-width:660px;">
+          <div style="font-family:var(--mono);font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);opacity:.7;padding-bottom:4px;border-bottom:1px solid var(--line);">BÁSICO</div>
+          <div class="fg"><label class="fl">Page title <span style="color:var(--sub);font-size:9px;">— aparece en Google y pestañas del navegador</span></label><input class="fi" id="seo-f-title" placeholder="Nombre — Cargo | Especialidad"></div>
+          <div class="fg"><label class="fl">Meta description <span style="color:var(--sub);font-size:9px;">— 150-160 chars, texto que ve el recruiter en Google</span></label><textarea class="fta" id="seo-f-desc" style="min-height:70px;" placeholder="Senior Real-Time VFX Artist con X años..."></textarea></div>
+          <div class="fg"><label class="fl">Keywords <span style="color:var(--sub);font-size:9px;">— separadas por coma, mezcla ES e EN</span></label><textarea class="fta" id="seo-f-kw" style="min-height:54px;" placeholder="VFX Artist, Niagara, UE5, Real-Time VFX, Tech Art..."></textarea></div>
+
+          <div style="font-family:var(--mono);font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);opacity:.7;padding-bottom:4px;border-bottom:1px solid var(--line);margin-top:6px;">IDENTIDAD PROFESIONAL</div>
+          <div class="fg"><label class="fl">Tu nombre completo</label><input class="fi" id="seo-f-author" placeholder="Yago Fernández"></div>
+          <div class="fg"><label class="fl">Job title <span style="color:var(--sub);font-size:9px;">— para Schema.org, exactamente como en LinkedIn</span></label><input class="fi" id="seo-f-jobtitle" placeholder="Senior Real-Time VFX Artist"></div>
+          <div class="fg"><label class="fl">Skills / specializations <span style="color:var(--sub);font-size:9px;">— separadas por coma</span></label><textarea class="fta" id="seo-f-skills" style="min-height:54px;" placeholder="Niagara, Embergen, Houdini, UE5, HLSL, Blueprint..."></textarea></div>
+          <div class="frow">
+            <div class="fg"><label class="fl">Availability</label><input class="fi" id="seo-f-avail" placeholder="Open to work"></div>
+            <div class="fg"><label class="fl">Location</label><input class="fi" id="seo-f-location" placeholder="Spain / Remote"></div>
+          </div>
+
+          <div style="font-family:var(--mono);font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);opacity:.7;padding-bottom:4px;border-bottom:1px solid var(--line);margin-top:6px;">REDES SOCIALES &amp; OG</div>
+          <div class="fg"><label class="fl">URL de tu portfolio <span style="color:var(--sub);font-size:9px;">— sin barra al final</span></label><input class="fi" id="seo-f-url" placeholder="https://yagovfx.github.io"></div>
+          <div class="fg"><label class="fl">Imagen OG <span style="color:var(--sub);font-size:9px;">— 1200×630px, aparece al compartir en LinkedIn/Twitter</span></label><input class="fi" id="seo-f-image" placeholder="https://…/og-image.jpg"></div>
+          <div class="fg"><label class="fl">Twitter / X handle <span style="color:var(--sub);font-size:9px;">— sin @</span></label><input class="fi" id="seo-f-twitter" placeholder="yagovfx"></div>
+
+          <div class="f-actions" style="padding-top:6px;">
+            <button class="ab primary" onclick="saveSeo()">Guardar SEO</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMPORT POSTS -->
+      <div class="adm-sec" id="sec-import">
+        <div class="a-title">Import Posts</div>
+        <div class="a-sub">Pega un JSON de posts (generado desde tu Excel/CSV). Los posts con IDs ya existentes se <strong>omiten</strong> — solo se añaden los nuevos. Los posts importados se crean como <strong>ocultos</strong> para que los termines tú.</div>
+        <a href="devlog_importer.html" target="_blank" class="ab primary" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:16px;text-decoration:none;">🔧 Abrir conversor Excel → JSON</a>
+        <div style="max-width:660px;display:grid;gap:10px;margin-top:14px;">
+          <div class="fg"><label class="fl">JSON de posts</label><textarea class="fta" id="import-json" style="min-height:140px;font-family:var(--mono);font-size:10px;" placeholder='[{"id":"xl_abc123","title":"Camera Fade...","cats":["Shader"],...}]'></textarea></div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <button class="ab primary" onclick="importPosts()">⬆ Importar</button>
+            <div id="import-status" style="font-family:var(--mono);font-size:9px;color:var(--sub);"></div>
+          </div>
+          <div class="hint-box" style="margin-top:4px;">
+            <strong>Identificadores estables:</strong> los posts del Excel tienen IDs basados en el título (ej. <code>xl_a1b2c3d4</code>). Si vuelves a importar el mismo JSON, solo se añadirán filas nuevas. Para forzar re-import de uno borra su ID de la base de datos primero.
+          </div>
+        </div>
+      </div>
+
       <div class="adm-sec" id="sec-settings">
         <div class="a-title">Settings</div>
-        <div class="fb-notice"><strong>⚠ Firebase not connected.</strong> Data lives in <strong>localStorage</strong> — this device only. Swap the <code>DB</code> layer for Firestore to sync everywhere.</div>
+        <div class="fb-notice" style="background:rgba(46,204,113,.07);border-color:rgba(46,204,113,.25);"><strong style="color:var(--green);">☁ Firebase connected.</strong> Todos los cambios se sincronizan en Firestore en tiempo real.</div>
         <div class="a-form">
           <div class="fg"><label class="fl">New admin password</label><input class="fi" type="password" id="newPw" placeholder="Leave blank to keep current"></div>
           <div class="fg"><label class="fl">Language</label>
@@ -745,8 +955,9 @@ option{background:var(--bg2);}
 <!-- ══ APP ══ -->
 <div id="app" class="la" data-tool-size="medium">
   <header class="topbar">
-    <span class="t-logo"><span class="t-dot"></span><span id="topName">YAGO FX</span></span>
+    <span class="t-logo"><img class="t-logo-img" src="https://yagovfx.github.io/YF_Logo.jpeg" alt="YF Logo"><span id="topName">YAGO FX</span></span>
     <div class="t-right">
+      <button class="tbtn devlog-btn" id="devlogBtn">Devlog</button>
       <div id="pageNavLinks"></div>
       <button class="lang-btn" id="langBtn" onclick="toggleLang()">ES</button>
       <div id="hdrLinks"></div>
@@ -797,17 +1008,62 @@ option{background:var(--bg2);}
     <div class="clips-lbl"><span id="clipsLbl">Clips</span></div>
     <div class="clips-scroll" id="clipsScroll" role="list"></div>
   </div>
+
+  <!-- MOBILE ONLY — immediately after clips bar, inside #app -->
+  <div id="mobInfo"></div>
+  <div id="mobSidebar" style="background:var(--bg2);border-top:1px solid var(--line);">
+    <!-- populated by renderMobSidebar() -->
+  </div>
 </div>
 
-<!-- MOBILE ONLY — shown below clips on small screens -->
-<div id="mobInfo"></div>
-<div id="mobSidebar" style="background:var(--bg2);border-top:1px solid var(--line);">
-  <!-- populated by renderMobSidebar() -->
-</div>
+<script type="module">
 
-<script>
-/* ══ DB ══ */
-const DB={get(){return JSON.parse(localStorage.getItem('vfx-v6')||'null');},set(d){localStorage.setItem('vfx-v6',JSON.stringify(d));}};
+/* ══ FIREBASE ══ */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+const firebaseConfig={apiKey:"AIzaSyCQWuMtoQrIMuP99jemn5BpjX18LEChaWY",authDomain:"portfolio-44b20.firebaseapp.com",projectId:"portfolio-44b20",storageBucket:"portfolio-44b20.firebasestorage.app",messagingSenderId:"1074424066814",appId:"1:1074424066814:web:34862ef3ebbdc824a26baf",measurementId:"G-QYRZSTTX7X"};
+const _fbApp=initializeApp(firebaseConfig);
+const _fdb=getFirestore(_fbApp);
+try{getAnalytics(_fbApp);}catch(e){}
+const PORTFOLIO_DOC=doc(_fdb,'portfolio','main');
+const DB={
+  _t:null,_l:null,_skip:0,
+  get(){return JSON.parse(localStorage.getItem('vfx-v6')||'null');},
+  set(d){
+    localStorage.setItem('vfx-v6',JSON.stringify(d));
+    clearTimeout(this._t);
+    this._skip=1;
+    this._lastWrite=Date.now();
+    this._t=setTimeout(async()=>{
+      try{await setDoc(PORTFOLIO_DOC,{data:JSON.stringify(d)});}
+      catch(e){console.warn('[FB] write failed:',e);this._skip=0;}
+    },600);
+  },
+  startSync(){
+    if(this._l)return;
+    this._l=onSnapshot(PORTFOLIO_DOC,snap=>{
+      if(!snap.exists())return;
+      if(this._skip>0){this._skip--;return;}
+      /* ignore snapshots within 5s of our own write */
+      if(this._lastWrite&&Date.now()-this._lastWrite<5000){return;}
+      try{
+        const r=JSON.parse(snap.data().data||'null');if(!r)return;
+        if(JSON.stringify(r)===JSON.stringify(D))return;
+        Object.assign(D,r);
+        localStorage.setItem('vfx-v6',JSON.stringify(D));
+        renderVisitor();
+        const t=document.getElementById('toast');
+        t.textContent='☁ Synced from another device';
+        t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2800);
+      }catch(e){console.warn('[FB] sync error',e);}
+    },e=>console.warn('[FB] listener error',e));
+  },
+  async loadRemote(){
+    try{const snap=await getDoc(PORTFOLIO_DOC);if(snap.exists()){const r=JSON.parse(snap.data().data||'null');if(r){localStorage.setItem('vfx-v6',JSON.stringify(r));return r;}}}catch(e){console.warn('[FB] load failed:',e);}return null;
+  }
+};
+
 
 /* ══ THEMES ══ */
 const COLOR_THEMES=[
@@ -853,6 +1109,23 @@ const DEFAULTS={
     {id:'l3',label:'Email',url:'mailto:yago@example.com',showInHeader:true},
   ],
   customPages:[],
+  posts:[],
+  premiumUrl:'',
+  seo:{
+    title:'Yago Fernández — Senior Real-Time VFX Artist',
+    description:'Senior Real-Time VFX Artist with 9+ years shipping gameplay and cinematic VFX for PC and console. Specialist in Niagara, Embergen, Houdini and Unreal Engine 5.',
+    keywords:'VFX Artist, Real-Time VFX, Niagara, Unreal Engine, Embergen, Houdini, Technical Artist, Game VFX, Gameplay FX, Cinematic VFX, UE5, Particle Systems, Tech Art',
+    author:'Yago Fernández',
+    siteUrl:'https://yagovfx.github.io',
+    image:'',
+    twitterHandle:'',
+    locale:'en_GB',
+    jobTitle:'Senior Real-Time VFX Artist',
+    yearsExp:'9+',
+    skills:'Niagara, Embergen, Houdini, Unreal Engine 5, HLSL, Blueprint, Maya, Photoshop',
+    availability:'Open to work',
+    location:'Spain',
+  },
   companies:[
     {id:'c1',name:'Alkimia Interactive',role:'Senior VFX Artist',period:'2025–2026',engine:'Unreal Engine 5',tools:'Niagara · Embergen',desc:'Effects for the Gothic Remake — gameplay attacks, animation-driven FX, set dressing.',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQ6-1tDzvXK5D9UKz50sjnRiilfYu5mVedF7z7USDugs_lw3X7ALPJmpXFbm7coB5vr8pfu-IstslFtHltCypfGcivM9EZhOhEOPwpkKstnZ7_pcYSe0rksyEOV5tnvuWVxfXz67Xkja56a1H9vx4KksD_1cHnXVVQuETrDCgZ0T_KKit1zmylTabfkxQ/s100/estudio_alkimia-interactive.jpg',thumb:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgk00OO8A6MSqiVFWV1UUjNgKF-PpclmV3GWjny8nRveOubjnS1mwlWAAmj501p8xIfZHKEemrGrQJqM0t3XLcMj2sDDMNwQ6p_7Qq-Yx-Fm257n1s1wVhJ33tWmz_lz7FxvK0utQGBSJwwkejEemiXotNYBW4dl-47fEekDNDnK-WpxIWrtp17rmebqd8/s1177/GothicRemake.png',clips:[]},
     {id:'c2',name:'Magic Media',role:'Senior VFX Artist',period:'2023–2025',engine:'Unreal Engine 5',tools:'Niagara · Embergen',desc:'Weapons and combat VFX for Remnant 2 — GPU particles, emissive flipbooks, shader work.',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFGsaldFNBjBGETfk0RmArpCoNjz-MDSUX1WgKpTaXKRCIM-1DdOSD-6T2XR8RZ6I_uI2J8jVIhHOMX9GaVm7BBm4ktSUH8LcL0ojzD2puSTEoOS2FPs1Xz-iSpP8IsOxYhkWea47CWr_WfAfp-8DKpz7zJNrFuS1pZCBvkU7d0FzkAImVcWN9kyB433s/s100/magic_media_entertainment_logo.jpg',thumb:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimInA0UsM9CrACgKUg30Y53gh_HwUxB30YJah_J-e7gnrmHfOsbf-Vxh7KHxnnMpjrxpDi_HCUXFR0-ITThJHyD-NWTJ1CGKsyky-BA_NGqTQjIh1Dmm9lePyj2g7vtRLktado1Pu4mWm0z5kPW1jZNLFGHO0Njx7r84x-xOzz7fGrykTKtJZHy6xbqr0/s3840/3840x2160.jpg',clips:[{id:'v1',title:"World's Edge Sword",tools:'UE5 · Niagara',video:'https://www.youtube.com/embed/PIiBLIhHVhU?mute=1',thumb:'https://img.youtube.com/vi/PIiBLIhHVhU/maxresdefault.jpg'},{id:'v2',title:'Weapons Reel',tools:'UE5 · Niagara',video:'https://player.vimeo.com/video/973385372',thumb:'https://i.vimeocdn.com/video/1907304284-bac8296ab76b31c57712941ffb2fede66f0b0d95d608d5c1c99f701dd11099a4-d?mw=1800&mh=983&q=70'}]},
@@ -876,6 +1149,14 @@ let D=DB.get()||JSON.parse(JSON.stringify(DEFAULTS));
 if(!D.reel){D.reel=JSON.parse(JSON.stringify(DEFAULTS.reel));}
 if(D.reel.enabled===undefined)D.reel.enabled=true;
 if(!D.customPages)D.customPages=[];
+D.companies.forEach(co=>{if(!co.projects)co.projects=[];if(!co.desc_es)co.desc_es='';});
+if(!D.posts)D.posts=[];
+if(!D.premiumUrl)D.premiumUrl='';
+if(!D.seo)D.seo=JSON.parse(JSON.stringify(DEFAULTS.seo));
+if(!D.seo.jobTitle)D.seo.jobTitle=DEFAULTS.seo.jobTitle;
+if(!D.seo.skills)D.seo.skills=DEFAULTS.seo.skills;
+if(!D.seo.availability)D.seo.availability=DEFAULTS.seo.availability;
+if(!D.seo.location)D.seo.location=DEFAULTS.seo.location;
 if(!D.cv)D.cv=JSON.parse(JSON.stringify(DEFAULTS.cv));
 if(!D.cv.artstation)D.cv.artstation='';
 if(!D.cv.skills)D.cv.skills=[];
@@ -894,7 +1175,7 @@ if(!D.profile.s2l_es)D.profile.s2l_es='';
 if(!D.profile.s3l_en)D.profile.s3l_en=D.profile.s3l;
 if(!D.profile.s3l_es)D.profile.s3l_es='';
 
-function save(){DB.set(D);const s=document.getElementById('saveStatus');if(s){s.textContent='✓ Saved';setTimeout(()=>s.textContent='',1800);}}
+function save(){DB.set(D);const s=document.getElementById('saveStatus');if(s){s.textContent='☁ Syncing…';setTimeout(()=>{s.textContent='✓ Synced';setTimeout(()=>s.textContent='',1800);},320);}}
 function uid(){return 'x'+Math.random().toString(36).slice(2,9);}
 function gv(id){const e=document.getElementById(id);return e?e.value:'';}
 function $el(id,txt){const e=document.getElementById(id);if(e)e.textContent=txt;}
@@ -910,6 +1191,8 @@ const TX={
     select_proj:'Select a project',
     no_clips:'No clips yet',
     clips:'Clips',
+    engine:'Engine',
+    tools:'Tools',
   },
   es:{
     open_to_work:'Disponible',
@@ -919,6 +1202,8 @@ const TX={
     select_proj:'Selecciona un proyecto',
     no_clips:'Sin clips aún',
     clips:'Clips',
+    engine:'Motor',
+    tools:'Herramientas',
   }
 };
 function t(k){return(TX[D.lang]||TX.en)[k]||k;}
@@ -958,6 +1243,21 @@ function applyLang(){
   const tagsSrc=isEs?(p.availTags_es||p.availTags_en||p.availTags):(p.availTags_en||p.availTags);
   const tagsHtml=tagsSrc.split(',').map(tg=>`<span class="avail-tag">${tg.trim()}</span>`).join('');
   ['availTags','mavailTags'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML=tagsHtml;});
+  // refresh mobile blocks with correct lang
+  renderMobSidebar();
+  renderCurrentCompanyInfo();
+  // refresh desktop right panel if a company is selected
+  if(typeof activeCompany!=='undefined'&&activeCompany){
+    const ac=D.companies.find(x=>x.id===activeCompany);
+    if(ac){
+      const ri=document.getElementById('riInner');
+      if(ri&&!ri.querySelector('.ri-empty')){
+        const isEs=L==='es';
+        ri.querySelector('.ri-desc').textContent=isEs&&ac.desc_es?ac.desc_es:ac.desc;
+        ri.querySelectorAll('.ri-key').forEach((k,i)=>{if(i===0)k.textContent=t('engine');if(i===1)k.textContent=t('tools');});
+      }
+    }
+  }
 }
 
 /* ══ COLOR THEME ══ */
@@ -1085,7 +1385,7 @@ function autoplayOnLoad(){
     }
     return;
   }
-  const co=D.companies.find(c=>c.clips&&c.clips.length>0);if(co)selectCo(co.id);
+  const co=D.companies.find(c=>(c.clips&&c.clips.length>0)||((c.projects||[]).some(p=>(p.clips||[]).length>0)));if(co)selectCo(co.id);
 }
 
 /* ══ VISITOR ══ */
@@ -1102,7 +1402,7 @@ function renderVisitor(){
   renderExpList();
   renderToolsGrid();
   renderHdrLinks();
-  renderPageNav();
+  
   renderMobSidebar();
   syncMobileBlocks();
   applyLang();
@@ -1199,9 +1499,9 @@ function renderCurrentCompanyInfo(){
     <div class="ri-inner">
       <div class="ri-tag">${c.role} · ${c.period}</div>
       <div class="ri-title">${c.name}</div>
-      <div class="ri-desc">${c.desc}</div>
-      <div class="ri-row"><span class="ri-key">Engine</span><span class="ri-val">${c.engine}</span></div>
-      <div class="ri-row"><span class="ri-key">Tools</span><span class="ri-val">${c.tools}</span></div>
+      <div class="ri-desc">${D.lang==='es'&&c.desc_es?c.desc_es:c.desc}</div>
+      <div class="ri-row"><span class="ri-key">${t('engine')}</span><span class="ri-val">${c.engine}</span></div>
+      <div class="ri-row"><span class="ri-key">${t('tools')}</span><span class="ri-val">${c.tools}</span></div>
     </div>`;
 }
 
@@ -1209,7 +1509,7 @@ function buildExpRowHtml(c){
   return `<img class="exp-logo" src="${c.logo}" alt="${c.name}"><div class="exp-info"><div class="exp-co">${c.name}</div><div class="exp-role-t">${c.role}</div><div class="exp-period">${c.period}</div></div>`;
 }
 function buildExpCardHtml(c){
-  return `<img class="exp-card-img" src="${c.thumb||c.logo}" alt="${c.name}"><div class="exp-card-body"><div class="exp-card-title">${c.name}</div><div class="exp-card-sub">${c.role} · ${c.period}</div><div class="exp-card-desc">${c.desc||''}</div></div>`;
+  return `<div class="exp-card-img-wrap"><div class="exp-card-img" style="background-image:url(${c.thumb||c.logo})"></div>${c.logo?`<img class="exp-card-logo-badge" src="${c.logo}" alt="${c.name}">`:''}</div><div class="exp-card-body"><div class="exp-card-title">${c.name}</div><div class="exp-card-sub">${c.role} · ${c.period}</div><div class="exp-card-desc">${D.lang==='es'&&c.desc_es?c.desc_es:(c.desc||'')}</div></div>`;
 }
 function renderExpList(){
   const el=document.getElementById('expList');if(!el)return;el.innerHTML='';
@@ -1239,15 +1539,15 @@ function selectCo(id){
   const infoHtml=`
     <div class="ri-tag">${c.role} · ${c.period}</div>
     <div class="ri-title">${c.name}</div>
-    <div class="ri-desc">${c.desc}</div>
+    <div class="ri-desc">${D.lang==='es'&&c.desc_es?c.desc_es:c.desc}</div>
     <div class="ri-row"><span class="ri-key">Engine</span><span class="ri-val">${c.engine}</span></div>
     <div class="ri-row"><span class="ri-key">Tools</span><span class="ri-val">${c.tools}</span></div>`;
   document.getElementById('riInner').innerHTML=infoHtml;
   $el('clipsLbl',c.name);
   document.getElementById('ambi').style.backgroundImage=`url(${c.thumb})`;
   buildClips(c);
-  if(c.clips[0]) playClip(c.clips[0],0);
-  else{
+  /* buildClips handles first clip autoplay */
+  if(false){/* placeholder */} else if(!(c.clips.length||(c.projects||[]).some(p=>(p.clips||[]).length))){
     document.getElementById('mainFrame').classList.remove('on');
     document.getElementById('mainFrame').src='about:blank';
     document.getElementById('ph').classList.remove('off');
@@ -1256,23 +1556,69 @@ function selectCo(id){
   }
 }
 
-function buildClips(c){
+function buildClips(co){
   const scroll=document.getElementById('clipsScroll');scroll.innerHTML='';
-  if(!c.clips.length){scroll.innerHTML=`<div style="display:flex;align-items:center;padding:0 16px;font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);">${t('no_clips')}</div>`;return;}
-  c.clips.forEach((cl,ci)=>{
-    const d=document.createElement('div');d.className='clip';d.setAttribute('role','listitem');
-    d.innerHTML=`<div class="clip-bg" style="background-image:url(${cl.thumb})"></div><div class="clip-grad"></div><div class="clip-play">▶</div><div class="clip-body"><div class="clip-title">${cl.title}</div><div class="clip-tools">${cl.tools}</div></div>`;
-    d.addEventListener('click',()=>playClip(cl,ci));scroll.appendChild(d);
+  const projects=co.projects||[];
+  const looseClips=co.clips||[];
+  const totalClips=looseClips.length+projects.reduce((s,p)=>s+(p.clips||[]).length,0);
+  if(!totalClips){
+    scroll.innerHTML=`<div style="display:flex;align-items:center;padding:0 16px;font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);">${t('no_clips')}</div>`;
+    return;
+  }
+  let globalIdx=0;
+  /* ── loose clips (no project) ── */
+  if(looseClips.length){
+    looseClips.forEach(cl=>{
+      const d=_makeClipEl(cl,globalIdx,null);
+      scroll.appendChild(d);globalIdx++;
+    });
+  }
+  /* ── projects ── */
+  projects.forEach(proj=>{
+    if(!(proj.clips||[]).length)return;
+    /* separator */
+    const sep=document.createElement('div');sep.className='clip-proj-sep';
+    sep.innerHTML=`${proj.thumb?`<img class="clip-proj-thumb" src="${proj.thumb}" alt="${proj.name}">`:''}<span class="clip-proj-name">${proj.name}</span>`;
+    scroll.appendChild(sep);
+    proj.clips.forEach(cl=>{
+      const d=_makeClipEl(cl,globalIdx,proj);
+      scroll.appendChild(d);globalIdx++;
+    });
   });
+  /* auto-play first clip */
+  const firstCo=looseClips[0]||(projects[0]&&(projects[0].clips||[])[0]);
+  const firstProj=looseClips.length?null:projects[0];
+  if(firstCo)playClip(firstCo,0,firstProj,co);
 }
 
-function playClip(cl,ci){
+function _makeClipEl(cl,idx,proj){
+  const d=document.createElement('div');d.className='clip';d.setAttribute('role','listitem');
+  d.innerHTML=`<div class="clip-bg" style="background-image:url(${cl.thumb})"></div><div class="clip-grad"></div><div class="clip-play">▶</div><div class="clip-body"><div class="clip-title">${cl.title}</div><div class="clip-tools">${cl.tools}</div></div>`;
+  d.addEventListener('click',()=>playClip(cl,idx,proj,D.companies.find(x=>x.id===activeCompany)));
+  return d;
+}
+
+function playClip(cl,ci,proj,co){
   const iframe=document.getElementById('mainFrame');
   document.getElementById('ph').classList.add('off');
   iframe.classList.remove('on');
   setTimeout(()=>{iframe.src=cl.video.includes('?')?cl.video+'&autoplay=1':cl.video+'?autoplay=1';setTimeout(()=>iframe.classList.add('on'),150);},100);
-  if(cl.thumb){document.getElementById('ambi').style.backgroundImage=`url(${cl.thumb})`;document.getElementById('ambi').classList.add('on');}
+  const thumb=cl.thumb||(proj&&proj.thumb)||(co&&co.thumb)||'';
+  if(thumb){document.getElementById('ambi').style.backgroundImage=`url(${thumb})`;document.getElementById('ambi').classList.add('on');}
   const np=document.getElementById('nowP');np.textContent=cl.title+(cl.tools?' · '+cl.tools:'');np.classList.add('on');
+  /* update right panel with project info if available, else company info */
+  if(proj){
+    const cover=document.getElementById('riCover');
+    const ph=proj.thumb||(co&&co.thumb)||'';
+    if(cover){cover.style.backgroundImage=`url(${ph})`;cover.dataset.url=ph;}
+    refreshCover();
+    document.getElementById('riInner').innerHTML=`
+      <div class="ri-tag">${co?co.role+' · '+co.period:''}</div>
+      <div class="ri-title">${proj.name}</div>
+      <div class="ri-desc">${proj.desc||co&&co.desc||''}</div>
+      ${proj.engine||co&&co.engine?`<div class="ri-row"><span class="ri-key">Engine</span><span class="ri-val">${proj.engine||co.engine}</span></div>`:''}
+      ${cl.tools?`<div class="ri-row"><span class="ri-key">Tools</span><span class="ri-val">${cl.tools}</span></div>`:''}`;
+  }
   let vi=0;document.querySelectorAll('#clipsScroll .clip').forEach(d=>{d.classList.toggle('active',vi===ci);vi++;});
   if(window.innerWidth<=768){const ctr=document.querySelector('.center');if(ctr)ctr.scrollIntoView({behavior:'smooth',block:'start'});}
 }
@@ -1282,34 +1628,7 @@ let lightMode=D.lightMode||false;
 function applyLightMode(){document.body.classList.toggle('light',lightMode);document.getElementById('themeBtn').textContent=lightMode?'☾':'☀';}
 document.getElementById('themeBtn').addEventListener('click',()=>{lightMode=!lightMode;D.lightMode=lightMode;save();applyLightMode();});
 
-/* ══ CUSTOM PAGES ══ */
-function renderPageNav(){
-  const nav=document.getElementById('pageNavLinks');if(!nav)return;nav.innerHTML='';
-  (D.customPages||[]).forEach(page=>{
-    const btn=document.createElement('button');btn.className='page-nav-btn';btn.textContent=page.title;
-    btn.addEventListener('click',()=>openPage(page.id));nav.appendChild(btn);
-  });
-}
-function openPage(id){
-  const page=(D.customPages||[]).find(p=>p.id===id);if(!page)return;
-  document.getElementById('pageTitleBar').textContent=page.title;
-  document.getElementById('pageBody').innerHTML=page.content||'<div class="page-section"><div class="page-text-block">No content yet.</div></div>';
-  document.getElementById('pageOverlay').classList.add('open');
-}
-function closePage(){document.getElementById('pageOverlay').classList.remove('open');}
-function renderPagesAdmin(){
-  const list=document.getElementById('pagesList');if(!list)return;list.innerHTML='';
-  (D.customPages||[]).forEach(page=>{
-    const row=document.createElement('div');row.className='cp-row';
-    row.innerHTML=`<div><div class="cp-title">${page.title}</div><div class="cp-sub">/${page.slug}</div></div><div class="cp-actions"><button class="ab primary" onclick="openEditPage('${page.id}')">Edit</button><button class="ab danger" onclick="deletePage('${page.id}')">Delete</button></div>`;
-    list.appendChild(row);
-  });
-}
-function openAddPage(){openModal('Add Page','',`<div class="a-form"><div class="fg"><label class="fl">Title (shown in top bar)</label><input class="fi" id="ap-title" placeholder="Tech Art"></div><div class="fg"><label class="fl">Slug</label><input class="fi" id="ap-slug" placeholder="tech-art"></div><div class="fg"><label class="fl">Content HTML</label><textarea class="fta" id="ap-content" style="min-height:120px;" placeholder="&lt;div class='page-section'&gt;..."></textarea></div><div class="hint-box">Use classes: <code>page-section</code>, <code>page-sec-title</code>, <code>page-text-block</code>, <code>page-grid-2</code>, <code>page-grid-3</code>, <code>page-card</code></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:'confirmAddPage()'}]);}
-function confirmAddPage(){if(!D.customPages)D.customPages=[];D.customPages.push({id:uid(),title:gv('ap-title')||'Page',slug:gv('ap-slug')||'page',content:gv('ap-content')});save();closeModal();renderPagesAdmin();renderPageNav();toast('Page added');}
-function openEditPage(id){const page=D.customPages.find(p=>p.id===id);openModal('Edit — '+page.title,'',`<div class="a-form"><div class="fg"><label class="fl">Title</label><input class="fi" id="ep-title" value="${page.title}"></div><div class="fg"><label class="fl">Slug</label><input class="fi" id="ep-slug" value="${page.slug}"></div><div class="fg"><label class="fl">Content HTML</label><textarea class="fta" id="ep-content" style="min-height:140px;">${page.content||''}</textarea></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditPage('${id}')`}]);}
-function confirmEditPage(id){const page=D.customPages.find(p=>p.id===id);page.title=gv('ep-title');page.slug=gv('ep-slug');page.content=gv('ep-content');save();closeModal();renderPagesAdmin();renderPageNav();toast('Updated');}
-function deletePage(id){if(!confirm('Delete?'))return;D.customPages=D.customPages.filter(p=>p.id!==id);save();renderPagesAdmin();renderPageNav();toast('Deleted');}
+
 
 /* ══ CV ══ */
 function renderCvForm(){
@@ -1376,145 +1695,6 @@ function openAddLang(){openModal('Add Language','',`<div class="a-form"><div cla
 function confirmAddLang(){if(!D.cv.languages)D.cv.languages=[];D.cv.languages.push({name:gv('lang-n'),level:gv('lang-l')});save();closeModal();renderLangList();toast('Added');}
 function deleteLang(i){D.cv.languages.splice(i,1);save();renderLangList();toast('Deleted');}
 
-
-/* ══ ATS-SAFE CV ══ */
-function generateAtsCv(){
-  saveCvData();
-  const p=D.profile, cv=D.cv||{};
-  const artstationUrl=cv.artstation||((D.links||[]).find(l=>l.label&&l.label.toLowerCase()==='artstation')||{}).url||'';
-  const linkedinUrl=((D.links||[]).find(l=>l.url&&l.url.includes('linkedin'))||{}).url||'';
-  const summary=cv.summary||(p.bio_en||p.bio)||'';
-  const name=p.name||'';
-  const role=p.role_en||p.role||'';
-  const avail=(p.availTags_en||p.availTags||'').split(',').map(t=>t.trim()).filter(Boolean).join(' | ');
-
-  /* ── Contact block — plain text, no images, no icons ── */
-  const contact=[
-    cv.email||'',
-    cv.phone||'',
-    cv.location||'',
-    cv.website||'',
-    linkedinUrl||'',
-    artstationUrl||'',
-  ].filter(Boolean).join('  |  ');
-
-  /* ── Experience — linear, no columns, company FIRST then role ── */
-  const expRows=D.companies.map(co=>{
-    const tools=[co.engine,co.tools].filter(Boolean).join(' | ');
-    return `
-      <div class="ats-exp-block">
-        <div class="ats-exp-head">
-          <span class="ats-co">${co.name}</span>
-          <span class="ats-sep"> — </span>
-          <span class="ats-role">${co.role}</span>
-          <span class="ats-period"> | ${co.period}</span>
-        </div>
-        ${tools?`<div class="ats-tools">${tools}</div>`:''}
-        ${co.desc?`<div class="ats-desc">${co.desc}</div>`:''}
-      </div>`;
-  }).join('');
-
-  /* ── Skills — plain comma-separated text, no tags/badges ── */
-  const skillsText=(cv.skills||[]).map(s=>s.replace(/^([^:]+:)/,'$1')).join('  •  ');
-
-  /* ── Education ── */
-  const eduRows=(cv.education||[]).map(e=>
-    `<div class="ats-edu-row"><strong>${e.title}</strong> — ${e.institution}${e.year?' ('+e.year+')':''}</div>`
-  ).join('');
-
-  /* ── Languages ── */
-  const langText=(cv.languages||[]).map(l=>`${l.name} (${l.level})`).join('  •  ');
-
-  /* ── Keywords section — critical for ATS keyword matching ── */
-  const seoSkills=(D.seo&&D.seo.skills)||'';
-  const seoKw=(D.seo&&D.seo.keywords)||'';
-  const allKw=[...new Set([
-    ...seoSkills.split(','),
-    ...seoKw.split(','),
-    ...(cv.skills||[]).flatMap(s=>s.split(/[:|,]/)),
-    ...D.companies.flatMap(co=>(co.tools||'').split(/[,·]/)),
-    ...D.companies.flatMap(co=>(co.engine||'').split(/[,·]/)),
-  ].map(k=>k.trim()).filter(k=>k.length>1))].join(', ');
-
-  const html=`<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>${name} — CV</title>
-<style>
-/* ATS-SAFE: single column, system fonts only, no images, no columns, no flex/grid */
-@page{size:A4;margin:20mm 20mm 18mm 20mm;}
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;background:#fff;color:#000;font-family:Arial,Helvetica,sans-serif;font-size:11pt;line-height:1.5;}
-a{color:#000;text-decoration:underline;}
-h1{font-size:18pt;font-weight:bold;margin:0 0 2px 0;letter-spacing:0;}
-h2{font-size:10pt;font-weight:bold;margin:14px 0 4px 0;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid #000;padding-bottom:2px;}
-.contact{font-size:9.5pt;color:#333;margin-bottom:12px;}
-.role-line{font-size:11pt;font-weight:bold;color:#000;margin-bottom:4px;}
-.summary{font-size:10pt;margin-bottom:14px;line-height:1.55;}
-.ats-exp-block{margin-bottom:10px;}
-.ats-exp-head{font-size:10.5pt;font-weight:bold;}
-.ats-co{font-size:10.5pt;}
-.ats-role{font-size:10.5pt;}
-.ats-period{font-size:9.5pt;color:#333;}
-.ats-tools{font-size:9pt;color:#333;margin-top:1px;}
-.ats-desc{font-size:10pt;margin-top:3px;line-height:1.45;}
-.ats-edu-row{margin-bottom:5px;font-size:10pt;}
-.skills-text{font-size:10pt;line-height:1.6;}
-.avail-text{font-size:10pt;}
-.kw-section{font-size:8.5pt;color:#444;line-height:1.6;margin-top:4px;}
-.page-break{page-break-before:always;}
-@media print{
-  body{font-size:10pt;}
-  h1{font-size:16pt;}
-  h2{font-size:9.5pt;}
-  .no-print{display:none!important;}
-}
-</style>
-</head>
-<body>
-
-<div class="no-print" style="background:#f0fdf4;border:1px solid #86efac;padding:12px 16px;margin-bottom:20px;font-family:Arial;font-size:11px;border-radius:4px;">
-  <strong>ATS-Safe CV</strong> — single column, system fonts, no images, no decorative elements.<br>
-  Print as PDF: <strong>File → Print → Save as PDF</strong> (use A4, no margins extra).
-  <button onclick="window.print()" style="margin-left:12px;padding:4px 12px;cursor:pointer;">🖨 Print / Save PDF</button>
-</div>
-
-<!-- HEADER -->
-<h1>${name}</h1>
-<div class="role-line">${role}</div>
-<div class="contact">${contact}</div>
-
-${summary?`<h2>Professional Summary</h2><div class="summary">${summary}</div>`:''}
-
-<!-- EXPERIENCE -->
-<h2>Experience</h2>
-${expRows}
-
-<!-- SKILLS — listed as plain text for ATS keyword matching -->
-${skillsText?`<h2>Technical Skills</h2><div class="skills-text">${skillsText}</div>`:''}
-
-<!-- EDUCATION -->
-${eduRows?`<h2>Education</h2>${eduRows}`:''}
-
-<!-- LANGUAGES -->
-${langText?`<h2>Languages</h2><div class="skills-text">${langText}</div>`:''}
-
-<!-- AVAILABILITY -->
-${avail?`<h2>Availability</h2><div class="avail-text">${avail}</div>`:''}
-
-<!-- KEYWORDS — hidden visually but readable by ATS parsers -->
-<!-- This section lists all relevant technical keywords for ATS matching -->
-${allKw?`<h2>Keywords</h2><div class="kw-section">${allKw}</div>`:''}
-
-</body>
-</html>`;
-
-  const w=window.open('','_blank','width=900,height=700');
-  w.document.write(html);
-  w.document.close();
-}
-
 function generateCvPdf(){
   saveCvData();
   const p=D.profile, cv=D.cv||{};
@@ -1566,7 +1746,10 @@ function generateCvPdf(){
           <div class="cvf-role">${p.role_en||p.role}</div>
           ${summary?`<div class="cvf-summary cvf-summarybox">${summary}</div>`:''}
         </div>
-        <div class="cvf-contact">${contactParts.map(x=>`<div>${x}</div>`).join('')}</div>
+        <div class="cvf-head-right">
+          <img class="cvf-logo" src="https://yagovfx.github.io/YF_Logo.jpeg" alt="YF">
+          <div class="cvf-contact">${contactParts.map(x=>`<div>${x}</div>`).join('')}</div>
+        </div>
       </div>
 
       <div class="cvf-section cvf-exp-section">
@@ -1597,6 +1780,8 @@ function generateCvPdf(){
     a{color:#7c5cfc;text-decoration:none;}
     .cvf-inner{max-width:720px;margin:0 auto;padding:18mm 16mm 14mm;font-size:10.5px;line-height:1.45;color:#222;}
     .cvf-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid #111;gap:16px;}
+    .cvf-head-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0;}
+    .cvf-logo{width:56px;height:56px;border-radius:50%;object-fit:cover;border:1.5px solid #ddd;}
     .cvf-head-left{flex:1;min-width:0;}
     .cvf-name{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:3px;}
     .cvf-role{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#7c5cfc;margin-bottom:8px;}
@@ -1710,7 +1895,7 @@ function checkPw(){
 function openAdmin(){
   document.getElementById('admin-overlay').classList.add('on');showSec('reel');
   renderAdminCos();renderVidCoSel();renderProfileForm();renderLayGrid();renderThemeGrid();
-  renderSizeGrid();renderToolsAdmin();renderLinksAdmin();renderPagesAdmin();renderCvForm();
+  renderSizeGrid();renderToolsAdmin();renderLinksAdmin();renderPostsAdmin();renderCvForm();renderSeoAdmin();
   const te=document.getElementById('togExpCards');if(te)te.checked=!!D.expCards;
   renderCurrentCompanyInfo();syncMobileBlocks();
   const ls=document.getElementById('langSel');if(ls)ls.value=D.lang;
@@ -1728,8 +1913,8 @@ function showSec(name){
   if(name==='videos'){renderVidCoSel();renderVidMgr();renderSizeGrid();}
   if(name==='tools'){renderToolsAdmin();['small','medium','large'].forEach(s=>{const b=document.getElementById('tsz-'+s);if(b){b.style.borderColor=s===D.toolSize?'var(--accent)':'';b.style.color=s===D.toolSize?'var(--accent)':'';}});}
   if(name==='links')renderLinksAdmin();
-  if(name==='pages')renderPagesAdmin();
   if(name==='cv')renderCvForm();
+  if(name==='posts'&&!document.getElementById('pe-title'))renderPostsAdmin();
 }
 
 /* drag helper */
@@ -1742,21 +1927,133 @@ function addDragCard(card,arr,id,cb){
 }
 
 /* companies */
-function renderAdminCos(){const g=document.getElementById('coCards');if(!g)return;g.innerHTML='';D.companies.forEach(c=>{const card=document.createElement('div');card.className='a-card';card.draggable=true;card.dataset.id=c.id;card.innerHTML=`<img class="a-card-img" src="${c.thumb}" alt="${c.name}"><div class="a-card-body"><div class="a-card-title"><span class="drag-h">⠿</span>${c.name}</div><div class="a-card-sub">${c.role} · ${c.period}</div><div class="a-card-desc">${c.desc}</div><div class="a-card-actions"><button class="ab primary" onclick="openEditCo('${c.id}')">Edit</button><button class="ab" onclick="showSec('videos');setTimeout(()=>{document.getElementById('vidCoSel').value='${c.id}';renderVidMgr();},80)">Clips (${c.clips.length})</button><button class="ab danger" onclick="deleteCo('${c.id}')">Delete</button></div></div>`;addDragCard(card,D.companies,c.id,()=>{save();renderAdminCos();renderExpList();renderMobSidebar();renderCurrentCompanyInfo();renderVidCoSel();});g.appendChild(card);});}
-function openAddCo(){openModal('Add Company','',`<div class="a-form"><div class="frow"><div class="fg"><label class="fl">Name</label><input class="fi" id="mc-n"></div><div class="fg"><label class="fl">Role</label><input class="fi" id="mc-r" value="Senior VFX Artist"></div></div><div class="frow"><div class="fg"><label class="fl">Period</label><input class="fi" id="mc-p"></div><div class="fg"><label class="fl">Engine</label><input class="fi" id="mc-e"></div></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="mc-t"></div><div class="fg"><label class="fl">Description</label><textarea class="fta" id="mc-d"></textarea></div><div class="fg"><label class="fl">Logo URL</label><input class="fi" id="mc-l"></div><div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="mc-th"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:'confirmAddCo()'}]);}
-function confirmAddCo(){D.companies.push({id:uid(),name:gv('mc-n')||'New Company',role:gv('mc-r'),period:gv('mc-p'),engine:gv('mc-e'),tools:gv('mc-t'),desc:gv('mc-d'),logo:gv('mc-l'),thumb:gv('mc-th'),clips:[]});save();closeModal();renderAdminCos();renderVidCoSel();toast('Added');}
-function openEditCo(id){const c=D.companies.find(x=>x.id===id);openModal('Edit — '+c.name,'',`<div class="a-form"><div class="frow"><div class="fg"><label class="fl">Name</label><input class="fi" id="ec-n" value="${c.name}"></div><div class="fg"><label class="fl">Role</label><input class="fi" id="ec-r" value="${c.role}"></div></div><div class="frow"><div class="fg"><label class="fl">Period</label><input class="fi" id="ec-p" value="${c.period}"></div><div class="fg"><label class="fl">Engine</label><input class="fi" id="ec-e" value="${c.engine}"></div></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="ec-t" value="${c.tools}"></div><div class="fg"><label class="fl">Description</label><textarea class="fta" id="ec-d">${c.desc}</textarea></div><div class="fg"><label class="fl">Logo URL</label><input class="fi" id="ec-l" value="${c.logo}"></div><div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="ec-th" value="${c.thumb}"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditCo('${id}')`}]);}
-function confirmEditCo(id){const c=D.companies.find(x=>x.id===id);c.name=gv('ec-n');c.role=gv('ec-r');c.period=gv('ec-p');c.engine=gv('ec-e');c.tools=gv('ec-t');c.desc=gv('ec-d');c.logo=gv('ec-l');c.thumb=gv('ec-th');save();closeModal();renderAdminCos();toast('Updated');}
+function renderAdminCos(){const g=document.getElementById('coCards');if(!g)return;g.innerHTML='';D.companies.forEach(c=>{const card=document.createElement('div');card.className='a-card';card.draggable=true;card.dataset.id=c.id;card.innerHTML=`<img class="a-card-img" src="${c.thumb}" alt="${c.name}"><div class="a-card-body"><div class="a-card-title"><span class="drag-h">⠿</span>${c.name}</div><div class="a-card-sub">${c.role} · ${c.period}</div><div class="a-card-desc">${c.desc}</div><div class="a-card-actions"><button class="ab primary" onclick="openEditCo('${c.id}')">Edit</button><button class="ab" onclick="showSec('videos');setTimeout(()=>{document.getElementById('vidCoSel').value='${c.id}';renderVidMgr();},80)">Clips &amp; Proyectos</button><button class="ab danger" onclick="deleteCo('${c.id}')">Delete</button></div></div>`;addDragCard(card,D.companies,c.id,()=>{save();renderAdminCos();renderExpList();renderMobSidebar();renderCurrentCompanyInfo();renderVidCoSel();});g.appendChild(card);});}
+function openAddCo(){openModal('Add Company','',`<div class="a-form"><div class="frow"><div class="fg"><label class="fl">Name</label><input class="fi" id="mc-n"></div><div class="fg"><label class="fl">Role</label><input class="fi" id="mc-r" value="Senior VFX Artist"></div></div><div class="frow"><div class="fg"><label class="fl">Period</label><input class="fi" id="mc-p"></div><div class="fg"><label class="fl">Engine</label><input class="fi" id="mc-e"></div></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="mc-t"></div><div class="fg"><label class="fl">Description (EN)</label><textarea class="fta" id="mc-d"></textarea></div><div class="fg"><label class="fl">Description (ES)</label><textarea class="fta" id="mc-des"></textarea></div><div class="fg"><label class="fl">Logo URL</label><input class="fi" id="mc-l"></div><div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="mc-th"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:'confirmAddCo()'}]);}
+function confirmAddCo(){D.companies.push({id:uid(),name:gv('mc-n')||'New Company',role:gv('mc-r'),period:gv('mc-p'),engine:gv('mc-e'),tools:gv('mc-t'),desc:gv('mc-d'),desc_es:gv('mc-des'),logo:gv('mc-l'),thumb:gv('mc-th'),clips:[],projects:[]});save();closeModal();renderAdminCos();renderVidCoSel();toast('Added');}
+function openEditCo(id){const c=D.companies.find(x=>x.id===id);openModal('Edit — '+c.name,'',`<div class="a-form"><div class="frow"><div class="fg"><label class="fl">Name</label><input class="fi" id="ec-n" value="${c.name}"></div><div class="fg"><label class="fl">Role</label><input class="fi" id="ec-r" value="${c.role}"></div></div><div class="frow"><div class="fg"><label class="fl">Period</label><input class="fi" id="ec-p" value="${c.period}"></div><div class="fg"><label class="fl">Engine</label><input class="fi" id="ec-e" value="${c.engine}"></div></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="ec-t" value="${c.tools}"></div><div class="fg"><label class="fl">Description (EN)</label><textarea class="fta" id="ec-d">${c.desc}</textarea></div><div class="fg"><label class="fl">Description (ES)</label><textarea class="fta" id="ec-des">${c.desc_es||''}</textarea></div><div class="fg"><label class="fl">Logo URL</label><input class="fi" id="ec-l" value="${c.logo}"></div><div class="fg"><label class="fl">Cover image URL</label><input class="fi" id="ec-th" value="${c.thumb}"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditCo('${id}')`}]);}
+function confirmEditCo(id){const c=D.companies.find(x=>x.id===id);c.name=gv('ec-n');c.role=gv('ec-r');c.period=gv('ec-p');c.engine=gv('ec-e');c.tools=gv('ec-t');c.desc=gv('ec-d');c.desc_es=gv('ec-des');c.logo=gv('ec-l');c.thumb=gv('ec-th');save();closeModal();renderAdminCos();toast('Updated');}
 function deleteCo(id){if(!confirm('Delete?'))return;D.companies=D.companies.filter(x=>x.id!==id);save();renderAdminCos();renderVidCoSel();toast('Deleted');}
 
 /* videos */
 function renderVidCoSel(){const sel=document.getElementById('vidCoSel');if(!sel)return;sel.innerHTML=D.companies.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');}
-function renderVidMgr(){const id=document.getElementById('vidCoSel')?.value;const c=D.companies.find(x=>x.id===id);const area=document.getElementById('vidMgrArea');if(!area)return;if(!c){area.innerHTML='';return;}area.innerHTML=`<button class="a-add-btn" onclick="openAddVid('${c.id}')">＋ Add clip to ${c.name}</button><div class="a-cards" id="vidCards"></div>`;const g=document.getElementById('vidCards');if(!c.clips.length){g.innerHTML=`<div style="color:var(--sub);font-size:11px;padding:8px 0;">No clips yet.</div>`;return;}c.clips.forEach(cl=>{const card=document.createElement('div');card.className='a-card';card.draggable=true;card.dataset.id=cl.id;card.innerHTML=`<img class="a-card-img" src="${cl.thumb||c.thumb}" style="height:70px;" alt="${cl.title}"><div class="a-card-body"><div class="a-card-title"><span class="drag-h">⠿</span>${cl.title}</div><div class="a-card-sub">${cl.tools}</div><div class="a-card-actions"><button class="ab primary" onclick="openEditVid('${c.id}','${cl.id}')">Edit</button><button class="ab danger" onclick="deleteVid('${c.id}','${cl.id}')">Delete</button></div></div>`;addDragCard(card,c.clips,cl.id,()=>{save();renderVidMgr();});g.appendChild(card);});}
-function openAddVid(cid){openModal('Add Clip','',`<div class="a-form"><div class="fg"><label class="fl">Title</label><input class="fi" id="av-t"></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="av-to"></div><div class="fg"><label class="fl">Embed URL</label><input class="fi" id="av-v" placeholder="https://www.youtube.com/embed/…"></div><div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="av-th"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:`confirmAddVid('${cid}')`}]);}
-function confirmAddVid(cid){const c=D.companies.find(x=>x.id===cid);c.clips.push({id:uid(),title:gv('av-t')||'Clip',tools:gv('av-to'),video:gv('av-v'),thumb:gv('av-th')});save();closeModal();renderVidMgr();toast('Added');}
-function openEditVid(cid,vid){const c=D.companies.find(x=>x.id===cid);const cl=c.clips.find(x=>x.id===vid);openModal('Edit Clip','',`<div class="a-form"><div class="fg"><label class="fl">Title</label><input class="fi" id="ev-t" value="${cl.title}"></div><div class="fg"><label class="fl">Tools</label><input class="fi" id="ev-to" value="${cl.tools}"></div><div class="fg"><label class="fl">Embed URL</label><input class="fi" id="ev-v" value="${cl.video}"></div><div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="ev-th" value="${cl.thumb}"></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditVid('${cid}','${vid}')`}]);}
-function confirmEditVid(cid,vid){const c=D.companies.find(x=>x.id===cid);const cl=c.clips.find(x=>x.id===vid);cl.title=gv('ev-t');cl.tools=gv('ev-to');cl.video=gv('ev-v');cl.thumb=gv('ev-th');save();closeModal();renderVidMgr();toast('Updated');}
-function deleteVid(cid,vid){const c=D.companies.find(x=>x.id===cid);c.clips=c.clips.filter(x=>x.id!==vid);save();renderVidMgr();toast('Deleted');}
+function renderVidMgr(){
+  const id=document.getElementById('vidCoSel')?.value;
+  const co=D.companies.find(x=>x.id===id);
+  const area=document.getElementById('vidMgrArea');if(!area)return;if(!co){area.innerHTML='';return;}
+  if(!co.projects)co.projects=[];
+
+  let html=`<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+    <button class="a-add-btn" style="margin:0;" onclick="openAddVid('${co.id}',null)">＋ Clip suelto</button>
+    <button class="a-add-btn" style="margin:0;background:rgba(124,92,252,.12);border-color:var(--accent);color:var(--accent);" onclick="openAddProject('${co.id}')">＋ Nuevo Proyecto</button>
+  </div>`;
+
+  /* ── Loose clips ── */
+  if(co.clips.length){
+    html+=`<div class="proj-section"><div class="proj-section-hd"><span class="proj-section-name" style="color:var(--sub);font-size:10px;">Sin proyecto</span></div><div class="proj-clips-area" id="loose-clips-${co.id}">`;
+    co.clips.forEach(cl=>{
+      html+=`<div class="proj-clip-row" draggable="true" data-id="${cl.id}">
+        <img class="proj-clip-thumb" src="${cl.thumb||co.thumb||''}" alt="">
+        <div class="proj-clip-info"><div class="proj-clip-title">${cl.title}</div><div class="proj-clip-sub">${cl.tools||''}</div></div>
+        <div class="proj-clip-actions">
+          <button class="ab primary" onclick="openEditVid('${co.id}','${cl.id}',null)">Edit</button>
+          <button class="ab danger" onclick="deleteVid('${co.id}','${cl.id}',null)">✕</button>
+        </div></div>`;
+    });
+    html+=`</div></div>`;
+  }
+
+  /* ── Projects ── */
+  co.projects.forEach(proj=>{
+    html+=`<div class="proj-section">
+      <div class="proj-section-hd">
+        ${proj.thumb?`<img src="${proj.thumb}" style="width:32px;height:32px;object-fit:cover;border-radius:4px;flex-shrink:0;" alt="">`:''}
+        <span class="proj-section-name">${proj.name}</span>
+        <div class="proj-section-actions">
+          <button class="ab primary" onclick="openAddVid('${co.id}','${proj.id}')">＋ Clip</button>
+          <button class="ab" onclick="openEditProject('${co.id}','${proj.id}')">Edit</button>
+          <button class="ab danger" onclick="deleteProject('${co.id}','${proj.id}')">✕</button>
+        </div>
+      </div>
+      <div class="proj-clips-area">`;
+    if(!(proj.clips||[]).length){
+      html+=`<div style="color:var(--sub);font-size:10px;padding:4px 0;">Sin clips en este proyecto.</div>`;
+    } else {
+      proj.clips.forEach(cl=>{
+        html+=`<div class="proj-clip-row">
+          <img class="proj-clip-thumb" src="${cl.thumb||proj.thumb||co.thumb||''}" alt="">
+          <div class="proj-clip-info"><div class="proj-clip-title">${cl.title}</div><div class="proj-clip-sub">${cl.tools||''}</div></div>
+          <div class="proj-clip-actions">
+            <button class="ab primary" onclick="openEditVid('${co.id}','${cl.id}','${proj.id}')">Edit</button>
+            <button class="ab danger" onclick="deleteVid('${co.id}','${cl.id}','${proj.id}')">✕</button>
+          </div></div>`;
+      });
+    }
+    html+=`</div></div>`;
+  });
+
+  area.innerHTML=html;
+}
+function openAddVid(cid,projId){openModal('Add Clip','',`<div class="a-form">
+  <div class="fg">
+    <label class="fl">Video URL <span style="color:var(--sub);font-size:9px;">(YouTube o Vimeo)</span></label>
+    <div style="display:flex;gap:6px;">
+      <input class="fi" id="av-url" placeholder="https://youtu.be/… o https://vimeo.com/…" style="flex:1;" oninput="document.getElementById('vf-status').textContent=''">
+      <button class="ab primary" onclick="fetchVideoMeta(document.getElementById('av-url').value)" style="flex-shrink:0;white-space:nowrap;">⬇ Auto-fill</button>
+    </div>
+    <div id="vf-status" style="font-family:var(--mono);font-size:8px;margin-top:4px;height:12px;"></div>
+  </div>
+  <div class="fg"><label class="fl">Title</label><input class="fi" id="av-t" placeholder="Se rellena automáticamente"></div>
+  <div class="fg"><label class="fl">Tools / descripción</label><input class="fi" id="av-to"></div>
+  <div class="fg"><label class="fl">Embed URL</label><input class="fi" id="av-v" placeholder="https://www.youtube.com/embed/…"></div>
+  <div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="av-th"></div>
+</div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Add',c:'primary',f:`confirmAddVid('${cid}','${projId||''}')`}]);}
+function confirmAddVid(cid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  const clip={id:uid(),title:gv('av-t')||'Clip',tools:gv('av-to'),video:gv('av-v'),thumb:gv('av-th')};
+  if(projId){
+    const proj=co.projects.find(x=>x.id===projId);
+    if(proj){if(!proj.clips)proj.clips=[];proj.clips.push(clip);}
+  } else {
+    co.clips.push(clip);
+  }
+  save();closeModal();renderVidMgr();toast('Added');
+}
+function openEditVid(cid,vid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  const cl=projId
+    ?(co.projects.find(x=>x.id===projId)||{clips:[]}).clips.find(x=>x.id===vid)
+    :co.clips.find(x=>x.id===vid);
+  if(!cl)return;
+  openModal('Edit Clip','',`<div class="a-form">
+  <div class="fg">
+    <label class="fl">Video URL <span style="color:var(--sub);font-size:9px;">(para re-fetch)</span></label>
+    <div style="display:flex;gap:6px;">
+      <input class="fi" id="av-url" placeholder="https://youtu.be/…" style="flex:1;" oninput="document.getElementById('vf-status').textContent=''">
+      <button class="ab primary" onclick="fetchVideoMeta(document.getElementById('av-url').value)" style="flex-shrink:0;white-space:nowrap;">⬇ Auto-fill</button>
+    </div>
+    <div id="vf-status" style="font-family:var(--mono);font-size:8px;margin-top:4px;height:12px;"></div>
+  </div>
+  <div class="fg"><label class="fl">Title</label><input class="fi" id="ev-t" value="${cl.title}"></div>
+  <div class="fg"><label class="fl">Tools / descripción</label><input class="fi" id="ev-to" value="${cl.tools}"></div>
+  <div class="fg"><label class="fl">Embed URL</label><input class="fi" id="ev-v" value="${cl.video}"></div>
+  <div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="ev-th" value="${cl.thumb}"></div>
+</div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditVid('${cid}','${vid}','${projId||''}')`}]);
+}
+function confirmEditVid(cid,vid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  const cl=projId
+    ?(co.projects.find(x=>x.id===projId)||{clips:[]}).clips.find(x=>x.id===vid)
+    :co.clips.find(x=>x.id===vid);
+  if(!cl)return;
+  cl.title=gv('ev-t');cl.tools=gv('ev-to');cl.video=gv('ev-v');cl.thumb=gv('ev-th');
+  save();closeModal();renderVidMgr();toast('Updated');
+}
+function deleteVid(cid,vid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  if(projId){const proj=co.projects.find(x=>x.id===projId);if(proj)proj.clips=(proj.clips||[]).filter(x=>x.id!==vid);}
+  else{co.clips=co.clips.filter(x=>x.id!==vid);}
+  save();renderVidMgr();toast('Deleted');
+}
 
 /* tools */
 function renderToolsAdmin(){const g=document.getElementById('toolsAGrid');if(!g)return;g.innerHTML='';D.tools.forEach(tool=>{const card=document.createElement('div');card.className='tool-a-card';card.draggable=true;card.dataset.id=tool.id;card.innerHTML=`<span class="drag-h" style="font-size:12px;">⠿</span><img class="tool-a-img" src="${tool.img}" alt="${tool.n}"><span class="tool-a-name">${tool.n}</span><div class="tool-a-btns"><button class="ab" onclick="openEditTool('${tool.id}')">Edit</button><button class="ab danger" onclick="deleteTool('${tool.id}')">Del</button></div>`;addDragCard(card,D.tools,tool.id,()=>{save();renderToolsAdmin();});g.appendChild(card);});}
@@ -1846,10 +2143,550 @@ function syncMobileBlocks(){
 }
 window.addEventListener('resize', syncMobileBlocks);
 
+
+
+
+/* ══ IMPORT POSTS ══ */
+function importPosts(){
+  const raw=document.getElementById('import-json').value.trim();
+  const status=document.getElementById('import-status');
+  if(!raw){status.textContent='Pega un JSON primero.';return;}
+  let incoming;
+  try{incoming=JSON.parse(raw);}
+  catch(e){status.textContent='JSON inválido: '+e.message;status.style.color='var(--red)';return;}
+  if(!Array.isArray(incoming)){status.textContent='El JSON debe ser un array []';status.style.color='var(--red)';return;}
+  if(!D.posts)D.posts=[];
+  const existingIds=new Set(D.posts.map(p=>p.id));
+  let added=0,skipped=0;
+  incoming.forEach(p=>{
+    if(!p.id||!p.title){skipped++;return;}
+    if(existingIds.has(p.id)){skipped++;return;}
+    // Ensure hidden by default on import
+    p.visible=p.visible===true?true:false;
+    D.posts.push(p);
+    existingIds.add(p.id);
+    added++;
+  });
+  save();
+  renderPostsAdmin();
+  status.textContent=`✓ ${added} posts añadidos, ${skipped} omitidos (ya existían o inválidos).`;
+  status.style.color='var(--green)';
+  if(added>0)document.getElementById('import-json').value='';
+}
+
+/* ══ SEO ══ */
+function applySEO(){
+  const s=D.seo||{};
+  const title=s.title||document.title;
+  const desc=s.description||'';
+  const url=s.siteUrl||location.href;
+  const img=s.image||'';
+  document.title=title;
+  const sm=(name,val)=>{const m=document.querySelector('meta[name="'+name+'"]');if(m)m.setAttribute('content',val);};
+  const sp=(prop,val)=>{const m=document.querySelector('meta[property="'+prop+'"]');if(m)m.setAttribute('content',val);};
+  sm('description',desc);sm('keywords',s.keywords||'');sm('author',s.author||'');
+  sp('og:title',title);sp('og:description',desc);sp('og:url',url);sp('og:image',img);sp('og:locale',s.locale||'en_GB');sp('og:site_name',s.author||'Portfolio');
+  sm('twitter:title',title);sm('twitter:description',desc);sm('twitter:image',img);sm('twitter:creator',s.twitterHandle?'@'+s.twitterHandle.replace('@',''):'');
+  const can=document.getElementById('seo-canonical');if(can)can.href=url;
+  const sameAs=[];
+  (D.links||[]).forEach(l=>{if(l.url&&(l.url.includes('artstation')||l.url.includes('linkedin')||l.url.includes('twitter')||l.url.includes('x.com')))sameAs.push(l.url);});
+  const schema={'@context':'https://schema.org','@graph':[
+    {'@type':'Person','@id':url+'#person',name:s.author||'',jobTitle:s.jobTitle||'',description:desc,url:url,image:img||undefined,sameAs:sameAs,
+     knowsAbout:(s.skills||'').split(',').map(x=>x.trim()).filter(Boolean),
+     workLocation:{'@type':'Place',name:s.location||''},
+     availableFor:{'@type':'Offer',description:s.availability||''}},
+    {'@type':'CreativeWork','@id':url+'#portfolio',name:title,description:desc,url:url,author:{'@id':url+'#person'},keywords:s.keywords||''}
+  ]};
+  // Add CreativeWork entries for each visible post
+  const visiblePosts=(D.posts||[]).filter(p=>p.visible!==false);
+  visiblePosts.forEach(p=>{
+    schema['@graph'].push({
+      '@type':'Article',
+      headline:p.title,
+      description:p.desc||'',
+      author:{'@id':url+'#person'},
+      keywords:(p.cats||[]).join(', '),
+      url:url+'#post-'+p.id,
+      datePublished:p.date||'',
+    });
+  });
+  const jld=document.getElementById('seo-jsonld');if(jld)jld.textContent=JSON.stringify(schema);
+}
+function renderSeoAdmin(){
+  const sec=document.getElementById('sec-seo');if(!sec)return;
+  const s=D.seo||{};
+  const sf=(id,val)=>{const e=sec.querySelector('#'+id);if(e)e.value=val||'';};
+  sf('seo-f-title',s.title);sf('seo-f-desc',s.description);sf('seo-f-kw',s.keywords);
+  sf('seo-f-author',s.author);sf('seo-f-url',s.siteUrl);sf('seo-f-image',s.image);
+  sf('seo-f-twitter',s.twitterHandle);sf('seo-f-jobtitle',s.jobTitle);
+  sf('seo-f-skills',s.skills);sf('seo-f-avail',s.availability);sf('seo-f-location',s.location);
+}
+function saveSeo(){
+  const gf=id=>{const e=document.querySelector('#sec-seo #'+id);return e?e.value:'';};
+  D.seo={title:gf('seo-f-title'),description:gf('seo-f-desc'),keywords:gf('seo-f-kw'),
+    author:gf('seo-f-author'),siteUrl:gf('seo-f-url'),image:gf('seo-f-image'),
+    twitterHandle:gf('seo-f-twitter'),locale:D.seo&&D.seo.locale||'en_GB',
+    jobTitle:gf('seo-f-jobtitle'),skills:gf('seo-f-skills'),
+    availability:gf('seo-f-avail'),location:gf('seo-f-location')};
+  save();applySEO();toast('SEO guardado ✓');
+}
+
+/* ══════════════════════════════════════════════
+   DEVLOG SYSTEM
+══════════════════════════════════════════════ */
+const POST_CATS=['Niagara','Shuriken','Embergen','Liquidgen','Material','Pipeline','3D','TechArt','Houdini','Photoshop'];
+const POST_TPLS={
+  niagara:{label:'🎨 Niagara / Gameplay VFX',blocks:[
+    {type:'hero-video',label:'Hero Shot',url:''},
+    {type:'compare',label:'Before / After',leftUrl:'',leftLabel:'Without FX',rightUrl:'',rightLabel:'With FX'},
+    {type:'intent',label:'Intent / Goal',text:'Impact effect focused on readability and strong directional energy for third-person combat.'},
+    {type:'breakdown',label:'Breakdown Visual',items:[{url:'',caption:'Emissive pass'},{url:'',caption:'Distortion'},{url:'',caption:'Sparks'},{url:'',caption:'Smoke'}]},
+    {type:'image',label:'Niagara Graph',url:'',caption:'Key modules — spawn logic and custom behavior'},
+    {type:'params',label:'Parameters / Controls',items:[{key:'Color',val:'Exposed'},{key:'Intensity',val:'0–1'},{key:'Hit Size',val:'Scalar'},{key:'Lifetime',val:'0.4s'},{key:'Randomization',val:'±20%'}]},
+    {type:'metrics',label:'Optimization',items:[{val:'GPU',label:'Particle type'},{val:'<200',label:'Particle count'},{val:'48',label:'Instructions'},{val:'LOD 3',label:'Scalability'}]},
+    {type:'image',label:'Final Cinematic Shots',url:'',caption:''},
+  ]},
+  material:{label:'🧱 Material / Shader',blocks:[
+    {type:'hero-video',label:'Final Result',url:''},
+    {type:'intent',label:'Material Purpose',text:'Stylized wet surface with dynamic puddles and edge wear.'},
+    {type:'breakdown',label:'Texture Inputs',items:[{url:'',caption:'Albedo'},{url:'',caption:'Normal'},{url:'',caption:'Mask'},{url:'',caption:'Noise'}]},
+    {type:'text',label:'Shader Features',html:'<ul><li><strong>Triplanar</strong> mapping</li><li><strong>Vertex paint</strong> blending</li><li><strong>Fresnel</strong> edge glow</li><li><strong>Depth fade</strong> intersections</li></ul>'},
+    {type:'image',label:'Graph Breakdown',url:'',caption:''},
+    {type:'params',label:'Parameters',items:[{key:'Roughness',val:'0.0–1.0'},{key:'Edge Wear',val:'0–1'},{key:'Dissolve',val:'0–1'},{key:'Glow',val:'0–5'}]},
+    {type:'metrics',label:'Performance',items:[{val:'Med',label:'Shader complexity'},{val:'42',label:'Instructions'},{val:'6',label:'Tex samplers'},{val:'LOD 2',label:'LOD'}]},
+    {type:'image',label:'Final Beauty Shots',url:'',caption:''},
+  ]},
+  scene:{label:'🌍 Environment / Scene',blocks:[
+    {type:'hero-video',label:'Hero Shot',url:''},
+    {type:'compare',label:'Blockout vs Final',leftUrl:'',leftLabel:'Blockout',rightUrl:'',rightLabel:'Final'},
+    {type:'image',label:'Concept / References',url:'',caption:'Moodboard'},
+    {type:'compare',label:'Lighting Passes',leftUrl:'',leftLabel:'Flat lit',rightUrl:'',rightLabel:'Final lighting'},
+    {type:'breakdown',label:'Asset Breakdown',items:[{url:'',caption:'Trim sheet'},{url:'',caption:'Hero props'},{url:'',caption:'Foliage'},{url:'',caption:'Modular kit'}]},
+    {type:'text',label:'Materials / Shaders',html:'<p>Key materials and technical approach.</p>'},
+    {type:'metrics',label:'Optimization',items:[{val:'2048',label:'Texel density'},{val:'GPU',label:'Instancing'},{val:'LOD 3',label:'LOD levels'},{val:'✓',label:'Streaming'}]},
+    {type:'image',label:'Cinematic Shots',url:'',caption:''},
+  ]},
+  techArt:{label:'⚙️ Tech Art / Pipeline',blocks:[
+    {type:'intent',label:'Problem Statement',text:'Artists needed a faster way to generate impact decals consistently across weapons.'},
+    {type:'hero-video',label:'Final Result',url:''},
+    {type:'image',label:'Workflow Overview',url:'',caption:'Input → Processing → Output'},
+    {type:'breakdown',label:'System Breakdown',items:[{url:'',caption:'Tools'},{url:'',caption:'Blueprints'},{url:'',caption:'Scripts'},{url:'',caption:'Data flow'}]},
+    {type:'text',label:'Key Features',html:'<ul><li><strong>Auto setup</strong> on import</li><li><strong>Batch processing</strong></li><li><strong>Artist friendly</strong> UI</li><li><strong>Reusable</strong> across projects</li></ul>'},
+    {type:'text',label:'Technical Details',html:'<p>Blueprint snippets, HLSL, editor tools and data structures.</p>'},
+    {type:'metrics',label:'Metrics / Improvements',items:[{val:'-70%',label:'Setup time'},{val:'-30%',label:'Shader instructions'},{val:'-25%',label:'Memory usage'},{val:'✓',label:'Scalable'}]},
+    {type:'hero-video',label:'Final Demo',url:''},
+  ]},
+  devlog:{label:'📝 Devlog libre',blocks:[
+    {type:'hero-video',label:'Hero Shot',url:''},
+    {type:'intent',label:'Intro',text:''},
+    {type:'text',label:'Content',html:'<p>Escribe aquí.</p>'},
+    {type:'image',label:'Image',url:'',caption:''},
+  ]},
+};
+
+function _uid(){return 'p'+Math.random().toString(36).slice(2,9);}
+function _fmt(iso){if(!iso)return'';return new Date(iso).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
+function _embed(url){
+  if(!url)return'';
+  const yt=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/);
+  if(yt)return'https://www.youtube.com/embed/'+yt[1];
+  const vi=url.match(/vimeo\.com\/(\d+)/);
+  if(vi)return'https://player.vimeo.com/video/'+vi[1];
+  return url;
+}
+
+let _activeCat='all';
+
+function openDevlog(){
+  document.getElementById('postOverlay').classList.add('open');
+  _showPostList();
+}
+function _closeDevlog(){document.getElementById('postOverlay').classList.remove('open');}
+function _showPostList(){
+  document.getElementById('postListView').style.display='block';
+  document.getElementById('postSingleView').classList.remove('visible');
+  document.getElementById('postOverlayTitle').textContent='Devlog';
+  _renderCats();_renderGrid();
+}
+function _renderCats(){
+  const el=document.getElementById('postCatsFilter');if(!el)return;
+  // Build category list dynamically from visible posts
+  const catSet=new Set();
+  (D.posts||[]).filter(p=>p.visible!==false).forEach(p=>(p.cats||[]).forEach(c=>catSet.add(c)));
+  const cats=['all',...Array.from(catSet).sort()];
+  el.innerHTML=cats.map(c=>`<button class="cat-pill${_activeCat===c?' active':''}" onclick="_setCat('${c}')">${c==='all'?'All':c}</button>`).join('');
+}
+function _setCat(c){_activeCat=c;_renderCats();_renderGrid();}
+function _renderGrid(){
+  const grid=document.getElementById('postsGrid');if(!grid)return;
+  const posts=(D.posts||[]).filter(p=>(p.visible!==false)&&(_activeCat==='all'||(p.cats||[]).includes(_activeCat)));
+  if(!posts.length){grid.innerHTML='<div style="color:var(--sub);font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:20px 0;">No posts yet.</div>';return;}
+  grid.innerHTML='';
+  posts.forEach(p=>{
+    const isPrem=!!p.premium;
+    const pu=(D.premiumUrl||'#').replace(/"/g,'&quot;');
+    const card=document.createElement('div');card.className='post-card';
+    card.innerHTML=`
+      <div class="post-thumb-wrap">
+        ${p.thumb?`<img class="post-thumb" src="${p.thumb}" alt="">`:`<div class="post-thumb-empty">✍️</div>`}
+        ${isPrem?`<div class="post-blur-gate"><div class="post-lock">🔒</div><button class="post-unlock-btn" onclick="event.stopPropagation();window.open('${pu}','_blank')">Unlock on Patreon</button></div>`:''}
+      </div>
+      <div class="post-card-body">
+        <div class="post-card-cats">${(p.cats||[]).map(ct=>`<span class="post-cat-tag">${ct}</span>`).join('')}</div>
+        <div class="post-card-title">${p.title||'Untitled'}</div>
+        <div class="post-card-desc">${p.desc||''}</div>
+        <div class="post-card-foot">
+          <span class="post-card-date">${_fmt(p.date)}</span>
+          <span class="post-badge ${isPrem?'premium':'free'}">${isPrem?'Premium':'Free'}</span>
+        </div>
+      </div>`;
+    card.addEventListener('click',()=>_openPost(p.id));
+    grid.appendChild(card);
+  });
+}
+function _openPost(id){
+  const p=(D.posts||[]).find(x=>x.id===id);if(!p)return;
+  document.getElementById('postListView').style.display='none';
+  const sv=document.getElementById('postSingleView');sv.classList.add('visible');
+  document.getElementById('postOverlayTitle').textContent=p.title||'Post';
+  document.getElementById('psCats').innerHTML=(p.cats||[]).map(ct=>`<span class="post-cat-tag">${ct}</span>`).join('');
+  document.getElementById('psTitle').textContent=p.title||'';
+  const isPrem=!!p.premium;
+  document.getElementById('psMeta').innerHTML=`<span class="ps-date">${_fmt(p.date)}</span><span class="post-badge ${isPrem?'premium':'free'}" style="margin-left:8px;">${isPrem?'Premium':'Free'}</span>`;
+  const blocks=p.blocks||[];
+  const showN=isPrem?Math.min(2,blocks.length):blocks.length;
+  // No cover image inside post — video block handles the hero
+  let html='';
+  for(let i=0;i<showN;i++)html+=_renderBlock(blocks[i]);
+  if(isPrem){const pu=D.premiumUrl||'#';html+=`<div class="prem-gate"><div class="prem-gate-icon">🔒</div><div class="prem-gate-title">Premium Content</div><div class="prem-gate-desc">Full breakdown available for supporters. Access the complete step-by-step process, parameters, graphs and all assets.</div><a class="prem-gate-btn" href="${pu}" target="_blank" rel="noopener">Unlock on Patreon ↗</a></div>`;}
+  document.getElementById('psBlocks').innerHTML=html;
+}
+function _renderBlock(b){
+  if(!b)return'';
+  const lbl=`<div class="pb-lbl">${b.label||''}</div>`;
+  switch(b.type){
+    case 'hero-video':case 'video':return b.url?`<div class="pb pb-video">${lbl}<iframe src="${_embed(b.url)}" allowfullscreen></iframe></div>`:'';
+    case 'image':return b.url?`<div class="pb"><figure class="pb-img">${lbl}<img src="${b.url}" alt="${b.caption||''}"><figcaption>${b.caption||''}</figcaption></figure></div>`:'';
+    case 'compare':return `<div class="pb">${lbl}<div class="pb-compare"><div class="pb-compare-side">${b.leftUrl?`<img src="${b.leftUrl}" alt=""><span class="pb-compare-lbl">${b.leftLabel||'Before'}</span>`:''}</div><div class="pb-compare-side">${b.rightUrl?`<img src="${b.rightUrl}" alt=""><span class="pb-compare-lbl">${b.rightLabel||'After'}</span>`:''}</div></div></div>`;
+    case 'intent':return `<div class="pb">${lbl}<div class="pb-intent">${b.text||''}</div></div>`;
+    case 'text':return `<div class="pb pb-text">${lbl}${b.html||''}</div>`;
+    case 'breakdown':return `<div class="pb">${lbl}<div class="pb-breakdown-grid">${(b.items||[]).filter(i=>i.url).map(i=>`<div class="pb-bd-item"><img src="${i.url}" alt="${i.caption||''}"><div class="pb-bd-lbl">${i.caption||''}</div></div>`).join('')}</div></div>`;
+    case 'params':return `<div class="pb">${lbl}<div class="pb-params-grid">${(b.items||[]).filter(i=>i.key||i.val).map(i=>`<div class="pb-param-row"><span class="pb-param-key">${i.key}</span><span class="pb-param-val">${i.val}</span></div>`).join('')}</div></div>`;
+    case 'metrics':return `<div class="pb">${lbl}<div class="pb-metrics-grid">${(b.items||[]).filter(i=>i.val||i.label).map(i=>`<div class="pb-metric"><div class="pb-metric-val">${i.val}</div><div class="pb-metric-lbl">${i.label}</div></div>`).join('')}</div></div>`;
+    case 'divider':return `<div class="pb"><hr class="pb-divider"></div>`;
+    default:return'';
+  }
+}
+
+/* ═══ ADMIN POST EDITOR ═══ */
+let _ep=null,_eb=[];
+function renderPostsAdmin(){
+  const g=document.getElementById('postsAdminGrid');if(!g)return;
+  const posts=D.posts||[];
+  const hiddenCount=(posts||[]).filter(p=>p.visible===false).length;
+  const visibleCount=posts.length-hiddenCount;
+  // Update fixed global bar (already in HTML)
+  const bar=document.getElementById('posts-global-bar');
+  if(bar){
+    bar.querySelector('#posts-bar-count').textContent=`${visibleCount} visible · ${hiddenCount} hidden`;
+  }
+  if(!posts.length){g.innerHTML='<div style="color:var(--sub);font-size:11px;padding:8px 0;">Sin posts todavía. Crea el primero.</div>';return;}
+  g.innerHTML='';
+  posts.forEach(p=>{
+    const d=document.createElement('div');d.className='post-adm-card';
+    d.innerHTML=`${p.thumb?`<img class="post-adm-thumb" src="${p.thumb}" alt="">`:`<div class="post-adm-nothumb">✍️</div>`}
+      <span class="post-adm-badge ${p.premium?'premium':'free'}">${p.premium?'Premium':'Free'}</span>
+      ${p.visible===false?'<span class="post-adm-badge free" style="top:28px;background:rgba(180,180,180,.8);color:#111;">Hidden</span>':''}
+      <div class="post-adm-body">
+        <div class="a-card-title">${p.title||'Untitled'}</div>
+        <div class="a-card-sub">${(p.cats||[]).join(' · ')||'Sin categoría'} · ${_fmt(p.date)}</div>
+        <div class="a-card-actions" style="margin-top:8px;flex-wrap:wrap;gap:4px;">
+          <label style="display:flex;align-items:center;gap:5px;font-size:10px;cursor:pointer;width:100%;margin-bottom:2px;">
+            <input type="checkbox" ${p.visible!==false?'checked':''} onchange="togglePostVisible('${p.id}',this.checked)">
+            <span style="color:${p.visible!==false?'var(--green)':'var(--sub)'};">${p.visible!==false?'Visible':'Hidden'}</span>
+          </label>
+          <button class="ab primary" onclick="openEditPost('${p.id}')">Edit</button>
+          <button class="ab danger" onclick="deletePost('${p.id}')">Delete</button>
+        </div>
+      </div>`;
+    g.appendChild(d);
+  });
+}
+function openAddPost(){
+  window._ep={id:_uid(),title:'',desc:'',thumb:'',cats:[],date:new Date().toISOString().slice(0,10),premium:false,blocks:[]};
+  window._eb=[];_renderPostEditor(true);
+}
+function openEditPost(id){
+  const p=(D.posts||[]).find(x=>x.id===id);if(!p)return;
+  window._ep=JSON.parse(JSON.stringify(p));window._eb=JSON.parse(JSON.stringify(p.blocks||[]));_renderPostEditor(false);
+}
+function _renderPostEditor(isNew){
+  const p=window._ep;const sec=document.getElementById('sec-posts');
+  const allCats=[...new Set([...POST_CATS,...(D.posts||[]).flatMap(p=>p.cats||[]),...(window._ep.cats||[])].filter(Boolean))].sort();
+  const catsHtml=allCats.map(ct=>`<label style="display:flex;align-items:center;gap:5px;font-size:11px;cursor:pointer;"><input type="checkbox" value="${ct}" ${(p.cats||[]).includes(ct)?'checked':''} onchange="_toggleCat('${ct}',this.checked)"> ${ct}</label>`).join('')
+    +`<div style="margin-top:8px;display:flex;gap:6px;align-items:center;"><input class="fi" id="new-cat-input" placeholder="Nueva categoría…" style="flex:1;"><button class="ab" onclick="_addNewCat()">+ Añadir</button></div>`;
+  const tplBtns=Object.entries(POST_TPLS).map(([k,v])=>`<button class="block-add-btn" onclick="_applyTpl('${k}')">${v.label}</button>`).join('');
+  const addBtns=[['hero-video','🎬 Hero Video'],['compare','⚡ Before/After'],['intent','💬 Intent'],['text','📝 Text'],['image','🖼 Image'],['video','▶ Video'],['breakdown','🔲 Breakdown Grid'],['params','⚙ Parameters'],['metrics','📊 Metrics'],['divider','— Divider']].map(([t,l])=>`<button class="block-add-btn" onclick="_addBlock('${t}')">${l}</button>`).join('');
+  sec.innerHTML=`<div class="a-title">${isNew?'New Post':'Edit Post'}</div>
+<div style="display:grid;gap:12px;max-width:660px;">
+  <div class="fg"><label class="fl">Título</label><input id="pe-title" class="fi" value="${(p.title||'').replace(/"/g,'&quot;')}"></div>
+  <div class="fg"><label class="fl">Descripción corta</label><textarea id="pe-desc" class="fta">${p.desc||''}</textarea></div>
+  <div class="fg"><label class="fl">URL imagen de portada</label><input id="pe-thumb" class="fi" value="${(p.thumb||'').replace(/"/g,'&quot;')}"></div>
+  <div class="fg"><label class="fl">Fecha</label><input id="pe-date" class="fi" type="date" value="${p.date||''}"></div>
+  <div class="fg"><label class="fl">Categorías</label><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">${catsHtml}</div></div>
+  <div class="toggle-row"><div><div class="toggle-lbl">Visible</div><div class="toggle-sub">Público — aparece en el Devlog para visitantes. Desactívalo para mantenerlo oculto.</div></div><label class="tog"><input id="pe-vis" type="checkbox" ${p.visible!==false?'checked':''}><span class="tog-sl"></span></label></div>
+  <div class="toggle-row"><div><div class="toggle-lbl">Premium</div><div class="toggle-sub">Bloqueado — muestra gate con enlace de pago</div></div><label class="tog"><input id="pe-prem" type="checkbox" ${p.premium?'checked':''}><span class="tog-sl"></span></label></div>
+  <div class="fg"><label class="fl">Premium URL (Patreon / Ko-fi)</label><input id="pe-premurl" class="fi" value="${(D.premiumUrl||'').replace(/"/g,'&quot;')}" placeholder="https://patreon.com/yourpage"></div>
+  <div style="border-top:1px solid var(--line);padding-top:14px;"><div class="fl" style="margin-bottom:8px;">Plantilla</div><div class="block-add-row">${tplBtns}</div></div>
+  <div style="border-top:1px solid var(--line);padding-top:14px;"><div class="fl" style="margin-bottom:8px;">Añadir bloque</div><div class="block-add-row">${addBtns}</div><div class="block-editor" id="blockEditor"></div></div>
+  <div class="f-actions" style="padding-top:6px;"><button class="ab primary" onclick="savePost()">Guardar Post</button><button class="ab" onclick="_cancelPostEditor()">Cancelar</button></div>
+</div>`;
+  _renderBlockEditor();
+}
+function _cancelPostEditor(){
+  const sec=document.getElementById('sec-posts');
+  sec.innerHTML=`<div class="a-title">Devlog Posts</div><div class="a-sub">Breakdowns, devlogs y artículos técnicos.</div><button class="a-add-btn" id="newPostBtn">＋ New Post</button><div class="posts-adm-grid" id="postsAdminGrid"></div>`;
+  document.getElementById('newPostBtn').addEventListener('click',openAddPost);
+  renderPostsAdmin();
+}
+function _addNewCat(){
+  const inp=document.getElementById('new-cat-input');
+  if(!inp)return;
+  const val=inp.value.trim();
+  if(!val)return;
+  _toggleCat(val,true);
+  inp.value='';
+  // Re-render editor to show new cat checked
+  _renderPostEditor(window._ep.id===window._ep.id);
+}
+function _toggleCat(ct,on){if(!window._ep.cats)window._ep.cats=[];if(on){if(!window._ep.cats.includes(ct))window._ep.cats.push(ct);}else window._ep.cats=window._ep.cats.filter(x=>x!==ct);}
+function _applyTpl(key){
+  if(!POST_TPLS[key])return;
+  if(window._eb.length>0&&!confirm('Reemplazar bloques con la plantilla?'))return;
+  window._eb=JSON.parse(JSON.stringify(POST_TPLS[key].blocks)).map(b=>({...b,id:_uid()}));
+  _renderBlockEditor();toast('Plantilla aplicada');
+}
+function _addBlock(type){
+  const defs={'hero-video':{type:'hero-video',label:'Hero Shot',url:''},'video':{type:'video',label:'Video',url:''},'image':{type:'image',label:'Image',url:'',caption:''},'compare':{type:'compare',label:'Before / After',leftUrl:'',leftLabel:'Before',rightUrl:'',rightLabel:'After'},'intent':{type:'intent',label:'Intent / Goal',text:''},'text':{type:'text',label:'Text Block',html:'<p></p>'},'breakdown':{type:'breakdown',label:'Breakdown Grid',items:[{url:'',caption:''},{url:'',caption:''},{url:'',caption:''},{url:'',caption:''}]},'params':{type:'params',label:'Parameters',items:[{key:'',val:''},{key:'',val:''}]},'metrics':{type:'metrics',label:'Metrics',items:[{val:'',label:''},{val:'',label:''},{val:'',label:''},{val:'',label:''}]},'divider':{type:'divider',label:'Divider'}};
+  window._eb.push({...defs[type],id:_uid()});_renderBlockEditor();
+}
+function _rmBlock(id){window._eb=window._eb.filter(b=>b.id!==id);_renderBlockEditor();}
+function _mvBlock(id,dir){const eb=window._eb;const i=eb.findIndex(b=>b.id===id);if(i<0)return;const ni=i+dir;if(ni<0||ni>=eb.length)return;[eb[i],eb[ni]]=[eb[ni],eb[i]];window._eb=eb;_renderBlockEditor();}
+function _renderBlockEditor(){
+  const el=document.getElementById('blockEditor');if(!el)return;
+  if(!window._eb.length){el.innerHTML='<div style="color:var(--sub);font-size:11px;padding:8px 0;">Sin bloques. Elige plantilla o añade bloques arriba.</div>';return;}
+  el.innerHTML='';
+  window._eb.forEach(b=>{
+    const row=document.createElement('div');row.className='block-row';
+    row.innerHTML=`<div style="display:flex;flex-direction:column;gap:2px;align-items:center;flex-shrink:0;"><button onclick="_mvBlock('${b.id}',-1)" style="background:none;border:none;color:var(--sub);cursor:pointer;">▲</button><span style="color:var(--sub);font-size:14px;user-select:none;">⠿</span><button onclick="_mvBlock('${b.id}',1)" style="background:none;border:none;color:var(--sub);cursor:pointer;">▼</button></div><div class="block-content"><div class="block-type-tag">${b.type.toUpperCase()}</div>${_blockFields(b)}</div><button class="block-rm-btn" onclick="_rmBlock('${b.id}')">✕</button>`;
+    el.appendChild(row);
+  });
+}
+function _blockFields(b){
+  const fi=(k,v,ph)=>`<input class="fi" style="margin-bottom:4px;" placeholder="${ph||''}" value="${(v||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}" oninput="_upd('${b.id}','${k}',this.value)">`;
+  const fta=(k,v,ph)=>`<textarea class="fta" style="min-height:54px;margin-bottom:4px;" placeholder="${ph||''}" oninput="_upd('${b.id}','${k}',this.value)">${v||''}</textarea>`;
+  const lbl=`<div class="fl" style="margin-bottom:3px;">Label</div>${fi('label',b.label,'Section label')}`;
+  switch(b.type){
+    case 'hero-video':case 'video':return lbl+`<div class="fl">Video URL (YouTube/Vimeo)</div>`+fi('url',b.url,'https://youtu.be/…');
+    case 'image':return lbl+`<div class="fl">Image URL</div>`+fi('url',b.url,'https://…')+`<div class="fl">Caption</div>`+fi('caption',b.caption,'Opcional');
+    case 'compare':return lbl+`<div class="fl">Left URL</div>`+fi('leftUrl',b.leftUrl,'')+`<div class="fl">Left label</div>`+fi('leftLabel',b.leftLabel,'Before')+`<div class="fl">Right URL</div>`+fi('rightUrl',b.rightUrl,'')+`<div class="fl">Right label</div>`+fi('rightLabel',b.rightLabel,'After');
+    case 'intent':return lbl+`<div class="fl">Text (2–3 líneas)</div>`+fta('text',b.text,'');
+    case 'text':return lbl+`<div class="fl">HTML — &lt;p&gt; &lt;strong&gt; &lt;em&gt; &lt;ul&gt;&lt;li&gt; &lt;h3&gt;</div>`+fta('html',b.html,'<p>Tu texto</p>');
+    case 'breakdown':return lbl+`<div class="fl">Items</div>`+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr 20px;gap:4px;margin-bottom:3px;align-items:center;"><input class="fi" placeholder="Image URL" value="${(it.url||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'url',this.value)"><input class="fi" placeholder="Caption" value="${(it.caption||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'caption',this.value)"><button onclick="_rmIt('${b.id}',${idx})" style="background:none;border:none;color:var(--sub);cursor:pointer;font-size:13px;line-height:1;padding:0;" title="Eliminar">✕</button></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addIt('${b.id}')">+ Imagen</button>`;
+    case 'params':return lbl+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr 20px;gap:4px;margin-bottom:3px;align-items:center;"><input class="fi" placeholder="Param" value="${(it.key||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'key',this.value)"><input class="fi" placeholder="Value" value="${(it.val||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'val',this.value)"><button onclick="_rmIt('${b.id}',${idx})" style="background:none;border:none;color:var(--sub);cursor:pointer;font-size:13px;line-height:1;padding:0;" title="Eliminar">✕</button></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addIt('${b.id}')">+ Param</button>`;
+    case 'metrics':return lbl+(b.items||[]).map((it,idx)=>`<div style="display:grid;grid-template-columns:1fr 1fr 20px;gap:4px;margin-bottom:3px;align-items:center;"><input class="fi" placeholder="Valor" value="${(it.val||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'val',this.value)"><input class="fi" placeholder="Label" value="${(it.label||'').replace(/"/g,'&quot;')}" oninput="_updIt('${b.id}',${idx},'label',this.value)"><button onclick="_rmIt('${b.id}',${idx})" style="background:none;border:none;color:var(--sub);cursor:pointer;font-size:13px;line-height:1;padding:0;" title="Eliminar">✕</button></div>`).join('')+`<button class="ab" style="margin-top:4px;" onclick="_addIt('${b.id}')">+ Métrica</button>`;
+    case 'divider':return `<div style="color:var(--sub);font-size:10px;">Línea separadora</div>`;
+    default:return'';
+  }
+}
+function _upd(id,k,v){const b=window._eb.find(x=>x.id===id);if(b)b[k]=v;}
+function _updIt(bid,idx,k,v){const b=window._eb.find(x=>x.id===bid);if(b&&b.items&&b.items[idx])b.items[idx][k]=v;}
+function _rmIt(bid,idx){const b=window._eb.find(x=>x.id===bid);if(b&&b.items)b.items.splice(idx,1);_renderBlockEditor();}
+function _addIt(bid){const b=window._eb.find(x=>x.id===bid);if(!b)return;if(!b.items)b.items=[];if(b.type==='params')b.items.push({key:'',val:''});else if(b.type==='metrics')b.items.push({val:'',label:''});else b.items.push({url:'',caption:''});_renderBlockEditor();}
+function savePost(){
+  if(!window._ep){toast('Error: no post en edición');return;}
+  if(!D.posts)D.posts=[];
+  /* Read all fields directly from DOM */
+  const g=id=>document.getElementById(id);
+  if(g('pe-title'))window._ep.title=g('pe-title').value;
+  if(g('pe-desc'))window._ep.desc=g('pe-desc').value;
+  if(g('pe-thumb'))window._ep.thumb=g('pe-thumb').value;
+  if(g('pe-date'))window._ep.date=g('pe-date').value;
+  if(g('pe-prem'))window._ep.premium=g('pe-prem').checked;
+  if(g('pe-vis'))window._ep.visible=g('pe-vis').checked;
+  if(g('pe-premurl'))D.premiumUrl=g('pe-premurl').value;
+  window._ep.blocks=JSON.parse(JSON.stringify(window._eb||[]));
+  // Auto-set thumb from first hero-video YouTube block if thumb is empty
+  if(!window._ep.thumb){
+    const heroVid=window._eb.find(b=>b.type==='hero-video'&&b.url);
+    if(heroVid){
+      const ytm=heroVid.url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+      if(ytm)window._ep.thumb=`https://img.youtube.com/vi/${ytm[1]}/maxresdefault.jpg`;
+    }
+  }
+  const idx=D.posts.findIndex(x=>x.id===window._ep.id);
+  if(idx>=0)D.posts[idx]=JSON.parse(JSON.stringify(window._ep));
+  else D.posts.unshift(JSON.parse(JSON.stringify(window._ep)));
+  save();
+  toast('Post guardado ✓');
+  _cancelPostEditor();
+}
+function togglePostVisible(id,on){
+  const p=(D.posts||[]).find(x=>x.id===id);if(!p)return;
+  p.visible=on;save();renderPostsAdmin();applySEO();
+}
+function _setAllVisible(on){
+  (D.posts||[]).forEach(p=>p.visible=on);
+  save();renderPostsAdmin();applySEO();
+  toast(on?'Todos los posts publicados ✓':'Todos los posts ocultados');
+}
+function deletePost(id){if(!confirm('Delete this post?'))return;D.posts=(D.posts||[]).filter(x=>x.id!==id);save();renderPostsAdmin();toast('Deleted');}
+
+/* ══ EXPOSE GLOBALS — must run synchronously before any onclick fires ══ */
+Object.assign(window,{
+  checkPw,openGate,closeAdmin,openAdmin,showSec,
+  saveReel,clearReel,setReelEnabled,
+  openAddCo,openEditCo,deleteCo,confirmAddCo,confirmEditCo,
+  openAddVid,openEditVid,deleteVid,confirmAddVid,confirmEditVid,renderVidMgr,
+  openAddTool,openEditTool,deleteTool,confirmAddTool,confirmEditTool,applyToolSize,
+  openAddLink,openEditLink,deleteLink,confirmAddLink,confirmEditLink,
+  saveProfile,renderProfileForm,saveCvData,generateCvPdf,
+  openAddEdu,openEditEdu,deleteEdu,confirmAddEdu,confirmEditEdu,
+  openAddSkill,openEditSkill,deleteSkill,confirmAddSkill,confirmEditSkill,
+  openAddLang,confirmAddLang,deleteLang,
+  saveSettings,exportData,resetData,openModal,closeModal,toast,
+  setExpCards,setCoverBg,applyFont,applyFontSize,applyAnimSpd,applyAnimEase,
+  setLang,toggleLang,
+  saveSeo,applySEO,renderSeoAdmin,importPosts,
+  openDevlog,openAddPost,togglePostVisible,_setAllVisible,_addNewCat,openEditPost,deletePost,savePost,renderPostsAdmin,
+  fetchVideoMeta,
+  openAddProject,confirmAddProject,openEditProject,confirmEditProject,deleteProject,
+  _setCat,_openPost,_applyTpl,_addBlock,_rmBlock,_mvBlock,
+  _upd,_updIt,_addIt,_rmIt,_toggleCat,_cancelPostEditor,
+});
+
+
+
+/* ══ PROJECT CRUD ══ */
+function openAddProject(cid){
+  openModal('New Project','',`<div class="a-form">
+    <div class="fg"><label class="fl">Project name</label><input class="fi" id="pj-name" placeholder="Gothic Remake"></div>
+    <div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="pj-thumb" placeholder="https://…"></div>
+    <div class="fg"><label class="fl">Description (optional)</label><textarea class="fta" id="pj-desc"></textarea></div>
+    <div class="fg"><label class="fl">Engine (optional)</label><input class="fi" id="pj-engine"></div>
+  </div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Create',c:'primary',f:`confirmAddProject('${cid}')`}]);
+}
+function confirmAddProject(cid){
+  const co=D.companies.find(x=>x.id===cid);
+  if(!co.projects)co.projects=[];
+  co.projects.push({id:uid(),name:gv('pj-name')||'Project',thumb:gv('pj-thumb'),desc:gv('pj-desc'),engine:gv('pj-engine'),clips:[]});
+  save();closeModal();renderVidMgr();toast('Project created');
+}
+function openEditProject(cid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  const proj=co.projects.find(x=>x.id===projId);if(!proj)return;
+  openModal('Edit Project','',`<div class="a-form">
+    <div class="fg"><label class="fl">Project name</label><input class="fi" id="pj-name" value="${proj.name}"></div>
+    <div class="fg"><label class="fl">Thumbnail URL</label><input class="fi" id="pj-thumb" value="${proj.thumb||''}"></div>
+    <div class="fg"><label class="fl">Description</label><textarea class="fta" id="pj-desc">${proj.desc||''}</textarea></div>
+    <div class="fg"><label class="fl">Engine</label><input class="fi" id="pj-engine" value="${proj.engine||''}"></div>
+  </div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditProject('${cid}','${projId}')`}]);
+}
+function confirmEditProject(cid,projId){
+  const co=D.companies.find(x=>x.id===cid);
+  const proj=co.projects.find(x=>x.id===projId);if(!proj)return;
+  proj.name=gv('pj-name')||proj.name;proj.thumb=gv('pj-thumb');proj.desc=gv('pj-desc');proj.engine=gv('pj-engine');
+  save();closeModal();renderVidMgr();toast('Updated');
+}
+function deleteProject(cid,projId){
+  if(!confirm('Delete this project and all its clips?'))return;
+  const co=D.companies.find(x=>x.id===cid);
+  co.projects=co.projects.filter(x=>x.id!==projId);
+  save();renderVidMgr();toast('Deleted');
+}
+
+/* ══ VIDEO META FETCH ══ */
+async function fetchVideoMeta(url){
+  if(!url)return;
+  const status=document.getElementById('vf-status');
+  if(status){status.textContent='Fetching…';status.style.color='var(--sub)';}
+  try{
+    // YouTube
+    const yt=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+    if(yt){
+      const id=yt[1];
+      // Thumbnail — try maxres first, fall back to hq
+      const thumb=`https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+      // Title via oEmbed (no API key needed)
+      const oe=await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}&format=json`);
+      const tj=await oe.json();
+      const title=tj.title||'';
+      const embed=`https://www.youtube.com/embed/${id}`;
+      _applyVideoMeta(title,thumb,embed);
+      if(status){status.textContent='✓ Found';status.style.color='var(--green)';}
+      return;
+    }
+    // Vimeo
+    const vi=url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+    if(vi){
+      const oe=await fetch(`https://vimeo.com/api/oembed.json?url=https://vimeo.com/${vi[1]}`);
+      const vj=await oe.json();
+      const title=vj.title||'';
+      const thumb=(vj.thumbnail_url||'').replace(/_\d+x\d+/,'');
+      const embed=`https://player.vimeo.com/video/${vi[1]}`;
+      _applyVideoMeta(title,thumb,embed);
+      if(status){status.textContent='✓ Found';status.style.color='var(--green)';}
+      return;
+    }
+    if(status){status.textContent='URL not recognized (use YouTube or Vimeo)';status.style.color='var(--red)';}
+  }catch(e){
+    if(status){status.textContent='Could not fetch — fill manually';status.style.color='var(--red)';}
+    console.warn('[fetchVideoMeta]',e);
+  }
+}
+function _applyVideoMeta(title,thumb,embed){
+  const t=document.getElementById('av-t')||document.getElementById('ev-t');
+  const th=document.getElementById('av-th')||document.getElementById('ev-th');
+  const v=document.getElementById('av-v')||document.getElementById('ev-v');
+  if(t&&!t.value)t.value=title;
+  if(th&&!th.value)th.value=thumb;
+  if(v&&!v.value)v.value=embed;
+}
+
 /* ══ INIT ══ */
-detectLang();
-renderVisitor();
-setTimeout(autoplayOnLoad,350);
+(async()=>{
+  const ld=document.createElement('div');
+  ld.style.cssText='position:fixed;inset:0;z-index:99999;background:var(--bg);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--sub);';
+  ld.textContent='Connecting…';document.body.appendChild(ld);
+  const remote=await DB.loadRemote();
+  if(remote){
+    Object.assign(D,remote);
+    if(!D.reel)D.reel=JSON.parse(JSON.stringify(DEFAULTS.reel));
+    if(D.reel.enabled===undefined)D.reel.enabled=true;
+    if(!D.customPages)D.customPages=[];
+    if(!D.posts)D.posts=[];
+    if(!D.premiumUrl)D.premiumUrl='';
+    if(!D.cv)D.cv=JSON.parse(JSON.stringify(DEFAULTS.cv));
+    if(!D.cv.artstation)D.cv.artstation='';if(!D.cv.skills)D.cv.skills=[];
+    if(D.expCards===undefined)D.expCards=true;
+    if(!D.profile.bio_en)D.profile.bio_en=D.profile.bio;if(!D.profile.bio_es)D.profile.bio_es='';
+    if(!D.profile.availTags_en)D.profile.availTags_en=D.profile.availTags;if(!D.profile.availTags_es)D.profile.availTags_es='';
+    if(!D.profile.role_en)D.profile.role_en=D.profile.role;if(!D.profile.role_es)D.profile.role_es='';
+    if(!D.profile.s1l_en)D.profile.s1l_en=D.profile.s1l;if(!D.profile.s1l_es)D.profile.s1l_es='';
+    if(!D.profile.s2l_en)D.profile.s2l_en=D.profile.s2l;if(!D.profile.s2l_es)D.profile.s2l_es='';
+    if(!D.profile.s3l_en)D.profile.s3l_en=D.profile.s3l;if(!D.profile.s3l_es)D.profile.s3l_es='';
+  }
+  ld.remove();
+  detectLang();renderVisitor();applySEO();setTimeout(autoplayOnLoad,350);
+  document.getElementById('devlogBtn').addEventListener('click',openDevlog);
+  document.getElementById('newPostBtn').addEventListener('click',openAddPost);
+  document.getElementById('postBackBtn').addEventListener('click',()=>{
+    const sv=document.getElementById('postSingleView');
+    if(sv.classList.contains('visible'))_showPostList();else _closeDevlog();
+  });
+  DB.startSync();
+})();
+
 </script>
 </body>
 </html>
