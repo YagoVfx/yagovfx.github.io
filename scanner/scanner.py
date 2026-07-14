@@ -35,10 +35,14 @@ ATS_MAP = {
 
 
 def load_existing_jobs() -> dict[str, dict]:
-    if not JOBS_FILE.exists():
+    if not JOBS_FILE.exists() or JOBS_FILE.stat().st_size == 0:
         return {}
-    with open(JOBS_FILE) as f:
-        data = json.load(f)
+    try:
+        with open(JOBS_FILE) as f:
+            data = json.load(f)
+    except json.JSONDecodeError:
+        logger.warning(f"{JOBS_FILE} exists but is not valid JSON — starting fresh")
+        return {}
     return {j["id"]: j for j in data.get("jobs", [])}
 
 
