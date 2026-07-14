@@ -1,18 +1,112 @@
-
 [
   {
+    "name": "Build A Rocket Boy",
+    "careersUrl": "https://www.buildarocketboy.com/join-us/opportunities",
+    "type": "custom"
+  },
+  {
+    "name": "CD Project",
+    "careersUrl": "https://www.cdprojektred.com/en/jobs#art",
+    "type": "custom"
+  },
+  {
     "name": "CI Games",
-    "careersUrl": "https://cigames.teamtailor.com/",
+    "careersUrl": "https://cigames.teamtailor.com",
     "type": "teamtailor"
   },
   {
-    "name": "Riot Games",
-    "careersUrl": "https://boards.greenhouse.io/riotgames",
-    "type": "greenhouse"
+    "name": "Respawn",
+    "careersUrl": "https://www.respawn.com/careers-listings?group=ART",
+    "type": "custom"
   },
   {
-    "name": "Naughty Dog",
-    "careersUrl": "https://jobs.lever.co/naughtydog",
-    "type": "lever"
+    "name": "Epic Games",
+    "careersUrl": "https://www.epicgames.com/site/careers/jobs?department=Art%20%26%20Animation&lang=en-US&page=1",
+    "type": "custom"
+  },
+  {
+    "name": "Frontier",
+    "careersUrl": "https://www.frontier.co.uk/careers/art",
+    "type": "custom"
+  },
+  {
+    "name": "Embark Studios",
+    "careersUrl": "https://careers.embark-studios.com",
+    "type": "custom"
+  },
+  {
+    "name": "Jagex",
+    "careersUrl": "https://www.jagex.com",
+    "type": "custom"
+  },
+  {
+    "name": "PTW",
+    "careersUrl": "https://side.inc",
+    "type": "custom"
+  },
+  {
+    "name": "Guerrilla",
+    "careersUrl": "https://www.guerrilla-games.com/join",
+    "type": "custom"
+  },
+  {
+    "name": "Rebellion",
+    "careersUrl": "https://careers.rebellion.com/#vacancies",
+    "type": "custom"
+  },
+  {
+    "name": "Room8",
+    "careersUrl": "https://room8studio.com",
+    "type": "custom"
+  },
+  {
+    "name": "EA",
+    "careersUrl": "https://jobs.ea.com/en_US/careers/Home/?8171=%5B10611%5D&8171_format=5683&listFilterMode=1&jobRecordsPerPage=20&",
+    "type": "custom"
+  },
+  {
+    "name": "Ubisoft",
+    "careersUrl": "https://www.ubisoft.com/en-us/company/careers/search?jobFamilies=Art",
+    "type": "custom"
+  },
+  {
+    "name": "Sumo Digital",
+    "careersUrl": "https://www.sumo-digital.com",
+    "type": "custom"
+  },
+  {
+    "name": "Massive",
+    "careersUrl": "https://www.massive.se/career",
+    "type": "custom"
+  },
+  {
+    "name": "Blizzard",
+    "careersUrl": "https://careers.blizzard.com/global/en/search-results?keywords=vfx",
+    "type": "custom"
+  },
+  {
+    "name": "2K",
+    "careersUrl": "https://2k.com",
+    "type": "custom"
+  },
+  {
+    "name": "Activision",
+    "careersUrl": "https://careers.activision.com/art-animation-sound",
+    "type": "custom"
+  },
+  {
+    "name": "Bungie",
+    "careersUrl": "https://careers.bungie.com",
+    "type": "custom"
+  },
+  {
+    "name": "EidosMontreal",
+    "careersUrl": "https://www.eidosmontreal.com",
+    "type": "custom"
+  },
+  {
+    "name": "Roblox",
+    "careersUrl": "https://careers.roblox.com/jobs?search=vfx",
+    "type": "custom"
   }
 ]
