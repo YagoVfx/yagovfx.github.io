@@ -1,15 +1,14 @@
-
-import json, logging, re, sys
+import json, logging, sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Make sure scanner package is importable
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from scanner.adapters.greenhouse import GreenhouseAdapter
 from scanner.adapters.lever import LeverAdapter
 from scanner.adapters.teamtailor import TeamtailorAdapter
 from scanner.adapters.custom_html import CustomHtmlAdapter
+from scanner.adapters.workday import WorkdayAdapter
 from scanner.companies import detect_ats, dedupe_companies
 from scanner.normalizer import preserve_first_seen, now_iso
 
@@ -28,10 +27,9 @@ ATS_MAP = {
     "greenhouse": GreenhouseAdapter,
     "lever": LeverAdapter,
     "teamtailor": TeamtailorAdapter,
+    "workday": WorkdayAdapter,
     "custom": CustomHtmlAdapter,
 }
-
-
 
 
 def load_existing_jobs() -> dict[str, dict]:
@@ -46,9 +44,6 @@ def load_existing_jobs() -> dict[str, dict]:
     return {j["id"]: j for j in data.get("jobs", [])}
 
 
-
-
-
 def run():
     if not COMPANIES_FILE.exists():
         logger.error(f"companies.json not found at {COMPANIES_FILE}")
@@ -56,7 +51,7 @@ def run():
 
     with open(COMPANIES_FILE) as f:
         companies = json.load(f)
-    companies = dedupe_companies(companies)   # <-- añadir esta línea
+    companies = dedupe_companies(companies)
 
     existing = load_existing_jobs()
     new_jobs: dict[str, dict] = {}
@@ -80,7 +75,6 @@ def run():
             statuses.append({"company": company["name"], "status": "error", "error": str(e), "lastAttempt": now_iso()})
             failed += 1
 
-    # Mark jobs not seen this run as closed (keep for 7 days)
     for jid, job in existing.items():
         if jid not in new_jobs:
             job["status"] = "closed"

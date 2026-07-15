@@ -19,6 +19,8 @@ def detect_ats(url: str) -> str:
         return "lever"
     if re.search(r"teamtailor\.com", url, re.IGNORECASE):
         return "teamtailor"
+    if re.search(r"myworkdayjobs\.com", url, re.IGNORECASE):
+        return "workday"
     return "custom"
 
 
@@ -51,6 +53,11 @@ def guess_name_from_url(url: str) -> str:
         slug = parts[0] if parts else ""
     elif "teamtailor.com" in host:
         slug = host.split(".")[0]
+    elif "myworkdayjobs.com" in host:
+        # e.g. activision.wd1.myworkdayjobs.com/Blizzard_External_Careers -> "Blizzard External Careers"
+        parts = [p for p in parsed.path.split("/") if p and not re.match(r"^[a-z]{2}-[A-Z]{2}$", p)]
+        slug = parts[0] if parts else host.split(".")[0]
+        slug = re.sub(r"_?external_?careers?", "", slug, flags=re.IGNORECASE).strip("_ ") or slug
     else:
         slug = host.split(".")[0] if host else ""
 

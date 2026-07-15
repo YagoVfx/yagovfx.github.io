@@ -25,6 +25,11 @@ def test_detect_ats_teamtailor():
     assert detect_ats("https://cigames.teamtailor.com/jobs") == "teamtailor"
 
 
+def test_detect_ats_workday():
+    assert detect_ats("https://activision.wd1.myworkdayjobs.com/Blizzard_External_Careers") == "workday"
+    assert detect_ats("https://ea.wd1.myworkdayjobs.com/en-US/Electronic_Arts") == "workday"
+
+
 def test_detect_ats_custom_fallback():
     assert detect_ats("https://example-studio.com/careers") == "custom"
     assert detect_ats("") == "custom"
@@ -68,6 +73,7 @@ if __name__ == "__main__":
     test_detect_ats_greenhouse()
     test_detect_ats_lever()
     test_detect_ats_teamtailor()
+    test_detect_ats_workday()
     test_detect_ats_custom_fallback()
     test_normalize_url_strips_trailing_and_suffix()
     test_guess_name_from_url()

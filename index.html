@@ -877,6 +877,7 @@ https://otraempresa.com/careers"></textarea>
                 <option value="greenhouse">Greenhouse</option>
                 <option value="lever">Lever</option>
                 <option value="teamtailor">Teamtailor</option>
+                <option value="workday">Workday</option>
                 <option value="custom">Custom</option>
               </select>
             </div>
@@ -2140,7 +2141,7 @@ function renderVfxCompaniesAdmin(){
 }
 function openEditVfxCompany(id){
   const c=D.vfxCompanies.find(x=>x.id===id);if(!c)return;
-  openModal('Editar empresa','',`<div class="a-form"><div class="fg"><label class="fl">Nombre</label><input class="fi" id="evc-n" value="${c.name}"></div><div class="fg"><label class="fl">Careers URL</label><input class="fi" id="evc-u" value="${c.careersUrl}"></div><div class="fg"><label class="fl">ATS</label><select class="fsel" id="evc-a"><option value="greenhouse" ${c.type==='greenhouse'?'selected':''}>Greenhouse</option><option value="lever" ${c.type==='lever'?'selected':''}>Lever</option><option value="teamtailor" ${c.type==='teamtailor'?'selected':''}>Teamtailor</option><option value="custom" ${c.type==='custom'?'selected':''}>Custom</option></select></div></div>`,[{l:'Cancelar',c:'',f:'closeModal()'},{l:'Guardar',c:'primary',f:`confirmEditVfxCompany('${id}')`}]);
+  openModal('Editar empresa','',`<div class="a-form"><div class="fg"><label class="fl">Nombre</label><input class="fi" id="evc-n" value="${c.name}"></div><div class="fg"><label class="fl">Careers URL</label><input class="fi" id="evc-u" value="${c.careersUrl}"></div><div class="fg"><label class="fl">ATS</label><select class="fsel" id="evc-a"><option value="greenhouse" ${c.type==='greenhouse'?'selected':''}>Greenhouse</option><option value="lever" ${c.type==='lever'?'selected':''}>Lever</option><option value="teamtailor" ${c.type==='teamtailor'?'selected':''}>Teamtailor</option><option value="workday" ${c.type==='workday'?'selected':''}>Workday</option><option value="custom" ${c.type==='custom'?'selected':''}>Custom</option></select></div></div>`,[{l:'Cancelar',c:'',f:'closeModal()'},{l:'Guardar',c:'primary',f:`confirmEditVfxCompany('${id}')`}]);
 }
 function confirmEditVfxCompany(id){
   const c=D.vfxCompanies.find(x=>x.id===id);if(!c)return;
