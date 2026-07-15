@@ -3,17 +3,17 @@
     "company": "Build A Rocket Boy",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 16,
-    "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:19Z"
+    "totalPostingsSeen": 0,
+    "needsReview": true,
+    "lastAttempt": "2026-07-15T22:31:08Z"
   },
   {
     "company": "CD Project",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 40,
+    "totalPostingsSeen": 4,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:19Z"
+    "lastAttempt": "2026-07-15T22:31:09Z"
   },
   {
     "company": "CI Games",
@@ -21,7 +21,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 3,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:20Z"
+    "lastAttempt": "2026-07-15T22:31:09Z"
   },
   {
     "company": "Respawn",
@@ -29,7 +29,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-15T22:23:25Z"
+    "lastAttempt": "2026-07-15T22:31:15Z"
   },
   {
     "company": "Epic Games",
@@ -37,103 +37,103 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-15T22:23:25Z"
+    "lastAttempt": "2026-07-15T22:31:15Z"
   },
   {
     "company": "Frontier",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 48,
+    "totalPostingsSeen": 9,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:27Z"
+    "lastAttempt": "2026-07-15T22:31:17Z"
   },
   {
     "company": "Embark Studios",
     "status": "ok",
     "jobsFound": 1,
-    "totalPostingsSeen": 43,
+    "totalPostingsSeen": 10,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:28Z"
+    "lastAttempt": "2026-07-15T22:31:17Z"
   },
   {
     "company": "Jagex",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 40,
+    "totalPostingsSeen": 4,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:28Z"
+    "lastAttempt": "2026-07-15T22:31:17Z"
   },
   {
     "company": "PTW",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 57,
-    "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:28Z"
+    "totalPostingsSeen": 0,
+    "needsReview": true,
+    "lastAttempt": "2026-07-15T22:31:18Z"
   },
   {
     "company": "Guerrilla",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 30,
-    "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:29Z"
+    "totalPostingsSeen": 0,
+    "needsReview": true,
+    "lastAttempt": "2026-07-15T22:31:18Z"
   },
   {
     "company": "Rebellion",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 29,
+    "totalPostingsSeen": 2,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:29Z"
+    "lastAttempt": "2026-07-15T22:31:19Z"
   },
   {
     "company": "Room8",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 53,
+    "totalPostingsSeen": 4,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:30Z"
+    "lastAttempt": "2026-07-15T22:31:19Z"
   },
   {
     "company": "EA",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 104,
+    "totalPostingsSeen": 46,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:31Z"
+    "lastAttempt": "2026-07-15T22:31:20Z"
   },
   {
     "company": "Ubisoft",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 28,
+    "totalPostingsSeen": 7,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:32Z"
+    "lastAttempt": "2026-07-15T22:31:21Z"
   },
   {
     "company": "Sumo Digital",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 46,
+    "totalPostingsSeen": 2,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:33Z"
+    "lastAttempt": "2026-07-15T22:31:22Z"
   },
   {
     "company": "Massive",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 56,
+    "totalPostingsSeen": 14,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:33Z"
+    "lastAttempt": "2026-07-15T22:31:22Z"
   },
   {
     "company": "Blizzard",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 15,
-    "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:34Z"
+    "totalPostingsSeen": 0,
+    "needsReview": true,
+    "lastAttempt": "2026-07-15T22:31:23Z"
   },
   {
     "company": "2K",
@@ -141,31 +141,31 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-15T22:23:38Z"
+    "lastAttempt": "2026-07-15T22:31:27Z"
   },
   {
     "company": "Activision",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 8,
-    "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:39Z"
+    "totalPostingsSeen": 0,
+    "needsReview": true,
+    "lastAttempt": "2026-07-15T22:31:28Z"
   },
   {
     "company": "Bungie",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 11,
+    "totalPostingsSeen": 2,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:39Z"
+    "lastAttempt": "2026-07-15T22:31:28Z"
   },
   {
     "company": "EidosMontreal",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 52,
+    "totalPostingsSeen": 3,
     "needsReview": false,
-    "lastAttempt": "2026-07-15T22:23:39Z"
+    "lastAttempt": "2026-07-15T22:31:28Z"
   },
   {
     "company": "Roblox",
@@ -173,6 +173,6 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-15T22:24:28Z"
+    "lastAttempt": "2026-07-15T22:32:18Z"
   }
 ]
