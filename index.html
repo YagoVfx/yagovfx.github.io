@@ -3026,6 +3026,34 @@ function _applyVideoMeta(title,thumb,embed){
   if(v&&!v.value)v.value=embed;
 }
 
+// Expose all top-level functions to `window` — required because this script
+// runs as a module (top-level declarations aren't global by default), and
+// the whole site relies on inline onclick="..." / onchange="..." attributes
+// that look up functions on the global object.
+Object.assign(window,{
+  $el, $els, _addBlock, _addIt, _addNewCat, _applyTpl, _applyVideoMeta, _blockFields,
+  _cancelPostEditor, _closeDevlog, _embed, _fmt, _makeClipEl, _mvBlock, _openPost, _renderBlock,
+  _renderBlockEditor, _renderCats, _renderGrid, _renderPostEditor, _rmBlock, _rmIt, _setAllVisible, _setCat,
+  _showPostList, _toggleCat, _uid, _upd, _updIt, addDragCard, addVfxCompanyManual, applyAnim,
+  applyAnimEase, applyAnimSpd, applyColorTheme, applyFont, applyFontSize, applyLang, applyLayout, applyLightMode,
+  applyPlayerSize, applySEO, applyToolSize, applyVfxJobsVisibility, autoplayOnLoad, buildClips, buildExpCardHtml, buildExpRowHtml,
+  checkPw, clearReel, closeAdmin, closeModal, closeVfxJobsPublic, confirmAddCo, confirmAddEdu, confirmAddLang,
+  confirmAddLink, confirmAddProject, confirmAddSkill, confirmAddTool, confirmAddVid, confirmEditCo, confirmEditEdu, confirmEditLink,
+  confirmEditProject, confirmEditSkill, confirmEditTool, confirmEditVfxCompany, confirmEditVid, deleteCo, deleteEdu, deleteLang,
+  deleteLink, deletePost, deleteProject, deleteSkill, deleteTool, deleteVfxCompany, deleteVid, detectLang,
+  exportData, exportVfxCompanies, fetchVideoMeta, generateCvPdf, gv, importPosts, importVfxBulk, loadLiveCompanies,
+  openAddCo, openAddEdu, openAddLang, openAddLink, openAddPost, openAddProject, openAddSkill, openAddTool,
+  openAddVid, openAdmin, openDevlog, openEditCo, openEditEdu, openEditLink, openEditPost, openEditProject,
+  openEditSkill, openEditTool, openEditVfxCompany, openEditVid, openGate, openModal, openVfxDiagnostics, openVfxJobsPublic,
+  playClip, previewVfxJobsAdmin, refreshCover, renderAdminCos, renderCurrentCompanyInfo, renderCvForm, renderEduList, renderExpList,
+  renderHdrLinks, renderLangList, renderLayGrid, renderLinksAdmin, renderMobLinks, renderMobSidebar, renderPostsAdmin, renderProfile,
+  renderProfileForm, renderReelForm, renderSeoAdmin, renderSizeGrid, renderSkillList, renderThemeGrid, renderToolsAdmin, renderToolsGrid,
+  renderVfxCompaniesAdmin, renderVfxJobsPublic, renderVidCoSel, renderVidMgr, renderVisitor, resetData, save, saveCvData,
+  savePost, saveProfile, saveReel, saveSeo, saveSettings, selectCo, setCoverBg, setExpCards,
+  setLang, setReelEnabled, setVfxJobsPublicVisible, showSec, syncMobileBlocks, t, toast, toggleLang,
+  togglePostVisible, uid, vfxDedupeCompanies, vfxDetectAts, vfxGuessName, vfxIsNew, vfxNormalizeUrl, vfxTimeAgo
+});
+
 /* ══ INIT ══ */
 (async()=>{
   const ld=document.createElement('div');
