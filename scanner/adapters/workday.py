@@ -71,7 +71,11 @@ class WorkdayAdapter(BaseAdapter):
                 r.raise_for_status()
                 data = r.json()
             except Exception as e:
-                logger.warning(f"[Workday] Request failed for {api_url}: {e}")
+                if offset == 0:
+                    # Failed before getting anything at all — a real error,
+                    # not "this company just has 0 postings".
+                    raise RuntimeError(f"Workday request failed for {api_url}: {e}")
+                logger.warning(f"[Workday] Request failed on a later page for {api_url}: {e} — returning partial results")
                 break
 
             postings = data.get("jobPostings", [])

@@ -24,7 +24,7 @@ class CustomHtmlAdapter(BaseAdapter):
     def fetch_jobs(self) -> list[dict]:
         r = http_get(self.careers_url)
         if not r:
-            return []
+            raise RuntimeError(f"No response from {self.careers_url}")
 
         soup = BeautifulSoup(r.text, "lxml")
         base = f"{urlparse(self.careers_url).scheme}://{urlparse(self.careers_url).netloc}"

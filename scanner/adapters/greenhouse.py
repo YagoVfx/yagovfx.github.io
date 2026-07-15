@@ -21,12 +21,15 @@ class GreenhouseAdapter(BaseAdapter):
         api_url = f"https://boards-api.greenhouse.io/v1/boards/{board}/jobs?content=true"
         r = http_get(api_url)
         if not r:
-            return []
+            # A real request failure (timeout, 429 exhausted, blocked, etc.)
+            # must NOT look the same as "fetched fine, found 0 postings" —
+            # raise so the scanner records this as a genuine error.
+            raise RuntimeError(f"No response from Greenhouse API for board '{board}' ({api_url})")
 
         try:
             data = r.json()
-        except Exception:
-            return []
+        except Exception as e:
+            raise RuntimeError(f"Invalid JSON from Greenhouse API for board '{board}': {e}")
 
         jobs = []
         raw_jobs = data.get("jobs", [])

@@ -21,12 +21,12 @@ class LeverAdapter(BaseAdapter):
         api_url = f"https://api.lever.co/v0/postings/{company}?mode=json"
         r = http_get(api_url)
         if not r:
-            return []
+            raise RuntimeError(f"No response from Lever API for company '{company}' ({api_url})")
 
         try:
             data = r.json()
-        except Exception:
-            return []
+        except Exception as e:
+            raise RuntimeError(f"Invalid JSON from Lever API for company '{company}': {e}")
 
         jobs = []
         self.total_seen = len(data)

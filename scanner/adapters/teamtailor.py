@@ -27,8 +27,7 @@ class TeamtailorAdapter(BaseAdapter):
     def fetch_jobs(self) -> list[dict]:
         html = self._get_jobs_page()
         if not html:
-            logger.warning(f"[Teamtailor] Could not fetch {self.careers_url}")
-            return []
+            raise RuntimeError(f"No response from any Teamtailor URL candidate for {self.careers_url}")
 
         soup = BeautifulSoup(html, "lxml")
         base = f"{urlparse(self.careers_url).scheme}://{urlparse(self.careers_url).netloc}"
