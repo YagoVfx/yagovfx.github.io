@@ -665,15 +665,6 @@ option{background:var(--bg2);}
         <div class="fb-notice"><strong>⚠ Sitio estático:</strong> este panel no puede escribir directamente en tu repositorio de GitHub. Importa/añade empresas aquí, pulsa <strong>"Descargar companies.json"</strong> y sustituye (haz commit de) el archivo <code>data/companies.json</code> en tu repo. El GitHub Action lo recogerá en la próxima ejecución (cada 6h) o puedes lanzarlo manualmente desde la pestaña Actions.</div>
 
         <div class="vfx-block">
-          <div class="vfx-block-title">0 · Visibilidad</div>
-          <div class="vfx-block-sub">Controla si el botón "VFX Jobs" aparece en la web pública. Mientras esté apagado, el tracker sigue funcionando (scanner, companies.json, jobs.json) pero solo lo ves tú, aquí en el admin.</div>
-          <div class="toggle-row" style="border-bottom:none;">
-            <div><div class="toggle-lbl">Mostrar pestaña VFX Jobs públicamente</div><div class="toggle-sub">Apagado por defecto</div></div>
-            <label class="tog"><input type="checkbox" id="vfxPublicToggle" onchange="setVfxJobsPublicVisible(this.checked)"><span class="tog-sl"></span></label>
-          </div>
-        </div>
-
-        <div class="vfx-block">
           <div class="vfx-block-title">1 · Importación masiva</div>
           <div class="vfx-block-sub">Pega una URL de careers por línea. Se detecta el ATS automáticamente (Greenhouse, Lever, Teamtailor) y se eliminan duplicados.</div>
           <textarea class="fta" id="vfxBulkInput" style="min-height:100px;" placeholder="https://boards.greenhouse.io/example
@@ -719,7 +710,6 @@ https://otraempresa.com/careers"></textarea>
             <button class="ab primary" onclick="exportVfxCompanies()">⬇ Descargar companies.json</button>
             <button class="ab" onclick="openVfxDiagnostics()">🩺 Ver estado del scanner</button>
             <button class="ab" onclick="window.open('data/jobs.json','_blank')">Ver jobs.json</button>
-            <button class="ab" onclick="previewVfxJobsAdmin()">👁 Vista previa de ofertas</button>
           </div>
         </div>
       </div>
@@ -1001,7 +991,6 @@ if(!D.reel){D.reel=JSON.parse(JSON.stringify(DEFAULTS.reel));}
 if(D.reel.enabled===undefined)D.reel.enabled=true;
 if(!D.customPages)D.customPages=[];
 if(!D.vfxCompanies)D.vfxCompanies=[];
-if(D.vfxJobsPublic===undefined)D.vfxJobsPublic=false;
 if(!D.cv)D.cv=JSON.parse(JSON.stringify(DEFAULTS.cv));
 if(!D.cv.artstation)D.cv.artstation='';
 if(!D.cv.skills)D.cv.skills=[];
@@ -1229,7 +1218,6 @@ function renderVisitor(){
   renderToolsGrid();
   renderHdrLinks();
   renderPageNav();
-  applyVfxJobsVisibility();
   renderMobSidebar();
   syncMobileBlocks();
   applyLang();
@@ -1423,10 +1411,7 @@ function openPage(id){
   document.getElementById('pageBody').innerHTML=page.content||'<div class="page-section"><div class="page-text-block">No content yet.</div></div>';
   document.getElementById('pageOverlay').classList.add('open');
 }
-function closePage(){
-  document.getElementById('pageOverlay').classList.remove('open');
-  if(vfxPreviewReturnToAdmin){vfxPreviewReturnToAdmin=false;document.getElementById('admin-overlay').classList.add('on');}
-}
+function closePage(){document.getElementById('pageOverlay').classList.remove('open');}
 function renderPagesAdmin(){
   const list=document.getElementById('pagesList');if(!list)return;list.innerHTML='';
   (D.customPages||[]).forEach(page=>{
@@ -1468,23 +1453,6 @@ function vfxGuessName(url){
     return slug.replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
   }catch(e){return url;}
 }
-function setVfxJobsPublicVisible(checked){
-  D.vfxJobsPublic=checked;save();applyVfxJobsVisibility();
-  toast(checked?'VFX Jobs ahora es visible públicamente':'VFX Jobs oculto para el público');
-}
-function applyVfxJobsVisibility(){
-  const btn=document.getElementById('vfxJobsNavBtn');
-  if(btn)btn.style.display=D.vfxJobsPublic?'':'none';
-  const toggle=document.getElementById('vfxPublicToggle');
-  if(toggle)toggle.checked=!!D.vfxJobsPublic;
-}
-let vfxPreviewReturnToAdmin=false;
-function previewVfxJobsAdmin(){
-  document.getElementById('admin-overlay').classList.remove('on');
-  vfxPreviewReturnToAdmin=true;
-  openVfxJobsPublic();
-}
-
 function vfxDedupeCompanies(list){
   const seen=new Set();const out=[];
   list.forEach(c=>{
@@ -1524,7 +1492,6 @@ function addVfxCompanyManual(){
   renderVfxCompaniesAdmin();toast('Empresa añadida');
 }
 function renderVfxCompaniesAdmin(){
-  applyVfxJobsVisibility();
   const list=document.getElementById('vfxCoList');if(!list)return;
   const countEl=document.getElementById('vfxCoCount');
   if(countEl)countEl.textContent=D.vfxCompanies.length?`(${D.vfxCompanies.length})`:'';
