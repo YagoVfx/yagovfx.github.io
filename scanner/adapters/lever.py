@@ -1,4 +1,3 @@
-
 import re, logging
 from .base import BaseAdapter, http_get
 from ..filters import classify_job, detect_workplace, detect_remote_scope
@@ -30,6 +29,7 @@ class LeverAdapter(BaseAdapter):
             return []
 
         jobs = []
+        self.total_seen = len(data)
         for j in data:
             title = j.get("text", "")
             categories = j.get("categories", {})

@@ -1,5 +1,3 @@
-
-
 from abc import ABC, abstractmethod
 from typing import Optional
 import requests, time, logging
@@ -36,6 +34,12 @@ class BaseAdapter(ABC):
         self.company = company["name"]
         self.careers_url = company["careersUrl"]
         self.raw = company
+        # Total postings this adapter actually saw on the page/API, BEFORE
+        # filtering by the VFX regex. Lets the scanner tell apart "this
+        # company genuinely has 0 VFX openings right now" (total_seen > 0,
+        # jobsFound == 0) from "the parser saw nothing at all — probably
+        # broken/blocked/JS-rendered" (total_seen == 0).
+        self.total_seen = 0
 
     @abstractmethod
     def fetch_jobs(self) -> list[dict]:
@@ -43,7 +47,6 @@ class BaseAdapter(ABC):
         pass
 
     def normalize(self, raw: dict) -> dict:
-        """Subclasses call this to get a standard skeleton."""
         return {
             "id": raw.get("id", ""),
             "company": self.company,
@@ -58,4 +61,3 @@ class BaseAdapter(ABC):
             "lastSeen": raw.get("lastSeen", ""),
             "status": "active",
         }
-

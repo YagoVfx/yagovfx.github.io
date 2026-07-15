@@ -1,4 +1,3 @@
-
 import re, logging
 from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
@@ -6,11 +5,6 @@ from .base import BaseAdapter, http_get
 from ..filters import classify_job, detect_workplace, detect_remote_scope
 
 logger = logging.getLogger(__name__)
-
-JOB_KEYWORDS = re.compile(
-    r'\b(job|jobs|career|careers|position|positions|opening|openings|vacancy|vacancies|work-with-us)\b',
-    re.IGNORECASE
-)
 
 
 class CustomHtmlAdapter(BaseAdapter):
@@ -25,6 +19,7 @@ class CustomHtmlAdapter(BaseAdapter):
         base = f"{urlparse(self.careers_url).scheme}://{urlparse(self.careers_url).netloc}"
         seen = set()
         jobs = []
+        candidates_seen = 0
 
         for a in soup.find_all("a", href=True):
             href = a["href"]
@@ -32,6 +27,7 @@ class CustomHtmlAdapter(BaseAdapter):
             title = re.sub(r'\s+', ' ', title)
             if not title or len(title) < 5 or len(title) > 120:
                 continue
+            candidates_seen += 1
 
             match = classify_job(title, "")
             if not match:
@@ -53,4 +49,5 @@ class CustomHtmlAdapter(BaseAdapter):
                 "matchType": match,
             }))
 
+        self.total_seen = candidates_seen
         return jobs

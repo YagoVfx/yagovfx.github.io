@@ -1,4 +1,3 @@
-
 import re, logging
 from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
@@ -7,11 +6,7 @@ from ..filters import classify_job, detect_workplace, detect_remote_scope
 
 logger = logging.getLogger(__name__)
 
-JOB_LINK_PATTERNS = [
-    r'/jobs/\d+',
-    r'/jobs/[a-z0-9-]+',
-    r'/en/jobs/',
-]
+JOB_LINK_PATTERNS = [r'/jobs/\d+', r'/jobs/[a-z0-9-]+', r'/en/jobs/']
 
 
 class TeamtailorAdapter(BaseAdapter):
@@ -39,6 +34,7 @@ class TeamtailorAdapter(BaseAdapter):
         base = f"{urlparse(self.careers_url).scheme}://{urlparse(self.careers_url).netloc}"
         seen_urls = set()
         jobs = []
+        candidates_seen = 0
 
         for a in soup.find_all("a", href=True):
             href = a["href"]
@@ -48,14 +44,13 @@ class TeamtailorAdapter(BaseAdapter):
             if not any(re.search(p, href) for p in JOB_LINK_PATTERNS):
                 continue
             seen_urls.add(full_url)
+            candidates_seen += 1
 
-            # Try to get title from link text or aria-label
             title = (a.get("aria-label") or a.get_text(separator=" ", strip=True))
             title = re.sub(r'\s+', ' ', title).strip()
             if not title or len(title) < 3:
                 continue
 
-            # Try to find location near this link
             loc = ""
             parent = a.find_parent()
             if parent:
@@ -80,4 +75,5 @@ class TeamtailorAdapter(BaseAdapter):
                 "matchType": match,
             }))
 
+        self.total_seen = candidates_seen
         return jobs

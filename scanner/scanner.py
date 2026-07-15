@@ -68,7 +68,19 @@ def run():
             for job in found:
                 preserve_first_seen(existing, job)
                 new_jobs[job["id"]] = job
-            statuses.append({"company": company["name"], "status": "ok", "jobsFound": len(found), "lastAttempt": now_iso()})
+            total_seen = getattr(adapter, "total_seen", None)
+            statuses.append({
+                "company": company["name"],
+                "status": "ok",
+                "jobsFound": len(found),
+                "totalPostingsSeen": total_seen,
+                # ok + 0 postings seen at all (not just 0 VFX matches) is
+                # suspicious: probably a JS-rendered page, a block, or a
+                # parser that no longer matches this site's HTML — flag it
+                # instead of silently reporting a clean "ok".
+                "needsReview": total_seen == 0,
+                "lastAttempt": now_iso(),
+            })
             succeeded += 1
         except Exception as e:
             logger.error(f"Error scanning {company['name']}: {e}")

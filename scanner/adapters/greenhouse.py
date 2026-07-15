@@ -1,5 +1,3 @@
-
-
 import re, logging
 from .base import BaseAdapter, http_get
 from ..filters import classify_job, detect_workplace, detect_remote_scope
@@ -7,7 +5,6 @@ from ..filters import classify_job, detect_workplace, detect_remote_scope
 logger = logging.getLogger(__name__)
 
 def extract_greenhouse_board(url: str) -> str | None:
-    # boards.greenhouse.io/BOARD  or  job-boards.greenhouse.io/BOARD
     m = re.search(r'greenhouse\.io/([^/?#]+)', url)
     return m.group(1) if m else None
 
@@ -32,7 +29,9 @@ class GreenhouseAdapter(BaseAdapter):
             return []
 
         jobs = []
-        for j in data.get("jobs", []):
+        raw_jobs = data.get("jobs", [])
+        self.total_seen = len(raw_jobs)
+        for j in raw_jobs:
             title = j.get("title", "")
             match = classify_job(title, j.get("content", ""))
             if not match:
@@ -50,4 +49,3 @@ class GreenhouseAdapter(BaseAdapter):
                 "matchType": match,
             }))
         return jobs
-

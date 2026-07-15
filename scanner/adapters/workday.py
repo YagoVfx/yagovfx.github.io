@@ -79,6 +79,7 @@ class WorkdayAdapter(BaseAdapter):
                 total = data.get("total", len(postings))
             if not postings:
                 break
+            self.total_seen += len(postings)
 
             for p in postings:
                 title = p.get("title", "")
