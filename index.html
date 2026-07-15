@@ -359,62 +359,6 @@ option{background:var(--bg2);}
 .cp-sub{font-family:var(--mono);font-size:9px;color:var(--sub);margin-top:2px;}
 .cp-actions{display:flex;gap:5px;flex-shrink:0;}
 
-/* ══ VFX JOBS — ADMIN MANAGER ══ */
-.vfx-block{margin-bottom:22px;}
-.vfx-block-title{font-size:13px;font-weight:800;margin-bottom:3px;}
-.vfx-block-sub{font-size:10.5px;color:var(--sub);margin-bottom:10px;line-height:1.55;}
-.vfx-import-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
-.vfx-co-list{display:flex;flex-direction:column;gap:6px;margin-top:12px;max-height:420px;overflow-y:auto;}
-.vfx-co-row{display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:8px 12px;}
-.vfx-co-main{flex:1;min-width:0;}
-.vfx-co-name{font-size:12px;font-weight:700;display:flex;align-items:center;gap:7px;}
-.vfx-co-url{font-family:var(--mono);font-size:9px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px;}
-.vfx-ats-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;border-radius:2px;background:var(--bg3);color:var(--accent2);flex-shrink:0;}
-.vfx-co-btns{display:flex;gap:4px;flex-shrink:0;}
-.vfx-empty{font-size:11px;color:var(--sub);padding:14px;text-align:center;background:var(--bg2);border:1px dashed var(--line);border-radius:var(--radius);}
-.vfx-diag-row{display:flex;align-items:center;gap:10px;padding:7px 12px;border-bottom:1px solid var(--line2);font-size:11px;}
-.vfx-diag-row:last-child{border-bottom:none;}
-.vfx-diag-co{flex:1;font-weight:600;}
-.vfx-diag-status{font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;}
-.vfx-diag-status.ok{background:rgba(46,204,113,.15);color:var(--green);}
-.vfx-diag-status.error{background:rgba(231,76,60,.15);color:var(--red);}
-.vfx-diag-err{font-size:9.5px;color:var(--sub);max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-
-/* ══ VFX JOBS — PUBLIC PAGE ══ */
-.vfxp-summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--line);}
-.vfxp-count{font-size:22px;font-weight:800;letter-spacing:-.02em;}
-.vfxp-count span{color:var(--accent);}
-.vfxp-meta{font-size:11px;color:var(--sub);}
-.vfxp-meta strong{color:var(--txt);}
-.vfxp-eu-badge{font-family:var(--mono);font-size:9px;letter-spacing:.06em;padding:3px 9px;border-radius:20px;background:rgba(46,204,113,.12);color:var(--green);border:1px solid rgba(46,204,113,.25);}
-.vfxp-controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px;}
-.vfxp-search{flex:1;min-width:180px;}
-.vfxp-filter-btn{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;border:1px solid var(--line);border-radius:20px;background:transparent;color:var(--sub);cursor:pointer;transition:all .18s;white-space:nowrap;}
-.vfxp-filter-btn:hover{border-color:var(--accent);color:var(--accent);}
-.vfxp-filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
-.vfxp-toggle{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--sub);margin-left:auto;}
-.vfxp-list{display:flex;flex-direction:column;gap:8px;}
-.vfxp-job{display:grid;grid-template-columns:1.4fr 1.6fr 1fr .8fr .9fr .8fr;gap:10px;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:7px;padding:12px 16px;transition:border-color .18s;}
-.vfxp-job:hover{border-color:var(--accent);}
-.vfxp-job.possible{opacity:.7;border-style:dashed;}
-.vfxp-co{font-size:12px;font-weight:700;}
-.vfxp-title-cell a{color:var(--txt);text-decoration:none;font-size:12.5px;font-weight:600;}
-.vfxp-title-cell a:hover{color:var(--accent);}
-.vfxp-new-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:.1em;padding:2px 5px;border-radius:2px;background:var(--accent);color:#fff;margin-left:6px;vertical-align:middle;}
-.vfxp-loc{font-size:11px;color:var(--sub);}
-.vfxp-badge{font-family:var(--mono);font-size:8px;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:2px;text-align:center;}
-.vfxp-badge.remote{background:rgba(46,204,113,.12);color:var(--green);}
-.vfxp-badge.hybrid{background:rgba(200,160,32,.14);color:#d4a72c;}
-.vfxp-badge.onsite{background:rgba(231,76,60,.12);color:var(--red);}
-.vfxp-badge.unknown{background:var(--bg3);color:var(--sub);}
-.vfxp-scope{font-size:10px;color:var(--sub);}
-.vfxp-seen{font-family:var(--mono);font-size:9.5px;color:var(--sub);}
-.vfxp-match{font-family:var(--mono);font-size:7.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:2px;}
-.vfxp-match.exactMatch{background:rgba(124,92,252,.14);color:var(--accent2);}
-.vfxp-match.possibleMatch{background:var(--bg3);color:var(--sub);}
-.vfxp-state{padding:40px 10px;text-align:center;color:var(--sub);font-size:12px;}
-@media(max-width:900px){.vfxp-job{grid-template-columns:1fr 1fr;}.vfxp-scope,.vfxp-match-cell{display:none;}}
-
 /* CV print styles — hides everything except the CV */
 @media print{
   @page{margin:12mm 14mm;size:A4;}
@@ -569,7 +513,6 @@ option{background:var(--bg2);}
       <div class="adm-nav-item" onclick="showSec('videos')" data-s="videos"><span class="adm-icon">🎬</span>Videos</div>
       <div class="adm-nav-item" onclick="showSec('tools')" data-s="tools"><span class="adm-icon">🔧</span>Core Tools</div>
       <div class="adm-nav-item" onclick="showSec('pages')" data-s="pages"><span class="adm-icon">📄</span>Custom Pages</div>
-      <div class="adm-nav-item" onclick="showSec('vfxjobs')" data-s="vfxjobs"><span class="adm-icon">🕹️</span>VFX Jobs</div>
       <div class="adm-nav-sec">Identity</div>
       <div class="adm-nav-item" onclick="showSec('profile')" data-s="profile"><span class="adm-icon">👤</span>Profile</div>
       <div class="adm-nav-item" onclick="showSec('cv')" data-s="cv"><span class="adm-icon">📋</span>CV / Resume</div>
@@ -656,72 +599,6 @@ option{background:var(--bg2);}
         <div class="a-sub">Fullscreen panels (Tech Art, Textures…). Each becomes a button in the top bar.</div>
         <button class="a-add-btn" onclick="openAddPage()">＋ Add page</button>
         <div class="cp-list" id="pagesList"></div>
-      </div>
-
-      <!-- VFX JOBS -->
-      <div class="adm-sec" id="sec-vfxjobs">
-        <div class="a-title">VFX Jobs Tracker</div>
-        <div class="a-sub">Gestiona la lista de estudios que el scanner de GitHub Actions revisa cada 6h.</div>
-        <div class="fb-notice"><strong>⚠ Sitio estático:</strong> este panel no puede escribir directamente en tu repositorio de GitHub. Importa/añade empresas aquí, pulsa <strong>"Descargar companies.json"</strong> y sustituye (haz commit de) el archivo <code>data/companies.json</code> en tu repo. El GitHub Action lo recogerá en la próxima ejecución (cada 6h) o puedes lanzarlo manualmente desde la pestaña Actions.</div>
-
-        <div class="vfx-block">
-          <div class="vfx-block-title">0 · Visibilidad</div>
-          <div class="vfx-block-sub">Controla si el botón "VFX Jobs" aparece en la web pública. Mientras esté apagado, el tracker sigue funcionando (scanner, companies.json, jobs.json) pero solo lo ves tú, aquí en el admin.</div>
-          <div class="toggle-row" style="border-bottom:none;">
-            <div><div class="toggle-lbl">Mostrar pestaña VFX Jobs públicamente</div><div class="toggle-sub">Apagado por defecto</div></div>
-            <label class="tog"><input type="checkbox" id="vfxPublicToggle" onchange="setVfxJobsPublicVisible(this.checked)"><span class="tog-sl"></span></label>
-          </div>
-        </div>
-
-        <div class="vfx-block">
-          <div class="vfx-block-title">1 · Importación masiva</div>
-          <div class="vfx-block-sub">Pega una URL de careers por línea. Se detecta el ATS automáticamente (Greenhouse, Lever, Teamtailor) y se eliminan duplicados.</div>
-          <textarea class="fta" id="vfxBulkInput" style="min-height:100px;" placeholder="https://boards.greenhouse.io/example
-https://jobs.lever.co/example
-https://empresa.teamtailor.com/
-https://otraempresa.com/careers"></textarea>
-          <div class="vfx-import-row">
-            <button class="ab primary" onclick="importVfxBulk()">Importar URLs</button>
-            <button class="ab" onclick="loadLiveCompanies()">↻ Cargar companies.json actual</button>
-          </div>
-        </div>
-
-        <div class="vfx-block">
-          <div class="vfx-block-title">2 · Añadir empresa manualmente</div>
-          <div class="a-form" style="max-width:640px;">
-            <div class="frow">
-              <div class="fg"><label class="fl">Nombre</label><input class="fi" id="vfx-m-name" placeholder="CI Games"></div>
-              <div class="fg"><label class="fl">Careers URL</label><input class="fi" id="vfx-m-url" placeholder="https://cigames.teamtailor.com/"></div>
-            </div>
-            <div class="fg" style="max-width:220px;">
-              <label class="fl">ATS (déjalo en auto para detectar)</label>
-              <select class="fsel" id="vfx-m-ats">
-                <option value="auto">Auto-detectar</option>
-                <option value="greenhouse">Greenhouse</option>
-                <option value="lever">Lever</option>
-                <option value="teamtailor">Teamtailor</option>
-                <option value="custom">Custom</option>
-              </select>
-            </div>
-            <div class="f-actions"><button class="ab primary" onclick="addVfxCompanyManual()">＋ Añadir empresa</button></div>
-          </div>
-        </div>
-
-        <div class="vfx-block">
-          <div class="vfx-block-title">3 · Lista de empresas <span style="color:var(--sub);font-weight:400;" id="vfxCoCount"></span></div>
-          <div class="vfx-block-sub">Edita, elimina o reordena antes de exportar.</div>
-          <div class="vfx-co-list" id="vfxCoList"></div>
-        </div>
-
-        <div class="vfx-block">
-          <div class="vfx-block-title">4 · Exportar / Diagnóstico</div>
-          <div class="f-actions">
-            <button class="ab primary" onclick="exportVfxCompanies()">⬇ Descargar companies.json</button>
-            <button class="ab" onclick="openVfxDiagnostics()">🩺 Ver estado del scanner</button>
-            <button class="ab" onclick="window.open('data/jobs.json','_blank')">Ver jobs.json</button>
-            <button class="ab" onclick="previewVfxJobsAdmin()">👁 Vista previa de ofertas</button>
-          </div>
-        </div>
       </div>
 
       <!-- PROFILE -->
@@ -871,7 +748,6 @@ https://otraempresa.com/careers"></textarea>
     <span class="t-logo"><span class="t-dot"></span><span id="topName">YAGO FX</span></span>
     <div class="t-right">
       <div id="pageNavLinks"></div>
-      <button class="page-nav-btn" id="vfxJobsNavBtn" onclick="openVfxJobsPublic()" style="border-color:var(--accent);color:var(--accent2);">VFX Jobs</button>
       <button class="lang-btn" id="langBtn" onclick="toggleLang()">ES</button>
       <div id="hdrLinks"></div>
       <button class="tbtn" id="themeBtn">☀</button>
@@ -1000,8 +876,6 @@ let D=DB.get()||JSON.parse(JSON.stringify(DEFAULTS));
 if(!D.reel){D.reel=JSON.parse(JSON.stringify(DEFAULTS.reel));}
 if(D.reel.enabled===undefined)D.reel.enabled=true;
 if(!D.customPages)D.customPages=[];
-if(!D.vfxCompanies)D.vfxCompanies=[];
-if(D.vfxJobsPublic===undefined)D.vfxJobsPublic=false;
 if(!D.cv)D.cv=JSON.parse(JSON.stringify(DEFAULTS.cv));
 if(!D.cv.artstation)D.cv.artstation='';
 if(!D.cv.skills)D.cv.skills=[];
@@ -1229,7 +1103,6 @@ function renderVisitor(){
   renderToolsGrid();
   renderHdrLinks();
   renderPageNav();
-  applyVfxJobsVisibility();
   renderMobSidebar();
   syncMobileBlocks();
   applyLang();
@@ -1423,10 +1296,7 @@ function openPage(id){
   document.getElementById('pageBody').innerHTML=page.content||'<div class="page-section"><div class="page-text-block">No content yet.</div></div>';
   document.getElementById('pageOverlay').classList.add('open');
 }
-function closePage(){
-  document.getElementById('pageOverlay').classList.remove('open');
-  if(vfxPreviewReturnToAdmin){vfxPreviewReturnToAdmin=false;document.getElementById('admin-overlay').classList.add('on');}
-}
+function closePage(){document.getElementById('pageOverlay').classList.remove('open');}
 function renderPagesAdmin(){
   const list=document.getElementById('pagesList');if(!list)return;list.innerHTML='';
   (D.customPages||[]).forEach(page=>{
@@ -1440,230 +1310,6 @@ function confirmAddPage(){if(!D.customPages)D.customPages=[];D.customPages.push(
 function openEditPage(id){const page=D.customPages.find(p=>p.id===id);openModal('Edit — '+page.title,'',`<div class="a-form"><div class="fg"><label class="fl">Title</label><input class="fi" id="ep-title" value="${page.title}"></div><div class="fg"><label class="fl">Slug</label><input class="fi" id="ep-slug" value="${page.slug}"></div><div class="fg"><label class="fl">Content HTML</label><textarea class="fta" id="ep-content" style="min-height:140px;">${page.content||''}</textarea></div></div>`,[{l:'Cancel',c:'',f:'closeModal()'},{l:'Save',c:'primary',f:`confirmEditPage('${id}')`}]);}
 function confirmEditPage(id){const page=D.customPages.find(p=>p.id===id);page.title=gv('ep-title');page.slug=gv('ep-slug');page.content=gv('ep-content');save();closeModal();renderPagesAdmin();renderPageNav();toast('Updated');}
 function deletePage(id){if(!confirm('Delete?'))return;D.customPages=D.customPages.filter(p=>p.id!==id);save();renderPagesAdmin();renderPageNav();toast('Deleted');}
-
-/* ══ VFX JOBS TRACKER — ADMIN COMPANY MANAGER ══ */
-function vfxDetectAts(url){
-  if(/greenhouse\.io/i.test(url))return'greenhouse';
-  if(/lever\.co/i.test(url))return'lever';
-  if(/teamtailor\.com/i.test(url))return'teamtailor';
-  return'custom';
-}
-function vfxNormalizeUrl(url){
-  url=(url||'').trim();
-  if(!url)return'';
-  if(!/^https?:\/\//i.test(url))url='https://'+url;
-  return url.replace(/\/+$/,'').replace(/\/(jobs|careers)$/i,'')||url;
-}
-function vfxGuessName(url){
-  try{
-    const u=new URL(vfxNormalizeUrl(url)||url);
-    const host=u.hostname.replace(/^www\./,'');
-    // teamtailor / lever / greenhouse subdomain or path slug
-    let slug='';
-    if(/greenhouse\.io/i.test(host)){const m=u.pathname.match(/\/([^/?#]+)/);slug=m?m[1]:'';}
-    else if(/lever\.co/i.test(host)){const m=u.pathname.match(/\/([^/?#]+)/);slug=m?m[1]:'';}
-    else if(/teamtailor\.com/i.test(host)){slug=host.split('.')[0];}
-    else{slug=host.split('.')[0];}
-    if(!slug)return host;
-    return slug.replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
-  }catch(e){return url;}
-}
-function setVfxJobsPublicVisible(checked){
-  D.vfxJobsPublic=checked;save();applyVfxJobsVisibility();
-  toast(checked?'VFX Jobs ahora es visible públicamente':'VFX Jobs oculto para el público');
-}
-function applyVfxJobsVisibility(){
-  const btn=document.getElementById('vfxJobsNavBtn');
-  if(btn)btn.style.display=D.vfxJobsPublic?'':'none';
-  const toggle=document.getElementById('vfxPublicToggle');
-  if(toggle)toggle.checked=!!D.vfxJobsPublic;
-}
-let vfxPreviewReturnToAdmin=false;
-function previewVfxJobsAdmin(){
-  document.getElementById('admin-overlay').classList.remove('on');
-  vfxPreviewReturnToAdmin=true;
-  openVfxJobsPublic();
-}
-
-function vfxDedupeCompanies(list){
-  const seen=new Set();const out=[];
-  list.forEach(c=>{
-    const key=vfxNormalizeUrl(c.careersUrl).toLowerCase();
-    if(!key||seen.has(key))return;
-    seen.add(key);out.push(c);
-  });
-  return out;
-}
-function importVfxBulk(){
-  const raw=gv('vfxBulkInput');
-  const lines=raw.split('\n').map(l=>l.trim()).filter(Boolean);
-  if(!lines.length){toast('Pega al menos una URL');return;}
-  let added=0;
-  lines.forEach(line=>{
-    const url=vfxNormalizeUrl(line);
-    if(!url)return;
-    const exists=D.vfxCompanies.some(c=>vfxNormalizeUrl(c.careersUrl).toLowerCase()===url.toLowerCase());
-    if(exists)return;
-    D.vfxCompanies.push({id:uid(),name:vfxGuessName(url),careersUrl:url,type:vfxDetectAts(url)});
-    added++;
-  });
-  D.vfxCompanies=vfxDedupeCompanies(D.vfxCompanies);
-  save();document.getElementById('vfxBulkInput').value='';renderVfxCompaniesAdmin();
-  toast(added?`${added} empresa(s) importada(s)`:'Sin novedades (duplicadas)');
-}
-function addVfxCompanyManual(){
-  const name=gv('vfx-m-name').trim();
-  const url=vfxNormalizeUrl(gv('vfx-m-url'));
-  let ats=gv('vfx-m-ats');
-  if(!url){toast('Falta la Careers URL');return;}
-  if(ats==='auto')ats=vfxDetectAts(url);
-  const exists=D.vfxCompanies.some(c=>vfxNormalizeUrl(c.careersUrl).toLowerCase()===url.toLowerCase());
-  if(exists){toast('Esa empresa ya está en la lista');return;}
-  D.vfxCompanies.push({id:uid(),name:name||vfxGuessName(url),careersUrl:url,type:ats});
-  save();document.getElementById('vfx-m-name').value='';document.getElementById('vfx-m-url').value='';
-  renderVfxCompaniesAdmin();toast('Empresa añadida');
-}
-function renderVfxCompaniesAdmin(){
-  applyVfxJobsVisibility();
-  const list=document.getElementById('vfxCoList');if(!list)return;
-  const countEl=document.getElementById('vfxCoCount');
-  if(countEl)countEl.textContent=D.vfxCompanies.length?`(${D.vfxCompanies.length})`:'';
-  list.innerHTML='';
-  if(!D.vfxCompanies.length){list.innerHTML='<div class="vfx-empty">Sin empresas todavía. Importa URLs o añade una manualmente.</div>';return;}
-  D.vfxCompanies.forEach(c=>{
-    const row=document.createElement('div');row.className='vfx-co-row';
-    row.innerHTML=`<div class="vfx-co-main"><div class="vfx-co-name">${c.name}<span class="vfx-ats-tag">${c.type}</span></div><div class="vfx-co-url">${c.careersUrl}</div></div><div class="vfx-co-btns"><button class="ab" onclick="openEditVfxCompany('${c.id}')">Edit</button><button class="ab danger" onclick="deleteVfxCompany('${c.id}')">Del</button></div>`;
-    list.appendChild(row);
-  });
-}
-function openEditVfxCompany(id){
-  const c=D.vfxCompanies.find(x=>x.id===id);if(!c)return;
-  openModal('Editar empresa','',`<div class="a-form"><div class="fg"><label class="fl">Nombre</label><input class="fi" id="evc-n" value="${c.name}"></div><div class="fg"><label class="fl">Careers URL</label><input class="fi" id="evc-u" value="${c.careersUrl}"></div><div class="fg"><label class="fl">ATS</label><select class="fsel" id="evc-a"><option value="greenhouse" ${c.type==='greenhouse'?'selected':''}>Greenhouse</option><option value="lever" ${c.type==='lever'?'selected':''}>Lever</option><option value="teamtailor" ${c.type==='teamtailor'?'selected':''}>Teamtailor</option><option value="custom" ${c.type==='custom'?'selected':''}>Custom</option></select></div></div>`,[{l:'Cancelar',c:'',f:'closeModal()'},{l:'Guardar',c:'primary',f:`confirmEditVfxCompany('${id}')`}]);
-}
-function confirmEditVfxCompany(id){
-  const c=D.vfxCompanies.find(x=>x.id===id);if(!c)return;
-  c.name=gv('evc-n')||c.name;c.careersUrl=vfxNormalizeUrl(gv('evc-u'))||c.careersUrl;c.type=gv('evc-a');
-  save();closeModal();renderVfxCompaniesAdmin();toast('Actualizado');
-}
-function deleteVfxCompany(id){
-  if(!confirm('¿Eliminar esta empresa de la lista?'))return;
-  D.vfxCompanies=D.vfxCompanies.filter(x=>x.id!==id);save();renderVfxCompaniesAdmin();toast('Eliminada');
-}
-async function loadLiveCompanies(){
-  try{
-    const r=await fetch('data/companies.json',{cache:'no-store'});
-    if(!r.ok)throw new Error('No encontrado');
-    const live=await r.json();
-    const mapped=live.map(c=>({id:uid(),name:c.name,careersUrl:c.careersUrl,type:c.type||vfxDetectAts(c.careersUrl)}));
-    D.vfxCompanies=vfxDedupeCompanies([...mapped,...D.vfxCompanies]);
-    save();renderVfxCompaniesAdmin();toast('companies.json cargado');
-  }catch(e){toast('No se pudo leer data/companies.json (¿aún no existe?)');}
-}
-function exportVfxCompanies(){
-  const out=D.vfxCompanies.map(c=>({name:c.name,careersUrl:c.careersUrl,type:c.type}));
-  const blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='companies.json';a.click();
-  toast('Descargado — sustituye data/companies.json en tu repo');
-}
-async function openVfxDiagnostics(){
-  let rows='<div class="vfx-empty">Cargando…</div>';
-  openModal('Estado del scanner','Último intento por empresa (data/scanner-status.json)',rows,[{l:'Cerrar',c:'',f:'closeModal()'}]);
-  try{
-    const r=await fetch('data/scanner-status.json',{cache:'no-store'});
-    if(!r.ok)throw new Error();
-    const statuses=await r.json();
-    if(!statuses.length){document.getElementById('mBody').innerHTML='<div class="vfx-empty">Sin datos todavía. Ejecuta el GitHub Action al menos una vez.</div>';return;}
-    document.getElementById('mBody').innerHTML=statuses.map(s=>`<div class="vfx-diag-row"><span class="vfx-diag-co">${s.company}</span><span class="vfx-diag-status ${s.status==='ok'?'ok':'error'}">${s.status}</span>${s.error?`<span class="vfx-diag-err">${s.error}</span>`:''}</div>`).join('');
-  }catch(e){
-    document.getElementById('mBody').innerHTML='<div class="vfx-empty">No se pudo leer data/scanner-status.json (¿el Action aún no se ha ejecutado?)</div>';
-  }
-}
-
-/* ══ VFX JOBS TRACKER — PUBLIC PAGE ══ */
-let vfxJobsCache=null;
-let vfxJobsFilterWp='all';       // all | remote | hybrid | onsite
-let vfxJobsShowPossible=false;
-let vfxJobsSort='newest';        // newest | company | title
-let vfxJobsSearch='';
-
-async function openVfxJobsPublic(){
-  document.getElementById('pageTitleBar').textContent='VFX Jobs';
-  document.getElementById('pageBody').innerHTML='<div class="vfxp-state">Cargando ofertas…</div>';
-  document.getElementById('pageOverlay').classList.add('open');
-  if(!vfxJobsCache){
-    try{
-      const r=await fetch('data/jobs.json',{cache:'no-store'});
-      if(!r.ok)throw new Error('not found');
-      vfxJobsCache=await r.json();
-    }catch(e){
-      document.getElementById('pageBody').innerHTML='<div class="vfxp-state">Todavía no hay datos de ofertas. El scanner automático (GitHub Action) generará <code>data/jobs.json</code> en su próxima ejecución.</div>';
-      return;
-    }
-  }
-  renderVfxJobsPublic();
-}
-function vfxTimeAgo(iso){
-  if(!iso)return'unknown';
-  const diffMs=Date.now()-new Date(iso).getTime();
-  const h=Math.floor(diffMs/3600000);
-  if(h<1)return'less than an hour ago';
-  if(h<24)return`${h}h ago`;
-  const d=Math.floor(h/24);
-  return`${d}d ago`;
-}
-function vfxIsNew(iso){
-  if(!iso)return false;
-  return(Date.now()-new Date(iso).getTime())<7*24*3600000;
-}
-function renderVfxJobsPublic(){
-  const data=vfxJobsCache;if(!data)return;
-  const active=(data.jobs||[]).filter(j=>j.status==='active');
-  const studios=new Set(active.map(j=>j.company)).size;
-  const euCount=active.filter(j=>/eu|europe/i.test(j.remoteScope||'')).length;
-
-  let list=active.filter(j=>vfxJobsShowPossible?true:j.matchType!=='possibleMatch');
-  if(vfxJobsFilterWp!=='all')list=list.filter(j=>j.workplaceType===vfxJobsFilterWp);
-  if(vfxJobsSearch.trim()){
-    const q=vfxJobsSearch.trim().toLowerCase();
-    list=list.filter(j=>j.company.toLowerCase().includes(q)||j.title.toLowerCase().includes(q));
-  }
-  if(vfxJobsSort==='company')list=[...list].sort((a,b)=>a.company.localeCompare(b.company));
-  else if(vfxJobsSort==='title')list=[...list].sort((a,b)=>a.title.localeCompare(b.title));
-  else list=[...list].sort((a,b)=>new Date(b.firstSeen||0)-new Date(a.firstSeen||0));
-
-  const wpBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsFilterWp===val?'active':''}" onclick="vfxJobsFilterWp='${val}';renderVfxJobsPublic()">${label}</button>`;
-
-  const rowsHtml=list.length?list.map(j=>`
-    <div class="vfxp-job ${j.matchType==='possibleMatch'?'possible':''}">
-      <div class="vfxp-co">${j.company}</div>
-      <div class="vfxp-title-cell"><a href="${j.url}" target="_blank" rel="noopener">${j.title}</a>${vfxIsNew(j.firstSeen)?'<span class="vfxp-new-tag">NEW</span>':''}</div>
-      <div class="vfxp-loc">${j.location||'—'}</div>
-      <div class="vfxp-badge ${j.workplaceType||'unknown'}">${j.workplaceType||'unknown'}</div>
-      <div class="vfxp-scope">${j.remoteScope||'Unknown'}</div>
-      <div class="vfxp-match ${j.matchType}">${j.matchType==='exactMatch'?'Exact':'Possible'}</div>
-    </div>`).join(''):'<div class="vfxp-state">No hay ofertas que coincidan con los filtros actuales.</div>';
-
-  document.getElementById('pageBody').innerHTML=`
-    <div class="vfxp-summary">
-      <div class="vfxp-count"><span>${active.length}</span> open position${active.length===1?'':'s'}</div>
-      <div class="vfxp-meta"><strong>${studios}</strong> studio${studios===1?'':'s'} hiring</div>
-      <div class="vfxp-meta">Last scan: ${vfxTimeAgo(data.lastUpdated)}</div>
-      ${euCount?`<span class="vfxp-eu-badge">${euCount} Remote EU position${euCount===1?'':'s'}</span>`:''}
-    </div>
-    <div class="vfxp-controls">
-      ${wpBtn('all','All')}${wpBtn('remote','Remote')}${wpBtn('hybrid','Hybrid')}${wpBtn('onsite','On-site')}
-      <input class="fi vfxp-search" placeholder="Search company or title…" value="${vfxJobsSearch}" oninput="vfxJobsSearch=this.value;renderVfxJobsPublic()">
-      <select class="fsel" style="max-width:170px;" onchange="vfxJobsSort=this.value;renderVfxJobsPublic()">
-        <option value="newest" ${vfxJobsSort==='newest'?'selected':''}>Newest detected</option>
-        <option value="company" ${vfxJobsSort==='company'?'selected':''}>Company</option>
-        <option value="title" ${vfxJobsSort==='title'?'selected':''}>Job title</option>
-      </select>
-      <label class="vfxp-toggle"><input type="checkbox" ${vfxJobsShowPossible?'checked':''} onchange="vfxJobsShowPossible=this.checked;renderVfxJobsPublic()"> Show possible matches</label>
-    </div>
-    <div class="vfxp-list">${rowsHtml}</div>
-  `;
-}
-
 
 /* ══ CV ══ */
 function renderCvForm(){
@@ -2058,7 +1704,7 @@ function checkPw(){
 function openAdmin(){
   document.getElementById('admin-overlay').classList.add('on');showSec('reel');
   renderAdminCos();renderVidCoSel();renderProfileForm();renderLayGrid();renderThemeGrid();
-  renderSizeGrid();renderToolsAdmin();renderLinksAdmin();renderPagesAdmin();renderCvForm();renderVfxCompaniesAdmin();
+  renderSizeGrid();renderToolsAdmin();renderLinksAdmin();renderPagesAdmin();renderCvForm();
   const te=document.getElementById('togExpCards');if(te)te.checked=!!D.expCards;
   renderCurrentCompanyInfo();syncMobileBlocks();
   const ls=document.getElementById('langSel');if(ls)ls.value=D.lang;
