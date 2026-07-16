@@ -25,20 +25,27 @@ def detect_ats(url: str) -> str:
 
 
 def normalize_url(url: str) -> str:
-    """Trim whitespace, ensure a scheme, and drop a trailing slash so
-    equivalent URLs (with/without trailing slash) compare as equal for
-    de-duplication.
-
-    NOTE: this used to also strip a trailing /jobs or /careers, but that
-    broke "custom" companies where that exact path IS the real page to
-    scrape (CustomHtmlAdapter fetches the URL as-is, no fallback logic).
+    """Trim whitespace and ensure a scheme. Does NOT touch a trailing
+    slash — some sites genuinely need it (e.g. a path that 404s or errors
+    without the final slash), so whatever is entered is preserved as-is.
+    For de-duplication comparisons, use dedupe_key() instead; don't use
+    this function's output as a comparison key.
     """
     if not url:
         return ""
     url = url.strip()
     if not re.match(r"^https?://", url, re.IGNORECASE):
         url = "https://" + url
-    return url.rstrip("/")
+    return url
+
+
+def dedupe_key(url: str) -> str:
+    """Comparison-only key: same as normalize_url() but also strips a
+    trailing slash and lowercases, so 'x.com/careers' and 'x.com/careers/'
+    are treated as the same company for de-dup purposes — WITHOUT mutating
+    the actual URL that gets saved/fetched.
+    """
+    return normalize_url(url).rstrip("/").lower()
 
 
 def guess_name_from_url(url: str) -> str:
@@ -74,7 +81,7 @@ def dedupe_companies(companies: list[dict]) -> list[dict]:
     seen = set()
     out = []
     for company in companies:
-        key = normalize_url(company.get("careersUrl", "")).lower()
+        key = dedupe_key(company.get("careersUrl", ""))
         if not key or key in seen:
             continue
         seen.add(key)

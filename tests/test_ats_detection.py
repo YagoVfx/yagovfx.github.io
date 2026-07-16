@@ -5,6 +5,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from scanner.companies import (
     detect_ats,
     normalize_url,
+    dedupe_key,
     guess_name_from_url,
     dedupe_companies,
     parse_bulk_urls,
@@ -35,12 +36,18 @@ def test_detect_ats_custom_fallback():
     assert detect_ats("") == "custom"
 
 
-def test_normalize_url_strips_trailing_slash_only():
-    assert normalize_url("https://cigames.teamtailor.com/") == "https://cigames.teamtailor.com"
-    # A /careers or /jobs suffix must be PRESERVED now — for "custom" ATS
-    # companies that exact path is the real page to scrape.
-    assert normalize_url("https://lighthousegames.com/careers/") == "https://lighthousegames.com/careers"
+def test_normalize_url_preserves_trailing_slash():
+    # normalize_url must NOT touch a trailing slash — some sites genuinely
+    # need it to work (e.g. https://x.com/careers/ errors without it).
+    assert normalize_url("https://lighthousegames.com/careers/") == "https://lighthousegames.com/careers/"
+    assert normalize_url("https://cigames.teamtailor.com/") == "https://cigames.teamtailor.com/"
     assert normalize_url("cigames.teamtailor.com") == "https://cigames.teamtailor.com"
+
+
+def test_dedupe_key_ignores_trailing_slash():
+    # dedupe_key (comparison-only) should treat these as equal, without
+    # mutating what actually gets saved.
+    assert dedupe_key("https://x.com/careers") == dedupe_key("https://x.com/careers/")
 
 
 def test_guess_name_from_url():
@@ -77,7 +84,8 @@ if __name__ == "__main__":
     test_detect_ats_teamtailor()
     test_detect_ats_workday()
     test_detect_ats_custom_fallback()
-    test_normalize_url_strips_trailing_slash_only()
+    test_normalize_url_preserves_trailing_slash()
+    test_dedupe_key_ignores_trailing_slash()
     test_guess_name_from_url()
     test_dedupe_companies_by_normalized_url()
     test_parse_bulk_urls_end_to_end()

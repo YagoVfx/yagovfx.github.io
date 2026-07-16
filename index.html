@@ -2077,11 +2077,16 @@ function vfxNormalizeUrl(url){
   url=(url||'').trim();
   if(!url)return'';
   if(!/^https?:\/\//i.test(url))url='https://'+url;
-  // NOTE: we used to also strip a trailing /jobs or /careers here, but that
-  // broke "custom" companies where that exact path IS the real page to
-  // scrape (CustomHtmlAdapter fetches this URL as-is, with no fallback
-  // logic). Only trim the trailing slash, needed for de-dup comparisons.
-  return url.replace(/\/+$/,'')||url;
+  // IMPORTANT: do NOT strip a trailing slash here. Some sites genuinely
+  // need it (e.g. https://x.com/careers/ 404s or errors without the final
+  // slash). Whatever the person types is what gets saved and fetched.
+  return url;
+}
+function vfxDedupeKey(url){
+  // Separate helper used ONLY for duplicate-comparison purposes, so
+  // "x.com/careers" and "x.com/careers/" are still treated as the same
+  // company for de-dup — without mutating the actual saved URL.
+  return (url||'').trim().replace(/\/+$/,'').toLowerCase();
 }
 function vfxGuessName(url){
   try{
@@ -2099,7 +2104,7 @@ function vfxGuessName(url){
 function vfxDedupeCompanies(list){
   const seen=new Set();const out=[];
   list.forEach(c=>{
-    const key=vfxNormalizeUrl(c.careersUrl).toLowerCase();
+    const key=vfxDedupeKey(c.careersUrl);
     if(!key||seen.has(key))return;
     seen.add(key);out.push(c);
   });
@@ -2113,7 +2118,7 @@ function importVfxBulk(){
   lines.forEach(line=>{
     const url=vfxNormalizeUrl(line);
     if(!url)return;
-    const exists=D.vfxCompanies.some(c=>vfxNormalizeUrl(c.careersUrl).toLowerCase()===url.toLowerCase());
+    const exists=D.vfxCompanies.some(c=>vfxDedupeKey(c.careersUrl)===vfxDedupeKey(url));
     if(exists)return;
     D.vfxCompanies.push({id:uid(),name:vfxGuessName(url),careersUrl:url,type:vfxDetectAts(url)});
     added++;
@@ -2128,7 +2133,7 @@ function addVfxCompanyManual(){
   let ats=gv('vfx-m-ats');
   if(!url){toast('Falta la Careers URL');return;}
   if(ats==='auto')ats=vfxDetectAts(url);
-  const exists=D.vfxCompanies.some(c=>vfxNormalizeUrl(c.careersUrl).toLowerCase()===url.toLowerCase());
+  const exists=D.vfxCompanies.some(c=>vfxDedupeKey(c.careersUrl)===vfxDedupeKey(url));
   if(exists){toast('Esa empresa ya está en la lista');return;}
   D.vfxCompanies.push({id:uid(),name:name||vfxGuessName(url),careersUrl:url,type:ats});
   save();document.getElementById('vfx-m-name').value='';document.getElementById('vfx-m-url').value='';
