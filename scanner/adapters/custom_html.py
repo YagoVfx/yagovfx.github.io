@@ -6,16 +6,20 @@ from ..filters import classify_job, detect_workplace, detect_remote_scope
 
 logger = logging.getLogger(__name__)
 
-# A link only counts as a "job candidate" if its URL actually looks like a
-# job/career/position/vacancy link. Just having plausible-length link text
-# is NOT enough — normal nav/footer/social links pass that check too, which
-# made total_seen (and therefore "needsReview") meaningless on JS-heavy
-# corporate sites: we'd count dozens of menu links as "postings seen" even
-# though the real job data never rendered (it's injected by JS we can't run).
-JOB_URL_RE = re.compile(
-    r'/(jobs?|careers?|positions?|openings?|vacanc(?:y|ies)|roles?)(?:[/?#]|$)',
-    re.IGNORECASE
-)
+# A link only counts as a "job candidate" if its URL both (a) contains a
+# job/career-ish keyword AND (b) also contains a signal that this is a
+# SPECIFIC posting — a numeric id (3+ digits) or a multi-word hyphenated
+# slug — rather than just a generic section of the site. This matters a lot
+# on career sites where the ENTIRE domain lives under /careers/ (e.g. Oracle
+# Taleo instances like jobs.ea.com): there, every nav link, filter, and
+# footer link also contains "/careers/", so keyword-matching alone massively
+# overcounts (we saw 46 "postings" on a page with 13 real ones).
+JOB_KEYWORD_RE = re.compile(r'/(?:jobs?|careers?|positions?|openings?|vacanc(?:y|ies)|roles?)(?:[/?#-]|$)', re.IGNORECASE)
+JOB_SPECIFIC_RE = re.compile(r'\d{3,}|(?:[a-z0-9]+-){2,}[a-z0-9]+', re.IGNORECASE)
+
+
+def _looks_like_job_url(href: str) -> bool:
+    return bool(JOB_KEYWORD_RE.search(href) and JOB_SPECIFIC_RE.search(href))
 
 
 class CustomHtmlAdapter(BaseAdapter):
@@ -34,7 +38,7 @@ class CustomHtmlAdapter(BaseAdapter):
 
         for a in soup.find_all("a", href=True):
             href = a["href"]
-            if not JOB_URL_RE.search(href):
+            if not _looks_like_job_url(href):
                 continue
 
             title = a.get_text(separator=" ", strip=True)
