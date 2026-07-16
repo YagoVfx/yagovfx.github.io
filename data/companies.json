@@ -82,36 +82,36 @@
   {
     "name": "Blizzard",
     "careersUrl": "https://activision.wd1.myworkdayjobs.com/Blizzard_External_Careers",
-    "type": "custom"
+    "type": "workday"
   },
   {
     "name": "2K",
-    "careersUrl": "https://2k.com",
+    "careersUrl": "https://2k.com/careers",
     "type": "custom"
   },
   {
     "name": "Activision",
     "careersUrl": "https://activision.wd1.myworkdayjobs.com/External",
-    "type": "custom"
+    "type": "workday"
   },
   {
     "name": "Bungie",
     "careersUrl": "https://boards.greenhouse.io/bungie",
-    "type": "custom"
+    "type": "greenhouse"
   },
   {
     "name": "EidosMontreal",
-    "careersUrl": "https://www.eidosmontreal.com",
+    "careersUrl": "https://www.eidosmontreal.com/careers",
     "type": "custom"
   },
   {
     "name": "Roblox",
     "careersUrl": "https://boards.greenhouse.io/roblox",
-    "type": "custom"
+    "type": "greenhouse"
   },
   {
     "name": "LightHouseGames",
-    "careersUrl": "https://lighthousegames.com",
-    "type": "custom"
+    "careersUrl": "https://jobs.workable.com/company/9NdGchEYkMTDejHGaa9eHJ/jobs-at-lighthouse-games",
+    "type": "workable"
   }
 ]
