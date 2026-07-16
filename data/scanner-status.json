@@ -5,7 +5,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-16T08:37:35Z"
+    "lastAttempt": "2026-07-16T09:01:19Z"
   },
   {
     "company": "CD Project",
@@ -13,7 +13,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-16T08:37:36Z"
+    "lastAttempt": "2026-07-16T09:01:20Z"
   },
   {
     "company": "CI Games",
@@ -21,13 +21,13 @@
     "jobsFound": 0,
     "totalPostingsSeen": 3,
     "needsReview": false,
-    "lastAttempt": "2026-07-16T08:37:36Z"
+    "lastAttempt": "2026-07-16T09:01:21Z"
   },
   {
     "company": "Respawn",
     "status": "error",
     "error": "No response from https://www.respawn.com/careers-listings?group=ART",
-    "lastAttempt": "2026-07-16T08:37:42Z"
+    "lastAttempt": "2026-07-16T09:01:26Z"
   },
   {
     "company": "Epic Games",
@@ -35,7 +35,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-16T08:37:42Z"
+    "lastAttempt": "2026-07-16T09:01:26Z"
   },
   {
     "company": "Frontier",
@@ -43,7 +43,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 1,
     "needsReview": false,
-    "lastAttempt": "2026-07-16T08:37:43Z"
+    "lastAttempt": "2026-07-16T09:01:27Z"
   },
   {
     "company": "Embark Studios",
@@ -51,7 +51,7 @@
     "jobsFound": 1,
     "totalPostingsSeen": 9,
     "needsReview": false,
-    "lastAttempt": "2026-07-16T08:37:43Z"
+    "lastAttempt": "2026-07-16T09:01:27Z"
   },
   {
     "company": "Jagex",
@@ -59,7 +59,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-16T08:37:43Z"
+    "lastAttempt": "2026-07-16T09:01:27Z"
   },
   {
     "company": "PTW",
@@ -67,7 +67,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-16T08:37:43Z"
+    "lastAttempt": "2026-07-16T09:01:28Z"
   },
   {
     "company": "Guerrilla",
@@ -75,7 +75,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-16T08:37:43Z"
+    "lastAttempt": "2026-07-16T09:01:28Z"
   },
   {
     "company": "Rebellion",
@@ -83,7 +83,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-16T08:37:44Z"
+    "lastAttempt": "2026-07-16T09:01:28Z"
   },
   {
     "company": "Room8",
@@ -91,7 +91,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-16T08:37:44Z"
+    "lastAttempt": "2026-07-16T09:01:28Z"
   },
   {
     "company": "EA",
@@ -99,7 +99,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 38,
     "needsReview": false,
-    "lastAttempt": "2026-07-16T08:37:46Z"
+    "lastAttempt": "2026-07-16T09:01:30Z"
   },
   {
     "company": "Ubisoft",
@@ -107,7 +107,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 1,
     "needsReview": false,
-    "lastAttempt": "2026-07-16T08:37:46Z"
+    "lastAttempt": "2026-07-16T09:01:30Z"
   },
   {
     "company": "Sumo Digital",
@@ -115,7 +115,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-16T08:37:48Z"
+    "lastAttempt": "2026-07-16T09:01:31Z"
   },
   {
     "company": "Massive",
@@ -123,25 +123,25 @@
     "jobsFound": 0,
     "totalPostingsSeen": 5,
     "needsReview": false,
-    "lastAttempt": "2026-07-16T08:37:48Z"
+    "lastAttempt": "2026-07-16T09:01:31Z"
   },
   {
     "company": "Blizzard",
     "status": "error",
     "error": "No response from https://activision.wd1.myworkdayjobs.com/Blizzard_External_Careers",
-    "lastAttempt": "2026-07-16T08:37:55Z"
+    "lastAttempt": "2026-07-16T09:01:41Z"
   },
   {
     "company": "2K",
     "status": "error",
     "error": "No response from https://2k.com",
-    "lastAttempt": "2026-07-16T08:37:59Z"
+    "lastAttempt": "2026-07-16T09:01:45Z"
   },
   {
     "company": "Activision",
     "status": "error",
     "error": "No response from https://activision.wd1.myworkdayjobs.com/External",
-    "lastAttempt": "2026-07-16T08:38:04Z"
+    "lastAttempt": "2026-07-16T09:01:49Z"
   },
   {
     "company": "Bungie",
@@ -149,7 +149,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 2,
     "needsReview": false,
-    "lastAttempt": "2026-07-16T08:38:04Z"
+    "lastAttempt": "2026-07-16T09:01:50Z"
   },
   {
     "company": "EidosMontreal",
@@ -157,13 +157,13 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-16T08:38:04Z"
+    "lastAttempt": "2026-07-16T09:01:50Z"
   },
   {
     "company": "Roblox",
     "status": "error",
     "error": "No response from https://boards.greenhouse.io/roblox",
-    "lastAttempt": "2026-07-16T08:38:54Z"
+    "lastAttempt": "2026-07-16T09:02:40Z"
   },
   {
     "company": "LightHouseGames",
@@ -171,6 +171,6 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-07-16T08:38:54Z"
+    "lastAttempt": "2026-07-16T09:02:40Z"
   }
 ]
