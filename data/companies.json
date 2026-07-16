@@ -26,7 +26,7 @@
   },
   {
     "name": "Frontier",
-    "careersUrl": "https://www.frontier.co.uk/careers/art",
+    "careersUrl": "https://jobs.eu.lever.co/frontier",
     "type": "custom"
   },
   {
@@ -46,7 +46,7 @@
   },
   {
     "name": "Guerrilla",
-    "careersUrl": "https://www.guerrilla-games.com/join",
+    "careersUrl": "https://job-boards.greenhouse.io/guerrilla-games",
     "type": "custom"
   },
   {
@@ -81,7 +81,7 @@
   },
   {
     "name": "Blizzard",
-    "careersUrl": "https://careers.blizzard.com/global/en/search-results?keywords=vfx",
+    "careersUrl": "https://activision.wd1.myworkdayjobs.com/Blizzard_External_Careers",
     "type": "custom"
   },
   {
@@ -91,12 +91,12 @@
   },
   {
     "name": "Activision",
-    "careersUrl": "https://careers.activision.com/art-animation-sound",
+    "careersUrl": "https://activision.wd1.myworkdayjobs.com/External",
     "type": "custom"
   },
   {
     "name": "Bungie",
-    "careersUrl": "https://careers.bungie.com",
+    "careersUrl": "https://boards.greenhouse.io/bungie",
     "type": "custom"
   },
   {
@@ -106,7 +106,12 @@
   },
   {
     "name": "Roblox",
-    "careersUrl": "https://careers.roblox.com/jobs?search=vfx",
+    "careersUrl": "https://boards.greenhouse.io/roblox",
+    "type": "custom"
+  },
+  {
+    "name": "LightHouseGames",
+    "careersUrl": "https://lighthousegames.com",
     "type": "custom"
   }
 ]
