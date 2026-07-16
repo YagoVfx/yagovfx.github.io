@@ -35,9 +35,11 @@ def test_detect_ats_custom_fallback():
     assert detect_ats("") == "custom"
 
 
-def test_normalize_url_strips_trailing_and_suffix():
+def test_normalize_url_strips_trailing_slash_only():
     assert normalize_url("https://cigames.teamtailor.com/") == "https://cigames.teamtailor.com"
-    assert normalize_url("https://cigames.teamtailor.com/jobs") == "https://cigames.teamtailor.com"
+    # A /careers or /jobs suffix must be PRESERVED now — for "custom" ATS
+    # companies that exact path is the real page to scrape.
+    assert normalize_url("https://lighthousegames.com/careers/") == "https://lighthousegames.com/careers"
     assert normalize_url("cigames.teamtailor.com") == "https://cigames.teamtailor.com"
 
 
@@ -49,7 +51,7 @@ def test_guess_name_from_url():
 def test_dedupe_companies_by_normalized_url():
     companies = [
         {"name": "CI Games", "careersUrl": "https://cigames.teamtailor.com/", "type": "teamtailor"},
-        {"name": "CI Games (dup)", "careersUrl": "https://cigames.teamtailor.com/jobs", "type": "teamtailor"},
+        {"name": "CI Games (dup)", "careersUrl": "https://cigames.teamtailor.com", "type": "teamtailor"},
         {"name": "Riot Games", "careersUrl": "https://boards.greenhouse.io/riotgames", "type": "greenhouse"},
     ]
     deduped = dedupe_companies(companies)
@@ -75,7 +77,7 @@ if __name__ == "__main__":
     test_detect_ats_teamtailor()
     test_detect_ats_workday()
     test_detect_ats_custom_fallback()
-    test_normalize_url_strips_trailing_and_suffix()
+    test_normalize_url_strips_trailing_slash_only()
     test_guess_name_from_url()
     test_dedupe_companies_by_normalized_url()
     test_parse_bulk_urls_end_to_end()

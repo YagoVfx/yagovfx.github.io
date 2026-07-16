@@ -506,6 +506,8 @@ option{background:var(--bg2);}
 .vfx-diag-row{display:flex;align-items:center;gap:10px;padding:7px 12px;border-bottom:1px solid var(--line2);font-size:11px;}
 .vfx-diag-row:last-child{border-bottom:none;}
 .vfx-diag-co{flex:1;font-weight:600;}
+.vfx-diag-co-link{color:inherit;text-decoration:none;border-bottom:1px dashed var(--sub);}
+.vfx-diag-co-link:hover{color:var(--accent);border-bottom-color:var(--accent);}
 .vfx-diag-status{font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;}
 .vfx-diag-status.ok{background:rgba(46,204,113,.15);color:var(--green);}
 .vfx-diag-status.review{background:rgba(212,167,44,.16);color:#d4a72c;}
@@ -2068,13 +2070,18 @@ function vfxDetectAts(url){
   if(/greenhouse\.io/i.test(url))return'greenhouse';
   if(/lever\.co/i.test(url))return'lever';
   if(/teamtailor\.com/i.test(url))return'teamtailor';
+  if(/myworkdayjobs\.com/i.test(url))return'workday';
   return'custom';
 }
 function vfxNormalizeUrl(url){
   url=(url||'').trim();
   if(!url)return'';
   if(!/^https?:\/\//i.test(url))url='https://'+url;
-  return url.replace(/\/+$/,'').replace(/\/(jobs|careers)$/i,'')||url;
+  // NOTE: we used to also strip a trailing /jobs or /careers here, but that
+  // broke "custom" companies where that exact path IS the real page to
+  // scrape (CustomHtmlAdapter fetches this URL as-is, with no fallback
+  // logic). Only trim the trailing slash, needed for de-dup comparisons.
+  return url.replace(/\/+$/,'')||url;
 }
 function vfxGuessName(url){
   try{
@@ -2142,11 +2149,14 @@ function renderVfxCompaniesAdmin(){
 }
 function openEditVfxCompany(id){
   const c=D.vfxCompanies.find(x=>x.id===id);if(!c)return;
-  openModal('Editar empresa','',`<div class="a-form"><div class="fg"><label class="fl">Nombre</label><input class="fi" id="evc-n" value="${c.name}"></div><div class="fg"><label class="fl">Careers URL</label><input class="fi" id="evc-u" value="${c.careersUrl}"></div><div class="fg"><label class="fl">ATS</label><select class="fsel" id="evc-a"><option value="greenhouse" ${c.type==='greenhouse'?'selected':''}>Greenhouse</option><option value="lever" ${c.type==='lever'?'selected':''}>Lever</option><option value="teamtailor" ${c.type==='teamtailor'?'selected':''}>Teamtailor</option><option value="workday" ${c.type==='workday'?'selected':''}>Workday</option><option value="custom" ${c.type==='custom'?'selected':''}>Custom</option></select></div></div>`,[{l:'Cancelar',c:'',f:'closeModal()'},{l:'Guardar',c:'primary',f:`confirmEditVfxCompany('${id}')`}]);
+  openModal('Editar empresa','',`<div class="a-form"><div class="fg"><label class="fl">Nombre</label><input class="fi" id="evc-n" value="${c.name}"></div><div class="fg"><label class="fl">Careers URL</label><input class="fi" id="evc-u" value="${c.careersUrl}"></div><div class="fg"><label class="fl">ATS</label><select class="fsel" id="evc-a"><option value="auto">↻ Auto-detectar (re-analiza la URL)</option><option value="greenhouse" ${c.type==='greenhouse'?'selected':''}>Greenhouse</option><option value="lever" ${c.type==='lever'?'selected':''}>Lever</option><option value="teamtailor" ${c.type==='teamtailor'?'selected':''}>Teamtailor</option><option value="workday" ${c.type==='workday'?'selected':''}>Workday</option><option value="custom" ${c.type==='custom'?'selected':''}>Custom</option></select></div></div>`,[{l:'Cancelar',c:'',f:'closeModal()'},{l:'Guardar',c:'primary',f:`confirmEditVfxCompany('${id}')`}]);
 }
 function confirmEditVfxCompany(id){
   const c=D.vfxCompanies.find(x=>x.id===id);if(!c)return;
-  c.name=gv('evc-n')||c.name;c.careersUrl=vfxNormalizeUrl(gv('evc-u'))||c.careersUrl;c.type=gv('evc-a');
+  c.name=gv('evc-n')||c.name;
+  c.careersUrl=vfxNormalizeUrl(gv('evc-u'))||c.careersUrl;
+  const chosenAts=gv('evc-a');
+  c.type=chosenAts==='auto'?vfxDetectAts(c.careersUrl):chosenAts;
   save();closeModal();renderVfxCompaniesAdmin();toast('Actualizado');
 }
 function deleteVfxCompany(id){
@@ -2180,8 +2190,10 @@ async function openVfxDiagnostics(){
       const cls=s.status!=='ok'?'error':(s.needsReview?'review':'ok');
       const label=s.status!=='ok'?'error':(s.needsReview?'review':'ok');
       const seenTxt=(s.status==='ok'&&s.totalPostingsSeen!=null)?`<span class="vfx-diag-err">${s.totalPostingsSeen} posting(s) seen · ${s.jobsFound} VFX match</span>`:'';
-      return `<div class="vfx-diag-row"><span class="vfx-diag-co">${s.company}</span><span class="vfx-diag-status ${cls}">${label}</span>${seenTxt}${s.error?`<span class="vfx-diag-err">${s.error}</span>`:''}</div>`;
-    }).join('')+'<div class="vfx-block-sub" style="margin-top:10px;">⚠ "review" = la petición fue bien pero no se vio ninguna oferta en la página (ni VFX ni de ningún otro tipo) — probable página con JavaScript, bloqueo, o cambio de estructura. Revisa esa empresa a mano.</div>';
+      const co=D.vfxCompanies.find(c=>c.name===s.company);
+      const nameHtml=co?`<a href="${co.careersUrl}" target="_blank" rel="noopener" class="vfx-diag-co-link">${s.company}</a>`:s.company;
+      return `<div class="vfx-diag-row"><span class="vfx-diag-co">${nameHtml}</span><span class="vfx-diag-status ${cls}">${label}</span>${seenTxt}${s.error?`<span class="vfx-diag-err">${s.error}</span>`:''}</div>`;
+    }).join('')+'<div class="vfx-block-sub" style="margin-top:10px;">⚠ "review" = la petición fue bien pero no se vio ninguna oferta en la página (ni VFX ni de ningún otro tipo) — probable página con JavaScript, bloqueo, o cambio de estructura. Revisa esa empresa a mano. El nombre de la empresa enlaza directamente a su careers URL.</div>';
   }catch(e){
     document.getElementById('mBody').innerHTML='<div class="vfx-empty">No se pudo leer data/scanner-status.json (¿el Action aún no se ha ejecutado?)</div>';
   }

@@ -1,4 +1,3 @@
-
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -19,8 +18,17 @@ def test_exclusions():
     assert classify_job("Motion Graphics Designer") is None
 
 def test_possible_match():
-    desc = "Experience with Niagara and real-time FX systems required"
-    assert classify_job("Technical Artist", desc) == "possibleMatch"
+    # POSSIBLE_TITLE requires the VFX-ish term to be in the TITLE (bare "fx",
+    # "vfx", "particle"...) — the description alone only confirms it, it
+    # can't carry the match on its own. "Technical Artist" (no fx/vfx word
+    # at all) can never satisfy this, regardless of description.
+    desc = "Uses Niagara for particle FX and real-time FX systems"
+    assert classify_job("FX Technical Artist", desc) == "possibleMatch"
+
+def test_bare_vfx_word_fallback():
+    assert classify_job("VFX Generalist") == "possibleMatch"
+    assert classify_job("VFX (all levels)") == "possibleMatch"
+    assert classify_job("Software Engineer") is None
 
 def test_workplace():
     assert detect_workplace("", "Remote - EU", "") == "remote"
@@ -37,6 +45,7 @@ if __name__ == "__main__":
     test_exact_matches()
     test_exclusions()
     test_possible_match()
+    test_bare_vfx_word_fallback()
     test_workplace()
     test_remote_scope()
     print("All tests passed.")

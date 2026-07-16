@@ -26,17 +26,19 @@ def detect_ats(url: str) -> str:
 
 def normalize_url(url: str) -> str:
     """Trim whitespace, ensure a scheme, and drop a trailing slash so
-    that equivalent URLs (with/without trailing slash, with/without
-    a trailing /jobs or /careers) compare as equal for de-duplication.
+    equivalent URLs (with/without trailing slash) compare as equal for
+    de-duplication.
+
+    NOTE: this used to also strip a trailing /jobs or /careers, but that
+    broke "custom" companies where that exact path IS the real page to
+    scrape (CustomHtmlAdapter fetches the URL as-is, no fallback logic).
     """
     if not url:
         return ""
     url = url.strip()
     if not re.match(r"^https?://", url, re.IGNORECASE):
         url = "https://" + url
-    url = url.rstrip("/")
-    url = re.sub(r"/(jobs|careers)$", "", url, flags=re.IGNORECASE)
-    return url
+    return url.rstrip("/")
 
 
 def guess_name_from_url(url: str) -> str:
