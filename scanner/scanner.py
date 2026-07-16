@@ -9,6 +9,7 @@ from scanner.adapters.lever import LeverAdapter
 from scanner.adapters.teamtailor import TeamtailorAdapter
 from scanner.adapters.custom_html import CustomHtmlAdapter
 from scanner.adapters.workday import WorkdayAdapter
+from scanner.adapters.workable import WorkableAdapter
 from scanner.companies import detect_ats, dedupe_companies
 from scanner.normalizer import preserve_first_seen, now_iso
 
@@ -28,6 +29,7 @@ ATS_MAP = {
     "lever": LeverAdapter,
     "teamtailor": TeamtailorAdapter,
     "workday": WorkdayAdapter,
+    "workable": WorkableAdapter,
     "custom": CustomHtmlAdapter,
 }
 

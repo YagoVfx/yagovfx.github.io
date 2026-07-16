@@ -21,6 +21,8 @@ def detect_ats(url: str) -> str:
         return "teamtailor"
     if re.search(r"myworkdayjobs\.com", url, re.IGNORECASE):
         return "workday"
+    if re.search(r"workable\.com", url, re.IGNORECASE):
+        return "workable"
     return "custom"
 
 

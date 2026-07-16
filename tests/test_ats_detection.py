@@ -31,6 +31,11 @@ def test_detect_ats_workday():
     assert detect_ats("https://ea.wd1.myworkdayjobs.com/en-US/Electronic_Arts") == "workday"
 
 
+def test_detect_ats_workable():
+    assert detect_ats("https://apply.workable.com/lighthousegames/") == "workable"
+    assert detect_ats("https://lighthousegames.workable.com/") == "workable"
+
+
 def test_detect_ats_custom_fallback():
     assert detect_ats("https://example-studio.com/careers") == "custom"
     assert detect_ats("") == "custom"
@@ -83,6 +88,7 @@ if __name__ == "__main__":
     test_detect_ats_lever()
     test_detect_ats_teamtailor()
     test_detect_ats_workday()
+    test_detect_ats_workable()
     test_detect_ats_custom_fallback()
     test_normalize_url_preserves_trailing_slash()
     test_dedupe_key_ignores_trailing_slash()

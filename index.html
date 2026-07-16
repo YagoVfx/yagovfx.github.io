@@ -881,6 +881,7 @@ https://otraempresa.com/careers"></textarea>
                 <option value="lever">Lever</option>
                 <option value="teamtailor">Teamtailor</option>
                 <option value="workday">Workday</option>
+                <option value="workable">Workable</option>
                 <option value="custom">Custom</option>
               </select>
             </div>
@@ -2071,6 +2072,7 @@ function vfxDetectAts(url){
   if(/lever\.co/i.test(url))return'lever';
   if(/teamtailor\.com/i.test(url))return'teamtailor';
   if(/myworkdayjobs\.com/i.test(url))return'workday';
+  if(/workable\.com/i.test(url))return'workable';
   return'custom';
 }
 function vfxNormalizeUrl(url){
@@ -2154,7 +2156,7 @@ function renderVfxCompaniesAdmin(){
 }
 function openEditVfxCompany(id){
   const c=D.vfxCompanies.find(x=>x.id===id);if(!c)return;
-  openModal('Editar empresa','',`<div class="a-form"><div class="fg"><label class="fl">Nombre</label><input class="fi" id="evc-n" value="${c.name}"></div><div class="fg"><label class="fl">Careers URL</label><input class="fi" id="evc-u" value="${c.careersUrl}"></div><div class="fg"><label class="fl">ATS</label><select class="fsel" id="evc-a"><option value="auto">↻ Auto-detectar (re-analiza la URL)</option><option value="greenhouse" ${c.type==='greenhouse'?'selected':''}>Greenhouse</option><option value="lever" ${c.type==='lever'?'selected':''}>Lever</option><option value="teamtailor" ${c.type==='teamtailor'?'selected':''}>Teamtailor</option><option value="workday" ${c.type==='workday'?'selected':''}>Workday</option><option value="custom" ${c.type==='custom'?'selected':''}>Custom</option></select></div></div>`,[{l:'Cancelar',c:'',f:'closeModal()'},{l:'Guardar',c:'primary',f:`confirmEditVfxCompany('${id}')`}]);
+  openModal('Editar empresa','',`<div class="a-form"><div class="fg"><label class="fl">Nombre</label><input class="fi" id="evc-n" value="${c.name}"></div><div class="fg"><label class="fl">Careers URL</label><input class="fi" id="evc-u" value="${c.careersUrl}"></div><div class="fg"><label class="fl">ATS</label><select class="fsel" id="evc-a"><option value="auto">↻ Auto-detectar (re-analiza la URL)</option><option value="greenhouse" ${c.type==='greenhouse'?'selected':''}>Greenhouse</option><option value="lever" ${c.type==='lever'?'selected':''}>Lever</option><option value="teamtailor" ${c.type==='teamtailor'?'selected':''}>Teamtailor</option><option value="workday" ${c.type==='workday'?'selected':''}>Workday</option><option value="workable" ${c.type==='workable'?'selected':''}>Workable</option><option value="custom" ${c.type==='custom'?'selected':''}>Custom</option></select></div></div>`,[{l:'Cancelar',c:'',f:'closeModal()'},{l:'Guardar',c:'primary',f:`confirmEditVfxCompany('${id}')`}]);
 }
 function confirmEditVfxCompany(id){
   const c=D.vfxCompanies.find(x=>x.id===id);if(!c)return;
@@ -2174,8 +2176,15 @@ async function loadLiveCompanies(){
     if(!r.ok)throw new Error('No encontrado');
     const live=await r.json();
     const mapped=live.map(c=>({id:uid(),name:c.name,careersUrl:c.careersUrl,type:c.type||vfxDetectAts(c.careersUrl)}));
-    D.vfxCompanies=vfxDedupeCompanies([...mapped,...D.vfxCompanies]);
-    save();renderVfxCompaniesAdmin();toast('companies.json cargado');
+    // IMPORTANT: local edits must win over the already-deployed file. This
+    // button is meant to pull in companies you don't have locally yet, NOT
+    // to overwrite type/URL corrections you've already made in this panel
+    // with whatever is still live (which may be stale/wrong — that's often
+    // exactly why you're re-editing it). D.vfxCompanies goes FIRST so
+    // vfxDedupeCompanies (which keeps the first occurrence per URL) keeps
+    // your local version whenever the same URL exists in both.
+    D.vfxCompanies=vfxDedupeCompanies([...D.vfxCompanies,...mapped]);
+    save();renderVfxCompaniesAdmin();toast('companies.json cargado (tus ediciones locales no se han sobrescrito)');
   }catch(e){toast('No se pudo leer data/companies.json (¿aún no existe?)');}
 }
 function exportVfxCompanies(){
