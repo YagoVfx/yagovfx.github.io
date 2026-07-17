@@ -12,6 +12,7 @@ from scanner.adapters.workday import WorkdayAdapter
 from scanner.adapters.workable import WorkableAdapter
 from scanner.companies import detect_ats, dedupe_companies
 from scanner.normalizer import preserve_first_seen, now_iso
+from scanner.sources.adzuna import fetch_adzuna_jobs
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 logger = logging.getLogger("scanner")
@@ -88,6 +89,16 @@ def run():
             logger.error(f"Error scanning {company['name']}: {e}")
             statuses.append({"company": company["name"], "status": "error", "error": str(e), "lastAttempt": now_iso()})
             failed += 1
+
+    # Adzuna: a broad keyword-search aggregator, on top of (not instead of)
+    # the per-company adapters above. Covers studios we can't reliably
+    # scrape directly (EA, Epic, Ubisoft...) since it pulls from thousands
+    # of sources. Optional — silently skipped if no API credentials are set.
+    adzuna_jobs, adzuna_status = fetch_adzuna_jobs()
+    for job in adzuna_jobs:
+        preserve_first_seen(existing, job)
+        new_jobs[job["id"]] = job
+    statuses.append(adzuna_status)
 
     for jid, job in existing.items():
         if jid not in new_jobs:
