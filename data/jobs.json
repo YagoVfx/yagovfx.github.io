@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-07-17T19:22:26Z",
+  "lastUpdated": "2026-07-17T19:26:12Z",
   "companiesScanned": 23,
-  "companiesSucceeded": 19,
-  "companiesFailed": 4,
+  "companiesSucceeded": 18,
+  "companiesFailed": 5,
   "totalVfxJobs": 1,
   "jobs": [
     {
@@ -16,7 +16,7 @@
       "ats": "custom",
       "matchType": "exactMatch",
       "firstSeen": "2026-07-14T14:18:44Z",
-      "lastSeen": "2026-07-17T19:22:15Z",
+      "lastSeen": "2026-07-17T19:26:01Z",
       "status": "active"
     }
   ]
