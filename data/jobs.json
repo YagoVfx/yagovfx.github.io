@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-17T13:56:56Z",
+  "lastUpdated": "2026-07-17T19:22:26Z",
   "companiesScanned": 23,
   "companiesSucceeded": 19,
   "companiesFailed": 4,
@@ -16,7 +16,7 @@
       "ats": "custom",
       "matchType": "exactMatch",
       "firstSeen": "2026-07-14T14:18:44Z",
-      "lastSeen": "2026-07-17T13:56:43Z",
+      "lastSeen": "2026-07-17T19:22:15Z",
       "status": "active"
     }
   ]
