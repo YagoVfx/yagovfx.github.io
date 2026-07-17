@@ -62,19 +62,30 @@ class WorkdayAdapter(BaseAdapter):
 
         for _ in range(MAX_PAGES):
             payload = {"appliedFacets": {}, "limit": PAGE_SIZE, "offset": offset, "searchText": ""}
+            r = None
             try:
                 r = requests.post(
                     api_url, json=payload,
-                    headers={**HEADERS, "Content-Type": "application/json"},
+                    headers={**HEADERS, "Content-Type": "application/json", "Referer": self.careers_url},
                     timeout=TIMEOUT,
                 )
                 r.raise_for_status()
                 data = r.json()
             except Exception as e:
+                # Surface the response body on failure — Workday's 4xx
+                # responses usually explain exactly what it didn't like
+                # about the payload, which is far more useful than just
+                # "422 Client Error" for figuring out the fix.
+                body_snippet = ""
+                if r is not None:
+                    try:
+                        body_snippet = f" | body: {r.text[:300]}"
+                    except Exception:
+                        pass
                 if offset == 0:
                     # Failed before getting anything at all — a real error,
                     # not "this company just has 0 postings".
-                    raise RuntimeError(f"Workday request failed for {api_url}: {e}")
+                    raise RuntimeError(f"Workday request failed for {api_url}: {e}{body_snippet}")
                 logger.warning(f"[Workday] Request failed on a later page for {api_url}: {e} — returning partial results")
                 break
 
