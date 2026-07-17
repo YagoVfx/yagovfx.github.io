@@ -117,7 +117,7 @@ class WorkableAdapter(BaseAdapter):
         return jobs
 
     def _fetch_via_search_portal(self, company_id: str) -> list[dict]:
-        api_url = f"https://jobs.workable.com/api/v1/jobs?{ID_SEARCH_PARAM}={company_id}&limit=100"
+        api_url = f"https://jobs.workable.com/api/v1/jobs?{ID_SEARCH_PARAM}={company_id}&limit=20"
         try:
             r = requests.get(api_url, headers=HEADERS, timeout=TIMEOUT)
             r.raise_for_status()
