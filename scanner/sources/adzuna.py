@@ -97,6 +97,7 @@ def fetch_adzuna_jobs(query: str = "VFX artist", countries: list[str] | None = N
                     "remoteScope": rs,
                     "ats": "adzuna",
                     "matchType": match,
+                    "companyCategory": "unknown",
                     "status": "active",
                 })
 

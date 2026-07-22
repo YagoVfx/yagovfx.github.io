@@ -57,6 +57,10 @@ class BaseAdapter(ABC):
             "remoteScope": raw.get("remoteScope", "unknown"),
             "ats": self.ats_type,
             "matchType": raw.get("matchType", "exactMatch"),
+            # Optional "aaa" | "indie" tag set per-company in companies.json
+            # (via the admin panel). Falls back to "unknown" so older
+            # companies.json files without this field still work.
+            "companyCategory": self.raw.get("category", "unknown"),
             "firstSeen": raw.get("firstSeen", ""),
             "lastSeen": raw.get("lastSeen", ""),
             "status": "active",

@@ -79,6 +79,24 @@ class WorkableAdapter(BaseAdapter):
         logger.error(f"[Workable] Cannot parse an account slug or company id from {self.careers_url}")
         return []
 
+    def _job_url(self, workable_url: str, shortcode: str) -> str:
+        """If the company config has an optional officialUrlTemplate (set
+        by the person in the admin panel, e.g. because they noticed the
+        company embeds this same Workable listing on their own domain —
+        "https://lighthousegames.com/careers/{shortcode}/" — use that
+        instead of the workable.com URL. Same application flow either way
+        (Workable is the ATS itself), but it lands on the company's own
+        site first rather than workable.com/apply.workable.com directly.
+        Falls back to the plain Workable URL if no template is set.
+        """
+        template = self.raw.get("officialUrlTemplate")
+        if template and shortcode:
+            try:
+                return template.replace("{shortcode}", str(shortcode))
+            except Exception:
+                pass
+        return workable_url
+
     def _fetch_via_widget(self, account: str) -> list[dict]:
         api_url = f"https://apply.workable.com/api/v1/widget/accounts/{account}?details=true"
         r = http_get(api_url)
@@ -105,10 +123,11 @@ class WorkableAdapter(BaseAdapter):
             wt = detect_workplace(title, f"{loc} {remote_flag}", "")
             rs = detect_remote_scope(title, f"{loc} {remote_flag}")
             shortcode = j.get("shortcode", "") or j.get("id", title)
+            workable_url = j.get("url", "") or f"https://apply.workable.com/{account}/j/{shortcode}/"
             jobs.append(self.normalize({
                 "id": f"wk-{re.sub(r'[^a-z0-9]', '-', str(shortcode).lower())[-40:]}",
                 "title": title,
-                "url": j.get("url", "") or f"https://apply.workable.com/{account}/j/{shortcode}/",
+                "url": self._job_url(workable_url, shortcode),
                 "location": loc,
                 "workplaceType": wt,
                 "remoteScope": rs,
@@ -143,10 +162,12 @@ class WorkableAdapter(BaseAdapter):
             wt = detect_workplace(title, f"{loc} {j.get('workplace','')}", "")
             rs = detect_remote_scope(title, loc)
             jid = j.get("id") or j.get("shortcode") or title
+            shortcode = j.get("shortcode") or j.get("id") or ""
+            workable_url = j.get("url") or j.get("applyUrl") or self.careers_url
             jobs.append(self.normalize({
                 "id": f"wk-{re.sub(r'[^a-z0-9]', '-', str(jid).lower())[-40:]}",
                 "title": title,
-                "url": j.get("url") or j.get("applyUrl") or self.careers_url,
+                "url": self._job_url(workable_url, shortcode),
                 "location": loc,
                 "workplaceType": wt,
                 "remoteScope": rs,

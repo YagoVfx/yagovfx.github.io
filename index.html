@@ -885,6 +885,14 @@ https://otraempresa.com/careers"></textarea>
                 <option value="custom">Custom</option>
               </select>
             </div>
+            <div class="fg" style="max-width:220px;">
+              <label class="fl">Categoría del estudio</label>
+              <select class="fsel" id="vfx-m-cat">
+                <option value="">Sin especificar</option>
+                <option value="aaa">AAA</option>
+                <option value="indie">Indie</option>
+              </select>
+            </div>
             <div class="f-actions"><button class="ab primary" onclick="addVfxCompanyManual()">＋ Añadir empresa</button></div>
           </div>
         </div>
@@ -2133,11 +2141,14 @@ function addVfxCompanyManual(){
   const name=gv('vfx-m-name').trim();
   const url=vfxNormalizeUrl(gv('vfx-m-url'));
   let ats=gv('vfx-m-ats');
+  const category=gv('vfx-m-cat');
   if(!url){toast('Falta la Careers URL');return;}
   if(ats==='auto')ats=vfxDetectAts(url);
   const exists=D.vfxCompanies.some(c=>vfxDedupeKey(c.careersUrl)===vfxDedupeKey(url));
   if(exists){toast('Esa empresa ya está en la lista');return;}
-  D.vfxCompanies.push({id:uid(),name:name||vfxGuessName(url),careersUrl:url,type:ats});
+  const entry={id:uid(),name:name||vfxGuessName(url),careersUrl:url,type:ats};
+  if(category)entry.category=category;
+  D.vfxCompanies.push(entry);
   save();document.getElementById('vfx-m-name').value='';document.getElementById('vfx-m-url').value='';
   renderVfxCompaniesAdmin();toast('Empresa añadida');
 }
@@ -2150,13 +2161,13 @@ function renderVfxCompaniesAdmin(){
   if(!D.vfxCompanies.length){list.innerHTML='<div class="vfx-empty">Sin empresas todavía. Importa URLs o añade una manualmente.</div>';return;}
   D.vfxCompanies.forEach(c=>{
     const row=document.createElement('div');row.className='vfx-co-row';
-    row.innerHTML=`<div class="vfx-co-main"><div class="vfx-co-name">${c.name}<span class="vfx-ats-tag">${c.type}</span></div><div class="vfx-co-url">${c.careersUrl}</div></div><div class="vfx-co-btns"><button class="ab" onclick="openEditVfxCompany('${c.id}')">Edit</button><button class="ab danger" onclick="deleteVfxCompany('${c.id}')">Del</button></div>`;
+    row.innerHTML=`<div class="vfx-co-main"><div class="vfx-co-name">${c.name}<span class="vfx-ats-tag">${c.type}</span>${c.category?`<span class="vfx-ats-tag" style="background:var(--accent);color:#fff;">${c.category==='aaa'?'AAA':'Indie'}</span>`:''}</div><div class="vfx-co-url">${c.careersUrl}</div></div><div class="vfx-co-btns"><button class="ab" onclick="openEditVfxCompany('${c.id}')">Edit</button><button class="ab danger" onclick="deleteVfxCompany('${c.id}')">Del</button></div>`;
     list.appendChild(row);
   });
 }
 function openEditVfxCompany(id){
   const c=D.vfxCompanies.find(x=>x.id===id);if(!c)return;
-  openModal('Editar empresa','',`<div class="a-form"><div class="fg"><label class="fl">Nombre</label><input class="fi" id="evc-n" value="${c.name}"></div><div class="fg"><label class="fl">Careers URL</label><input class="fi" id="evc-u" value="${c.careersUrl}"></div><div class="fg"><label class="fl">ATS</label><select class="fsel" id="evc-a"><option value="auto">↻ Auto-detectar (re-analiza la URL)</option><option value="greenhouse" ${c.type==='greenhouse'?'selected':''}>Greenhouse</option><option value="lever" ${c.type==='lever'?'selected':''}>Lever</option><option value="teamtailor" ${c.type==='teamtailor'?'selected':''}>Teamtailor</option><option value="workday" ${c.type==='workday'?'selected':''}>Workday</option><option value="workable" ${c.type==='workable'?'selected':''}>Workable</option><option value="custom" ${c.type==='custom'?'selected':''}>Custom</option></select></div></div>`,[{l:'Cancelar',c:'',f:'closeModal()'},{l:'Guardar',c:'primary',f:`confirmEditVfxCompany('${id}')`}]);
+  openModal('Editar empresa','',`<div class="a-form"><div class="fg"><label class="fl">Nombre</label><input class="fi" id="evc-n" value="${c.name}"></div><div class="fg"><label class="fl">Careers URL</label><input class="fi" id="evc-u" value="${c.careersUrl}"></div><div class="fg"><label class="fl">ATS</label><select class="fsel" id="evc-a" onchange="document.getElementById('evc-tpl-wrap').style.display=this.value==='workable'?'':'none'"><option value="auto">↻ Auto-detectar (re-analiza la URL)</option><option value="greenhouse" ${c.type==='greenhouse'?'selected':''}>Greenhouse</option><option value="lever" ${c.type==='lever'?'selected':''}>Lever</option><option value="teamtailor" ${c.type==='teamtailor'?'selected':''}>Teamtailor</option><option value="workday" ${c.type==='workday'?'selected':''}>Workday</option><option value="workable" ${c.type==='workable'?'selected':''}>Workable</option><option value="custom" ${c.type==='custom'?'selected':''}>Custom</option></select></div><div class="fg"><label class="fl">Categoría del estudio</label><select class="fsel" id="evc-cat"><option value="" ${!c.category?'selected':''}>Sin especificar</option><option value="aaa" ${c.category==='aaa'?'selected':''}>AAA</option><option value="indie" ${c.category==='indie'?'selected':''}>Indie</option></select></div><div class="fg" id="evc-tpl-wrap" style="display:${c.type==='workable'?'':'none'};"><label class="fl">URL oficial (opcional, solo Workable)</label><input class="fi" id="evc-tpl" value="${c.officialUrlTemplate||''}" placeholder="https://suempresa.com/careers/{shortcode}/"><div class="vfx-block-sub" style="margin:4px 0 0;">Si la empresa incrusta sus ofertas de Workable en su propia web, pon aquí el patrón de esa URL usando <code>{shortcode}</code> donde iría el código de la oferta. Déjalo vacío para usar el enlace de Workable tal cual.</div></div></div>`,[{l:'Cancelar',c:'',f:'closeModal()'},{l:'Guardar',c:'primary',f:`confirmEditVfxCompany('${id}')`}]);
 }
 function confirmEditVfxCompany(id){
   const c=D.vfxCompanies.find(x=>x.id===id);if(!c)return;
@@ -2164,6 +2175,11 @@ function confirmEditVfxCompany(id){
   c.careersUrl=vfxNormalizeUrl(gv('evc-u'))||c.careersUrl;
   const chosenAts=gv('evc-a');
   c.type=chosenAts==='auto'?vfxDetectAts(c.careersUrl):chosenAts;
+  const cat=gv('evc-cat');
+  if(cat)c.category=cat;else delete c.category;
+  const tplEl=document.getElementById('evc-tpl');
+  const tpl=tplEl?tplEl.value.trim():'';
+  if(tpl)c.officialUrlTemplate=tpl;else delete c.officialUrlTemplate;
   save();closeModal();renderVfxCompaniesAdmin();toast('Actualizado');
 }
 function deleteVfxCompany(id){
@@ -2175,7 +2191,7 @@ async function loadLiveCompanies(){
     const r=await fetch('data/companies.json',{cache:'no-store'});
     if(!r.ok)throw new Error('No encontrado');
     const live=await r.json();
-    const mapped=live.map(c=>({id:uid(),name:c.name,careersUrl:c.careersUrl,type:c.type||vfxDetectAts(c.careersUrl)}));
+    const mapped=live.map(c=>({id:uid(),name:c.name,careersUrl:c.careersUrl,type:c.type||vfxDetectAts(c.careersUrl),...(c.officialUrlTemplate?{officialUrlTemplate:c.officialUrlTemplate}:{}),...(c.category?{category:c.category}:{})}));
     // IMPORTANT: local edits must win over the already-deployed file. This
     // button is meant to pull in companies you don't have locally yet, NOT
     // to overwrite type/URL corrections you've already made in this panel
@@ -2188,7 +2204,12 @@ async function loadLiveCompanies(){
   }catch(e){toast('No se pudo leer data/companies.json (¿aún no existe?)');}
 }
 function exportVfxCompanies(){
-  const out=D.vfxCompanies.map(c=>({name:c.name,careersUrl:c.careersUrl,type:c.type}));
+  const out=D.vfxCompanies.map(c=>{
+    const o={name:c.name,careersUrl:c.careersUrl,type:c.type};
+    if(c.officialUrlTemplate)o.officialUrlTemplate=c.officialUrlTemplate;
+    if(c.category)o.category=c.category;
+    return o;
+  });
   const blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='companies.json';a.click();
   toast('Descargado — sustituye data/companies.json en tu repo');
@@ -2214,12 +2235,30 @@ async function openVfxDiagnostics(){
 }
 
 /* ══ VFX JOBS TRACKER — PUBLIC PAGE ══ */
-let vfxJobsCache=null;
-let vfxJobsFilterWp='all';
-let vfxJobsShowPossible=false;
-let vfxJobsSort='newest';
-let vfxJobsSearch='';
+// State lives in one object (not loose top-level `let`s) and is only ever
+// mutated through the setter functions below, which are exposed to
+// `window`. This matters because the page script runs as a module: a
+// top-level `let` is NOT the same thing as a `window` property, so an
+// inline onclick like `vfxJobsFilterWp='remote'` used to silently create an
+// unrelated global instead of touching the variable this file actually
+// reads — every filter/search/sort control looked wired up but did nothing.
+// Routing every change through a function call (already how the rest of
+// the admin panel talks to inline handlers) avoids that trap entirely.
+const vfxJobsState={
+  cache:null,
+  filterWp:'all',       // all | remote | hybrid | onsite
+  filterCat:'all',      // all | aaa | indie
+  showPossible:false,
+  sort:'newest',        // newest | company | title
+  search:'',
+};
 let vfxPreviewReturnToAdmin=false;
+
+function setVfxWpFilter(val){vfxJobsState.filterWp=val;renderVfxJobsPublic();}
+function setVfxCatFilter(val){vfxJobsState.filterCat=val;renderVfxJobsPublic();}
+function setVfxSearch(val){vfxJobsState.search=val;renderVfxJobsPublic();}
+function setVfxSort(val){vfxJobsState.sort=val;renderVfxJobsPublic();}
+function setVfxShowPossible(checked){vfxJobsState.showPossible=checked;renderVfxJobsPublic();}
 
 function previewVfxJobsAdmin(){
   document.getElementById('admin-overlay').classList.remove('on');
@@ -2233,11 +2272,11 @@ function closeVfxJobsPublic(){
 async function openVfxJobsPublic(){
   document.getElementById('vfxJobsBody').innerHTML='<div class="vfxp-state">Cargando ofertas…</div>';
   document.getElementById('vfxJobsOverlay').classList.add('open');
-  if(!vfxJobsCache){
+  if(!vfxJobsState.cache){
     try{
       const r=await fetch('data/jobs.json',{cache:'no-store'});
       if(!r.ok)throw new Error('not found');
-      vfxJobsCache=await r.json();
+      vfxJobsState.cache=await r.json();
     }catch(e){
       document.getElementById('vfxJobsBody').innerHTML='<div class="vfxp-state">Todavía no hay datos de ofertas. El scanner automático (GitHub Action) generará <code>data/jobs.json</code> en su próxima ejecución.</div>';
       return;
@@ -2258,27 +2297,34 @@ function vfxIsNew(iso){
   if(!iso)return false;
   return(Date.now()-new Date(iso).getTime())<7*24*3600000;
 }
+function vfxCatLabel(cat){
+  if(cat==='aaa')return'AAA';
+  if(cat==='indie')return'Indie';
+  return'';
+}
 function renderVfxJobsPublic(){
-  const data=vfxJobsCache;if(!data)return;
+  const data=vfxJobsState.cache;if(!data)return;
   const active=(data.jobs||[]).filter(j=>j.status==='active');
   const studios=new Set(active.map(j=>j.company)).size;
   const euCount=active.filter(j=>/eu|europe/i.test(j.remoteScope||'')).length;
 
-  let list=active.filter(j=>vfxJobsShowPossible?true:j.matchType!=='possibleMatch');
-  if(vfxJobsFilterWp!=='all')list=list.filter(j=>j.workplaceType===vfxJobsFilterWp);
-  if(vfxJobsSearch.trim()){
-    const q=vfxJobsSearch.trim().toLowerCase();
+  let list=active.filter(j=>vfxJobsState.showPossible?true:j.matchType!=='possibleMatch');
+  if(vfxJobsState.filterWp!=='all')list=list.filter(j=>j.workplaceType===vfxJobsState.filterWp);
+  if(vfxJobsState.filterCat!=='all')list=list.filter(j=>(j.companyCategory||'unknown')===vfxJobsState.filterCat);
+  if(vfxJobsState.search.trim()){
+    const q=vfxJobsState.search.trim().toLowerCase();
     list=list.filter(j=>j.company.toLowerCase().includes(q)||j.title.toLowerCase().includes(q));
   }
-  if(vfxJobsSort==='company')list=[...list].sort((a,b)=>a.company.localeCompare(b.company));
-  else if(vfxJobsSort==='title')list=[...list].sort((a,b)=>a.title.localeCompare(b.title));
+  if(vfxJobsState.sort==='company')list=[...list].sort((a,b)=>a.company.localeCompare(b.company)||a.title.localeCompare(b.title));
+  else if(vfxJobsState.sort==='title')list=[...list].sort((a,b)=>a.title.localeCompare(b.title)||a.company.localeCompare(b.company));
   else list=[...list].sort((a,b)=>new Date(b.firstSeen||0)-new Date(a.firstSeen||0));
 
-  const wpBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsFilterWp===val?'active':''}" onclick="vfxJobsFilterWp='${val}';renderVfxJobsPublic()">${label}</button>`;
+  const wpBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsState.filterWp===val?'active':''}" onclick="setVfxWpFilter('${val}')">${label}</button>`;
+  const catBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsState.filterCat===val?'active':''}" onclick="setVfxCatFilter('${val}')">${label}</button>`;
 
   const rowsHtml=list.length?list.map(j=>`
     <div class="vfxp-job ${j.matchType==='possibleMatch'?'possible':''}">
-      <div class="vfxp-co">${j.company}</div>
+      <div class="vfxp-co">${j.company}${vfxCatLabel(j.companyCategory)?`<span class="vfx-ats-tag" style="margin-left:6px;">${vfxCatLabel(j.companyCategory)}</span>`:''}</div>
       <div class="vfxp-title-cell"><a href="${j.url}" target="_blank" rel="noopener">${j.title}</a>${vfxIsNew(j.firstSeen)?'<span class="vfxp-new-tag">NEW</span>':''}</div>
       <div class="vfxp-loc">${j.location||'—'}</div>
       <div class="vfxp-badge ${j.workplaceType||'unknown'}">${j.workplaceType||'unknown'}</div>
@@ -2295,13 +2341,16 @@ function renderVfxJobsPublic(){
     </div>
     <div class="vfxp-controls">
       ${wpBtn('all','All')}${wpBtn('remote','Remote')}${wpBtn('hybrid','Hybrid')}${wpBtn('onsite','On-site')}
-      <input class="fi vfxp-search" placeholder="Search company or title…" value="${vfxJobsSearch}" oninput="vfxJobsSearch=this.value;renderVfxJobsPublic()">
-      <select class="fsel" style="max-width:170px;" onchange="vfxJobsSort=this.value;renderVfxJobsPublic()">
-        <option value="newest" ${vfxJobsSort==='newest'?'selected':''}>Newest detected</option>
-        <option value="company" ${vfxJobsSort==='company'?'selected':''}>Company</option>
-        <option value="title" ${vfxJobsSort==='title'?'selected':''}>Job title</option>
+    </div>
+    <div class="vfxp-controls">
+      ${catBtn('all','All studios')}${catBtn('aaa','AAA')}${catBtn('indie','Indie')}
+      <input class="fi vfxp-search" placeholder="Search company or title…" value="${vfxJobsState.search}" oninput="setVfxSearch(this.value)">
+      <select class="fsel" style="max-width:190px;" onchange="setVfxSort(this.value)">
+        <option value="newest" ${vfxJobsState.sort==='newest'?'selected':''}>Newest detected</option>
+        <option value="company" ${vfxJobsState.sort==='company'?'selected':''}>Company (A-Z)</option>
+        <option value="title" ${vfxJobsState.sort==='title'?'selected':''}>Job title (A-Z)</option>
       </select>
-      <label class="vfxp-toggle"><input type="checkbox" ${vfxJobsShowPossible?'checked':''} onchange="vfxJobsShowPossible=this.checked;renderVfxJobsPublic()"> Show possible matches</label>
+      <label class="vfxp-toggle"><input type="checkbox" ${vfxJobsState.showPossible?'checked':''} onchange="setVfxShowPossible(this.checked)"> Show possible matches</label>
     </div>
     <div class="vfxp-list">${rowsHtml}</div>
   `;
@@ -3083,6 +3132,7 @@ Object.assign(window,{
   renderProfileForm, renderReelForm, renderSeoAdmin, renderSizeGrid, renderSkillList, renderThemeGrid, renderToolsAdmin, renderToolsGrid,
   renderVfxCompaniesAdmin, renderVfxJobsPublic, renderVidCoSel, renderVidMgr, renderVisitor, resetData, save, saveCvData,
   savePost, saveProfile, saveReel, saveSeo, saveSettings, selectCo, setCoverBg, setExpCards,
+  setVfxWpFilter, setVfxCatFilter, setVfxSearch, setVfxSort, setVfxShowPossible,
   setLang, setReelEnabled, setVfxJobsPublicVisible, showSec, syncMobileBlocks, t, toast, toggleLang,
   togglePostVisible, uid, vfxDedupeCompanies, vfxDetectAts, vfxGuessName, vfxIsNew, vfxNormalizeUrl, vfxTimeAgo
 });
