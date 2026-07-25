@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-07-25T03:30:50Z",
+  "lastUpdated": "2026-07-25T08:19:30Z",
   "companiesScanned": 23,
-  "companiesSucceeded": 18,
-  "companiesFailed": 5,
+  "companiesSucceeded": 19,
+  "companiesFailed": 4,
   "totalVfxJobs": 104,
   "jobs": [
     {
@@ -17,23 +17,8 @@
       "matchType": "exactMatch",
       "companyCategory": "unknown",
       "firstSeen": "2026-07-14T14:18:44Z",
-      "lastSeen": "2026-07-25T03:30:25Z",
+      "lastSeen": "2026-07-25T08:19:11Z",
       "status": "active"
-    },
-    {
-      "id": "az-5654949933",
-      "company": "Cloud Imperium Games Limited",
-      "title": "VFX Artist",
-      "url": "https://www.adzuna.co.uk/jobs/land/ad/5654949933?se=ltgJONmH8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=9C0198F1183A002F8B25A0CB66EFF39CA26EFF47",
-      "location": "Manchester, Greater Manchester",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "exactMatch",
-      "companyCategory": "unknown",
-      "status": "active",
-      "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
     },
     {
       "id": "az-5726950989",
@@ -48,7 +33,22 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
+    },
+    {
+      "id": "az-5654949933",
+      "company": "Cloud Imperium Games Limited",
+      "title": "VFX Artist",
+      "url": "https://www.adzuna.co.uk/jobs/land/ad/5654949933?se=gIx7jAGI8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=9C0198F1183A002F8B25A0CB66EFF39CA26EFF47",
+      "location": "Manchester, Greater Manchester",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "unknown",
+      "status": "active",
+      "firstSeen": "2026-07-17T20:20:55Z",
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5552932841",
@@ -63,7 +63,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5552932820",
@@ -78,7 +78,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5552932836",
@@ -93,13 +93,13 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5119754002",
       "company": "Enorth Staffing Limited",
       "title": "VFX Artist",
-      "url": "https://www.adzuna.co.uk/jobs/land/ad/5119754002?se=ltgJONmH8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=5B0D2C75974611A271F943E27EECB1990860F82A",
+      "url": "https://www.adzuna.co.uk/jobs/land/ad/5119754002?se=gIx7jAGI8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=5B0D2C75974611A271F943E27EECB1990860F82A",
       "location": "London, UK",
       "workplaceType": "unknown",
       "remoteScope": "UK",
@@ -108,7 +108,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5814749913",
@@ -123,7 +123,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-25T03:30:50Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5805529271",
@@ -138,7 +138,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-18T03:18:33Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5672287328",
@@ -153,7 +153,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5706061043",
@@ -168,7 +168,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5699001130",
@@ -183,7 +183,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5790981669",
@@ -198,7 +198,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5790981658",
@@ -213,7 +213,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5790981649",
@@ -228,7 +228,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5790968858",
@@ -243,7 +243,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5790968856",
@@ -258,7 +258,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5790968864",
@@ -273,13 +273,13 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5735101390",
       "company": "Cloud Imperium Games Limited",
       "title": "Senior VFX Artist",
-      "url": "https://www.adzuna.co.uk/jobs/land/ad/5735101390?se=ltgJONmH8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=8C3214854F50501AEB08C03029FA2E1E56701565",
+      "url": "https://www.adzuna.co.uk/jobs/land/ad/5735101390?se=gIx7jAGI8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=8C3214854F50501AEB08C03029FA2E1E56701565",
       "location": "Manchester, Greater Manchester",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -288,13 +288,13 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5733999582",
       "company": "Cloud Imperium Games Limited",
       "title": "Principal VFX Artist",
-      "url": "https://www.adzuna.co.uk/jobs/land/ad/5733999582?se=ltgJONmH8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=FC236E56F5DB4F00CBCA47677FF1AA98A80D79AF",
+      "url": "https://www.adzuna.co.uk/jobs/land/ad/5733999582?se=gIx7jAGI8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=FC236E56F5DB4F00CBCA47677FF1AA98A80D79AF",
       "location": "Manchester, Greater Manchester",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -303,7 +303,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5679133331",
@@ -318,7 +318,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5801251435",
@@ -333,7 +333,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5801251432",
@@ -348,7 +348,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5793750486",
@@ -363,7 +363,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5790994570",
@@ -378,7 +378,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5736357877",
@@ -393,7 +393,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5679132470",
@@ -408,7 +408,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5810193354",
@@ -423,7 +423,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-22T03:32:31Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5361303375",
@@ -438,7 +438,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5812136782",
@@ -453,7 +453,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-24T08:38:26Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5034487479",
@@ -468,22 +468,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
-    },
-    {
-      "id": "az-5814079184",
-      "company": "Liquid Development, LLC",
-      "title": "VFX Artist - GameSim - Talent Pipeline (Orlando)",
-      "url": "https://www.adzuna.com/land/ad/5814079184?se=EkXkONmH8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=3095C0111AC4931316374C20C9CACB378D39A2BD",
-      "location": "Sand Lake, Orange County",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "exactMatch",
-      "companyCategory": "unknown",
-      "status": "active",
-      "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5677617119",
@@ -498,7 +483,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5620207010",
@@ -513,7 +498,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5504357701",
@@ -528,7 +513,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5652004593",
@@ -543,13 +528,13 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5568773819",
       "company": "Insight Global",
       "title": "VFX Artist",
-      "url": "https://www.adzuna.com/land/ad/5568773819?se=EkXkONmH8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=1645F062C341544331F4DDE4F4C07A27DE30A124",
+      "url": "https://www.adzuna.com/land/ad/5568773819?se=Nl79jAGI8RGcSL7j7eCQ9g&utm_medium=api&utm_source=361fafca&v=1645F062C341544331F4DDE4F4C07A27DE30A124",
       "location": "Menlo Park, San Mateo County",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -558,22 +543,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
-    },
-    {
-      "id": "az-5814078460",
-      "company": "Liquid Development, LLC",
-      "title": "Remote Real-Time VFX Artist – Growth Path (Orlando)",
-      "url": "https://www.adzuna.com/land/ad/5814078460?se=EkXkONmH8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=E5007EB558EBC7A1A1E42B8FCDF208D7735E101C",
-      "location": "Sand Lake, Orange County",
-      "workplaceType": "remote",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "exactMatch",
-      "companyCategory": "unknown",
-      "status": "active",
-      "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5538360373",
@@ -588,7 +558,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5776963984",
@@ -603,13 +573,13 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5786701853",
       "company": "Ember Lab",
       "title": "Lead VFX Artist",
-      "url": "https://www.adzuna.com/land/ad/5786701853?se=EkXkONmH8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=CFB9D12E5A7FAA12E6B7072C38D1E40B1FE86BD9",
+      "url": "https://www.adzuna.com/land/ad/5786701853?se=Nl79jAGI8RGcSL7j7eCQ9g&utm_medium=api&utm_source=361fafca&v=CFB9D12E5A7FAA12E6B7072C38D1E40B1FE86BD9",
       "location": "King, Orange County",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -618,7 +588,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5761066992",
@@ -633,7 +603,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5787950418",
@@ -648,7 +618,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5752941990",
@@ -663,7 +633,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5759775977",
@@ -678,7 +648,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5749312187",
@@ -693,7 +663,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5749312168",
@@ -708,7 +678,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5749312177",
@@ -723,7 +693,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5776591897",
@@ -738,13 +708,13 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5780603068",
       "company": "Insight Global",
       "title": "Technical Artist - VFX",
-      "url": "https://www.adzuna.com/land/ad/5780603068?se=EkXkONmH8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=BA513FE893BC0FC8E3687A7CDA15082FB87060E8",
+      "url": "https://www.adzuna.com/land/ad/5780603068?se=Nl79jAGI8RGcSL7j7eCQ9g&utm_medium=api&utm_source=361fafca&v=BA513FE893BC0FC8E3687A7CDA15082FB87060E8",
       "location": "Pico Heights, Los Angeles County",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -753,7 +723,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5731201709",
@@ -768,7 +738,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5715650446",
@@ -783,7 +753,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5814182327",
@@ -798,7 +768,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5422344101",
@@ -813,7 +783,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5785271944",
@@ -828,7 +798,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5787238266",
@@ -843,7 +813,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5814182203",
@@ -858,7 +828,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5793786868",
@@ -873,7 +843,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5787860589",
@@ -888,7 +858,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5732880781",
@@ -903,7 +873,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5797382283",
@@ -918,7 +888,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5736350644",
@@ -933,7 +903,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5770241845",
@@ -948,7 +918,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5774032991",
@@ -963,7 +933,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5721223284",
@@ -978,7 +948,22 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
+    },
+    {
+      "id": "az-5813415802",
+      "company": "Shiro Games",
+      "title": "VFX Artist (CDD 12 mois)",
+      "url": "https://www.adzuna.fr/details/5813415802?utm_medium=api&utm_source=361fafca",
+      "location": "Talence, Bordeaux",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "unknown",
+      "status": "active",
+      "firstSeen": "2026-07-25T08:19:30Z",
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5721184348",
@@ -993,7 +978,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5761605022",
@@ -1008,7 +993,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5808894714",
@@ -1023,7 +1008,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-21T08:41:33Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5809178429",
@@ -1038,7 +1023,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-21T14:12:23Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5793381294",
@@ -1053,7 +1038,22 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
+    },
+    {
+      "id": "az-5814180351",
+      "company": "Renderer Studios",
+      "title": "VFX Artist",
+      "url": "https://www.adzuna.nl/details/5814180351?utm_medium=api&utm_source=361fafca",
+      "location": "Veldhoven, Noord-Brabant",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "unknown",
+      "status": "active",
+      "firstSeen": "2026-07-25T08:19:30Z",
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5537797180",
@@ -1068,7 +1068,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5805399009",
@@ -1083,7 +1083,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-18T03:18:33Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5727218748",
@@ -1098,7 +1098,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5736352794",
@@ -1113,7 +1113,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5791181814",
@@ -1128,7 +1128,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-18T19:16:11Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5763815967",
@@ -1143,7 +1143,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5761807810",
@@ -1158,7 +1158,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5801734679",
@@ -1173,7 +1173,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5720744781",
@@ -1188,7 +1188,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5761756088",
@@ -1203,7 +1203,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5749301696",
@@ -1218,7 +1218,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5805587710",
@@ -1233,7 +1233,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-18T03:18:33Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5714821063",
@@ -1248,7 +1248,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5647996845",
@@ -1263,7 +1263,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5647996848",
@@ -1278,7 +1278,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5806557373",
@@ -1293,7 +1293,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-19T03:39:30Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5763828878",
@@ -1308,7 +1308,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5808924734",
@@ -1323,7 +1323,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-21T08:41:33Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5812280831",
@@ -1338,7 +1338,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-23T14:24:47Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5794071604",
@@ -1353,7 +1353,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5799349291",
@@ -1368,7 +1368,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5799857592",
@@ -1383,7 +1383,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5799882708",
@@ -1398,7 +1398,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5800544057",
@@ -1413,7 +1413,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5800543906",
@@ -1428,7 +1428,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5804079047",
@@ -1443,7 +1443,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-22T03:32:31Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5814182188",
@@ -1458,7 +1458,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5736358838",
@@ -1473,7 +1473,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5804105504",
@@ -1488,7 +1488,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5728857033",
@@ -1503,7 +1503,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5790096714",
@@ -1518,7 +1518,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5804109036",
@@ -1533,7 +1533,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-21T03:33:37Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5473508779",
@@ -1548,7 +1548,7 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5804092333",
@@ -1563,7 +1563,37 @@
       "companyCategory": "unknown",
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
+    },
+    {
+      "id": "az-5814079184",
+      "company": "Liquid Development, LLC",
+      "title": "VFX Artist - GameSim - Talent Pipeline (Orlando)",
+      "url": "https://www.adzuna.com/land/ad/5814079184?se=EkXkONmH8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=3095C0111AC4931316374C20C9CACB378D39A2BD",
+      "location": "Sand Lake, Orange County",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "unknown",
+      "status": "closed",
+      "firstSeen": "2026-07-24T19:41:33Z",
+      "lastSeen": "2026-07-25T08:19:30Z"
+    },
+    {
+      "id": "az-5814078460",
+      "company": "Liquid Development, LLC",
+      "title": "Remote Real-Time VFX Artist – Growth Path (Orlando)",
+      "url": "https://www.adzuna.com/land/ad/5814078460?se=EkXkONmH8RGEopbyd0f8Hw&utm_medium=api&utm_source=361fafca&v=E5007EB558EBC7A1A1E42B8FCDF208D7735E101C",
+      "location": "Sand Lake, Orange County",
+      "workplaceType": "remote",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "unknown",
+      "status": "closed",
+      "firstSeen": "2026-07-24T19:41:33Z",
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5794895680",
@@ -1578,7 +1608,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5809402203",
@@ -1593,7 +1623,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-21T19:44:34Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5809391454",
@@ -1608,7 +1638,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-24T14:03:52Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5777694887",
@@ -1623,7 +1653,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5724998693",
@@ -1638,7 +1668,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5810042488",
@@ -1653,7 +1683,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-22T03:32:31Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5809598066",
@@ -1668,7 +1698,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-21T19:44:34Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5774156431",
@@ -1682,7 +1712,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5804122069",
@@ -1696,7 +1726,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5687834785",
@@ -1710,7 +1740,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5807753946",
@@ -1724,7 +1754,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-20T09:31:48Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     },
     {
       "id": "az-5796355596",
@@ -1738,7 +1768,7 @@
       "matchType": "exactMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-07-25T03:30:50Z"
+      "lastSeen": "2026-07-25T08:19:30Z"
     }
   ]
 }
