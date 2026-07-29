@@ -12,16 +12,21 @@ def test_exact_matches():
     assert classify_job("VFX Supervisor") == "exactMatch"
     assert classify_job("Realtime VFX") == "exactMatch"
 
+def test_effects_artist_variants():
+    assert classify_job("Effects Artist") == "exactMatch"
+    assert classify_job("Senior Effects Artist") == "exactMatch"
+    assert classify_job("Lead Effects Artist") == "exactMatch"
+    assert classify_job("Principal Effects Artist") == "exactMatch"
+    assert classify_job("Effects TD") == "exactMatch"
+    assert classify_job("Environment FX Artist") == "exactMatch"
+
 def test_exclusions():
     assert classify_job("Compositor") is None
     assert classify_job("Compositing Artist") is None
     assert classify_job("Motion Graphics Designer") is None
+    assert classify_job("After Effects Artist") is None
 
 def test_possible_match():
-    # POSSIBLE_TITLE requires the VFX-ish term to be in the TITLE (bare "fx",
-    # "vfx", "particle"...) — the description alone only confirms it, it
-    # can't carry the match on its own. "Technical Artist" (no fx/vfx word
-    # at all) can never satisfy this, regardless of description.
     desc = "Uses Niagara for particle FX and real-time FX systems"
     assert classify_job("FX Technical Artist", desc) == "possibleMatch"
 
@@ -43,6 +48,7 @@ def test_remote_scope():
 
 if __name__ == "__main__":
     test_exact_matches()
+    test_effects_artist_variants()
     test_exclusions()
     test_possible_match()
     test_bare_vfx_word_fallback()

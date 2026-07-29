@@ -2234,7 +2234,7 @@ async function openVfxDiagnostics(){
     document.getElementById('mBody').innerHTML=statuses.map(s=>{
       const cls=s.status!=='ok'?'error':(s.needsReview?'review':'ok');
       const label=s.status!=='ok'?'error':(s.needsReview?'review':'ok');
-      const seenTxt=(s.status==='ok'&&s.totalPostingsSeen!=null)?`<span class="vfx-diag-err">${s.totalPostingsSeen} posting(s) seen · ${s.jobsFound} VFX match</span>`:'';
+      const seenTxt=(s.status==='ok'&&s.totalPostingsSeen!=null)?`<span class="vfx-diag-err">${s.totalPostingsSeen} posting(s) seen · ${s.jobsFound} VFX match${s.signalOnlyJobsAdded?` · ${s.signalOnlyJobsAdded} señal(es) enlazadas directamente`:''}</span>`:'';
       const co=D.vfxCompanies.find(c=>c.name===s.company);
       const nameHtml=co?`<a href="${co.careersUrl}" target="_blank" rel="noopener" class="vfx-diag-co-link">${s.company}</a>`:s.company;
       return `<div class="vfx-diag-row"><span class="vfx-diag-co">${nameHtml}</span><span class="vfx-diag-status ${cls}">${label}</span>${seenTxt}${s.error?`<span class="vfx-diag-err">${s.error}</span>`:''}</div>`;
@@ -2335,7 +2335,7 @@ function renderVfxJobsPublic(){
   const rowsHtml=list.length?list.map(j=>`
     <div class="vfxp-job ${j.matchType==='possibleMatch'?'possible':''}">
       <div class="vfxp-co">${j.company}${vfxCatLabel(j.companyCategory)?`<span class="vfx-ats-tag" style="margin-left:6px;">${vfxCatLabel(j.companyCategory)}</span>`:''}</div>
-      <div class="vfxp-title-cell"><a href="${j.url}" target="_blank" rel="noopener">${j.title}</a>${vfxIsNew(j.firstSeen)?'<span class="vfxp-new-tag">NEW</span>':''}${j.viaAggregator?'<span class="vfxp-aggregator-tag" title="Este enlace pasa primero por la web de Adzuna antes de llegar a la oferta">vía Adzuna</span>':''}</div>
+      <div class="vfxp-title-cell"><a href="${j.url}" target="_blank" rel="noopener" ${j.signalOnly?'style="font-style:italic;"':''}>${j.title}</a>${vfxIsNew(j.firstSeen)?'<span class="vfxp-new-tag">NEW</span>':''}${j.viaAggregator?'<span class="vfxp-aggregator-tag" title="Este enlace pasa primero por la web de Adzuna antes de llegar a la oferta">vía Adzuna</span>':''}${j.signalOnly?'<span class="vfxp-aggregator-tag" title="No pudimos leer esta página directamente, pero Adzuna indica que hay una oferta VFX activa. El enlace lleva directo a la web de la empresa, no a Adzuna.">señal detectada</span>':''}</div>
       <div class="vfxp-loc">${j.location||'—'}</div>
       <div class="vfxp-badge ${j.workplaceType||'unknown'}">${j.workplaceType||'unknown'}</div>
       <div class="vfxp-scope">${j.remoteScope||'Unknown'}</div>

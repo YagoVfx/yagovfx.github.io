@@ -9,12 +9,33 @@ EXACT_PATTERNS = re.compile(
     r'|senior\s*fx|junior\s*fx|lead\s*fx|principal\s*fx'
     r'|game\s*vfx|game\s*fx|gameplay\s*vfx|gameplay\s*fx'
     r'|niagara\s*artist|particle\s*artist'
+    # Added per user report: "Effects Artist" (no vfx/fx abbreviation at
+    # all) is a very common real-world title on several studios' own
+    # career sites (Ubisoft, Massive, etc.) and was previously invisible
+    # to this filter entirely — not even possibleMatch, just silently
+    # dropped, because POSSIBLE_TITLE below still required "fx"/"vfx" too.
+    r'|senior\s*effects\s*artist|junior\s*effects\s*artist|lead\s*effects\s*artist'
+    r'|principal\s*effects\s*artist|effects\s*artist|effects\s*td|fx\s*td|vfx\s*td'
+    r'|environment\s*fx\s*artist|creature\s*fx\s*artist|character\s*fx\s*artist'
+    r'|cloth\s*fx\s*artist|rigid\s*body\s*fx'
     r')',
     re.IGNORECASE
 )
-POSSIBLE_TITLE = re.compile(r'\b(vfx|visual\s*effects?|particle|fx\b|real[-\s]time\s*art)', re.IGNORECASE)
-POSSIBLE_DESC = re.compile(r'\b(niagara|unreal\s*engine\s*vfx|realtime\s*fx|real[-\s]time\s*fx|game\s*vfx|particle\s*system)', re.IGNORECASE)
-EXCLUSIONS = re.compile(r'\b(compositor|compositing|nuke|flame|houdini\s*fx\s*td|motion\s*graphic|after\s*effects?\s*artist|film\s*vfx|cinematic\s*vfx\s*director|post\s*production)\b', re.IGNORECASE)
+
+POSSIBLE_TITLE = re.compile(
+    r'\b(vfx|visual\s*effects?|particle|fx\b|real[-\s]time\s*art|effects)',
+    re.IGNORECASE
+)
+POSSIBLE_DESC = re.compile(
+    r'\b(niagara|unreal\s*engine\s*vfx|realtime\s*fx|real[-\s]time\s*fx|game\s*vfx|particle\s*system)',
+    re.IGNORECASE
+)
+
+EXCLUSIONS = re.compile(
+    r'\b(compositor|compositing|nuke|flame|houdini\s*fx\s*td|motion\s*graphic|after\s*effects?\s*artist'
+    r'|film\s*vfx|cinematic\s*vfx\s*director|post\s*production)\b',
+    re.IGNORECASE
+)
 
 BARE_VFX_RE = re.compile(r'\bvfx\b', re.IGNORECASE)
 
@@ -25,12 +46,6 @@ def classify_job(title, description=""):
         return "exactMatch"
     if POSSIBLE_TITLE.search(title) and POSSIBLE_DESC.search(description):
         return "possibleMatch"
-    # Safety net: adapters that only have the link text (Teamtailor, custom
-    # HTML — no job description available) can never hit the line above,
-    # since POSSIBLE_DESC can never match an empty string. So: any title
-    # with the bare word "vfx" that didn't already match EXACT_PATTERNS
-    # (e.g. "VFX Generalist", "Junior VFX (Contract)") still gets flagged
-    # as a possible match instead of being silently dropped.
     if BARE_VFX_RE.search(title):
         return "possibleMatch"
     return None

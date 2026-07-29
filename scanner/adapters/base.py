@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Optional
 import requests, time, logging
+from ..company_category import classify_company_category
 
 logger = logging.getLogger(__name__)
 
@@ -30,15 +31,24 @@ def http_get(url: str, retries: int = 2) -> Optional[requests.Response]:
 class BaseAdapter(ABC):
     ats_type: str = "base"
 
+    # True for adapters backed by a real structured API (Greenhouse, Lever,
+    # Ashby, SmartRecruiters, Recruitee, Personio, Workday, Workable): if
+    # one of these returns 0 postings, that's a TRUSTWORTHY "this company
+    # genuinely has zero open positions right now" signal, not a parsing
+    # failure — the API either works or raises/errors, there's no
+    # ambiguous middle ground like there is with HTML scraping.
+    #
+    # False for adapters that scrape HTML heuristically (CustomHtmlAdapter,
+    # TeamtailorAdapter): 0 candidates found there is genuinely ambiguous
+    # between "this company has no postings" and "this page needs
+    # JavaScript we can't run" or "our link-matching heuristic missed
+    # them" — so it's still worth a "needsReview" flag in that case.
+    uses_reliable_api: bool = True
+
     def __init__(self, company: dict):
         self.company = company["name"]
         self.careers_url = company["careersUrl"]
         self.raw = company
-        # Total postings this adapter actually saw on the page/API, BEFORE
-        # filtering by the VFX regex. Lets the scanner tell apart "this
-        # company genuinely has 0 VFX openings right now" (total_seen > 0,
-        # jobsFound == 0) from "the parser saw nothing at all — probably
-        # broken/blocked/JS-rendered" (total_seen == 0).
         self.total_seen = 0
 
     @abstractmethod
@@ -57,10 +67,8 @@ class BaseAdapter(ABC):
             "remoteScope": raw.get("remoteScope", "unknown"),
             "ats": self.ats_type,
             "matchType": raw.get("matchType", "exactMatch"),
-            # Optional "aaa" | "indie" tag set per-company in companies.json
-            # (via the admin panel). Falls back to "unknown" so older
-            # companies.json files without this field still work.
-            "companyCategory": self.raw.get("category", "unknown"),
+            "companyCategory": classify_company_category(self.company, self.raw.get("category")),
+            "viaAggregator": False,
             "firstSeen": raw.get("firstSeen", ""),
             "lastSeen": raw.get("lastSeen", ""),
             "status": "active",
