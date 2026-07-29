@@ -23,6 +23,14 @@ def detect_ats(url: str) -> str:
         return "workday"
     if re.search(r"workable\.com", url, re.IGNORECASE):
         return "workable"
+    if re.search(r"ashbyhq\.com", url, re.IGNORECASE):
+        return "ashby"
+    if re.search(r"smartrecruiters\.com", url, re.IGNORECASE):
+        return "smartrecruiters"
+    if re.search(r"recruitee\.com", url, re.IGNORECASE):
+        return "recruitee"
+    if re.search(r"jobs\.personio\.(?:de|com)", url, re.IGNORECASE):
+        return "personio"
     return "custom"
 
 

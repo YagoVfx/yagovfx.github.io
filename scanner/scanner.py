@@ -1,4 +1,4 @@
-import json, logging, sys
+import json, logging, re, sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -10,6 +10,10 @@ from scanner.adapters.teamtailor import TeamtailorAdapter
 from scanner.adapters.custom_html import CustomHtmlAdapter
 from scanner.adapters.workday import WorkdayAdapter
 from scanner.adapters.workable import WorkableAdapter
+from scanner.adapters.ashby import AshbyAdapter
+from scanner.adapters.smartrecruiters import SmartRecruitersAdapter
+from scanner.adapters.recruitee import RecruiteeAdapter
+from scanner.adapters.personio import PersonioAdapter
 from scanner.companies import detect_ats, dedupe_companies
 from scanner.normalizer import preserve_first_seen, now_iso
 from scanner.sources.adzuna import fetch_adzuna_jobs
@@ -25,9 +29,20 @@ COMPANIES_FILE = DATA_DIR / "companies.json"
 JOBS_FILE = DATA_DIR / "jobs.json"
 STATUS_FILE = DATA_DIR / "scanner-status.json"
 
+# Priority order, cheapest/most-reliable first (per the project's own
+# guiding principle: official API > AJAX/JSON endpoint > plain HTML >
+# aggregator as a last resort). This dict is just the lookup table used
+# below — the actual "last resort" behavior for Adzuna is enforced by
+# running it after every company adapter and de-duplicating against
+# whatever those already found (see dedupe_against_direct_matches below),
+# not by this ordering alone.
 ATS_MAP = {
     "greenhouse": GreenhouseAdapter,
     "lever": LeverAdapter,
+    "ashby": AshbyAdapter,
+    "smartrecruiters": SmartRecruitersAdapter,
+    "recruitee": RecruiteeAdapter,
+    "personio": PersonioAdapter,
     "teamtailor": TeamtailorAdapter,
     "workday": WorkdayAdapter,
     "workable": WorkableAdapter,
@@ -45,6 +60,34 @@ def load_existing_jobs() -> dict[str, dict]:
         logger.warning(f"{JOBS_FILE} exists but is not valid JSON — starting fresh")
         return {}
     return {j["id"]: j for j in data.get("jobs", [])}
+
+
+def _normalize_for_dedup(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", (text or "").lower()).strip()
+
+
+def dedupe_adzuna_against_direct_matches(adzuna_jobs: list[dict], direct_jobs: dict) -> list[dict]:
+    """Adzuna is meant to be a last resort, not a competing duplicate: if a
+    company adapter already found this exact job directly (same company +
+    same title), keep the direct link (no interstitial, no click limits)
+    and drop the Adzuna copy instead of showing both.
+    """
+    direct_keys = {
+        (_normalize_for_dedup(j["company"]), _normalize_for_dedup(j["title"]))
+        for j in direct_jobs.values()
+        if not j.get("viaAggregator")
+    }
+    kept = []
+    skipped = 0
+    for job in adzuna_jobs:
+        key = (_normalize_for_dedup(job["company"]), _normalize_for_dedup(job["title"]))
+        if key in direct_keys:
+            skipped += 1
+            continue
+        kept.append(job)
+    if skipped:
+        logger.info(f"[Adzuna] Skipped {skipped} job(s) already found via a direct company adapter")
+    return kept
 
 
 def run():
@@ -90,11 +133,14 @@ def run():
             statuses.append({"company": company["name"], "status": "error", "error": str(e), "lastAttempt": now_iso()})
             failed += 1
 
-    # Adzuna: a broad keyword-search aggregator, on top of (not instead of)
-    # the per-company adapters above. Covers studios we can't reliably
-    # scrape directly (EA, Epic, Ubisoft...) since it pulls from thousands
-    # of sources. Optional — silently skipped if no API credentials are set.
+    # Adzuna: last resort. Runs on top of (not instead of) the per-company
+    # adapters above, and only ever fills gaps — any job it finds that a
+    # direct adapter already found gets dropped in favor of the direct
+    # link (no interstitial, no click limits). Optional — silently skipped
+    # if no API credentials are set.
     adzuna_jobs, adzuna_status = fetch_adzuna_jobs()
+    adzuna_jobs = dedupe_adzuna_against_direct_matches(adzuna_jobs, new_jobs)
+    adzuna_status["jobsFound"] = len(adzuna_jobs)
     for job in adzuna_jobs:
         preserve_first_seen(existing, job)
         new_jobs[job["id"]] = job
