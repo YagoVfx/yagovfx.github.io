@@ -126,7 +126,15 @@ def run():
                 new_jobs[job["id"]] = job
             total_seen = getattr(adapter, "total_seen", None)
             uses_reliable_api = getattr(adapter, "uses_reliable_api", True)
-            needs_review = (total_seen == 0) and not uses_reliable_api
+            # Broadened on purpose: it's not just "0 candidates seen at all"
+            # that's suspicious for an HTML-scraping heuristic — "we saw
+            # postings but matched none" is equally untrustworthy for those
+            # adapters (proven in practice: e.g. EA's page had real VFX
+            # roles while our scraper counted 40 unrelated candidates and
+            # matched 0). A real structured API (Greenhouse, Ashby...)
+            # reporting 0 matches IS trustworthy — its title data isn't a
+            # heuristic guess, so that case stays un-flagged.
+            needs_review = (len(found) == 0) and not uses_reliable_api
             if needs_review:
                 needs_review_companies.append(company)
             statuses.append({

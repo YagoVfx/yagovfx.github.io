@@ -27,14 +27,19 @@ def test_html_scraping_adapters_flagged_as_unreliable():
 
 
 def test_needs_review_logic_matches_expectation():
-    # Mirrors the exact computation used in scanner.py's run().
-    def needs_review(total_seen, uses_reliable_api):
-        return (total_seen == 0) and not uses_reliable_api
+    # Mirrors the exact computation used in scanner.py's run(): it's based
+    # on jobsFound (VFX matches), not totalPostingsSeen — an unreliable
+    # HTML scraper that saw plenty of candidates but matched none (e.g.
+    # EA: 40 seen, 0 matched) is just as untrustworthy as one that saw
+    # nothing at all.
+    def needs_review(jobs_found, uses_reliable_api):
+        return (jobs_found == 0) and not uses_reliable_api
 
-    assert needs_review(0, True) is False   # Greenhouse/Lever/etc, genuinely empty
-    assert needs_review(0, False) is True   # CustomHtml/Teamtailor, ambiguous
-    assert needs_review(5, False) is False  # HTML scraper saw real candidates
-    assert needs_review(5, True) is False
+    assert needs_review(0, True) is False    # Greenhouse/Lever/etc, genuinely empty
+    assert needs_review(0, False) is True    # CustomHtml/Teamtailor, no matches at all
+    assert needs_review(0, False) is True    # (e.g. EA: many candidates seen, 0 matched — still flagged)
+    assert needs_review(3, False) is False   # HTML scraper actually matched something
+    assert needs_review(3, True) is False
 
 
 if __name__ == "__main__":

@@ -2238,7 +2238,7 @@ async function openVfxDiagnostics(){
       const co=D.vfxCompanies.find(c=>c.name===s.company);
       const nameHtml=co?`<a href="${co.careersUrl}" target="_blank" rel="noopener" class="vfx-diag-co-link">${s.company}</a>`:s.company;
       return `<div class="vfx-diag-row"><span class="vfx-diag-co">${nameHtml}</span><span class="vfx-diag-status ${cls}">${label}</span>${seenTxt}${s.error?`<span class="vfx-diag-err">${s.error}</span>`:''}</div>`;
-    }).join('')+'<div class="vfx-block-sub" style="margin-top:10px;">⚠ "review" = la petición fue bien pero no se vio ninguna oferta en la página (ni VFX ni de ningún otro tipo) — probable página con JavaScript, bloqueo, o cambio de estructura. Revisa esa empresa a mano. El nombre de la empresa enlaza directamente a su careers URL.</div>';
+    }).join('')+'<div class="vfx-block-sub" style="margin-top:10px;">⚠ "review" = esta empresa usa un scraper heurístico (no una API oficial) y no encontró ninguna oferta VFX — puede ser porque la página no tiene ninguna abierta, porque carga por JavaScript, o porque nuestro filtro no reconoció el título. Cuando esto pasa, el sistema comprueba en Adzuna si hay señales de una oferta VFX activa para esa empresa; si las hay, aparecerá en el listado enlazando directamente a la web de la empresa (no a Adzuna). El nombre de la empresa aquí enlaza directamente a su careers URL para que la revises tú mismo.</div>';
   }catch(e){
     document.getElementById('mBody').innerHTML='<div class="vfx-empty">No se pudo leer data/scanner-status.json (¿el Action aún no se ha ejecutado?)</div>';
   }
