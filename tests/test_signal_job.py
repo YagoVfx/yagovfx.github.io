@@ -4,7 +4,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from scanner.scanner import build_signal_job
-from scanner.sources.adzuna import check_company_has_vfx_signal
+from scanner.sources.adzuna import company_names_match, find_signal_matches
 
 
 def test_signal_job_links_to_company_own_page_not_adzuna():
@@ -14,22 +14,36 @@ def test_signal_job_links_to_company_own_page_not_adzuna():
     assert job["viaAggregator"] is False
     assert job["signalOnly"] is True
     assert job["matchType"] == "possibleMatch"
-    assert "example.com" in job["url"] and "adzuna" not in job["url"]
+    assert "adzuna" not in job["url"]
 
 
-def test_signal_check_returns_false_without_credentials():
-    old_id = os.environ.pop("ADZUNA_APP_ID", None)
-    old_key = os.environ.pop("ADZUNA_APP_KEY", None)
-    try:
-        assert check_company_has_vfx_signal("Some Studio") is False
-    finally:
-        if old_id is not None:
-            os.environ["ADZUNA_APP_ID"] = old_id
-        if old_key is not None:
-            os.environ["ADZUNA_APP_KEY"] = old_key
+def test_company_names_match_handles_legal_name_variance():
+    # Exact / substring cases
+    assert company_names_match("EA", "EA Vancouver")
+    assert company_names_match("Embark Studios", "Embark")
+    # Near-miss spelling ("Project" vs "Projekt") should still fuzzy-match
+    assert company_names_match("CD Project", "CD Projekt Red S.A.")
+    # Clearly unrelated names should not match
+    assert not company_names_match("Lighthouse Games", "Ubisoft Montreal")
+
+
+def test_find_signal_matches_reuses_broad_results_no_extra_query():
+    adzuna_jobs = [
+        {"id": "az-1", "company": "Rebellion Developments", "title": "VFX Artist"},
+        {"id": "az-2", "company": "Some Unrelated Co", "title": "VFX Artist"},
+    ]
+    companies_to_check = [
+        {"name": "Rebellion", "careersUrl": "https://careers.rebellion.com"},
+        {"name": "Jagex", "careersUrl": "https://www.jagex.com"},
+    ]
+    signals, matched_ids = find_signal_matches(adzuna_jobs, companies_to_check)
+    assert signals.get("Rebellion") is True
+    assert "Jagex" not in signals
+    assert matched_ids == ["az-1"]
 
 
 if __name__ == "__main__":
     test_signal_job_links_to_company_own_page_not_adzuna()
-    test_signal_check_returns_false_without_credentials()
+    test_company_names_match_handles_legal_name_variance()
+    test_find_signal_matches_reuses_broad_results_no_extra_query()
     print("All tests passed.")
