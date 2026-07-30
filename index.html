@@ -749,7 +749,8 @@ option{background:var(--bg2);}
       <div class="adm-nav-item" onclick="showSec('anim')" data-s="anim"><span class="adm-icon">⚡</span>Animations</div>
       <div class="adm-nav-sec">System</div>
       <div class="adm-nav-item" onclick="showSec('posts')" data-s="posts"><span class="adm-icon">✍️</span>Devlog Posts</div>
-      <div class="adm-nav-item" onclick="showSec('vfxjobs')" data-s="vfxjobs"><span class="adm-icon">🕹️</span>VFX Jobs</div>
+      <div class="adm-nav-item" onclick="showSec('vfxjobs')" data-s="vfxjobs"><span class="adm-icon">🕹️</span>VFX Jobs — Config</div>
+      <div class="adm-nav-item" onclick="showSec('vfxjobsview')" data-s="vfxjobsview"><span class="adm-icon">📋</span>VFX Jobs — Ver ofertas</div>
       <div class="adm-nav-item" onclick="showSec('links')" data-s="links"><span class="adm-icon">🔗</span>Links</div>
       <div class="adm-nav-item" onclick="showSec('import')" data-s="import"><span class="adm-icon">⬆</span>Import</div>
       <div class="adm-nav-item" onclick="showSec('seo')" data-s="seo"><span class="adm-icon">🔍</span>SEO</div>
@@ -915,9 +916,16 @@ https://otraempresa.com/careers"></textarea>
             <button class="ab primary" onclick="exportVfxCompanies()">⬇ Descargar companies.json</button>
             <button class="ab" onclick="openVfxDiagnostics()">🩺 Ver estado del scanner</button>
             <button class="ab" onclick="window.open('data/jobs.json','_blank')">Ver jobs.json</button>
-            <button class="ab" onclick="previewVfxJobsAdmin()">👁 Vista previa de ofertas</button>
           </div>
+          <div class="vfx-block-sub" style="margin-top:8px;">Para ver el listado de ofertas encontradas, usa la categoría <strong>"VFX Jobs — Ver ofertas"</strong> del menú de la izquierda.</div>
         </div>
+      </div>
+
+      <!-- VFX JOBS VIEW (separado de la configuración del tracker) -->
+      <div class="adm-sec" id="sec-vfxjobsview">
+        <div class="a-title">VFX Jobs — Ver ofertas</div>
+        <div class="a-sub">Listado completo de ofertas detectadas, igual que lo vería un visitante en la pestaña pública (esté o no activada). Esto es solo para ti, aquí en el admin.</div>
+        <div id="vfxJobsAdminView"></div>
       </div>
 
       <!-- PROFILE -->
@@ -2262,7 +2270,13 @@ const vfxJobsState={
   sort:'newest',        // newest | company | title
   search:'',
 };
-let vfxPreviewReturnToAdmin=false;
+// Which DOM node renderVfxJobsPublic() writes into — the public overlay
+// (visitors, and the topbar button) or the dedicated admin-only "Ver
+// ofertas" section (a separate left-nav category, kept apart from the
+// tracker CONFIG section on purpose, per how this is actually used day to
+// day: configuring companies vs. just checking current listings are two
+// different tasks).
+let vfxJobsRenderTargetId='vfxJobsBody';
 
 function setVfxWpFilter(val){vfxJobsState.filterWp=val;renderVfxJobsPublic();}
 function setVfxCatFilter(val){vfxJobsState.filterCat=val;renderVfxJobsPublic();}
@@ -2270,27 +2284,40 @@ function setVfxSearch(val){vfxJobsState.search=val;renderVfxJobsPublic();}
 function setVfxSort(val){vfxJobsState.sort=val;renderVfxJobsPublic();}
 function setVfxShowPossible(checked){vfxJobsState.showPossible=checked;renderVfxJobsPublic();}
 
-function previewVfxJobsAdmin(){
-  document.getElementById('admin-overlay').classList.remove('on');
-  vfxPreviewReturnToAdmin=true;
-  openVfxJobsPublic();
+async function ensureVfxJobsLoaded(){
+  if(vfxJobsState.cache)return true;
+  try{
+    const r=await fetch('data/jobs.json',{cache:'no-store'});
+    if(!r.ok)throw new Error('not found');
+    vfxJobsState.cache=await r.json();
+    return true;
+  }catch(e){
+    return false;
+  }
 }
 function closeVfxJobsPublic(){
   document.getElementById('vfxJobsOverlay').classList.remove('open');
-  if(vfxPreviewReturnToAdmin){vfxPreviewReturnToAdmin=false;document.getElementById('admin-overlay').classList.add('on');}
 }
 async function openVfxJobsPublic(){
+  vfxJobsRenderTargetId='vfxJobsBody';
   document.getElementById('vfxJobsBody').innerHTML='<div class="vfxp-state">Cargando ofertas…</div>';
   document.getElementById('vfxJobsOverlay').classList.add('open');
-  if(!vfxJobsState.cache){
-    try{
-      const r=await fetch('data/jobs.json',{cache:'no-store'});
-      if(!r.ok)throw new Error('not found');
-      vfxJobsState.cache=await r.json();
-    }catch(e){
-      document.getElementById('vfxJobsBody').innerHTML='<div class="vfxp-state">Todavía no hay datos de ofertas. El scanner automático (GitHub Action) generará <code>data/jobs.json</code> en su próxima ejecución.</div>';
-      return;
-    }
+  const ok=await ensureVfxJobsLoaded();
+  if(!ok){
+    document.getElementById('vfxJobsBody').innerHTML='<div class="vfxp-state">Todavía no hay datos de ofertas. El scanner automático (GitHub Action) generará <code>data/jobs.json</code> en su próxima ejecución.</div>';
+    return;
+  }
+  renderVfxJobsPublic();
+}
+async function renderVfxJobsAdminView(){
+  vfxJobsRenderTargetId='vfxJobsAdminView';
+  const container=document.getElementById('vfxJobsAdminView');
+  if(!container)return;
+  container.innerHTML='<div class="vfxp-state">Cargando ofertas…</div>';
+  const ok=await ensureVfxJobsLoaded();
+  if(!ok){
+    container.innerHTML='<div class="vfxp-state">Todavía no hay datos de ofertas. El scanner automático (GitHub Action) generará <code>data/jobs.json</code> en su próxima ejecución.</div>';
+    return;
   }
   renderVfxJobsPublic();
 }
@@ -2342,7 +2369,7 @@ function renderVfxJobsPublic(){
       <div class="vfxp-match ${j.matchType}">${j.matchType==='exactMatch'?'Exact':'Possible'}</div>
     </div>`).join(''):'<div class="vfxp-state">No hay ofertas que coincidan con los filtros actuales.</div>';
 
-  document.getElementById('vfxJobsBody').innerHTML=`
+  document.getElementById(vfxJobsRenderTargetId).innerHTML=`
     <div class="vfxp-summary">
       <div class="vfxp-count"><span>${active.length}</span> open position${active.length===1?'':'s'}</div>
       <div class="vfxp-meta"><strong>${studios}</strong> studio${studios===1?'':'s'} hiring</div>
@@ -2376,6 +2403,7 @@ function showSec(name){
   if(name==='themes')renderThemeGrid();
   if(name==='videos'){renderVidCoSel();renderVidMgr();renderSizeGrid();}
   if(name==='vfxjobs')renderVfxCompaniesAdmin();
+  if(name==='vfxjobsview')renderVfxJobsAdminView();
   if(name==='tools'){renderToolsAdmin();['small','medium','large'].forEach(s=>{const b=document.getElementById('tsz-'+s);if(b){b.style.borderColor=s===D.toolSize?'var(--accent)':'';b.style.color=s===D.toolSize?'var(--accent)':'';}});}
   if(name==='links')renderLinksAdmin();
   if(name==='cv')renderCvForm();
@@ -3137,7 +3165,8 @@ Object.assign(window,{
   openAddCo, openAddEdu, openAddLang, openAddLink, openAddPost, openAddProject, openAddSkill, openAddTool,
   openAddVid, openAdmin, openDevlog, openEditCo, openEditEdu, openEditLink, openEditPost, openEditProject,
   openEditSkill, openEditTool, openEditVfxCompany, openEditVid, openGate, openModal, openVfxDiagnostics, openVfxJobsPublic,
-  playClip, previewVfxJobsAdmin, refreshCover, renderAdminCos, renderCurrentCompanyInfo, renderCvForm, renderEduList, renderExpList,
+  playClip, refreshCover, renderAdminCos, renderCurrentCompanyInfo, renderCvForm, renderEduList, renderExpList,
+  renderVfxJobsAdminView,
   renderHdrLinks, renderLangList, renderLayGrid, renderLinksAdmin, renderMobLinks, renderMobSidebar, renderPostsAdmin, renderProfile,
   renderProfileForm, renderReelForm, renderSeoAdmin, renderSizeGrid, renderSkillList, renderThemeGrid, renderToolsAdmin, renderToolsGrid,
   renderVfxCompaniesAdmin, renderVfxJobsPublic, renderVidCoSel, renderVidMgr, renderVisitor, resetData, save, saveCvData,

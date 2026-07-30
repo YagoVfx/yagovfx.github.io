@@ -17,6 +17,7 @@ from scanner.companies import detect_ats, dedupe_companies
 from scanner.normalizer import preserve_first_seen, now_iso
 from scanner.company_category import classify_company_category
 from scanner.sources.adzuna import fetch_adzuna_jobs, find_signal_matches
+from scanner.auto_discover import discover_direct_source, load_discovery_cache, save_discovery_cache
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 logger = logging.getLogger("scanner")
@@ -99,6 +100,42 @@ def build_signal_job(company: dict, now: str) -> dict:
     }
 
 
+def upgrade_adzuna_jobs_to_direct_links(adzuna_jobs: list[dict], cache: dict) -> tuple[list[dict], int]:
+    """For every remaining Adzuna job (i.e. not already matched to a
+    tracked company via find_signal_matches), try to auto-discover a real
+    Greenhouse/Lever/Ashby board for that company. If found, rewrite the
+    job to point straight there instead of Adzuna's redirect — same title/
+    match, but viaAggregator becomes False and the URL goes directly to a
+    verified-live board, not through any interstitial page.
+
+    This is what actually reduces reliance on Adzuna's own redirect over
+    time: rather than requiring manual research per company (as done for
+    Asobo Studio, Saber Interactive Spain, etc.), any company whose board
+    slug matches one of a few common patterns gets upgraded automatically,
+    for free, on every scan.
+    """
+    upgraded_count = 0
+    out = []
+    checked_companies = {}  # company name -> discovery result this run, to avoid re-probing per job
+
+    for job in adzuna_jobs:
+        company_name = job["company"]
+        if company_name not in checked_companies:
+            checked_companies[company_name] = discover_direct_source(company_name, cache=cache)
+        discovery = checked_companies[company_name]
+
+        if discovery:
+            job = dict(job)  # don't mutate the original in place
+            job["url"] = discovery["careersUrl"]
+            job["ats"] = discovery["ats"]
+            job["viaAggregator"] = False
+            upgraded_count += 1
+
+        out.append(job)
+
+    return out, upgraded_count
+
+
 def run():
     if not COMPANIES_FILE.exists():
         logger.error(f"companies.json not found at {COMPANIES_FILE}")
@@ -167,6 +204,15 @@ def run():
     # company we're about to give a direct-link "signal" entry to instead.
     adzuna_jobs = [j for j in adzuna_jobs if j["id"] not in matched_ids_set]
 
+    # For every remaining Adzuna job, try to auto-discover a real ATS board
+    # (Greenhouse/Lever/Ashby) for that company and upgrade the link to
+    # point straight there instead of through Adzuna's interstitial page.
+    # This is the actual fix for "Adzuna finds real jobs but I can't use
+    # the links" — automatic, no per-company manual research required.
+    discovery_cache = load_discovery_cache()
+    adzuna_jobs, auto_upgraded_count = upgrade_adzuna_jobs_to_direct_links(adzuna_jobs, discovery_cache)
+    save_discovery_cache(discovery_cache)
+
     now = now_iso()
     signal_jobs_added = 0
     for company in needs_review_companies:
@@ -179,6 +225,7 @@ def run():
     adzuna_jobs = dedupe_adzuna_against_direct_matches(adzuna_jobs, new_jobs)
     adzuna_status["jobsFound"] = len(adzuna_jobs)
     adzuna_status["signalOnlyJobsAdded"] = signal_jobs_added
+    adzuna_status["autoUpgradedToDirectLink"] = auto_upgraded_count
     for job in adzuna_jobs:
         preserve_first_seen(existing, job)
         new_jobs[job["id"]] = job
