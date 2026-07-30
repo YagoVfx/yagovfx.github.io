@@ -228,5 +228,9 @@
   "magic media": {
     "found": false,
     "checkedAt": 1785412283.6984155
+  },
+  "ign solutions": {
+    "found": false,
+    "checkedAt": 1785440667.8579946
   }
 }
