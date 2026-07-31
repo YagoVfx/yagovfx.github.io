@@ -2266,6 +2266,7 @@ const vfxJobsState={
   cache:null,
   filterWp:'all',       // all | remote | hybrid | onsite
   filterCat:'all',      // all | aaa | indie
+  filterAts:'all',      // all | greenhouse | lever | teamtailor | workday | workable | ashby | smartrecruiters | recruitee | personio | custom | adzuna | adzuna-signal
   showPossible:false,
   sort:'newest',        // newest | company | title
   search:'',
@@ -2280,6 +2281,7 @@ let vfxJobsRenderTargetId='vfxJobsBody';
 
 function setVfxWpFilter(val){vfxJobsState.filterWp=val;renderVfxJobsPublic();}
 function setVfxCatFilter(val){vfxJobsState.filterCat=val;renderVfxJobsPublic();}
+function setVfxAtsFilter(val){vfxJobsState.filterAts=val;renderVfxJobsPublic();}
 function setVfxSearch(val){vfxJobsState.search=val;renderVfxJobsPublic();}
 function setVfxSort(val){vfxJobsState.sort=val;renderVfxJobsPublic();}
 function setVfxShowPossible(checked){vfxJobsState.showPossible=checked;renderVfxJobsPublic();}
@@ -2344,10 +2346,13 @@ function renderVfxJobsPublic(){
   const active=(data.jobs||[]).filter(j=>j.status==='active');
   const studios=new Set(active.map(j=>j.company)).size;
   const euCount=active.filter(j=>/eu|europe/i.test(j.remoteScope||'')).length;
+  const atsCounts=data.jobsByAts||{};
+  const atsLabels={greenhouse:'Greenhouse',lever:'Lever',teamtailor:'Teamtailor',workday:'Workday',workable:'Workable',ashby:'Ashby',smartrecruiters:'SmartRecruiters',recruitee:'Recruitee',personio:'Personio',custom:'Custom',adzuna:'Adzuna',"adzuna-signal":'Adzuna (señal)'};
 
   let list=active.filter(j=>vfxJobsState.showPossible?true:j.matchType!=='possibleMatch');
   if(vfxJobsState.filterWp!=='all')list=list.filter(j=>j.workplaceType===vfxJobsState.filterWp);
   if(vfxJobsState.filterCat!=='all')list=list.filter(j=>(j.companyCategory||'unknown')===vfxJobsState.filterCat);
+  if(vfxJobsState.filterAts!=='all')list=list.filter(j=>j.ats===vfxJobsState.filterAts);
   if(vfxJobsState.search.trim()){
     const q=vfxJobsState.search.trim().toLowerCase();
     list=list.filter(j=>j.company.toLowerCase().includes(q)||j.title.toLowerCase().includes(q));
@@ -2358,6 +2363,11 @@ function renderVfxJobsPublic(){
 
   const wpBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsState.filterWp===val?'active':''}" onclick="setVfxWpFilter('${val}')">${label}</button>`;
   const catBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsState.filterCat===val?'active':''}" onclick="setVfxCatFilter('${val}')">${label}</button>`;
+  const atsOptions=Object.keys(atsCounts).sort((a,b)=>atsCounts[b]-atsCounts[a]);
+  const atsSelectHtml=`<select class="fsel" style="max-width:210px;" onchange="setVfxAtsFilter(this.value)">
+    <option value="all" ${vfxJobsState.filterAts==='all'?'selected':''}>Todos los adapters (${active.length})</option>
+    ${atsOptions.map(k=>`<option value="${k}" ${vfxJobsState.filterAts===k?'selected':''}>${atsLabels[k]||k} (${atsCounts[k]})</option>`).join('')}
+  </select>`;
 
   const rowsHtml=list.length?list.map(j=>`
     <div class="vfxp-job ${j.matchType==='possibleMatch'?'possible':''}">
@@ -2381,6 +2391,7 @@ function renderVfxJobsPublic(){
     </div>
     <div class="vfxp-controls">
       ${catBtn('all','All studios')}${catBtn('aaa','AAA')}${catBtn('indie','Indie')}
+      ${atsSelectHtml}
       <input class="fi vfxp-search" placeholder="Search company or title…" value="${vfxJobsState.search}" oninput="setVfxSearch(this.value)">
       <select class="fsel" style="max-width:190px;" onchange="setVfxSort(this.value)">
         <option value="newest" ${vfxJobsState.sort==='newest'?'selected':''}>Newest detected</option>
@@ -3171,7 +3182,7 @@ Object.assign(window,{
   renderProfileForm, renderReelForm, renderSeoAdmin, renderSizeGrid, renderSkillList, renderThemeGrid, renderToolsAdmin, renderToolsGrid,
   renderVfxCompaniesAdmin, renderVfxJobsPublic, renderVidCoSel, renderVidMgr, renderVisitor, resetData, save, saveCvData,
   savePost, saveProfile, saveReel, saveSeo, saveSettings, selectCo, setCoverBg, setExpCards,
-  setVfxWpFilter, setVfxCatFilter, setVfxSearch, setVfxSort, setVfxShowPossible,
+  setVfxWpFilter, setVfxCatFilter, setVfxAtsFilter, setVfxSearch, setVfxSort, setVfxShowPossible,
   setLang, setReelEnabled, setVfxJobsPublicVisible, showSec, syncMobileBlocks, t, toast, toggleLang,
   togglePostVisible, uid, vfxDedupeCompanies, vfxDetectAts, vfxGuessName, vfxIsNew, vfxNormalizeUrl, vfxTimeAgo
 });

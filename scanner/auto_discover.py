@@ -9,21 +9,26 @@ never a direct link. Manually researching each new studio's real ATS
 Games) works, but doesn't scale to "every studio Adzuna happens to find".
 
 Instead: many companies Adzuna indexes actually SOURCE their listing from
-Greenhouse, Lever, or Ashby in the first place (Adzuna scraped it from
-there) — these three all expose free, public, unauthenticated JSON APIs
-keyed by a "board slug" that is very often just the company's name,
+an ATS with a free, public, unauthenticated JSON/XML API keyed by a
+"board slug" (or subdomain) that is very often just the company's name,
 slugified. So for any company name we don't already have configured, we
-can try a handful of plausible slug variants against these three APIs
-directly. This is safe (not a guess at an arbitrary domain — we're
-probing a known, structured, self-verifying namespace: if the slug is
-wrong, the API just returns 404/empty, so there's no risk of linking
-somewhere wrong or misleading) and needs zero manual research.
+can try a handful of plausible slug variants against SEVERAL such APIs
+directly: Greenhouse, Lever, Ashby, Personio, Workable, SmartRecruiters,
+Recruitee — every ATS this project already has a working adapter for,
+except Teamtailor (no public API to probe blind, HTML-only) and Workday
+(needs a tenant+host+site combo that can't be guessed from a company name
+alone). This is safe (not a guess at an arbitrary domain — we're probing
+known, structured, self-verifying namespaces: if the slug is wrong, the
+API just returns 404/empty, so there's no risk of linking somewhere wrong
+or misleading) and needs zero manual research.
 
 Results are cached (both hits AND misses) in data/ats-discovery-cache.json
 so repeat scans don't re-probe the same company name over and over —
 misses are allowed to be retried after a while (a studio might set up a
-Greenhouse board later), hits are kept indefinitely (companies rarely
-change ATS).
+board later, or genuinely have zero open postings right now — a "miss"
+here can mean either "no board found" or "board found but currently
+empty", both correctly treated as "nothing to link to yet"), hits are
+kept indefinitely (companies rarely change ATS).
 """
 import re
 import json
@@ -135,7 +140,71 @@ def _try_ashby(slug: str):
         return None
 
 
-_PROBERS = [_try_greenhouse, _try_lever, _try_ashby]
+def _try_personio(slug: str):
+    for tld in ("de", "com"):
+        url = f"https://{slug}.jobs.personio.{tld}/xml?language=en"
+        try:
+            r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+            if r.status_code != 200 or not r.text.strip():
+                continue
+            # Cheap check without a full XML parse: a real Personio feed
+            # has at least one <position> element.
+            if "<position" not in r.text:
+                continue
+            return {"ats": "personio", "careersUrl": f"https://{slug}.jobs.personio.{tld}", "sample_count": r.text.count("<position")}
+        except Exception:
+            continue
+    return None
+
+
+def _try_workable(slug: str):
+    url = f"https://apply.workable.com/api/v1/widget/accounts/{slug}?details=true"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+        if r.status_code != 200:
+            return None
+        data = r.json()
+        jobs = data.get("jobs", [])
+        if not jobs:
+            return None
+        return {"ats": "workable", "careersUrl": f"https://apply.workable.com/{slug}", "sample_count": len(jobs)}
+    except Exception:
+        return None
+
+
+def _try_smartrecruiters(slug: str):
+    url = f"https://api.smartrecruiters.com/v1/companies/{slug}/postings"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+        if r.status_code != 200:
+            return None
+        data = r.json()
+        content = data.get("content", [])
+        if not content:
+            return None
+        return {"ats": "smartrecruiters", "careersUrl": f"https://careers.smartrecruiters.com/{slug}", "sample_count": len(content)}
+    except Exception:
+        return None
+
+
+def _try_recruitee(slug: str):
+    url = f"https://{slug}.recruitee.com/api/offers/"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+        if r.status_code != 200:
+            return None
+        data = r.json()
+        offers = data.get("offers", [])
+        if not offers:
+            return None
+        return {"ats": "recruitee", "careersUrl": f"https://{slug}.recruitee.com", "sample_count": len(offers)}
+    except Exception:
+        return None
+
+
+# Ordered cheapest/most-common first, so most real hits resolve early and
+# short-circuit the remaining (slower, less common) probes for that slug.
+_PROBERS = [_try_greenhouse, _try_lever, _try_ashby, _try_personio, _try_workable, _try_smartrecruiters, _try_recruitee]
 
 
 def discover_direct_source(company_name: str, cache: dict | None = None) -> dict | None:

@@ -79,6 +79,21 @@ def dedupe_adzuna_against_direct_matches(adzuna_jobs: list[dict], direct_jobs: d
     return kept
 
 
+def compute_jobs_by_ats(active_jobs: list[dict]) -> dict[str, int]:
+    """Count active jobs per 'ats' value (the same adapter names used
+    throughout: greenhouse, lever, teamtailor, workday, workable, ashby,
+    smartrecruiters, recruitee, personio, custom, adzuna, adzuna-signal).
+    A job auto-upgraded from Adzuna to a direct board (see
+    upgrade_adzuna_jobs_to_direct_links) is counted under its real
+    discovered ats, not "adzuna" — it genuinely links there now.
+    """
+    counts: dict[str, int] = {}
+    for j in active_jobs:
+        key = j.get("ats", "unknown")
+        counts[key] = counts.get(key, 0) + 1
+    return counts
+
+
 def build_signal_job(company: dict, now: str) -> dict:
     name = company["name"]
     return {
@@ -239,12 +254,15 @@ def run():
 
     active_jobs = [j for j in new_jobs.values() if j["status"] == "active"]
 
+    jobs_by_ats = compute_jobs_by_ats(active_jobs)
+
     output = {
         "lastUpdated": now_iso(),
         "companiesScanned": len(companies),
         "companiesSucceeded": succeeded,
         "companiesFailed": failed,
         "totalVfxJobs": len(active_jobs),
+        "jobsByAts": jobs_by_ats,
         "jobs": list(new_jobs.values()),
     }
 
