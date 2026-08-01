@@ -1,5 +1,4 @@
 {
-  
   "enorth staffing limited": {
     "found": false,
     "checkedAt": 1785412206.8956687
@@ -227,5 +226,11 @@
   "ign solutions": {
     "found": false,
     "checkedAt": 1785440667.8579946
+  },
+  "lighthouse games": {
+    "found": true,
+    "ats": "workable",
+    "careersUrl": "https://apply.workable.com/lighthousegames",
+    "checkedAt": 1785575861.8288193
   }
 }
