@@ -1,18 +1,3 @@
-"""
-SmartRecruiters adapter.
-
-Official, documented, public (no-auth) Postings API:
-    GET https://api.smartrecruiters.com/v1/companies/{companyIdentifier}/postings?limit=&offset=
-
-Docs: https://developers.smartrecruiters.com/docs/endpoints
-Paginated via limit/offset, response has "content" (list) and "totalFound".
-
-IMPORTANT CAVEAT (documented by SmartRecruiters, not a bug on our side):
-this public feed is opt-in per SmartRecruiters customer / plan tier. Some
-companies using SmartRecruiters simply don't have it turned on, in which
-case this returns an empty or 404 response — treat as "no data available",
-not as a scanner failure, since there's nothing wrong with our request.
-"""
 import re
 import logging
 import requests
@@ -22,16 +7,26 @@ from ..filters import classify_job, detect_workplace, detect_remote_scope
 logger = logging.getLogger(__name__)
 
 PAGE_SIZE = 100
-MAX_PAGES = 5  # safety cap: up to 500 postings per company per run
+MAX_PAGES = 5
 
 
 def extract_smartrecruiters_company(url: str) -> str | None:
-    m = re.search(r'smartrecruiters\.com/(?:companies/)?([a-zA-Z0-9_-]+)', url or "")
+    # api.smartrecruiters.com/v1/companies/{id}/postings — the raw API URL
+    # form, checked FIRST since it's more specific (otherwise the looser
+    # pattern below would incorrectly grab "v1" as if it were the company
+    # identifier).
+    m = re.search(r'api\.smartrecruiters\.com/v1/companies/([a-zA-Z0-9_-]+)', url or "", re.IGNORECASE)
+    if m:
+        return m.group(1)
+    # jobs.smartrecruiters.com/{id} or careers.smartrecruiters.com/{id} —
+    # the public-facing career-site URL form.
+    m = re.search(r'smartrecruiters\.com/(?:companies/)?([a-zA-Z0-9_-]+)', url or "", re.IGNORECASE)
     return m.group(1) if m else None
 
 
 class SmartRecruitersAdapter(BaseAdapter):
     ats_type = "smartrecruiters"
+    uses_reliable_api = True
 
     def fetch_jobs(self) -> list[dict]:
         company = extract_smartrecruiters_company(self.careers_url)
@@ -67,13 +62,11 @@ class SmartRecruitersAdapter(BaseAdapter):
                 match = classify_job(title, "")
                 if not match:
                     continue
-
                 loc_obj = j.get("location", {}) or {}
                 loc = ", ".join(p for p in (loc_obj.get("city"), loc_obj.get("region"), loc_obj.get("country")) if p)
                 remote_flag = "remote" if loc_obj.get("remote") else ""
                 wt = detect_workplace(title, f"{loc} {remote_flag}", "")
                 rs = detect_remote_scope(title, loc)
-
                 posting_id = j.get("id", title)
                 ref_id = j.get("refNumber", "")
                 jobs.append(self.normalize({
