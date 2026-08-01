@@ -13,6 +13,7 @@ from scanner.adapters.ashby import AshbyAdapter
 from scanner.adapters.smartrecruiters import SmartRecruitersAdapter
 from scanner.adapters.recruitee import RecruiteeAdapter
 from scanner.adapters.personio import PersonioAdapter
+from scanner.adapters.massive_wp import MassiveWPAdapter
 from scanner.companies import detect_ats, dedupe_companies
 from scanner.normalizer import preserve_first_seen, now_iso
 from scanner.company_category import classify_company_category
@@ -41,6 +42,7 @@ ATS_MAP = {
     "workday": WorkdayAdapter,
     "workable": WorkableAdapter,
     "custom": CustomHtmlAdapter,
+    "massive-wp": MassiveWPAdapter,
 }
 
 

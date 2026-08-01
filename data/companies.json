@@ -76,8 +76,8 @@
   },
   {
     "name": "Massive",
-    "careersUrl": "https://www.massive.se/career",
-    "type": "custom"
+    "careersUrl": "https://www.massive.se/career/",
+    "type": "massive-wp"
   },
   {
     "name": "Blizzard",
