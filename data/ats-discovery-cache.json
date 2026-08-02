@@ -232,5 +232,9 @@
     "ats": "workable",
     "careersUrl": "https://apply.workable.com/lighthousegames",
     "checkedAt": 1785575861.8288193
+  },
+  "ubisoft": {
+    "found": false,
+    "checkedAt": 1785699807.3921437
   }
 }
