@@ -925,6 +925,7 @@ https://otraempresa.com/careers"></textarea>
       <div class="adm-sec" id="sec-vfxjobsview">
         <div class="a-title">VFX Jobs — Ver ofertas</div>
         <div class="a-sub">Listado completo de ofertas detectadas, igual que lo vería un visitante en la pestaña pública (esté o no activada). Esto es solo para ti, aquí en el admin.</div>
+        <div class="f-actions" style="margin-bottom:10px;"><button class="ab" onclick="refreshVfxJobsAdminView()">🔄 Actualizar (recargar data/jobs.json)</button></div>
         <div id="vfxJobsAdminView"></div>
       </div>
 
@@ -2286,8 +2287,8 @@ function setVfxSearch(val){vfxJobsState.search=val;renderVfxJobsPublic();}
 function setVfxSort(val){vfxJobsState.sort=val;renderVfxJobsPublic();}
 function setVfxShowPossible(checked){vfxJobsState.showPossible=checked;renderVfxJobsPublic();}
 
-async function ensureVfxJobsLoaded(){
-  if(vfxJobsState.cache)return true;
+async function ensureVfxJobsLoaded(force){
+  if(vfxJobsState.cache&&!force)return true;
   try{
     const r=await fetch('data/jobs.json',{cache:'no-store'});
     if(!r.ok)throw new Error('not found');
@@ -2311,18 +2312,20 @@ async function openVfxJobsPublic(){
   }
   renderVfxJobsPublic();
 }
-async function renderVfxJobsAdminView(){
+async function renderVfxJobsAdminView(force){
   vfxJobsRenderTargetId='vfxJobsAdminView';
   const container=document.getElementById('vfxJobsAdminView');
   if(!container)return;
   container.innerHTML='<div class="vfxp-state">Cargando ofertas…</div>';
-  const ok=await ensureVfxJobsLoaded();
+  const ok=await ensureVfxJobsLoaded(force);
   if(!ok){
     container.innerHTML='<div class="vfxp-state">Todavía no hay datos de ofertas. El scanner automático (GitHub Action) generará <code>data/jobs.json</code> en su próxima ejecución.</div>';
     return;
   }
   renderVfxJobsPublic();
+  if(force)toast('Datos recargados desde data/jobs.json');
 }
+function refreshVfxJobsAdminView(){renderVfxJobsAdminView(true);}
 function vfxTimeAgo(iso){
   if(!iso)return'unknown';
   const diffMs=Date.now()-new Date(iso).getTime();
@@ -3177,7 +3180,7 @@ Object.assign(window,{
   openAddVid, openAdmin, openDevlog, openEditCo, openEditEdu, openEditLink, openEditPost, openEditProject,
   openEditSkill, openEditTool, openEditVfxCompany, openEditVid, openGate, openModal, openVfxDiagnostics, openVfxJobsPublic,
   playClip, refreshCover, renderAdminCos, renderCurrentCompanyInfo, renderCvForm, renderEduList, renderExpList,
-  renderVfxJobsAdminView,
+  renderVfxJobsAdminView, refreshVfxJobsAdminView,
   renderHdrLinks, renderLangList, renderLayGrid, renderLinksAdmin, renderMobLinks, renderMobSidebar, renderPostsAdmin, renderProfile,
   renderProfileForm, renderReelForm, renderSeoAdmin, renderSizeGrid, renderSkillList, renderThemeGrid, renderToolsAdmin, renderToolsGrid,
   renderVfxCompaniesAdmin, renderVfxJobsPublic, renderVidCoSel, renderVidMgr, renderVisitor, resetData, save, saveCvData,

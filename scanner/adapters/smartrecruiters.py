@@ -63,16 +63,36 @@ class SmartRecruitersAdapter(BaseAdapter):
                 if not match:
                     continue
                 loc_obj = j.get("location", {}) or {}
-                loc = ", ".join(p for p in (loc_obj.get("city"), loc_obj.get("region"), loc_obj.get("country")) if p)
+                # "fullLocation" is pre-formatted by SmartRecruiters itself
+                # ("Warsaw, Masovian Voivodeship, Poland") — prefer it over
+                # manually joining city/region/country, falling back to
+                # the manual join only if it's missing.
+                loc = loc_obj.get("fullLocation") or ", ".join(
+                    p for p in (loc_obj.get("city"), loc_obj.get("region"), loc_obj.get("country")) if p
+                )
                 remote_flag = "remote" if loc_obj.get("remote") else ""
                 wt = detect_workplace(title, f"{loc} {remote_flag}", "")
                 rs = detect_remote_scope(title, loc)
                 posting_id = j.get("id", title)
-                ref_id = j.get("refNumber", "")
+                # IMPORTANT: "postingUrl" is the real public job-page link.
+                # "ref" (used here previously) is NOT a page — per
+                # SmartRecruiters' own docs it's an internal API URL that
+                # returns more JSON, not a webpage a candidate can open.
+                # Confirmed against a real posting's raw API response.
+                #
+                # The LIST endpoint (used here) can omit some fields
+                # present on the single-posting DETAIL endpoint per
+                # SmartRecruiters' own docs, so postingUrl isn't
+                # guaranteed present — fall back to reconstructing the
+                # real URL pattern confirmed from a live posting:
+                # https://jobs.smartrecruiters.com/{company}/{id}-{title-slug}
+                title_slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+                fallback_url = f"https://jobs.smartrecruiters.com/{company}/{posting_id}-{title_slug}" if title_slug else f"https://jobs.smartrecruiters.com/{company}/{posting_id}"
+                url = j.get("postingUrl") or j.get("applyUrl") or fallback_url
                 jobs.append(self.normalize({
                     "id": f"sr-{re.sub(r'[^a-z0-9]', '-', str(posting_id).lower())[-40:]}",
                     "title": title,
-                    "url": j.get("ref", "") or f"https://jobs.smartrecruiters.com/{company}/{ref_id or posting_id}",
+                    "url": url,
                     "location": loc,
                     "workplaceType": wt,
                     "remoteScope": rs,
