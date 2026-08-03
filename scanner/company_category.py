@@ -14,7 +14,7 @@ KNOWN_AAA_ALIASES = [
     "bend studio", "firesprite", "nixxes", "housemarque",
     "nintendo", "square enix", "eidos montreal", "crystal dynamics",
     "io interactive", "capcom", "konami", "bandai namco", "sega",
-    "atlus", "fromsoftware", "from software", "cd projekt",
+    "atlus", "fromsoftware", "from software", "cd projekt", "cd project",
     "warner bros games", "warner bros. games", "netherrealm",
     "rocksteady", "monolith", "riot games", "tencent", "netease",
     "epic games", "valve", "codemasters", "criterion",
