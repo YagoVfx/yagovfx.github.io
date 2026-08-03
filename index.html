@@ -2180,7 +2180,7 @@ function renderVfxCompaniesAdmin(){
   if(!D.vfxCompanies.length){list.innerHTML='<div class="vfx-empty">Sin empresas todavía. Importa URLs o añade una manualmente.</div>';return;}
   D.vfxCompanies.forEach(c=>{
     const row=document.createElement('div');row.className='vfx-co-row';
-    row.innerHTML=`<div class="vfx-co-main"><div class="vfx-co-name">${c.name}<span class="vfx-ats-tag">${c.type}</span>${c.category?`<span class="vfx-ats-tag" style="background:var(--accent);color:#fff;">${c.category==='aaa'?'AAA':'Indie'}</span>`:''}</div><div class="vfx-co-url">${c.careersUrl}</div></div><div class="vfx-co-btns"><button class="ab" onclick="openEditVfxCompany('${c.id}')">Edit</button><button class="ab danger" onclick="deleteVfxCompany('${c.id}')">Del</button></div>`;
+    row.innerHTML=`<div class="vfx-co-main"><div class="vfx-co-name">${c.name}<span class="vfx-ats-tag">${c.type}</span>${c.category?`<span class="vfx-ats-tag" style="background:var(--accent);color:#fff;">${c.category==='aaa'?'AAA':'Indie'}</span>`:''}</div><div class="vfx-co-url">${c.careersUrl}</div></div><div class="vfx-co-btns"><button class="ab" onclick="syncVfxCompanyFromLive('${c.id}')" title="Traer los datos actuales de esta empresa desde data/companies.json (por si la editaste directamente en GitHub)">🔄 Sync</button><button class="ab" onclick="openEditVfxCompany('${c.id}')">Edit</button><button class="ab danger" onclick="deleteVfxCompany('${c.id}')">Del</button></div>`;
     list.appendChild(row);
   });
 }
@@ -2222,6 +2222,28 @@ async function loadLiveCompanies(){
     save();renderVfxCompaniesAdmin();toast('companies.json cargado (tus ediciones locales no se han sobrescrito)');
   }catch(e){toast('No se pudo leer data/companies.json (¿aún no existe?)');}
 }
+async function syncVfxCompanyFromLive(id){
+  // The opposite direction of loadLiveCompanies' safety rule, deliberately:
+  // this pulls ONE specific company's data FROM the live companies.json,
+  // overwriting the local entry — for when the file was edited directly
+  // in GitHub (bypassing this admin panel entirely), so the browser's
+  // local state never found out about that change on its own.
+  const local=D.vfxCompanies.find(c=>c.id===id);
+  if(!local){toast('Empresa no encontrada');return;}
+  try{
+    const r=await fetch('data/companies.json',{cache:'no-store'});
+    if(!r.ok)throw new Error('No encontrado');
+    const live=await r.json();
+    const match=live.find(c=>vfxDedupeKey(c.careersUrl)===vfxDedupeKey(local.careersUrl)||_normalizeNameForSync(c.name)===_normalizeNameForSync(local.name));
+    if(!match){toast('No se encontró esta empresa en data/companies.json en vivo');return;}
+    local.careersUrl=match.careersUrl;
+    local.type=match.type||vfxDetectAts(match.careersUrl);
+    if(match.officialUrlTemplate)local.officialUrlTemplate=match.officialUrlTemplate;else delete local.officialUrlTemplate;
+    if(match.category)local.category=match.category;else delete local.category;
+    save();renderVfxCompaniesAdmin();toast(`"${local.name}" actualizada desde companies.json`);
+  }catch(e){toast('No se pudo leer data/companies.json');}
+}
+function _normalizeNameForSync(name){return(name||'').trim().toLowerCase();}
 function exportVfxCompanies(){
   const out=D.vfxCompanies.map(c=>{
     const o={name:c.name,careersUrl:c.careersUrl,type:c.type};
@@ -3186,7 +3208,7 @@ Object.assign(window,{
   renderVfxCompaniesAdmin, renderVfxJobsPublic, renderVidCoSel, renderVidMgr, renderVisitor, resetData, save, saveCvData,
   savePost, saveProfile, saveReel, saveSeo, saveSettings, selectCo, setCoverBg, setExpCards,
   setVfxWpFilter, setVfxCatFilter, setVfxAtsFilter, setVfxSearch, setVfxSort, setVfxShowPossible,
-  setLang, setReelEnabled, setVfxJobsPublicVisible, showSec, syncMobileBlocks, t, toast, toggleLang,
+  setLang, setReelEnabled, setVfxJobsPublicVisible, showSec, syncMobileBlocks, syncVfxCompanyFromLive, t, toast, toggleLang,
   togglePostVisible, uid, vfxDedupeCompanies, vfxDetectAts, vfxGuessName, vfxIsNew, vfxNormalizeUrl, vfxTimeAgo
 });
 
