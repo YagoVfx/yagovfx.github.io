@@ -236,5 +236,11 @@
   "ubisoft": {
     "found": false,
     "checkedAt": 1785699807.3921437
+  },
+  "deck 13": {
+    "found": true,
+    "ats": "personio",
+    "careersUrl": "https://deck13.jobs.personio.de",
+    "checkedAt": 1785728639.5645359
   }
 }
