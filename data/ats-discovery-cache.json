@@ -242,5 +242,11 @@
     "ats": "personio",
     "careersUrl": "https://deck13.jobs.personio.de",
     "checkedAt": 1785728639.5645359
+  },
+  "trove brands": {
+    "found": true,
+    "ats": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/trovebrands",
+    "checkedAt": 1786026640.3090367
   }
 }
