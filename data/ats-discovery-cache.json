@@ -248,5 +248,11 @@
     "ats": "greenhouse",
     "careersUrl": "https://job-boards.greenhouse.io/trovebrands",
     "checkedAt": 1786026640.3090367
+  },
+  "blackbird interactive": {
+    "found": true,
+    "ats": "lever",
+    "careersUrl": "https://jobs.lever.co/blackbirdinteractive",
+    "checkedAt": 1786129662.4043229
   }
 }
