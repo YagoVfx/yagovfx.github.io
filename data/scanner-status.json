@@ -5,15 +5,15 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-08-11T07:19:36Z"
+    "lastAttempt": "2026-08-11T13:23:24Z"
   },
   {
     "company": "CD Project",
     "status": "ok",
     "jobsFound": 4,
-    "totalPostingsSeen": 43,
+    "totalPostingsSeen": 44,
     "needsReview": false,
-    "lastAttempt": "2026-08-11T07:19:36Z"
+    "lastAttempt": "2026-08-11T13:23:25Z"
   },
   {
     "company": "CI Games",
@@ -21,13 +21,13 @@
     "jobsFound": 0,
     "totalPostingsSeen": 2,
     "needsReview": false,
-    "lastAttempt": "2026-08-11T07:19:37Z"
+    "lastAttempt": "2026-08-11T13:23:25Z"
   },
   {
     "company": "Respawn",
     "status": "error",
     "error": "No response from https://www.respawn.com/careers-listings?group=ART",
-    "lastAttempt": "2026-08-11T07:19:42Z"
+    "lastAttempt": "2026-08-11T13:23:30Z"
   },
   {
     "company": "Epic Games",
@@ -35,7 +35,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-08-11T07:19:43Z"
+    "lastAttempt": "2026-08-11T13:23:31Z"
   },
   {
     "company": "Frontier",
@@ -43,7 +43,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 1,
     "needsReview": true,
-    "lastAttempt": "2026-08-11T07:19:43Z"
+    "lastAttempt": "2026-08-11T13:23:31Z"
   },
   {
     "company": "Embark Studios",
@@ -51,7 +51,7 @@
     "jobsFound": 1,
     "totalPostingsSeen": 9,
     "needsReview": false,
-    "lastAttempt": "2026-08-11T07:19:43Z"
+    "lastAttempt": "2026-08-11T13:23:31Z"
   },
   {
     "company": "Jagex",
@@ -59,7 +59,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-08-11T07:19:44Z"
+    "lastAttempt": "2026-08-11T13:23:31Z"
   },
   {
     "company": "PTW",
@@ -67,7 +67,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-08-11T07:19:44Z"
+    "lastAttempt": "2026-08-11T13:23:31Z"
   },
   {
     "company": "Guerrilla",
@@ -75,7 +75,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 1,
     "needsReview": true,
-    "lastAttempt": "2026-08-11T07:19:44Z"
+    "lastAttempt": "2026-08-11T13:23:49Z"
   },
   {
     "company": "Rebellion",
@@ -83,7 +83,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-08-11T07:19:45Z"
+    "lastAttempt": "2026-08-11T13:23:49Z"
   },
   {
     "company": "Room8",
@@ -91,7 +91,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-08-11T07:19:45Z"
+    "lastAttempt": "2026-08-11T13:23:50Z"
   },
   {
     "company": "EA",
@@ -99,15 +99,15 @@
     "jobsFound": 0,
     "totalPostingsSeen": 30,
     "needsReview": true,
-    "lastAttempt": "2026-08-11T07:19:47Z"
+    "lastAttempt": "2026-08-11T13:23:51Z"
   },
   {
     "company": "Ubisoft",
     "status": "ok",
     "jobsFound": 6,
-    "totalPostingsSeen": 272,
+    "totalPostingsSeen": 271,
     "needsReview": false,
-    "lastAttempt": "2026-08-11T07:19:49Z"
+    "lastAttempt": "2026-08-11T13:23:53Z"
   },
   {
     "company": "Sumo Digital",
@@ -115,7 +115,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 0,
     "needsReview": true,
-    "lastAttempt": "2026-08-11T07:19:50Z"
+    "lastAttempt": "2026-08-11T13:23:54Z"
   },
   {
     "company": "Massive",
@@ -123,25 +123,25 @@
     "jobsFound": 1,
     "totalPostingsSeen": 9,
     "needsReview": false,
-    "lastAttempt": "2026-08-11T07:19:51Z"
+    "lastAttempt": "2026-08-11T13:23:55Z"
   },
   {
     "company": "Blizzard",
     "status": "error",
-    "error": "Workday request failed for https://activision.wd1.myworkdayjobs.com/wday/cxs/activision/Blizzard_External_Careers/jobs: 422 Client Error: Unprocessable Entity for url: https://activision.wd1.myworkdayjobs.com/wday/cxs/activision/Blizzard_External_Careers/jobs | body: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"77885FMSOBYJS0\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
-    "lastAttempt": "2026-08-11T07:19:51Z"
+    "error": "Workday request failed for https://activision.wd1.myworkdayjobs.com/wday/cxs/activision/Blizzard_External_Careers/jobs: 422 Client Error: Unprocessable Entity for url: https://activision.wd1.myworkdayjobs.com/wday/cxs/activision/Blizzard_External_Careers/jobs | body: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"8FCD58MSOOYQUN\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
+    "lastAttempt": "2026-08-11T13:23:55Z"
   },
   {
     "company": "2K",
     "status": "error",
     "error": "No response from https://2k.com/careers",
-    "lastAttempt": "2026-08-11T07:19:55Z"
+    "lastAttempt": "2026-08-11T13:23:59Z"
   },
   {
     "company": "Activision",
     "status": "error",
-    "error": "Workday request failed for https://activision.wd1.myworkdayjobs.com/wday/cxs/activision/External/jobs: 422 Client Error: Unprocessable Entity for url: https://activision.wd1.myworkdayjobs.com/wday/cxs/activision/External/jobs | body: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"29813EMSOBYNA0\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
-    "lastAttempt": "2026-08-11T07:19:56Z"
+    "error": "Workday request failed for https://activision.wd1.myworkdayjobs.com/wday/cxs/activision/External/jobs: 422 Client Error: Unprocessable Entity for url: https://activision.wd1.myworkdayjobs.com/wday/cxs/activision/External/jobs | body: {\"errorCode\":\"HTTP_422\",\"errorCaseId\":\"F1B6ACMSOOYU5H\",\"httpStatus\":422,\"message\":\"\",\"messageParams\":{}}",
+    "lastAttempt": "2026-08-11T13:23:59Z"
   },
   {
     "company": "Bungie",
@@ -149,7 +149,7 @@
     "jobsFound": 0,
     "totalPostingsSeen": 2,
     "needsReview": false,
-    "lastAttempt": "2026-08-11T07:19:56Z"
+    "lastAttempt": "2026-08-11T13:24:00Z"
   },
   {
     "company": "EidosMontreal",
@@ -157,15 +157,15 @@
     "jobsFound": 0,
     "totalPostingsSeen": 3,
     "needsReview": true,
-    "lastAttempt": "2026-08-11T07:19:56Z"
+    "lastAttempt": "2026-08-11T13:24:00Z"
   },
   {
     "company": "Roblox",
     "status": "ok",
     "jobsFound": 0,
-    "totalPostingsSeen": 224,
+    "totalPostingsSeen": 223,
     "needsReview": false,
-    "lastAttempt": "2026-08-11T07:19:57Z"
+    "lastAttempt": "2026-08-11T13:24:01Z"
   },
   {
     "company": "LightHouseGames",
@@ -173,15 +173,15 @@
     "jobsFound": 0,
     "totalPostingsSeen": 20,
     "needsReview": false,
-    "lastAttempt": "2026-08-11T07:19:57Z"
+    "lastAttempt": "2026-08-11T13:24:01Z"
   },
   {
     "source": "Adzuna",
     "company": "(Adzuna — broad keyword search, not one company)",
     "status": "ok",
     "countriesQueried": 8,
-    "totalPostingsSeen": 160,
-    "jobsFound": 83,
+    "totalPostingsSeen": 159,
+    "jobsFound": 82,
     "signalOnlyJobsAdded": 4,
     "autoUpgradedToDirectLink": 18
   }
