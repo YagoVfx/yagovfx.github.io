@@ -1,15 +1,15 @@
 {
   "enorth staffing limited": {
     "found": false,
-    "checkedAt": 1785412206.8956687
+    "checkedAt": 1786628175.1952684
   },
   "unknown": {
     "found": false,
-    "checkedAt": 1785412209.0877528
+    "checkedAt": 1786628213.1434662
   },
   "cloud imperium games": {
     "found": false,
-    "checkedAt": 1785412210.0725396
+    "checkedAt": 1786628195.4608917
   },
   "studiob": {
     "found": false,
@@ -17,39 +17,41 @@
   },
   "cloud imperium games limited": {
     "found": false,
-    "checkedAt": 1785412213.897776
+    "checkedAt": 1786628187.2122338
   },
   "1010 games": {
     "found": false,
-    "checkedAt": 1785412215.2503695
+    "checkedAt": 1786628203.6010847
   },
   "gram games": {
     "found": false,
-    "checkedAt": 1785412216.8189309
+    "checkedAt": 1786628229.092089
   },
   "sega europe": {
     "found": false,
-    "checkedAt": 1785412218.270847
+    "checkedAt": 1786628218.6081471
   },
   "homa": {
     "found": false,
-    "checkedAt": 1785412220.2656157
+    "checkedAt": 1786628378.638272
   },
   "side": {
     "found": false,
-    "checkedAt": 1785412221.2883036
+    "checkedAt": 1786628242.124393
   },
   "cinesite-london": {
     "found": false,
     "checkedAt": 1785412222.3277977
   },
   "nextgen skills academy": {
-    "found": false,
-    "checkedAt": 1785412223.2246358
+    "found": true,
+    "ats": "smartrecruiters",
+    "careersUrl": "https://careers.smartrecruiters.com/nextgen",
+    "checkedAt": 1786628251.7364893
   },
   "insight global": {
     "found": false,
-    "checkedAt": 1785412225.1779263
+    "checkedAt": 1786628262.2037876
   },
   "liquid development, llc": {
     "found": true,
@@ -63,23 +65,25 @@
   },
   "local seo tulsa": {
     "found": false,
-    "checkedAt": 1785412229.7929392
+    "checkedAt": 1786628276.5354586
   },
   "ht visions": {
     "found": false,
-    "checkedAt": 1785412231.858974
+    "checkedAt": 1786628287.0775084
   },
   "lakshya digital": {
     "found": false,
-    "checkedAt": 1785412233.6308503
+    "checkedAt": 1786628297.63026
   },
   "komodo co., ltd.": {
     "found": false,
-    "checkedAt": 1785412235.583563
+    "checkedAt": 1786628308.4145465
   },
   "ember lab": {
-    "found": false,
-    "checkedAt": 1785412240.3065557
+    "found": true,
+    "ats": "recruitee",
+    "careersUrl": "https://ember.recruitee.com",
+    "checkedAt": 1786628318.6754115
   },
   "turtle rock studios": {
     "found": true,
@@ -94,8 +98,10 @@
     "checkedAt": 1785412243.467829
   },
   "keywords studios": {
-    "found": false,
-    "checkedAt": 1785412243.5709944
+    "found": true,
+    "ats": "smartrecruiters",
+    "careersUrl": "https://careers.smartrecruiters.com/keywordsstudios",
+    "checkedAt": 1786628329.3591857
   },
   "liquid development": {
     "found": true,
@@ -105,7 +111,7 @@
   },
   "sideshow": {
     "found": false,
-    "checkedAt": 1785412247.3360004
+    "checkedAt": 1786628331.6308143
   },
   "mobilityware": {
     "found": true,
@@ -115,19 +121,23 @@
   },
   "renderer studios": {
     "found": false,
-    "checkedAt": 1785412248.5030763
+    "checkedAt": 1786628336.6499166
   },
   "weltenbauer. software entwicklung gmbh": {
-    "found": false,
-    "checkedAt": 1785412250.381178
+    "found": true,
+    "ats": "personio",
+    "careersUrl": "https://weltenbauer-software-entwicklung-gmbh.jobs.personio.de",
+    "checkedAt": 1786628346.8455408
   },
   "weltenbauer. karriere": {
     "found": false,
-    "checkedAt": 1785412252.2625747
+    "checkedAt": 1786628351.594768
   },
   "cactus punch": {
-    "found": false,
-    "checkedAt": 1785412254.242762
+    "found": true,
+    "ats": "personio",
+    "careersUrl": "https://cactus.jobs.personio.de",
+    "checkedAt": 1786628361.8247814
   },
   "iris games": {
     "found": true,
@@ -137,7 +147,7 @@
   },
   "sirene games": {
     "found": false,
-    "checkedAt": 1785412257.931992
+    "checkedAt": 1786628370.6719265
   },
   "voodoo": {
     "found": true,
@@ -159,27 +169,27 @@
   },
   "shiro games": {
     "found": false,
-    "checkedAt": 1785412263.406603
+    "checkedAt": 1786628383.5093608
   },
   "capijobnew": {
     "found": false,
-    "checkedAt": 1785412264.7784774
+    "checkedAt": 1786628392.4508018
   },
   "asobo studio": {
     "found": false,
-    "checkedAt": 1785412265.6901703
+    "checkedAt": 1786628398.5131128
   },
   "jungler": {
     "found": false,
-    "checkedAt": 1785412267.7779853
+    "checkedAt": 1786628413.8210452
   },
   "reflector entertainment": {
     "found": false,
-    "checkedAt": 1785412268.7103083
+    "checkedAt": 1786628419.1015968
   },
   "arcanaut studios": {
     "found": false,
-    "checkedAt": 1785412270.5594285
+    "checkedAt": 1786628430.342102
   },
   "kabam games inc. job on t-net": {
     "found": true,
@@ -189,7 +199,7 @@
   },
   "warner bros. discovery": {
     "found": false,
-    "checkedAt": 1785412274.0115316
+    "checkedAt": 1786628441.0496805
   },
   "highdive": {
     "found": true,
@@ -199,19 +209,23 @@
   },
   "behaviour interactive": {
     "found": false,
-    "checkedAt": 1785412275.9931479
+    "checkedAt": 1786628451.2127423
   },
   "company3": {
-    "found": false,
-    "checkedAt": 1785412278.097844
+    "found": true,
+    "ats": "recruitee",
+    "careersUrl": "https://company3.recruitee.com",
+    "checkedAt": 1786628465.329238
   },
   "rodeo fx": {
     "found": false,
     "checkedAt": 1785412279.7213557
   },
   "saber interactive spain": {
-    "found": false,
-    "checkedAt": 1785412281.7230492
+    "found": true,
+    "ats": "personio",
+    "careersUrl": "https://saber-interactive-spain.jobs.personio.de",
+    "checkedAt": 1786628468.1058714
   },
   "scopely": {
     "found": true,
@@ -220,8 +234,10 @@
     "checkedAt": 1785412283.5343654
   },
   "magic media": {
-    "found": false,
-    "checkedAt": 1785412283.6984155
+    "found": true,
+    "ats": "workable",
+    "careersUrl": "https://apply.workable.com/magic-media",
+    "checkedAt": 1786628471.7421727
   },
   "ign solutions": {
     "found": false,
