@@ -274,5 +274,11 @@
   "digital legends entertainment": {
     "found": false,
     "checkedAt": 1786194321.629579
+  },
+  "aesir interactive": {
+    "found": true,
+    "ats": "personio",
+    "careersUrl": "https://aesir.jobs.personio.de",
+    "checkedAt": 1786734290.4756665
   }
 }
