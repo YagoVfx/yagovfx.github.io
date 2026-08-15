@@ -660,13 +660,6 @@ option{background:var(--bg2);}
 .proj-clip-sub{font-family:var(--mono);font-size:8px;color:var(--sub);}
 .proj-clip-actions{display:flex;gap:4px;flex-shrink:0;}
 
-/* ══ SKIN: LIBRARY — cascarón (Fase 1) ══ */
-#librarySkinRoot{position:fixed;inset:0;background:#14100c;color:#e8dcc8;display:flex;align-items:center;justify-content:center;z-index:10;}
-.lib-shell-inner{max-width:420px;text-align:center;padding:32px;}
-.lib-shell-icon{font-size:48px;margin-bottom:16px;}
-.lib-shell-title{font-size:20px;font-weight:800;margin-bottom:10px;font-family:Georgia,serif;}
-.lib-shell-sub{font-size:13px;color:#a89a82;line-height:1.6;margin-bottom:24px;}
-
 </style>
 </head>
 <body>
@@ -754,7 +747,6 @@ option{background:var(--bg2);}
       <div class="adm-nav-item" onclick="showSec('layout')" data-s="layout"><span class="adm-icon">📐</span>Layout</div>
       <div class="adm-nav-item" onclick="showSec('themes')" data-s="themes"><span class="adm-icon">🎨</span>Colors & Font</div>
       <div class="adm-nav-item" onclick="showSec('anim')" data-s="anim"><span class="adm-icon">⚡</span>Animations</div>
-      <div class="adm-nav-item" onclick="showSec('skin')" data-s="skin"><span class="adm-icon">📚</span>Skin</div>
       <div class="adm-nav-sec">System</div>
       <div class="adm-nav-item" onclick="showSec('posts')" data-s="posts"><span class="adm-icon">✍️</span>Devlog Posts</div>
       <div class="adm-nav-item" onclick="showSec('vfxjobs')" data-s="vfxjobs"><span class="adm-icon">🕹️</span>VFX Jobs — Config</div>
@@ -1047,24 +1039,6 @@ https://otraempresa.com/careers"></textarea>
         </div>
       </div>
 
-      <!-- SKIN (Fase 1) -->
-      <div class="adm-sec" id="sec-skin">
-        <div class="a-title">Skin</div>
-        <div class="a-sub">Elige cómo se presenta tu portfolio a los visitantes. El contenido es exactamente el mismo en ambas — solo cambia la forma.</div>
-        <div class="fb-notice"><strong>⚠ En construcción:</strong> "Library" es una skin nueva en desarrollo (interfaz 3D diegética, un despacho de artista técnico donde los libros son el menú). Por ahora solo muestra una pantalla de "próximamente" — el contenido real llegará en fases futuras. "Classic" es tu web actual, sin cambios.</div>
-        <div class="a-form" style="max-width:480px;">
-          <div class="frow">
-            <div class="fg">
-              <label class="fl">Skin activa</label>
-              <select class="fsel" id="skinSel" onchange="setSkin(this.value)">
-                <option value="classic">Classic (por defecto)</option>
-                <option value="library">Library (en construcción)</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- LINKS -->
       <div class="adm-sec" id="sec-links">
         <div class="a-title">Links</div>
@@ -1215,20 +1189,6 @@ https://otraempresa.com/careers"></textarea>
   </div>
 </div>
 
-<!-- ══ SKIN: LIBRARY (cascarón, Fase 1) ══
-     Hermano de #app, nunca dentro. Classic (#app) no se toca ni se lee
-     desde aquí — applySkinVisibility() decide cuál de los dos mostrar.
-     Mientras esto sea solo un placeholder, el riesgo de romper Classic
-     es cero: ningún render*() de Classic sabe que esto existe. -->
-<div id="librarySkinRoot" style="display:none;">
-  <div class="lib-shell-inner">
-    <div class="lib-shell-icon">📚</div>
-    <div class="lib-shell-title">El estudio está en obras</div>
-    <div class="lib-shell-sub">Estamos construyendo una forma nueva de recorrer este portfolio. Vuelve pronto.</div>
-    <button class="ab primary" onclick="setSkin('classic')">← Volver a la versión clásica</button>
-  </div>
-</div>
-
 <script type="module">
 
 /* ══ FIREBASE ══ */
@@ -1296,7 +1256,6 @@ const COLOR_THEMES=[
 const DEFAULTS={
   password:'admin123',lang:'en',layout:'la',coverBg:true,playerSize:'medium',
   font:'Sora',fontSize:'1',colorTheme:'violet',toolSize:'medium',lightMode:false,expCards:true,
-  skin:'classic',
   anim:{speed:'0.35s',ease:'cubic-bezier(0.4,0,0.2,1)'},
   reel:{enabled:true,title:'Demo Reel 2025',year:'2025',
     video:'https://player.vimeo.com/video/973385372?autoplay=1&muted=1&playsinline=1',
@@ -1365,7 +1324,6 @@ if(D.reel.enabled===undefined)D.reel.enabled=true;
 if(!D.customPages)D.customPages=[];
 if(!D.vfxCompanies)D.vfxCompanies=[];
 if(D.vfxJobsPublic===undefined)D.vfxJobsPublic=false;
-if(!D.skin)D.skin='classic';
 D.companies.forEach(co=>{if(!co.projects)co.projects=[];if(!co.desc_es)co.desc_es='';});
 if(!D.posts)D.posts=[];
 if(!D.premiumUrl)D.premiumUrl='';
@@ -1607,28 +1565,6 @@ function autoplayOnLoad(){
 
 /* ══ VISITOR ══ */
 let activeCompany=null;
-/* ══ SKIN MANAGER (Fase 1) ══
-   Capa fina que decide qué skin se muestra. NO toca ningún render*() de
-   Classic — solo oculta/muestra contenedores enteros (#app vs
-   #librarySkinRoot). Classic sigue funcionando exactamente igual esté
-   activo o no; cuando está oculto simplemente no se ve, pero su propio
-   código de renderizado no sabe que existe una skin alternativa. */
-function getActiveSkin(){return D.skin||'classic';}
-function setSkin(id){
-  D.skin=id;
-  save();
-  applySkinVisibility();
-  toast(id==='library'?'Skin: Library (en construcción)':'Skin: Classic');
-}
-function applySkinVisibility(){
-  const app=document.getElementById('app');
-  const lib=document.getElementById('librarySkinRoot');
-  if(!app||!lib)return;
-  const isLibrary=getActiveSkin()==='library';
-  app.style.display=isLibrary?'none':'';
-  lib.style.display=isLibrary?'flex':'none';
-}
-
 function renderVisitor(){
   applyColorTheme(D.colorTheme||'violet');
   applyFont(D.font||'Sora');
@@ -2514,7 +2450,6 @@ function showSec(name){
   if(name==='themes')renderThemeGrid();
   if(name==='videos'){renderVidCoSel();renderVidMgr();renderSizeGrid();}
   if(name==='vfxjobs')renderVfxCompaniesAdmin();
-  if(name==='skin'){const sk=document.getElementById('skinSel');if(sk)sk.value=getActiveSkin();}
   if(name==='vfxjobsview')renderVfxJobsAdminView();
   if(name==='tools'){renderToolsAdmin();['small','medium','large'].forEach(s=>{const b=document.getElementById('tsz-'+s);if(b){b.style.borderColor=s===D.toolSize?'var(--accent)':'';b.style.color=s===D.toolSize?'var(--accent)':'';}});}
   if(name==='links')renderLinksAdmin();
@@ -3268,12 +3203,11 @@ Object.assign(window,{
   _renderBlockEditor, _renderCats, _renderGrid, _renderPostEditor, _rmBlock, _rmIt, _setAllVisible, _setCat,
   _showPostList, _toggleCat, _uid, _upd, _updIt, addDragCard, addVfxCompanyManual, applyAnim,
   applyAnimEase, applyAnimSpd, applyColorTheme, applyFont, applyFontSize, applyLang, applyLayout, applyLightMode,
-  applyPlayerSize, applySEO, applySkinVisibility, applyToolSize, applyVfxJobsVisibility, autoplayOnLoad, buildClips, buildExpCardHtml, buildExpRowHtml,
+  applyPlayerSize, applySEO, applyToolSize, applyVfxJobsVisibility, autoplayOnLoad, buildClips, buildExpCardHtml, buildExpRowHtml,
   checkPw, clearReel, closeAdmin, closeModal, closeVfxJobsPublic, confirmAddCo, confirmAddEdu, confirmAddLang,
   confirmAddLink, confirmAddProject, confirmAddSkill, confirmAddTool, confirmAddVid, confirmEditCo, confirmEditEdu, confirmEditLink,
   confirmEditProject, confirmEditSkill, confirmEditTool, confirmEditVfxCompany, confirmEditVid, deleteCo, deleteEdu, deleteLang,
   deleteLink, deletePost, deleteProject, deleteSkill, deleteTool, deleteVfxCompany, deleteVid, detectLang,
-  getActiveSkin, setSkin,
   exportData, exportVfxCompanies, fetchVideoMeta, generateCvPdf, gv, importPosts, importVfxBulk, loadLiveCompanies,
   openAddCo, openAddEdu, openAddLang, openAddLink, openAddPost, openAddProject, openAddSkill, openAddTool,
   openAddVid, openAdmin, openDevlog, openEditCo, openEditEdu, openEditLink, openEditPost, openEditProject,
@@ -3313,7 +3247,7 @@ Object.assign(window,{
     if(!D.profile.s3l_en)D.profile.s3l_en=D.profile.s3l;if(!D.profile.s3l_es)D.profile.s3l_es='';
   }
   ld.remove();
-  detectLang();renderVisitor();applySkinVisibility();applySEO();setTimeout(autoplayOnLoad,350);
+  detectLang();renderVisitor();applySEO();setTimeout(autoplayOnLoad,350);
   document.getElementById('devlogBtn').addEventListener('click',openDevlog);
   document.getElementById('newPostBtn').addEventListener('click',openAddPost);
   document.getElementById('postBackBtn').addEventListener('click',()=>{
