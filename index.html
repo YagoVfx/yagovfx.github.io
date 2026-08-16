@@ -9,6 +9,12 @@
 <meta name="author" id="seo-author" content="Yago Fernández">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#0a0b0f">
+<!-- Three.js solo para la skin Library — el importmap no descarga nada
+     por sí solo, solo se resuelve cuando algún script hace
+     import('three'), y eso solo ocurre si el visitante activa Library. -->
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" id="og-title" content="Yago Fernández — Senior Real-Time VFX Artist">
@@ -1220,13 +1226,21 @@ https://otraempresa.com/careers"></textarea>
      desde aquí — applySkinVisibility() decide cuál de los dos mostrar.
      Mientras esto sea solo un placeholder, el riesgo de romper Classic
      es cero: ningún render*() de Classic sabe que esto existe. -->
+<!-- ══ SKIN: LIBRARY (Fase 2) ══
+     Hermano de #app, nunca dentro. Classic (#app) no se toca ni se lee
+     desde aquí — applySkinVisibility() decide cuál de los dos mostrar.
+     El botón "Volver" está SIEMPRE visible, encima de cualquier estado
+     (cargando / error / escena), porque es la puerta de salida de
+     accesibilidad definida en la arquitectura: nunca debe depender de
+     que la escena 3D haya cargado bien para poder volver a Classic. -->
 <div id="librarySkinRoot" style="display:none;">
-  <div class="lib-shell-inner">
+  <button class="ab" id="libBackBtn" onclick="setSkin('classic')" style="position:fixed;top:16px;left:16px;z-index:20;">← Classic</button>
+  <div id="libLoadingState" class="lib-shell-inner">
     <div class="lib-shell-icon">📚</div>
-    <div class="lib-shell-title">El estudio está en obras</div>
-    <div class="lib-shell-sub">Estamos construyendo una forma nueva de recorrer este portfolio. Vuelve pronto.</div>
-    <button class="ab primary" onclick="setSkin('classic')">← Volver a la versión clásica</button>
+    <div class="lib-shell-title" id="libLoadingTitle">Cargando el estudio…</div>
+    <div class="lib-shell-sub" id="libLoadingSub">Preparando la escena. Un momento.</div>
   </div>
+  <div id="libCanvasContainer" style="position:absolute;inset:0;display:none;"></div>
 </div>
 
 <script type="module">
@@ -1607,26 +1621,64 @@ function autoplayOnLoad(){
 
 /* ══ VISITOR ══ */
 let activeCompany=null;
-/* ══ SKIN MANAGER (Fase 1) ══
+/* ══ SKIN MANAGER (Fase 1-2) ══
    Capa fina que decide qué skin se muestra. NO toca ningún render*() de
    Classic — solo oculta/muestra contenedores enteros (#app vs
    #librarySkinRoot). Classic sigue funcionando exactamente igual esté
    activo o no; cuando está oculto simplemente no se ve, pero su propio
-   código de renderizado no sabe que existe una skin alternativa. */
+   código de renderizado no sabe que existe una skin alternativa.
+
+   La escena 3D (Three.js) se importa de forma DINÁMICA, solo la primera
+   vez que alguien activa Library — los visitantes que se quedan en
+   Classic (la mayoría) no descargan ni un byte de WebGL. */
+let libraryScene=null;      // instancia de la escena, una vez cargada
+let libraryLoadPromise=null; // evita cargarla dos veces si se hace toggle rápido
+
 function getActiveSkin(){return D.skin||'classic';}
+
 function setSkin(id){
   D.skin=id;
   save();
   applySkinVisibility();
-  toast(id==='library'?'Skin: Library (en construcción)':'Skin: Classic');
+  if(id==='library')ensureLibrarySceneLoaded();
+  else if(libraryScene)libraryScene.pause();
+  toast(id==='library'?'Skin: Library':'Skin: Classic');
 }
+
 function applySkinVisibility(){
   const app=document.getElementById('app');
   const lib=document.getElementById('librarySkinRoot');
   if(!app||!lib)return;
   const isLibrary=getActiveSkin()==='library';
   app.style.display=isLibrary?'none':'';
-  lib.style.display=isLibrary?'flex':'none';
+  lib.style.display=isLibrary?'block':'none';
+  if(isLibrary)ensureLibrarySceneLoaded();
+  else if(libraryScene)libraryScene.pause();
+}
+
+async function ensureLibrarySceneLoaded(){
+  if(libraryScene){libraryScene.resume();return;}
+  if(libraryLoadPromise)return libraryLoadPromise;
+
+  const titleEl=document.getElementById('libLoadingTitle');
+  const subEl=document.getElementById('libLoadingSub');
+  const loadingEl=document.getElementById('libLoadingState');
+  const canvasEl=document.getElementById('libCanvasContainer');
+
+  libraryLoadPromise=(async()=>{
+    try{
+      const mod=await import('./skins/library/scene.js');
+      if(subEl)subEl.textContent='Montando la escena…';
+      libraryScene=await mod.initLibraryScene(canvasEl);
+      loadingEl.style.display='none';
+      canvasEl.style.display='block';
+    }catch(e){
+      console.error('[Library skin] fallo al cargar la escena:',e);
+      if(titleEl)titleEl.textContent='No se pudo cargar el estudio';
+      if(subEl)subEl.textContent='Tu navegador o conexión no permitió cargar la escena 3D. Puedes volver a la versión clásica con el botón de arriba.';
+    }
+  })();
+  return libraryLoadPromise;
 }
 
 function renderVisitor(){
