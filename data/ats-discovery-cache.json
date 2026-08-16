@@ -280,5 +280,9 @@
     "ats": "personio",
     "careersUrl": "https://aesir.jobs.personio.de",
     "checkedAt": 1786734290.4756665
+  },
+  "game path": {
+    "found": false,
+    "checkedAt": 1786884848.7504406
   }
 }
