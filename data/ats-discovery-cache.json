@@ -300,5 +300,11 @@
   "zynga": {
     "found": false,
     "checkedAt": 1787122624.341804
+  },
+  "digital extremes": {
+    "found": true,
+    "ats": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/digitalextremes",
+    "checkedAt": 1787165176.7828546
   }
 }
