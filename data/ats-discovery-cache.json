@@ -306,5 +306,11 @@
     "ats": "greenhouse",
     "careersUrl": "https://job-boards.greenhouse.io/digitalextremes",
     "checkedAt": 1787165176.7828546
+  },
+  "sandbox interactive": {
+    "found": true,
+    "ats": "personio",
+    "careersUrl": "https://sandbox.jobs.personio.de",
+    "checkedAt": 1787190257.599287
   }
 }
