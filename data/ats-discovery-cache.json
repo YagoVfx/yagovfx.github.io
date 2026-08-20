@@ -312,5 +312,9 @@
     "ats": "personio",
     "careersUrl": "https://sandbox.jobs.personio.de",
     "checkedAt": 1787190257.599287
+  },
+  "success matcher recruitment": {
+    "found": false,
+    "checkedAt": 1787231064.7800758
   }
 }
