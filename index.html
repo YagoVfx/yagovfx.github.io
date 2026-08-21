@@ -1667,9 +1667,13 @@ async function ensureLibrarySceneLoaded(){
 
   libraryLoadPromise=(async()=>{
     try{
-      const mod=await import('./skins/library/scene.js');
+      const [sceneMod,modelMod]=await Promise.all([
+        import('./skins/library/scene.js'),
+        import('./skins/library/sections-model.js'),
+      ]);
       if(subEl)subEl.textContent='Montando la escena…';
-      libraryScene=await mod.initLibraryScene(canvasEl);
+      const sectionsModel=modelMod.deriveSectionsModel(D);
+      libraryScene=await sceneMod.initLibraryScene(canvasEl,sectionsModel.books);
       loadingEl.style.display='none';
       canvasEl.style.display='block';
     }catch(e){

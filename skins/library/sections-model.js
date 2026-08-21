@@ -147,4 +147,4 @@ function deriveSectionsModel(D) {
   return { books: books, deskObjects: deskObjects };
 }
 
-if (typeof module !== 'undefined') module.exports = { deriveSectionsModel: deriveSectionsModel };
+export { deriveSectionsModel };

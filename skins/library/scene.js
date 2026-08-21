@@ -1,28 +1,32 @@
 /*
- * FASE 2 — Escena 3D estática (sin interacción todavía)
- * =======================================================
+ * FASE 3 — Estantería generada por datos
+ * =========================================
  *
- * Objetivo de esta fase: validar que la habitación carga rápido y se ve
- * bien con una cámara fija, ANTES de invertir tiempo en libros
- * interactivos, coreografía de cámara o materiales detallados.
+ * Sobre la Fase 2 (habitación estática), esta fase añade: los libros se
+ * generan automáticamente a partir de `books` (viene de
+ * sections-model.js / deriveSectionsModel), no están hardcodeados en la
+ * escena. Añadir o quitar una sección en los datos reordena la
+ * estantería sola, sin tocar este archivo.
  *
- * Decisiones deliberadas para esta fase (ya acordadas):
- *   - Solo geometría primitiva de Three.js (cajas, cilindros, planos) —
- *     nada de modelos 3D importados. Evita producción de assets pesada.
- *   - Solo sombras básicas (PCFSoftShadowMap). Nada de luz volumétrica,
- *     polvo, profundidad de campo ni post-procesado — eso es la Fase 11.
- *   - Sin libros como objetos independientes todavía — eso es la Fase 3.
+ * Todavía NO hay interacción (hover/click) — eso es la Fase 4. Los
+ * libros son mallas simples (cajas) con color/grosor derivados de los
+ * datos; personalidad visual real (texturas, desgaste, tipografía del
+ * lomo) es la Fase 10.
+ *
+ * Decisiones ya acordadas y vigentes desde la Fase 2:
+ *   - Solo geometría primitiva de Three.js — nada de modelos 3D importados.
+ *   - Solo sombras básicas (PCFSoftShadowMap).
  *   - Cámara fija, sin animación — eso es la Fase 5.
  *
- * Contrato con index.html: exporta initLibraryScene(container), que
- * devuelve { pause(), resume() }. index.html se encarga de cuándo
- * llamarlas (visibilidad de la skin) — este archivo no sabe nada del
- * resto de la web ni del SkinManager.
+ * Contrato con index.html: exporta initLibraryScene(container, books),
+ * que devuelve { pause(), resume(), books }. `books` (los meshes 3D, no
+ * los datos) se expone para que fases futuras (hover en Fase 4, click
+ * en Fase 5) puedan engancharse sin tener que rehacer la generación.
  */
 
 import * as THREE from 'three';
 
-export async function initLibraryScene(container) {
+export async function initLibraryScene(container, books = []) {
   let running = true;
   let rafId = null;
 
@@ -99,7 +103,7 @@ export async function initLibraryScene(container) {
   windowFrame.rotation.y = -Math.PI / 2;
   scene.add(windowFrame);
 
-  // ── Estantería (solo estructura — SIN libros, eso es la Fase 3) ──
+  // ── Estantería (estructura fija + libros generados por datos) ────
   const shelf = new THREE.Group();
   const shelfWidth = 3.4, shelfHeight = 2.6, shelfDepth = 0.4;
   const shelfSideGeo = new THREE.BoxGeometry(0.08, shelfHeight, shelfDepth);
@@ -120,6 +124,59 @@ export async function initLibraryScene(container) {
   }
   shelf.position.set(-3.2, 0, -2.7);
   scene.add(shelf);
+
+  // ── Libros (Fase 3): generados a partir de `books`, no hardcodeados.
+  // Cada libro es una simple caja — nada de modelado, personalidad
+  // visual real (texturas, desgaste, tipografía del lomo) es la Fase 10.
+  // El único "carácter" que se les da ahora es grosor y color, ambos
+  // calculados a partir de los propios datos (pageCount, índice), para
+  // que se distingan de un vistazo sin haber diseñado cada uno a mano.
+  const bookPalette = [0xa63d2f, 0x3d5a80, 0x6b8f3f, 0xb08a3e, 0x7a4a8f, 0x2e6b6b, 0x9c4a5c];
+  const shelfInnerWidth = shelfWidth - 0.2; // deja margen a los laterales
+  const bookHeight = (shelfHeight / shelfLevels) - 0.12; // cabe entre dos baldas
+  const bookDepth = shelfDepth - 0.08;
+
+  const bookGroups = []; // se guarda para reutilizar en fases futuras (hover/click)
+  let level = 0;
+  const halfInnerWidth = shelfInnerWidth / 2;
+  let cursorX = -halfInnerWidth;
+
+  books.forEach((book, i) => {
+    let thickness = Math.min(0.05 + (book.pageCount || 1) * 0.012, 0.16);
+
+    // Si no cabe en la balda actual, salta a la siguiente (envoltura
+    // automática — así añadir un libro de más no rompe el layout).
+    if (cursorX + thickness > halfInnerWidth && level < shelfLevels - 1) {
+      level++;
+      cursorX = -halfInnerWidth;
+    }
+
+    // Caso límite (muchos más libros de los que caben físicamente,
+    // incluso repartidos en todas las baldas): se estrecha el libro para
+    // que quede dentro del hueco, en vez de dejar que atraviese la
+    // estructura de la estantería. Solo ocurre con muchas más secciones
+    // de las que este portfolio tendrá nunca, pero así el layout nunca
+    // se rompe visualmente por muy grande que crezca el contenido.
+    const remaining = halfInnerWidth - cursorX;
+    if (remaining < thickness) thickness = Math.max(remaining, 0.005);
+
+    const color = bookPalette[i % bookPalette.length];
+    const bookMat = new THREE.MeshStandardMaterial({ color, roughness: 0.75, metalness: 0.02 });
+    const bookMesh = new THREE.Mesh(new THREE.BoxGeometry(thickness, bookHeight, bookDepth), bookMat);
+    bookMesh.castShadow = true;
+    bookMesh.receiveShadow = true;
+    bookMesh.userData = { bookId: book.id, title: book.title, shortLabel: book.shortLabel };
+
+    const y = (shelfHeight / shelfLevels) * level + bookHeight / 2 + 0.03;
+    bookMesh.position.set(cursorX + thickness / 2, y, 0);
+    shelf.add(bookMesh);
+    bookGroups.push(bookMesh);
+
+    // El cursor nunca puede superar el límite físico de la balda, ni
+    // para este libro ni para calcular la posición del siguiente — es
+    // la parte clave del blindaje, no solo acotar el grosor de uno.
+    cursorX = Math.min(cursorX + thickness + 0.01, halfInnerWidth);
+  });
 
   // ── Mesa ────────────────────────────────────────────────────────
   const desk = new THREE.Group();
@@ -255,5 +312,5 @@ export async function initLibraryScene(container) {
     tick();
   }
 
-  return { pause, resume };
+  return { pause, resume, books: bookGroups };
 }
