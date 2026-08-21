@@ -251,7 +251,7 @@
   },
   "ubisoft": {
     "found": false,
-    "checkedAt": 1785699807.3921437
+    "checkedAt": 1786931321.1857958
   },
   "deck 13": {
     "found": true,
@@ -284,5 +284,37 @@
   "game path": {
     "found": false,
     "checkedAt": 1786884848.7504406
+  },
+  "the nova lab": {
+    "found": false,
+    "checkedAt": 1787036222.2030218
+  },
+  "gunfire games": {
+    "found": false,
+    "checkedAt": 1787079021.0623643
+  },
+  "lightfold": {
+    "found": false,
+    "checkedAt": 1787079029.6155107
+  },
+  "zynga": {
+    "found": false,
+    "checkedAt": 1787122624.341804
+  },
+  "digital extremes": {
+    "found": true,
+    "ats": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/digitalextremes",
+    "checkedAt": 1787165176.7828546
+  },
+  "sandbox interactive": {
+    "found": true,
+    "ats": "personio",
+    "careersUrl": "https://sandbox.jobs.personio.de",
+    "checkedAt": 1787190257.599287
+  },
+  "success matcher recruitment": {
+    "found": false,
+    "checkedAt": 1787231064.7800758
   }
 }
