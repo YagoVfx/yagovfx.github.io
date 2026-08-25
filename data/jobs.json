@@ -1,21 +1,19 @@
 {
-  "lastUpdated": "2026-08-25T01:44:45Z",
+  "lastUpdated": "2026-08-25T07:00:54Z",
   "companiesScanned": 23,
   "companiesSucceeded": 19,
   "companiesFailed": 4,
-  "totalVfxJobs": 91,
+  "totalVfxJobs": 50,
   "jobsByAts": {
-    "smartrecruiters": 17,
+    "smartrecruiters": 13,
     "custom": 1,
     "massive-wp": 1,
-    "adzuna-signal": 5,
+    "adzuna-signal": 3,
     "workable": 3,
-    "adzuna": 41,
-    "greenhouse": 8,
-    "recruitee": 4,
-    "ashby": 4,
-    "personio": 6,
-    "lever": 1
+    "adzuna": 24,
+    "greenhouse": 3,
+    "recruitee": 1,
+    "ashby": 1
   },
   "jobs": [
     {
@@ -31,7 +29,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-13T19:13:22Z",
-      "lastSeen": "2026-08-25T01:44:20Z",
+      "lastSeen": "2026-08-25T07:00:24Z",
       "status": "active"
     },
     {
@@ -47,7 +45,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-10T19:07:27Z",
-      "lastSeen": "2026-08-25T01:44:20Z",
+      "lastSeen": "2026-08-25T07:00:24Z",
       "status": "active"
     },
     {
@@ -63,7 +61,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-07-14T14:18:44Z",
-      "lastSeen": "2026-08-25T01:44:26Z",
+      "lastSeen": "2026-08-25T07:00:31Z",
       "status": "active"
     },
     {
@@ -79,7 +77,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-19T18:46:02Z",
-      "lastSeen": "2026-08-25T01:44:31Z",
+      "lastSeen": "2026-08-25T07:00:36Z",
       "status": "active"
     },
     {
@@ -95,7 +93,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-08-25T01:44:31Z",
+      "lastSeen": "2026-08-25T07:00:36Z",
       "status": "active"
     },
     {
@@ -111,7 +109,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-08-25T01:44:31Z",
+      "lastSeen": "2026-08-25T07:00:36Z",
       "status": "active"
     },
     {
@@ -127,7 +125,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-08-25T01:44:31Z",
+      "lastSeen": "2026-08-25T07:00:36Z",
       "status": "active"
     },
     {
@@ -143,7 +141,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-08-25T01:44:31Z",
+      "lastSeen": "2026-08-25T07:00:36Z",
       "status": "active"
     },
     {
@@ -159,7 +157,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-08-25T01:44:31Z",
+      "lastSeen": "2026-08-25T07:00:36Z",
       "status": "active"
     },
     {
@@ -175,7 +173,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-08-25T01:44:31Z",
+      "lastSeen": "2026-08-25T07:00:36Z",
       "status": "active"
     },
     {
@@ -191,24 +189,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:17:29Z",
-      "lastSeen": "2026-08-25T01:44:32Z",
-      "status": "active"
-    },
-    {
-      "id": "sig-respawn",
-      "company": "Respawn",
-      "title": "Posible oferta VFX detectada — ver listado completo",
-      "url": "https://www.respawn.com/careers-listings?group=ART",
-      "location": "",
-      "workplaceType": "unknown",
-      "remoteScope": "unknown",
-      "ats": "adzuna-signal",
-      "matchType": "possibleMatch",
-      "companyCategory": "aaa",
-      "viaAggregator": false,
-      "signalOnly": true,
-      "firstSeen": "2026-08-22T12:54:10Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:38Z",
       "status": "active"
     },
     {
@@ -225,7 +206,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:19:41Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
       "status": "active"
     },
     {
@@ -242,7 +223,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-08-15T18:40:05Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
       "status": "active"
     },
     {
@@ -259,24 +240,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:19:41Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
-      "status": "active"
-    },
-    {
-      "id": "sig-ea",
-      "company": "EA",
-      "title": "Posible oferta VFX detectada — ver listado completo",
-      "url": "https://jobs.ea.com/en_US/careers/Home/?8171=%5B10611%5D&8171_format=5683&listFilterMode=1&jobRecordsPerPage=20&",
-      "location": "",
-      "workplaceType": "unknown",
-      "remoteScope": "unknown",
-      "ats": "adzuna-signal",
-      "matchType": "possibleMatch",
-      "companyCategory": "aaa",
-      "viaAggregator": false,
-      "signalOnly": true,
-      "firstSeen": "2026-07-29T21:30:46Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
       "status": "active"
     },
     {
@@ -293,13 +257,13 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5119754002",
       "company": "Enorth Staffing Limited",
       "title": "VFX Artist",
-      "url": "https://www.adzuna.co.uk/jobs/land/ad/5119754002?se=do6fiCag8RGoxpN31Vp7kA&utm_medium=api&utm_source=361fafca&v=5B0D2C75974611A271F943E27EECB1990860F82A",
+      "url": "https://www.adzuna.co.uk/jobs/land/ad/5119754002?se=Hi6jsVKg8RGkr9xW060fUg&utm_medium=api&utm_source=361fafca&v=5B0D2C75974611A271F943E27EECB1990860F82A",
       "location": "London, UK",
       "workplaceType": "unknown",
       "remoteScope": "UK",
@@ -309,7 +273,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5654949933",
@@ -325,7 +289,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5706061043",
@@ -341,7 +305,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5699001130",
@@ -357,7 +321,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5735101390",
@@ -373,13 +337,13 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5733999582",
       "company": "Cloud Imperium Games Limited",
       "title": "Principal VFX Artist",
-      "url": "https://www.adzuna.co.uk/jobs/land/ad/5733999582?se=do6fiCag8RGoxpN31Vp7kA&utm_medium=api&utm_source=361fafca&v=FC236E56F5DB4F00CBCA47677FF1AA98A80D79AF",
+      "url": "https://www.adzuna.co.uk/jobs/land/ad/5733999582?se=Hi6jsVKg8RGkr9xW060fUg&utm_medium=api&utm_source=361fafca&v=FC236E56F5DB4F00CBCA47677FF1AA98A80D79AF",
       "location": "Manchester, Greater Manchester",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -389,7 +353,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5679133331",
@@ -405,7 +369,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5840318554",
@@ -421,7 +385,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-13T19:13:50Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5840318553",
@@ -437,7 +401,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-13T19:13:50Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5790994570",
@@ -453,7 +417,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5848440762",
@@ -469,7 +433,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-08-19T18:46:16Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5679132470",
@@ -485,7 +449,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5846915583",
@@ -501,7 +465,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-19T06:57:11Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5361303375",
@@ -517,7 +481,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5034487479",
@@ -533,13 +497,13 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5568773819",
       "company": "Insight Global",
       "title": "VFX Artist",
-      "url": "https://www.adzuna.com/land/ad/5568773819?se=EnmViSag8RGoxpN31Vp7kA&utm_medium=api&utm_source=361fafca&v=1645F062C341544331F4DDE4F4C07A27DE30A124",
+      "url": "https://www.adzuna.com/land/ad/5568773819?se=sjZttFKg8RGLZZiuaUCfOw&utm_medium=api&utm_source=361fafca&v=1645F062C341544331F4DDE4F4C07A27DE30A124",
       "location": "Menlo Park, San Mateo County",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -549,7 +513,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5852452497",
@@ -565,7 +529,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-22T12:54:10Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5844971993",
@@ -581,7 +545,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-18T06:57:16Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5504357701",
@@ -597,7 +561,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5652004593",
@@ -613,7 +577,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5538360373",
@@ -629,7 +593,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5849565038",
@@ -645,7 +609,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-20T13:04:39Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5776963984",
@@ -661,7 +625,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5786701853",
@@ -677,7 +641,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5834415260",
@@ -693,7 +657,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-08-10T07:57:18Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5830268464",
@@ -709,7 +673,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-08-06T14:30:40Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5846795785",
@@ -725,7 +689,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-18T18:50:35Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5749312187",
@@ -741,7 +705,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5749312168",
@@ -757,7 +721,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5749312177",
@@ -773,7 +737,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5776591897",
@@ -789,13 +753,13 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5780603068",
       "company": "Insight Global",
       "title": "Technical Artist - VFX",
-      "url": "https://www.adzuna.com/land/ad/5780603068?se=EnmViSag8RGoxpN31Vp7kA&utm_medium=api&utm_source=361fafca&v=BA513FE893BC0FC8E3687A7CDA15082FB87060E8",
+      "url": "https://www.adzuna.com/land/ad/5780603068?se=sjZttFKg8RGLZZiuaUCfOw&utm_medium=api&utm_source=361fafca&v=BA513FE893BC0FC8E3687A7CDA15082FB87060E8",
       "location": "Pico Heights, Los Angeles County",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -805,7 +769,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5846830200",
@@ -821,7 +785,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-18T18:50:35Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5731201709",
@@ -837,327 +801,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5821410712",
-      "company": "IGN Solutions",
-      "title": "VFX-artist (Unity, mobile)",
-      "url": "https://www.adzuna.de/details/5821410712?utm_medium=api&utm_source=361fafca",
-      "location": "Deutschland",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "possibleMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "status": "active",
-      "firstSeen": "2026-07-30T19:44:30Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5848812181",
-      "company": "Sandbox Interactive",
-      "title": "VFX Artist (m/f/d)",
-      "url": "https://sandbox.jobs.personio.de",
-      "location": "Prenzlauer Berg, Berlin",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "personio",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "status": "active",
-      "firstSeen": "2026-08-20T01:44:28Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5422344101",
-      "company": "Side",
-      "title": "Tech & VFX Artist - Talent Pool (EU)",
-      "url": "https://www.adzuna.de/details/5422344101?utm_medium=api&utm_source=361fafca",
-      "location": "Berlin, Deutschland",
-      "workplaceType": "unknown",
-      "remoteScope": "EU/Europe",
-      "ats": "adzuna",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "status": "active",
-      "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5826203575",
-      "company": "DECK 13",
-      "title": "Senior VFX Artist (f/m/x)",
-      "url": "https://deck13.jobs.personio.de",
-      "location": "Bockenheim, Frankfurt am Main",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "personio",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "status": "active",
-      "firstSeen": "2026-08-03T03:44:01Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5851014582",
-      "company": "DECK 13",
-      "title": "Lead VFX Artist (f/m/x)",
-      "url": "https://deck13.jobs.personio.de",
-      "location": "Bockenheim, Frankfurt am Main",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "personio",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "status": "active",
-      "firstSeen": "2026-08-21T13:03:20Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5842043177",
-      "company": "Aesir Interactive",
-      "title": "VFX Artist (f/m/d) Regular / Senior",
-      "url": "https://aesir.jobs.personio.de",
-      "location": "Ludwigsvorstadt-Isarvorstadt, München",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "personio",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "status": "active",
-      "firstSeen": "2026-08-14T19:05:01Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5785271944",
-      "company": "weltenbauer. Software Entwicklung GmbH",
-      "title": "Tech Artist VFX w/m/d",
-      "url": "https://weltenbauer-software-entwicklung-gmbh.jobs.personio.de",
-      "location": "Sonnenberg, Wiesbaden",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "personio",
-      "matchType": "possibleMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "status": "active",
-      "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5787238266",
-      "company": "weltenbauer. Karriere",
-      "title": "Tech Artist VFX w/m/d",
-      "url": "https://www.adzuna.de/details/5787238266?utm_medium=api&utm_source=361fafca",
-      "location": "Deutschland",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "possibleMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "status": "active",
-      "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5849825045",
-      "company": "btf",
-      "title": "VFX Producer:in (all gender)",
-      "url": "https://www.adzuna.de/details/5849825045?utm_medium=api&utm_source=361fafca",
-      "location": "Bickendorf, Köln",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "possibleMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "status": "active",
-      "firstSeen": "2026-08-24T07:13:22Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5793786868",
-      "company": "Iris Games",
-      "title": "VFX Artist UE5",
-      "url": "https://job-boards.greenhouse.io/iris",
-      "location": "France",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "greenhouse",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "status": "active",
-      "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5831881841",
-      "company": "Game Path",
-      "title": "VFX Artist (Unreal)",
-      "url": "https://www.adzuna.fr/details/5831881841?utm_medium=api&utm_source=361fafca",
-      "location": "Bordeaux, Gironde",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "status": "active",
-      "firstSeen": "2026-08-16T12:54:19Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5797382283",
-      "company": "Voodoo",
-      "title": "VFX Artist - Freelance",
-      "url": "https://jobs.ashbyhq.com/voodoo",
-      "location": "Paris, Ile-de-France",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "ashby",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "status": "active",
-      "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5770241845",
-      "company": "Genius Game FZCO",
-      "title": "VFX Artist (100% Télétravail)",
-      "url": "https://job-boards.greenhouse.io/genius",
-      "location": "France",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "greenhouse",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "status": "active",
-      "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5774032991",
-      "company": "Voodoo",
-      "title": "VFX Artist - Marble Sort",
-      "url": "https://jobs.ashbyhq.com/voodoo",
-      "location": "Paris, Ile-de-France",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "ashby",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "status": "active",
-      "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5821409015",
-      "company": "IGN Solutions",
-      "title": "VFX-artist (Unity, mobile)",
-      "url": "https://www.adzuna.fr/details/5821409015?utm_medium=api&utm_source=361fafca",
-      "location": "France",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "possibleMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "status": "active",
-      "firstSeen": "2026-08-02T08:34:32Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5813415802",
-      "company": "Shiro Games",
-      "title": "VFX Artist (CDD 12 mois)",
-      "url": "https://www.adzuna.fr/details/5813415802?utm_medium=api&utm_source=361fafca",
-      "location": "Talence, Bordeaux",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "status": "active",
-      "firstSeen": "2026-07-25T08:19:30Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5761605022",
-      "company": "Capijobnew",
-      "title": "VFX Artist - Ubisoft Paris Mobile F/H/NB",
-      "url": "https://www.adzuna.fr/details/5761605022?utm_medium=api&utm_source=361fafca",
-      "location": "France",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "status": "active",
-      "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5808894714",
-      "company": "Asobo Studio",
-      "title": "Senior VFX Artist H/F(Projet narratif non annoncé)",
-      "url": "https://www.adzuna.fr/details/5808894714?utm_medium=api&utm_source=361fafca",
-      "location": "Talence, Bordeaux",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "status": "active",
-      "firstSeen": "2026-07-21T08:41:33Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5843154996",
-      "company": "Asobo Studio",
-      "title": "Senior VFX Artist H/F (Projet narratif non annoncé)",
-      "url": "https://www.adzuna.fr/details/5843154996?utm_medium=api&utm_source=361fafca",
-      "location": "Bordeaux, Gironde",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "status": "active",
-      "firstSeen": "2026-08-15T18:40:05Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
-    },
-    {
-      "id": "az-5793381294",
-      "company": "Jungler",
-      "title": "3D FX artist",
-      "url": "https://www.adzuna.fr/details/5793381294?utm_medium=api&utm_source=361fafca",
-      "location": "France",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "adzuna",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "status": "active",
-      "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5821408802",
@@ -1173,7 +817,361 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-30T19:44:30Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "sig-respawn",
+      "company": "Respawn",
+      "title": "Posible oferta VFX detectada — ver listado completo",
+      "url": "https://www.respawn.com/careers-listings?group=ART",
+      "location": "",
+      "workplaceType": "unknown",
+      "remoteScope": "unknown",
+      "ats": "adzuna-signal",
+      "matchType": "possibleMatch",
+      "companyCategory": "aaa",
+      "viaAggregator": false,
+      "signalOnly": true,
+      "firstSeen": "2026-08-22T12:54:10Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
+      "status": "closed"
+    },
+    {
+      "id": "sig-ea",
+      "company": "EA",
+      "title": "Posible oferta VFX detectada — ver listado completo",
+      "url": "https://jobs.ea.com/en_US/careers/Home/?8171=%5B10611%5D&8171_format=5683&listFilterMode=1&jobRecordsPerPage=20&",
+      "location": "",
+      "workplaceType": "unknown",
+      "remoteScope": "unknown",
+      "ats": "adzuna-signal",
+      "matchType": "possibleMatch",
+      "companyCategory": "aaa",
+      "viaAggregator": false,
+      "signalOnly": true,
+      "firstSeen": "2026-07-29T21:30:46Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
+      "status": "closed"
+    },
+    {
+      "id": "az-5821410712",
+      "company": "IGN Solutions",
+      "title": "VFX-artist (Unity, mobile)",
+      "url": "https://www.adzuna.de/details/5821410712?utm_medium=api&utm_source=361fafca",
+      "location": "Deutschland",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "possibleMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "status": "closed",
+      "firstSeen": "2026-07-30T19:44:30Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5848812181",
+      "company": "Sandbox Interactive",
+      "title": "VFX Artist (m/f/d)",
+      "url": "https://sandbox.jobs.personio.de",
+      "location": "Prenzlauer Berg, Berlin",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "personio",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "status": "closed",
+      "firstSeen": "2026-08-20T01:44:28Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5422344101",
+      "company": "Side",
+      "title": "Tech & VFX Artist - Talent Pool (EU)",
+      "url": "https://www.adzuna.de/details/5422344101?utm_medium=api&utm_source=361fafca",
+      "location": "Berlin, Deutschland",
+      "workplaceType": "unknown",
+      "remoteScope": "EU/Europe",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "status": "closed",
+      "firstSeen": "2026-07-17T20:20:55Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5826203575",
+      "company": "DECK 13",
+      "title": "Senior VFX Artist (f/m/x)",
+      "url": "https://deck13.jobs.personio.de",
+      "location": "Bockenheim, Frankfurt am Main",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "personio",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "status": "closed",
+      "firstSeen": "2026-08-03T03:44:01Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5851014582",
+      "company": "DECK 13",
+      "title": "Lead VFX Artist (f/m/x)",
+      "url": "https://deck13.jobs.personio.de",
+      "location": "Bockenheim, Frankfurt am Main",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "personio",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "status": "closed",
+      "firstSeen": "2026-08-21T13:03:20Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5842043177",
+      "company": "Aesir Interactive",
+      "title": "VFX Artist (f/m/d) Regular / Senior",
+      "url": "https://aesir.jobs.personio.de",
+      "location": "Ludwigsvorstadt-Isarvorstadt, München",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "personio",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "status": "closed",
+      "firstSeen": "2026-08-14T19:05:01Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5785271944",
+      "company": "weltenbauer. Software Entwicklung GmbH",
+      "title": "Tech Artist VFX w/m/d",
+      "url": "https://weltenbauer-software-entwicklung-gmbh.jobs.personio.de",
+      "location": "Sonnenberg, Wiesbaden",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "personio",
+      "matchType": "possibleMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "status": "closed",
+      "firstSeen": "2026-07-17T20:20:55Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5787238266",
+      "company": "weltenbauer. Karriere",
+      "title": "Tech Artist VFX w/m/d",
+      "url": "https://www.adzuna.de/details/5787238266?utm_medium=api&utm_source=361fafca",
+      "location": "Deutschland",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "possibleMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "status": "closed",
+      "firstSeen": "2026-07-17T20:20:55Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5849825045",
+      "company": "btf",
+      "title": "VFX Producer:in (all gender)",
+      "url": "https://www.adzuna.de/details/5849825045?utm_medium=api&utm_source=361fafca",
+      "location": "Bickendorf, Köln",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "possibleMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "status": "closed",
+      "firstSeen": "2026-08-24T07:13:22Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5793786868",
+      "company": "Iris Games",
+      "title": "VFX Artist UE5",
+      "url": "https://job-boards.greenhouse.io/iris",
+      "location": "France",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "greenhouse",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "status": "closed",
+      "firstSeen": "2026-07-17T20:20:55Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5831881841",
+      "company": "Game Path",
+      "title": "VFX Artist (Unreal)",
+      "url": "https://www.adzuna.fr/details/5831881841?utm_medium=api&utm_source=361fafca",
+      "location": "Bordeaux, Gironde",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "status": "closed",
+      "firstSeen": "2026-08-16T12:54:19Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5797382283",
+      "company": "Voodoo",
+      "title": "VFX Artist - Freelance",
+      "url": "https://jobs.ashbyhq.com/voodoo",
+      "location": "Paris, Ile-de-France",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "ashby",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "status": "closed",
+      "firstSeen": "2026-07-17T20:20:55Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5770241845",
+      "company": "Genius Game FZCO",
+      "title": "VFX Artist (100% Télétravail)",
+      "url": "https://job-boards.greenhouse.io/genius",
+      "location": "France",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "greenhouse",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "status": "closed",
+      "firstSeen": "2026-07-17T20:20:55Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5774032991",
+      "company": "Voodoo",
+      "title": "VFX Artist - Marble Sort",
+      "url": "https://jobs.ashbyhq.com/voodoo",
+      "location": "Paris, Ile-de-France",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "ashby",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "status": "closed",
+      "firstSeen": "2026-07-17T20:20:55Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5821409015",
+      "company": "IGN Solutions",
+      "title": "VFX-artist (Unity, mobile)",
+      "url": "https://www.adzuna.fr/details/5821409015?utm_medium=api&utm_source=361fafca",
+      "location": "France",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "possibleMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "status": "closed",
+      "firstSeen": "2026-08-02T08:34:32Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5813415802",
+      "company": "Shiro Games",
+      "title": "VFX Artist (CDD 12 mois)",
+      "url": "https://www.adzuna.fr/details/5813415802?utm_medium=api&utm_source=361fafca",
+      "location": "Talence, Bordeaux",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "status": "closed",
+      "firstSeen": "2026-07-25T08:19:30Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5761605022",
+      "company": "Capijobnew",
+      "title": "VFX Artist - Ubisoft Paris Mobile F/H/NB",
+      "url": "https://www.adzuna.fr/details/5761605022?utm_medium=api&utm_source=361fafca",
+      "location": "France",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "status": "closed",
+      "firstSeen": "2026-07-17T20:20:55Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5808894714",
+      "company": "Asobo Studio",
+      "title": "Senior VFX Artist H/F(Projet narratif non annoncé)",
+      "url": "https://www.adzuna.fr/details/5808894714?utm_medium=api&utm_source=361fafca",
+      "location": "Talence, Bordeaux",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "status": "closed",
+      "firstSeen": "2026-07-21T08:41:33Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5843154996",
+      "company": "Asobo Studio",
+      "title": "Senior VFX Artist H/F (Projet narratif non annoncé)",
+      "url": "https://www.adzuna.fr/details/5843154996?utm_medium=api&utm_source=361fafca",
+      "location": "Bordeaux, Gironde",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "status": "closed",
+      "firstSeen": "2026-08-15T18:40:05Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
+    },
+    {
+      "id": "az-5793381294",
+      "company": "Jungler",
+      "title": "3D FX artist",
+      "url": "https://www.adzuna.fr/details/5793381294?utm_medium=api&utm_source=361fafca",
+      "location": "France",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "status": "closed",
+      "firstSeen": "2026-07-17T20:20:55Z",
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5537797180",
@@ -1187,9 +1185,9 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5805399009",
@@ -1203,9 +1201,9 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-18T03:18:33Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5727218748",
@@ -1219,9 +1217,9 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5801734679",
@@ -1235,9 +1233,9 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5832073958",
@@ -1251,9 +1249,9 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-08-07T19:07:43Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5720744781",
@@ -1267,9 +1265,9 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5749301696",
@@ -1283,9 +1281,9 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5805587710",
@@ -1299,9 +1297,9 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-18T03:18:33Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5647996845",
@@ -1315,9 +1313,9 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5647996848",
@@ -1331,9 +1329,9 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5799349291",
@@ -1347,9 +1345,9 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5840222651",
@@ -1363,9 +1361,9 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-08-14T13:24:03Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5840223415",
@@ -1379,9 +1377,9 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-08-14T13:24:03Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5804079047",
@@ -1395,9 +1393,9 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-22T03:32:31Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5804105504",
@@ -1411,9 +1409,9 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5820901582",
@@ -1427,9 +1425,9 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-30T08:42:43Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5804109036",
@@ -1443,9 +1441,9 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-21T03:33:37Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5473508779",
@@ -1459,9 +1457,9 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5804092333",
@@ -1475,9 +1473,9 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "active",
+      "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5787950418",
@@ -1493,7 +1491,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "sig-2k",
@@ -1509,7 +1507,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:19:41Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
       "status": "closed"
     },
     {
@@ -1526,7 +1524,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5814078460",
@@ -1542,7 +1540,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5832007647",
@@ -1558,7 +1556,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-07T19:07:43Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5790096714",
@@ -1574,7 +1572,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5815352608",
@@ -1590,7 +1588,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-25T13:54:44Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5728857033",
@@ -1606,7 +1604,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5817843649",
@@ -1622,7 +1620,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-28T03:25:20Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5820061130",
@@ -1638,7 +1636,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-29T19:36:17Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5820055186",
@@ -1654,7 +1652,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-29T19:36:17Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5820055314",
@@ -1670,7 +1668,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-29T19:36:17Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5814182327",
@@ -1686,7 +1684,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5814180351",
@@ -1702,7 +1700,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-25T08:19:30Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5814182188",
@@ -1718,7 +1716,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5732880781",
@@ -1734,7 +1732,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5834379907",
@@ -1750,7 +1748,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-08-09T07:08:07Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5761756088",
@@ -1766,7 +1764,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "sr-744000142664110",
@@ -1781,7 +1779,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-10T19:07:27Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
       "status": "closed"
     },
     {
@@ -1798,7 +1796,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5736352794",
@@ -1814,7 +1812,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5736358838",
@@ -1830,7 +1828,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5736357877",
@@ -1846,7 +1844,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5799882708",
@@ -1862,7 +1860,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5799857592",
@@ -1878,7 +1876,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5815102316",
@@ -1894,7 +1892,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-25T13:54:44Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5809178429",
@@ -1910,7 +1908,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-21T14:12:23Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "sr-744000122112172",
@@ -1925,7 +1923,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
       "status": "closed"
     },
     {
@@ -1941,7 +1939,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
       "status": "closed"
     },
     {
@@ -1958,7 +1956,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5801251432",
@@ -1974,7 +1972,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5800544057",
@@ -1990,7 +1988,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5800543906",
@@ -2006,7 +2004,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "sr-744000136044054",
@@ -2021,7 +2019,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
       "status": "closed"
     },
     {
@@ -2037,7 +2035,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
       "status": "closed"
     },
     {
@@ -2053,7 +2051,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
       "status": "closed"
     },
     {
@@ -2070,7 +2068,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-08T13:05:32Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5793750486",
@@ -2086,7 +2084,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5814182203",
@@ -2102,7 +2100,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5820153032",
@@ -2118,7 +2116,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-29T21:06:27Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5820152838",
@@ -2134,7 +2132,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-29T21:06:27Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5752941990",
@@ -2150,7 +2148,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5715650446",
@@ -2166,7 +2164,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5721223284",
@@ -2182,7 +2180,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "sig-ubisoft",
@@ -2198,7 +2196,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:30:46Z",
-      "lastSeen": "2026-08-25T01:44:45Z",
+      "lastSeen": "2026-08-25T07:00:54Z",
       "status": "closed"
     },
     {
@@ -2215,7 +2213,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-25T03:30:50Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5805529271",
@@ -2231,7 +2229,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-18T03:18:33Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5791181814",
@@ -2247,7 +2245,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-18T19:16:11Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5672287328",
@@ -2263,7 +2261,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5812136782",
@@ -2279,7 +2277,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-24T08:38:26Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5677617119",
@@ -2295,7 +2293,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5821368228",
@@ -2311,7 +2309,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-30T19:44:30Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5721184348",
@@ -2327,7 +2325,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5620207010",
@@ -2343,7 +2341,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5714821063",
@@ -2359,7 +2357,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5806557373",
@@ -2375,7 +2373,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-19T03:39:30Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5808924734",
@@ -2391,7 +2389,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-21T08:41:33Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5812280831",
@@ -2407,7 +2405,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-23T14:24:47Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5552932841",
@@ -2423,7 +2421,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5552932820",
@@ -2439,7 +2437,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5552932836",
@@ -2455,7 +2453,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5790981669",
@@ -2471,7 +2469,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5790981658",
@@ -2487,7 +2485,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5790981649",
@@ -2503,7 +2501,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5790968858",
@@ -2519,7 +2517,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5790968856",
@@ -2535,7 +2533,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5790968864",
@@ -2551,7 +2549,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5761066992",
@@ -2567,7 +2565,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5759775977",
@@ -2583,7 +2581,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5763815967",
@@ -2599,7 +2597,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5761807810",
@@ -2615,7 +2613,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5763828878",
@@ -2631,7 +2629,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5787860589",
@@ -2646,7 +2644,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5794071604",
@@ -2661,7 +2659,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5810193354",
@@ -2676,7 +2674,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-22T03:32:31Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5794895680",
@@ -2691,7 +2689,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5809402203",
@@ -2706,7 +2704,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-21T19:44:34Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5809391454",
@@ -2721,7 +2719,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-24T14:03:52Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5777694887",
@@ -2736,7 +2734,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5724998693",
@@ -2751,7 +2749,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5810042488",
@@ -2766,7 +2764,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-22T03:32:31Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5809598066",
@@ -2781,7 +2779,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-21T19:44:34Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5774156431",
@@ -2795,7 +2793,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5804122069",
@@ -2809,7 +2807,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5687834785",
@@ -2823,7 +2821,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5807753946",
@@ -2837,7 +2835,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-20T09:31:48Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     },
     {
       "id": "az-5796355596",
@@ -2851,7 +2849,7 @@
       "matchType": "exactMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-08-25T01:44:45Z"
+      "lastSeen": "2026-08-25T07:00:54Z"
     }
   ]
 }
