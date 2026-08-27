@@ -324,5 +324,13 @@
   "underground production": {
     "found": false,
     "checkedAt": 1787727710.7833428
+  },
+  "kafi": {
+    "found": false,
+    "checkedAt": 1787822567.9184968
+  },
+  "nbcuniversal": {
+    "found": false,
+    "checkedAt": 1787822573.9216452
   }
 }
