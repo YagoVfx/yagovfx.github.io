@@ -1,7 +1,7 @@
 {
   "enorth staffing limited": {
     "found": false,
-    "checkedAt": 1786628175.1952684
+    "checkedAt": 1787868713.553303
   },
   "unknown": {
     "found": false,
@@ -9,7 +9,7 @@
   },
   "cloud imperium games": {
     "found": false,
-    "checkedAt": 1786628195.4608917
+    "checkedAt": 1787868725.1734543
   },
   "studiob": {
     "found": false,
@@ -17,11 +17,11 @@
   },
   "cloud imperium games limited": {
     "found": false,
-    "checkedAt": 1786628187.2122338
+    "checkedAt": 1787868732.9899337
   },
   "1010 games": {
     "found": false,
-    "checkedAt": 1786628203.6010847
+    "checkedAt": 1787868741.9641688
   },
   "gram games": {
     "found": false,
@@ -29,7 +29,7 @@
   },
   "sega europe": {
     "found": false,
-    "checkedAt": 1786628218.6081471
+    "checkedAt": 1787868752.5487826
   },
   "homa": {
     "found": false,
@@ -37,7 +37,7 @@
   },
   "side": {
     "found": false,
-    "checkedAt": 1786628242.124393
+    "checkedAt": 1787868762.1307566
   },
   "cinesite-london": {
     "found": false,
@@ -51,7 +51,7 @@
   },
   "insight global": {
     "found": false,
-    "checkedAt": 1786628262.2037876
+    "checkedAt": 1787868766.5532794
   },
   "liquid development, llc": {
     "found": true,
@@ -65,15 +65,15 @@
   },
   "local seo tulsa": {
     "found": false,
-    "checkedAt": 1786628276.5354586
+    "checkedAt": 1787868776.9412377
   },
   "ht visions": {
     "found": false,
-    "checkedAt": 1786628287.0775084
+    "checkedAt": 1787868785.9415202
   },
   "lakshya digital": {
     "found": false,
-    "checkedAt": 1786628297.63026
+    "checkedAt": 1787868795.2479143
   },
   "komodo co., ltd.": {
     "found": false,
@@ -111,7 +111,7 @@
   },
   "sideshow": {
     "found": false,
-    "checkedAt": 1786628331.6308143
+    "checkedAt": 1787868805.8626254
   },
   "mobilityware": {
     "found": true,
@@ -131,7 +131,7 @@
   },
   "weltenbauer. karriere": {
     "found": false,
-    "checkedAt": 1786628351.594768
+    "checkedAt": 1787868810.3955746
   },
   "cactus punch": {
     "found": true,
@@ -169,27 +169,27 @@
   },
   "shiro games": {
     "found": false,
-    "checkedAt": 1786628383.5093608
+    "checkedAt": 1787868819.464413
   },
   "capijobnew": {
     "found": false,
-    "checkedAt": 1786628392.4508018
+    "checkedAt": 1787868826.622261
   },
   "asobo studio": {
     "found": false,
-    "checkedAt": 1786628398.5131128
+    "checkedAt": 1787868831.5587218
   },
   "jungler": {
     "found": false,
-    "checkedAt": 1786628413.8210452
+    "checkedAt": 1787868841.016004
   },
   "reflector entertainment": {
     "found": false,
-    "checkedAt": 1786628419.1015968
+    "checkedAt": 1787868845.4645798
   },
   "arcanaut studios": {
     "found": false,
-    "checkedAt": 1786628430.342102
+    "checkedAt": 1787868854.5161607
   },
   "kabam games inc. job on t-net": {
     "found": true,
@@ -199,7 +199,7 @@
   },
   "warner bros. discovery": {
     "found": false,
-    "checkedAt": 1786628441.0496805
+    "checkedAt": 1787868878.6820064
   },
   "highdive": {
     "found": true,
@@ -332,5 +332,11 @@
   "nbcuniversal": {
     "found": false,
     "checkedAt": 1787822573.9216452
+  },
+  "believer": {
+    "found": true,
+    "ats": "ashby",
+    "careersUrl": "https://jobs.ashbyhq.com/believer",
+    "checkedAt": 1787868804.8145351
   }
 }
