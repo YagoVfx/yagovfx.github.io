@@ -338,5 +338,9 @@
     "ats": "ashby",
     "careersUrl": "https://jobs.ashbyhq.com/believer",
     "checkedAt": 1787868804.8145351
+  },
+  "dneg": {
+    "found": false,
+    "checkedAt": 1788280218.5099657
   }
 }
