@@ -299,7 +299,7 @@
   },
   "zynga": {
     "found": false,
-    "checkedAt": 1787122624.341804
+    "checkedAt": 1788347294.0089698
   },
   "digital extremes": {
     "found": true,
@@ -342,5 +342,13 @@
   "dneg": {
     "found": false,
     "checkedAt": 1788280218.5099657
+  },
+  "the walt disney company": {
+    "found": false,
+    "checkedAt": 1788347299.9996436
+  },
+  "studio wildcard": {
+    "found": false,
+    "checkedAt": 1788347311.9322386
   }
 }
