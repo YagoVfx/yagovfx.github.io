@@ -24,8 +24,10 @@
     "checkedAt": 1787868741.9641688
   },
   "gram games": {
-    "found": false,
-    "checkedAt": 1786628229.092089
+    "found": true,
+    "ats": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/gram",
+    "checkedAt": 1788366527.26228
   },
   "sega europe": {
     "found": false,
