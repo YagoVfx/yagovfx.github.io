@@ -352,5 +352,11 @@
   "studio wildcard": {
     "found": false,
     "checkedAt": 1788347311.9322386
+  },
+  "velan studios": {
+    "found": true,
+    "ats": "workable",
+    "careersUrl": "https://apply.workable.com/velanstudios",
+    "checkedAt": 1788604077.295519
   }
 }
