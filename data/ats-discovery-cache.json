@@ -362,5 +362,11 @@
   "innogames gmbh": {
     "found": false,
     "checkedAt": 1788885163.0117512
+  },
+  "airship": {
+    "found": true,
+    "ats": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/airship",
+    "checkedAt": 1788928000.324058
   }
 }
