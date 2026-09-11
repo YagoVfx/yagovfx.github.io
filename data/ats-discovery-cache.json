@@ -368,5 +368,11 @@
     "ats": "greenhouse",
     "careersUrl": "https://job-boards.greenhouse.io/airship",
     "checkedAt": 1788928000.324058
+  },
+  "sourcing unicorns": {
+    "found": true,
+    "ats": "recruitee",
+    "careersUrl": "https://sourcingunicorns.recruitee.com",
+    "checkedAt": 1789124784.4391127
   }
 }
