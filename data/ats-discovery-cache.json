@@ -374,5 +374,9 @@
     "ats": "recruitee",
     "careersUrl": "https://sourcingunicorns.recruitee.com",
     "checkedAt": 1789124784.4391127
+  },
+  "ubisoft montréal": {
+    "found": false,
+    "checkedAt": 1789186911.431085
   }
 }
