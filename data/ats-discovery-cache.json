@@ -378,5 +378,9 @@
   "ubisoft montréal": {
     "found": false,
     "checkedAt": 1789186911.431085
+  },
+  "nvidia": {
+    "found": false,
+    "checkedAt": 1789729383.5470572
   }
 }
