@@ -220,8 +220,10 @@
     "checkedAt": 1786628465.329238
   },
   "rodeo fx": {
-    "found": false,
-    "checkedAt": 1785412279.7213557
+    "found": true,
+    "ats": "smartrecruiters",
+    "careersUrl": "https://careers.smartrecruiters.com/rodeofx",
+    "checkedAt": 1790162561.7056015
   },
   "saber interactive spain": {
     "found": true,
@@ -325,7 +327,7 @@
   },
   "underground production": {
     "found": false,
-    "checkedAt": 1788952255.7521036
+    "checkedAt": 1790162547.0687854
   },
   "kafi": {
     "found": false,
