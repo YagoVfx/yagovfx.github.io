@@ -665,7 +665,7 @@ option{background:var(--bg2);}
    Todo el CSS vive bajo #cleanSkinRoot para no interferir con Classic. */
 #cleanSkinRoot,#cleanDetailOverlay{
   --cln-bg:#ffffff;--cln-fg:#0a0a0a;--cln-sub:#6b6b6b;--cln-line:#e6e6e6;
-  --cln-accent:#0a0a0a;--cln-card-bg:#fafafa;
+  --cln-accent:#ff4d23;--cln-card-bg:#fafafa;
   position:fixed;inset:0;background:var(--cln-bg);color:var(--cln-fg);
   overflow-y:auto;-webkit-overflow-scrolling:touch;
   font-family:'Inter',system-ui,sans-serif;
@@ -681,9 +681,10 @@ option{background:var(--bg2);}
 .cln-langbtn{position:fixed;top:18px;right:18px;z-index:40;background:transparent;border:1px solid var(--cln-line);
   color:var(--cln-fg);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
   padding:9px 14px;border-radius:999px;cursor:pointer;}
-.cln-wrap{max-width:1760px;margin:0;padding:88px 4vw 100px 64px;}
-.cln-hero{padding-bottom:56px;border-bottom:1px solid var(--cln-line);margin-bottom:56px;}
-.cln-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:18px;}
+.cln-wrap{max-width:none;margin:0;padding:88px 3vw 100px 64px;}
+.cln-hero{padding-bottom:44px;margin-bottom:48px;}
+.cln-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:18px;display:flex;align-items:center;gap:8px;}
+.cln-eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--cln-accent);flex-shrink:0;}
 .cln-name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:clamp(38px,7vw,74px);line-height:1.03;letter-spacing:-.01em;margin-bottom:6px;}
 .cln-role{font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(16px,2.2vw,22px);color:var(--cln-sub);margin-bottom:26px;}
 .cln-bio{font-size:16px;line-height:1.65;max-width:640px;color:#2a2a2a;margin-bottom:32px;}
@@ -693,28 +694,34 @@ option{background:var(--bg2);}
 .cln-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;}
 .cln-tag{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.04em;border:1px solid var(--cln-line);border-radius:999px;padding:6px 12px;color:#333;}
 .cln-links{display:flex;gap:10px;flex-wrap:wrap;}
-.cln-link{font-size:13px;font-weight:600;border:1px solid var(--cln-fg);border-radius:999px;padding:10px 20px;text-decoration:none;transition:background .2s,color .2s;}
+.cln-link{font-size:13px;font-weight:600;border:1px solid var(--cln-fg);border-radius:999px;padding:10px 20px;text-decoration:none;transition:background .2s,color .2s;background:var(--cln-bg);color:var(--cln-fg);font-family:inherit;cursor:pointer;appearance:none;-webkit-appearance:none;display:inline-block;}
 .cln-link.primary{background:var(--cln-fg);}
-#cleanSkinRoot a.cln-link.primary,#cleanDetailOverlay a.cln-link.primary{color:var(--cln-bg);}
+#cleanSkinRoot a.cln-link.primary,#cleanDetailOverlay a.cln-link.primary,#cleanSkinRoot button.cln-link.primary{color:var(--cln-bg);}
 .cln-link.primary:hover{opacity:.8;}
-#cleanSkinRoot a.cln-link:not(.primary):hover,#cleanDetailOverlay a.cln-link:not(.primary):hover{background:var(--cln-fg);color:var(--cln-bg);}
+#cleanSkinRoot .cln-link:not(.primary):hover,#cleanDetailOverlay .cln-link:not(.primary):hover{background:var(--cln-fg);color:var(--cln-bg);}
 .cln-section{margin-bottom:64px;}
 .cln-section-title{font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:22px;display:flex;align-items:center;gap:10px;}
+.cln-section-title::before{content:'';width:16px;height:3px;border-radius:2px;background:var(--cln-accent);flex-shrink:0;}
 .cln-section-title::after{content:'';flex:1;height:1px;background:var(--cln-line);}
-.cln-case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
-.cln-case{border:1px solid var(--cln-line);border-radius:14px;overflow:hidden;background:var(--cln-card-bg);cursor:pointer;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
-.cln-case:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.08);}
-.cln-case-img{aspect-ratio:16/9;background-size:cover;background-position:center;background-color:#eee;position:relative;}
-.cln-case-clipcount{position:absolute;bottom:10px;right:10px;background:rgba(255,255,255,.92);border-radius:999px;padding:4px 10px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.05em;}
-.cln-case-body{padding:18px 20px 22px;}
-.cln-case-period{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:6px;}
-.cln-case-name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;margin-bottom:4px;}
-.cln-case-role{font-size:12.5px;color:var(--cln-sub);margin-bottom:10px;}
-.cln-case-desc{font-size:13px;line-height:1.55;color:#333;}
+.cln-case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px;}
+.cln-case{position:relative;aspect-ratio:3/4;border-radius:18px;overflow:hidden;cursor:pointer;background:var(--cln-card-bg);box-shadow:0 1px 3px rgba(0,0,0,.07);transition:box-shadow .3s,transform .3s;}
+.cln-case:hover{box-shadow:0 20px 40px rgba(0,0,0,.18);transform:translateY(-4px);}
+.cln-case-img{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#eee;transition:transform .6s cubic-bezier(.2,.8,.2,1);}
+.cln-case:hover .cln-case-img{transform:scale(1.07);}
+.cln-case-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.55) 72%,rgba(0,0,0,.9) 100%);}
+.cln-case-clipcount{position:absolute;top:16px;right:16px;z-index:2;background:var(--cln-accent);color:#fff;border-radius:999px;padding:5px 12px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.05em;font-weight:700;}
+.cln-case-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 22px 26px;color:#fff;}
+.cln-case-period{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:6px;}
+.cln-case-name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:22px;line-height:1.15;margin-bottom:4px;color:#fff;}
+.cln-case-role{font-size:12.5px;color:rgba(255,255,255,.8);margin-bottom:10px;}
+.cln-case-desc{font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.82);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.cln-case-arrow{position:absolute;bottom:22px;right:20px;z-index:2;width:34px;height:34px;border-radius:50%;background:#fff;color:#0a0a0a;display:flex;align-items:center;justify-content:center;font-size:15px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;}
+.cln-case:hover .cln-case-arrow{opacity:1;transform:translateY(0);}
 .cln-tool-grid{display:flex;flex-wrap:wrap;gap:10px;}
-.cln-tool-chip{display:flex;align-items:center;gap:8px;border:1px solid var(--cln-line);border-radius:10px;padding:9px 14px;font-size:12.5px;font-weight:600;}
+.cln-tool-chip{display:flex;align-items:center;gap:8px;border:1px solid var(--cln-line);border-radius:10px;padding:9px 14px;font-size:12.5px;font-weight:600;transition:border-color .2s;}
+.cln-tool-chip:hover{border-color:var(--cln-accent);}
 .cln-tool-chip img{width:16px;height:16px;object-fit:contain;}
-.cln-body-grid{display:grid;grid-template-columns:1fr 380px;gap:56px;align-items:start;}
+.cln-body-grid{display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:start;}
 .cln-aside{position:sticky;top:28px;display:flex;flex-direction:column;gap:40px;}
 .cln-list-item{padding:12px 0;border-bottom:1px solid var(--cln-line);display:flex;justify-content:space-between;gap:12px;font-size:13.5px;}
 .cln-list-item:last-child{border-bottom:none;}
@@ -744,7 +751,7 @@ option{background:var(--bg2);}
 .cln-clip-title{font-size:11.5px;font-weight:700;line-height:1.3;}
 .cln-clip-sub{font-family:'Space Mono',monospace;font-size:9px;color:var(--cln-sub);margin-top:2px;}
 .cln-clip-proj-lbl{grid-column:1/-1;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cln-sub);margin-top:10px;padding-top:10px;border-top:1px solid var(--cln-line);}
-@media(max-width:960px){
+@media(max-width:1040px){
   .cln-wrap,.cln-detail-wrap{padding-left:20px;padding-right:20px;}
   .cln-body-grid{grid-template-columns:1fr;}
   .cln-aside{position:static;}
@@ -1304,7 +1311,6 @@ https://otraempresa.com/careers"></textarea>
      Todo el contenido se genera en JS (renderCleanSkin) a partir de D,
      los mismos datos que usa Classic, así que nunca se desincroniza. -->
 <div id="cleanSkinRoot" style="display:none;">
-  <button class="cln-backbtn" onclick="openDevlog()">Devlog</button>
   <button class="cln-langbtn" onclick="toggleLang();renderCleanSkin();">EN / ES</button>
   <div id="cleanContent"></div>
 </div>
@@ -1741,21 +1747,22 @@ function renderCleanSkin(){
   const linksHtml=(D.links||[]).filter(l=>l.showInHeader).map((l,i)=>{
     const isEmail=l.url.startsWith('mailto:');
     return `<a class="cln-link${i===0?' primary':''}" href="${l.url}"${isEmail?'':' target="_blank" rel="noopener"'}>${l.label}</a>`;
-  }).join('');
+  }).join('')+`<button class="cln-link" onclick="openDevlog()">Devlog</button>`;
 
   const caseCardsHtml=(D.companies||[]).map(c=>{
     const clipCount=(c.clips||[]).length+(c.projects||[]).reduce((s,pr)=>s+(pr.clips||[]).length,0);
     const desc=isEs&&c.desc_es?c.desc_es:(c.desc||'');
     return `<div class="cln-case" onclick="openCleanDetail('${c.id}')">
-      <div class="cln-case-img" style="background-image:url(${c.thumb||c.logo||''})">
-        ${clipCount?`<span class="cln-case-clipcount">${clipCount} ${t('clips')}</span>`:''}
-      </div>
+      <div class="cln-case-img" style="background-image:url(${c.thumb||c.logo||''})"></div>
+      <div class="cln-case-scrim"></div>
+      ${clipCount?`<span class="cln-case-clipcount">${clipCount} ${t('clips')}</span>`:''}
       <div class="cln-case-body">
         <div class="cln-case-period">${c.period||''}</div>
         <div class="cln-case-name">${c.name||''}</div>
         <div class="cln-case-role">${c.role||''}</div>
         <div class="cln-case-desc">${desc}</div>
       </div>
+      <div class="cln-case-arrow">↗</div>
     </div>`;
   }).join('');
 
