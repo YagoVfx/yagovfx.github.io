@@ -9,12 +9,6 @@
 <meta name="author" id="seo-author" content="Yago Fernández">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#0a0b0f">
-<!-- Three.js solo para la skin Library — el importmap no descarga nada
-     por sí solo, solo se resuelve cuando algún script hace
-     import('three'), y eso solo ocurre si el visitante activa Library. -->
-<script type="importmap">
-{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
-</script>
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" id="og-title" content="Yago Fernández — Senior Real-Time VFX Artist">
@@ -666,12 +660,92 @@ option{background:var(--bg2);}
 .proj-clip-sub{font-family:var(--mono);font-size:8px;color:var(--sub);}
 .proj-clip-actions{display:flex;gap:4px;flex-shrink:0;}
 
-/* ══ SKIN: LIBRARY — cascarón (Fase 1) ══ */
-#librarySkinRoot{position:fixed;inset:0;background:#14100c;color:#e8dcc8;display:flex;align-items:center;justify-content:center;z-index:10;}
-.lib-shell-inner{max-width:420px;text-align:center;padding:32px;}
-.lib-shell-icon{font-size:48px;margin-bottom:16px;}
-.lib-shell-title{font-size:20px;font-weight:800;margin-bottom:10px;font-family:Georgia,serif;}
-.lib-shell-sub{font-size:13px;color:#a89a82;line-height:1.6;margin-bottom:24px;}
+/* ══ SKIN: CLEAN — editorial, minimalista, tarjetas case-study ══
+   Paleta fija propia (no depende de los temas de color de Classic).
+   Todo el CSS vive bajo #cleanSkinRoot para no interferir con Classic. */
+#cleanSkinRoot,#cleanDetailOverlay{
+  --cln-bg:#ffffff;--cln-fg:#0a0a0a;--cln-sub:#6b6b6b;--cln-line:#e6e6e6;
+  --cln-accent:#0a0a0a;--cln-card-bg:#fafafa;
+  position:fixed;inset:0;background:var(--cln-bg);color:var(--cln-fg);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+  font-family:'Inter',system-ui,sans-serif;
+}
+#cleanSkinRoot{z-index:10;}
+#cleanSkinRoot .cln-serif,#cleanDetailOverlay .cln-serif{font-family:'Unbounded',sans-serif;}
+#cleanSkinRoot a,#cleanDetailOverlay a{color:inherit;}
+#cleanSkinRoot ::selection,#cleanDetailOverlay ::selection{background:var(--cln-fg);color:var(--cln-bg);}
+.cln-backbtn{position:fixed;top:18px;left:18px;z-index:40;background:var(--cln-bg);border:1px solid var(--cln-fg);
+  color:var(--cln-fg);font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.04em;
+  padding:9px 16px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s;}
+.cln-backbtn:hover{background:var(--cln-fg);color:var(--cln-bg);}
+.cln-langbtn{position:fixed;top:18px;right:18px;z-index:40;background:transparent;border:1px solid var(--cln-line);
+  color:var(--cln-fg);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  padding:9px 14px;border-radius:999px;cursor:pointer;}
+.cln-wrap{max-width:1040px;margin:0 auto;padding:88px 32px 120px;}
+.cln-hero{padding-bottom:56px;border-bottom:1px solid var(--cln-line);margin-bottom:56px;}
+.cln-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:18px;}
+.cln-name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:clamp(38px,7vw,74px);line-height:1.03;letter-spacing:-.01em;margin-bottom:6px;}
+.cln-role{font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(16px,2.2vw,22px);color:var(--cln-sub);margin-bottom:26px;}
+.cln-bio{font-size:16px;line-height:1.65;max-width:640px;color:#2a2a2a;margin-bottom:32px;}
+.cln-stats{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:28px;}
+.cln-stat-n{font-family:'Unbounded',sans-serif;font-weight:700;font-size:30px;}
+.cln-stat-l{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--cln-sub);margin-top:2px;}
+.cln-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;}
+.cln-tag{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.04em;border:1px solid var(--cln-line);border-radius:999px;padding:6px 12px;color:#333;}
+.cln-links{display:flex;gap:10px;flex-wrap:wrap;}
+.cln-link{font-size:13px;font-weight:600;border:1px solid var(--cln-fg);border-radius:999px;padding:10px 20px;text-decoration:none;transition:background .2s,color .2s;}
+.cln-link.primary{background:var(--cln-fg);color:var(--cln-bg);}
+.cln-link.primary:hover{opacity:.8;}
+.cln-link:not(.primary):hover{background:var(--cln-fg);color:var(--cln-bg);}
+.cln-section{margin-bottom:64px;}
+.cln-section-title{font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:22px;display:flex;align-items:center;gap:10px;}
+.cln-section-title::after{content:'';flex:1;height:1px;background:var(--cln-line);}
+.cln-case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.cln-case{border:1px solid var(--cln-line);border-radius:14px;overflow:hidden;background:var(--cln-card-bg);cursor:pointer;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
+.cln-case:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.08);}
+.cln-case-img{aspect-ratio:16/9;background-size:cover;background-position:center;background-color:#eee;position:relative;}
+.cln-case-clipcount{position:absolute;bottom:10px;right:10px;background:rgba(255,255,255,.92);border-radius:999px;padding:4px 10px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.05em;}
+.cln-case-body{padding:18px 20px 22px;}
+.cln-case-period{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:6px;}
+.cln-case-name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;margin-bottom:4px;}
+.cln-case-role{font-size:12.5px;color:var(--cln-sub);margin-bottom:10px;}
+.cln-case-desc{font-size:13px;line-height:1.55;color:#333;}
+.cln-tool-grid{display:flex;flex-wrap:wrap;gap:10px;}
+.cln-tool-chip{display:flex;align-items:center;gap:8px;border:1px solid var(--cln-line);border-radius:10px;padding:9px 14px;font-size:12.5px;font-weight:600;}
+.cln-tool-chip img{width:16px;height:16px;object-fit:contain;}
+.cln-cols2{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.cln-list-item{padding:12px 0;border-bottom:1px solid var(--cln-line);display:flex;justify-content:space-between;gap:12px;font-size:13.5px;}
+.cln-list-item:last-child{border-bottom:none;}
+.cln-list-title{font-weight:700;}
+.cln-list-sub{color:var(--cln-sub);font-size:12px;}
+.cln-contact-grid{display:flex;flex-wrap:wrap;gap:12px 32px;}
+.cln-contact-item{font-size:14px;}
+.cln-contact-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:3px;}
+.cln-footer{padding-top:40px;border-top:1px solid var(--cln-line);font-family:'Space Mono',monospace;font-size:11px;color:var(--cln-sub);}
+/* detail overlay */
+#cleanDetailOverlay{position:fixed;inset:0;background:var(--cln-bg);z-index:50;overflow-y:auto;display:none;}
+#cleanDetailOverlay.on{display:block;}
+.cln-detail-wrap{max-width:920px;margin:0 auto;padding:88px 32px 100px;}
+.cln-detail-cover{width:100%;aspect-ratio:16/8;background-size:cover;background-position:center;border-radius:16px;margin-bottom:28px;background-color:#eee;}
+.cln-detail-meta{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:8px;}
+.cln-detail-title{font-family:'Unbounded',sans-serif;font-weight:700;font-size:clamp(28px,5vw,44px);margin-bottom:16px;}
+.cln-detail-desc{font-size:15px;line-height:1.7;max-width:680px;color:#2a2a2a;margin-bottom:22px;}
+.cln-detail-specs{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:36px;}
+.cln-player{width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;margin-bottom:20px;display:none;}
+.cln-player.on{display:block;}
+.cln-player iframe{width:100%;height:100%;border:0;}
+.cln-clip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;}
+.cln-clip{border:1px solid var(--cln-line);border-radius:10px;overflow:hidden;cursor:pointer;background:var(--cln-card-bg);}
+.cln-clip-img{aspect-ratio:16/9;background-size:cover;background-position:center;background-color:#eee;position:relative;}
+.cln-clip-img::after{content:'▶';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;text-shadow:0 1px 6px rgba(0,0,0,.5);}
+.cln-clip-body{padding:9px 10px;}
+.cln-clip-title{font-size:11.5px;font-weight:700;line-height:1.3;}
+.cln-clip-sub{font-family:'Space Mono',monospace;font-size:9px;color:var(--cln-sub);margin-top:2px;}
+.cln-clip-proj-lbl{grid-column:1/-1;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cln-sub);margin-top:10px;padding-top:10px;border-top:1px solid var(--cln-line);}
+@media(max-width:700px){
+  .cln-wrap,.cln-detail-wrap{padding-left:20px;padding-right:20px;}
+  .cln-cols2{grid-template-columns:1fr;gap:32px;}
+}
 
 </style>
 </head>
@@ -1057,14 +1131,14 @@ https://otraempresa.com/careers"></textarea>
       <div class="adm-sec" id="sec-skin">
         <div class="a-title">Skin</div>
         <div class="a-sub">Elige cómo se presenta tu portfolio a los visitantes. El contenido es exactamente el mismo en ambas — solo cambia la forma.</div>
-        <div class="fb-notice"><strong>⚠ En construcción:</strong> "Library" es una skin nueva en desarrollo (interfaz 3D diegética, un despacho de artista técnico donde los libros son el menú). Por ahora solo muestra una pantalla de "próximamente" — el contenido real llegará en fases futuras. "Classic" es tu web actual, sin cambios.</div>
+        <div class="fb-notice"><strong>ℹ Info:</strong> "Clean" es una skin alternativa completa — diseño editorial minimalista (blanco/negro), con tarjetas tipo case-study por empresa/proyecto y toda tu info (experiencia, skills, CV, contacto) en una sola página fácil de leer. "Classic" es tu web actual, sin cambios.</div>
         <div class="a-form" style="max-width:480px;">
           <div class="frow">
             <div class="fg">
               <label class="fl">Skin activa</label>
               <select class="fsel" id="skinSel" onchange="setSkin(this.value)">
                 <option value="classic">Classic (por defecto)</option>
-                <option value="library">Library (en construcción)</option>
+                <option value="clean">Clean (editorial, case-studies)</option>
               </select>
             </div>
           </div>
@@ -1221,26 +1295,22 @@ https://otraempresa.com/careers"></textarea>
   </div>
 </div>
 
-<!-- ══ SKIN: LIBRARY (cascarón, Fase 1) ══
-     Hermano de #app, nunca dentro. Classic (#app) no se toca ni se lee
-     desde aquí — applySkinVisibility() decide cuál de los dos mostrar.
-     Mientras esto sea solo un placeholder, el riesgo de romper Classic
-     es cero: ningún render*() de Classic sabe que esto existe. -->
-<!-- ══ SKIN: LIBRARY (Fase 2) ══
-     Hermano de #app, nunca dentro. Classic (#app) no se toca ni se lee
-     desde aquí — applySkinVisibility() decide cuál de los dos mostrar.
-     El botón "Volver" está SIEMPRE visible, encima de cualquier estado
-     (cargando / error / escena), porque es la puerta de salida de
-     accesibilidad definida en la arquitectura: nunca debe depender de
-     que la escena 3D haya cargado bien para poder volver a Classic. -->
-<div id="librarySkinRoot" style="display:none;">
-  <button class="ab" id="libBackBtn" onclick="setSkin('classic')" style="position:fixed;top:16px;left:16px;z-index:20;">← Classic</button>
-  <div id="libLoadingState" class="lib-shell-inner">
-    <div class="lib-shell-icon">📚</div>
-    <div class="lib-shell-title" id="libLoadingTitle">Cargando el estudio…</div>
-    <div class="lib-shell-sub" id="libLoadingSub">Preparando la escena. Un momento.</div>
+<!-- ══ SKIN: CLEAN ══
+     Hermana de #app, nunca dentro. Classic (#app) no se toca ni se lee
+     desde aquí — applySkinVisibility() decide cuál de las dos mostrar.
+     Todo el contenido se genera en JS (renderCleanSkin) a partir de D,
+     los mismos datos que usa Classic, así que nunca se desincroniza. -->
+<div id="cleanSkinRoot" style="display:none;">
+  <button class="cln-backbtn" onclick="setSkin('classic')">← Classic</button>
+  <button class="cln-langbtn" onclick="toggleLang();renderCleanSkin();">EN / ES</button>
+  <div id="cleanContent"></div>
+</div>
+
+<div id="cleanDetailOverlay">
+  <div class="cln-detail-wrap">
+    <button class="cln-backbtn" style="position:static;margin-bottom:28px;" onclick="closeCleanDetail()">← Volver</button>
+    <div id="cleanDetailContent"></div>
   </div>
-  <div id="libCanvasContainer" style="position:absolute;inset:0;display:none;"></div>
 </div>
 
 <script type="module">
@@ -1621,18 +1691,12 @@ function autoplayOnLoad(){
 
 /* ══ VISITOR ══ */
 let activeCompany=null;
-/* ══ SKIN MANAGER (Fase 1-2) ══
+/* ══ SKIN MANAGER ══
    Capa fina que decide qué skin se muestra. NO toca ningún render*() de
    Classic — solo oculta/muestra contenedores enteros (#app vs
-   #librarySkinRoot). Classic sigue funcionando exactamente igual esté
+   #cleanSkinRoot). Classic sigue funcionando exactamente igual esté
    activo o no; cuando está oculto simplemente no se ve, pero su propio
-   código de renderizado no sabe que existe una skin alternativa.
-
-   La escena 3D (Three.js) se importa de forma DINÁMICA, solo la primera
-   vez que alguien activa Library — los visitantes que se quedan en
-   Classic (la mayoría) no descargan ni un byte de WebGL. */
-let libraryScene=null;      // instancia de la escena, una vez cargada
-let libraryLoadPromise=null; // evita cargarla dos veces si se hace toggle rápido
+   código de renderizado no sabe que existe una skin alternativa. */
 
 function getActiveSkin(){return D.skin||'classic';}
 
@@ -1640,49 +1704,176 @@ function setSkin(id){
   D.skin=id;
   save();
   applySkinVisibility();
-  if(id==='library')ensureLibrarySceneLoaded();
-  else if(libraryScene)libraryScene.pause();
-  toast(id==='library'?'Skin: Library':'Skin: Classic');
+  toast(id==='clean'?'Skin: Clean':'Skin: Classic');
 }
 
 function applySkinVisibility(){
   const app=document.getElementById('app');
-  const lib=document.getElementById('librarySkinRoot');
-  if(!app||!lib)return;
-  const isLibrary=getActiveSkin()==='library';
-  app.style.display=isLibrary?'none':'';
-  lib.style.display=isLibrary?'block':'none';
-  if(isLibrary)ensureLibrarySceneLoaded();
-  else if(libraryScene)libraryScene.pause();
+  const cln=document.getElementById('cleanSkinRoot');
+  if(!app||!cln)return;
+  const isClean=getActiveSkin()==='clean';
+  app.style.display=isClean?'none':'';
+  cln.style.display=isClean?'block':'none';
+  if(isClean)renderCleanSkin();
+  else closeCleanDetail();
 }
 
-async function ensureLibrarySceneLoaded(){
-  if(libraryScene){libraryScene.resume();return;}
-  if(libraryLoadPromise)return libraryLoadPromise;
+/* ══ SKIN: CLEAN — render ══
+   Lee directamente de D (los mismos datos que Classic) y construye la
+   página editorial de tarjetas case-study. Se reconstruye entera cada
+   vez que se muestra, así que siempre refleja el contenido actual. */
+function renderCleanSkin(){
+  const root=document.getElementById('cleanContent');
+  if(!root)return;
+  const p=D.profile,isEs=D.lang==='es';
+  const bio=isEs?(p.bio_es||p.bio_en||p.bio):(p.bio_en||p.bio);
+  const role=isEs?(p.role_es||p.role_en||p.role):(p.role_en||p.role);
+  const s1l=isEs?(p.s1l_es||p.s1l_en||p.s1l):(p.s1l_en||p.s1l);
+  const s2l=isEs?(p.s2l_es||p.s2l_en||p.s2l):(p.s2l_en||p.s2l);
+  const s3l=isEs?(p.s3l_es||p.s3l_en||p.s3l):(p.s3l_en||p.s3l);
+  const tagsSrc=isEs?(p.availTags_es||p.availTags_en||p.availTags):(p.availTags_en||p.availTags);
+  const tagsHtml=(tagsSrc||'').split(',').filter(Boolean).map(tg=>`<span class="cln-tag">${tg.trim()}</span>`).join('');
+  const cv=D.cv||{};
 
-  const titleEl=document.getElementById('libLoadingTitle');
-  const subEl=document.getElementById('libLoadingSub');
-  const loadingEl=document.getElementById('libLoadingState');
-  const canvasEl=document.getElementById('libCanvasContainer');
+  const linksHtml=(D.links||[]).filter(l=>l.showInHeader).map((l,i)=>{
+    const isEmail=l.url.startsWith('mailto:');
+    return `<a class="cln-link${i===0?' primary':''}" href="${l.url}"${isEmail?'':' target="_blank" rel="noopener"'}>${l.label}</a>`;
+  }).join('');
 
-  libraryLoadPromise=(async()=>{
-    try{
-      const [sceneMod,modelMod]=await Promise.all([
-        import('./skins/library/scene.js'),
-        import('./skins/library/sections-model.js'),
-      ]);
-      if(subEl)subEl.textContent='Montando la escena…';
-      const sectionsModel=modelMod.deriveSectionsModel(D);
-      libraryScene=await sceneMod.initLibraryScene(canvasEl,sectionsModel.books);
-      loadingEl.style.display='none';
-      canvasEl.style.display='block';
-    }catch(e){
-      console.error('[Library skin] fallo al cargar la escena:',e);
-      if(titleEl)titleEl.textContent='No se pudo cargar el estudio';
-      if(subEl)subEl.textContent='Tu navegador o conexión no permitió cargar la escena 3D. Puedes volver a la versión clásica con el botón de arriba.';
-    }
-  })();
-  return libraryLoadPromise;
+  const caseCardsHtml=(D.companies||[]).map(c=>{
+    const clipCount=(c.clips||[]).length+(c.projects||[]).reduce((s,pr)=>s+(pr.clips||[]).length,0);
+    const desc=isEs&&c.desc_es?c.desc_es:(c.desc||'');
+    return `<div class="cln-case" onclick="openCleanDetail('${c.id}')">
+      <div class="cln-case-img" style="background-image:url(${c.thumb||c.logo||''})">
+        ${clipCount?`<span class="cln-case-clipcount">${clipCount} ${t('clips')}</span>`:''}
+      </div>
+      <div class="cln-case-body">
+        <div class="cln-case-period">${c.period||''}</div>
+        <div class="cln-case-name">${c.name||''}</div>
+        <div class="cln-case-role">${c.role||''}</div>
+        <div class="cln-case-desc">${desc}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const toolsHtml=(D.tools||[]).map(tl=>`<div class="cln-tool-chip"><img src="${tl.img}" alt="${tl.n}">${tl.n}</div>`).join('');
+  const skillsHtml=(cv.skills||[]).map(s=>`<span class="cln-tag">${s}</span>`).join('');
+
+  const eduHtml=(cv.education||[]).map(e=>`<div class="cln-list-item"><div><div class="cln-list-title">${e.title||''}</div><div class="cln-list-sub">${e.institution||''}</div></div><div class="cln-list-sub">${e.year||''}</div></div>`).join('');
+  const langHtml=(cv.languages||[]).map(l=>`<div class="cln-list-item"><div class="cln-list-title">${l.name||''}</div><div class="cln-list-sub">${l.level||''}</div></div>`).join('');
+
+  const contactBits=[
+    cv.email?['Email',`<a href="mailto:${cv.email}">${cv.email}</a>`]:null,
+    cv.phone?['Phone',cv.phone]:null,
+    cv.location?['Location',cv.location]:null,
+    cv.website?['Website',`<a href="${cv.website}" target="_blank" rel="noopener">${cv.website}</a>`]:null,
+    cv.artstation?['ArtStation',`<a href="${cv.artstation}" target="_blank" rel="noopener">${cv.artstation}</a>`]:null,
+  ].filter(Boolean).map(([label,val])=>`<div class="cln-contact-item"><div class="cln-contact-label">${label}</div>${val}</div>`).join('');
+
+  root.innerHTML=`
+    <div class="cln-wrap">
+      <div class="cln-hero">
+        <div class="cln-eyebrow">${isEs?'Portfolio':'Portfolio'} — ${t('open_to_work')}</div>
+        <div class="cln-name">${p.name||''}</div>
+        <div class="cln-role">${role||''}</div>
+        <div class="cln-bio">${bio||''}${cv.summary?` ${cv.summary}`:''}</div>
+        <div class="cln-stats">
+          <div><div class="cln-stat-n">${p.s1n||''}</div><div class="cln-stat-l">${s1l||''}</div></div>
+          <div><div class="cln-stat-n">${p.s2n||''}</div><div class="cln-stat-l">${s2l||''}</div></div>
+          <div><div class="cln-stat-n">${p.s3n||''}</div><div class="cln-stat-l">${s3l||''}</div></div>
+        </div>
+        <div class="cln-tags">${tagsHtml}</div>
+        <div class="cln-links">${linksHtml}</div>
+      </div>
+
+      <div class="cln-section">
+        <div class="cln-section-title">${t('experience')}</div>
+        <div class="cln-case-grid">${caseCardsHtml}</div>
+      </div>
+
+      <div class="cln-section cln-cols2">
+        <div>
+          <div class="cln-section-title">${t('core_tools')}${skillsHtml?' + Skills':''}</div>
+          <div class="cln-tool-grid">${toolsHtml}</div>
+          ${skillsHtml?`<div class="cln-tags" style="margin-top:14px;">${skillsHtml}</div>`:''}
+        </div>
+        <div>
+          ${eduHtml?`<div class="cln-section-title">${isEs?'Educación':'Education'}</div><div style="margin-bottom:24px;">${eduHtml}</div>`:''}
+          ${langHtml?`<div class="cln-section-title">${isEs?'Idiomas':'Languages'}</div><div>${langHtml}</div>`:''}
+        </div>
+      </div>
+
+      ${contactBits?`<div class="cln-section">
+        <div class="cln-section-title">${isEs?'Contacto':'Contact'}</div>
+        <div class="cln-contact-grid">${contactBits}</div>
+      </div>`:''}
+
+      <div class="cln-footer">© ${new Date().getFullYear()} ${p.name||''} — ${isEs?'skin Clean':'Clean skin'}</div>
+    </div>
+  `;
+}
+
+function openCleanDetail(id){
+  const c=(D.companies||[]).find(x=>x.id===id);if(!c)return;
+  const isEs=D.lang==='es';
+  const desc=isEs&&c.desc_es?c.desc_es:(c.desc||'');
+  const looseClips=c.clips||[];
+  const projects=c.projects||[];
+
+  let clipsHtml='';
+  let firstClip=null;
+  looseClips.forEach((cl,i)=>{
+    if(!firstClip)firstClip=cl;
+    clipsHtml+=`<div class="cln-clip" onclick="playCleanClip('${(cl.video||'').replace(/'/g,"\\'")}',this)">
+      <div class="cln-clip-img" style="background-image:url(${cl.thumb||''})"></div>
+      <div class="cln-clip-body"><div class="cln-clip-title">${cl.title||''}</div><div class="cln-clip-sub">${cl.tools||''}</div></div>
+    </div>`;
+  });
+  projects.forEach(pr=>{
+    if(!(pr.clips||[]).length)return;
+    clipsHtml+=`<div class="cln-clip-proj-lbl">${pr.name||''}</div>`;
+    pr.clips.forEach(cl=>{
+      if(!firstClip)firstClip=cl;
+      clipsHtml+=`<div class="cln-clip" onclick="playCleanClip('${(cl.video||'').replace(/'/g,"\\'")}',this)">
+        <div class="cln-clip-img" style="background-image:url(${cl.thumb||''})"></div>
+        <div class="cln-clip-body"><div class="cln-clip-title">${cl.title||''}</div><div class="cln-clip-sub">${cl.tools||''}</div></div>
+      </div>`;
+    });
+  });
+
+  const content=document.getElementById('cleanDetailContent');
+  content.innerHTML=`
+    <div class="cln-detail-cover" id="cleanDetailCover" style="background-image:url(${c.thumb||c.logo||''})"></div>
+    <div class="cln-detail-meta">${c.role||''} · ${c.period||''}</div>
+    <div class="cln-detail-title">${c.name||''}</div>
+    <div class="cln-detail-desc">${desc}</div>
+    <div class="cln-detail-specs">
+      <div><div class="cln-contact-label">${t('engine')}</div>${c.engine||''}</div>
+      <div><div class="cln-contact-label">${t('tools')}</div>${c.tools||''}</div>
+    </div>
+    <div class="cln-player" id="cleanPlayer"><iframe id="cleanPlayerFrame" allow="autoplay;fullscreen" allowfullscreen></iframe></div>
+    <div class="cln-section-title">${t('clips')}</div>
+    <div class="cln-clip-grid">${clipsHtml||`<div class="cln-list-sub">${t('no_clips')}</div>`}</div>
+  `;
+  document.getElementById('cleanDetailOverlay').classList.add('on');
+  document.getElementById('cleanDetailOverlay').scrollTop=0;
+  if(firstClip)playCleanClip(firstClip.video);
+}
+
+function playCleanClip(video){
+  if(!video)return;
+  const player=document.getElementById('cleanPlayer');
+  const frame=document.getElementById('cleanPlayerFrame');
+  if(!player||!frame)return;
+  frame.src=video.includes('?')?video+'&autoplay=1':video+'?autoplay=1';
+  player.classList.add('on');
+}
+
+function closeCleanDetail(){
+  const ov=document.getElementById('cleanDetailOverlay');
+  if(ov)ov.classList.remove('on');
+  const frame=document.getElementById('cleanPlayerFrame');
+  if(frame)frame.src='about:blank';
 }
 
 function renderVisitor(){
@@ -3329,7 +3520,7 @@ Object.assign(window,{
   confirmAddLink, confirmAddProject, confirmAddSkill, confirmAddTool, confirmAddVid, confirmEditCo, confirmEditEdu, confirmEditLink,
   confirmEditProject, confirmEditSkill, confirmEditTool, confirmEditVfxCompany, confirmEditVid, deleteCo, deleteEdu, deleteLang,
   deleteLink, deletePost, deleteProject, deleteSkill, deleteTool, deleteVfxCompany, deleteVid, detectLang,
-  getActiveSkin, setSkin,
+  getActiveSkin, setSkin, renderCleanSkin, openCleanDetail, closeCleanDetail, playCleanClip,
   exportData, exportVfxCompanies, fetchVideoMeta, generateCvPdf, gv, importPosts, importVfxBulk, loadLiveCompanies,
   openAddCo, openAddEdu, openAddLang, openAddLink, openAddPost, openAddProject, openAddSkill, openAddTool,
   openAddVid, openAdmin, openDevlog, openEditCo, openEditEdu, openEditLink, openEditPost, openEditProject,
