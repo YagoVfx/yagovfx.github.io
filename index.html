@@ -681,7 +681,7 @@ option{background:var(--bg2);}
 .cln-langbtn{position:fixed;top:18px;right:18px;z-index:40;background:transparent;border:1px solid var(--cln-line);
   color:var(--cln-fg);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
   padding:9px 14px;border-radius:999px;cursor:pointer;}
-.cln-wrap{max-width:1040px;margin:0 auto;padding:88px 32px 120px;}
+.cln-wrap{max-width:1760px;margin:0;padding:88px 4vw 100px 64px;}
 .cln-hero{padding-bottom:56px;border-bottom:1px solid var(--cln-line);margin-bottom:56px;}
 .cln-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:18px;}
 .cln-name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:clamp(38px,7vw,74px);line-height:1.03;letter-spacing:-.01em;margin-bottom:6px;}
@@ -694,13 +694,14 @@ option{background:var(--bg2);}
 .cln-tag{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.04em;border:1px solid var(--cln-line);border-radius:999px;padding:6px 12px;color:#333;}
 .cln-links{display:flex;gap:10px;flex-wrap:wrap;}
 .cln-link{font-size:13px;font-weight:600;border:1px solid var(--cln-fg);border-radius:999px;padding:10px 20px;text-decoration:none;transition:background .2s,color .2s;}
-.cln-link.primary{background:var(--cln-fg);color:var(--cln-bg);}
+.cln-link.primary{background:var(--cln-fg);}
+#cleanSkinRoot a.cln-link.primary,#cleanDetailOverlay a.cln-link.primary{color:var(--cln-bg);}
 .cln-link.primary:hover{opacity:.8;}
-.cln-link:not(.primary):hover{background:var(--cln-fg);color:var(--cln-bg);}
+#cleanSkinRoot a.cln-link:not(.primary):hover,#cleanDetailOverlay a.cln-link:not(.primary):hover{background:var(--cln-fg);color:var(--cln-bg);}
 .cln-section{margin-bottom:64px;}
 .cln-section-title{font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:22px;display:flex;align-items:center;gap:10px;}
 .cln-section-title::after{content:'';flex:1;height:1px;background:var(--cln-line);}
-.cln-case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.cln-case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
 .cln-case{border:1px solid var(--cln-line);border-radius:14px;overflow:hidden;background:var(--cln-card-bg);cursor:pointer;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
 .cln-case:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.08);}
 .cln-case-img{aspect-ratio:16/9;background-size:cover;background-position:center;background-color:#eee;position:relative;}
@@ -713,13 +714,14 @@ option{background:var(--bg2);}
 .cln-tool-grid{display:flex;flex-wrap:wrap;gap:10px;}
 .cln-tool-chip{display:flex;align-items:center;gap:8px;border:1px solid var(--cln-line);border-radius:10px;padding:9px 14px;font-size:12.5px;font-weight:600;}
 .cln-tool-chip img{width:16px;height:16px;object-fit:contain;}
-.cln-cols2{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.cln-body-grid{display:grid;grid-template-columns:1fr 380px;gap:56px;align-items:start;}
+.cln-aside{position:sticky;top:28px;display:flex;flex-direction:column;gap:40px;}
 .cln-list-item{padding:12px 0;border-bottom:1px solid var(--cln-line);display:flex;justify-content:space-between;gap:12px;font-size:13.5px;}
 .cln-list-item:last-child{border-bottom:none;}
 .cln-list-title{font-weight:700;}
 .cln-list-sub{color:var(--cln-sub);font-size:12px;}
-.cln-contact-grid{display:flex;flex-wrap:wrap;gap:12px 32px;}
-.cln-contact-item{font-size:14px;}
+.cln-contact-grid{display:flex;flex-direction:column;gap:14px;}
+.cln-contact-item{font-size:13.5px;overflow-wrap:anywhere;}
 .cln-contact-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:3px;}
 .cln-footer{padding-top:40px;border-top:1px solid var(--cln-line);font-family:'Space Mono',monospace;font-size:11px;color:var(--cln-sub);}
 /* detail overlay */
@@ -742,9 +744,10 @@ option{background:var(--bg2);}
 .cln-clip-title{font-size:11.5px;font-weight:700;line-height:1.3;}
 .cln-clip-sub{font-family:'Space Mono',monospace;font-size:9px;color:var(--cln-sub);margin-top:2px;}
 .cln-clip-proj-lbl{grid-column:1/-1;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cln-sub);margin-top:10px;padding-top:10px;border-top:1px solid var(--cln-line);}
-@media(max-width:700px){
+@media(max-width:960px){
   .cln-wrap,.cln-detail-wrap{padding-left:20px;padding-right:20px;}
-  .cln-cols2{grid-template-columns:1fr;gap:32px;}
+  .cln-body-grid{grid-template-columns:1fr;}
+  .cln-aside{position:static;}
 }
 
 </style>
@@ -1301,7 +1304,7 @@ https://otraempresa.com/careers"></textarea>
      Todo el contenido se genera en JS (renderCleanSkin) a partir de D,
      los mismos datos que usa Classic, así que nunca se desincroniza. -->
 <div id="cleanSkinRoot" style="display:none;">
-  <button class="cln-backbtn" onclick="setSkin('classic')">← Classic</button>
+  <button class="cln-backbtn" onclick="openDevlog()">Devlog</button>
   <button class="cln-langbtn" onclick="toggleLang();renderCleanSkin();">EN / ES</button>
   <div id="cleanContent"></div>
 </div>
@@ -1773,7 +1776,7 @@ function renderCleanSkin(){
   root.innerHTML=`
     <div class="cln-wrap">
       <div class="cln-hero">
-        <div class="cln-eyebrow">${isEs?'Portfolio':'Portfolio'} — ${t('open_to_work')}</div>
+        <div class="cln-eyebrow">Portfolio — ${t('open_to_work')}</div>
         <div class="cln-name">${p.name||''}</div>
         <div class="cln-role">${role||''}</div>
         <div class="cln-bio">${bio||''}${cv.summary?` ${cv.summary}`:''}</div>
@@ -1786,27 +1789,25 @@ function renderCleanSkin(){
         <div class="cln-links">${linksHtml}</div>
       </div>
 
-      <div class="cln-section">
-        <div class="cln-section-title">${t('experience')}</div>
-        <div class="cln-case-grid">${caseCardsHtml}</div>
-      </div>
-
-      <div class="cln-section cln-cols2">
-        <div>
-          <div class="cln-section-title">${t('core_tools')}${skillsHtml?' + Skills':''}</div>
-          <div class="cln-tool-grid">${toolsHtml}</div>
-          ${skillsHtml?`<div class="cln-tags" style="margin-top:14px;">${skillsHtml}</div>`:''}
+      <div class="cln-body-grid">
+        <div class="cln-main">
+          <div class="cln-section" style="margin-bottom:0;">
+            <div class="cln-section-title">${t('experience')}</div>
+            <div class="cln-case-grid">${caseCardsHtml}</div>
+          </div>
         </div>
-        <div>
-          ${eduHtml?`<div class="cln-section-title">${isEs?'Educación':'Education'}</div><div style="margin-bottom:24px;">${eduHtml}</div>`:''}
-          ${langHtml?`<div class="cln-section-title">${isEs?'Idiomas':'Languages'}</div><div>${langHtml}</div>`:''}
+
+        <div class="cln-aside">
+          <div>
+            <div class="cln-section-title">${t('core_tools')}</div>
+            <div class="cln-tool-grid">${toolsHtml}</div>
+            ${skillsHtml?`<div class="cln-tags" style="margin-top:14px;">${skillsHtml}</div>`:''}
+          </div>
+          ${eduHtml?`<div><div class="cln-section-title">${isEs?'Educación':'Education'}</div>${eduHtml}</div>`:''}
+          ${langHtml?`<div><div class="cln-section-title">${isEs?'Idiomas':'Languages'}</div>${langHtml}</div>`:''}
+          ${contactBits?`<div><div class="cln-section-title">${isEs?'Contacto':'Contact'}</div><div class="cln-contact-grid">${contactBits}</div></div>`:''}
         </div>
       </div>
-
-      ${contactBits?`<div class="cln-section">
-        <div class="cln-section-title">${isEs?'Contacto':'Contact'}</div>
-        <div class="cln-contact-grid">${contactBits}</div>
-      </div>`:''}
 
       <div class="cln-footer">© ${new Date().getFullYear()} ${p.name||''} — ${isEs?'skin Clean':'Clean skin'}</div>
     </div>
