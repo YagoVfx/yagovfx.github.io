@@ -678,9 +678,14 @@ option{background:var(--bg2);}
   color:var(--cln-fg);font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.04em;
   padding:9px 16px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s;}
 .cln-backbtn:hover{background:var(--cln-fg);color:var(--cln-bg);}
-.cln-langbtn{position:fixed;top:18px;right:18px;z-index:40;background:transparent;border:1px solid var(--cln-line);
+.cln-topright{position:fixed;top:18px;right:18px;z-index:40;display:flex;gap:10px;align-items:center;}
+.cln-langbtn{background:transparent;border:1px solid var(--cln-line);
   color:var(--cln-fg);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
   padding:9px 14px;border-radius:999px;cursor:pointer;}
+.cln-iconbtn{background:transparent;border:1px solid var(--cln-line);color:var(--cln-sub);
+  width:34px;height:34px;border-radius:999px;cursor:pointer;font-size:14px;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s;}
+.cln-iconbtn:hover{border-color:var(--cln-accent);color:var(--cln-accent);}
 .cln-wrap{max-width:none;margin:0;padding:88px 3vw 100px 64px;}
 .cln-hero{padding-bottom:44px;margin-bottom:48px;}
 .cln-eyebrow{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:18px;display:flex;align-items:center;gap:8px;}
@@ -703,16 +708,16 @@ option{background:var(--bg2);}
 .cln-section-title{font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:22px;display:flex;align-items:center;gap:10px;}
 .cln-section-title::before{content:'';width:16px;height:3px;border-radius:2px;background:var(--cln-accent);flex-shrink:0;}
 .cln-section-title::after{content:'';flex:1;height:1px;background:var(--cln-line);}
-.cln-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:26px;}
-.cln-case{position:relative;aspect-ratio:3/4;border-radius:18px;overflow:hidden;cursor:pointer;background:var(--cln-card-bg);box-shadow:0 1px 3px rgba(0,0,0,.07);transition:box-shadow .3s,transform .3s;}
+.cln-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;}
+.cln-case{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;cursor:pointer;background:var(--cln-card-bg);box-shadow:0 1px 3px rgba(0,0,0,.07);transition:box-shadow .3s,transform .3s;}
 .cln-case:hover{box-shadow:0 20px 40px rgba(0,0,0,.18);transform:translateY(-4px);}
 .cln-case-img{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#eee;transition:transform .6s cubic-bezier(.2,.8,.2,1);}
 .cln-case:hover .cln-case-img{transform:scale(1.07);}
 .cln-case-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.55) 72%,rgba(0,0,0,.9) 100%);}
 .cln-case-clipcount{position:absolute;top:16px;right:16px;z-index:2;background:var(--cln-accent);color:#fff;border-radius:999px;padding:5px 12px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.05em;font-weight:700;}
-.cln-case-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 22px 26px;color:#fff;}
+.cln-case-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 18px 20px;color:#fff;}
 .cln-case-period{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:6px;}
-.cln-case-name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:22px;line-height:1.15;margin-bottom:4px;color:#fff;}
+.cln-case-name{font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.15;margin-bottom:4px;color:#fff;}
 .cln-case-role{font-size:12.5px;color:rgba(255,255,255,.8);margin-bottom:10px;}
 .cln-case-desc{font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.82);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
 .cln-case-arrow{position:absolute;bottom:22px;right:20px;z-index:2;width:34px;height:34px;border-radius:50%;background:#fff;color:#0a0a0a;display:flex;align-items:center;justify-content:center;font-size:15px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;}
@@ -721,8 +726,10 @@ option{background:var(--bg2);}
 .cln-tool-chip{display:flex;align-items:center;gap:8px;border:1px solid var(--cln-line);border-radius:10px;padding:9px 14px;font-size:12.5px;font-weight:600;transition:border-color .2s;}
 .cln-tool-chip:hover{border-color:var(--cln-accent);}
 .cln-tool-chip img{width:14px;height:14px;object-fit:contain;background:var(--cln-fg);border-radius:5px;padding:4px;box-sizing:content-box;flex-shrink:0;}
-.cln-body-grid{display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:start;max-width:1520px;margin-bottom:60px;}
-.cln-aside{display:flex;flex-direction:column;gap:40px;}
+.cln-body-grid{display:grid;grid-template-columns:1fr 700px;gap:56px;align-items:start;max-width:1560px;margin-bottom:60px;}
+.cln-aside{display:flex;gap:32px;align-items:flex-start;}
+.cln-aside-tools{flex:0 0 400px;}
+.cln-aside-side{flex:1;min-width:220px;display:flex;flex-direction:column;gap:32px;}
 .cln-list-item{padding:12px 0;border-bottom:1px solid var(--cln-line);display:flex;justify-content:space-between;gap:12px;font-size:13.5px;}
 .cln-list-item:last-child{border-bottom:none;}
 .cln-list-title{font-weight:700;}
@@ -754,6 +761,10 @@ option{background:var(--bg2);}
 @media(max-width:1040px){
   .cln-wrap,.cln-detail-wrap{padding-left:20px;padding-right:20px;}
   .cln-body-grid{grid-template-columns:1fr;max-width:none;}
+}
+@media(max-width:700px){
+  .cln-aside{flex-direction:column;}
+  .cln-aside-tools{flex:none;width:100%;}
 }
 
 </style>
@@ -1310,7 +1321,10 @@ https://otraempresa.com/careers"></textarea>
      Todo el contenido se genera en JS (renderCleanSkin) a partir de D,
      los mismos datos que usa Classic, así que nunca se desincroniza. -->
 <div id="cleanSkinRoot" style="display:none;">
-  <button class="cln-langbtn" onclick="toggleLang();renderCleanSkin();">EN / ES</button>
+  <div class="cln-topright">
+    <button class="cln-iconbtn" onclick="openGate()" title="Admin">⚙</button>
+    <button class="cln-langbtn" onclick="toggleLang();renderCleanSkin();">EN / ES</button>
+  </div>
   <div id="cleanContent"></div>
 </div>
 
@@ -1809,13 +1823,15 @@ function renderCleanSkin(){
         </div>
 
         <div class="cln-aside">
-          <div>
+          <div class="cln-aside-tools">
             <div class="cln-section-title">${t('core_tools')}</div>
             <div class="cln-tool-grid">${toolsHtml}</div>
             ${skillsHtml?`<div class="cln-tags" style="margin-top:14px;">${skillsHtml}</div>`:''}
           </div>
-          ${eduHtml?`<div><div class="cln-section-title">${isEs?'Educación':'Education'}</div>${eduHtml}</div>`:''}
-          ${langHtml?`<div><div class="cln-section-title">${isEs?'Idiomas':'Languages'}</div>${langHtml}</div>`:''}
+          <div class="cln-aside-side">
+            ${eduHtml?`<div><div class="cln-section-title">${isEs?'Educación':'Education'}</div>${eduHtml}</div>`:''}
+            ${langHtml?`<div><div class="cln-section-title">${isEs?'Idiomas':'Languages'}</div>${langHtml}</div>`:''}
+          </div>
         </div>
       </div>
 
