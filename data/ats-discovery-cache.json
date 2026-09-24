@@ -396,5 +396,11 @@
     "ats": "lever",
     "careersUrl": "https://jobs.lever.co/larian",
     "checkedAt": 1790224304.5408938
+  },
+  "insomniac games": {
+    "found": true,
+    "ats": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/insomniac",
+    "checkedAt": 1790249674.1497486
   }
 }
