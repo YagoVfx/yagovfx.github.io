@@ -2635,22 +2635,24 @@ const vfxJobsState={
   filterCat:'all',      // all | aaa | indie
   filterAts:'all',      // all | greenhouse | lever | teamtailor | workday | workable | ashby | smartrecruiters | recruitee | personio | custom | adzuna | adzuna-signal
   filterCompany:'all',  // all | <company name>
+  filterLocation:'all', // all | spain | <location string>
   showPossible:false,
   sort:'newest',        // newest | company | title
   search:'',
 };
-// Which DOM node renderVfxJobsPublic() writes into — the public overlay
-// (visitors, and the topbar button) or the dedicated admin-only "Ver
-// ofertas" section (a separate left-nav category, kept apart from the
-// tracker CONFIG section on purpose, per how this is actually used day to
-// day: configuring companies vs. just checking current listings are two
-// different tasks).
+// Which DOM node renderVfxJobsPublic() writes into — el overlay público
+// (visitantes, y el botón de la topbar) o la sección dedicada solo-admin
+// "Ver ofertas" (una categoría de nav izquierdo separada, aparte de la
+// sección CONFIG del tracker a propósito, según cómo se usa esto en el
+// día a día: configurar empresas vs. simplemente revisar el listado
+// actual son dos tareas distintas).
 let vfxJobsRenderTargetId='vfxJobsBody';
 
 function setVfxWpFilter(val){vfxJobsState.filterWp=val;renderVfxJobsPublic();}
 function setVfxCatFilter(val){vfxJobsState.filterCat=val;renderVfxJobsPublic();}
 function setVfxAtsFilter(val){vfxJobsState.filterAts=val;renderVfxJobsPublic();}
 function setVfxCompanyFilter(val){vfxJobsState.filterCompany=val;renderVfxJobsPublic();}
+function setVfxLocationFilter(val){vfxJobsState.filterLocation=val;renderVfxJobsPublic();}
 function setVfxSearch(val){vfxJobsState.search=val;renderVfxJobsPublic();}
 function setVfxSort(val){vfxJobsState.sort=val;renderVfxJobsPublic();}
 function setVfxShowPossible(checked){vfxJobsState.showPossible=checked;renderVfxJobsPublic();}
@@ -2715,8 +2717,6 @@ function vfxCatLabel(cat){
 function renderVfxJobsPublic(){
   const data=vfxJobsState.cache;if(!data)return;
   const active=(data.jobs||[]).filter(j=>j.status==='active');
-  const studios=new Set(active.map(j=>j.company)).size;
-  const euCount=active.filter(j=>/eu|europe/i.test(j.remoteScope||'')).length;
   const atsCounts=data.jobsByAts||{};
   const atsLabels={greenhouse:'Greenhouse',lever:'Lever',teamtailor:'Teamtailor',workday:'Workday',workable:'Workable',ashby:'Ashby',smartrecruiters:'SmartRecruiters',recruitee:'Recruitee',personio:'Personio',custom:'Custom',adzuna:'Adzuna',"adzuna-signal":'Adzuna (señal)'};
 
@@ -2725,6 +2725,8 @@ function renderVfxJobsPublic(){
   if(vfxJobsState.filterCat!=='all')list=list.filter(j=>(j.companyCategory||'unknown')===vfxJobsState.filterCat);
   if(vfxJobsState.filterAts!=='all')list=list.filter(j=>j.ats===vfxJobsState.filterAts);
   if(vfxJobsState.filterCompany!=='all')list=list.filter(j=>j.company===vfxJobsState.filterCompany);
+  if(vfxJobsState.filterLocation==='spain')list=list.filter(j=>/españa|spain/i.test(j.location||''));
+  else if(vfxJobsState.filterLocation!=='all')list=list.filter(j=>(j.location||'Unknown')===vfxJobsState.filterLocation);
   if(vfxJobsState.search.trim()){
     const q=vfxJobsState.search.trim().toLowerCase();
     list=list.filter(j=>j.company.toLowerCase().includes(q)||j.title.toLowerCase().includes(q));
@@ -2733,8 +2735,17 @@ function renderVfxJobsPublic(){
   else if(vfxJobsState.sort==='title')list=[...list].sort((a,b)=>a.title.localeCompare(b.title)||a.company.localeCompare(b.company));
   else list=[...list].sort((a,b)=>new Date(b.firstSeen||0)-new Date(a.firstSeen||0));
 
+  // Estos tres números del resumen se calculan SIEMPRE sobre `list` (ya con
+  // todos los filtros aplicados), nunca sobre `active` — así lo que se ve
+  // en el resumen coincide exactamente con las filas que aparecen debajo.
+  // Antes se calculaban sobre el total sin filtrar y podían no cuadrar con
+  // el listado real al combinar varios filtros a la vez.
+  const studios=new Set(list.map(j=>j.company)).size;
+  const euCount=list.filter(j=>/eu|europe/i.test(j.remoteScope||'')).length;
+
   const wpBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsState.filterWp===val?'active':''}" onclick="setVfxWpFilter('${val}')">${label}</button>`;
   const catBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsState.filterCat===val?'active':''}" onclick="setVfxCatFilter('${val}')">${label}</button>`;
+  const locBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsState.filterLocation===val?'active':''}" onclick="setVfxLocationFilter('${val}')">${label}</button>`;
   const atsOptions=Object.keys(atsCounts).sort((a,b)=>atsCounts[b]-atsCounts[a]);
   const atsSelectHtml=`<select class="fsel" style="max-width:210px;" onchange="setVfxAtsFilter(this.value)">
     <option value="all" ${vfxJobsState.filterAts==='all'?'selected':''}>Todos los adapters (${active.length})</option>
@@ -2746,6 +2757,24 @@ function renderVfxJobsPublic(){
   const companySelectHtml=`<select class="fsel" style="max-width:210px;" onchange="setVfxCompanyFilter(this.value)">
     <option value="all" ${vfxJobsState.filterCompany==='all'?'selected':''}>Todas las empresas (${active.length})</option>
     ${companyOptions.map(k=>`<option value="${k.replace(/"/g,'&quot;')}" ${vfxJobsState.filterCompany===k?'selected':''}>${k} (${companyCounts[k]})</option>`).join('')}
+  </select>`;
+  // Filtro de ubicación: las que contienen España/Spain van primero
+  // (es lo que más le interesa al admin), el resto ordenado por nº de
+  // ofertas. Es texto libre tal cual llega del scanner, no un país
+  // normalizado, así que agrupamos por coincidencia de texto.
+  const locationCounts={};
+  active.forEach(j=>{const loc=j.location||'Unknown';locationCounts[loc]=(locationCounts[loc]||0)+1;});
+  const isSpainLoc=s=>/españa|spain/i.test(s);
+  const locationOptions=Object.keys(locationCounts).sort((a,b)=>{
+    const aEs=isSpainLoc(a),bEs=isSpainLoc(b);
+    if(aEs!==bEs)return aEs?-1:1;
+    return locationCounts[b]-locationCounts[a]||a.localeCompare(b);
+  });
+  const spainTotal=active.filter(j=>isSpainLoc(j.location||'')).length;
+  const locationSelectHtml=`<select class="fsel" style="max-width:220px;" onchange="setVfxLocationFilter(this.value)">
+    <option value="all" ${vfxJobsState.filterLocation==='all'?'selected':''}>Todas las ubicaciones (${active.length})</option>
+    ${spainTotal?`<option value="spain" ${vfxJobsState.filterLocation==='spain'?'selected':''}>🇪🇸 España — todas (${spainTotal})</option>`:''}
+    ${locationOptions.map(k=>`<option value="${k.replace(/"/g,'&quot;')}" ${vfxJobsState.filterLocation===k?'selected':''}>${isSpainLoc(k)?'🇪🇸 ':''}${k} (${locationCounts[k]})</option>`).join('')}
   </select>`;
 
   const rowsHtml=list.length?list.map(j=>`
@@ -2760,18 +2789,20 @@ function renderVfxJobsPublic(){
 
   document.getElementById(vfxJobsRenderTargetId).innerHTML=`
     <div class="vfxp-summary">
-      <div class="vfxp-count"><span>${active.length}</span> open position${active.length===1?'':'s'}</div>
+      <div class="vfxp-count"><span>${list.length}</span> open position${list.length===1?'':'s'}</div>
       <div class="vfxp-meta"><strong>${studios}</strong> studio${studios===1?'':'s'} hiring</div>
       <div class="vfxp-meta">Last scan: ${vfxTimeAgo(data.lastUpdated)}</div>
       ${euCount?`<span class="vfxp-eu-badge">${euCount} Remote EU position${euCount===1?'':'s'}</span>`:''}
     </div>
     <div class="vfxp-controls">
       ${wpBtn('all','All')}${wpBtn('remote','Remote')}${wpBtn('hybrid','Hybrid')}${wpBtn('onsite','On-site')}
+      ${spainTotal?locBtn('spain','🇪🇸 España'):''}
     </div>
     <div class="vfxp-controls">
       ${catBtn('all','All studios')}${catBtn('aaa','AAA')}${catBtn('indie','Indie')}
       ${atsSelectHtml}
       ${companySelectHtml}
+      ${locationSelectHtml}
       <input class="fi vfxp-search" placeholder="Search company or title…" value="${vfxJobsState.search}" oninput="setVfxSearch(this.value)">
       <select class="fsel" style="max-width:190px;" onchange="setVfxSort(this.value)">
         <option value="newest" ${vfxJobsState.sort==='newest'?'selected':''}>Newest detected</option>
@@ -3564,7 +3595,7 @@ Object.assign(window,{
   renderProfileForm, renderReelForm, renderSeoAdmin, renderSizeGrid, renderSkillList, renderThemeGrid, renderToolsAdmin, renderToolsGrid,
   renderVfxCompaniesAdmin, renderVfxJobsPublic, renderVidCoSel, renderVidMgr, renderVisitor, resetData, save, saveCvData,
   savePost, saveProfile, saveReel, saveSeo, saveSettings, selectCo, setCoverBg, setExpCards,
-  setVfxWpFilter, setVfxCatFilter, setVfxAtsFilter, setVfxCompanyFilter, setVfxSearch, setVfxSort, setVfxShowPossible,
+  setVfxWpFilter, setVfxCatFilter, setVfxAtsFilter, setVfxCompanyFilter, setVfxLocationFilter, setVfxSearch, setVfxSort, setVfxShowPossible,
   setLang, setReelEnabled, setVfxJobsPublicVisible, showSec, syncMobileBlocks, syncVfxCompanyFromLive, t, toast, toggleLang,
   togglePostVisible, uid, vfxDedupeCompanies, vfxDetectAts, vfxGuessName, vfxIsNew, vfxNormalizeUrl, vfxTimeAgo
 });
