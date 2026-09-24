@@ -721,8 +721,8 @@ option{background:var(--bg2);}
 .cln-tool-chip{display:flex;align-items:center;gap:8px;border:1px solid var(--cln-line);border-radius:10px;padding:9px 14px;font-size:12.5px;font-weight:600;transition:border-color .2s;}
 .cln-tool-chip:hover{border-color:var(--cln-accent);}
 .cln-tool-chip img{width:14px;height:14px;object-fit:contain;background:var(--cln-fg);border-radius:5px;padding:4px;box-sizing:content-box;flex-shrink:0;}
-.cln-body-grid{display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:start;}
-.cln-aside{position:sticky;top:28px;display:flex;flex-direction:column;gap:40px;}
+.cln-body-grid{display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:start;max-width:1520px;margin-bottom:60px;}
+.cln-aside{display:flex;flex-direction:column;gap:40px;}
 .cln-list-item{padding:12px 0;border-bottom:1px solid var(--cln-line);display:flex;justify-content:space-between;gap:12px;font-size:13.5px;}
 .cln-list-item:last-child{border-bottom:none;}
 .cln-list-title{font-weight:700;}
@@ -753,8 +753,7 @@ option{background:var(--bg2);}
 .cln-clip-proj-lbl{grid-column:1/-1;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cln-sub);margin-top:10px;padding-top:10px;border-top:1px solid var(--cln-line);}
 @media(max-width:1040px){
   .cln-wrap,.cln-detail-wrap{padding-left:20px;padding-right:20px;}
-  .cln-body-grid{grid-template-columns:1fr;}
-  .cln-aside{position:static;}
+  .cln-body-grid{grid-template-columns:1fr;max-width:none;}
 }
 
 </style>
@@ -1807,11 +1806,6 @@ function renderCleanSkin(){
             <div class="cln-tags">${tagsHtml}</div>
             <div class="cln-links">${linksHtml}</div>
           </div>
-
-          <div class="cln-section" style="margin-bottom:0;">
-            <div class="cln-section-title">${t('experience')}</div>
-            <div class="cln-case-grid">${caseCardsHtml}</div>
-          </div>
         </div>
 
         <div class="cln-aside">
@@ -1823,6 +1817,11 @@ function renderCleanSkin(){
           ${eduHtml?`<div><div class="cln-section-title">${isEs?'Educación':'Education'}</div>${eduHtml}</div>`:''}
           ${langHtml?`<div><div class="cln-section-title">${isEs?'Idiomas':'Languages'}</div>${langHtml}</div>`:''}
         </div>
+      </div>
+
+      <div class="cln-section" style="margin-bottom:0;">
+        <div class="cln-section-title">${t('experience')}</div>
+        <div class="cln-case-grid">${caseCardsHtml}</div>
       </div>
 
       <div class="cln-footer">© ${new Date().getFullYear()} ${p.name||''} — ${isEs?'skin Clean':'Clean skin'}</div>
