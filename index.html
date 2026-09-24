@@ -694,7 +694,7 @@ option{background:var(--bg2);}
 .cln-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px;}
 .cln-tag{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.04em;border:1px solid var(--cln-line);border-radius:999px;padding:6px 12px;color:#333;}
 .cln-links{display:flex;gap:10px;flex-wrap:wrap;}
-.cln-link{font-size:13px;font-weight:600;border:1px solid var(--cln-fg);border-radius:999px;padding:10px 20px;text-decoration:none;transition:background .2s,color .2s;background:var(--cln-bg);color:var(--cln-fg);font-family:inherit;cursor:pointer;appearance:none;-webkit-appearance:none;display:inline-block;}
+.cln-link{font-size:13px;font-weight:600;border:1px solid var(--cln-fg);border-radius:999px;padding:10px 20px;text-decoration:none;transition:background .2s,color .2s;background:var(--cln-bg);color:var(--cln-fg);font-family:inherit;cursor:pointer;appearance:none;-webkit-appearance:none;display:inline-flex;align-items:center;box-sizing:border-box;line-height:1.2;margin:0;vertical-align:middle;}
 .cln-link.primary{background:var(--cln-fg);}
 #cleanSkinRoot a.cln-link.primary,#cleanDetailOverlay a.cln-link.primary,#cleanSkinRoot button.cln-link.primary{color:var(--cln-bg);}
 .cln-link.primary:hover{opacity:.8;}
@@ -703,7 +703,7 @@ option{background:var(--bg2);}
 .cln-section-title{font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--cln-sub);margin-bottom:22px;display:flex;align-items:center;gap:10px;}
 .cln-section-title::before{content:'';width:16px;height:3px;border-radius:2px;background:var(--cln-accent);flex-shrink:0;}
 .cln-section-title::after{content:'';flex:1;height:1px;background:var(--cln-line);}
-.cln-case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px;}
+.cln-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:26px;}
 .cln-case{position:relative;aspect-ratio:3/4;border-radius:18px;overflow:hidden;cursor:pointer;background:var(--cln-card-bg);box-shadow:0 1px 3px rgba(0,0,0,.07);transition:box-shadow .3s,transform .3s;}
 .cln-case:hover{box-shadow:0 20px 40px rgba(0,0,0,.18);transform:translateY(-4px);}
 .cln-case-img{position:absolute;inset:0;background-size:cover;background-position:center;background-color:#eee;transition:transform .6s cubic-bezier(.2,.8,.2,1);}
@@ -720,7 +720,7 @@ option{background:var(--bg2);}
 .cln-tool-grid{display:flex;flex-wrap:wrap;gap:10px;}
 .cln-tool-chip{display:flex;align-items:center;gap:8px;border:1px solid var(--cln-line);border-radius:10px;padding:9px 14px;font-size:12.5px;font-weight:600;transition:border-color .2s;}
 .cln-tool-chip:hover{border-color:var(--cln-accent);}
-.cln-tool-chip img{width:16px;height:16px;object-fit:contain;}
+.cln-tool-chip img{width:14px;height:14px;object-fit:contain;background:var(--cln-fg);border-radius:5px;padding:4px;box-sizing:content-box;flex-shrink:0;}
 .cln-body-grid{display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:start;}
 .cln-aside{position:sticky;top:28px;display:flex;flex-direction:column;gap:40px;}
 .cln-list-item{padding:12px 0;border-bottom:1px solid var(--cln-line);display:flex;justify-content:space-between;gap:12px;font-size:13.5px;}
@@ -1709,6 +1709,24 @@ let activeCompany=null;
 
 function getActiveSkin(){return D.skin||'classic';}
 
+/* Overlays como el de Devlog (#postOverlay) o VFX Jobs (#vfxJobsOverlay) son
+   compartidos por ambas skins y pintan con las MISMAS variables CSS globales
+   que usa Classic (--bg, --txt, --accent...). Mientras Clean está activo,
+   repintamos esas variables con la paleta editorial de Clean, así que
+   cualquier overlay que se abra encima (Devlog incluido) se ve coherente en
+   vez de mostrar el tema oscuro de Classic. Al volver a Classic, se
+   restauran exactamente los valores del tema de color que tenga elegido. */
+const CLEAN_GLOBAL_THEME={
+  '--bg':'#ffffff','--bg2':'#fafafa','--bg3':'#f2f2f2','--surface':'#fafafa',
+  '--line':'#e6e6e6','--line2':'#eeeeee','--txt':'#0a0a0a','--sub':'#6b6b6b',
+  '--accent':'#ff4d23','--accent2':'#ff8a5c','--accentglow':'rgba(255,77,35,0.15)',
+  '--green':'#1ca058','--red':'#c0392b','--sans':"'Inter',sans-serif",'--radius':'10px',
+};
+function applyCleanGlobalTheme(){
+  Object.entries(CLEAN_GLOBAL_THEME).forEach(([k,v])=>document.documentElement.style.setProperty(k,v));
+}
+function restoreClassicGlobalTheme(){applyColorTheme(D.colorTheme||'violet');}
+
 function setSkin(id){
   D.skin=id;
   save();
@@ -1723,8 +1741,8 @@ function applySkinVisibility(){
   const isClean=getActiveSkin()==='clean';
   app.style.display=isClean?'none':'';
   cln.style.display=isClean?'block':'none';
-  if(isClean)renderCleanSkin();
-  else closeCleanDetail();
+  if(isClean){renderCleanSkin();applyCleanGlobalTheme();}
+  else{closeCleanDetail();restoreClassicGlobalTheme();}
 }
 
 /* ══ SKIN: CLEAN — render ══
@@ -1766,38 +1784,30 @@ function renderCleanSkin(){
     </div>`;
   }).join('');
 
-  const toolsHtml=(D.tools||[]).map(tl=>`<div class="cln-tool-chip"><img src="${tl.img}" alt="${tl.n}">${tl.n}</div>`).join('');
+  const toolsHtml=(D.tools||[]).map(tl=>`<div class="cln-tool-chip">${tl.img?`<img src="${tl.img}" alt="${tl.n}">`:''}${tl.n}</div>`).join('');
   const skillsHtml=(cv.skills||[]).map(s=>`<span class="cln-tag">${s}</span>`).join('');
 
   const eduHtml=(cv.education||[]).map(e=>`<div class="cln-list-item"><div><div class="cln-list-title">${e.title||''}</div><div class="cln-list-sub">${e.institution||''}</div></div><div class="cln-list-sub">${e.year||''}</div></div>`).join('');
   const langHtml=(cv.languages||[]).map(l=>`<div class="cln-list-item"><div class="cln-list-title">${l.name||''}</div><div class="cln-list-sub">${l.level||''}</div></div>`).join('');
 
-  const contactBits=[
-    cv.email?['Email',`<a href="mailto:${cv.email}">${cv.email}</a>`]:null,
-    cv.phone?['Phone',cv.phone]:null,
-    cv.location?['Location',cv.location]:null,
-    cv.website?['Website',`<a href="${cv.website}" target="_blank" rel="noopener">${cv.website}</a>`]:null,
-    cv.artstation?['ArtStation',`<a href="${cv.artstation}" target="_blank" rel="noopener">${cv.artstation}</a>`]:null,
-  ].filter(Boolean).map(([label,val])=>`<div class="cln-contact-item"><div class="cln-contact-label">${label}</div>${val}</div>`).join('');
-
   root.innerHTML=`
     <div class="cln-wrap">
-      <div class="cln-hero">
-        <div class="cln-eyebrow">Portfolio — ${t('open_to_work')}</div>
-        <div class="cln-name">${p.name||''}</div>
-        <div class="cln-role">${role||''}</div>
-        <div class="cln-bio">${bio||''}${cv.summary?` ${cv.summary}`:''}</div>
-        <div class="cln-stats">
-          <div><div class="cln-stat-n">${p.s1n||''}</div><div class="cln-stat-l">${s1l||''}</div></div>
-          <div><div class="cln-stat-n">${p.s2n||''}</div><div class="cln-stat-l">${s2l||''}</div></div>
-          <div><div class="cln-stat-n">${p.s3n||''}</div><div class="cln-stat-l">${s3l||''}</div></div>
-        </div>
-        <div class="cln-tags">${tagsHtml}</div>
-        <div class="cln-links">${linksHtml}</div>
-      </div>
-
       <div class="cln-body-grid">
         <div class="cln-main">
+          <div class="cln-hero">
+            <div class="cln-eyebrow">Portfolio — ${t('open_to_work')}</div>
+            <div class="cln-name">${p.name||''}</div>
+            <div class="cln-role">${role||''}</div>
+            <div class="cln-bio">${bio||''}${cv.summary?` ${cv.summary}`:''}</div>
+            <div class="cln-stats">
+              <div><div class="cln-stat-n">${p.s1n||''}</div><div class="cln-stat-l">${s1l||''}</div></div>
+              <div><div class="cln-stat-n">${p.s2n||''}</div><div class="cln-stat-l">${s2l||''}</div></div>
+              <div><div class="cln-stat-n">${p.s3n||''}</div><div class="cln-stat-l">${s3l||''}</div></div>
+            </div>
+            <div class="cln-tags">${tagsHtml}</div>
+            <div class="cln-links">${linksHtml}</div>
+          </div>
+
           <div class="cln-section" style="margin-bottom:0;">
             <div class="cln-section-title">${t('experience')}</div>
             <div class="cln-case-grid">${caseCardsHtml}</div>
@@ -1812,7 +1822,6 @@ function renderCleanSkin(){
           </div>
           ${eduHtml?`<div><div class="cln-section-title">${isEs?'Educación':'Education'}</div>${eduHtml}</div>`:''}
           ${langHtml?`<div><div class="cln-section-title">${isEs?'Idiomas':'Languages'}</div>${langHtml}</div>`:''}
-          ${contactBits?`<div><div class="cln-section-title">${isEs?'Contacto':'Contact'}</div><div class="cln-contact-grid">${contactBits}</div></div>`:''}
         </div>
       </div>
 
