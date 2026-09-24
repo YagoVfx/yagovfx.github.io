@@ -531,6 +531,7 @@ option{background:var(--bg2);}
 .vfxp-job{display:grid;grid-template-columns:1.4fr 1.6fr 1fr .8fr .9fr .8fr;gap:10px;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:7px;padding:12px 16px;transition:border-color .18s;}
 .vfxp-job:hover{border-color:var(--accent);}
 .vfxp-job.possible{opacity:.7;border-style:dashed;}
+.vfxp-job.new{background:linear-gradient(0deg,var(--accentglow,rgba(255,90,30,.12)),var(--accentglow,rgba(255,90,30,.12))),var(--bg2);border-color:var(--accent);border-left:3px solid var(--accent);padding-left:14px;}
 .vfxp-co{font-size:12px;font-weight:700;}
 .vfxp-title-cell a{color:var(--txt);text-decoration:none;font-size:12.5px;font-weight:600;}
 .vfxp-title-cell a:hover{color:var(--accent);}
@@ -1778,7 +1779,7 @@ function renderCleanSkin(){
   const linksHtml=(D.links||[]).filter(l=>l.showInHeader).map((l,i)=>{
     const isEmail=l.url.startsWith('mailto:');
     return `<a class="cln-link${i===0?' primary':''}" href="${l.url}"${isEmail?'':' target="_blank" rel="noopener"'}>${l.label}</a>`;
-  }).join('')+`<button class="cln-link" onclick="openDevlog()">Devlog</button>`;
+  }).join('')+`<button class="cln-link" onclick="openDevlog()">Devlog</button>`+(D.vfxJobsPublic?`<button class="cln-link" onclick="openVfxJobsPublic()">VFX Jobs</button>`:'');
 
   const caseCardsHtml=(D.companies||[]).map(c=>{
     const clipCount=(c.clips||[]).length+(c.projects||[]).reduce((s,pr)=>s+(pr.clips||[]).length,0);
@@ -2748,7 +2749,7 @@ function renderVfxJobsPublic(){
   </select>`;
 
   const rowsHtml=list.length?list.map(j=>`
-    <div class="vfxp-job ${j.matchType==='possibleMatch'?'possible':''}">
+    <div class="vfxp-job ${j.matchType==='possibleMatch'?'possible':''} ${vfxIsNew(j.firstSeen)?'new':''}">
       <div class="vfxp-co">${j.company}${vfxCatLabel(j.companyCategory)?`<span class="vfx-ats-tag" style="margin-left:6px;">${vfxCatLabel(j.companyCategory)}</span>`:''}</div>
       <div class="vfxp-title-cell"><a href="${j.url}" target="_blank" rel="noopener" ${j.signalOnly?'style="font-style:italic;"':''}>${j.title}</a>${vfxIsNew(j.firstSeen)?'<span class="vfxp-new-tag">NEW</span>':''}${j.viaAggregator?'<span class="vfxp-aggregator-tag" title="Este enlace pasa primero por la web de Adzuna antes de llegar a la oferta">vía Adzuna</span>':''}${j.signalOnly?'<span class="vfxp-aggregator-tag" title="No pudimos leer esta página directamente, pero Adzuna indica que hay una oferta VFX activa. El enlace lleva directo a la web de la empresa, no a Adzuna.">señal detectada</span>':''}</div>
       <div class="vfxp-loc">${j.location||'—'}</div>
