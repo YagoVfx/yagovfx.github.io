@@ -808,6 +808,26 @@ option{background:var(--bg2);}
 
 .rl-section{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:0 50px;position:relative;border-top:1px solid var(--rl-line);}
 .rl-hero{border-top:none;}
+.rl-hero-content{position:relative;z-index:1;}
+.rl-firebg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+.rl-ember{position:absolute;bottom:-10px;border-radius:50%;background:radial-gradient(circle,#ffd28a,#ff5a1f 55%,transparent 75%);
+  animation-name:rlEmberRise;animation-timing-function:ease-out;animation-iteration-count:infinite;}
+.rl-smoke{position:absolute;bottom:-40px;border-radius:50%;background:radial-gradient(circle,rgba(130,100,80,.28),transparent 70%);
+  filter:blur(16px);animation-name:rlSmokeRise;animation-timing-function:linear;animation-iteration-count:infinite;}
+@keyframes rlEmberRise{
+  0%{transform:translate(0,0) scale(1);opacity:0;}
+  12%{opacity:1;}
+  100%{transform:translate(var(--dx,20px),-70vh) scale(.25);opacity:0;}
+}
+@keyframes rlSmokeRise{
+  0%{transform:translate(0,0) scale(.8);opacity:0;}
+  20%{opacity:.5;}
+  100%{transform:translate(var(--dx,40px),-75vh) scale(1.7);opacity:0;}
+}
+.rl-firebg.rl-paused .rl-ember,.rl-firebg.rl-paused .rl-smoke{animation-play-state:paused;}
+@media(prefers-reduced-motion:reduce){
+  .rl-ember,.rl-smoke{animation:none;opacity:.12;bottom:20%;}
+}
 .rl-hero .rl-kicker{font-size:14px;color:var(--rl-sub);margin-bottom:18px;max-width:440px;line-height:1.5;}
 .rl-hero h1{font-size:clamp(48px,10vw,150px);font-weight:700;line-height:.96;margin:0 0 20px;letter-spacing:-.01em;}
 .rl-hero .rl-role{font-size:clamp(17px,2.2vw,24px);color:var(--rl-sub);font-weight:400;}
@@ -821,18 +841,18 @@ option{background:var(--bg2);}
 .rl-scene p{font-size:16px;line-height:1.6;max-width:560px;color:#d3d5d9;margin-bottom:20px;}
 .rl-scene .rl-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px;}
 .rl-scene .rl-tags span{font-size:12px;border:1px solid var(--rl-line);border-radius:999px;padding:7px 14px;color:#c9cbd1;}
-.rl-clipgroup{display:flex;flex-direction:column;gap:14px;margin-top:6px;}
-.rl-clip-thumbs{display:flex;gap:10px;flex-wrap:wrap;}
+.rl-clipgroup{position:absolute;right:50px;top:50%;transform:translateY(-50%);width:min(52vw,780px);display:flex;flex-direction:column;gap:16px;}
+.rl-clip-thumbs{display:flex;gap:12px;flex-wrap:wrap;}
 .rl-cliptile{flex-shrink:0;border-radius:6px;border:1px solid var(--rl-line);position:relative;overflow:hidden;cursor:pointer;
   background-size:cover;background-position:center;background-color:#141519;}
 .rl-cliptile .rl-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);background:rgba(0,0,0,.25);transition:background .2s;}
 .rl-cliptile:hover .rl-play{background:rgba(0,0,0,.1);}
 .rl-cliptile .rl-idx{position:absolute;top:8px;left:10px;font-size:10px;color:rgba(255,255,255,.75);z-index:1;text-shadow:0 1px 3px rgba(0,0,0,.6);}
 .rl-cliptile iframe{width:100%;height:100%;border:0;position:absolute;inset:0;}
-.rl-cliptile.rl-main{width:min(100%,620px);aspect-ratio:16/9;}
-.rl-cliptile.rl-main .rl-play{font-size:30px;}
-.rl-cliptile.rl-thumb{width:96px;aspect-ratio:16/9;}
-.rl-cliptile.rl-thumb .rl-play{font-size:12px;}
+.rl-cliptile.rl-main{width:100%;aspect-ratio:16/9;}
+.rl-cliptile.rl-main .rl-play{font-size:40px;}
+.rl-cliptile.rl-thumb{width:140px;aspect-ratio:16/9;}
+.rl-cliptile.rl-thumb .rl-play{font-size:14px;}
 
 .rl-close{border-top:1px solid var(--rl-line);}
 .rl-close h2{font-size:clamp(28px,4.6vw,52px);font-weight:700;margin:0 0 24px;max-width:640px;line-height:1.15;}
@@ -869,10 +889,14 @@ option{background:var(--bg2);}
   .rl-cursor-ring{transition:none;}
   .rl-cursor-ping{display:none;}
 }
+@media(max-width:1280px){
+  .rl-clipgroup{position:static;transform:none;width:100%;max-width:620px;margin-top:28px;}
+}
 @media(max-width:640px){
   .rl-section{padding:0 24px;}
   .rl-nav{left:24px;right:24px;}
   .rl-hero .rl-scrolldown,.rl-close .rl-footer{left:24px;}
+  .rl-cliptile.rl-thumb{width:104px;}
 }
 
 </style>
@@ -2069,6 +2093,28 @@ function reelGatherClips(c){
   return clips;
 }
 
+function reelFireParticlesHtml(){
+  let embers='';
+  for(let i=0;i<26;i++){
+    const left=(Math.random()*100).toFixed(1);
+    const size=(2+Math.random()*3).toFixed(1);
+    const dur=(4+Math.random()*4).toFixed(1);
+    const delay=(-Math.random()*8).toFixed(1);
+    const dx=(Math.random()*80-40).toFixed(0);
+    embers+=`<div class="rl-ember" style="left:${left}%;width:${size}px;height:${size}px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx}px;"></div>`;
+  }
+  let smoke='';
+  for(let i=0;i<5;i++){
+    const left=(Math.random()*100).toFixed(1);
+    const size=(90+Math.random()*90).toFixed(0);
+    const dur=(14+Math.random()*8).toFixed(1);
+    const delay=(-Math.random()*16).toFixed(1);
+    const dx=(Math.random()*100-50).toFixed(0);
+    smoke+=`<div class="rl-smoke" style="left:${left}%;width:${size}px;height:${size}px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx}px;"></div>`;
+  }
+  return smoke+embers;
+}
+
 function renderReelSkin(){
   const root=document.getElementById('rlContent');
   if(!root)return;
@@ -2080,10 +2126,13 @@ function renderReelSkin(){
 
   const heroHtml=`
     <section class="rl-section rl-hero" id="rl-s0">
-      <div class="rl-kicker rl-reveal rl-d1">${bio}</div>
-      <h1 class="rl-reveal rl-d2">${name.split(' ').join('<br>')}</h1>
-      <div class="rl-role rl-reveal rl-d3">${role}</div>
-      <div class="rl-scrolldown rl-reveal rl-d4">Scroll to watch the reel ↓</div>
+      <div class="rl-firebg">${reelFireParticlesHtml()}</div>
+      <div class="rl-hero-content">
+        <div class="rl-kicker rl-reveal rl-d1">${bio}</div>
+        <h1 class="rl-reveal rl-d2">${name.split(' ').join('<br>')}</h1>
+        <div class="rl-role rl-reveal rl-d3">${role}</div>
+        <div class="rl-scrolldown rl-reveal rl-d4">Scroll to watch the reel ↓</div>
+      </div>
     </section>`;
 
   const sceneIds=[];
@@ -2149,6 +2198,7 @@ function playReelClip(mainId,video){
 function reelSetupInteractions(sceneIds){
   const scrubber=document.getElementById('rlScrubber');
   const nextBtn=document.getElementById('rlNextBtn');
+  const nextArrow=nextBtn.querySelector('.rl-arrow');
   scrubber.innerHTML='';
   sceneIds.forEach((id,i)=>{
     const b=document.createElement('button');
@@ -2159,23 +2209,32 @@ function reelSetupInteractions(sceneIds){
   });
   const dots=[...scrubber.children];
   let currentIndex=0;
+  const isLast=()=>currentIndex===sceneIds.length-1;
   nextBtn.onclick=()=>{
-    const next=Math.min(currentIndex+1,sceneIds.length-1);
-    document.getElementById(sceneIds[next]).scrollIntoView({behavior:'smooth'});
+    const target=isLast()?0:Math.min(currentIndex+1,sceneIds.length-1);
+    document.getElementById(sceneIds[target]).scrollIntoView({behavior:'smooth'});
   };
   if(reelObserver)reelObserver.disconnect();
   reelObserver=new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
+      const idx=sceneIds.indexOf(e.target.id);
+      if(idx<0)return;
       if(e.isIntersecting){
-        const idx=sceneIds.indexOf(e.target.id);
-        if(idx<0)return;
         currentIndex=idx;
         dots.forEach(d=>d.classList.remove('active'));
         dots[idx].classList.add('active');
-        nextBtn.classList.toggle('hidden',idx===sceneIds.length-1);
+        nextArrow.textContent=isLast()?'↑':'↓';
+        nextBtn.setAttribute('aria-label',isLast()?'Back to top':'Go to next section');
         e.target.querySelectorAll('.rl-reveal').forEach(el=>el.classList.add('rl-in'));
         const tint=getComputedStyle(e.target).getPropertyValue('--tint').trim()||'#7c5cff';
         document.documentElement.style.setProperty('--rl-cursor-tint',tint);
+        if(idx===0)document.querySelectorAll('.rl-firebg').forEach(f=>f.classList.remove('rl-paused'));
+      }else{
+        // Al salir de la sección quitamos 'rl-in': si vuelves a entrar más
+        // tarde, la animación de entrada se repite en vez de quedarse ya
+        // disparada para siempre.
+        e.target.querySelectorAll('.rl-reveal').forEach(el=>el.classList.remove('rl-in'));
+        if(idx===0)document.querySelectorAll('.rl-firebg').forEach(f=>f.classList.add('rl-paused'));
       }
     });
   },{threshold:.4});
@@ -2226,6 +2285,15 @@ function renderVisitor(){
   syncMobileBlocks();
   applyLang();
   applyLightMode();
+  // renderVisitor() se llama desde varios sitios (bootstrap, tras cerrar el
+  // admin, tras sincronizar datos...) y siempre repinta el tema de Classic
+  // primero (línea de arriba). Si Clean o Reel están activos en ese
+  // momento, reafirmamos su tema justo después, si no cualquier overlay
+  // compartido (Devlog incluido) se quedaría con el tema de Classic aunque
+  // la skin visible sea otra.
+  const _sk=getActiveSkin();
+  if(_sk==='clean')applyCleanGlobalTheme();
+  else if(_sk==='reel')applyReelGlobalTheme();
 }
 
 function renderProfile(){
