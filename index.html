@@ -728,7 +728,7 @@ option{background:var(--bg2);}
 .cln-tool-chip:hover{border-color:var(--cln-accent);}
 .cln-tool-chip img{width:14px;height:14px;object-fit:contain;background:var(--cln-fg);border-radius:5px;padding:4px;box-sizing:content-box;flex-shrink:0;}
 .cln-body-grid{display:grid;grid-template-columns:1fr 700px;gap:56px;align-items:start;max-width:1560px;margin-bottom:60px;}
-.cln-aside{padding-top: 123px;}
+.cln-aside{display:flex;gap:32px;align-items:flex-start;}
 .cln-aside-tools{flex:0 0 400px;}
 .cln-aside-side{flex:1;min-width:220px;display:flex;flex-direction:column;gap:32px;}
 .cln-list-item{padding:12px 0;border-bottom:1px solid var(--cln-line);display:flex;justify-content:space-between;gap:12px;font-size:13.5px;}
@@ -766,6 +766,113 @@ option{background:var(--bg2);}
 @media(max-width:700px){
   .cln-aside{flex-direction:column;}
   .cln-aside-tools{flex:none;width:100%;}
+}
+
+/* ══ SKIN: REEL — motion-first, cinematic scroll, en inglés ══
+   Paleta fija propia (near-black + acento violeta), independiente de los
+   temas de color de Classic. Todo vive bajo #reelSkinRoot. */
+#reelSkinRoot{
+  --rl-bg:#0a0b0d;--rl-fg:#f4f5f7;--rl-sub:#888d96;--rl-line:rgba(255,255,255,.1);
+  position:fixed;inset:0;background:var(--rl-bg);color:var(--rl-fg);z-index:10;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;font-family:'Space Grotesk',system-ui,sans-serif;
+  scroll-snap-type:y proximity;
+}
+#reelSkinRoot a{color:inherit;}
+#reelSkinRoot ::selection{background:var(--rl-fg);color:var(--rl-bg);}
+
+.rl-hud-corner{position:fixed;width:22px;height:22px;border-color:rgba(255,255,255,.35);z-index:40;pointer-events:none;}
+.rl-tl{top:16px;left:16px;border-top:1px solid;border-left:1px solid;}
+.rl-tr{top:16px;right:16px;border-top:1px solid;border-right:1px solid;}
+.rl-bl{bottom:16px;left:16px;border-bottom:1px solid;border-left:1px solid;}
+.rl-br{bottom:16px;right:16px;border-bottom:1px solid;border-right:1px solid;}
+
+.rl-nav{position:fixed;top:22px;left:50px;right:50px;z-index:40;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--rl-sub);}
+.rl-nav-right{display:flex;align-items:center;gap:10px;}
+.rl-nav-btn{background:transparent;border:1px solid var(--rl-line);color:var(--rl-sub);font-family:inherit;font-size:12px;
+  border-radius:999px;padding:7px 14px;cursor:pointer;transition:border-color .2s,color .2s;}
+.rl-nav-btn:hover{border-color:var(--rl-fg);color:var(--rl-fg);}
+.rl-nav-icon{width:30px;height:30px;padding:0;display:flex;align-items:center;justify-content:center;font-size:13px;}
+
+.rl-scrubber{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:40;display:flex;gap:9px;}
+.rl-scrubber button{width:9px;height:9px;border-radius:50%;background:transparent;border:1px solid rgba(255,255,255,.4);cursor:pointer;padding:0;transition:background .25s,border-color .25s,width .25s;}
+.rl-scrubber button.active{background:var(--rl-fg);border-color:var(--rl-fg);width:26px;border-radius:5px;}
+.rl-scrubber button:focus-visible{outline:2px solid var(--rl-fg);outline-offset:3px;}
+
+.rl-next-btn{position:fixed;bottom:22px;right:26px;z-index:40;width:44px;height:44px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.04);color:var(--rl-fg);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:16px;transition:opacity .25s,border-color .2s;}
+.rl-next-btn:hover{border-color:var(--rl-fg);}
+.rl-next-btn.hidden{opacity:0;pointer-events:none;}
+.rl-next-btn .rl-arrow{animation:rlNudge 2s ease-in-out infinite;}
+@keyframes rlNudge{0%,100%{transform:translateY(0);}50%{transform:translateY(3px);}}
+
+.rl-section{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:0 50px;position:relative;border-top:1px solid var(--rl-line);}
+.rl-hero{border-top:none;}
+.rl-hero .rl-kicker{font-size:14px;color:var(--rl-sub);margin-bottom:18px;max-width:440px;line-height:1.5;}
+.rl-hero h1{font-size:clamp(48px,10vw,150px);font-weight:700;line-height:.96;margin:0 0 20px;letter-spacing:-.01em;}
+.rl-hero .rl-role{font-size:clamp(17px,2.2vw,24px);color:var(--rl-sub);font-weight:400;}
+.rl-hero .rl-scrolldown{position:absolute;bottom:70px;left:50px;font-size:11px;color:var(--rl-sub);}
+
+.rl-scene{--tint:#7c5cff;}
+.rl-scene::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,color-mix(in srgb,var(--tint) 18%,transparent),transparent 60%);pointer-events:none;}
+.rl-scene .rl-num{font-size:13px;color:var(--tint);margin-bottom:14px;}
+.rl-scene h2{font-size:clamp(34px,6vw,88px);font-weight:700;line-height:1;margin:0 0 14px;max-width:900px;}
+.rl-scene .rl-meta{font-size:13px;color:var(--rl-sub);margin-bottom:20px;}
+.rl-scene p{font-size:16px;line-height:1.6;max-width:560px;color:#d3d5d9;margin-bottom:20px;}
+.rl-scene .rl-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px;}
+.rl-scene .rl-tags span{font-size:12px;border:1px solid var(--rl-line);border-radius:999px;padding:7px 14px;color:#c9cbd1;}
+.rl-clipgroup{display:flex;flex-direction:column;gap:14px;margin-top:6px;}
+.rl-clip-thumbs{display:flex;gap:10px;flex-wrap:wrap;}
+.rl-cliptile{flex-shrink:0;border-radius:6px;border:1px solid var(--rl-line);position:relative;overflow:hidden;cursor:pointer;
+  background-size:cover;background-position:center;background-color:#141519;}
+.rl-cliptile .rl-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);background:rgba(0,0,0,.25);transition:background .2s;}
+.rl-cliptile:hover .rl-play{background:rgba(0,0,0,.1);}
+.rl-cliptile .rl-idx{position:absolute;top:8px;left:10px;font-size:10px;color:rgba(255,255,255,.75);z-index:1;text-shadow:0 1px 3px rgba(0,0,0,.6);}
+.rl-cliptile iframe{width:100%;height:100%;border:0;position:absolute;inset:0;}
+.rl-cliptile.rl-main{width:min(100%,620px);aspect-ratio:16/9;}
+.rl-cliptile.rl-main .rl-play{font-size:30px;}
+.rl-cliptile.rl-thumb{width:96px;aspect-ratio:16/9;}
+.rl-cliptile.rl-thumb .rl-play{font-size:12px;}
+
+.rl-close{border-top:1px solid var(--rl-line);}
+.rl-close h2{font-size:clamp(28px,4.6vw,52px);font-weight:700;margin:0 0 24px;max-width:640px;line-height:1.15;}
+.rl-close .rl-tools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px;}
+.rl-close .rl-tools span{font-size:12px;color:var(--rl-sub);border:1px solid var(--rl-line);border-radius:999px;padding:7px 14px;}
+.rl-close .rl-links{display:flex;flex-wrap:wrap;gap:12px;}
+.rl-close .rl-links a{font-size:14px;color:var(--rl-fg);text-decoration:none;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:11px 22px;transition:background .2s,color .2s;}
+.rl-close .rl-links a.rl-primary{background:var(--rl-fg);border-color:var(--rl-fg);}
+#reelSkinRoot .rl-close .rl-links a.rl-primary{color:#000;}
+.rl-close .rl-links a:not(.rl-primary):hover{background:rgba(255,255,255,.08);}
+.rl-close .rl-footer{position:absolute;bottom:70px;left:50px;font-size:11px;color:var(--rl-sub);}
+
+.rl-reveal{opacity:0;transform:translateX(-48px);transition:opacity .8s cubic-bezier(.16,.7,.2,1),transform .8s cubic-bezier(.16,.7,.2,1);}
+.rl-reveal.rl-in{opacity:1;transform:translateX(0);}
+.rl-d1{transition-delay:.05s;}.rl-d2{transition-delay:.18s;}.rl-d3{transition-delay:.31s;}
+.rl-d4{transition-delay:.44s;}.rl-d5{transition-delay:.58s;}.rl-d6{transition-delay:.72s;}
+
+@media(pointer:fine){
+  #reelSkinRoot,#reelSkinRoot a,#reelSkinRoot button{cursor:none;}
+  .rl-cursor-dot,.rl-cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%);will-change:transform;}
+  .rl-cursor-ring{width:30px;height:30px;border:1px solid var(--rl-cursor-tint,#7c5cff);transition:transform .15s ease-out,width .2s,height .2s,border-color .3s;}
+  .rl-cursor-dot{width:5px;height:5px;background:var(--rl-cursor-tint,#7c5cff);transition:background .3s;}
+  .rl-cursor-ring::before,.rl-cursor-ring::after{content:'';position:absolute;background:var(--rl-cursor-tint,#7c5cff);}
+  .rl-cursor-ring::before{top:-5px;left:50%;width:1px;height:4px;transform:translateX(-50%);}
+  .rl-cursor-ring::after{bottom:-5px;left:50%;width:1px;height:4px;transform:translateX(-50%);}
+  #reelSkinRoot.rl-cursor-down .rl-cursor-ring{width:22px;height:22px;}
+  .rl-cursor-ping{position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;border:1.5px solid var(--rl-cursor-tint,#7c5cff);
+    pointer-events:none;z-index:9998;opacity:.9;animation:rlPingOut .65s cubic-bezier(.16,.7,.2,1) forwards;}
+  @keyframes rlPingOut{to{transform:translate(-50%,-50%) scale(5.5);opacity:0;}}
+}
+@media(prefers-reduced-motion:reduce){
+  .rl-reveal{opacity:1;transform:none;transition:none;}
+  .rl-next-btn .rl-arrow{animation:none;}
+  .rl-cursor-ring{transition:none;}
+  .rl-cursor-ping{display:none;}
+}
+@media(max-width:640px){
+  .rl-section{padding:0 24px;}
+  .rl-nav{left:24px;right:24px;}
+  .rl-hero .rl-scrolldown,.rl-close .rl-footer{left:24px;}
 }
 
 </style>
@@ -1151,8 +1258,8 @@ https://otraempresa.com/careers"></textarea>
       <!-- SKIN (Fase 1) -->
       <div class="adm-sec" id="sec-skin">
         <div class="a-title">Skin</div>
-        <div class="a-sub">Elige cómo se presenta tu portfolio a los visitantes. El contenido es exactamente el mismo en ambas — solo cambia la forma.</div>
-        <div class="fb-notice"><strong>ℹ Info:</strong> "Clean" es una skin alternativa completa — diseño editorial minimalista (blanco/negro), con tarjetas tipo case-study por empresa/proyecto y toda tu info (experiencia, skills, CV, contacto) en una sola página fácil de leer. "Classic" es tu web actual, sin cambios.</div>
+        <div class="a-sub">Elige cómo se presenta tu portfolio a los visitantes. El contenido es exactamente el mismo en las tres — solo cambia la forma.</div>
+        <div class="fb-notice"><strong>ℹ Info:</strong> "Clean" es editorial minimalista (blanco/negro), con tarjetas case-study y toda tu info en una sola página fácil de leer. "Reel" es cinemática, oscura, a pantalla completa por proyecto, con animaciones de scroll y cursor personalizado — siempre en inglés, sea cual sea el idioma que tengas puesto. "Classic" es tu web actual, sin cambios.</div>
         <div class="a-form" style="max-width:480px;">
           <div class="frow">
             <div class="fg">
@@ -1160,6 +1267,7 @@ https://otraempresa.com/careers"></textarea>
               <select class="fsel" id="skinSel" onchange="setSkin(this.value)">
                 <option value="classic">Classic (por defecto)</option>
                 <option value="clean">Clean (editorial, case-studies)</option>
+                <option value="reel">Reel (cinemática, EN)</option>
               </select>
             </div>
           </div>
@@ -1318,7 +1426,7 @@ https://otraempresa.com/careers"></textarea>
 
 <!-- ══ SKIN: CLEAN ══
      Hermana de #app, nunca dentro. Classic (#app) no se toca ni se lee
-     desde aquí — applySkinVisibility() decide cuál de las dos mostrar.
+     desde aquí — applySkinVisibility() decide cuál de las tres mostrar.
      Todo el contenido se genera en JS (renderCleanSkin) a partir de D,
      los mismos datos que usa Classic, así que nunca se desincroniza. -->
 <div id="cleanSkinRoot" style="display:none;">
@@ -1334,6 +1442,27 @@ https://otraempresa.com/careers"></textarea>
     <button class="cln-backbtn" style="position:static;margin-bottom:28px;" onclick="closeCleanDetail()">← Volver</button>
     <div id="cleanDetailContent"></div>
   </div>
+</div>
+
+<!-- ══ SKIN: REEL ══
+     Hermana de #app y #cleanSkinRoot. Todo el contenido se genera en JS
+     (renderReelSkin) a partir de D, igual que Clean, así que nunca se
+     desincroniza. Se muestra siempre en inglés a propósito (ver renderReelSkin). -->
+<div id="reelSkinRoot" style="display:none;">
+  <div class="rl-hud-corner rl-tl"></div><div class="rl-hud-corner rl-tr"></div>
+  <div class="rl-hud-corner rl-bl"></div><div class="rl-hud-corner rl-br"></div>
+  <nav class="rl-nav">
+    <span id="rlNavName"></span>
+    <div class="rl-nav-right">
+      <button class="rl-nav-btn" onclick="openDevlog()">Devlog</button>
+      <button class="rl-nav-btn rl-nav-icon" onclick="openGate()" title="Admin">⚙</button>
+    </div>
+  </nav>
+  <div class="rl-scrubber" id="rlScrubber"></div>
+  <button class="rl-next-btn" id="rlNextBtn" aria-label="Go to next section"><span class="rl-arrow">↓</span></button>
+  <div class="rl-cursor-ring" id="rlCursorRing"></div>
+  <div class="rl-cursor-dot" id="rlCursorDot"></div>
+  <div id="rlContent"></div>
 </div>
 
 <script type="module">
@@ -1741,22 +1870,40 @@ function applyCleanGlobalTheme(){
 }
 function restoreClassicGlobalTheme(){applyColorTheme(D.colorTheme||'violet');}
 
+/* Mismo mecanismo que Clean, pero con la paleta de Reel (near-black +
+   acento violeta + Space Grotesk), para que Devlog (y cualquier otro
+   overlay compartido) se vea coherente también mientras Reel está activo. */
+const REEL_GLOBAL_THEME={
+  '--bg':'#0a0b0d','--bg2':'#111318','--bg3':'#181b21','--surface':'#111318',
+  '--line':'rgba(255,255,255,.12)','--line2':'rgba(255,255,255,.08)',
+  '--txt':'#f4f5f7','--sub':'#888d96',
+  '--accent':'#7c5cff','--accent2':'#9b82ff','--accentglow':'rgba(124,92,255,.18)',
+  '--green':'#35e6c2','--red':'#ff6b57','--sans':"'Space Grotesk',sans-serif",'--radius':'8px',
+};
+function applyReelGlobalTheme(){
+  Object.entries(REEL_GLOBAL_THEME).forEach(([k,v])=>document.documentElement.style.setProperty(k,v));
+}
+
 function setSkin(id){
   D.skin=id;
   save();
   applySkinVisibility();
-  toast(id==='clean'?'Skin: Clean':'Skin: Classic');
+  toast(id==='clean'?'Skin: Clean':id==='reel'?'Skin: Reel':'Skin: Classic');
 }
 
 function applySkinVisibility(){
   const app=document.getElementById('app');
   const cln=document.getElementById('cleanSkinRoot');
-  if(!app||!cln)return;
-  const isClean=getActiveSkin()==='clean';
-  app.style.display=isClean?'none':'';
-  cln.style.display=isClean?'block':'none';
-  if(isClean){renderCleanSkin();applyCleanGlobalTheme();}
-  else{closeCleanDetail();restoreClassicGlobalTheme();}
+  const reel=document.getElementById('reelSkinRoot');
+  if(!app||!cln||!reel)return;
+  const skin=getActiveSkin();
+  app.style.display=skin==='classic'?'':'none';
+  cln.style.display=skin==='clean'?'block':'none';
+  reel.style.display=skin==='reel'?'block':'none';
+  closeCleanDetail();
+  if(skin==='clean'){renderCleanSkin();applyCleanGlobalTheme();}
+  else if(skin==='reel'){renderReelSkin();applyReelGlobalTheme();}
+  else{restoreClassicGlobalTheme();}
 }
 
 /* ══ SKIN: CLEAN — render ══
@@ -1907,6 +2054,159 @@ function closeCleanDetail(){
   if(ov)ov.classList.remove('on');
   const frame=document.getElementById('cleanPlayerFrame');
   if(frame)frame.src='about:blank';
+}
+
+/* ══ SKIN: REEL — render ══
+   Igual que Clean, lee directamente de D, pero SIEMPRE en inglés (campos
+   _en con fallback al campo base, que ya está en inglés de fábrica) — es
+   una decisión de la propia skin, no sigue el toggle de idioma de D.lang. */
+const REEL_TINTS=['#7c5cff','#35e6c2','#ff6b57'];
+let reelObserver=null;
+
+function reelGatherClips(c){
+  const clips=[...(c.clips||[])];
+  (c.projects||[]).forEach(pr=>(pr.clips||[]).forEach(cl=>clips.push(cl)));
+  return clips;
+}
+
+function renderReelSkin(){
+  const root=document.getElementById('rlContent');
+  if(!root)return;
+  const p=D.profile,cv=D.cv||{};
+  const name=p.name||'';
+  const role=p.role_en||p.role||'';
+  const bio=p.bio_en||p.bio||'';
+  document.getElementById('rlNavName').textContent=name;
+
+  const heroHtml=`
+    <section class="rl-section rl-hero" id="rl-s0">
+      <div class="rl-kicker rl-reveal rl-d1">${bio}</div>
+      <h1 class="rl-reveal rl-d2">${name.split(' ').join('<br>')}</h1>
+      <div class="rl-role rl-reveal rl-d3">${role}</div>
+      <div class="rl-scrolldown rl-reveal rl-d4">Scroll to watch the reel ↓</div>
+    </section>`;
+
+  const sceneIds=[];
+  const scenesHtml=(D.companies||[]).map((c,i)=>{
+    const id='rl-s'+(i+1);
+    sceneIds.push(id);
+    const tint=REEL_TINTS[i%REEL_TINTS.length];
+    const desc=c.desc||'';
+    const tags=(c.tools||'').split(/[|,]/).map(s=>s.trim()).filter(Boolean).slice(0,4);
+    const clips=reelGatherClips(c);
+    const main=clips[0];
+    const thumbs=clips.slice(1);
+    const mainId='rl-main-'+c.id;
+    const mainTileHtml=main
+      ?`<div class="rl-cliptile rl-main" id="${mainId}" style="background-image:url(${main.thumb||c.thumb||''})" onclick="playReelClip('${mainId}','${(main.video||'').replace(/'/g,"\\'")}')"><span class="rl-idx">Featured</span><span class="rl-play">▶</span></div>`
+      :`<div class="rl-cliptile rl-main" style="background-image:url(${c.thumb||c.logo||''})"></div>`;
+    const thumbsHtml=thumbs.map((cl,ti)=>`<div class="rl-cliptile rl-thumb" onclick="playReelClip('${mainId}','${(cl.video||'').replace(/'/g,"\\'")}')" style="background-image:url(${cl.thumb||''})"><span class="rl-idx">${String(ti+2).padStart(2,'0')}</span><span class="rl-play">▶</span></div>`).join('');
+    return `
+    <section class="rl-section rl-scene" id="${id}" style="--tint:${tint}">
+      <div class="rl-num rl-reveal rl-d1">Project — ${c.period||''}</div>
+      <h2 class="rl-reveal rl-d2">${c.name||''}</h2>
+      <div class="rl-meta rl-reveal rl-d3">${c.role||''}</div>
+      <p class="rl-reveal rl-d4">${desc}</p>
+      ${tags.length?`<div class="rl-tags rl-reveal rl-d5">${tags.map(tg=>`<span>${tg}</span>`).join('')}</div>`:''}
+      <div class="rl-clipgroup rl-reveal rl-d6">
+        ${mainTileHtml}
+        ${thumbsHtml?`<div class="rl-clip-thumbs">${thumbsHtml}</div>`:''}
+      </div>
+    </section>`;
+  }).join('');
+
+  const closeId='rl-s'+((D.companies||[]).length+1);
+  sceneIds.unshift('rl-s0');
+  sceneIds.push(closeId);
+
+  const availLine=p.availTags_en||p.availTags||'Available for new projects, remote.';
+  const toolsHtml=(D.tools||[]).map(tl=>`<span>${tl.n}</span>`).join('');
+  const linksHtml=(D.links||[]).filter(l=>l.showInHeader).map((l,i)=>{
+    const isEmail=l.url.startsWith('mailto:');
+    return `<a class="${i===0?'rl-primary':''}" href="${l.url}"${isEmail?'':' target="_blank" rel="noopener"'}>${l.label}</a>`;
+  }).join('');
+
+  const closeHtml=`
+    <section class="rl-section rl-close" id="${closeId}">
+      <h2 class="rl-reveal rl-d1">${availLine}</h2>
+      <div class="rl-tools rl-reveal rl-d2">${toolsHtml}</div>
+      <div class="rl-links rl-reveal rl-d3">${linksHtml}</div>
+      <div class="rl-footer rl-reveal rl-d4">© ${new Date().getFullYear()} ${name} — Reel skin</div>
+    </section>`;
+
+  root.innerHTML=heroHtml+scenesHtml+closeHtml;
+  reelSetupInteractions(sceneIds);
+}
+
+function playReelClip(mainId,video){
+  if(!video)return;
+  const el=document.getElementById(mainId);
+  if(!el)return;
+  const src=video.includes('?')?video+'&autoplay=1':video+'?autoplay=1';
+  el.innerHTML=`<iframe src="${src}" allow="autoplay;fullscreen" allowfullscreen></iframe>`;
+}
+
+function reelSetupInteractions(sceneIds){
+  const scrubber=document.getElementById('rlScrubber');
+  const nextBtn=document.getElementById('rlNextBtn');
+  scrubber.innerHTML='';
+  sceneIds.forEach((id,i)=>{
+    const b=document.createElement('button');
+    if(i===0)b.classList.add('active');
+    b.setAttribute('aria-label','Go to section '+(i+1));
+    b.onclick=()=>document.getElementById(id).scrollIntoView({behavior:'smooth'});
+    scrubber.appendChild(b);
+  });
+  const dots=[...scrubber.children];
+  let currentIndex=0;
+  nextBtn.onclick=()=>{
+    const next=Math.min(currentIndex+1,sceneIds.length-1);
+    document.getElementById(sceneIds[next]).scrollIntoView({behavior:'smooth'});
+  };
+  if(reelObserver)reelObserver.disconnect();
+  reelObserver=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const idx=sceneIds.indexOf(e.target.id);
+        if(idx<0)return;
+        currentIndex=idx;
+        dots.forEach(d=>d.classList.remove('active'));
+        dots[idx].classList.add('active');
+        nextBtn.classList.toggle('hidden',idx===sceneIds.length-1);
+        e.target.querySelectorAll('.rl-reveal').forEach(el=>el.classList.add('rl-in'));
+        const tint=getComputedStyle(e.target).getPropertyValue('--tint').trim()||'#7c5cff';
+        document.documentElement.style.setProperty('--rl-cursor-tint',tint);
+      }
+    });
+  },{threshold:.4});
+  sceneIds.forEach(id=>{const el=document.getElementById(id);if(el)reelObserver.observe(el);});
+}
+
+/* Cursor personalizado: elementos fijos en el esqueleto (nunca se
+   destruyen al re-renderizar), así que los listeners se enganchan UNA
+   sola vez. Al estar dentro de #reelSkinRoot, el display:none del padre
+   ya los oculta por completo cuando cualquier otra skin está activa —
+   no hace falta gating adicional. */
+if(window.matchMedia('(pointer:fine)').matches){
+  const reelRoot=document.getElementById('reelSkinRoot');
+  const rlDot=document.getElementById('rlCursorDot'),rlRing=document.getElementById('rlCursorRing');
+  window.addEventListener('mousemove',(ev)=>{
+    if(getActiveSkin()!=='reel')return;
+    rlDot.style.transform=`translate(${ev.clientX}px,${ev.clientY}px) translate(-50%,-50%)`;
+    rlRing.style.transform=`translate(${ev.clientX}px,${ev.clientY}px) translate(-50%,-50%)`;
+  });
+  window.addEventListener('mousedown',(ev)=>{
+    if(getActiveSkin()!=='reel')return;
+    reelRoot.classList.add('rl-cursor-down');
+    const ping=document.createElement('div');
+    ping.className='rl-cursor-ping';
+    ping.style.left=ev.clientX+'px';
+    ping.style.top=ev.clientY+'px';
+    ping.style.transform='translate(-50%,-50%) scale(1)';
+    reelRoot.appendChild(ping);
+    ping.addEventListener('animationend',()=>ping.remove());
+  });
+  window.addEventListener('mouseup',()=>reelRoot.classList.remove('rl-cursor-down'));
 }
 
 function renderVisitor(){
@@ -3584,7 +3884,7 @@ Object.assign(window,{
   confirmAddLink, confirmAddProject, confirmAddSkill, confirmAddTool, confirmAddVid, confirmEditCo, confirmEditEdu, confirmEditLink,
   confirmEditProject, confirmEditSkill, confirmEditTool, confirmEditVfxCompany, confirmEditVid, deleteCo, deleteEdu, deleteLang,
   deleteLink, deletePost, deleteProject, deleteSkill, deleteTool, deleteVfxCompany, deleteVid, detectLang,
-  getActiveSkin, setSkin, renderCleanSkin, openCleanDetail, closeCleanDetail, playCleanClip,
+  getActiveSkin, setSkin, renderCleanSkin, openCleanDetail, closeCleanDetail, playCleanClip, renderReelSkin, playReelClip,
   exportData, exportVfxCompanies, fetchVideoMeta, generateCvPdf, gv, importPosts, importVfxBulk, loadLiveCompanies,
   openAddCo, openAddEdu, openAddLang, openAddLink, openAddPost, openAddProject, openAddSkill, openAddTool,
   openAddVid, openAdmin, openDevlog, openEditCo, openEditEdu, openEditLink, openEditPost, openEditProject,
