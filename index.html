@@ -806,27 +806,27 @@ option{background:var(--bg2);}
 .rl-next-btn .rl-arrow{animation:rlNudge 2s ease-in-out infinite;}
 @keyframes rlNudge{0%,100%{transform:translateY(0);}50%{transform:translateY(3px);}}
 
-.rl-section{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:0 50px;position:relative;border-top:1px solid var(--rl-line);}
+.rl-section{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:0 50px;position:relative;z-index:1;border-top:1px solid var(--rl-line);}
 .rl-hero{border-top:none;}
-.rl-hero-content{position:relative;z-index:1;}
-.rl-firebg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
-.rl-ember{position:absolute;bottom:-10px;border-radius:50%;background:radial-gradient(circle,#ffd28a,#ff5a1f 55%,transparent 75%);
-  animation-name:rlEmberRise;animation-timing-function:ease-out;animation-iteration-count:infinite;}
-.rl-smoke{position:absolute;bottom:-40px;border-radius:50%;background:radial-gradient(circle,rgba(130,100,80,.28),transparent 70%);
-  filter:blur(16px);animation-name:rlSmokeRise;animation-timing-function:linear;animation-iteration-count:infinite;}
-@keyframes rlEmberRise{
-  0%{transform:translate(0,0) scale(1);opacity:0;}
-  12%{opacity:1;}
-  100%{transform:translate(var(--dx,20px),-70vh) scale(.25);opacity:0;}
+.rl-firebg{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+.rl-ember{position:absolute;top:0;left:-3%;border-radius:50%;background:radial-gradient(circle,#ffd28a,#ff5a1f 55%,transparent 75%);
+  animation-name:rlEmberDrift;animation-timing-function:linear;animation-iteration-count:infinite;}
+.rl-smoke{position:absolute;top:0;left:-10%;border-radius:50%;background:radial-gradient(circle,rgba(210,195,180,.55),transparent 68%);
+  filter:blur(14px);animation-name:rlSmokeDrift;animation-timing-function:linear;animation-iteration-count:infinite;}
+@keyframes rlEmberDrift{
+  0%{transform:translate(0,0);opacity:0;}
+  10%{opacity:1;}
+  88%{opacity:1;}
+  100%{transform:translate(var(--dx,105vw),var(--dy,0px));opacity:0;}
 }
-@keyframes rlSmokeRise{
+@keyframes rlSmokeDrift{
   0%{transform:translate(0,0) scale(.8);opacity:0;}
-  20%{opacity:.5;}
-  100%{transform:translate(var(--dx,40px),-75vh) scale(1.7);opacity:0;}
+  18%{opacity:.7;}
+  85%{opacity:.5;}
+  100%{transform:translate(var(--dx,90vw),-60px) scale(1.5);opacity:0;}
 }
-.rl-firebg.rl-paused .rl-ember,.rl-firebg.rl-paused .rl-smoke{animation-play-state:paused;}
 @media(prefers-reduced-motion:reduce){
-  .rl-ember,.rl-smoke{animation:none;opacity:.12;bottom:20%;}
+  .rl-ember,.rl-smoke{animation:none;opacity:.1;left:20%;}
 }
 .rl-hero .rl-kicker{font-size:14px;color:var(--rl-sub);margin-bottom:18px;max-width:440px;line-height:1.5;}
 .rl-hero h1{font-size:clamp(48px,10vw,150px);font-weight:700;line-height:.96;margin:0 0 20px;letter-spacing:-.01em;}
@@ -841,7 +841,9 @@ option{background:var(--bg2);}
 .rl-scene p{font-size:16px;line-height:1.6;max-width:560px;color:#d3d5d9;margin-bottom:20px;}
 .rl-scene .rl-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px;}
 .rl-scene .rl-tags span{font-size:12px;border:1px solid var(--rl-line);border-radius:999px;padding:7px 14px;color:#c9cbd1;}
-.rl-clipgroup{position:absolute;right:50px;top:50%;transform:translateY(-50%);width:min(52vw,780px);display:flex;flex-direction:column;gap:16px;}
+.rl-scene-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start;width:100%;}
+.rl-scene-media{width:100%;}
+.rl-clipgroup{display:flex;flex-direction:column;gap:16px;width:100%;}
 .rl-clip-thumbs{display:flex;gap:12px;flex-wrap:wrap;}
 .rl-cliptile{flex-shrink:0;border-radius:6px;border:1px solid var(--rl-line);position:relative;overflow:hidden;cursor:pointer;
   background-size:cover;background-position:center;background-color:#141519;}
@@ -890,7 +892,8 @@ option{background:var(--bg2);}
   .rl-cursor-ping{display:none;}
 }
 @media(max-width:1280px){
-  .rl-clipgroup{position:static;transform:none;width:100%;max-width:620px;margin-top:28px;}
+  .rl-scene-grid{grid-template-columns:1fr;}
+  .rl-scene-media{max-width:620px;}
 }
 @media(max-width:640px){
   .rl-section{padding:0 24px;}
@@ -1473,6 +1476,7 @@ https://otraempresa.com/careers"></textarea>
      (renderReelSkin) a partir de D, igual que Clean, así que nunca se
      desincroniza. Se muestra siempre en inglés a propósito (ver renderReelSkin). -->
 <div id="reelSkinRoot" style="display:none;">
+  <div class="rl-firebg" id="rlFireBg"></div>
   <div class="rl-hud-corner rl-tl"></div><div class="rl-hud-corner rl-tr"></div>
   <div class="rl-hud-corner rl-bl"></div><div class="rl-hud-corner rl-br"></div>
   <nav class="rl-nav">
@@ -2095,22 +2099,23 @@ function reelGatherClips(c){
 
 function reelFireParticlesHtml(){
   let embers='';
-  for(let i=0;i<26;i++){
-    const left=(Math.random()*100).toFixed(1);
+  for(let i=0;i<30;i++){
+    const top=(Math.random()*100).toFixed(1);
     const size=(2+Math.random()*3).toFixed(1);
-    const dur=(4+Math.random()*4).toFixed(1);
-    const delay=(-Math.random()*8).toFixed(1);
-    const dx=(Math.random()*80-40).toFixed(0);
-    embers+=`<div class="rl-ember" style="left:${left}%;width:${size}px;height:${size}px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx}px;"></div>`;
+    const dur=(7+Math.random()*6).toFixed(1);
+    const delay=(-Math.random()*13).toFixed(1);
+    const dx=(95+Math.random()*25).toFixed(0);
+    const dy=(Math.random()*60-30).toFixed(0);
+    embers+=`<div class="rl-ember" style="top:${top}vh;width:${size}px;height:${size}px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx}vw;--dy:${dy}px;"></div>`;
   }
   let smoke='';
-  for(let i=0;i<5;i++){
-    const left=(Math.random()*100).toFixed(1);
-    const size=(90+Math.random()*90).toFixed(0);
-    const dur=(14+Math.random()*8).toFixed(1);
-    const delay=(-Math.random()*16).toFixed(1);
-    const dx=(Math.random()*100-50).toFixed(0);
-    smoke+=`<div class="rl-smoke" style="left:${left}%;width:${size}px;height:${size}px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx}px;"></div>`;
+  for(let i=0;i<7;i++){
+    const top=(Math.random()*100).toFixed(1);
+    const size=(100+Math.random()*110).toFixed(0);
+    const dur=(16+Math.random()*10).toFixed(1);
+    const delay=(-Math.random()*26).toFixed(1);
+    const dx=(85+Math.random()*30).toFixed(0);
+    smoke+=`<div class="rl-smoke" style="top:${top}vh;width:${size}px;height:${size}px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx}vw;"></div>`;
   }
   return smoke+embers;
 }
@@ -2126,13 +2131,10 @@ function renderReelSkin(){
 
   const heroHtml=`
     <section class="rl-section rl-hero" id="rl-s0">
-      <div class="rl-firebg">${reelFireParticlesHtml()}</div>
-      <div class="rl-hero-content">
-        <div class="rl-kicker rl-reveal rl-d1">${bio}</div>
-        <h1 class="rl-reveal rl-d2">${name.split(' ').join('<br>')}</h1>
-        <div class="rl-role rl-reveal rl-d3">${role}</div>
-        <div class="rl-scrolldown rl-reveal rl-d4">Scroll to watch the reel ↓</div>
-      </div>
+      <div class="rl-kicker rl-reveal rl-d1">${bio}</div>
+      <h1 class="rl-reveal rl-d2">${name.split(' ').join('<br>')}</h1>
+      <div class="rl-role rl-reveal rl-d3">${role}</div>
+      <div class="rl-scrolldown rl-reveal rl-d4">Scroll to watch the reel ↓</div>
     </section>`;
 
   const sceneIds=[];
@@ -2152,14 +2154,20 @@ function renderReelSkin(){
     const thumbsHtml=thumbs.map((cl,ti)=>`<div class="rl-cliptile rl-thumb" onclick="playReelClip('${mainId}','${(cl.video||'').replace(/'/g,"\\'")}')" style="background-image:url(${cl.thumb||''})"><span class="rl-idx">${String(ti+2).padStart(2,'0')}</span><span class="rl-play">▶</span></div>`).join('');
     return `
     <section class="rl-section rl-scene" id="${id}" style="--tint:${tint}">
-      <div class="rl-num rl-reveal rl-d1">Project — ${c.period||''}</div>
-      <h2 class="rl-reveal rl-d2">${c.name||''}</h2>
-      <div class="rl-meta rl-reveal rl-d3">${c.role||''}</div>
-      <p class="rl-reveal rl-d4">${desc}</p>
-      ${tags.length?`<div class="rl-tags rl-reveal rl-d5">${tags.map(tg=>`<span>${tg}</span>`).join('')}</div>`:''}
-      <div class="rl-clipgroup rl-reveal rl-d6">
-        ${mainTileHtml}
-        ${thumbsHtml?`<div class="rl-clip-thumbs">${thumbsHtml}</div>`:''}
+      <div class="rl-scene-grid">
+        <div class="rl-scene-text">
+          <div class="rl-num rl-reveal rl-d1">Project — ${c.period||''}</div>
+          <h2 class="rl-reveal rl-d2">${c.name||''}</h2>
+          <div class="rl-meta rl-reveal rl-d3">${c.role||''}</div>
+          <p class="rl-reveal rl-d4">${desc}</p>
+          ${tags.length?`<div class="rl-tags rl-reveal rl-d5">${tags.map(tg=>`<span>${tg}</span>`).join('')}</div>`:''}
+        </div>
+        <div class="rl-scene-media rl-reveal rl-d6">
+          <div class="rl-clipgroup">
+            ${mainTileHtml}
+            ${thumbsHtml?`<div class="rl-clip-thumbs">${thumbsHtml}</div>`:''}
+          </div>
+        </div>
       </div>
     </section>`;
   }).join('');
@@ -2184,6 +2192,7 @@ function renderReelSkin(){
     </section>`;
 
   root.innerHTML=heroHtml+scenesHtml+closeHtml;
+  document.getElementById('rlFireBg').innerHTML=reelFireParticlesHtml();
   reelSetupInteractions(sceneIds);
 }
 
@@ -2228,13 +2237,11 @@ function reelSetupInteractions(sceneIds){
         e.target.querySelectorAll('.rl-reveal').forEach(el=>el.classList.add('rl-in'));
         const tint=getComputedStyle(e.target).getPropertyValue('--tint').trim()||'#7c5cff';
         document.documentElement.style.setProperty('--rl-cursor-tint',tint);
-        if(idx===0)document.querySelectorAll('.rl-firebg').forEach(f=>f.classList.remove('rl-paused'));
       }else{
         // Al salir de la sección quitamos 'rl-in': si vuelves a entrar más
         // tarde, la animación de entrada se repite en vez de quedarse ya
         // disparada para siempre.
         e.target.querySelectorAll('.rl-reveal').forEach(el=>el.classList.remove('rl-in'));
-        if(idx===0)document.querySelectorAll('.rl-firebg').forEach(f=>f.classList.add('rl-paused'));
       }
     });
   },{threshold:.4});
