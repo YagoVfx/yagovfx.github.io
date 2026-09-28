@@ -806,9 +806,10 @@ option{background:var(--bg2);}
 .rl-next-btn .rl-arrow{animation:rlNudge 2s ease-in-out infinite;}
 @keyframes rlNudge{0%,100%{transform:translateY(0);}50%{transform:translateY(3px);}}
 
-.rl-section{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:0 50px;position:relative;z-index:1;}
+.rl-section{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:0 50px;position:relative;}
 .rl-hero{border-top:none;}
-.rl-firebg{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+.rl-fx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1;}
+.rl-fx.rl-paused *{animation-play-state:paused!important;}
 .rl-ember{position:absolute;top:0;left:-3%;background:radial-gradient(circle,#ffd28a,#ff5a1f 55%,transparent 75%);
   animation-name:rlEmberDrift;animation-timing-function:ease-out;animation-iteration-count:infinite;}
 .rl-ember-dot{border-radius:50%;}
@@ -842,8 +843,41 @@ option{background:var(--bg2);}
   0%,100%{transform:scale(1) translate(0,0);}
   50%{transform:scale(1.18) translate(5px,-8px);}
 }
+/* Relámpagos: el destello dura una fracción del intervalo (flashes muy breves, sin parpadeo sostenido). */
+.rl-lightning{position:absolute;inset:0;opacity:0;mix-blend-mode:screen;
+  background:radial-gradient(ellipse 70% 90% at var(--lx,50%) 0%,color-mix(in srgb,var(--lc,#bcd4ff) 55%,transparent),transparent 70%);
+  animation-name:rlLightning;animation-timing-function:linear;animation-iteration-count:infinite;}
+@keyframes rlLightning{
+  0%{opacity:0;}
+  .4%{opacity:var(--peak,.6);}
+  .9%{opacity:calc(var(--peak,.6) * .12);}
+  1.5%{opacity:calc(var(--peak,.6) * .85);}
+  2.6%{opacity:0;}
+  100%{opacity:0;}
+}
+.rl-bolt{position:absolute;top:0;width:20%;height:100%;overflow:visible;color:var(--lc,#bcd4ff);}
+.rl-bolt path{fill:none;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke;}
+.rl-bolt-glow{stroke:currentColor;stroke-width:6;opacity:.6;filter:blur(3px);}
+.rl-bolt-core{stroke:#fff;stroke-width:1.6;}
+/* Fuego: lenguas de llama que parpadean + resplandor base en el borde inferior. */
+.rl-flame{position:absolute;bottom:-4vh;border-radius:50% 50% 45% 45%/75% 75% 25% 25%;
+  background:radial-gradient(ellipse at 50% 90%,#fff4c2 0%,#ffc14a 22%,#ff6a1f 52%,rgba(255,60,0,0) 78%);
+  filter:blur(7px);mix-blend-mode:screen;transform-origin:50% 100%;opacity:var(--fi,1);
+  animation-name:rlFlame;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
+@keyframes rlFlame{
+  0%,100%{transform:scale(1,1) skewX(0deg);opacity:var(--fi,1);}
+  25%{transform:scale(.9,1.14) skewX(4deg) translateY(-2%);opacity:calc(var(--fi,1) * .85);}
+  50%{transform:scale(1.07,.9) skewX(-5deg);opacity:var(--fi,1);}
+  75%{transform:scale(.95,1.1) skewX(3deg) translateY(-3%);opacity:calc(var(--fi,1) * .9);}
+}
+.rl-fire-glow{position:absolute;left:0;right:0;bottom:0;height:34vh;mix-blend-mode:screen;
+  background:linear-gradient(0deg,rgba(255,110,30,calc(.45 * var(--gi,1))),rgba(255,70,0,calc(.18 * var(--gi,1))) 45%,transparent);
+  animation:rlGlowPulse 3.2s ease-in-out infinite;}
+@keyframes rlGlowPulse{0%,100%{opacity:.75;}50%{opacity:1;}}
 @media(prefers-reduced-motion:reduce){
   .rl-ember,.rl-smoke,.rl-smoke-core{animation:none;opacity:.08;left:20%;}
+  .rl-flame,.rl-fire-glow{animation:none;}
+  .rl-lightning{display:none;}
 }
 .rl-hero .rl-kicker{font-size:14px;color:var(--rl-sub);margin-bottom:18px;max-width:440px;line-height:1.5;}
 .rl-hero h1{font-size:clamp(48px,10vw,150px);font-weight:700;line-height:.96;margin:0 0 20px;letter-spacing:-.01em;}
@@ -1336,42 +1370,9 @@ https://otraempresa.com/careers"></textarea>
           </div>
         </div>
 
-        <div class="a-title" style="margin-top:34px;font-size:15px;">Reel — efectos de fuego</div>
-        <div class="a-sub">Ajusta las chispas y el humo de la skin Reel. Los cambios se guardan solos; cambia a Reel para verlos. Valores más bajos de "duración" = más rápido.</div>
-        <div class="a-form" style="max-width:640px;" id="reelFxForm">
-          <div class="fl" style="margin:6px 0 10px;font-weight:700;">🔥 Chispas</div>
-          <div class="frow">
-            <div class="fg"><label class="fl">Cantidad</label><input class="fi" type="number" min="0" max="150" step="1" id="rlfx-emberCount" onchange="setReelFx('emberCount',this.value)"></div>
-            <div class="fg"><label class="fl">% con brillo extra</label><input class="fi" type="number" min="0" max="100" step="1" id="rlfx-emberBrightPct" onchange="setReelFx('emberBrightPct',this.value)"></div>
-          </div>
-          <div class="frow">
-            <div class="fg"><label class="fl">Duración mín (s)</label><input class="fi" type="number" min="1" max="60" step="0.5" id="rlfx-emberDurMin" onchange="setReelFx('emberDurMin',this.value)"></div>
-            <div class="fg"><label class="fl">Duración máx (s)</label><input class="fi" type="number" min="1" max="60" step="0.5" id="rlfx-emberDurMax" onchange="setReelFx('emberDurMax',this.value)"></div>
-          </div>
-          <div class="frow">
-            <div class="fg"><label class="fl">Tamaño mín (px)</label><input class="fi" type="number" min="1" max="20" step="0.5" id="rlfx-emberSizeMin" onchange="setReelFx('emberSizeMin',this.value)"></div>
-            <div class="fg"><label class="fl">Tamaño máx (px)</label><input class="fi" type="number" min="1" max="20" step="0.5" id="rlfx-emberSizeMax" onchange="setReelFx('emberSizeMax',this.value)"></div>
-          </div>
-          <div class="frow">
-            <div class="fg"><label class="fl">Brillo mín (0–1)</label><input class="fi" type="number" min="0" max="1" step="0.05" id="rlfx-emberPeakMin" onchange="setReelFx('emberPeakMin',this.value)"></div>
-            <div class="fg"><label class="fl">Brillo máx (0–1)</label><input class="fi" type="number" min="0" max="1" step="0.05" id="rlfx-emberPeakMax" onchange="setReelFx('emberPeakMax',this.value)"></div>
-          </div>
-
-          <div class="fl" style="margin:22px 0 10px;font-weight:700;">💨 Humo</div>
-          <div class="frow">
-            <div class="fg"><label class="fl">Cantidad</label><input class="fi" type="number" min="0" max="20" step="1" id="rlfx-smokeCount" onchange="setReelFx('smokeCount',this.value)"></div>
-            <div class="fg"><label class="fl">Intensidad (0–2.5)</label><input class="fi" type="number" min="0" max="2.5" step="0.1" id="rlfx-smokeIntensity" onchange="setReelFx('smokeIntensity',this.value)"></div>
-          </div>
-          <div class="frow">
-            <div class="fg"><label class="fl">Duración mín (s)</label><input class="fi" type="number" min="3" max="120" step="1" id="rlfx-smokeDurMin" onchange="setReelFx('smokeDurMin',this.value)"></div>
-            <div class="fg"><label class="fl">Duración máx (s)</label><input class="fi" type="number" min="3" max="120" step="1" id="rlfx-smokeDurMax" onchange="setReelFx('smokeDurMax',this.value)"></div>
-          </div>
-          <div class="frow">
-            <div class="fg"><label class="fl">Tamaño mín (px)</label><input class="fi" type="number" min="60" max="800" step="10" id="rlfx-smokeSizeMin" onchange="setReelFx('smokeSizeMin',this.value)"></div>
-            <div class="fg"><label class="fl">Tamaño máx (px)</label><input class="fi" type="number" min="60" max="800" step="10" id="rlfx-smokeSizeMax" onchange="setReelFx('smokeSizeMax',this.value)"></div>
-          </div>
-          <button class="a-add-btn" style="margin-top:18px;" onclick="resetReelFx()">↺ Restaurar valores por defecto</button>
-        </div>
+        <div class="a-title" style="margin-top:34px;font-size:15px;">Reel — efectos por sección</div>
+        <div class="a-sub">Cada sección (portada, cada proyecto y cierre) tiene sus propios efectos. Elige la sección, activa o desactiva cada efecto y ajusta los valores. Se guarda solo; cambia a Reel para verlo. Duración más baja = más rápido.</div>
+        <div class="a-form" style="max-width:760px;" id="reelFxForm"></div>
       </div>
 
       <!-- LINKS -->
@@ -1549,7 +1550,6 @@ https://otraempresa.com/careers"></textarea>
      (renderReelSkin) a partir de D, igual que Clean, así que nunca se
      desincroniza. Se muestra siempre en inglés a propósito (ver renderReelSkin). -->
 <div id="reelSkinRoot" style="display:none;">
-  <div class="rl-firebg" id="rlFireBg"></div>
   <div class="rl-hud-corner rl-tl"></div><div class="rl-hud-corner rl-tr"></div>
   <div class="rl-hud-corner rl-bl"></div><div class="rl-hud-corner rl-br"></div>
   <nav class="rl-nav">
@@ -2163,6 +2163,7 @@ function closeCleanDetail(){
    una decisión de la propia skin, no sigue el toggle de idioma de D.lang. */
 const REEL_TINTS=['#7c5cff','#35e6c2','#ff6b57'];
 let reelObserver=null;
+let reelFxObserver=null;
 
 function reelGatherClips(c){
   const clips=[...(c.clips||[])];
@@ -2170,111 +2171,232 @@ function reelGatherClips(c){
   return clips;
 }
 
-/* Configuración de los efectos de fuego. Valores por defecto = el aspecto
-   actual. Se pueden cambiar desde Admin → Skin → "Reel — efectos de fuego"
-   (se guardan en D.reelFire); cualquier valor que falte usa el de aquí. */
+/* ══ REEL — efectos por sección ══
+   Cada sección (portada, cada proyecto, cierre) lleva su propia capa .rl-fx
+   con su propia configuración y sus propios interruptores. Los valores por
+   defecto reproducen el aspecto original; lo que se cambie en
+   Admin → Skin → "Reel — efectos por sección" se guarda en D.reelFx[clave]. */
 const REEL_FX_DEFAULTS={
-  emberCount:32, emberDurMin:5, emberDurMax:19,
-  emberSizeMin:2, emberSizeMax:5.5,
-  emberBrightPct:28, emberPeakMin:0.4, emberPeakMax:1,
-  smokeCount:6, smokeDurMin:18, smokeDurMax:44,
-  smokeSizeMin:180, smokeSizeMax:340, smokeIntensity:1,
+  dotsOn:true,   dotCount:19, dotDurMin:5, dotDurMax:19, dotSizeMin:2, dotSizeMax:5.5, dotBrightPct:28, dotPeakMin:0.4, dotPeakMax:1,
+  streakOn:true, streakCount:13, streakDurMin:5, streakDurMax:19, streakLenMin:14, streakLenMax:38, streakThick:2, streakBrightPct:28, streakPeakMin:0.4, streakPeakMax:1,
+  smokeOn:true,  smokeCount:6, smokeDurMin:18, smokeDurMax:44, smokeSizeMin:180, smokeSizeMax:340, smokeIntMin:0.8, smokeIntMax:1.2,
+  lightningOn:false, lightningCount:2, lightningBoltPct:70, lightningIntervalMin:6, lightningIntervalMax:16, lightningIntMin:0.35, lightningIntMax:0.7, lightningColor:'#bcd4ff',
+  fireOn:false,  fireCount:16, fireGlow:1, fireHeightMin:18, fireHeightMax:42, fireWidthMin:90, fireWidthMax:220, fireDurMin:0.9, fireDurMax:2.4, fireIntMin:0.55, fireIntMax:1,
 };
-function reelFireCfg(){
-  const saved=D.reelFire||{};
+// [clave, etiqueta, mín, máx, paso]  ·  o  [clave, etiqueta, 'color']
+const REEL_FX_SCHEMA=[
+  {title:'✨ Chispas (puntos)', on:'dotsOn', fields:[
+    ['dotCount','Cantidad',0,150,1],['dotBrightPct','% con brillo extra',0,100,1],
+    ['dotDurMin','Duración mín (s)',1,60,.5],['dotDurMax','Duración máx (s)',1,60,.5],
+    ['dotSizeMin','Tamaño mín (px)',1,20,.5],['dotSizeMax','Tamaño máx (px)',1,20,.5],
+    ['dotPeakMin','Brillo mín (0–1)',0,1,.05],['dotPeakMax','Brillo máx (0–1)',0,1,.05]]},
+  {title:'☄️ Chispas largas (estelas)', on:'streakOn', fields:[
+    ['streakCount','Cantidad',0,150,1],['streakBrightPct','% con brillo extra',0,100,1],
+    ['streakDurMin','Duración mín (s)',1,60,.5],['streakDurMax','Duración máx (s)',1,60,.5],
+    ['streakLenMin','Largo mín (px)',4,200,1],['streakLenMax','Largo máx (px)',4,200,1],
+    ['streakThick','Grosor (px)',1,8,.5],
+    ['streakPeakMin','Brillo mín (0–1)',0,1,.05],['streakPeakMax','Brillo máx (0–1)',0,1,.05]]},
+  {title:'💨 Humo', on:'smokeOn', fields:[
+    ['smokeCount','Cantidad',0,20,1],
+    ['smokeDurMin','Duración mín (s)',3,120,1],['smokeDurMax','Duración máx (s)',3,120,1],
+    ['smokeSizeMin','Tamaño mín (px)',60,800,10],['smokeSizeMax','Tamaño máx (px)',60,800,10],
+    ['smokeIntMin','Intensidad mín (0–2.5)',0,2.5,.1],['smokeIntMax','Intensidad máx (0–2.5)',0,2.5,.1]]},
+  {title:'⚡ Relámpagos', on:'lightningOn',
+   note:'Por seguridad (fotosensibilidad) el intervalo mínimo es 3 s, y no se muestran a visitantes con "reducir movimiento" activado.',
+   fields:[
+    ['lightningCount','Cantidad',1,4,1],['lightningBoltPct','% con rayo visible',0,100,1],
+    ['lightningIntervalMin','Intervalo mín (s)',3,30,1],['lightningIntervalMax','Intervalo máx (s)',3,30,1],
+    ['lightningIntMin','Intensidad mín (0–1)',0,1,.05],['lightningIntMax','Intensidad máx (0–1)',0,1,.05],
+    ['lightningColor','Color','color']]},
+  {title:'🔥 Fuego', on:'fireOn', fields:[
+    ['fireCount','Llamas',0,40,1],['fireGlow','Resplandor base (0–2)',0,2,.1],
+    ['fireHeightMin','Altura mín (% pantalla)',5,90,1],['fireHeightMax','Altura máx (% pantalla)',5,90,1],
+    ['fireWidthMin','Ancho mín (px)',30,500,5],['fireWidthMax','Ancho máx (px)',30,500,5],
+    ['fireDurMin','Parpadeo mín (s)',0.3,8,.1],['fireDurMax','Parpadeo máx (s)',0.3,8,.1],
+    ['fireIntMin','Intensidad mín (0–1)',0,1,.05],['fireIntMax','Intensidad máx (0–1)',0,1,.05]]},
+];
+
+let reelFxEditKey='hero';   // sección que se está editando en el admin
+
+function reelFxSectionList(){
+  const list=[{key:'hero',label:'Portada'}];
+  (D.companies||[]).forEach(c=>list.push({key:String(c.id),label:c.name||('Proyecto '+c.id)}));
+  list.push({key:'close',label:'Cierre'});
+  return list;
+}
+
+/* Config efectiva de una sección: defaults + lo guardado, con límites y
+   mín/máx coherentes (si alguien los pone al revés, se intercambian). */
+function reelFxCfg(key){
+  const own=(D.reelFx&&D.reelFx[key])||{};
+  const m=Object.assign({},REEL_FX_DEFAULTS,own);
   const c={};
-  Object.keys(REEL_FX_DEFAULTS).forEach(k=>{
-    const v=parseFloat(saved[k]);
-    c[k]=Number.isFinite(v)?v:REEL_FX_DEFAULTS[k];
+  REEL_FX_SCHEMA.forEach(g=>{
+    c[g.on]=!!m[g.on];
+    g.fields.forEach(f=>{
+      const k=f[0];
+      if(f[2]==='color'){c[k]=/^#[0-9a-f]{6}$/i.test(m[k])?m[k]:REEL_FX_DEFAULTS[k];return;}
+      let v=parseFloat(m[k]);
+      if(!Number.isFinite(v))v=REEL_FX_DEFAULTS[k];
+      c[k]=Math.min(f[3],Math.max(f[2],v));
+    });
   });
-  // mín/máx coherentes (si alguien los pone al revés, los intercambiamos)
-  [['emberDurMin','emberDurMax'],['emberSizeMin','emberSizeMax'],['emberPeakMin','emberPeakMax'],['smokeDurMin','smokeDurMax'],['smokeSizeMin','smokeSizeMax']].forEach(([a,b])=>{
-    if(c[a]>c[b]){const t=c[a];c[a]=c[b];c[b]=t;}
+  Object.keys(c).forEach(k=>{
+    if(!k.endsWith('Min'))return;
+    const mx=k.slice(0,-3)+'Max';
+    if(typeof c[k]==='number'&&typeof c[mx]==='number'&&c[k]>c[mx]){const t=c[k];c[k]=c[mx];c[mx]=t;}
   });
-  // límites de seguridad para no matar el rendimiento
-  c.emberCount=Math.max(0,Math.min(150,Math.round(c.emberCount)));
-  c.smokeCount=Math.max(0,Math.min(20,Math.round(c.smokeCount)));
-  c.emberDurMin=Math.max(1,c.emberDurMin);
-  c.smokeDurMin=Math.max(3,c.smokeDurMin);
+  ['dotCount','streakCount','smokeCount','lightningCount','fireCount'].forEach(k=>c[k]=Math.round(c[k]));
   return c;
 }
 const rnd=(a,b)=>a+Math.random()*(b-a);
 
-function reelFireParticlesHtml(){
-  const c=reelFireCfg();
-  const streakScale=((c.emberSizeMin+c.emberSizeMax)/2)/3.75; // 1 con los valores por defecto
-  let embers='';
-  for(let i=0;i<c.emberCount;i++){
-    const top=(Math.random()*100).toFixed(1);
-    const dur=rnd(c.emberDurMin,c.emberDurMax).toFixed(1);   // velocidades muy variadas
-    const delay=(-Math.random()*c.emberDurMax).toFixed(1);
-    const dx=55+Math.random()*55;                              // recorrido horizontal (vw)
-    const dy=-(20+Math.random()*55);                           // recorrido vertical hacia arriba (vh) → diagonal
-    const angle=(Math.atan2(-dy*9,dx)*180/Math.PI).toFixed(1); // orientación de la estela según la diagonal real
-    const peak=rnd(c.emberPeakMin,c.emberPeakMax).toFixed(2);  // intensidad: unas más fuertes que otras
-    const bright=Math.random()*100<c.emberBrightPct?' rl-ember-bright':'';
-    if(Math.random()<0.4){
-      const len=((14+Math.random()*24)*streakScale).toFixed(0);
-      embers+=`<div class="rl-ember rl-ember-streak${bright}" style="top:${top}vh;width:${len}px;height:2px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx.toFixed(0)}vw;--dy:${dy.toFixed(0)}vh;--rot:${angle}deg;--peak:${peak};"></div>`;
-    }else{
-      const size=rnd(c.emberSizeMin,c.emberSizeMax).toFixed(1);
-      embers+=`<div class="rl-ember rl-ember-dot${bright}" style="top:${top}vh;width:${size}px;height:${size}px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx.toFixed(0)}vw;--dy:${dy.toFixed(0)}vh;--peak:${peak};"></div>`;
-    }
+/* Trayectoria diagonal de una chispa (recorrido en vw/vh + ángulo de la estela). */
+function reelEmberVec(){
+  const dx=55+Math.random()*55, dy=-(20+Math.random()*55);
+  return {dx:dx.toFixed(0),dy:dy.toFixed(0),angle:(Math.atan2(-dy*9,dx)*180/Math.PI).toFixed(1)};
+}
+function reelDotsHtml(c){
+  let o='';
+  for(let i=0;i<c.dotCount;i++){
+    const v=reelEmberVec();
+    const dur=rnd(c.dotDurMin,c.dotDurMax);
+    const bright=Math.random()*100<c.dotBrightPct?' rl-ember-bright':'';
+    const size=rnd(c.dotSizeMin,c.dotSizeMax).toFixed(1);
+    o+=`<div class="rl-ember rl-ember-dot${bright}" style="top:${(Math.random()*100).toFixed(1)}%;width:${size}px;height:${size}px;animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${v.dx}vw;--dy:${v.dy}vh;--peak:${rnd(c.dotPeakMin,c.dotPeakMax).toFixed(2)};"></div>`;
   }
-  let smoke='';
+  return o;
+}
+function reelStreaksHtml(c){
+  let o='';
+  for(let i=0;i<c.streakCount;i++){
+    const v=reelEmberVec();
+    const dur=rnd(c.streakDurMin,c.streakDurMax);
+    const bright=Math.random()*100<c.streakBrightPct?' rl-ember-bright':'';
+    const len=rnd(c.streakLenMin,c.streakLenMax).toFixed(0);
+    o+=`<div class="rl-ember rl-ember-streak${bright}" style="top:${(Math.random()*100).toFixed(1)}%;width:${len}px;height:${c.streakThick}px;animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${v.dx}vw;--dy:${v.dy}vh;--rot:${v.angle}deg;--peak:${rnd(c.streakPeakMin,c.streakPeakMax).toFixed(2)};"></div>`;
+  }
+  return o;
+}
+function reelSmokeHtml(c){
+  let o='';
   for(let i=0;i<c.smokeCount;i++){
-    const top=(Math.random()*100).toFixed(1);
-    const env=rnd(c.smokeSizeMin,c.smokeSizeMax);              // tamaño del "puff" contenedor
-    const dur=rnd(c.smokeDurMin,c.smokeDurMax).toFixed(1);     // capas a velocidades bien distintas
-    const delay=(-Math.random()*c.smokeDurMax).toFixed(1);
-    const dx=(40+Math.random()*55).toFixed(0);
-    const dy=-(15+Math.random()*40).toFixed(0);
+    const env=rnd(c.smokeSizeMin,c.smokeSizeMax);           // tamaño del "puff" contenedor
+    const dur=rnd(c.smokeDurMin,c.smokeDurMax);              // capas a velocidades distintas
+    const si=rnd(c.smokeIntMin,c.smokeIntMax).toFixed(2);    // intensidad propia de cada voluta
     let cores='';
-    const coreCount=2+Math.floor(Math.random()*2); // 2-3 núcleos por puff
+    const coreCount=2+Math.floor(Math.random()*2);           // 2-3 núcleos por puff
     for(let j=0;j<coreCount;j++){
-      const warm=j===0; // el primero, más pequeño y cálido (base); el resto, fríos y más grandes
+      const warm=j===0;                                       // el primero, más pequeño y cálido
       const size=warm?(env*.4+Math.random()*30):(env*.65+Math.random()*50);
-      const offT=(Math.random()*40-15).toFixed(0);
-      const offL=(Math.random()*40-15).toFixed(0);
-      const pDur=(4+Math.random()*5).toFixed(1);
-      const pDelay=(-Math.random()*9).toFixed(1);
-      cores+=`<span class="rl-smoke-core ${warm?'warm':'cool'}" style="width:${size.toFixed(0)}px;height:${(size*1.1).toFixed(0)}px;top:${offT}%;left:${offL}%;animation-duration:${pDur}s;animation-delay:${pDelay}s;"></span>`;
+      cores+=`<span class="rl-smoke-core ${warm?'warm':'cool'}" style="width:${size.toFixed(0)}px;height:${(size*1.1).toFixed(0)}px;top:${(Math.random()*40-15).toFixed(0)}%;left:${(Math.random()*40-15).toFixed(0)}%;animation-duration:${(4+Math.random()*5).toFixed(1)}s;animation-delay:${(-Math.random()*9).toFixed(1)}s;"></span>`;
     }
-    smoke+=`<div class="rl-smoke" style="top:${top}vh;width:${env.toFixed(0)}px;height:${env.toFixed(0)}px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx}vw;--dy:${dy}vh;">${cores}</div>`;
+    o+=`<div class="rl-smoke" style="top:${(Math.random()*100).toFixed(1)}%;width:${env.toFixed(0)}px;height:${env.toFixed(0)}px;animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${(40+Math.random()*55).toFixed(0)}vw;--dy:${-(15+Math.random()*40).toFixed(0)}vh;--si:${si};">${cores}</div>`;
   }
-  return smoke+embers;
+  return o;
 }
 
-/* Pinta (o repinta) el fuego y aplica la intensidad del humo. */
-function reelApplyFire(){
-  const fb=document.getElementById('rlFireBg');
-  if(!fb)return;
-  fb.style.setProperty('--si',reelFireCfg().smokeIntensity);
-  fb.innerHTML=reelFireParticlesHtml();
+/* Rayo dentado: tronco con pequeñas desviaciones + 1-2 ramas. */
+function reelBoltPath(){
+  let x=50,y=0;const pts=[[x,y]];
+  while(y<100){y=Math.min(100,y+5+Math.random()*9);x=Math.max(10,Math.min(90,x+(Math.random()*24-12)));pts.push([x,y]);}
+  let d='M'+pts.map(q=>q[0].toFixed(1)+' '+q[1].toFixed(1)).join(' L');
+  const branches=1+Math.floor(Math.random()*2);
+  for(let b=0;b<branches&&pts.length>5;b++){
+    let [bx,by]=pts[2+Math.floor(Math.random()*(pts.length-4))];
+    const dir=Math.random()<.5?-1:1;
+    d+=' M'+bx.toFixed(1)+' '+by.toFixed(1);
+    for(let k=0;k<3;k++){bx=Math.max(4,Math.min(96,bx+dir*(4+Math.random()*9)));by=Math.min(100,by+4+Math.random()*7);d+=' L'+bx.toFixed(1)+' '+by.toFixed(1);}
+  }
+  return d;
+}
+function reelLightningHtml(c){
+  let o='';
+  for(let i=0;i<c.lightningCount;i++){
+    const interval=rnd(c.lightningIntervalMin,c.lightningIntervalMax);
+    const x=10+Math.random()*80;
+    let bolt='';
+    if(Math.random()*100<c.lightningBoltPct){
+      const d=reelBoltPath();
+      bolt=`<svg class="rl-bolt" style="left:${(x-10).toFixed(0)}%" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path class="rl-bolt-glow" d="${d}"/><path class="rl-bolt-core" d="${d}"/></svg>`;
+    }
+    o+=`<div class="rl-lightning" style="animation-duration:${interval.toFixed(1)}s;animation-delay:${(-Math.random()*interval).toFixed(1)}s;--peak:${rnd(c.lightningIntMin,c.lightningIntMax).toFixed(2)};--lc:${c.lightningColor};--lx:${x.toFixed(0)}%;">${bolt}</div>`;
+  }
+  return o;
+}
+function reelFlamesHtml(c){
+  let o=`<div class="rl-fire-glow" style="--gi:${c.fireGlow};"></div>`;
+  for(let i=0;i<c.fireCount;i++){
+    const w=rnd(c.fireWidthMin,c.fireWidthMax);
+    const dur=rnd(c.fireDurMin,c.fireDurMax);
+    o+=`<div class="rl-flame" style="left:${rnd(-2,102).toFixed(1)}%;margin-left:${(-w/2).toFixed(0)}px;width:${w.toFixed(0)}px;height:${rnd(c.fireHeightMin,c.fireHeightMax).toFixed(0)}vh;animation-duration:${dur.toFixed(2)}s;animation-delay:${(-Math.random()*dur).toFixed(2)}s;--fi:${rnd(c.fireIntMin,c.fireIntMax).toFixed(2)};"></div>`;
+  }
+  return o;
 }
 
-/* ── Admin: controles de los efectos ── */
-function loadReelFxForm(){
-  const c=reelFireCfg();
-  Object.keys(REEL_FX_DEFAULTS).forEach(k=>{
-    const el=document.getElementById('rlfx-'+k);
-    if(el)el.value=c[k];
+/* Contenido de la capa de una sección: humo y fuego al fondo, chispas encima, relámpagos arriba. */
+function reelFxHtml(key){
+  const c=reelFxCfg(key);
+  return (c.smokeOn?reelSmokeHtml(c):'')
+    +(c.fireOn?reelFlamesHtml(c):'')
+    +(c.dotsOn?reelDotsHtml(c):'')
+    +(c.streakOn?reelStreaksHtml(c):'')
+    +(c.lightningOn?reelLightningHtml(c):'');
+}
+/* Pinta (o repinta) las capas: todas, o solo la de la sección indicada. */
+function reelApplyFx(onlyKey){
+  document.querySelectorAll('#rlContent .rl-fx').forEach(layer=>{
+    const key=layer.dataset.fx;
+    if(onlyKey&&key!==onlyKey)return;
+    layer.innerHTML=reelFxHtml(key);
   });
 }
-function setReelFx(key,val){
-  D.reelFire=D.reelFire||{};
-  const v=parseFloat(val);
-  if(Number.isFinite(v))D.reelFire[key]=v;else delete D.reelFire[key];
-  save();
-  reelApplyFire();
-  loadReelFxForm(); // refleja valores corregidos (mín/máx intercambiados, límites)
+
+/* ── Admin: formulario por sección ── */
+function loadReelFxForm(){
+  const host=document.getElementById('reelFxForm');
+  if(!host)return;
+  const list=reelFxSectionList();
+  if(!list.some(x=>x.key===reelFxEditKey))reelFxEditKey='hero';
+  const c=reelFxCfg(reelFxEditKey);
+  let h=`<div class="frow"><div class="fg"><label class="fl">Sección</label><select class="fsel" onchange="setReelFxSection(this.value)">${list.map(x=>`<option value="${x.key}" ${x.key===reelFxEditKey?'selected':''}>${x.label}</option>`).join('')}</select></div></div>`;
+  REEL_FX_SCHEMA.forEach(g=>{
+    h+=`<div style="margin:22px 0 10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;"><span class="fl" style="font-weight:700;margin:0;">${g.title}</span><label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;"><input type="checkbox" ${c[g.on]?'checked':''} onchange="setReelFxOn('${g.on}',this.checked)"> Activado en esta sección</label></div>`;
+    if(g.note)h+=`<div class="a-sub" style="margin:-4px 0 10px;">${g.note}</div>`;
+    h+=`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;${c[g.on]?'':'opacity:.45;'}">`;
+    g.fields.forEach(f=>{
+      if(f[2]==='color')h+=`<div class="fg"><label class="fl">${f[1]}</label><input class="fi" type="color" value="${c[f[0]]}" style="padding:2px;height:36px;" onchange="setReelFx('${f[0]}',this.value)"></div>`;
+      else h+=`<div class="fg"><label class="fl">${f[1]}</label><input class="fi" type="number" min="${f[2]}" max="${f[3]}" step="${f[4]}" value="${c[f[0]]}" onchange="setReelFx('${f[0]}',this.value)"></div>`;
+    });
+    h+='</div>';
+  });
+  h+=`<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;"><button class="a-add-btn" onclick="copyReelFxToAll()">⧉ Copiar esta sección a todas</button><button class="a-add-btn" onclick="resetReelFx()">↺ Restaurar esta sección</button></div>`;
+  host.innerHTML=h;
 }
+function reelFxOwn(){
+  D.reelFx=D.reelFx||{};
+  return (D.reelFx[reelFxEditKey]=D.reelFx[reelFxEditKey]||{});
+}
+function reelFxCommit(){save();reelApplyFx(reelFxEditKey);loadReelFxForm();}
+function setReelFx(key,val){
+  const own=reelFxOwn();
+  if(key==='lightningColor')own[key]=val;
+  else{const v=parseFloat(val);if(Number.isFinite(v))own[key]=v;else delete own[key];}
+  reelFxCommit();
+}
+function setReelFxOn(key,on){reelFxOwn()[key]=!!on;reelFxCommit();}
+function setReelFxSection(key){reelFxEditKey=key;loadReelFxForm();}
 function resetReelFx(){
-  delete D.reelFire;
-  save();
-  reelApplyFire();
-  loadReelFxForm();
-  toast('Efectos restaurados');
+  if(D.reelFx)delete D.reelFx[reelFxEditKey];
+  reelFxCommit();
+  toast('Sección restaurada');
+}
+function copyReelFxToAll(){
+  const src=reelFxCfg(reelFxEditKey);
+  D.reelFx=D.reelFx||{};
+  reelFxSectionList().forEach(x=>{D.reelFx[x.key]=Object.assign({},src);});
+  save();reelApplyFx();loadReelFxForm();
+  toast('Copiado a todas las secciones');
 }
 
 function renderReelSkin(){
@@ -2295,6 +2417,7 @@ function renderReelSkin(){
 
   const heroHtml=`
     <section class="rl-section rl-hero" id="rl-s0">
+      <div class="rl-fx" data-fx="hero"></div>
       <div class="rl-hero-grid">
         <div>
           <div class="rl-kicker rl-reveal rl-d1">${bio}</div>
@@ -2333,6 +2456,7 @@ function renderReelSkin(){
     </div>`).join('');
     return `
     <section class="rl-section rl-scene" id="${id}" style="--tint:${tint}">
+      <div class="rl-fx" data-fx="${c.id}"></div>
       <div class="rl-scene-grid">
         <div class="rl-scene-text">
           <div class="rl-num rl-reveal rl-d1">Project — ${c.period||''}</div>
@@ -2364,6 +2488,7 @@ function renderReelSkin(){
 
   const closeHtml=`
     <section class="rl-section rl-close" id="${closeId}">
+      <div class="rl-fx" data-fx="close"></div>
       <h2 class="rl-reveal rl-d1">${availLine}</h2>
       <div class="rl-tools rl-reveal rl-d2">${toolsHtml}</div>
       <div class="rl-links rl-reveal rl-d3">${linksHtml}</div>
@@ -2371,7 +2496,7 @@ function renderReelSkin(){
     </section>`;
 
   root.innerHTML=heroHtml+scenesHtml+closeHtml;
-  reelApplyFire();
+  reelApplyFx();
   reelSetupInteractions(sceneIds);
 }
 
@@ -2425,6 +2550,15 @@ function reelSetupInteractions(sceneIds){
     });
   },{threshold:.4});
   sceneIds.forEach(id=>{const el=document.getElementById(id);if(el)reelObserver.observe(el);});
+  // Las capas de efectos de las secciones que no se ven se pausan (ahorra CPU/GPU).
+  if(reelFxObserver)reelFxObserver.disconnect();
+  reelFxObserver=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      const fx=e.target.querySelector('.rl-fx');
+      if(fx)fx.classList.toggle('rl-paused',!e.isIntersecting);
+    });
+  },{threshold:0});
+  sceneIds.forEach(id=>{const el=document.getElementById(id);if(el)reelFxObserver.observe(el);});
 }
 
 /* Cursor personalizado: elementos fijos en el esqueleto (nunca se
@@ -4138,7 +4272,7 @@ Object.assign(window,{
   confirmAddLink, confirmAddProject, confirmAddSkill, confirmAddTool, confirmAddVid, confirmEditCo, confirmEditEdu, confirmEditLink,
   confirmEditProject, confirmEditSkill, confirmEditTool, confirmEditVfxCompany, confirmEditVid, deleteCo, deleteEdu, deleteLang,
   deleteLink, deletePost, deleteProject, deleteSkill, deleteTool, deleteVfxCompany, deleteVid, detectLang,
-  getActiveSkin, setSkin, renderCleanSkin, openCleanDetail, closeCleanDetail, playCleanClip, renderReelSkin, playReelClip, setReelFx, resetReelFx, loadReelFxForm,
+  getActiveSkin, setSkin, renderCleanSkin, openCleanDetail, closeCleanDetail, playCleanClip, renderReelSkin, playReelClip, setReelFx, setReelFxOn, setReelFxSection, resetReelFx, copyReelFxToAll, loadReelFxForm,
   exportData, exportVfxCompanies, fetchVideoMeta, generateCvPdf, gv, importPosts, importVfxBulk, loadLiveCompanies,
   openAddCo, openAddEdu, openAddLang, openAddLink, openAddPost, openAddProject, openAddSkill, openAddTool,
   openAddVid, openAdmin, openDevlog, openEditCo, openEditEdu, openEditLink, openEditPost, openEditProject,
