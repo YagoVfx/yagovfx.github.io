@@ -406,5 +406,9 @@
   "junkfish": {
     "found": false,
     "checkedAt": 1790311402.8153048
+  },
+  "manpowergroup": {
+    "found": false,
+    "checkedAt": 1790602869.335119
   }
 }
