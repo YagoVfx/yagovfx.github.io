@@ -829,8 +829,8 @@ option{background:var(--bg2);}
 .rl-smoke{position:absolute;top:0;left:-18%;animation-name:rlSmokeDrift;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
 .rl-smoke-core{position:absolute;border-radius:50%;filter:blur(17px);mix-blend-mode:screen;
   animation-name:rlSmokePulse;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
-.rl-smoke-core.warm{background:radial-gradient(circle,rgba(235,175,120,.4),transparent 70%);}
-.rl-smoke-core.cool{background:radial-gradient(circle,rgba(198,198,205,.32),transparent 72%);}
+.rl-smoke-core.warm{background:radial-gradient(circle,rgba(235,175,120,calc(.4 * var(--si,1))),transparent 70%);}
+.rl-smoke-core.cool{background:radial-gradient(circle,rgba(198,198,205,calc(.32 * var(--si,1))),transparent 72%);}
 @keyframes rlSmokeDrift{
   0%{transform:translate(0,0) rotate(0deg) scale(.7);opacity:0;}
   16%{opacity:.85;}
@@ -1334,6 +1334,43 @@ https://otraempresa.com/careers"></textarea>
               </select>
             </div>
           </div>
+        </div>
+
+        <div class="a-title" style="margin-top:34px;font-size:15px;">Reel — efectos de fuego</div>
+        <div class="a-sub">Ajusta las chispas y el humo de la skin Reel. Los cambios se guardan solos; cambia a Reel para verlos. Valores más bajos de "duración" = más rápido.</div>
+        <div class="a-form" style="max-width:640px;" id="reelFxForm">
+          <div class="fl" style="margin:6px 0 10px;font-weight:700;">🔥 Chispas</div>
+          <div class="frow">
+            <div class="fg"><label class="fl">Cantidad</label><input class="fi" type="number" min="0" max="150" step="1" id="rlfx-emberCount" onchange="setReelFx('emberCount',this.value)"></div>
+            <div class="fg"><label class="fl">% con brillo extra</label><input class="fi" type="number" min="0" max="100" step="1" id="rlfx-emberBrightPct" onchange="setReelFx('emberBrightPct',this.value)"></div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label class="fl">Duración mín (s)</label><input class="fi" type="number" min="1" max="60" step="0.5" id="rlfx-emberDurMin" onchange="setReelFx('emberDurMin',this.value)"></div>
+            <div class="fg"><label class="fl">Duración máx (s)</label><input class="fi" type="number" min="1" max="60" step="0.5" id="rlfx-emberDurMax" onchange="setReelFx('emberDurMax',this.value)"></div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label class="fl">Tamaño mín (px)</label><input class="fi" type="number" min="1" max="20" step="0.5" id="rlfx-emberSizeMin" onchange="setReelFx('emberSizeMin',this.value)"></div>
+            <div class="fg"><label class="fl">Tamaño máx (px)</label><input class="fi" type="number" min="1" max="20" step="0.5" id="rlfx-emberSizeMax" onchange="setReelFx('emberSizeMax',this.value)"></div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label class="fl">Brillo mín (0–1)</label><input class="fi" type="number" min="0" max="1" step="0.05" id="rlfx-emberPeakMin" onchange="setReelFx('emberPeakMin',this.value)"></div>
+            <div class="fg"><label class="fl">Brillo máx (0–1)</label><input class="fi" type="number" min="0" max="1" step="0.05" id="rlfx-emberPeakMax" onchange="setReelFx('emberPeakMax',this.value)"></div>
+          </div>
+
+          <div class="fl" style="margin:22px 0 10px;font-weight:700;">💨 Humo</div>
+          <div class="frow">
+            <div class="fg"><label class="fl">Cantidad</label><input class="fi" type="number" min="0" max="20" step="1" id="rlfx-smokeCount" onchange="setReelFx('smokeCount',this.value)"></div>
+            <div class="fg"><label class="fl">Intensidad (0–2.5)</label><input class="fi" type="number" min="0" max="2.5" step="0.1" id="rlfx-smokeIntensity" onchange="setReelFx('smokeIntensity',this.value)"></div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label class="fl">Duración mín (s)</label><input class="fi" type="number" min="3" max="120" step="1" id="rlfx-smokeDurMin" onchange="setReelFx('smokeDurMin',this.value)"></div>
+            <div class="fg"><label class="fl">Duración máx (s)</label><input class="fi" type="number" min="3" max="120" step="1" id="rlfx-smokeDurMax" onchange="setReelFx('smokeDurMax',this.value)"></div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label class="fl">Tamaño mín (px)</label><input class="fi" type="number" min="60" max="800" step="10" id="rlfx-smokeSizeMin" onchange="setReelFx('smokeSizeMin',this.value)"></div>
+            <div class="fg"><label class="fl">Tamaño máx (px)</label><input class="fi" type="number" min="60" max="800" step="10" id="rlfx-smokeSizeMax" onchange="setReelFx('smokeSizeMax',this.value)"></div>
+          </div>
+          <button class="a-add-btn" style="margin-top:18px;" onclick="resetReelFx()">↺ Restaurar valores por defecto</button>
         </div>
       </div>
 
@@ -2133,31 +2170,63 @@ function reelGatherClips(c){
   return clips;
 }
 
+/* Configuración de los efectos de fuego. Valores por defecto = el aspecto
+   actual. Se pueden cambiar desde Admin → Skin → "Reel — efectos de fuego"
+   (se guardan en D.reelFire); cualquier valor que falte usa el de aquí. */
+const REEL_FX_DEFAULTS={
+  emberCount:32, emberDurMin:5, emberDurMax:19,
+  emberSizeMin:2, emberSizeMax:5.5,
+  emberBrightPct:28, emberPeakMin:0.4, emberPeakMax:1,
+  smokeCount:6, smokeDurMin:18, smokeDurMax:44,
+  smokeSizeMin:180, smokeSizeMax:340, smokeIntensity:1,
+};
+function reelFireCfg(){
+  const saved=D.reelFire||{};
+  const c={};
+  Object.keys(REEL_FX_DEFAULTS).forEach(k=>{
+    const v=parseFloat(saved[k]);
+    c[k]=Number.isFinite(v)?v:REEL_FX_DEFAULTS[k];
+  });
+  // mín/máx coherentes (si alguien los pone al revés, los intercambiamos)
+  [['emberDurMin','emberDurMax'],['emberSizeMin','emberSizeMax'],['emberPeakMin','emberPeakMax'],['smokeDurMin','smokeDurMax'],['smokeSizeMin','smokeSizeMax']].forEach(([a,b])=>{
+    if(c[a]>c[b]){const t=c[a];c[a]=c[b];c[b]=t;}
+  });
+  // límites de seguridad para no matar el rendimiento
+  c.emberCount=Math.max(0,Math.min(150,Math.round(c.emberCount)));
+  c.smokeCount=Math.max(0,Math.min(20,Math.round(c.smokeCount)));
+  c.emberDurMin=Math.max(1,c.emberDurMin);
+  c.smokeDurMin=Math.max(3,c.smokeDurMin);
+  return c;
+}
+const rnd=(a,b)=>a+Math.random()*(b-a);
+
 function reelFireParticlesHtml(){
+  const c=reelFireCfg();
+  const streakScale=((c.emberSizeMin+c.emberSizeMax)/2)/3.75; // 1 con los valores por defecto
   let embers='';
-  for(let i=0;i<32;i++){
+  for(let i=0;i<c.emberCount;i++){
     const top=(Math.random()*100).toFixed(1);
-    const dur=(5+Math.random()*14).toFixed(1);      // velocidades muy variadas
-    const delay=(-Math.random()*18).toFixed(1);
-    const dx=55+Math.random()*55;                    // recorrido horizontal (vw)
-    const dy=-(20+Math.random()*55);                 // recorrido vertical hacia arriba (vh) → diagonal
+    const dur=rnd(c.emberDurMin,c.emberDurMax).toFixed(1);   // velocidades muy variadas
+    const delay=(-Math.random()*c.emberDurMax).toFixed(1);
+    const dx=55+Math.random()*55;                              // recorrido horizontal (vw)
+    const dy=-(20+Math.random()*55);                           // recorrido vertical hacia arriba (vh) → diagonal
     const angle=(Math.atan2(-dy*9,dx)*180/Math.PI).toFixed(1); // orientación de la estela según la diagonal real
-    const peak=(0.4+Math.random()*0.6).toFixed(2);   // intensidad: unas más fuertes que otras
-    const bright=Math.random()<0.28?' rl-ember-bright':'';
+    const peak=rnd(c.emberPeakMin,c.emberPeakMax).toFixed(2);  // intensidad: unas más fuertes que otras
+    const bright=Math.random()*100<c.emberBrightPct?' rl-ember-bright':'';
     if(Math.random()<0.4){
-      const len=(14+Math.random()*24).toFixed(0);
+      const len=((14+Math.random()*24)*streakScale).toFixed(0);
       embers+=`<div class="rl-ember rl-ember-streak${bright}" style="top:${top}vh;width:${len}px;height:2px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx.toFixed(0)}vw;--dy:${dy.toFixed(0)}vh;--rot:${angle}deg;--peak:${peak};"></div>`;
     }else{
-      const size=(2+Math.random()*3.5).toFixed(1);
+      const size=rnd(c.emberSizeMin,c.emberSizeMax).toFixed(1);
       embers+=`<div class="rl-ember rl-ember-dot${bright}" style="top:${top}vh;width:${size}px;height:${size}px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx.toFixed(0)}vw;--dy:${dy.toFixed(0)}vh;--peak:${peak};"></div>`;
     }
   }
   let smoke='';
-  for(let i=0;i<6;i++){
+  for(let i=0;i<c.smokeCount;i++){
     const top=(Math.random()*100).toFixed(1);
-    const env=180+Math.random()*160;                 // tamaño del "puff" contenedor
-    const dur=(18+Math.random()*26).toFixed(1);       // capas a velocidades bien distintas
-    const delay=(-Math.random()*36).toFixed(1);
+    const env=rnd(c.smokeSizeMin,c.smokeSizeMax);              // tamaño del "puff" contenedor
+    const dur=rnd(c.smokeDurMin,c.smokeDurMax).toFixed(1);     // capas a velocidades bien distintas
+    const delay=(-Math.random()*c.smokeDurMax).toFixed(1);
     const dx=(40+Math.random()*55).toFixed(0);
     const dy=-(15+Math.random()*40).toFixed(0);
     let cores='';
@@ -2174,6 +2243,38 @@ function reelFireParticlesHtml(){
     smoke+=`<div class="rl-smoke" style="top:${top}vh;width:${env.toFixed(0)}px;height:${env.toFixed(0)}px;animation-duration:${dur}s;animation-delay:${delay}s;--dx:${dx}vw;--dy:${dy}vh;">${cores}</div>`;
   }
   return smoke+embers;
+}
+
+/* Pinta (o repinta) el fuego y aplica la intensidad del humo. */
+function reelApplyFire(){
+  const fb=document.getElementById('rlFireBg');
+  if(!fb)return;
+  fb.style.setProperty('--si',reelFireCfg().smokeIntensity);
+  fb.innerHTML=reelFireParticlesHtml();
+}
+
+/* ── Admin: controles de los efectos ── */
+function loadReelFxForm(){
+  const c=reelFireCfg();
+  Object.keys(REEL_FX_DEFAULTS).forEach(k=>{
+    const el=document.getElementById('rlfx-'+k);
+    if(el)el.value=c[k];
+  });
+}
+function setReelFx(key,val){
+  D.reelFire=D.reelFire||{};
+  const v=parseFloat(val);
+  if(Number.isFinite(v))D.reelFire[key]=v;else delete D.reelFire[key];
+  save();
+  reelApplyFire();
+  loadReelFxForm(); // refleja valores corregidos (mín/máx intercambiados, límites)
+}
+function resetReelFx(){
+  delete D.reelFire;
+  save();
+  reelApplyFire();
+  loadReelFxForm();
+  toast('Efectos restaurados');
 }
 
 function renderReelSkin(){
@@ -2270,7 +2371,7 @@ function renderReelSkin(){
     </section>`;
 
   root.innerHTML=heroHtml+scenesHtml+closeHtml;
-  document.getElementById('rlFireBg').innerHTML=reelFireParticlesHtml();
+  reelApplyFire();
   reelSetupInteractions(sceneIds);
 }
 
@@ -3278,7 +3379,7 @@ function showSec(name){
   if(name==='themes')renderThemeGrid();
   if(name==='videos'){renderVidCoSel();renderVidMgr();renderSizeGrid();}
   if(name==='vfxjobs')renderVfxCompaniesAdmin();
-  if(name==='skin'){const sk=document.getElementById('skinSel');if(sk)sk.value=getActiveSkin();}
+  if(name==='skin'){const sk=document.getElementById('skinSel');if(sk)sk.value=getActiveSkin();loadReelFxForm();}
   if(name==='vfxjobsview')renderVfxJobsAdminView();
   if(name==='tools'){renderToolsAdmin();['small','medium','large'].forEach(s=>{const b=document.getElementById('tsz-'+s);if(b){b.style.borderColor=s===D.toolSize?'var(--accent)':'';b.style.color=s===D.toolSize?'var(--accent)':'';}});}
   if(name==='links')renderLinksAdmin();
@@ -4037,7 +4138,7 @@ Object.assign(window,{
   confirmAddLink, confirmAddProject, confirmAddSkill, confirmAddTool, confirmAddVid, confirmEditCo, confirmEditEdu, confirmEditLink,
   confirmEditProject, confirmEditSkill, confirmEditTool, confirmEditVfxCompany, confirmEditVid, deleteCo, deleteEdu, deleteLang,
   deleteLink, deletePost, deleteProject, deleteSkill, deleteTool, deleteVfxCompany, deleteVid, detectLang,
-  getActiveSkin, setSkin, renderCleanSkin, openCleanDetail, closeCleanDetail, playCleanClip, renderReelSkin, playReelClip,
+  getActiveSkin, setSkin, renderCleanSkin, openCleanDetail, closeCleanDetail, playCleanClip, renderReelSkin, playReelClip, setReelFx, resetReelFx, loadReelFxForm,
   exportData, exportVfxCompanies, fetchVideoMeta, generateCvPdf, gv, importPosts, importVfxBulk, loadLiveCompanies,
   openAddCo, openAddEdu, openAddLang, openAddLink, openAddPost, openAddProject, openAddSkill, openAddTool,
   openAddVid, openAdmin, openDevlog, openEditCo, openEditEdu, openEditLink, openEditPost, openEditProject,
