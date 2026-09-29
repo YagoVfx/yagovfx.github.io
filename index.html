@@ -870,6 +870,10 @@ option{background:var(--bg2);}
   filter:blur(calc(2px + var(--fj,1) * 1px));
   animation-name:rlFlame;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
 .rl-flame-bloom{filter:blur(calc(2px + var(--fj,1) * 1px)) brightness(calc(1 + var(--fbl,0) * .5)) drop-shadow(0 0 calc(var(--fbl,0) * 16px) rgba(255,120,30,calc(var(--fbl,0) * .6)));}
+/* Envoltorio interno: aquí se engancha el filtro SVG de ruido (textura de la
+   propia llama, no solo la silueta), separado del blur/bloom del contenedor
+   para que uno no pise al otro. */
+.rl-flame-fx{position:absolute;inset:0;}
 .rl-tongue{position:absolute;bottom:0;transform-origin:50% 100%;mix-blend-mode:screen;
   clip-path:polygon(50% 0%,62% 22%,80% 45%,94% 72%,100% 100%,0% 100%,6% 72%,20% 45%,38% 22%);
   background:linear-gradient(0deg,#fff3b8 0%,#ffc24a 24%,#ff6a1f 58%,rgba(255,50,0,0) 100%);
@@ -889,8 +893,12 @@ option{background:var(--bg2);}
   background:linear-gradient(0deg,rgba(255,110,30,calc(.45 * var(--gi,1))),rgba(255,70,0,calc(.18 * var(--gi,1))) 45%,transparent);
   animation:rlGlowPulse 3.2s ease-in-out infinite;}
 @keyframes rlGlowPulse{0%,100%{opacity:.75;}50%{opacity:1;}}
+.rl-snow{position:absolute;top:0;left:0;border-radius:50%;filter:blur(.4px);
+  background:radial-gradient(circle,rgba(255,255,255,.95),rgba(255,255,255,.25) 70%,transparent);
+  animation-name:rlEmberDrift;animation-timing-function:linear;animation-iteration-count:infinite;}
+.rl-snow-bloom{filter:blur(.4px) brightness(calc(1 + var(--bloom,0) * .6)) drop-shadow(0 0 calc(var(--bloom,0) * 6px) rgba(255,255,255,.8));}
 @media(prefers-reduced-motion:reduce){
-  .rl-ember,.rl-smoke{animation:none;opacity:.12;}
+  .rl-ember,.rl-smoke,.rl-snow{animation:none;opacity:.12;}
   .rl-smoke-body,.rl-flame,.rl-tongue,.rl-fire-glow{animation:none;}
   .rl-lightning{display:none;}
 }
@@ -2200,6 +2208,7 @@ const REEL_FX_DEFAULTS={
   smokeOn:true,  smokeCount:6, smokeSpeedMin:1.5, smokeSpeedMax:4, smokeAngle:22, smokeSpread:10, smokeSizeMin:180, smokeSizeMax:340, smokeIntMin:0.8, smokeIntMax:1.2, smokeNoise:1.2,
   lightningOn:false, lightningCount:2, lightningBoltPct:70, lightningIntervalMin:6, lightningIntervalMax:16, lightningSizeMin:55, lightningSizeMax:100, lightningIntMin:0.35, lightningIntMax:0.7, lightningColor:'#bcd4ff',
   fireOn:false,  fireCount:16, fireNoise:1.5, fireGlow:1, fireHeightMin:18, fireHeightMax:42, fireWidthMin:90, fireWidthMax:220, fireDurMin:0.9, fireDurMax:2.4, fireIntMin:0.55, fireIntMax:1,
+  snowOn:false,  snowCount:70, snowSpeedMin:2, snowSpeedMax:9, snowAngle:270, snowSpread:18, snowSizeMin:2, snowSizeMax:7, snowPeakMin:0.4, snowPeakMax:1,
 };
 const REEL_FX_DIR_NOTE='Velocidad en % de pantalla por segundo (más alto = más rápido). Dirección: 0° = →, 90° = ↑, 180° = ←, 270° = ↓; la dispersión es una variación aleatoria de ± grados. Un brillo por encima de 1 añade bloom (halo).';
 // [clave, etiqueta, mín, máx, paso]  ·  o  [clave, etiqueta, 'color']
@@ -2228,13 +2237,13 @@ const REEL_FX_SCHEMA=[
   {title:'⚡ Relámpagos', on:'lightningOn',
    note:'Por seguridad (fotosensibilidad) el intervalo mínimo es 3 s, y no se muestran a visitantes con "reducir movimiento" activado. Tamaño = alto del rayo en % de la pantalla. Intensidad por encima de 1 = más bloom.',
    fields:[
-    ['lightningCount','Cantidad',1,4,1],['lightningBoltPct','% con rayo visible',0,100,1],
+    ['lightningCount','Cantidad',1,8,1],['lightningBoltPct','% con rayo visible',0,100,1],
     ['lightningIntervalMin','Intervalo mín (s)',3,30,1],['lightningIntervalMax','Intervalo máx (s)',3,30,1],
     ['lightningSizeMin','Tamaño mín (%)',15,100,1],['lightningSizeMax','Tamaño máx (%)',15,100,1],
     ['lightningIntMin','Intensidad mín (0–3)',0,3,.05],['lightningIntMax','Intensidad máx (0–3)',0,3,.05],
     ['lightningColor','Color','color']]},
   {title:'🔥 Fuego', on:'fireOn',
-   note:'Ruido = cuántas lenguas irregulares forman cada llama y cuánto se retuercen (0 = llama lisa tipo vela). Intensidad por encima de 1 = más bloom.',
+   note:'Ruido controla dos cosas: cuántas lenguas irregulares forma cada llama y cuánto se retuercen, y además la textura interna de la propia llama (vetas más/menos calientes y bordes lamiendo, vía un filtro de turbulencia). En 0 la llama es lisa tipo vela. Intensidad por encima de 1 = más bloom.',
    fields:[
     ['fireCount','Llamas',0,60,1],['fireNoise','Ruido (0–3)',0,3,.1],
     ['fireGlow','Resplandor base (0–3)',0,3,.1],
@@ -2242,6 +2251,12 @@ const REEL_FX_SCHEMA=[
     ['fireWidthMin','Ancho mín (px)',30,500,5],['fireWidthMax','Ancho máx (px)',30,500,5],
     ['fireDurMin','Parpadeo mín (s)',0.3,8,.1],['fireDurMax','Parpadeo máx (s)',0.3,8,.1],
     ['fireIntMin','Intensidad mín (0–3)',0,3,.05],['fireIntMax','Intensidad máx (0–3)',0,3,.05]]},
+  {title:'❄️ Nieve', on:'snowOn', note:REEL_FX_DIR_NOTE, fields:[
+    ['snowCount','Cantidad',0,300,1],
+    ['snowSpeedMin','Velocidad mín',0.5,60,.5],['snowSpeedMax','Velocidad máx',0.5,60,.5],
+    ['snowAngle','Dirección (°)',0,360,1],['snowSpread','Dispersión (± °)',0,180,1],
+    ['snowSizeMin','Tamaño mín (px)',1,30,.5],['snowSizeMax','Tamaño máx (px)',1,30,.5],
+    ['snowPeakMin','Brillo mín (0–3)',0,3,.05],['snowPeakMax','Brillo máx (0–3)',0,3,.05]]},
 ];
 
 let reelFxEditKey='hero';   // sección que se está editando en el admin
@@ -2275,7 +2290,7 @@ function reelFxCfg(key){
     const mx=k.slice(0,-3)+'Max';
     if(typeof c[k]==='number'&&typeof c[mx]==='number'&&c[k]>c[mx]){const t=c[k];c[k]=c[mx];c[mx]=t;}
   });
-  ['dotCount','streakCount','smokeCount','lightningCount','fireCount'].forEach(k=>c[k]=Math.round(c[k]));
+  ['dotCount','streakCount','smokeCount','lightningCount','fireCount','snowCount'].forEach(k=>c[k]=Math.round(c[k]));
   return c;
 }
 const rnd=(a,b)=>a+Math.random()*(b-a);
@@ -2378,10 +2393,11 @@ function reelLightningHtml(c){
 }
 
 function reelFlamesHtml(c){
-  let o=`<div class="rl-fire-glow" style="--gi:${c.fireGlow};"></div>`;
+  let o=`<div class="rl-fire-glow" style="--gi:${c.fireGlow};"></div>`,defs='';
   const tongues=1+Math.round(c.fireNoise*2);                     // lenguas por llama
   for(let i=0;i<c.fireCount;i++){
     const w=rnd(c.fireWidthMin,c.fireWidthMax);
+    const heightVh=rnd(c.fireHeightMin,c.fireHeightMax);
     const dur=rnd(c.fireDurMin,c.fireDurMax);
     const it=reelIntensity(rnd(c.fireIntMin,c.fireIntMax));
     let t='';
@@ -2390,16 +2406,49 @@ function reelFlamesHtml(c){
       const td=rnd(.35,1.1)*dur/1.4+.25;
       t+=`<div class="rl-tongue" style="left:${tongues===1?0:rnd(0,100-tw).toFixed(0)}%;width:${tw.toFixed(0)}%;height:${(tongues===1?100:rnd(48,100)).toFixed(0)}%;animation-duration:${td.toFixed(2)}s;animation-delay:${(-Math.random()*td).toFixed(2)}s;"></div>`;
     }
-    o+=`<div class="rl-flame${it.isBloom?' rl-flame-bloom':''}" style="left:${rnd(-2,102).toFixed(1)}%;margin-left:${(-w/2).toFixed(0)}px;width:${w.toFixed(0)}px;height:${rnd(c.fireHeightMin,c.fireHeightMax).toFixed(0)}vh;animation-duration:${dur.toFixed(2)}s;animation-delay:${(-Math.random()*dur).toFixed(2)}s;--fi:${it.peak};--fbl:${it.bloom};--fj:${c.fireNoise.toFixed(2)};">${t}</div>`;
+    // Textura de la propia llama: turbulencia → se mezcla (overlay) con el
+    // degradado para crear vetas más/menos calientes, y esa misma
+    // turbulencia se usa para desplazar el resultado (bordes lamiendo,
+    // no solo la silueta poligonal). Sin ruido (0) no se genera filtro,
+    // así una llama "lisa" no paga ningún coste extra.
+    let fx='';
+    if(c.fireNoise>0.05){
+      const id='rlft'+(reelFxUid++), seed=Math.floor(Math.random()*900)+1;
+      const hpx=Math.max(40,heightVh*7); // px aprox. para escalar la frecuencia
+      const fX=(3.2/w).toFixed(5), fY=(fX*0.3).toFixed(5);
+      const disp=Math.min(w,hpx)*0.16*c.fireNoise;
+      defs+=`<filter id="${id}" x="-60%" y="-40%" width="220%" height="180%" color-interpolation-filters="sRGB">`
+        +`<feTurbulence type="fractalNoise" baseFrequency="${fX} ${fY}" numOctaves="3" seed="${seed}" result="n"/>`
+        +`<feColorMatrix in="n" type="saturate" values="0" result="ng"/>`
+        +`<feBlend in="SourceGraphic" in2="ng" mode="overlay" result="tex"/>`
+        +`<feDisplacementMap in="tex" in2="n" scale="${disp.toFixed(0)}" xChannelSelector="R" yChannelSelector="G"/></filter>`;
+      fx=`filter:url(#${id});`;
+    }
+    o+=`<div class="rl-flame${it.isBloom?' rl-flame-bloom':''}" style="left:${rnd(-2,102).toFixed(1)}%;margin-left:${(-w/2).toFixed(0)}px;width:${w.toFixed(0)}px;height:${heightVh.toFixed(0)}vh;animation-duration:${dur.toFixed(2)}s;animation-delay:${(-Math.random()*dur).toFixed(2)}s;--fi:${it.peak};--fbl:${it.bloom};--fj:${c.fireNoise.toFixed(2)};"><div class="rl-flame-fx" style="${fx}">${t}</div></div>`;
+  }
+  return (defs?`<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs}</defs></svg>`:'')+o;
+}
+
+/* Contenido de la capa de una sección: humo y fuego al fondo, chispas encima, relámpagos arriba. */
+function reelSnowHtml(c){
+  let o='';
+  for(let i=0;i<c.snowCount;i++){
+    const L=rnd(70,130);
+    const v=reelDirVec(c.snowAngle,c.snowSpread,L);
+    const dur=L/rnd(c.snowSpeedMin,c.snowSpeedMax);
+    const it=reelIntensity(rnd(c.snowPeakMin,c.snowPeakMax));
+    const size=rnd(c.snowSizeMin,c.snowSizeMax).toFixed(1);
+    const pos=`left:calc(${(Math.random()*100).toFixed(1)}% - ${(v.dx/2).toFixed(1)}vmax);top:calc(${(Math.random()*100).toFixed(1)}% - ${(v.dy/2).toFixed(1)}vmax);`;
+    o+=`<div class="rl-snow${it.isBloom?' rl-snow-bloom':''}" style="${pos}width:${size}px;height:${size}px;animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${v.dx.toFixed(1)}vmax;--dy:${v.dy.toFixed(1)}vmax;--peak:${it.peak};--bloom:${it.bloom};"></div>`;
   }
   return o;
 }
 
-/* Contenido de la capa de una sección: humo y fuego al fondo, chispas encima, relámpagos arriba. */
 function reelFxHtml(key){
   const c=reelFxCfg(key);
   return (c.smokeOn?reelSmokeHtml(c):'')
     +(c.fireOn?reelFlamesHtml(c):'')
+    +(c.snowOn?reelSnowHtml(c):'')
     +(c.dotsOn?reelEmbersHtml(c,'dot'):'')
     +(c.streakOn?reelEmbersHtml(c,'streak'):'')
     +(c.lightningOn?reelLightningHtml(c):'');
