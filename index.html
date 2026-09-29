@@ -810,42 +810,46 @@ option{background:var(--bg2);}
 .rl-hero{border-top:none;}
 .rl-fx{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1;}
 .rl-fx.rl-paused *{animation-play-state:paused!important;}
-.rl-ember{position:absolute;top:0;left:-3%;background:radial-gradient(circle,#ffd28a,#ff5a1f 55%,transparent 75%);
+.rl-ember{position:absolute;top:0;left:0;background:radial-gradient(circle,#ffd28a,#ff5a1f 55%,transparent 75%);
   animation-name:rlEmberDrift;animation-timing-function:ease-out;animation-iteration-count:infinite;}
 .rl-ember-dot{border-radius:50%;}
 .rl-ember-streak{border-radius:999px;background:linear-gradient(90deg,transparent,#ff5a1f 30%,#ffd28a 65%,transparent);}
 .rl-ember-bright{filter:drop-shadow(0 0 5px rgba(255,150,70,.85));}
+/* Intensidad > 1 → bloom: la opacidad se queda en 1 y el exceso se convierte en brillo y halo. */
+.rl-ember-bloom{filter:brightness(calc(1 + var(--bloom,0) * .55)) drop-shadow(0 0 calc(3px + var(--bloom,0) * 9px) rgba(255,170,90,calc(.45 + var(--bloom,0) * .3)));}
+.rl-ember-bright.rl-ember-bloom{filter:brightness(calc(1 + var(--bloom,0) * .55)) drop-shadow(0 0 5px rgba(255,150,70,.85)) drop-shadow(0 0 calc(var(--bloom,0) * 10px) rgba(255,190,110,calc(var(--bloom,0) * .6)));}
+/* Primero se traslada y después se rota (así la estela apunta exactamente hacia donde viaja). */
 @keyframes rlEmberDrift{
-  0%{transform:rotate(var(--rot,0deg)) translate(0,0);opacity:0;}
+  0%{transform:translate(0,0) rotate(var(--rot,0deg));opacity:0;}
   10%{opacity:var(--peak,1);}
   88%{opacity:var(--peak,1);}
-  100%{transform:rotate(var(--rot,0deg)) translate(var(--dx,80vw),var(--dy,-50vh));opacity:0;}
+  100%{transform:translate(var(--dx,80vmax),var(--dy,-40vmax)) rotate(var(--rot,0deg));opacity:0;}
 }
-/* Humo: cada "puff" es un contenedor que deriva en diagonal + rota + escala
-   lentamente; dentro lleva 2-3 núcleos (uno cálido más pequeño, uno o dos
-   fríos más grandes) que además "hierven" con su propia animación corta e
-   independiente — esa doble capa de movimiento (deriva lenta del conjunto +
-   turbulencia rápida de cada núcleo) es lo que lo hace leer como humo real
-   en vez de manchas estáticas. */
-.rl-smoke{position:absolute;top:0;left:-18%;animation-name:rlSmokeDrift;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
-.rl-smoke-core{position:absolute;border-radius:50%;filter:blur(17px);mix-blend-mode:screen;
-  animation-name:rlSmokePulse;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
+/* Humo: cada "puff" deriva en la dirección elegida (transform, en compositor).
+   Dentro, un cuerpo con 3-5 núcleos difuminados pasa por un filtro SVG de ruido
+   fractal (desplaza los bordes y modula la densidad → aspecto de nube, no de
+   discos). El filtro es ESTÁTICO: lo único que se anima es el transform del
+   contenedor y una rotación lenta del cuerpo, así no se recalcula cada frame. */
+.rl-smoke{position:absolute;will-change:transform;animation-name:rlSmokeDrift;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
+.rl-smoke-body{position:absolute;left:50%;top:50%;transform-origin:50% 50%;animation-name:rlSmokeBody;animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-direction:alternate;}
+.rl-smoke-core{position:absolute;border-radius:50%;mix-blend-mode:screen;transform:translate(-50%,-50%);}
 .rl-smoke-core.warm{background:radial-gradient(circle,rgba(235,175,120,calc(.4 * var(--si,1))),transparent 70%);}
 .rl-smoke-core.cool{background:radial-gradient(circle,rgba(198,198,205,calc(.32 * var(--si,1))),transparent 72%);}
 @keyframes rlSmokeDrift{
-  0%{transform:translate(0,0) rotate(0deg) scale(.7);opacity:0;}
+  0%{transform:translate(0,0) rotate(0deg) scale(.75);opacity:0;}
   16%{opacity:.85;}
-  50%{transform:translate(calc(var(--dx,60vw) * .5),calc(var(--dy,-40vh) * .5)) rotate(9deg) scale(1.35);}
+  50%{transform:translate(calc(var(--dx,60vmax) * .5),calc(var(--dy,-30vmax) * .5)) rotate(9deg) scale(1.3);}
   82%{opacity:.4;}
-  100%{transform:translate(var(--dx,60vw),var(--dy,-40vh)) rotate(-7deg) scale(2.1);opacity:0;}
+  100%{transform:translate(var(--dx,60vmax),var(--dy,-30vmax)) rotate(-7deg) scale(1.9);opacity:0;}
 }
-@keyframes rlSmokePulse{
-  0%,100%{transform:scale(1) translate(0,0);}
-  50%{transform:scale(1.18) translate(5px,-8px);}
+@keyframes rlSmokeBody{
+  0%{transform:scale(var(--s,1)) rotate(0deg);}
+  100%{transform:scale(var(--s,1)) rotate(var(--rs,30deg));}
 }
-/* Relámpagos: el destello dura una fracción del intervalo (flashes muy breves, sin parpadeo sostenido). */
+/* Relámpagos: el destello dura una fracción del intervalo (flashes muy breves, sin parpadeo sostenido).
+   --ls = tamaño del rayo (% de alto), --lbl = exceso de intensidad sobre 1 (bloom). */
 .rl-lightning{position:absolute;inset:0;opacity:0;mix-blend-mode:screen;
-  background:radial-gradient(ellipse 70% 90% at var(--lx,50%) 0%,color-mix(in srgb,var(--lc,#bcd4ff) 55%,transparent),transparent 70%);
+  background:radial-gradient(ellipse calc(var(--ls,100) * .7% * (1 + var(--lbl,0) * .35)) calc(var(--ls,100) * .9% * (1 + var(--lbl,0) * .35)) at var(--lx,50%) 0%,color-mix(in srgb,var(--lc,#bcd4ff) 55%,transparent),transparent 70%);
   animation-name:rlLightning;animation-timing-function:linear;animation-iteration-count:infinite;}
 @keyframes rlLightning{
   0%{opacity:0;}
@@ -855,28 +859,39 @@ option{background:var(--bg2);}
   2.6%{opacity:0;}
   100%{opacity:0;}
 }
-.rl-bolt{position:absolute;top:0;width:20%;height:100%;overflow:visible;color:var(--lc,#bcd4ff);}
+.rl-bolt{position:absolute;top:0;overflow:visible;color:var(--lc,#bcd4ff);}
 .rl-bolt path{fill:none;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke;}
-.rl-bolt-glow{stroke:currentColor;stroke-width:6;opacity:.6;filter:blur(3px);}
+.rl-bolt-glow{stroke:currentColor;stroke-width:calc(6px * (1 + var(--lbl,0) * .8));opacity:min(1,calc(.6 + var(--lbl,0) * .15));filter:blur(calc(3px + var(--lbl,0) * 3px));}
 .rl-bolt-core{stroke:#fff;stroke-width:1.6;}
-/* Fuego: lenguas de llama que parpadean + resplandor base en el borde inferior. */
-.rl-flame{position:absolute;bottom:-4vh;border-radius:50% 50% 45% 45%/75% 75% 25% 25%;
-  background:radial-gradient(ellipse at 50% 90%,#fff4c2 0%,#ffc14a 22%,#ff6a1f 52%,rgba(255,60,0,0) 78%);
-  filter:blur(7px);mix-blend-mode:screen;transform-origin:50% 100%;opacity:var(--fi,1);
+/* Fuego: cada "llama" es un racimo de lenguas puntiagudas (más ruido = más lenguas
+   y más irregulares) con parpadeo propio, en vez de un único blob liso tipo vela.
+   --fj = ruido, --fi = opacidad, --fbl = exceso de intensidad sobre 1 (bloom). */
+.rl-flame{position:absolute;bottom:-3vh;transform-origin:50% 100%;opacity:var(--fi,1);
+  filter:blur(calc(2px + var(--fj,1) * 1px));
   animation-name:rlFlame;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
+.rl-flame-bloom{filter:blur(calc(2px + var(--fj,1) * 1px)) brightness(calc(1 + var(--fbl,0) * .5)) drop-shadow(0 0 calc(var(--fbl,0) * 16px) rgba(255,120,30,calc(var(--fbl,0) * .6)));}
+.rl-tongue{position:absolute;bottom:0;transform-origin:50% 100%;mix-blend-mode:screen;
+  clip-path:polygon(50% 0%,62% 22%,80% 45%,94% 72%,100% 100%,0% 100%,6% 72%,20% 45%,38% 22%);
+  background:linear-gradient(0deg,#fff3b8 0%,#ffc24a 24%,#ff6a1f 58%,rgba(255,50,0,0) 100%);
+  animation-name:rlTongue;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
 @keyframes rlFlame{
-  0%,100%{transform:scale(1,1) skewX(0deg);opacity:var(--fi,1);}
-  25%{transform:scale(.9,1.14) skewX(4deg) translateY(-2%);opacity:calc(var(--fi,1) * .85);}
-  50%{transform:scale(1.07,.9) skewX(-5deg);opacity:var(--fi,1);}
-  75%{transform:scale(.95,1.1) skewX(3deg) translateY(-3%);opacity:calc(var(--fi,1) * .9);}
+  0%,100%{transform:skewX(0deg);opacity:var(--fi,1);}
+  30%{transform:skewX(calc(2deg * var(--fj,1))) translateY(-1%);opacity:calc(var(--fi,1) * .85);}
+  60%{transform:skewX(calc(-3deg * var(--fj,1)));opacity:var(--fi,1);}
+  80%{transform:skewX(calc(1.5deg * var(--fj,1))) translateY(-2%);opacity:calc(var(--fi,1) * .92);}
+}
+@keyframes rlTongue{
+  0%,100%{transform:scale(1,1) skewX(0deg);}
+  30%{transform:scale(calc(1 - .1 * var(--fj,1)),calc(1 + .22 * var(--fj,1))) skewX(calc(6deg * var(--fj,1)));}
+  65%{transform:scale(calc(1 + .08 * var(--fj,1)),calc(1 - .18 * var(--fj,1))) skewX(calc(-7deg * var(--fj,1)));}
 }
 .rl-fire-glow{position:absolute;left:0;right:0;bottom:0;height:34vh;mix-blend-mode:screen;
   background:linear-gradient(0deg,rgba(255,110,30,calc(.45 * var(--gi,1))),rgba(255,70,0,calc(.18 * var(--gi,1))) 45%,transparent);
   animation:rlGlowPulse 3.2s ease-in-out infinite;}
 @keyframes rlGlowPulse{0%,100%{opacity:.75;}50%{opacity:1;}}
 @media(prefers-reduced-motion:reduce){
-  .rl-ember,.rl-smoke,.rl-smoke-core{animation:none;opacity:.08;left:20%;}
-  .rl-flame,.rl-fire-glow{animation:none;}
+  .rl-ember,.rl-smoke{animation:none;opacity:.12;}
+  .rl-smoke-body,.rl-flame,.rl-tongue,.rl-fire-glow{animation:none;}
   .rl-lightning{display:none;}
 }
 .rl-hero .rl-kicker{font-size:14px;color:var(--rl-sub);margin-bottom:18px;max-width:440px;line-height:1.5;}
@@ -2175,48 +2190,62 @@ function reelGatherClips(c){
    Cada sección (portada, cada proyecto, cierre) lleva su propia capa .rl-fx
    con su propia configuración y sus propios interruptores. Los valores por
    defecto reproducen el aspecto original; lo que se cambie en
-   Admin → Skin → "Reel — efectos por sección" se guarda en D.reelFx[clave]. */
+   Admin → Skin → "Reel — efectos por sección" se guarda en D.reelFx[clave].
+   Velocidades en % de pantalla por segundo (vmax/s); direcciones en grados
+   (0° = →, 90° = ↑, 180° = ←, 270° = ↓). Las intensidades pueden pasar de 1:
+   la opacidad se queda en 1 y el exceso se convierte en bloom. */
 const REEL_FX_DEFAULTS={
-  dotsOn:true,   dotCount:19, dotDurMin:5, dotDurMax:19, dotSizeMin:2, dotSizeMax:5.5, dotBrightPct:28, dotPeakMin:0.4, dotPeakMax:1,
-  streakOn:true, streakCount:13, streakDurMin:5, streakDurMax:19, streakLenMin:14, streakLenMax:38, streakThick:2, streakBrightPct:28, streakPeakMin:0.4, streakPeakMax:1,
-  smokeOn:true,  smokeCount:6, smokeDurMin:18, smokeDurMax:44, smokeSizeMin:180, smokeSizeMax:340, smokeIntMin:0.8, smokeIntMax:1.2,
-  lightningOn:false, lightningCount:2, lightningBoltPct:70, lightningIntervalMin:6, lightningIntervalMax:16, lightningIntMin:0.35, lightningIntMax:0.7, lightningColor:'#bcd4ff',
-  fireOn:false,  fireCount:16, fireGlow:1, fireHeightMin:18, fireHeightMax:42, fireWidthMin:90, fireWidthMax:220, fireDurMin:0.9, fireDurMax:2.4, fireIntMin:0.55, fireIntMax:1,
+  dotsOn:true,   dotCount:19, dotSpeedMin:5, dotSpeedMax:16, dotAngle:32, dotSpread:14, dotSizeMin:2, dotSizeMax:5.5, dotBrightPct:28, dotPeakMin:0.4, dotPeakMax:1,
+  streakOn:true, streakCount:13, streakSpeedMin:5, streakSpeedMax:16, streakAngle:32, streakSpread:14, streakLenMin:14, streakLenMax:38, streakThick:2, streakBrightPct:28, streakPeakMin:0.4, streakPeakMax:1,
+  smokeOn:true,  smokeCount:6, smokeSpeedMin:1.5, smokeSpeedMax:4, smokeAngle:22, smokeSpread:10, smokeSizeMin:180, smokeSizeMax:340, smokeIntMin:0.8, smokeIntMax:1.2, smokeNoise:1.2,
+  lightningOn:false, lightningCount:2, lightningBoltPct:70, lightningIntervalMin:6, lightningIntervalMax:16, lightningSizeMin:55, lightningSizeMax:100, lightningIntMin:0.35, lightningIntMax:0.7, lightningColor:'#bcd4ff',
+  fireOn:false,  fireCount:16, fireNoise:1.5, fireGlow:1, fireHeightMin:18, fireHeightMax:42, fireWidthMin:90, fireWidthMax:220, fireDurMin:0.9, fireDurMax:2.4, fireIntMin:0.55, fireIntMax:1,
 };
+const REEL_FX_DIR_NOTE='Velocidad en % de pantalla por segundo (más alto = más rápido). Dirección: 0° = →, 90° = ↑, 180° = ←, 270° = ↓; la dispersión es una variación aleatoria de ± grados. Un brillo por encima de 1 añade bloom (halo).';
 // [clave, etiqueta, mín, máx, paso]  ·  o  [clave, etiqueta, 'color']
 const REEL_FX_SCHEMA=[
-  {title:'✨ Chispas (puntos)', on:'dotsOn', fields:[
+  {title:'✨ Chispas (puntos)', on:'dotsOn', note:REEL_FX_DIR_NOTE, fields:[
     ['dotCount','Cantidad',0,150,1],['dotBrightPct','% con brillo extra',0,100,1],
-    ['dotDurMin','Duración mín (s)',1,60,.5],['dotDurMax','Duración máx (s)',1,60,.5],
+    ['dotSpeedMin','Velocidad mín',0.5,60,.5],['dotSpeedMax','Velocidad máx',0.5,60,.5],
+    ['dotAngle','Dirección (°)',0,360,1],['dotSpread','Dispersión (± °)',0,180,1],
     ['dotSizeMin','Tamaño mín (px)',1,20,.5],['dotSizeMax','Tamaño máx (px)',1,20,.5],
-    ['dotPeakMin','Brillo mín (0–1)',0,1,.05],['dotPeakMax','Brillo máx (0–1)',0,1,.05]]},
+    ['dotPeakMin','Brillo mín (0–3)',0,3,.05],['dotPeakMax','Brillo máx (0–3)',0,3,.05]]},
   {title:'☄️ Chispas largas (estelas)', on:'streakOn', fields:[
     ['streakCount','Cantidad',0,150,1],['streakBrightPct','% con brillo extra',0,100,1],
-    ['streakDurMin','Duración mín (s)',1,60,.5],['streakDurMax','Duración máx (s)',1,60,.5],
+    ['streakSpeedMin','Velocidad mín',0.5,60,.5],['streakSpeedMax','Velocidad máx',0.5,60,.5],
+    ['streakAngle','Dirección (°)',0,360,1],['streakSpread','Dispersión (± °)',0,180,1],
     ['streakLenMin','Largo mín (px)',4,200,1],['streakLenMax','Largo máx (px)',4,200,1],
     ['streakThick','Grosor (px)',1,8,.5],
-    ['streakPeakMin','Brillo mín (0–1)',0,1,.05],['streakPeakMax','Brillo máx (0–1)',0,1,.05]]},
-  {title:'💨 Humo', on:'smokeOn', fields:[
-    ['smokeCount','Cantidad',0,20,1],
-    ['smokeDurMin','Duración mín (s)',3,120,1],['smokeDurMax','Duración máx (s)',3,120,1],
-    ['smokeSizeMin','Tamaño mín (px)',60,800,10],['smokeSizeMax','Tamaño máx (px)',60,800,10],
-    ['smokeIntMin','Intensidad mín (0–2.5)',0,2.5,.1],['smokeIntMax','Intensidad máx (0–2.5)',0,2.5,.1]]},
+    ['streakPeakMin','Brillo mín (0–3)',0,3,.05],['streakPeakMax','Brillo máx (0–3)',0,3,.05]]},
+  {title:'💨 Humo', on:'smokeOn',
+   note:'El ruido deforma los bordes y rompe la densidad para que parezca nube y no un disco (0 = sin ruido, más ligero). Con tamaños muy grandes el filtro se calcula a menor resolución para no ralentizar.',
+   fields:[
+    ['smokeCount','Cantidad',0,20,1],['smokeNoise','Ruido (0–3)',0,3,.1],
+    ['smokeSpeedMin','Velocidad mín',0.2,30,.1],['smokeSpeedMax','Velocidad máx',0.2,30,.1],
+    ['smokeAngle','Dirección (°)',0,360,1],['smokeSpread','Dispersión (± °)',0,180,1],
+    ['smokeSizeMin','Tamaño mín (px)',60,2000,10],['smokeSizeMax','Tamaño máx (px)',60,2000,10],
+    ['smokeIntMin','Intensidad mín (0–3)',0,3,.1],['smokeIntMax','Intensidad máx (0–3)',0,3,.1]]},
   {title:'⚡ Relámpagos', on:'lightningOn',
-   note:'Por seguridad (fotosensibilidad) el intervalo mínimo es 3 s, y no se muestran a visitantes con "reducir movimiento" activado.',
+   note:'Por seguridad (fotosensibilidad) el intervalo mínimo es 3 s, y no se muestran a visitantes con "reducir movimiento" activado. Tamaño = alto del rayo en % de la pantalla. Intensidad por encima de 1 = más bloom.',
    fields:[
     ['lightningCount','Cantidad',1,4,1],['lightningBoltPct','% con rayo visible',0,100,1],
     ['lightningIntervalMin','Intervalo mín (s)',3,30,1],['lightningIntervalMax','Intervalo máx (s)',3,30,1],
-    ['lightningIntMin','Intensidad mín (0–1)',0,1,.05],['lightningIntMax','Intensidad máx (0–1)',0,1,.05],
+    ['lightningSizeMin','Tamaño mín (%)',15,100,1],['lightningSizeMax','Tamaño máx (%)',15,100,1],
+    ['lightningIntMin','Intensidad mín (0–3)',0,3,.05],['lightningIntMax','Intensidad máx (0–3)',0,3,.05],
     ['lightningColor','Color','color']]},
-  {title:'🔥 Fuego', on:'fireOn', fields:[
-    ['fireCount','Llamas',0,40,1],['fireGlow','Resplandor base (0–2)',0,2,.1],
+  {title:'🔥 Fuego', on:'fireOn',
+   note:'Ruido = cuántas lenguas irregulares forman cada llama y cuánto se retuercen (0 = llama lisa tipo vela). Intensidad por encima de 1 = más bloom.',
+   fields:[
+    ['fireCount','Llamas',0,60,1],['fireNoise','Ruido (0–3)',0,3,.1],
+    ['fireGlow','Resplandor base (0–3)',0,3,.1],
     ['fireHeightMin','Altura mín (% pantalla)',5,90,1],['fireHeightMax','Altura máx (% pantalla)',5,90,1],
     ['fireWidthMin','Ancho mín (px)',30,500,5],['fireWidthMax','Ancho máx (px)',30,500,5],
     ['fireDurMin','Parpadeo mín (s)',0.3,8,.1],['fireDurMax','Parpadeo máx (s)',0.3,8,.1],
-    ['fireIntMin','Intensidad mín (0–1)',0,1,.05],['fireIntMax','Intensidad máx (0–1)',0,1,.05]]},
+    ['fireIntMin','Intensidad mín (0–3)',0,3,.05],['fireIntMax','Intensidad máx (0–3)',0,3,.05]]},
 ];
 
 let reelFxEditKey='hero';   // sección que se está editando en el admin
+let reelFxUid=0;            // ids únicos para los filtros SVG del humo
 
 function reelFxSectionList(){
   const list=[{key:'hero',label:'Portada'}];
@@ -2251,49 +2280,69 @@ function reelFxCfg(key){
 }
 const rnd=(a,b)=>a+Math.random()*(b-a);
 
-/* Trayectoria diagonal de una chispa (recorrido en vw/vh + ángulo de la estela). */
-function reelEmberVec(){
-  const dx=55+Math.random()*55, dy=-(20+Math.random()*55);
-  return {dx:dx.toFixed(0),dy:dy.toFixed(0),angle:(Math.atan2(-dy*9,dx)*180/Math.PI).toFixed(1)};
+/* Vector de viaje (en vmax, así el ángulo es real sea cual sea la proporción de pantalla). */
+function reelDirVec(angle,spread,L){
+  const a=(angle+(Math.random()*2-1)*spread)*Math.PI/180;
+  return {dx:L*Math.cos(a),dy:-L*Math.sin(a),rot:-a*180/Math.PI};
 }
-function reelDotsHtml(c){
+/* Intensidad > 1 → la opacidad se queda en 1 y el exceso pasa a ser bloom. */
+function reelIntensity(b){return {peak:Math.min(1,b).toFixed(2),bloom:Math.max(0,b-1).toFixed(2),isBloom:b>1.05};}
+
+function reelEmbersHtml(c,p){          // p = 'dot' | 'streak'
+  const streak=p==='streak';
   let o='';
-  for(let i=0;i<c.dotCount;i++){
-    const v=reelEmberVec();
-    const dur=rnd(c.dotDurMin,c.dotDurMax);
-    const bright=Math.random()*100<c.dotBrightPct?' rl-ember-bright':'';
-    const size=rnd(c.dotSizeMin,c.dotSizeMax).toFixed(1);
-    o+=`<div class="rl-ember rl-ember-dot${bright}" style="top:${(Math.random()*100).toFixed(1)}%;width:${size}px;height:${size}px;animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${v.dx}vw;--dy:${v.dy}vh;--peak:${rnd(c.dotPeakMin,c.dotPeakMax).toFixed(2)};"></div>`;
-  }
-  return o;
-}
-function reelStreaksHtml(c){
-  let o='';
-  for(let i=0;i<c.streakCount;i++){
-    const v=reelEmberVec();
-    const dur=rnd(c.streakDurMin,c.streakDurMax);
-    const bright=Math.random()*100<c.streakBrightPct?' rl-ember-bright':'';
-    const len=rnd(c.streakLenMin,c.streakLenMax).toFixed(0);
-    o+=`<div class="rl-ember rl-ember-streak${bright}" style="top:${(Math.random()*100).toFixed(1)}%;width:${len}px;height:${c.streakThick}px;animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${v.dx}vw;--dy:${v.dy}vh;--rot:${v.angle}deg;--peak:${rnd(c.streakPeakMin,c.streakPeakMax).toFixed(2)};"></div>`;
-  }
-  return o;
-}
-function reelSmokeHtml(c){
-  let o='';
-  for(let i=0;i<c.smokeCount;i++){
-    const env=rnd(c.smokeSizeMin,c.smokeSizeMax);           // tamaño del "puff" contenedor
-    const dur=rnd(c.smokeDurMin,c.smokeDurMax);              // capas a velocidades distintas
-    const si=rnd(c.smokeIntMin,c.smokeIntMax).toFixed(2);    // intensidad propia de cada voluta
-    let cores='';
-    const coreCount=2+Math.floor(Math.random()*2);           // 2-3 núcleos por puff
-    for(let j=0;j<coreCount;j++){
-      const warm=j===0;                                       // el primero, más pequeño y cálido
-      const size=warm?(env*.4+Math.random()*30):(env*.65+Math.random()*50);
-      cores+=`<span class="rl-smoke-core ${warm?'warm':'cool'}" style="width:${size.toFixed(0)}px;height:${(size*1.1).toFixed(0)}px;top:${(Math.random()*40-15).toFixed(0)}%;left:${(Math.random()*40-15).toFixed(0)}%;animation-duration:${(4+Math.random()*5).toFixed(1)}s;animation-delay:${(-Math.random()*9).toFixed(1)}s;"></span>`;
+  for(let i=0;i<c[p+'Count'];i++){
+    const L=rnd(70,130);
+    const v=reelDirVec(c[p+'Angle'],c[p+'Spread'],L);
+    const dur=L/rnd(c[p+'SpeedMin'],c[p+'SpeedMax']);
+    const it=reelIntensity(rnd(c[p+'PeakMin'],c[p+'PeakMax']));
+    const cls=(Math.random()*100<c[p+'BrightPct']?' rl-ember-bright':'')+(it.isBloom?' rl-ember-bloom':'');
+    // El punto medio del recorrido cae en un punto aleatorio de la sección → sirve para cualquier dirección.
+    const pos=`left:calc(${(Math.random()*100).toFixed(1)}% - ${(v.dx/2).toFixed(1)}vmax);top:calc(${(Math.random()*100).toFixed(1)}% - ${(v.dy/2).toFixed(1)}vmax);`;
+    const anim=`animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${v.dx.toFixed(1)}vmax;--dy:${v.dy.toFixed(1)}vmax;--peak:${it.peak};--bloom:${it.bloom};`;
+    if(streak){
+      o+=`<div class="rl-ember rl-ember-streak${cls}" style="${pos}width:${rnd(c.streakLenMin,c.streakLenMax).toFixed(0)}px;height:${c.streakThick}px;${anim}--rot:${v.rot.toFixed(1)}deg;"></div>`;
+    }else{
+      const size=rnd(c.dotSizeMin,c.dotSizeMax).toFixed(1);
+      o+=`<div class="rl-ember rl-ember-dot${cls}" style="${pos}width:${size}px;height:${size}px;${anim}"></div>`;
     }
-    o+=`<div class="rl-smoke" style="top:${(Math.random()*100).toFixed(1)}%;width:${env.toFixed(0)}px;height:${env.toFixed(0)}px;animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${(40+Math.random()*55).toFixed(0)}vw;--dy:${-(15+Math.random()*40).toFixed(0)}vh;--si:${si};">${cores}</div>`;
   }
   return o;
+}
+
+function reelSmokeHtml(c){
+  let o='',defs='';
+  for(let i=0;i<c.smokeCount;i++){
+    const env=rnd(c.smokeSizeMin,c.smokeSizeMax);            // tamaño final del puff
+    const L=rnd(55,110);
+    const v=reelDirVec(c.smokeAngle,c.smokeSpread,L);
+    const dur=L/rnd(c.smokeSpeedMin,c.smokeSpeedMax);
+    const si=rnd(c.smokeIntMin,c.smokeIntMax).toFixed(2);
+    // El cuerpo se dibuja a ≤420px y se amplía con transform: así el coste del filtro está acotado aunque el puff sea enorme.
+    const sc=Math.max(1,env/420), ib=env/sc;
+    let filt='';
+    if(c.smokeNoise>0.05){
+      const id='rlst'+(reelFxUid++), seed=Math.floor(Math.random()*900)+1;
+      const t=Math.min(1,c.smokeNoise/1.5), K=2.4*t, B=1-1.65*t;   // contraste de densidad y nivel medio
+      defs+=`<filter id="${id}" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">`
+        +`<feTurbulence type="fractalNoise" baseFrequency="${(2.2/ib).toFixed(5)} ${(3/ib).toFixed(5)}" numOctaves="3" seed="${seed}" result="w"/>`
+        +`<feDisplacementMap in="SourceGraphic" in2="w" scale="${(ib*0.3*c.smokeNoise).toFixed(0)}" xChannelSelector="R" yChannelSelector="G" result="d"/>`
+        +`<feTurbulence type="fractalNoise" baseFrequency="${(5.5/ib).toFixed(5)}" numOctaves="3" seed="${seed+7}" result="n"/>`
+        +`<feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ${K.toFixed(2)} 0 0 0 ${B.toFixed(2)}" result="a"/>`
+        +`<feComposite in="d" in2="a" operator="in"/></filter>`;
+      filt=`filter:url(#${id});`;
+    }
+    let cores='';
+    const coreCount=3+Math.floor(Math.random()*3);            // 3-5 núcleos
+    for(let j=0;j<coreCount;j++){
+      const warm=j===0;                                        // el primero, más pequeño y cálido
+      const size=warm?ib*(.32+Math.random()*.14):ib*(.5+Math.random()*.35);
+      cores+=`<span class="rl-smoke-core ${warm?'warm':'cool'}" style="width:${size.toFixed(0)}px;height:${(size*1.1).toFixed(0)}px;left:${(50+rnd(-24,24)).toFixed(0)}%;top:${(50+rnd(-24,24)).toFixed(0)}%;filter:blur(${Math.max(10,ib*.06).toFixed(0)}px);"></span>`;
+    }
+    const body=`<div class="rl-smoke-body" style="width:${ib.toFixed(0)}px;height:${ib.toFixed(0)}px;margin-left:${(-ib/2).toFixed(0)}px;margin-top:${(-ib/2).toFixed(0)}px;--s:${sc.toFixed(3)};--rs:${rnd(-35,35).toFixed(0)}deg;animation-duration:${rnd(25,60).toFixed(0)}s;${filt}">${cores}</div>`;
+    o+=`<div class="rl-smoke" style="left:calc(${(Math.random()*100).toFixed(1)}% - ${(env/2).toFixed(0)}px - ${(v.dx/2).toFixed(1)}vmax);top:calc(${(Math.random()*100).toFixed(1)}% - ${(env/2).toFixed(0)}px - ${(v.dy/2).toFixed(1)}vmax);width:${env.toFixed(0)}px;height:${env.toFixed(0)}px;animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${v.dx.toFixed(1)}vmax;--dy:${v.dy.toFixed(1)}vmax;--si:${si};">${body}</div>`;
+  }
+  return (defs?`<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs}</defs></svg>`:'')+o;
 }
 
 /* Rayo dentado: tronco con pequeñas desviaciones + 1-2 ramas. */
@@ -2315,21 +2364,33 @@ function reelLightningHtml(c){
   for(let i=0;i<c.lightningCount;i++){
     const interval=rnd(c.lightningIntervalMin,c.lightningIntervalMax);
     const x=10+Math.random()*80;
+    const size=rnd(c.lightningSizeMin,c.lightningSizeMax);      // alto del rayo en % de la sección
+    const it=reelIntensity(rnd(c.lightningIntMin,c.lightningIntMax));
     let bolt='';
     if(Math.random()*100<c.lightningBoltPct){
-      const d=reelBoltPath();
-      bolt=`<svg class="rl-bolt" style="left:${(x-10).toFixed(0)}%" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path class="rl-bolt-glow" d="${d}"/><path class="rl-bolt-core" d="${d}"/></svg>`;
+      const d=reelBoltPath(), w=size*0.2;
+      bolt=`<svg class="rl-bolt" style="left:${(x-w/2).toFixed(1)}%;width:${w.toFixed(1)}%;height:${size.toFixed(0)}%" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path class="rl-bolt-glow" d="${d}"/><path class="rl-bolt-core" d="${d}"/></svg>`;
     }
-    o+=`<div class="rl-lightning" style="animation-duration:${interval.toFixed(1)}s;animation-delay:${(-Math.random()*interval).toFixed(1)}s;--peak:${rnd(c.lightningIntMin,c.lightningIntMax).toFixed(2)};--lc:${c.lightningColor};--lx:${x.toFixed(0)}%;">${bolt}</div>`;
+    const br=parseFloat(it.bloom)>0?`filter:brightness(${(1+parseFloat(it.bloom)*.4).toFixed(2)});`:'';
+    o+=`<div class="rl-lightning" style="animation-duration:${interval.toFixed(1)}s;animation-delay:${(-Math.random()*interval).toFixed(1)}s;--peak:${it.peak};--lbl:${it.bloom};--lc:${c.lightningColor};--lx:${x.toFixed(0)}%;--ls:${size.toFixed(0)};${br}">${bolt}</div>`;
   }
   return o;
 }
+
 function reelFlamesHtml(c){
   let o=`<div class="rl-fire-glow" style="--gi:${c.fireGlow};"></div>`;
+  const tongues=1+Math.round(c.fireNoise*2);                     // lenguas por llama
   for(let i=0;i<c.fireCount;i++){
     const w=rnd(c.fireWidthMin,c.fireWidthMax);
     const dur=rnd(c.fireDurMin,c.fireDurMax);
-    o+=`<div class="rl-flame" style="left:${rnd(-2,102).toFixed(1)}%;margin-left:${(-w/2).toFixed(0)}px;width:${w.toFixed(0)}px;height:${rnd(c.fireHeightMin,c.fireHeightMax).toFixed(0)}vh;animation-duration:${dur.toFixed(2)}s;animation-delay:${(-Math.random()*dur).toFixed(2)}s;--fi:${rnd(c.fireIntMin,c.fireIntMax).toFixed(2)};"></div>`;
+    const it=reelIntensity(rnd(c.fireIntMin,c.fireIntMax));
+    let t='';
+    for(let k=0;k<tongues;k++){
+      const tw=tongues===1?100:rnd(28,62);
+      const td=rnd(.35,1.1)*dur/1.4+.25;
+      t+=`<div class="rl-tongue" style="left:${tongues===1?0:rnd(0,100-tw).toFixed(0)}%;width:${tw.toFixed(0)}%;height:${(tongues===1?100:rnd(48,100)).toFixed(0)}%;animation-duration:${td.toFixed(2)}s;animation-delay:${(-Math.random()*td).toFixed(2)}s;"></div>`;
+    }
+    o+=`<div class="rl-flame${it.isBloom?' rl-flame-bloom':''}" style="left:${rnd(-2,102).toFixed(1)}%;margin-left:${(-w/2).toFixed(0)}px;width:${w.toFixed(0)}px;height:${rnd(c.fireHeightMin,c.fireHeightMax).toFixed(0)}vh;animation-duration:${dur.toFixed(2)}s;animation-delay:${(-Math.random()*dur).toFixed(2)}s;--fi:${it.peak};--fbl:${it.bloom};--fj:${c.fireNoise.toFixed(2)};">${t}</div>`;
   }
   return o;
 }
@@ -2339,8 +2400,8 @@ function reelFxHtml(key){
   const c=reelFxCfg(key);
   return (c.smokeOn?reelSmokeHtml(c):'')
     +(c.fireOn?reelFlamesHtml(c):'')
-    +(c.dotsOn?reelDotsHtml(c):'')
-    +(c.streakOn?reelStreaksHtml(c):'')
+    +(c.dotsOn?reelEmbersHtml(c,'dot'):'')
+    +(c.streakOn?reelEmbersHtml(c,'streak'):'')
     +(c.lightningOn?reelLightningHtml(c):'');
 }
 /* Pinta (o repinta) las capas: todas, o solo la de la sección indicada. */
