@@ -2417,10 +2417,11 @@ function reelFlamesHtml(c){
       const hpx=Math.max(40,heightVh*7); // px aprox. para escalar la frecuencia
       const fX=(3.2/w).toFixed(5), fY=(fX*0.3).toFixed(5);
       const disp=Math.min(w,hpx)*0.16*c.fireNoise;
-      defs+=`<filter id="${id}" x="-60%" y="-40%" width="220%" height="180%" color-interpolation-filters="sRGB">`
+      defs+=`<filter id="${id}" x="-40%" y="-20%" width="180%" height="140%" color-interpolation-filters="sRGB">`
         +`<feTurbulence type="fractalNoise" baseFrequency="${fX} ${fY}" numOctaves="3" seed="${seed}" result="n"/>`
         +`<feColorMatrix in="n" type="saturate" values="0" result="ng"/>`
-        +`<feBlend in="SourceGraphic" in2="ng" mode="overlay" result="tex"/>`
+        +`<feBlend in="SourceGraphic" in2="ng" mode="overlay" result="lit"/>`
+        +`<feComposite in="lit" in2="SourceGraphic" operator="in" result="tex"/>`
         +`<feDisplacementMap in="tex" in2="n" scale="${disp.toFixed(0)}" xChannelSelector="R" yChannelSelector="G"/></filter>`;
       fx=`filter:url(#${id});`;
     }
