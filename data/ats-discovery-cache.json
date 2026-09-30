@@ -303,7 +303,7 @@
   },
   "zynga": {
     "found": false,
-    "checkedAt": 1789557716.0043178
+    "checkedAt": 1790771116.4193866
   },
   "digital extremes": {
     "found": true,
@@ -353,7 +353,7 @@
   },
   "studio wildcard": {
     "found": false,
-    "checkedAt": 1789557721.4233284
+    "checkedAt": 1790771122.738246
   },
   "velan studios": {
     "found": true,
@@ -422,5 +422,9 @@
   "pro integrate": {
     "found": false,
     "checkedAt": 1790745714.9254336
+  },
+  "intelliswift - an ltts company": {
+    "found": false,
+    "checkedAt": 1790771134.572364
   }
 }
