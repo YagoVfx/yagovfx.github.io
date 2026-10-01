@@ -319,7 +319,7 @@
   },
   "success matcher recruitment": {
     "found": false,
-    "checkedAt": 1789663781.687283
+    "checkedAt": 1790894185.726788
   },
   "btf": {
     "found": false,
@@ -432,5 +432,13 @@
     "ats": "smartrecruiters",
     "careersUrl": "https://careers.smartrecruiters.com/gameloft",
     "checkedAt": 1790832980.9823408
+  },
+  "experis": {
+    "found": false,
+    "checkedAt": 1790894177.9804885
+  },
+  "remotejobsone": {
+    "found": false,
+    "checkedAt": 1790894195.3381116
   }
 }
