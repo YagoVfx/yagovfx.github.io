@@ -897,6 +897,24 @@ option{background:var(--bg2);}
   background:radial-gradient(circle,rgba(255,255,255,.95),rgba(255,255,255,.25) 70%,transparent);
   animation-name:rlEmberDrift;animation-timing-function:linear;animation-iteration-count:infinite;}
 .rl-snow-bloom{filter:blur(.4px) brightness(calc(1 + var(--bloom,0) * .6)) drop-shadow(0 0 calc(var(--bloom,0) * 6px) rgba(255,255,255,.8));}
+/* Nieve posada sobre el texto: una copia transparente del mismo texto, con
+   el "casquete" dibujado solo como sombras blancas hacia arriba (no rellena
+   la letra, solo se asoma por encima, como nieve posada en el borde).
+   Se anima solo la opacidad del conjunto: sube (se posa), aguanta, baja (se
+   derrite) y vuelve a empezar — sin física real, pero lee como acumulación. */
+.rl-snowcap{position:absolute;inset:0;display:block;color:transparent;pointer-events:none;user-select:none;z-index:2;
+  text-shadow:0 -2px 0 #fff,-1px -3px 0 #fff,1px -3px 0 #fff,
+    -2px -4px 1px rgba(255,255,255,.85),2px -4px 1px rgba(255,255,255,.85),
+    0 -6px 3px rgba(255,255,255,.55);
+  opacity:0;animation-name:rlSnowPile;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
+@keyframes rlSnowPile{
+  0%{opacity:0;}
+  50%{opacity:0;}
+  68%{opacity:1;}
+  84%{opacity:1;}
+  100%{opacity:0;}
+}
+@media(prefers-reduced-motion:reduce){.rl-snowcap{display:none;}}
 @media(prefers-reduced-motion:reduce){
   .rl-ember,.rl-smoke,.rl-snow{animation:none;opacity:.12;}
   .rl-smoke-body,.rl-flame,.rl-tongue,.rl-fire-glow{animation:none;}
@@ -2207,8 +2225,9 @@ const REEL_FX_DEFAULTS={
   streakOn:true, streakCount:13, streakSpeedMin:5, streakSpeedMax:16, streakAngle:32, streakSpread:14, streakLenMin:14, streakLenMax:38, streakThick:2, streakBrightPct:28, streakPeakMin:0.4, streakPeakMax:1,
   smokeOn:true,  smokeCount:6, smokeSpeedMin:1.5, smokeSpeedMax:4, smokeAngle:22, smokeSpread:10, smokeSizeMin:180, smokeSizeMax:340, smokeIntMin:0.8, smokeIntMax:1.2, smokeNoise:1.2,
   lightningOn:false, lightningCount:2, lightningBoltPct:70, lightningIntervalMin:6, lightningIntervalMax:16, lightningSizeMin:55, lightningSizeMax:100, lightningIntMin:0.35, lightningIntMax:0.7, lightningColor:'#bcd4ff',
-  fireOn:false,  fireCount:16, fireNoise:1.5, fireGlow:1, fireHeightMin:18, fireHeightMax:42, fireWidthMin:90, fireWidthMax:220, fireDurMin:0.9, fireDurMax:2.4, fireIntMin:0.55, fireIntMax:1,
+  fireOn:false,  fireCount:16, fireNoise:1.5, fireTexNoise:1.2, fireGlow:1, fireHeightMin:18, fireHeightMax:42, fireWidthMin:90, fireWidthMax:220, fireDurMin:0.9, fireDurMax:2.4, fireIntMin:0.55, fireIntMax:1,
   snowOn:false,  snowCount:70, snowSpeedMin:2, snowSpeedMax:9, snowAngle:270, snowSpread:18, snowSizeMin:2, snowSizeMax:7, snowPeakMin:0.4, snowPeakMax:1,
+  snowPileOn:false, snowPileCycleMin:18, snowPileCycleMax:32,
 };
 const REEL_FX_DIR_NOTE='Velocidad en % de pantalla por segundo (más alto = más rápido). Dirección: 0° = →, 90° = ↑, 180° = ←, 270° = ↓; la dispersión es una variación aleatoria de ± grados. Un brillo por encima de 1 añade bloom (halo).';
 // [clave, etiqueta, mín, máx, paso]  ·  o  [clave, etiqueta, 'color']
@@ -2243,20 +2262,23 @@ const REEL_FX_SCHEMA=[
     ['lightningIntMin','Intensidad mín (0–3)',0,3,.05],['lightningIntMax','Intensidad máx (0–3)',0,3,.05],
     ['lightningColor','Color','color']]},
   {title:'🔥 Fuego', on:'fireOn',
-   note:'Ruido controla dos cosas: cuántas lenguas irregulares forma cada llama y cuánto se retuercen, y además la textura interna de la propia llama (vetas más/menos calientes y bordes lamiendo, vía un filtro de turbulencia). En 0 la llama es lisa tipo vela. Intensidad por encima de 1 = más bloom.',
+   note:'Ruido de forma = cuántas lenguas irregulares forma cada llama y cuánto se retuercen (0 = llama lisa tipo vela). Ruido de textura = turbulencia DENTRO de la llama (vetas más/menos calientes, bordes lamiendo) — son independientes: puedes subir uno sin mover el otro. Intensidad por encima de 1 = más bloom.',
    fields:[
-    ['fireCount','Llamas',0,60,1],['fireNoise','Ruido (0–3)',0,3,.1],
+    ['fireCount','Llamas',0,60,1],['fireNoise','Ruido de forma (0–3)',0,3,.1],['fireTexNoise','Ruido de textura (0–3)',0,3,.1],
     ['fireGlow','Resplandor base (0–3)',0,3,.1],
     ['fireHeightMin','Altura mín (% pantalla)',5,90,1],['fireHeightMax','Altura máx (% pantalla)',5,90,1],
     ['fireWidthMin','Ancho mín (px)',30,500,5],['fireWidthMax','Ancho máx (px)',30,500,5],
     ['fireDurMin','Parpadeo mín (s)',0.3,8,.1],['fireDurMax','Parpadeo máx (s)',0.3,8,.1],
     ['fireIntMin','Intensidad mín (0–3)',0,3,.05],['fireIntMax','Intensidad máx (0–3)',0,3,.05]]},
-  {title:'❄️ Nieve', on:'snowOn', note:REEL_FX_DIR_NOTE, fields:[
+  {title:'❄️ Nieve', on:'snowOn', note:REEL_FX_DIR_NOTE,
+   extraToggle:{key:'snowPileOn',label:'Posarse en las letras grandes (título) y derretirse poco a poco'},
+   fields:[
     ['snowCount','Cantidad',0,300,1],
     ['snowSpeedMin','Velocidad mín',0.5,60,.5],['snowSpeedMax','Velocidad máx',0.5,60,.5],
     ['snowAngle','Dirección (°)',0,360,1],['snowSpread','Dispersión (± °)',0,180,1],
     ['snowSizeMin','Tamaño mín (px)',1,30,.5],['snowSizeMax','Tamaño máx (px)',1,30,.5],
-    ['snowPeakMin','Brillo mín (0–3)',0,3,.05],['snowPeakMax','Brillo máx (0–3)',0,3,.05]]},
+    ['snowPeakMin','Brillo mín (0–3)',0,3,.05],['snowPeakMax','Brillo máx (0–3)',0,3,.05],
+    ['snowPileCycleMin','Ciclo posado mín (s)',4,90,1],['snowPileCycleMax','Ciclo posado máx (s)',4,90,1]]},
 ];
 
 let reelFxEditKey='hero';   // sección que se está editando en el admin
@@ -2277,6 +2299,7 @@ function reelFxCfg(key){
   const c={};
   REEL_FX_SCHEMA.forEach(g=>{
     c[g.on]=!!m[g.on];
+    if(g.extraToggle)c[g.extraToggle.key]=!!m[g.extraToggle.key];
     g.fields.forEach(f=>{
       const k=f[0];
       if(f[2]==='color'){c[k]=/^#[0-9a-f]{6}$/i.test(m[k])?m[k]:REEL_FX_DEFAULTS[k];return;}
@@ -2412,11 +2435,11 @@ function reelFlamesHtml(c){
     // no solo la silueta poligonal). Sin ruido (0) no se genera filtro,
     // así una llama "lisa" no paga ningún coste extra.
     let fx='';
-    if(c.fireNoise>0.05){
+    if(c.fireTexNoise>0.05){
       const id='rlft'+(reelFxUid++), seed=Math.floor(Math.random()*900)+1;
       const hpx=Math.max(40,heightVh*7); // px aprox. para escalar la frecuencia
       const fX=(3.2/w).toFixed(5), fY=(fX*0.3).toFixed(5);
-      const disp=Math.min(w,hpx)*0.16*c.fireNoise;
+      const disp=Math.min(w,hpx)*0.16*c.fireTexNoise;
       defs+=`<filter id="${id}" x="-40%" y="-20%" width="180%" height="140%" color-interpolation-filters="sRGB">`
         +`<feTurbulence type="fractalNoise" baseFrequency="${fX} ${fY}" numOctaves="3" seed="${seed}" result="n"/>`
         +`<feColorMatrix in="n" type="saturate" values="0" result="ng"/>`
@@ -2443,6 +2466,17 @@ function reelSnowHtml(c){
     o+=`<div class="rl-snow${it.isBloom?' rl-snow-bloom':''}" style="${pos}width:${size}px;height:${size}px;animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${v.dx.toFixed(1)}vmax;--dy:${v.dy.toFixed(1)}vmax;--peak:${it.peak};--bloom:${it.bloom};"></div>`;
   }
   return o;
+}
+
+/* Envuelve un título con su "gorra de nieve" si esa sección tiene nieve +
+   la opción de posarse activadas; si no, devuelve el texto tal cual. El
+   elemento que llama a esto debe llevar position:relative (los <h1>/<h2>
+   de Reel ya la tienen). */
+function reelSnowcapHtml(key,text){
+  const c=reelFxCfg(key);
+  if(!(c.snowOn&&c.snowPileOn))return text;
+  const dur=rnd(c.snowPileCycleMin,c.snowPileCycleMax).toFixed(1);
+  return `${text}<span class="rl-snowcap" aria-hidden="true" style="animation-duration:${dur}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;">${text}</span>`;
 }
 
 function reelFxHtml(key){
@@ -2472,7 +2506,7 @@ function loadReelFxForm(){
   const c=reelFxCfg(reelFxEditKey);
   let h=`<div class="frow"><div class="fg"><label class="fl">Sección</label><select class="fsel" onchange="setReelFxSection(this.value)">${list.map(x=>`<option value="${x.key}" ${x.key===reelFxEditKey?'selected':''}>${x.label}</option>`).join('')}</select></div></div>`;
   REEL_FX_SCHEMA.forEach(g=>{
-    h+=`<div style="margin:22px 0 10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;"><span class="fl" style="font-weight:700;margin:0;">${g.title}</span><label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;"><input type="checkbox" ${c[g.on]?'checked':''} onchange="setReelFxOn('${g.on}',this.checked)"> Activado en esta sección</label></div>`;
+    h+=`<div style="margin:22px 0 10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;"><span class="fl" style="font-weight:700;margin:0;">${g.title}</span><label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;"><input type="checkbox" ${c[g.on]?'checked':''} onchange="setReelFxOn('${g.on}',this.checked)"> Activado en esta sección</label>${g.extraToggle?`<label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;"><input type="checkbox" ${c[g.extraToggle.key]?'checked':''} onchange="setReelFxOn('${g.extraToggle.key}',this.checked)"> ${g.extraToggle.label}</label>`:''}</div>`;
     if(g.note)h+=`<div class="a-sub" style="margin:-4px 0 10px;">${g.note}</div>`;
     h+=`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;${c[g.on]?'':'opacity:.45;'}">`;
     g.fields.forEach(f=>{
@@ -2532,7 +2566,7 @@ function renderReelSkin(){
       <div class="rl-hero-grid">
         <div>
           <div class="rl-kicker rl-reveal rl-d1">${bio}</div>
-          <h1 class="rl-reveal rl-d2">${name.split(' ').join('<br>')}</h1>
+          <h1 class="rl-reveal rl-d2" style="position:relative;">${reelSnowcapHtml('hero',name.split(' ').join('<br>'))}</h1>
           <div class="rl-role rl-reveal rl-d3">${role}</div>
           ${tagsHtml?`<div class="rl-tags rl-reveal rl-d4">${tagsHtml}</div>`:''}
           ${heroLinksHtml?`<div class="rl-hero-links rl-reveal rl-d5">${heroLinksHtml}</div>`:''}
@@ -2571,7 +2605,7 @@ function renderReelSkin(){
       <div class="rl-scene-grid">
         <div class="rl-scene-text">
           <div class="rl-num rl-reveal rl-d1">Project — ${c.period||''}</div>
-          <h2 class="rl-reveal rl-d2">${c.name||''}</h2>
+          <h2 class="rl-reveal rl-d2" style="position:relative;">${reelSnowcapHtml(c.id,c.name||'')}</h2>
           <div class="rl-meta rl-reveal rl-d3">${c.role||''}</div>
           <p class="rl-reveal rl-d4">${desc}</p>
           ${tags.length?`<div class="rl-tags rl-reveal rl-d5">${tags.map(tg=>`<span>${tg}</span>`).join('')}</div>`:''}
@@ -2600,7 +2634,7 @@ function renderReelSkin(){
   const closeHtml=`
     <section class="rl-section rl-close" id="${closeId}">
       <div class="rl-fx" data-fx="close"></div>
-      <h2 class="rl-reveal rl-d1">${availLine}</h2>
+      <h2 class="rl-reveal rl-d1" style="position:relative;">${reelSnowcapHtml(closeId,availLine)}</h2>
       <div class="rl-tools rl-reveal rl-d2">${toolsHtml}</div>
       <div class="rl-links rl-reveal rl-d3">${linksHtml}</div>
       <div class="rl-footer rl-reveal rl-d4">© ${new Date().getFullYear()} ${name} — Reel skin</div>
