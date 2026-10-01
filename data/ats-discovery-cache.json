@@ -426,5 +426,11 @@
   "intelliswift - an ltts company": {
     "found": false,
     "checkedAt": 1790771134.572364
+  },
+  "gameloft barcelona": {
+    "found": true,
+    "ats": "smartrecruiters",
+    "careersUrl": "https://careers.smartrecruiters.com/gameloft",
+    "checkedAt": 1790832980.9823408
   }
 }
