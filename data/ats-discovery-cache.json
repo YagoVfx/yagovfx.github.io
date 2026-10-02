@@ -440,5 +440,15 @@
   "remotejobsone": {
     "found": false,
     "checkedAt": 1790894195.3381116
+  },
+  "yo ai labs": {
+    "found": true,
+    "ats": "recruitee",
+    "careersUrl": "https://yo.recruitee.com",
+    "checkedAt": 1790918612.263488
+  },
+  "el ranchito": {
+    "found": false,
+    "checkedAt": 1790918624.7419953
   }
 }
