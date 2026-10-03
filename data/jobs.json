@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-10-03T11:32:15Z",
+  "lastUpdated": "2026-10-03T16:08:05Z",
   "companiesScanned": 23,
   "companiesSucceeded": 19,
   "companiesFailed": 4,
-  "totalVfxJobs": 100,
+  "totalVfxJobs": 99,
   "jobsByAts": {
     "smartrecruiters": 28,
     "massive-wp": 2,
-    "adzuna-signal": 3,
+    "adzuna-signal": 2,
     "workable": 5,
     "adzuna": 36,
     "greenhouse": 9,
@@ -30,7 +30,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-10-01T22:35:51Z",
-      "lastSeen": "2026-10-03T11:31:36Z",
+      "lastSeen": "2026-10-03T16:07:37Z",
       "status": "active"
     },
     {
@@ -46,7 +46,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-09-17T16:49:15Z",
-      "lastSeen": "2026-10-03T11:31:36Z",
+      "lastSeen": "2026-10-03T16:07:37Z",
       "status": "active"
     },
     {
@@ -62,7 +62,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-09-08T21:02:43Z",
-      "lastSeen": "2026-10-03T11:31:48Z",
+      "lastSeen": "2026-10-03T16:07:48Z",
       "status": "active"
     },
     {
@@ -78,7 +78,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-31T22:44:50Z",
-      "lastSeen": "2026-10-03T11:31:48Z",
+      "lastSeen": "2026-10-03T16:07:48Z",
       "status": "active"
     },
     {
@@ -94,7 +94,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-31T22:44:50Z",
-      "lastSeen": "2026-10-03T11:31:48Z",
+      "lastSeen": "2026-10-03T16:07:48Z",
       "status": "active"
     },
     {
@@ -110,7 +110,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-26T19:56:12Z",
-      "lastSeen": "2026-10-03T11:31:48Z",
+      "lastSeen": "2026-10-03T16:07:48Z",
       "status": "active"
     },
     {
@@ -126,7 +126,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-03T11:31:48Z",
+      "lastSeen": "2026-10-03T16:07:48Z",
       "status": "active"
     },
     {
@@ -142,7 +142,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-03T11:31:48Z",
+      "lastSeen": "2026-10-03T16:07:48Z",
       "status": "active"
     },
     {
@@ -158,7 +158,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:17:29Z",
-      "lastSeen": "2026-10-03T11:31:50Z",
+      "lastSeen": "2026-10-03T16:07:49Z",
       "status": "active"
     },
     {
@@ -174,7 +174,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-10-01T12:59:56Z",
-      "lastSeen": "2026-10-03T11:31:50Z",
+      "lastSeen": "2026-10-03T16:07:49Z",
       "status": "active"
     },
     {
@@ -191,24 +191,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:19:41Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
-      "status": "active"
-    },
-    {
-      "id": "sig-blizzard",
-      "company": "Blizzard",
-      "title": "Posible oferta VFX detectada — ver listado completo",
-      "url": "https://activision.wd1.myworkdayjobs.com/Blizzard_External_Careers",
-      "location": "",
-      "workplaceType": "unknown",
-      "remoteScope": "unknown",
-      "ats": "adzuna-signal",
-      "matchType": "possibleMatch",
-      "companyCategory": "aaa",
-      "viaAggregator": false,
-      "signalOnly": true,
-      "firstSeen": "2026-08-29T16:39:23Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "active"
     },
     {
@@ -225,7 +208,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-08-27T09:22:59Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "active"
     },
     {
@@ -242,13 +225,13 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5119754002",
       "company": "Enorth Staffing Limited",
       "title": "VFX Artist",
-      "url": "https://www.adzuna.co.uk/jobs/land/ad/5119754002?se=2rRKCh6_8RGTyvTH5qRQ7A&utm_medium=api&utm_source=361fafca&v=5B0D2C75974611A271F943E27EECB1990860F82A",
+      "url": "https://www.adzuna.co.uk/jobs/land/ad/5119754002?se=fEpPmES_8RGN96JAzfykhw&utm_medium=api&utm_source=361fafca&v=5B0D2C75974611A271F943E27EECB1990860F82A",
       "location": "London, UK",
       "workplaceType": "unknown",
       "remoteScope": "UK",
@@ -258,7 +241,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5876461571",
@@ -274,7 +257,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-09T04:26:40Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5896919229",
@@ -290,7 +273,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-09-25T04:45:37Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5706061043",
@@ -306,7 +289,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5699001130",
@@ -322,13 +305,13 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5733999582",
       "company": "Cloud Imperium Games Limited",
       "title": "Principal VFX Artist",
-      "url": "https://www.adzuna.co.uk/jobs/land/ad/5733999582?se=2rRKCh6_8RGTyvTH5qRQ7A&utm_medium=api&utm_source=361fafca&v=FC236E56F5DB4F00CBCA47677FF1AA98A80D79AF",
+      "url": "https://www.adzuna.co.uk/jobs/land/ad/5733999582?se=fEpPmES_8RGN96JAzfykhw&utm_medium=api&utm_source=361fafca&v=FC236E56F5DB4F00CBCA47677FF1AA98A80D79AF",
       "location": "Manchester, Greater Manchester",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -338,7 +321,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5679133331",
@@ -354,7 +337,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5879460717",
@@ -370,7 +353,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-09-11T11:06:26Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5735101390",
@@ -386,7 +369,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5879460715",
@@ -402,7 +385,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-09-11T11:06:26Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5848440762",
@@ -418,7 +401,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-08-19T18:46:16Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5679132470",
@@ -434,7 +417,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5846915583",
@@ -450,7 +433,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-19T06:57:11Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5867222979",
@@ -466,7 +449,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-02T16:28:54Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5361303375",
@@ -482,7 +465,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5034487479",
@@ -498,7 +481,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5867563560",
@@ -514,13 +497,13 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-09-02T20:56:47Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5899625037",
       "company": "ManpowerGroup",
       "title": "VFX Artist",
-      "url": "https://www.adzuna.com/land/ad/5899625037?se=8mfPCh6_8RG_QOooc_iMBQ&utm_medium=api&utm_source=361fafca&v=C40BA92AF5A2AB7ED5901F746EACB8C22801C116",
+      "url": "https://www.adzuna.com/land/ad/5899625037?se=fl5HmUS_8RGN96JAzfykhw&utm_medium=api&utm_source=361fafca&v=C40BA92AF5A2AB7ED5901F746EACB8C22801C116",
       "location": "International, King County",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -530,7 +513,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-09-28T13:41:16Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5844971993",
@@ -546,7 +529,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-18T06:57:16Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5504357701",
@@ -562,7 +545,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5652004593",
@@ -578,7 +561,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5899523830",
@@ -594,7 +577,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-26T11:14:40Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5905542549",
@@ -610,7 +593,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-10-02T05:23:58Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5538360373",
@@ -626,7 +609,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5849565038",
@@ -642,7 +625,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-20T13:04:39Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5877708286",
@@ -658,7 +641,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-10T04:24:51Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5786701853",
@@ -674,7 +657,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5858226699",
@@ -690,7 +673,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-08-27T22:15:03Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5896480751",
@@ -706,7 +689,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-24T11:34:39Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5714296687",
@@ -722,7 +705,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-09-02T11:08:43Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5905542550",
@@ -738,7 +721,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-10-02T05:23:58Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5903296399",
@@ -754,7 +737,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-09-30T05:22:06Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5905542681",
@@ -770,7 +753,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-10-01T22:36:42Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5749312187",
@@ -786,7 +769,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5749312168",
@@ -802,7 +785,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5749312177",
@@ -818,7 +801,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5889052595",
@@ -834,7 +817,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-09-18T11:03:10Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5776591897",
@@ -850,7 +833,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5904070624",
@@ -866,7 +849,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-09-30T22:09:38Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5731201709",
@@ -882,7 +865,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5848812181",
@@ -898,7 +881,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-08-20T01:44:28Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5422344101",
@@ -914,7 +897,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5851014582",
@@ -930,7 +913,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-08-21T13:03:20Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5842043177",
@@ -946,7 +929,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-08-14T19:05:01Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5785271944",
@@ -962,7 +945,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5787238266",
@@ -978,7 +961,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5793786868",
@@ -994,7 +977,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5774032991",
@@ -1010,7 +993,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5850612236",
@@ -1026,7 +1009,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-26T07:02:04Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5761605022",
@@ -1042,7 +1025,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5808894714",
@@ -1058,7 +1041,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-21T08:41:33Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5843154996",
@@ -1074,7 +1057,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-08-15T18:40:05Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5793381294",
@@ -1090,7 +1073,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5537797180",
@@ -1106,7 +1089,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5870640472",
@@ -1122,7 +1105,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-05T10:27:59Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5727218748",
@@ -1138,7 +1121,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5832073958",
@@ -1154,7 +1137,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-08-07T19:07:43Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5720744781",
@@ -1170,7 +1153,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5749301696",
@@ -1186,7 +1169,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5805587710",
@@ -1202,7 +1185,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-18T03:18:33Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5749301699",
@@ -1218,7 +1201,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-08-27T09:22:59Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5647996845",
@@ -1234,7 +1217,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5647996848",
@@ -1250,7 +1233,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5735659782",
@@ -1266,7 +1249,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-08-27T09:22:59Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5879138619",
@@ -1282,7 +1265,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-11T11:06:26Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5909414749",
@@ -1298,7 +1281,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5909414648",
@@ -1314,7 +1297,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5799349291",
@@ -1330,23 +1313,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
-    },
-    {
-      "id": "az-5880981028",
-      "company": "Company3",
-      "title": "VFX Production Manager (General Submission)",
-      "url": "https://company3.recruitee.com",
-      "location": "Vancouver, Greater Vancouver",
-      "workplaceType": "unknown",
-      "remoteScope": "Unknown",
-      "ats": "recruitee",
-      "matchType": "possibleMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "status": "active",
-      "firstSeen": "2026-09-14T12:33:08Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5880981942",
@@ -1362,7 +1329,23 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-12T15:26:59Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
+    },
+    {
+      "id": "az-5880981028",
+      "company": "Company3",
+      "title": "VFX Production Manager (General Submission)",
+      "url": "https://company3.recruitee.com",
+      "location": "Vancouver, Greater Vancouver",
+      "workplaceType": "unknown",
+      "remoteScope": "Unknown",
+      "ats": "recruitee",
+      "matchType": "possibleMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "status": "active",
+      "firstSeen": "2026-09-14T12:33:08Z",
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5894973575",
@@ -1378,7 +1361,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-23T16:44:22Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5902269851",
@@ -1394,7 +1377,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-09-29T05:33:19Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5894973574",
@@ -1410,7 +1393,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-23T11:22:44Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5904779694",
@@ -1426,7 +1409,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-10-01T05:36:33Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5896083834",
@@ -1442,7 +1425,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-24T04:32:00Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5909781598",
@@ -1458,7 +1441,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5896092475",
@@ -1474,7 +1457,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-24T04:32:00Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5909777547",
@@ -1490,7 +1473,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5896082987",
@@ -1506,7 +1489,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-09-24T04:32:00Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5820901582",
@@ -1522,7 +1505,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-07-30T08:42:43Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5909777725",
@@ -1538,7 +1521,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5473508779",
@@ -1554,7 +1537,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5909778593",
@@ -1570,7 +1553,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5907315899",
@@ -1586,7 +1569,7 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-10-02T12:22:20Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5909777777",
@@ -1602,7 +1585,7 @@
       "viaAggregator": false,
       "status": "active",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5907315876",
@@ -1618,7 +1601,24 @@
       "viaAggregator": true,
       "status": "active",
       "firstSeen": "2026-10-02T05:23:58Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
+    },
+    {
+      "id": "sig-blizzard",
+      "company": "Blizzard",
+      "title": "Posible oferta VFX detectada — ver listado completo",
+      "url": "https://activision.wd1.myworkdayjobs.com/Blizzard_External_Careers",
+      "location": "",
+      "workplaceType": "unknown",
+      "remoteScope": "unknown",
+      "ats": "adzuna-signal",
+      "matchType": "possibleMatch",
+      "companyCategory": "aaa",
+      "viaAggregator": false,
+      "signalOnly": true,
+      "firstSeen": "2026-08-29T16:39:23Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
+      "status": "closed"
     },
     {
       "id": "az-5906505169",
@@ -1634,7 +1634,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-10-02T05:23:58Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5903437467",
@@ -1650,7 +1650,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-30T05:22:06Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5903437448",
@@ -1666,7 +1666,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-30T05:22:06Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5875590640",
@@ -1682,7 +1682,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-08T16:32:56Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5878336071",
@@ -1698,7 +1698,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-10T11:07:47Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5903859566",
@@ -1714,7 +1714,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-30T12:25:45Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5654949933",
@@ -1730,7 +1730,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5906090481",
@@ -1746,7 +1746,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-10-01T22:36:42Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sr-744000143352561",
@@ -1761,7 +1761,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-13T19:13:22Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -1778,7 +1778,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-30T12:25:45Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sig-frontier",
@@ -1794,7 +1794,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-08-15T18:40:05Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -1811,7 +1811,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-30T05:22:06Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5897448848",
@@ -1827,7 +1827,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-25T04:45:37Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5568773819",
@@ -1843,7 +1843,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5780603068",
@@ -1859,7 +1859,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5846830200",
@@ -1875,7 +1875,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-18T18:50:35Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5869754684",
@@ -1891,7 +1891,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-04T04:17:23Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5895721513",
@@ -1907,7 +1907,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-24T04:32:00Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5896376567",
@@ -1923,7 +1923,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-24T11:34:39Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5805399009",
@@ -1939,7 +1939,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-18T03:18:33Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5864405588",
@@ -1955,7 +1955,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-03T16:19:35Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5876797956",
@@ -1971,7 +1971,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-10T11:07:47Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5826203575",
@@ -1987,7 +1987,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-08-03T03:44:01Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5842741858",
@@ -2003,7 +2003,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-27T09:22:59Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sig-respawn",
@@ -2019,7 +2019,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-08-22T12:54:10Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -2036,7 +2036,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-24T07:13:22Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5791181814",
@@ -2052,7 +2052,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-18T19:16:11Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sr-744000136488869",
@@ -2067,7 +2067,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -2083,7 +2083,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -2100,7 +2100,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-18T18:50:35Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5870263534",
@@ -2116,7 +2116,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-04T11:06:18Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5770241845",
@@ -2132,7 +2132,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sr-744000142664350",
@@ -2147,7 +2147,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-10T19:07:27Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -2164,7 +2164,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-14T04:41:29Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5864858819",
@@ -2180,7 +2180,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-01T16:30:24Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5881840820",
@@ -2196,7 +2196,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-13T04:35:46Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5813415802",
@@ -2212,7 +2212,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-25T08:19:30Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5869754689",
@@ -2228,7 +2228,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-04T11:06:18Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5880203310",
@@ -2244,7 +2244,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-12T04:22:03Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sig-epic-games",
@@ -2260,7 +2260,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:19:41Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -2277,7 +2277,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-03T11:05:23Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5880454939",
@@ -2293,7 +2293,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-12T04:22:03Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5868707174",
@@ -2309,7 +2309,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-03T11:05:23Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5840223415",
@@ -2325,7 +2325,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-08-14T13:24:03Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5840222651",
@@ -2341,7 +2341,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-08-14T13:24:03Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5866686026",
@@ -2357,7 +2357,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-02T11:08:43Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sig-ea",
@@ -2373,7 +2373,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:30:46Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -2390,7 +2390,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-13T19:13:50Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5840318553",
@@ -2406,7 +2406,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-13T19:13:50Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5867366239",
@@ -2422,7 +2422,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-02T20:56:47Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5867366351",
@@ -2438,7 +2438,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-02T20:56:47Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5856433338",
@@ -2454,7 +2454,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-27T09:22:59Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5869595179",
@@ -2470,7 +2470,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-04T11:06:18Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5869595277",
@@ -2486,7 +2486,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-09-04T11:06:18Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5834415260",
@@ -2502,7 +2502,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-08-10T07:57:18Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5850942366",
@@ -2518,7 +2518,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-09-02T16:28:54Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sr-744000138676145",
@@ -2533,7 +2533,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -2549,7 +2549,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-07-14T14:18:44Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -2566,7 +2566,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-30T19:44:30Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5821409015",
@@ -2582,7 +2582,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-02T08:34:32Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5821408802",
@@ -2598,7 +2598,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-30T19:44:30Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5821409207",
@@ -2614,7 +2614,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-27T09:22:59Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5801734679",
@@ -2630,7 +2630,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5804079047",
@@ -2646,7 +2646,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-22T03:32:31Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5804105504",
@@ -2662,7 +2662,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5804109036",
@@ -2678,7 +2678,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-21T03:33:37Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5804092333",
@@ -2694,7 +2694,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5790994570",
@@ -2710,7 +2710,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5831881841",
@@ -2726,7 +2726,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-16T12:54:19Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5797382283",
@@ -2742,7 +2742,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sr-744000144352305",
@@ -2757,7 +2757,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-19T18:46:02Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -2774,7 +2774,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-08-06T14:30:40Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5776963984",
@@ -2790,7 +2790,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sr-744000139136678",
@@ -2805,7 +2805,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -2822,7 +2822,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-22T12:54:10Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5787950418",
@@ -2838,7 +2838,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sig-2k",
@@ -2854,7 +2854,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:19:41Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -2871,7 +2871,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5814078460",
@@ -2887,7 +2887,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5832007647",
@@ -2903,7 +2903,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-07T19:07:43Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5790096714",
@@ -2919,7 +2919,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5815352608",
@@ -2935,7 +2935,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-25T13:54:44Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5728857033",
@@ -2951,7 +2951,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5817843649",
@@ -2967,7 +2967,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-28T03:25:20Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5820061130",
@@ -2983,7 +2983,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-29T19:36:17Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5820055186",
@@ -2999,7 +2999,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-29T19:36:17Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5820055314",
@@ -3015,7 +3015,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-29T19:36:17Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5814182327",
@@ -3031,7 +3031,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5814180351",
@@ -3047,7 +3047,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-25T08:19:30Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5814182188",
@@ -3063,7 +3063,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5732880781",
@@ -3079,7 +3079,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5834379907",
@@ -3095,7 +3095,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-08-09T07:08:07Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5761756088",
@@ -3111,7 +3111,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sr-744000142664110",
@@ -3126,7 +3126,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-10T19:07:27Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -3143,7 +3143,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5736352794",
@@ -3159,7 +3159,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5736358838",
@@ -3175,7 +3175,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5736357877",
@@ -3191,7 +3191,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5799882708",
@@ -3207,7 +3207,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5799857592",
@@ -3223,7 +3223,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5815102316",
@@ -3239,7 +3239,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-25T13:54:44Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5809178429",
@@ -3255,7 +3255,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-21T14:12:23Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sr-744000122112172",
@@ -3270,7 +3270,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -3286,7 +3286,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -3303,7 +3303,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5801251432",
@@ -3319,7 +3319,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5800544057",
@@ -3335,7 +3335,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5800543906",
@@ -3351,7 +3351,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sr-744000136044054",
@@ -3366,7 +3366,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -3382,7 +3382,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -3398,7 +3398,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -3415,7 +3415,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-08-08T13:05:32Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5793750486",
@@ -3431,7 +3431,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5814182203",
@@ -3447,7 +3447,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-24T19:41:33Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5820153032",
@@ -3463,7 +3463,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-29T21:06:27Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5820152838",
@@ -3479,7 +3479,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-29T21:06:27Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5752941990",
@@ -3495,7 +3495,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5715650446",
@@ -3511,7 +3511,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5721223284",
@@ -3527,7 +3527,7 @@
       "viaAggregator": false,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "sig-ubisoft",
@@ -3543,7 +3543,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:30:46Z",
-      "lastSeen": "2026-10-03T11:32:15Z",
+      "lastSeen": "2026-10-03T16:08:05Z",
       "status": "closed"
     },
     {
@@ -3560,7 +3560,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-25T03:30:50Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5805529271",
@@ -3576,7 +3576,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-18T03:18:33Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5672287328",
@@ -3592,7 +3592,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5812136782",
@@ -3608,7 +3608,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-24T08:38:26Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5677617119",
@@ -3624,7 +3624,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5821368228",
@@ -3640,7 +3640,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-30T19:44:30Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5721184348",
@@ -3656,7 +3656,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5620207010",
@@ -3672,7 +3672,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5714821063",
@@ -3688,7 +3688,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5806557373",
@@ -3704,7 +3704,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-19T03:39:30Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5808924734",
@@ -3720,7 +3720,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-21T08:41:33Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5812280831",
@@ -3736,7 +3736,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-23T14:24:47Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5552932841",
@@ -3752,7 +3752,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5552932820",
@@ -3768,7 +3768,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5552932836",
@@ -3784,7 +3784,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5790981669",
@@ -3800,7 +3800,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5790981658",
@@ -3816,7 +3816,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5790981649",
@@ -3832,7 +3832,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5790968858",
@@ -3848,7 +3848,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5790968856",
@@ -3864,7 +3864,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5790968864",
@@ -3880,7 +3880,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5761066992",
@@ -3896,7 +3896,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5759775977",
@@ -3912,7 +3912,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5763815967",
@@ -3928,7 +3928,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5761807810",
@@ -3944,7 +3944,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5763828878",
@@ -3960,7 +3960,7 @@
       "viaAggregator": true,
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5787860589",
@@ -3975,7 +3975,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5794071604",
@@ -3990,7 +3990,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5810193354",
@@ -4005,7 +4005,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-22T03:32:31Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5794895680",
@@ -4020,7 +4020,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5809402203",
@@ -4035,7 +4035,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-21T19:44:34Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5809391454",
@@ -4050,7 +4050,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-24T14:03:52Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5777694887",
@@ -4065,7 +4065,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5724998693",
@@ -4080,7 +4080,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5810042488",
@@ -4095,7 +4095,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-22T03:32:31Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5809598066",
@@ -4110,7 +4110,7 @@
       "companyCategory": "unknown",
       "status": "closed",
       "firstSeen": "2026-07-21T19:44:34Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5774156431",
@@ -4124,7 +4124,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5804122069",
@@ -4138,7 +4138,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5687834785",
@@ -4152,7 +4152,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5807753946",
@@ -4166,7 +4166,7 @@
       "matchType": "possibleMatch",
       "status": "closed",
       "firstSeen": "2026-07-20T09:31:48Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     },
     {
       "id": "az-5796355596",
@@ -4180,7 +4180,7 @@
       "matchType": "exactMatch",
       "status": "closed",
       "firstSeen": "2026-07-17T20:20:55Z",
-      "lastSeen": "2026-10-03T11:32:15Z"
+      "lastSeen": "2026-10-03T16:08:05Z"
     }
   ]
 }
