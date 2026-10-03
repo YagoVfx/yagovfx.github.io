@@ -450,5 +450,17 @@
   "el ranchito": {
     "found": false,
     "checkedAt": 1790918624.7419953
+  },
+  "gameloft": {
+    "found": true,
+    "ats": "smartrecruiters",
+    "careersUrl": "https://careers.smartrecruiters.com/gameloft",
+    "checkedAt": 1791027120.8734994
+  },
+  "smartrecruiters, inc.": {
+    "found": true,
+    "ats": "smartrecruiters",
+    "careersUrl": "https://careers.smartrecruiters.com/smartrecruiters",
+    "checkedAt": 1791027123.7795253
   }
 }
