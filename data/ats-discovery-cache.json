@@ -472,5 +472,15 @@
     "ats": "greenhouse",
     "careersUrl": "https://job-boards.greenhouse.io/riotgames",
     "checkedAt": 1791092353.7419035
+  },
+  "hasbro": {
+    "found": true,
+    "ats": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/hasbro",
+    "checkedAt": 1791115990.2337449
+  },
+  "notodoanimacion": {
+    "found": false,
+    "checkedAt": 1791115990.3722045
   }
 }
