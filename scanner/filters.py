@@ -39,8 +39,38 @@ EXCLUSIONS = re.compile(
 
 BARE_VFX_RE = re.compile(r'\bvfx\b', re.IGNORECASE)
 
+# "Remote" en el título no significa "remoto desde cualquier sitio": muchas
+# ofertas son remote-pero-solo-dentro-de-un-país, y eso solo se sabe por
+# cómo está redactada la descripción (no hay un campo aparte para esto en
+# ninguno de los ATS que leemos). Cubre las formas más comunes en inglés;
+# es heurístico a propósito — mejor descartar una oferta válida rara vez
+# que dejar pasar basura que luego da "not available in your region".
+US_ONLY_RE = re.compile(
+    r'\b(u\.?s\.?\s*citizens?\s*only|us[-\s]based\s*only'
+    r'|must\s*be\s*(?:currently\s*)?(?:based|located|residing)\s*in\s*the\s*(?:u\.?s\.?|united\s*states)'
+    r'|must\s*reside\s*in\s*the\s*(?:u\.?s\.?|united\s*states)'
+    r'|authorized\s*to\s*work\s*in\s*the\s*u\.?s\.?\s*without\s*(?:visa\s*)?sponsorship'
+    r'|(?:no|unable\s*to\s*provide)\s*(?:visa\s*)?sponsorship'
+    r'|this\s*(?:role|position|job)\s*is\s*(?:only\s*)?(?:open|available)\s*to\s*(?:u\.?s\.?|united\s*states)\s*(?:residents|candidates)'
+    r'|u\.?s\.?\s*work\s*authorization\s*required'
+    r')\b', re.IGNORECASE
+)
+UK_ONLY_RE = re.compile(
+    r'\b(uk\s*residents?\s*only|u\.?k\.?\s*citizens?\s*only'
+    r'|must\s*be\s*(?:based|located)\s*in\s*the\s*uk\b'
+    r'|right\s*to\s*work\s*in\s*the\s*uk\s*(?:is\s*)?required'
+    r')\b', re.IGNORECASE
+)
+
+def is_region_restricted(text):
+    """True si el texto deja claro que la oferta está cerrada a un país
+    fuera de España/UE (EEUU o Reino Unido en sus formas más habituales)."""
+    return bool(US_ONLY_RE.search(text) or UK_ONLY_RE.search(text))
+
 def classify_job(title, description=""):
     if EXCLUSIONS.search(title):
+        return None
+    if is_region_restricted(f"{title} {description}"):
         return None
     if EXACT_PATTERNS.search(title):
         return "exactMatch"

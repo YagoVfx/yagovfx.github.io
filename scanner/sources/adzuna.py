@@ -31,6 +31,7 @@ import logging
 import difflib
 import re
 import requests
+from datetime import datetime, timezone, timedelta
 from ..filters import classify_job, detect_workplace, detect_remote_scope
 from ..adapters.base import HEADERS, TIMEOUT
 from ..company_category import classify_company_category
@@ -40,6 +41,26 @@ logger = logging.getLogger(__name__)
 DEFAULT_COUNTRIES = ["gb", "us", "de", "fr", "nl", "ca", "es", "se"]
 RESULTS_PER_PAGE = 20
 MAX_PAGES_PER_COUNTRY = 2
+
+# Adzuna es un índice de búsqueda agregado, no la fuente original: puede
+# devolver anuncios que llevan meses cerrados o reindexados. A diferencia
+# de un ATS directo (Greenhouse, Lever...), donde "está en la respuesta"
+# ya significa "sigue publicado ahora mismo" por definición, aquí hace
+# falta comprobar la fecha nosotros mismos. 45 días cubre de sobra el
+# tiempo de vida normal de una oferta sin arrastrar basura vieja.
+MAX_JOB_AGE_DAYS = 45
+
+
+def _job_age_days(created: str) -> float | None:
+    if not created:
+        return None
+    try:
+        dt = datetime.fromisoformat(created.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+    except (ValueError, TypeError):
+        return None
+    return (datetime.now(timezone.utc) - dt).total_seconds() / 86400
 
 # Corporate suffixes stripped before comparing two company names, so e.g.
 # "CD Projekt Red S.A." and "CD Projekt RED" compare more fairly.
@@ -127,6 +148,12 @@ def fetch_adzuna_jobs(query: str = "VFX artist", countries: list[str] | None = N
                 if not match:
                     continue
 
+                created = j.get("created", "")
+                age_days = _job_age_days(created)
+                if age_days is not None and age_days > MAX_JOB_AGE_DAYS:
+                    logger.info(f"[Adzuna] Skipping stale listing ({age_days:.0f}d old): {title} @ {j.get('company', {}).get('display_name', '?')}")
+                    continue
+
                 loc = (j.get("location") or {}).get("display_name", "")
                 company = (j.get("company") or {}).get("display_name", "Unknown")
                 wt = detect_workplace(title, loc, description[:200])
@@ -144,6 +171,7 @@ def fetch_adzuna_jobs(query: str = "VFX artist", countries: list[str] | None = N
                     "matchType": match,
                     "companyCategory": classify_company_category(company),
                     "viaAggregator": True,
+                    "postedDate": created or None,
                     "status": "active",
                 })
 

@@ -36,6 +36,13 @@ class RecruiteeAdapter(BaseAdapter):
         if not api_url:
             logger.error(f"[Recruitee] Cannot build API URL from {self.careers_url}")
             return []
+        # Mismo origen (scheme+host) que la API que SÍ acabamos de usar con
+        # éxito, para construir la URL de cada oferta nosotros mismos — no
+        # depender del campo "careers_url" de cada oferta, que para algunas
+        # empresas viene vacío o apunta al dominio genérico recruitee.com
+        # en vez de a la empresa (visto en producción con una oferta real:
+        # el enlace llevaba a https://recruitee.com/ sin más).
+        job_origin = api_url.rsplit("/api/offers/", 1)[0]
 
         r = http_get(api_url)
         if not r:
@@ -65,7 +72,9 @@ class RecruiteeAdapter(BaseAdapter):
             rs = detect_remote_scope(title, loc)
 
             slug = j.get("slug", "") or j.get("id", title)
-            careers_page_url = j.get("careers_url", "") or ""
+            careers_page_url = f"{job_origin}/o/{slug}" if slug else (j.get("careers_url", "") or "")
+            if not careers_page_url or careers_page_url == "https://recruitee.com/":
+                careers_page_url = j.get("careers_url", "") or job_origin
             jobs.append(self.normalize({
                 "id": f"rc-{re.sub(r'[^a-z0-9]', '-', str(slug).lower())[-40:]}",
                 "title": title,
