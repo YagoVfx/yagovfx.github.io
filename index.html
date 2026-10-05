@@ -863,22 +863,37 @@ option{background:var(--bg2);}
 .rl-bolt path{fill:none;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke;}
 .rl-bolt-glow{stroke:currentColor;stroke-width:calc(6px * (1 + var(--lbl,0) * .8));opacity:min(1,calc(.6 + var(--lbl,0) * .15));filter:blur(calc(3px + var(--lbl,0) * 3px));}
 .rl-bolt-core{stroke:#fff;stroke-width:1.6;}
-/* Fuego: cada "llama" es un racimo de lenguas puntiagudas (más ruido = más lenguas
-   y más irregulares) con parpadeo propio, en vez de un único blob liso tipo vela.
-   --fj = ruido, --fi = opacidad, --fbl = exceso de intensidad sobre 1 (bloom). */
+/* Fuego: cada "llama" es un racimo de lenguas puntiagudas (más ruido de forma =
+   más lenguas y más irregulares) con parpadeo propio, en vez de un único blob
+   liso tipo vela. Tres animaciones INDEPENDIENTES, cada una con su propia
+   duración/controlador, para que se puedan combinar sin pisarse:
+   .rl-flame (contenedor) = crecer/encogerse entero, como respira una llama real.
+   .rl-flame-fx (envoltorio interno) = vaivén lateral + lleva el filtro de ruido.
+   .rl-tongue (cada lengua) = su propio parpadeo de forma, ya existía.
+   --fj = ruido de forma, --fi = opacidad, --fbl = bloom, --gr = cantidad de
+   crecimiento, --flt = tinte de color según --tint para que combine con la escena. */
 .rl-flame{position:absolute;bottom:-3vh;transform-origin:50% 100%;opacity:var(--fi,1);
-  filter:blur(calc(2px + var(--fj,1) * 1px));
-  animation-name:rlFlame;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
-.rl-flame-bloom{filter:blur(calc(2px + var(--fj,1) * 1px)) brightness(calc(1 + var(--fbl,0) * .5)) drop-shadow(0 0 calc(var(--fbl,0) * 16px) rgba(255,120,30,calc(var(--fbl,0) * .6)));}
+  animation-name:rlFlameGrow;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
+.rl-flame-bloom{filter:brightness(calc(1 + var(--fbl,0) * .5)) drop-shadow(0 0 calc(var(--fbl,0) * 16px) rgba(255,120,30,calc(var(--fbl,0) * .6)));}
 /* Envoltorio interno: aquí se engancha el filtro SVG de ruido (textura de la
-   propia llama, no solo la silueta), separado del blur/bloom del contenedor
-   para que uno no pise al otro. */
-.rl-flame-fx{position:absolute;inset:0;}
+   propia llama, no solo la silueta) Y el vaivén lateral — separado del
+   contenedor para que el crecimiento y el vaivén tengan cada uno su propia
+   velocidad sin pisarse (dos transforms independientes en dos elementos). */
+.rl-flame-fx{position:absolute;inset:0;transform-origin:50% 100%;
+  filter:blur(calc(2px + var(--fj,1) * 1px));
+  animation-name:rlFlameSway;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
 .rl-tongue{position:absolute;bottom:0;transform-origin:50% 100%;mix-blend-mode:screen;
   clip-path:polygon(50% 0%,62% 22%,80% 45%,94% 72%,100% 100%,0% 100%,6% 72%,20% 45%,38% 22%);
   background:linear-gradient(0deg,#fff3b8 0%,#ffc24a 24%,#ff6a1f 58%,rgba(255,50,0,0) 100%);
   animation-name:rlTongue;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
-@keyframes rlFlame{
+/* Crecer/encogerse: escala vertical (alarga/acorta la llama) + un pelín de
+   horizontal en sentido contrario (al estirarse, una llama real se afina). */
+@keyframes rlFlameGrow{
+  0%,100%{transform:scaleY(1) scaleX(1);}
+  35%{transform:scaleY(calc(1 + var(--gr,0))) scaleX(calc(1 - var(--gr,0) * .35));}
+  70%{transform:scaleY(calc(1 - var(--gr,0) * .55)) scaleX(calc(1 + var(--gr,0) * .2));}
+}
+@keyframes rlFlameSway{
   0%,100%{transform:skewX(0deg);opacity:var(--fi,1);}
   30%{transform:skewX(calc(2deg * var(--fj,1))) translateY(-1%);opacity:calc(var(--fi,1) * .85);}
   60%{transform:skewX(calc(-3deg * var(--fj,1)));opacity:var(--fi,1);}
@@ -903,9 +918,19 @@ option{background:var(--bg2);}
    Se anima solo la opacidad del conjunto: sube (se posa), aguanta, baja (se
    derrite) y vuelve a empezar — sin física real, pero lee como acumulación. */
 .rl-snowcap{position:absolute;inset:0;display:block;color:transparent;pointer-events:none;user-select:none;z-index:2;
-  text-shadow:0 -2px 0 #fff,-1px -3px 0 #fff,1px -3px 0 #fff,
-    -2px -4px 1px rgba(255,255,255,.85),2px -4px 1px rgba(255,255,255,.85),
-    0 -6px 3px rgba(255,255,255,.55);
+  /* En em, no en px: un desplazamiento fijo de 2-8px es invisible al lado
+     de un título de 100-150px (el bug real). En em escala con el tamaño
+     real del título siempre. Primero una línea de contacto oscura pegada
+     al borde (para que se note AUNQUE el título ya sea blanco — si no,
+     "nieve blanca sobre letra blanca" no se distingue de nada) y luego
+     el volumen blanco de la nieve por encima de eso. */
+  text-shadow:
+    0 -.03em 0 rgba(10,14,22,.55),
+    0 -.05em 0 #fff,
+    -.035em -.09em 0 #fff,.035em -.09em 0 #fff,
+    -.07em -.14em .02em rgba(255,255,255,.92),.07em -.14em .02em rgba(255,255,255,.92),
+    0 -.2em .09em rgba(255,255,255,.7),
+    0 -.28em .16em rgba(214,228,255,.42);
   opacity:0;animation-name:rlSnowPile;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
 @keyframes rlSnowPile{
   0%{opacity:0;}
@@ -2226,6 +2251,8 @@ const REEL_FX_DEFAULTS={
   smokeOn:true,  smokeCount:6, smokeSpeedMin:1.5, smokeSpeedMax:4, smokeAngle:22, smokeSpread:10, smokeSizeMin:180, smokeSizeMax:340, smokeIntMin:0.8, smokeIntMax:1.2, smokeNoise:1.2,
   lightningOn:false, lightningCount:2, lightningBoltPct:70, lightningIntervalMin:6, lightningIntervalMax:16, lightningSizeMin:55, lightningSizeMax:100, lightningIntMin:0.35, lightningIntMax:0.7, lightningColor:'#bcd4ff',
   fireOn:false,  fireCount:16, fireNoise:1.5, fireTexNoise:1.2, fireGlow:1, fireHeightMin:18, fireHeightMax:42, fireWidthMin:90, fireWidthMax:220, fireDurMin:0.9, fireDurMax:2.4, fireIntMin:0.55, fireIntMax:1,
+  fireFlowSpeedMin:2, fireFlowSpeedMax:5, fireFlowAmount:1,
+  fireGrowAmount:0.18, fireGrowSpeedMin:0.6, fireGrowSpeedMax:1.8,
   snowOn:false,  snowCount:70, snowSpeedMin:2, snowSpeedMax:9, snowAngle:270, snowSpread:18, snowSizeMin:2, snowSizeMax:7, snowPeakMin:0.4, snowPeakMax:1,
   snowPileOn:false, snowPileCycleMin:18, snowPileCycleMax:32,
 };
@@ -2262,13 +2289,17 @@ const REEL_FX_SCHEMA=[
     ['lightningIntMin','Intensidad mín (0–3)',0,3,.05],['lightningIntMax','Intensidad máx (0–3)',0,3,.05],
     ['lightningColor','Color','color']]},
   {title:'🔥 Fuego', on:'fireOn',
-   note:'Ruido de forma = cuántas lenguas irregulares forma cada llama y cuánto se retuercen (0 = llama lisa tipo vela). Ruido de textura = turbulencia DENTRO de la llama (vetas más/menos calientes, bordes lamiendo) — son independientes: puedes subir uno sin mover el otro. Intensidad por encima de 1 = más bloom.',
+   note:'Ruido de forma = cuántas lenguas irregulares forma cada llama y cuánto se retuercen (0 = llama lisa tipo vela). Ruido de textura = turbulencia DENTRO de la llama (vetas más/menos calientes, bordes lamiendo) — son independientes: puedes subir uno sin mover el otro. "Movimiento del ruido" hace que esa textura fluya con el tiempo (sube + deriva lateral aleatoria) en vez de quedarse fija — solo se nota si el ruido de textura está por encima de 0. "Crecer/encogerse" hace que la llama entera respire (se alarga y se afina, luego se acorta) de forma independiente al vaivén lateral. Intensidad por encima de 1 = más bloom.',
    fields:[
     ['fireCount','Llamas',0,60,1],['fireNoise','Ruido de forma (0–3)',0,3,.1],['fireTexNoise','Ruido de textura (0–3)',0,3,.1],
+    ['fireFlowSpeedMin','Movim. ruido — vel. mín (s)',0.3,20,.1],['fireFlowSpeedMax','Movim. ruido — vel. máx (s)',0.3,20,.1],
+    ['fireFlowAmount','Movim. ruido — distancia (0–3)',0,3,.1],
+    ['fireGrowAmount','Crecer/encogerse — cantidad (0–1.5)',0,1.5,.05],
+    ['fireGrowSpeedMin','Crecer/encogerse — vel. mín (s)',0.2,10,.1],['fireGrowSpeedMax','Crecer/encogerse — vel. máx (s)',0.2,10,.1],
     ['fireGlow','Resplandor base (0–3)',0,3,.1],
     ['fireHeightMin','Altura mín (% pantalla)',5,90,1],['fireHeightMax','Altura máx (% pantalla)',5,90,1],
     ['fireWidthMin','Ancho mín (px)',30,500,5],['fireWidthMax','Ancho máx (px)',30,500,5],
-    ['fireDurMin','Parpadeo mín (s)',0.3,8,.1],['fireDurMax','Parpadeo máx (s)',0.3,8,.1],
+    ['fireDurMin','Vaivén lateral — vel. mín (s)',0.3,8,.1],['fireDurMax','Vaivén lateral — vel. máx (s)',0.3,8,.1],
     ['fireIntMin','Intensidad mín (0–3)',0,3,.05],['fireIntMax','Intensidad máx (0–3)',0,3,.05]]},
   {title:'❄️ Nieve', on:'snowOn', note:REEL_FX_DIR_NOTE,
    extraToggle:{key:'snowPileOn',label:'Posarse en las letras grandes (título) y derretirse poco a poco'},
@@ -2421,34 +2452,44 @@ function reelFlamesHtml(c){
   for(let i=0;i<c.fireCount;i++){
     const w=rnd(c.fireWidthMin,c.fireWidthMax);
     const heightVh=rnd(c.fireHeightMin,c.fireHeightMax);
-    const dur=rnd(c.fireDurMin,c.fireDurMax);
+    const swayDur=rnd(c.fireDurMin,c.fireDurMax);     // vaivén lateral (rl-flame-fx)
+    const growDur=rnd(c.fireGrowSpeedMin,c.fireGrowSpeedMax); // crecer/encogerse (rl-flame)
     const it=reelIntensity(rnd(c.fireIntMin,c.fireIntMax));
     let t='';
     for(let k=0;k<tongues;k++){
       const tw=tongues===1?100:rnd(28,62);
-      const td=rnd(.35,1.1)*dur/1.4+.25;
+      const td=rnd(.35,1.1)*swayDur/1.4+.25;
       t+=`<div class="rl-tongue" style="left:${tongues===1?0:rnd(0,100-tw).toFixed(0)}%;width:${tw.toFixed(0)}%;height:${(tongues===1?100:rnd(48,100)).toFixed(0)}%;animation-duration:${td.toFixed(2)}s;animation-delay:${(-Math.random()*td).toFixed(2)}s;"></div>`;
     }
     // Textura de la propia llama: turbulencia → se mezcla (overlay) con el
-    // degradado para crear vetas más/menos calientes, y esa misma
-    // turbulencia se usa para desplazar el resultado (bordes lamiendo,
-    // no solo la silueta poligonal). Sin ruido (0) no se genera filtro,
-    // así una llama "lisa" no paga ningún coste extra.
+    // degradado para crear vetas más/menos calientes, esa misma turbulencia
+    // desplaza el resultado (bordes lamiendo), Y ADEMÁS se panea con el
+    // tiempo (feOffset animado por SMIL: sube + un poco de deriva lateral
+    // aleatoria) para que el patrón de ruido fluya, no se quede fijo.
+    // Sin ruido de textura (0) no se genera filtro ni animación extra.
     let fx='';
     if(c.fireTexNoise>0.05){
       const id='rlft'+(reelFxUid++), seed=Math.floor(Math.random()*900)+1;
       const hpx=Math.max(40,heightVh*7); // px aprox. para escalar la frecuencia
       const fX=(3.2/w).toFixed(5), fY=(fX*0.3).toFixed(5);
       const disp=Math.min(w,hpx)*0.16*c.fireTexNoise;
+      const flowDur=rnd(c.fireFlowSpeedMin,c.fireFlowSpeedMax);
+      const flowDist=Math.min(w,hpx)*0.5*c.fireFlowAmount;
+      const dyVals=`0;${(-flowDist).toFixed(0)};${(-flowDist*0.45).toFixed(0)};${(-flowDist*1.2).toFixed(0)};0`;
+      const dxVals=`0;${(flowDist*0.22).toFixed(0)};${(-flowDist*0.15).toFixed(0)};${(flowDist*0.1).toFixed(0)};0`;
       defs+=`<filter id="${id}" x="-40%" y="-20%" width="180%" height="140%" color-interpolation-filters="sRGB">`
         +`<feTurbulence type="fractalNoise" baseFrequency="${fX} ${fY}" numOctaves="3" seed="${seed}" result="n"/>`
-        +`<feColorMatrix in="n" type="saturate" values="0" result="ng"/>`
+        +`<feOffset in="n" dx="0" dy="0" result="nMoved">`
+        +`<animate attributeName="dy" values="${dyVals}" dur="${flowDur.toFixed(1)}s" repeatCount="indefinite"/>`
+        +`<animate attributeName="dx" values="${dxVals}" dur="${(flowDur*1.6).toFixed(1)}s" repeatCount="indefinite"/>`
+        +`</feOffset>`
+        +`<feColorMatrix in="nMoved" type="saturate" values="0" result="ng"/>`
         +`<feBlend in="SourceGraphic" in2="ng" mode="overlay" result="lit"/>`
         +`<feComposite in="lit" in2="SourceGraphic" operator="in" result="tex"/>`
-        +`<feDisplacementMap in="tex" in2="n" scale="${disp.toFixed(0)}" xChannelSelector="R" yChannelSelector="G"/></filter>`;
-      fx=`filter:url(#${id});`;
+        +`<feDisplacementMap in="tex" in2="nMoved" scale="${disp.toFixed(0)}" xChannelSelector="R" yChannelSelector="G"/></filter>`;
+      fx=`filter:url(#${id}) blur(calc(2px + var(--fj,1) * 1px));`;
     }
-    o+=`<div class="rl-flame${it.isBloom?' rl-flame-bloom':''}" style="left:${rnd(-2,102).toFixed(1)}%;margin-left:${(-w/2).toFixed(0)}px;width:${w.toFixed(0)}px;height:${heightVh.toFixed(0)}vh;animation-duration:${dur.toFixed(2)}s;animation-delay:${(-Math.random()*dur).toFixed(2)}s;--fi:${it.peak};--fbl:${it.bloom};--fj:${c.fireNoise.toFixed(2)};"><div class="rl-flame-fx" style="${fx}">${t}</div></div>`;
+    o+=`<div class="rl-flame${it.isBloom?' rl-flame-bloom':''}" style="left:${rnd(-2,102).toFixed(1)}%;margin-left:${(-w/2).toFixed(0)}px;width:${w.toFixed(0)}px;height:${heightVh.toFixed(0)}vh;animation-duration:${growDur.toFixed(2)}s;animation-delay:${(-Math.random()*growDur).toFixed(2)}s;--fi:${it.peak};--fbl:${it.bloom};--fj:${c.fireNoise.toFixed(2)};--gr:${c.fireGrowAmount.toFixed(2)};"><div class="rl-flame-fx" style="${fx}animation-duration:${swayDur.toFixed(2)}s;animation-delay:${(-Math.random()*swayDur).toFixed(2)}s;">${t}</div></div>`;
   }
   return (defs?`<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs}</defs></svg>`:'')+o;
 }
