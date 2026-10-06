@@ -884,8 +884,19 @@ option{background:var(--bg2);}
   animation-name:rlFlameSway;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
 .rl-tongue{position:absolute;bottom:0;transform-origin:50% 100%;mix-blend-mode:screen;
   clip-path:polygon(50% 0%,62% 22%,80% 45%,94% 72%,100% 100%,0% 100%,6% 72%,20% 45%,38% 22%);
-  background:linear-gradient(0deg,#fff3b8 0%,#ffc24a 24%,#ff6a1f 58%,rgba(255,50,0,0) 100%);
+  background:linear-gradient(0deg,#fff6d8 0%,#ffcf6b 14%,#ff9a3c 32%,#ff5a1f 56%,rgba(200,30,0,.55) 80%,rgba(255,50,0,0) 100%);
   animation-name:rlTongue;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
+/* Núcleo caliente: una segunda forma, más pequeña, clara y por encima (en
+   mezcla "screen"), pegada a la base de la llama — es lo que de verdad
+   distingue una llama real de un triángulo naranja: el centro va más
+   blanco/amarillo que los bordes. Una por llama (no por lengua, para no
+   multiplicar elementos), hereda la duración de rl-flame-fx vía "inherit". */
+.rl-flame-core{position:absolute;bottom:0;left:50%;width:46%;height:72%;transform:translateX(-50%);
+  border-radius:50% 50% 45% 45%/75% 75% 25% 25%;
+  background:linear-gradient(0deg,#fff 0%,#fff3c0 30%,rgba(255,190,70,.5) 65%,rgba(255,150,40,0) 100%);
+  mix-blend-mode:screen;opacity:var(--ci,.85);filter:blur(1.5px);
+  animation-name:rlFlameCore;animation-duration:inherit;animation-timing-function:ease-in-out;animation-iteration-count:infinite;}
+@keyframes rlFlameCore{0%,100%{transform:translateX(-50%) scaleY(1);}50%{transform:translateX(-50%) scaleY(1.18);}}
 /* Crecer/encogerse: escala vertical (alarga/acorta la llama) + un pelín de
    horizontal en sentido contrario (al estirarse, una llama real se afina). */
 @keyframes rlFlameGrow{
@@ -900,18 +911,31 @@ option{background:var(--bg2);}
   80%{transform:skewX(calc(1.5deg * var(--fj,1))) translateY(-2%);opacity:calc(var(--fi,1) * .92);}
 }
 @keyframes rlTongue{
-  0%,100%{transform:scale(1,1) skewX(0deg);}
-  30%{transform:scale(calc(1 - .1 * var(--fj,1)),calc(1 + .22 * var(--fj,1))) skewX(calc(6deg * var(--fj,1)));}
-  65%{transform:scale(calc(1 + .08 * var(--fj,1)),calc(1 - .18 * var(--fj,1))) skewX(calc(-7deg * var(--fj,1)));}
+  0%,100%{clip-path:polygon(50% 0%,62% 22%,80% 45%,94% 72%,100% 100%,0% 100%,6% 72%,20% 45%,38% 22%);
+    transform:scale(1,1) skewX(0deg);}
+  25%{clip-path:polygon(50% calc(0% - 3.2% * var(--fj,1)),62% calc(22% - 6.3% * var(--fj,1)),80% calc(45% + 2.7% * var(--fj,1)),94% calc(72% - 7.7% * var(--fj,1)),100% 100%,0% 100%,6% calc(72% + .6% * var(--fj,1)),20% calc(45% - 2.4% * var(--fj,1)),38% calc(22% - 8% * var(--fj,1)));
+    transform:scale(calc(1 - .1 * var(--fj,1)),calc(1 + .16 * var(--fj,1))) skewX(calc(5deg * var(--fj,1)));}
+  55%{clip-path:polygon(50% calc(0% + .1% * var(--fj,1)),62% calc(22% - 8.3% * var(--fj,1)),80% calc(45% - 1.2% * var(--fj,1)),94% calc(72% - 7.7% * var(--fj,1)),100% 100%,0% 100%,6% calc(72% - 7.4% * var(--fj,1)),20% calc(45% - 1.4% * var(--fj,1)),38% calc(22% + 5.9% * var(--fj,1)));
+    transform:scale(calc(1 + .06 * var(--fj,1)),calc(1 - .14 * var(--fj,1))) skewX(calc(-6deg * var(--fj,1)));}
+  80%{clip-path:polygon(50% calc(0% - 6.8% * var(--fj,1)),62% calc(22% - 5% * var(--fj,1)),80% calc(45% + 2.3% * var(--fj,1)),94% calc(72% + 8.1% * var(--fj,1)),100% 100%,0% 100%,6% calc(72% + 1.4% * var(--fj,1)),20% calc(45% - 1.9% * var(--fj,1)),38% calc(22% + 8.6% * var(--fj,1)));
+    transform:scale(calc(1 - .05 * var(--fj,1)),calc(1 + .08 * var(--fj,1))) skewX(calc(3deg * var(--fj,1)));}
 }
 .rl-fire-glow{position:absolute;left:0;right:0;bottom:0;height:34vh;mix-blend-mode:screen;
   background:linear-gradient(0deg,rgba(255,110,30,calc(.45 * var(--gi,1))),rgba(255,70,0,calc(.18 * var(--gi,1))) 45%,transparent);
   animation:rlGlowPulse 3.2s ease-in-out infinite;}
 @keyframes rlGlowPulse{0%,100%{opacity:.75;}50%{opacity:1;}}
-.rl-snow{position:absolute;top:0;left:0;border-radius:50%;filter:blur(.4px);
-  background:radial-gradient(circle,rgba(255,255,255,.95),rgba(255,255,255,.25) 70%,transparent);
-  animation-name:rlEmberDrift;animation-timing-function:linear;animation-iteration-count:infinite;}
-.rl-snow-bloom{filter:blur(.4px) brightness(calc(1 + var(--bloom,0) * .6)) drop-shadow(0 0 calc(var(--bloom,0) * 6px) rgba(255,255,255,.8));}
+/* Tres "especies" de copo en vez de un único círculo repetido — cada una
+   con su propia silueta, y la de cristal además con sus picos jitterados
+   por instancia (cada copo literalmente distinto, no una copia). */
+.rl-snow{position:absolute;top:0;left:0;animation-name:rlEmberDrift;animation-timing-function:linear;animation-iteration-count:infinite;}
+.rl-snow-soft{border-radius:50%;filter:blur(.5px);
+  background:radial-gradient(circle,rgba(255,255,255,.95),rgba(255,255,255,.25) 70%,transparent);}
+.rl-snow-crystal{background:rgba(255,255,255,.9);filter:drop-shadow(0 0 1px rgba(255,255,255,.5));}
+.rl-snow-chunk{filter:blur(.3px);
+  background:radial-gradient(circle,rgba(255,255,255,.92),rgba(235,240,250,.55) 65%,transparent);}
+.rl-snow-soft.rl-snow-bloom{filter:blur(.5px) brightness(calc(1 + var(--bloom,0) * .6)) drop-shadow(0 0 calc(var(--bloom,0) * 6px) rgba(255,255,255,.8));}
+.rl-snow-crystal.rl-snow-bloom{filter:brightness(calc(1 + var(--bloom,0) * .6)) drop-shadow(0 0 calc(1px + var(--bloom,0) * 6px) rgba(255,255,255,.8));}
+.rl-snow-chunk.rl-snow-bloom{filter:blur(.3px) brightness(calc(1 + var(--bloom,0) * .6)) drop-shadow(0 0 calc(var(--bloom,0) * 6px) rgba(255,255,255,.8));}
 /* Nieve posada sobre el texto: una copia transparente del mismo texto, con
    el "casquete" dibujado solo como sombras blancas hacia arriba (no rellena
    la letra, solo se asoma por encima, como nieve posada en el borde).
@@ -2489,12 +2513,32 @@ function reelFlamesHtml(c){
         +`<feDisplacementMap in="tex" in2="nMoved" scale="${disp.toFixed(0)}" xChannelSelector="R" yChannelSelector="G"/></filter>`;
       fx=`filter:url(#${id}) blur(calc(2px + var(--fj,1) * 1px));`;
     }
-    o+=`<div class="rl-flame${it.isBloom?' rl-flame-bloom':''}" style="left:${rnd(-2,102).toFixed(1)}%;margin-left:${(-w/2).toFixed(0)}px;width:${w.toFixed(0)}px;height:${heightVh.toFixed(0)}vh;animation-duration:${growDur.toFixed(2)}s;animation-delay:${(-Math.random()*growDur).toFixed(2)}s;--fi:${it.peak};--fbl:${it.bloom};--fj:${c.fireNoise.toFixed(2)};--gr:${c.fireGrowAmount.toFixed(2)};"><div class="rl-flame-fx" style="${fx}animation-duration:${swayDur.toFixed(2)}s;animation-delay:${(-Math.random()*swayDur).toFixed(2)}s;">${t}</div></div>`;
+    const core=`<div class="rl-flame-core" style="--ci:${(parseFloat(it.peak)*0.9).toFixed(2)};"></div>`;
+    o+=`<div class="rl-flame${it.isBloom?' rl-flame-bloom':''}" style="left:${rnd(-2,102).toFixed(1)}%;margin-left:${(-w/2).toFixed(0)}px;width:${w.toFixed(0)}px;height:${heightVh.toFixed(0)}vh;animation-duration:${growDur.toFixed(2)}s;animation-delay:${(-Math.random()*growDur).toFixed(2)}s;--fi:${it.peak};--fbl:${it.bloom};--fj:${c.fireNoise.toFixed(2)};--gr:${c.fireGrowAmount.toFixed(2)};"><div class="rl-flame-fx" style="${fx}animation-duration:${swayDur.toFixed(2)}s;animation-delay:${(-Math.random()*swayDur).toFixed(2)}s;">${t}${core}</div></div>`;
   }
   return (defs?`<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>${defs}</defs></svg>`:'')+o;
 }
 
 /* Contenido de la capa de una sección: humo y fuego al fondo, chispas encima, relámpagos arriba. */
+/* Silueta de "cristal" de nieve: estrella de 12 puntas (6 largas + 6 cortas
+   alternadas) con cada radio jitterado al azar — así cada copo-cristal
+   tiene un contorno genuinamente distinto, no una copia del mismo SVG. */
+function reelSnowCrystalPath(){
+  const pts=[];
+  for(let i=0;i<12;i++){
+    const outer=i%2===0;
+    const r=(outer?46:19)+rnd(-7,7);
+    const rad=i*30*Math.PI/180;
+    pts.push(`${(50+r*Math.cos(rad)).toFixed(1)}% ${(50+r*Math.sin(rad)).toFixed(1)}%`);
+  }
+  return `polygon(${pts.join(',')})`;
+}
+/* "Trozo" orgánico: blob con las 4 esquinas de border-radius jitteradas,
+   igual de técnica que ya usamos en el humo. */
+function reelSnowChunkRadius(){
+  const r=()=>`${(40+rnd(-15,15)).toFixed(0)}%`;
+  return `${r()} ${r()} ${r()} ${r()}/${r()} ${r()} ${r()} ${r()}`;
+}
 function reelSnowHtml(c){
   let o='';
   for(let i=0;i<c.snowCount;i++){
@@ -2502,9 +2546,21 @@ function reelSnowHtml(c){
     const v=reelDirVec(c.snowAngle,c.snowSpread,L);
     const dur=L/rnd(c.snowSpeedMin,c.snowSpeedMax);
     const it=reelIntensity(rnd(c.snowPeakMin,c.snowPeakMax));
-    const size=rnd(c.snowSizeMin,c.snowSizeMax).toFixed(1);
+    const size=rnd(c.snowSizeMin,c.snowSizeMax);
     const pos=`left:calc(${(Math.random()*100).toFixed(1)}% - ${(v.dx/2).toFixed(1)}vmax);top:calc(${(Math.random()*100).toFixed(1)}% - ${(v.dy/2).toFixed(1)}vmax);`;
-    o+=`<div class="rl-snow${it.isBloom?' rl-snow-bloom':''}" style="${pos}width:${size}px;height:${size}px;animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${v.dx.toFixed(1)}vmax;--dy:${v.dy.toFixed(1)}vmax;--peak:${it.peak};--bloom:${it.bloom};"></div>`;
+    const anim=`animation-duration:${dur.toFixed(1)}s;animation-delay:${(-Math.random()*dur).toFixed(1)}s;--dx:${v.dx.toFixed(1)}vmax;--dy:${v.dy.toFixed(1)}vmax;--peak:${it.peak};--bloom:${it.bloom};`;
+    const roll=Math.random();
+    let cls,extra='';
+    if(roll<0.45){
+      cls='rl-snow-soft';
+    }else if(roll<0.8){
+      cls='rl-snow-crystal';
+      extra=`clip-path:${reelSnowCrystalPath()};transform:rotate(${rnd(0,360).toFixed(0)}deg);`;
+    }else{
+      cls='rl-snow-chunk';
+      extra=`border-radius:${reelSnowChunkRadius()};`;
+    }
+    o+=`<div class="rl-snow ${cls}${it.isBloom?' rl-snow-bloom':''}" style="${pos}width:${size.toFixed(1)}px;height:${(size*(cls==='rl-snow-chunk'?rnd(0.75,1.15):1)).toFixed(1)}px;${extra}${anim}"></div>`;
   }
   return o;
 }
@@ -2563,7 +2619,19 @@ function reelFxOwn(){
   D.reelFx=D.reelFx||{};
   return (D.reelFx[reelFxEditKey]=D.reelFx[reelFxEditKey]||{});
 }
-function reelFxCommit(){save();reelApplyFx(reelFxEditKey);loadReelFxForm();}
+function reelFxCommit(){
+  save();
+  // OJO: antes esto llamaba solo a reelApplyFx(), que repinta las capas de
+  // partículas (.rl-fx) pero NUNCA toca los <h1>/<h2> — y la "gorra de
+  // nieve" vive metida DENTRO del título, generada una vez en
+  // renderReelSkin(). Por eso activar "posarse en las letras" no se veía:
+  // la opción se guardaba bien, pero el título ya renderizado no se
+  // enteraba. renderReelSkin() reconstruye toda la página de Reel
+  // (incluidos los títulos), así que esto cubre cualquier ajuste,
+  // presente o futuro, que afecte a algo que no sea una partícula suelta.
+  renderReelSkin();
+  loadReelFxForm();
+}
 function setReelFx(key,val){
   const own=reelFxOwn();
   if(key==='lightningColor')own[key]=val;
