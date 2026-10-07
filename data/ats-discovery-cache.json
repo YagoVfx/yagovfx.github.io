@@ -490,5 +490,15 @@
   "gloss studio": {
     "found": false,
     "checkedAt": 1791310648.6620467
+  },
+  "amanotes": {
+    "found": true,
+    "ats": "lever",
+    "careersUrl": "https://jobs.lever.co/amanotes",
+    "checkedAt": 1791351700.7819967
+  },
+  "meme house la, inc": {
+    "found": false,
+    "checkedAt": 1791351701.549136
   }
 }
