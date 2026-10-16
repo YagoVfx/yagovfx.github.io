@@ -449,7 +449,7 @@
   },
   "el ranchito": {
     "found": false,
-    "checkedAt": 1790918624.7419953
+    "checkedAt": 1792149168.2858124
   },
   "gameloft": {
     "found": true,
@@ -524,5 +524,11 @@
   "impleo": {
     "found": false,
     "checkedAt": 1792063087.3493555
+  },
+  "escape velocity entertainment": {
+    "found": true,
+    "ats": "ashby",
+    "careersUrl": "https://jobs.ashbyhq.com/escape",
+    "checkedAt": 1792149160.5750391
   }
 }
