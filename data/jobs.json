@@ -1,24 +1,20 @@
 {
-  "lastUpdated": "2026-10-20T11:23:53Z",
+  "lastUpdated": "2026-10-20T16:47:44Z",
   "companiesScanned": 23,
-  "companiesSucceeded": 18,
-  "companiesFailed": 5,
-  "totalVfxJobs": 64,
+  "companiesSucceeded": 19,
+  "companiesFailed": 4,
+  "totalVfxJobs": 63,
   "jobsByAts": {
-    "smartrecruiters": 17,
+    "smartrecruiters": 10,
     "massive-wp": 3,
     "custom": 1,
-    "adzuna-signal": 4,
-    "greenhouse": 7,
-    "adzuna": 18,
-    "recruitee": 6,
-    "workable": 2,
-    "personio": 3,
-    "lever": 1,
-    "ashby": 2
+    "adzuna-signal": 5,
+    "adzuna": 44
   },
   "jobs": [
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "sr-744000155548950",
       "company": "CD Project",
       "title": "Lead VFX Artist",
@@ -31,10 +27,12 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-10-14T17:00:31Z",
-      "lastSeen": "2026-10-20T11:22:32Z",
+      "lastSeen": "2026-10-20T16:47:20Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "sr-744000152943445",
       "company": "CD Project",
       "title": "Senior VFX Artist",
@@ -47,10 +45,12 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-10-01T22:35:51Z",
-      "lastSeen": "2026-10-20T11:22:32Z",
+      "lastSeen": "2026-10-20T16:47:20Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "sr-744000155791859",
       "company": "Ubisoft",
       "title": "Partenaire d'affaires RH - Hybride VFX ",
@@ -63,10 +63,12 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-10-15T16:49:00Z",
-      "lastSeen": "2026-10-20T11:22:44Z",
+      "lastSeen": "2026-10-20T16:47:32Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "sr-744000154392949",
       "company": "Ubisoft",
       "title": "VFX Artist Intern",
@@ -79,10 +81,12 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-10-08T13:17:07Z",
-      "lastSeen": "2026-10-20T11:22:44Z",
+      "lastSeen": "2026-10-20T16:47:32Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "sr-744000153412618",
       "company": "Ubisoft",
       "title": "Senior VFX Artist [Tom Clancy's The Division 3]",
@@ -95,10 +99,12 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-10-05T14:23:59Z",
-      "lastSeen": "2026-10-20T11:22:44Z",
+      "lastSeen": "2026-10-20T16:47:32Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "sr-744000148330865",
       "company": "Ubisoft",
       "title": "VFX Artist (Assassin's Creed Invictus)",
@@ -111,10 +117,12 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-09-08T21:02:43Z",
-      "lastSeen": "2026-10-20T11:22:44Z",
+      "lastSeen": "2026-10-20T16:47:32Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "sr-744000146473011",
       "company": "Ubisoft",
       "title": "HR Business Partner - Hybride VFX",
@@ -127,10 +135,12 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-31T22:44:50Z",
-      "lastSeen": "2026-10-20T11:22:44Z",
+      "lastSeen": "2026-10-20T16:47:32Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "sr-744000145799549",
       "company": "Ubisoft",
       "title": "VFX Artist (Splinter Cell Remake)",
@@ -143,10 +153,12 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-26T19:56:12Z",
-      "lastSeen": "2026-10-20T11:22:44Z",
+      "lastSeen": "2026-10-20T16:47:32Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "sr-744000135273552",
       "company": "Ubisoft",
       "title": "FX Artist",
@@ -159,10 +171,12 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-20T11:22:44Z",
+      "lastSeen": "2026-10-20T16:47:32Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "sr-744000131860128",
       "company": "Ubisoft",
       "title": "Senior VFX Artist [Tom Clancy's The Division 2: Survivors]",
@@ -175,10 +189,12 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-20T11:22:44Z",
+      "lastSeen": "2026-10-20T16:47:32Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "mwp-e-job-senior-vfx-artist-744000131860128-",
       "company": "Massive",
       "title": "Senior VFX Artist",
@@ -191,10 +207,12 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:17:29Z",
-      "lastSeen": "2026-10-20T11:23:35Z",
+      "lastSeen": "2026-10-20T16:47:34Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "mwp-e-job-senior-vfx-artist-744000153412618-",
       "company": "Massive",
       "title": "Senior VFX Artist",
@@ -207,10 +225,12 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-10-05T14:24:00Z",
-      "lastSeen": "2026-10-20T11:23:35Z",
+      "lastSeen": "2026-10-20T16:47:34Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "mwp-ssive-se-job-vfx-artist-744000145799549-",
       "company": "Massive",
       "title": "VFX Artist",
@@ -223,10 +243,12 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-10-01T12:59:56Z",
-      "lastSeen": "2026-10-20T11:23:35Z",
+      "lastSeen": "2026-10-20T16:47:34Z",
       "status": "active"
     },
     {
+      "spainEligibility": "unknown",
+      "eligibilityReason": "Remote-from-Spain and employment terms not confirmed",
       "id": "ch--com-en-ca-eic-candidateportal-jobs-2358",
       "company": "EidosMontreal",
       "title": "VFX Artist Montréal, QC, CAN",
@@ -239,7 +261,24 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-10-09T22:32:50Z",
-      "lastSeen": "2026-10-20T11:23:41Z",
+      "lastSeen": "2026-10-20T16:47:40Z",
+      "status": "active"
+    },
+    {
+      "id": "sig-ci-games",
+      "company": "CI Games",
+      "title": "Posible oferta VFX detectada — ver listado completo",
+      "url": "https://cigames.teamtailor.com",
+      "location": "",
+      "workplaceType": "unknown",
+      "remoteScope": "unknown",
+      "ats": "adzuna-signal",
+      "matchType": "possibleMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "signalOnly": true,
+      "firstSeen": "2026-10-20T16:47:44Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "active"
     },
     {
@@ -256,7 +295,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:19:41Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "active"
     },
     {
@@ -273,7 +312,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:30:46Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "active"
     },
     {
@@ -290,7 +329,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-08-29T16:39:23Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "active"
     },
     {
@@ -307,25 +346,26 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-08-27T09:22:59Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "active"
     },
     {
       "id": "az-5876461571",
       "company": "Airship",
       "title": "VFX Artist",
-      "url": "https://job-boards.greenhouse.io/airship",
+      "url": "https://www.adzuna.co.uk/jobs/details/5876461571?utm_medium=api&utm_source=361fafca",
       "location": "Sherrards Green, Malvern",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "greenhouse",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-09-09T02:40:31Z",
       "status": "active",
+      "discoveredCareersUrl": "https://job-boards.greenhouse.io/airship",
       "firstSeen": "2026-09-09T04:26:40Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5896919229",
@@ -342,7 +382,7 @@
       "postedDate": "2026-09-24T14:54:29Z",
       "status": "active",
       "firstSeen": "2026-09-25T04:45:37Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5921994774",
@@ -359,7 +399,7 @@
       "postedDate": "2026-10-10T11:58:01Z",
       "status": "active",
       "firstSeen": "2026-10-10T12:21:07Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5921994699",
@@ -376,13 +416,13 @@
       "postedDate": "2026-10-10T11:57:58Z",
       "status": "active",
       "firstSeen": "2026-10-10T12:21:07Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5914025515",
       "company": "Redemption Games, Inc.",
       "title": "Lead VFX Artist & Animator",
-      "url": "https://www.adzuna.com/land/ad/5914025515?se=AB8HtXjM8RGSvYUmXtLuxQ&utm_medium=api&utm_source=361fafca&v=CAC8A5B2AEF43AFD331B855B508697C23D5ACEEB",
+      "url": "https://www.adzuna.com/land/ad/5914025515?se=vIZp96XM8RGK9qbcmVZkaw&utm_medium=api&utm_source=361fafca&v=CAC8A5B2AEF43AFD331B855B508697C23D5ACEEB",
       "location": "US",
       "workplaceType": "unknown",
       "remoteScope": "US",
@@ -393,13 +433,13 @@
       "postedDate": "2026-10-06T12:25:25Z",
       "status": "active",
       "firstSeen": "2026-10-06T18:17:40Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5920153705",
       "company": "Gloss Studio",
       "title": "Beauty VFX Artist, DaVinci Resolve",
-      "url": "https://www.adzuna.com/land/ad/5920153705?se=AB8HtXjM8RGSvYUmXtLuxQ&utm_medium=api&utm_source=361fafca&v=F4ADF38ADD4FA5B4A7A42E2441889862D974F971",
+      "url": "https://www.adzuna.com/land/ad/5920153705?se=vIZp96XM8RGK9qbcmVZkaw&utm_medium=api&utm_source=361fafca&v=F4ADF38ADD4FA5B4A7A42E2441889862D974F971",
       "location": "US",
       "workplaceType": "unknown",
       "remoteScope": "US",
@@ -410,13 +450,13 @@
       "postedDate": "2026-10-09T01:15:04Z",
       "status": "active",
       "firstSeen": "2026-10-09T13:04:35Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5927882963",
       "company": "Redemption Games, Inc.",
       "title": "Lead VFX Artist & Animator (United States)",
-      "url": "https://www.adzuna.com/land/ad/5927882963?se=AB8HtXjM8RGSvYUmXtLuxQ&utm_medium=api&utm_source=361fafca&v=61C2CAC024C4172ECE2E1B63D2E101D0B829A727",
+      "url": "https://www.adzuna.com/land/ad/5927882963?se=vIZp96XM8RGK9qbcmVZkaw&utm_medium=api&utm_source=361fafca&v=61C2CAC024C4172ECE2E1B63D2E101D0B829A727",
       "location": "US",
       "workplaceType": "unknown",
       "remoteScope": "US",
@@ -427,92 +467,97 @@
       "postedDate": "2026-10-14T13:48:14Z",
       "status": "active",
       "firstSeen": "2026-10-14T21:33:19Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5899523830",
       "company": "Naughty Dog",
       "title": "VFX Artist",
-      "url": "https://job-boards.greenhouse.io/naughtydog",
+      "url": "https://www.adzuna.com/details/5899523830?utm_medium=api&utm_source=361fafca",
       "location": "Santa Monica, Los Angeles County",
       "workplaceType": "hybrid",
       "remoteScope": "Unknown",
-      "ats": "greenhouse",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "aaa",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-09-26T06:10:23Z",
       "status": "active",
+      "discoveredCareersUrl": "https://job-boards.greenhouse.io/naughtydog",
       "firstSeen": "2026-09-26T11:14:40Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5905542549",
       "company": "YO AI Labs",
       "title": "VFX Artist - Remote",
-      "url": "https://yo.recruitee.com",
+      "url": "https://www.adzuna.com/details/5905542549?utm_medium=api&utm_source=361fafca",
       "location": "New York City, New York",
       "workplaceType": "remote",
       "remoteScope": "Unknown",
-      "ats": "recruitee",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-01T07:30:59Z",
       "status": "active",
+      "discoveredCareersUrl": "https://yo.recruitee.com",
       "firstSeen": "2026-10-02T05:23:58Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5877708286",
       "company": "Velan Studios",
       "title": "VFX Artist (Lead)",
-      "url": "https://apply.workable.com/velanstudios",
+      "url": "https://www.adzuna.com/details/5877708286?utm_medium=api&utm_source=361fafca",
       "location": "Troy, Rensselaer County",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "workable",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-09-09T20:22:08Z",
       "status": "active",
+      "discoveredCareersUrl": "https://apply.workable.com/velanstudios",
       "firstSeen": "2026-09-10T04:24:51Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5896480751",
       "company": "Insomniac Games",
       "title": "VFX Artist (Contract)",
-      "url": "https://job-boards.greenhouse.io/insomniac",
+      "url": "https://www.adzuna.com/details/5896480751?utm_medium=api&utm_source=361fafca",
       "location": "US",
       "workplaceType": "unknown",
       "remoteScope": "US",
-      "ats": "greenhouse",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "aaa",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-09-24T03:33:02Z",
       "status": "active",
+      "discoveredCareersUrl": "https://job-boards.greenhouse.io/insomniac",
       "firstSeen": "2026-09-24T11:34:39Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5905542550",
       "company": "YO AI Labs",
       "title": "VFX Artist / 3D Animator - Remote",
-      "url": "https://yo.recruitee.com",
+      "url": "https://www.adzuna.com/details/5905542550?utm_medium=api&utm_source=361fafca",
       "location": "New York City, New York",
       "workplaceType": "remote",
       "remoteScope": "Unknown",
-      "ats": "recruitee",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-01T07:30:59Z",
       "status": "active",
+      "discoveredCareersUrl": "https://yo.recruitee.com",
       "firstSeen": "2026-10-02T05:23:58Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5889052595",
@@ -529,194 +574,205 @@
       "postedDate": "2026-09-18T06:13:20Z",
       "status": "active",
       "firstSeen": "2026-09-18T11:03:10Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5934449963",
       "company": "LEONINE Holding GmbH",
       "title": "AI / VFX Artist",
-      "url": "https://leonine.jobs.personio.de",
+      "url": "https://www.adzuna.de/land/ad/5934449963?se=UI_q96XM8RGUlZcLbi9XfA&utm_medium=api&utm_source=361fafca&v=C456D187EA50332EF282385F3DB6BA1DD413B855",
       "location": "München, München (Kreis)",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "personio",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-19T20:25:59Z",
       "status": "active",
+      "discoveredCareersUrl": "https://leonine.jobs.personio.de",
       "firstSeen": "2026-10-19T22:15:54Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5935075723",
       "company": "LEONINE Holding GmbH",
       "title": "Ai / Vfx Artist",
-      "url": "https://leonine.jobs.personio.de",
+      "url": "https://www.adzuna.de/land/ad/5935075723?se=UI_q96XM8RGUlZcLbi9XfA&utm_medium=api&utm_source=361fafca&v=EFDAED35FBDAB091A9EFAE1CA6698658482D6D84",
       "location": "Deutschland",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "personio",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-20T05:29:32Z",
       "status": "active",
+      "discoveredCareersUrl": "https://leonine.jobs.personio.de",
       "firstSeen": "2026-10-20T04:35:43Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5934252521",
       "company": "LEONINE Holding GmbH",
       "title": "AI / VFX Artist",
-      "url": "https://leonine.jobs.personio.de",
+      "url": "https://www.adzuna.de/details/5934252521?utm_medium=api&utm_source=361fafca",
       "location": "München, München (Kreis)",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "personio",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-19T15:42:31Z",
       "status": "active",
+      "discoveredCareersUrl": "https://leonine.jobs.personio.de",
       "firstSeen": "2026-10-19T22:15:54Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5911271406",
       "company": "Hasbro",
       "title": "Senior VFX Artist",
-      "url": "https://job-boards.greenhouse.io/hasbro",
+      "url": "https://www.adzuna.ca/details/5911271406?utm_medium=api&utm_source=361fafca",
       "location": "Montréal, Québec",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "greenhouse",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-04T04:33:29Z",
       "status": "active",
+      "discoveredCareersUrl": "https://job-boards.greenhouse.io/hasbro",
       "firstSeen": "2026-10-04T12:13:16Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5932112027",
       "company": "Velan Studios",
       "title": "VFX Artist (Lead)",
-      "url": "https://apply.workable.com/velanstudios",
+      "url": "https://www.adzuna.ca/details/5932112027?utm_medium=api&utm_source=361fafca",
       "location": "Toronto, Ontario",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "workable",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-17T07:31:20Z",
       "status": "active",
+      "discoveredCareersUrl": "https://apply.workable.com/velanstudios",
       "firstSeen": "2026-10-17T15:25:25Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5911284403",
       "company": "Hasbro",
       "title": "Artiste de VFX Sénior.e",
-      "url": "https://job-boards.greenhouse.io/hasbro",
+      "url": "https://www.adzuna.ca/details/5911284403?utm_medium=api&utm_source=361fafca",
       "location": "Montréal, Québec",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "greenhouse",
+      "ats": "adzuna",
       "matchType": "possibleMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-04T04:44:19Z",
       "status": "active",
+      "discoveredCareersUrl": "https://job-boards.greenhouse.io/hasbro",
       "firstSeen": "2026-10-05T05:22:52Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5907698461",
       "company": "Company3",
       "title": "VFX Production Manager (General Submission)",
-      "url": "https://company3.recruitee.com",
+      "url": "https://www.adzuna.ca/details/5907698461?utm_medium=api&utm_source=361fafca",
       "location": "Toronto, Ontario",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "recruitee",
+      "ats": "adzuna",
       "matchType": "possibleMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-02T04:46:54Z",
       "status": "active",
+      "discoveredCareersUrl": "https://company3.recruitee.com",
       "firstSeen": "2026-10-13T14:03:34Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5907703751",
       "company": "Company3",
       "title": "VFX Production Manager (General Submission)",
-      "url": "https://company3.recruitee.com",
+      "url": "https://www.adzuna.ca/details/5907703751?utm_medium=api&utm_source=361fafca",
       "location": "Greater Vancouver, British Columbia",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "recruitee",
+      "ats": "adzuna",
       "matchType": "possibleMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-02T04:52:38Z",
       "status": "active",
+      "discoveredCareersUrl": "https://company3.recruitee.com",
       "firstSeen": "2026-10-14T11:39:16Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5924124080",
       "company": "Company3",
       "title": "VFX Production Manager (General Submission)",
-      "url": "https://company3.recruitee.com",
+      "url": "https://www.adzuna.ca/details/5924124080?utm_medium=api&utm_source=361fafca",
       "location": "Vancouver, Greater Vancouver",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "recruitee",
+      "ats": "adzuna",
       "matchType": "possibleMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-12T07:10:05Z",
       "status": "active",
+      "discoveredCareersUrl": "https://company3.recruitee.com",
       "firstSeen": "2026-10-13T14:03:34Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5924124358",
       "company": "Company3",
       "title": "VFX Production Manager (General Submission)",
-      "url": "https://company3.recruitee.com",
+      "url": "https://www.adzuna.ca/details/5924124358?utm_medium=api&utm_source=361fafca",
       "location": "Toronto, Ontario",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "recruitee",
+      "ats": "adzuna",
       "matchType": "possibleMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-12T07:10:13Z",
       "status": "active",
+      "discoveredCareersUrl": "https://company3.recruitee.com",
       "firstSeen": "2026-10-13T14:03:34Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5930394780",
       "company": "Rodeo FX",
       "title": "VFX Producer - Senior - Permanent role",
-      "url": "https://careers.smartrecruiters.com/rodeofx",
+      "url": "https://www.adzuna.ca/details/5930394780?utm_medium=api&utm_source=361fafca",
       "location": "Montréal, Québec",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "smartrecruiters",
+      "ats": "adzuna",
       "matchType": "possibleMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-16T07:01:53Z",
       "status": "active",
+      "discoveredCareersUrl": "https://careers.smartrecruiters.com/rodeofx",
       "firstSeen": "2026-10-16T11:12:58Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5902269851",
@@ -733,7 +789,7 @@
       "postedDate": "2026-09-28T22:21:31Z",
       "status": "active",
       "firstSeen": "2026-09-29T05:33:19Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5918690987",
@@ -750,7 +806,7 @@
       "postedDate": "2026-10-08T10:28:08Z",
       "status": "active",
       "firstSeen": "2026-10-09T05:55:30Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5924083938",
@@ -767,143 +823,133 @@
       "postedDate": "2026-10-12T12:44:13Z",
       "status": "active",
       "firstSeen": "2026-10-12T15:11:15Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5896083834",
       "company": "Larian Studios",
       "title": "Senior VFX Artist",
-      "url": "https://jobs.lever.co/larian",
+      "url": "https://www.adzuna.es/details/5896083834?utm_medium=api&utm_source=361fafca",
       "location": "España",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "lever",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "aaa",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-09-24T03:40:53Z",
       "status": "active",
+      "discoveredCareersUrl": "https://jobs.lever.co/larian",
       "firstSeen": "2026-09-24T04:32:00Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5911347025",
       "company": "Gameloft Barcelona",
       "title": "Lead VFX Artist",
-      "url": "https://careers.smartrecruiters.com/gameloft",
+      "url": "https://www.adzuna.es/details/5911347025?utm_medium=api&utm_source=361fafca",
       "location": "Barcelona, Cataluña",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "smartrecruiters",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "aaa",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-04T12:30:52Z",
       "status": "active",
+      "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-04T12:13:16Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5909777529",
       "company": "Gameloft",
       "title": "Lead VFX Artist",
-      "url": "https://careers.smartrecruiters.com/gameloft",
+      "url": "https://www.adzuna.es/details/5909777529?utm_medium=api&utm_source=361fafca",
       "location": "Barcelona, Cataluña",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "smartrecruiters",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "aaa",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-03T12:30:52Z",
       "status": "active",
+      "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-04T05:39:14Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5909781598",
       "company": "Gameloft",
       "title": "Lead VFX Artist",
-      "url": "https://careers.smartrecruiters.com/gameloft",
+      "url": "https://www.adzuna.es/details/5909781598?utm_medium=api&utm_source=361fafca",
       "location": "Cataluña, España",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "smartrecruiters",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "aaa",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-03T12:37:56Z",
       "status": "active",
+      "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5896092475",
       "company": "Scopely",
       "title": "VFX Artist - Monopoly GO!",
-      "url": "https://job-boards.greenhouse.io/scopely",
+      "url": "https://www.adzuna.es/details/5896092475?utm_medium=api&utm_source=361fafca",
       "location": "Barcelona",
       "workplaceType": "hybrid",
       "remoteScope": "Unknown",
-      "ats": "greenhouse",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "aaa",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-09-24T03:42:34Z",
       "status": "active",
+      "discoveredCareersUrl": "https://job-boards.greenhouse.io/scopely",
       "firstSeen": "2026-09-24T04:32:00Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5909777547",
       "company": "Gameloft",
       "title": "Lead Real-Time VFX Artist",
-      "url": "https://careers.smartrecruiters.com/gameloft",
+      "url": "https://www.adzuna.es/details/5909777547?utm_medium=api&utm_source=361fafca",
       "location": "Barcelona, Cataluña",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "smartrecruiters",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "aaa",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-03T12:30:53Z",
       "status": "active",
+      "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
-    },
-    {
-      "id": "az-5930368558",
-      "company": "Escape Velocity Entertainment",
-      "title": "Remote Lead Outsourcing VFX Artist",
-      "url": "https://jobs.ashbyhq.com/escape",
-      "location": "España",
-      "workplaceType": "remote",
-      "remoteScope": "Unknown",
-      "ats": "ashby",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "postedDate": "2026-10-16T12:51:40Z",
-      "status": "active",
-      "firstSeen": "2026-10-16T11:12:58Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5896082987",
       "company": "Scopely",
       "title": "Senior VFX Artist - Monopoly GO!",
-      "url": "https://job-boards.greenhouse.io/scopely",
+      "url": "https://www.adzuna.es/details/5896082987?utm_medium=api&utm_source=361fafca",
       "location": "España",
       "workplaceType": "hybrid",
       "remoteScope": "Unknown",
-      "ats": "greenhouse",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "aaa",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-09-24T03:40:44Z",
       "status": "active",
+      "discoveredCareersUrl": "https://job-boards.greenhouse.io/scopely",
       "firstSeen": "2026-09-24T04:32:00Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5924080915",
@@ -920,58 +966,43 @@
       "postedDate": "2026-10-12T12:38:57Z",
       "status": "active",
       "firstSeen": "2026-10-13T14:03:34Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
-    },
-    {
-      "id": "az-5930366299",
-      "company": "Escape Velocity Entertainment",
-      "title": "Lead Outsourcing VFX Artist | Fully Remote",
-      "url": "https://jobs.ashbyhq.com/escape",
-      "location": "España",
-      "workplaceType": "remote",
-      "remoteScope": "Unknown",
-      "ats": "ashby",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": false,
-      "postedDate": "2026-10-16T12:50:03Z",
-      "status": "active",
-      "firstSeen": "2026-10-16T11:12:58Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5909778593",
       "company": "Gameloft",
       "title": "Lead VFX Artist: Real-Time Visuals & Team Leadership",
-      "url": "https://careers.smartrecruiters.com/gameloft",
+      "url": "https://www.adzuna.es/details/5909778593?utm_medium=api&utm_source=361fafca",
       "location": "Cataluña, España",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
-      "ats": "smartrecruiters",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "aaa",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-03T12:31:20Z",
       "status": "active",
+      "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5911350472",
       "company": "SmartRecruiters, Inc.",
       "title": "Hybrid Lead VFX Artist — Real-Time Effects Leader",
-      "url": "https://careers.smartrecruiters.com/smartrecruiters",
+      "url": "https://www.adzuna.es/details/5911350472?utm_medium=api&utm_source=361fafca",
       "location": "Barcelona, Cataluña",
       "workplaceType": "hybrid",
       "remoteScope": "Unknown",
-      "ats": "smartrecruiters",
+      "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "indie",
-      "viaAggregator": false,
+      "viaAggregator": true,
       "postedDate": "2026-10-04T12:42:46Z",
       "status": "active",
+      "discoveredCareersUrl": "https://careers.smartrecruiters.com/smartrecruiters",
       "firstSeen": "2026-10-05T05:22:52Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5927285707",
@@ -988,7 +1019,7 @@
       "postedDate": "2026-10-14T12:48:59Z",
       "status": "active",
       "firstSeen": "2026-10-15T11:18:13Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5916784667",
@@ -1005,7 +1036,7 @@
       "postedDate": "2026-10-07T12:33:39Z",
       "status": "active",
       "firstSeen": "2026-10-08T05:50:01Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5916784460",
@@ -1022,7 +1053,7 @@
       "postedDate": "2026-10-07T12:33:36Z",
       "status": "active",
       "firstSeen": "2026-10-08T05:50:01Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5907315899",
@@ -1039,7 +1070,7 @@
       "postedDate": "2026-10-02T06:44:25Z",
       "status": "active",
       "firstSeen": "2026-10-02T12:22:20Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5916783905",
@@ -1056,7 +1087,7 @@
       "postedDate": "2026-10-07T12:33:09Z",
       "status": "active",
       "firstSeen": "2026-10-08T05:50:01Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5916784944",
@@ -1073,7 +1104,7 @@
       "postedDate": "2026-10-07T12:33:50Z",
       "status": "active",
       "firstSeen": "2026-10-08T05:50:01Z",
-      "lastSeen": "2026-10-20T11:23:53Z"
+      "lastSeen": "2026-10-20T16:47:44Z"
     },
     {
       "id": "az-5907315876",
@@ -1090,6 +1121,40 @@
       "postedDate": "2026-10-02T06:44:25Z",
       "status": "active",
       "firstSeen": "2026-10-02T05:23:58Z",
+      "lastSeen": "2026-10-20T16:47:44Z"
+    },
+    {
+      "id": "az-5930368558",
+      "company": "Escape Velocity Entertainment",
+      "title": "Remote Lead Outsourcing VFX Artist",
+      "url": "https://jobs.ashbyhq.com/escape",
+      "location": "España",
+      "workplaceType": "remote",
+      "remoteScope": "Unknown",
+      "ats": "ashby",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "postedDate": "2026-10-16T12:51:40Z",
+      "status": "unverified",
+      "firstSeen": "2026-10-16T11:12:58Z",
+      "lastSeen": "2026-10-20T11:23:53Z"
+    },
+    {
+      "id": "az-5930366299",
+      "company": "Escape Velocity Entertainment",
+      "title": "Lead Outsourcing VFX Artist | Fully Remote",
+      "url": "https://jobs.ashbyhq.com/escape",
+      "location": "España",
+      "workplaceType": "remote",
+      "remoteScope": "Unknown",
+      "ats": "ashby",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": false,
+      "postedDate": "2026-10-16T12:50:03Z",
+      "status": "unverified",
+      "firstSeen": "2026-10-16T11:12:58Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
     {
@@ -1105,7 +1170,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-10-18T14:16:38Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-18T15:45:53Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1122,7 +1187,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-09-04T09:55:36Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-05T10:27:59Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1139,7 +1204,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-09-02T16:58:42Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-02T16:28:54Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1156,7 +1221,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-10T03:25:04Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-10T12:21:07Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1173,7 +1238,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-10-03T00:44:10Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-03T11:32:15Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1190,7 +1255,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-10-03T00:44:09Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-03T11:32:15Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1207,7 +1272,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "postedDate": "2026-10-10T12:44:18Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-11T05:33:23Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1224,7 +1289,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "postedDate": "2026-10-10T12:39:20Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-11T05:33:23Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1241,7 +1306,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-09T19:33:41Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-10T05:36:53Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1258,7 +1323,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-09-23T05:03:52Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-23T16:44:22Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1275,7 +1340,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-09-04T02:35:26Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-04T04:17:23Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1292,7 +1357,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-09-02T21:41:36Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-02T20:56:47Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1309,7 +1374,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-09T18:49:56Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-09T22:33:17Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1326,7 +1391,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-31T22:44:50Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -1342,7 +1407,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-09T18:41:41Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-09T22:33:17Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1359,7 +1424,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-09-17T16:49:15Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -1375,7 +1440,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-06T22:01:46Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T05:41:51Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1392,7 +1457,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-06T20:31:43Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T05:41:51Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1409,7 +1474,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-06T23:03:20Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T05:41:51Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1426,7 +1491,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-07T01:02:35Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T05:41:51Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1443,7 +1508,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-12T16:31:02Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-13T14:03:34Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1460,7 +1525,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-01T07:31:03Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-01T22:36:42Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1477,7 +1542,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-06T19:15:46Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T05:41:51Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1494,7 +1559,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-09-30T12:15:04Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-30T22:09:38Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1511,7 +1576,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-07T02:30:54Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T13:10:15Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1528,7 +1593,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-07T02:05:16Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T13:10:15Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1545,7 +1610,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-12T18:22:21Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-13T00:31:21Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1562,7 +1627,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-07T00:44:18Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T05:41:51Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1579,7 +1644,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-09-10T22:07:36Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-11T11:06:26Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1596,7 +1661,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-10-03T12:30:54Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-03T11:32:15Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1613,7 +1678,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-12T06:26:41Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-12T05:44:01Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1630,7 +1695,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-09-12T08:01:07Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-14T12:33:08Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1647,7 +1712,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-09-12T08:02:08Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-12T15:26:59Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1664,7 +1729,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-10-03T12:30:54Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-03T11:32:15Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1681,7 +1746,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-09-26T07:06:10Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-28T13:41:16Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1698,7 +1763,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-08-27T08:10:55Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-27T22:15:03Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1715,7 +1780,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-10-07T07:25:38Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T13:10:15Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1732,7 +1797,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-04T12:30:39Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-05T05:22:52Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1749,7 +1814,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-07T01:30:00Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T13:10:15Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1766,7 +1831,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-10-06T20:32:22Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T05:41:51Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1783,7 +1848,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-09T08:48:56Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-09T13:04:35Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1800,7 +1865,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-09-11T09:52:41Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-11T11:06:26Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1817,7 +1882,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-09-11T09:52:41Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-11T11:06:26Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1834,7 +1899,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-06T21:18:52Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T05:41:51Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1851,7 +1916,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-06T20:59:02Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T05:41:51Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1868,7 +1933,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-10-07T06:04:45Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T13:10:15Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1885,7 +1950,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-09-29T22:22:37Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-30T05:22:06Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1902,7 +1967,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-09-23T05:03:52Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-23T11:22:44Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1919,7 +1984,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-10-07T01:30:02Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-07T13:10:15Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1936,7 +2001,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-03T12:41:08Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-03T20:58:04Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1953,7 +2018,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "postedDate": "2026-10-03T22:41:36Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-04T05:39:14Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1970,7 +2035,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-10-06T12:28:34Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-06T18:17:40Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -1987,7 +2052,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "postedDate": "2026-10-05T02:56:45Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-05T05:22:52Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2004,7 +2069,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "postedDate": "2026-10-05T02:56:49Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-05T05:22:52Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2021,7 +2086,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "postedDate": "2026-10-03T23:15:59Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-04T05:39:14Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2038,7 +2103,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "postedDate": "2026-10-01T06:29:57Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-01T05:36:33Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2055,7 +2120,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-08-21T14:38:16Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-21T13:03:20Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2072,7 +2137,7 @@
       "companyCategory": "indie",
       "viaAggregator": true,
       "postedDate": "2026-08-21T07:38:44Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-26T07:02:04Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2089,7 +2154,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "postedDate": "2026-10-04T12:43:00Z",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-05T05:22:52Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2105,7 +2170,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2121,7 +2186,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2137,7 +2202,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2153,7 +2218,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2169,7 +2234,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2185,7 +2250,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2201,7 +2266,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2217,7 +2282,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-19T18:46:16Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2233,7 +2298,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2249,7 +2314,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-19T06:57:11Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2265,7 +2330,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2281,7 +2346,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2297,7 +2362,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-18T06:57:16Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2313,7 +2378,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2329,7 +2394,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2345,7 +2410,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2361,7 +2426,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-20T13:04:39Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2377,7 +2442,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2393,7 +2458,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-02T11:08:43Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2409,7 +2474,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2425,7 +2490,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2441,7 +2506,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2457,7 +2522,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2473,7 +2538,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2489,7 +2554,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-20T01:44:28Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2505,7 +2570,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2521,7 +2586,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-14T19:05:01Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2537,7 +2602,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2553,7 +2618,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2569,7 +2634,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2585,7 +2650,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2601,7 +2666,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2617,7 +2682,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-21T08:41:33Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2633,7 +2698,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-15T18:40:05Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2649,7 +2714,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2665,7 +2730,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2681,7 +2746,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2697,7 +2762,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-07T19:07:43Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2713,7 +2778,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2729,7 +2794,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2745,7 +2810,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-18T03:18:33Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2761,7 +2826,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-27T09:22:59Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2777,7 +2842,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2793,7 +2858,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2809,7 +2874,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-27T09:22:59Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2825,7 +2890,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2841,7 +2906,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-30T08:42:43Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2857,7 +2922,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2873,7 +2938,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-02T05:23:58Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2889,7 +2954,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-30T05:22:06Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2905,7 +2970,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-30T05:22:06Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2921,7 +2986,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-08T16:32:56Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2937,7 +3002,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-10T11:07:47Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2953,7 +3018,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-30T12:25:45Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2969,7 +3034,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -2985,7 +3050,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-10-01T22:36:42Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3002,7 +3067,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-13T19:13:22Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -3017,7 +3082,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-30T12:25:45Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3036,7 +3101,7 @@
       "signalOnly": true,
       "firstSeen": "2026-08-15T18:40:05Z",
       "lastSeen": "2026-10-20T11:23:53Z",
-      "status": "closed"
+      "status": "unverified"
     },
     {
       "id": "az-5903175781",
@@ -3050,7 +3115,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-30T05:22:06Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3066,7 +3131,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-25T04:45:37Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3082,7 +3147,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3098,7 +3163,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3114,7 +3179,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-18T18:50:35Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3130,7 +3195,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-24T04:32:00Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3146,7 +3211,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-24T11:34:39Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3162,7 +3227,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-18T03:18:33Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3178,7 +3243,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-03T16:19:35Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3194,7 +3259,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-10T11:07:47Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3210,7 +3275,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-03T03:44:01Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3226,7 +3291,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-27T09:22:59Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3245,7 +3310,7 @@
       "signalOnly": true,
       "firstSeen": "2026-08-22T12:54:10Z",
       "lastSeen": "2026-10-20T11:23:53Z",
-      "status": "closed"
+      "status": "unverified"
     },
     {
       "id": "az-5849825045",
@@ -3259,7 +3324,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-24T07:13:22Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3275,7 +3340,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-18T19:16:11Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3292,7 +3357,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -3308,7 +3373,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -3323,7 +3388,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-18T18:50:35Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3339,7 +3404,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-04T11:06:18Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3355,7 +3420,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3372,7 +3437,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-10T19:07:27Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -3387,7 +3452,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-14T04:41:29Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3403,7 +3468,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-01T16:30:24Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3419,7 +3484,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-13T04:35:46Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3435,7 +3500,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-25T08:19:30Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3451,7 +3516,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-04T11:06:18Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3467,7 +3532,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-12T04:22:03Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3486,7 +3551,7 @@
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:19:41Z",
       "lastSeen": "2026-10-20T11:23:53Z",
-      "status": "closed"
+      "status": "unverified"
     },
     {
       "id": "az-5868261145",
@@ -3500,7 +3565,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-03T11:05:23Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3516,7 +3581,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-12T04:22:03Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3532,7 +3597,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-03T11:05:23Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3548,7 +3613,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-14T13:24:03Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3564,7 +3629,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-14T13:24:03Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3580,7 +3645,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-02T11:08:43Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3596,7 +3661,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-13T19:13:50Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3612,7 +3677,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-13T19:13:50Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3628,7 +3693,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-02T20:56:47Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3644,7 +3709,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-02T20:56:47Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3660,7 +3725,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-27T09:22:59Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3676,7 +3741,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-04T11:06:18Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3692,7 +3757,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-04T11:06:18Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3708,7 +3773,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-10T07:57:18Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3724,7 +3789,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "aaa",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-09-02T16:28:54Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3741,7 +3806,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -3758,7 +3823,7 @@
       "viaAggregator": false,
       "firstSeen": "2026-07-14T14:18:44Z",
       "lastSeen": "2026-10-20T11:23:53Z",
-      "status": "closed"
+      "status": "unverified"
     },
     {
       "id": "az-5821410712",
@@ -3772,7 +3837,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-30T19:44:30Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3788,7 +3853,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-02T08:34:32Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3804,7 +3869,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-30T19:44:30Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3820,7 +3885,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-27T09:22:59Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3836,7 +3901,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3852,7 +3917,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-22T03:32:31Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3868,7 +3933,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3884,7 +3949,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-21T03:33:37Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3900,7 +3965,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3916,7 +3981,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3932,7 +3997,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-16T12:54:19Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3948,7 +4013,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3965,7 +4030,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-19T18:46:02Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -3980,7 +4045,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-06T14:30:40Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -3996,7 +4061,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4013,7 +4078,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -4028,7 +4093,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-22T12:54:10Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4044,7 +4109,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4063,7 +4128,7 @@
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:19:41Z",
       "lastSeen": "2026-10-20T11:23:53Z",
-      "status": "closed"
+      "status": "unverified"
     },
     {
       "id": "az-5814079184",
@@ -4077,7 +4142,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-24T19:41:33Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4093,7 +4158,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-24T19:41:33Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4109,7 +4174,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-07T19:07:43Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4125,7 +4190,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4141,7 +4206,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-25T13:54:44Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4157,7 +4222,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4173,7 +4238,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-28T03:25:20Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4189,7 +4254,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-29T19:36:17Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4205,7 +4270,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-29T19:36:17Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4221,7 +4286,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-29T19:36:17Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4237,7 +4302,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-24T19:41:33Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4253,7 +4318,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-25T08:19:30Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4269,7 +4334,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-24T19:41:33Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4285,7 +4350,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4301,7 +4366,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-09T07:08:07Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4317,7 +4382,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4334,7 +4399,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-10T19:07:27Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -4349,7 +4414,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4365,7 +4430,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4381,7 +4446,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4397,7 +4462,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4413,7 +4478,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4429,7 +4494,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4445,7 +4510,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-25T13:54:44Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4461,7 +4526,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-21T14:12:23Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4478,7 +4543,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -4494,7 +4559,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -4509,7 +4574,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4525,7 +4590,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4541,7 +4606,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4557,7 +4622,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4574,7 +4639,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -4590,7 +4655,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -4606,7 +4671,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -4621,7 +4686,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-08-08T13:05:32Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4637,7 +4702,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4653,7 +4718,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-24T19:41:33Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4669,7 +4734,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-29T21:06:27Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4685,7 +4750,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-29T21:06:27Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4701,7 +4766,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4717,7 +4782,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4733,7 +4798,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": false,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4751,7 +4816,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:30:46Z",
-      "lastSeen": "2026-10-20T11:23:53Z",
+      "lastSeen": "2026-10-20T16:47:44Z",
       "status": "closed"
     },
     {
@@ -4766,7 +4831,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-25T03:30:50Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4782,7 +4847,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-18T03:18:33Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4798,7 +4863,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4814,7 +4879,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-24T08:38:26Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4830,7 +4895,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4846,7 +4911,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-30T19:44:30Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4862,7 +4927,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4878,7 +4943,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4894,7 +4959,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4910,7 +4975,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-19T03:39:30Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4926,7 +4991,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "aaa",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-21T08:41:33Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4942,7 +5007,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "aaa",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-23T14:24:47Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4958,7 +5023,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4974,7 +5039,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -4990,7 +5055,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5006,7 +5071,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5022,7 +5087,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5038,7 +5103,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5054,7 +5119,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5070,7 +5135,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5086,7 +5151,7 @@
       "matchType": "exactMatch",
       "companyCategory": "indie",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5102,7 +5167,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5118,7 +5183,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5134,7 +5199,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5150,7 +5215,7 @@
       "matchType": "exactMatch",
       "companyCategory": "aaa",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5166,7 +5231,7 @@
       "matchType": "possibleMatch",
       "companyCategory": "aaa",
       "viaAggregator": true,
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5181,7 +5246,7 @@
       "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "unknown",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5196,7 +5261,7 @@
       "ats": "adzuna",
       "matchType": "possibleMatch",
       "companyCategory": "unknown",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5211,7 +5276,7 @@
       "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "unknown",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-22T03:32:31Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5226,7 +5291,7 @@
       "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "unknown",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5241,7 +5306,7 @@
       "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "unknown",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-21T19:44:34Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5256,7 +5321,7 @@
       "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "unknown",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-24T14:03:52Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5271,7 +5336,7 @@
       "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "unknown",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5286,7 +5351,7 @@
       "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "unknown",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5301,7 +5366,7 @@
       "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "unknown",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-22T03:32:31Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5316,7 +5381,7 @@
       "ats": "adzuna",
       "matchType": "exactMatch",
       "companyCategory": "unknown",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-21T19:44:34Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5330,7 +5395,7 @@
       "remoteScope": "Unknown",
       "ats": "adzuna",
       "matchType": "possibleMatch",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5344,7 +5409,7 @@
       "remoteScope": "Unknown",
       "ats": "adzuna",
       "matchType": "possibleMatch",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5358,7 +5423,7 @@
       "remoteScope": "Unknown",
       "ats": "adzuna",
       "matchType": "possibleMatch",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5372,7 +5437,7 @@
       "remoteScope": "Unknown",
       "ats": "adzuna",
       "matchType": "possibleMatch",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-20T09:31:48Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     },
@@ -5386,7 +5451,7 @@
       "remoteScope": "UK",
       "ats": "adzuna",
       "matchType": "exactMatch",
-      "status": "closed",
+      "status": "unverified",
       "firstSeen": "2026-07-17T20:20:55Z",
       "lastSeen": "2026-10-20T11:23:53Z"
     }
