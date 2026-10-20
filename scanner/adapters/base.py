@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Optional
 import requests, time, logging
 from ..company_category import classify_company_category
+from ..filters import evaluate_spain_eligibility
 
 logger = logging.getLogger(__name__)
 
@@ -57,7 +58,10 @@ class BaseAdapter(ABC):
         pass
 
     def normalize(self, raw: dict) -> dict:
+        eligibility, reason = evaluate_spain_eligibility(raw.get("title", ""), raw.get("location", ""), raw.get("description", ""), raw.get("workplaceType", "unknown"))
         return {
+            "spainEligibility": eligibility,
+            "eligibilityReason": reason,
             "id": raw.get("id", ""),
             "company": self.company,
             "title": raw.get("title", ""),

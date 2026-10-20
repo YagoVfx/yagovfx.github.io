@@ -14,9 +14,10 @@ def test_upgrades_job_when_cache_has_a_known_hit():
     ]
     upgraded, count = upgrade_adzuna_jobs_to_direct_links(jobs, cache)
     assert count == 1
-    assert upgraded[0]["url"] == "https://job-boards.greenhouse.io/gramgamescareers"
-    assert upgraded[0]["viaAggregator"] is False
-    assert upgraded[0]["ats"] == "greenhouse"
+    assert upgraded[0]["url"] == "https://adzuna.es/land/ad/1"
+    assert upgraded[0]["discoveredCareersUrl"] == "https://job-boards.greenhouse.io/gramgamescareers"
+    assert upgraded[0]["viaAggregator"] is True
+    assert upgraded[0].get("ats", "adzuna") == "adzuna"
     # Original list must not be mutated in place.
     assert jobs[0]["viaAggregator"] is True
 
@@ -42,7 +43,7 @@ def test_only_probes_each_company_once_per_run():
     ]
     upgraded, count = upgrade_adzuna_jobs_to_direct_links(jobs, cache)
     assert count == 2
-    assert all(j["viaAggregator"] is False for j in upgraded)
+    assert all(j["viaAggregator"] is True for j in upgraded)
 
 
 if __name__ == "__main__":

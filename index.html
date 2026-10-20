@@ -3653,6 +3653,8 @@ async function openVfxDiagnostics(){
 // the admin panel talks to inline handlers) avoids that trap entirely.
 const vfxJobsState={
   cache:null,
+  filterEligibility:'all', // all | promising | review | unknown | restricted
+  showUnverified:false,
   filterWp:'all',       // all | remote | hybrid | onsite
   filterCat:'all',      // all | aaa | indie
   filterAts:'all',      // all | greenhouse | lever | teamtailor | workday | workable | ashby | smartrecruiters | recruitee | personio | custom | adzuna | adzuna-signal
@@ -3670,6 +3672,10 @@ const vfxJobsState={
 // actual son dos tareas distintas).
 let vfxJobsRenderTargetId='vfxJobsBody';
 
+function setVfxEligibility(val){vfxJobsState.filterEligibility=val;renderVfxJobsPublic();}
+function setVfxUnverified(val){vfxJobsState.showUnverified=val;renderVfxJobsPublic();}
+function vfxEsc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function vfxSafeUrl(v){try{const u=new URL(v,location.href);return ['http:','https:'].includes(u.protocol)?vfxEsc(u.href):'#';}catch(_){return '#';}}
 function setVfxWpFilter(val){vfxJobsState.filterWp=val;renderVfxJobsPublic();}
 function setVfxCatFilter(val){vfxJobsState.filterCat=val;renderVfxJobsPublic();}
 function setVfxAtsFilter(val){vfxJobsState.filterAts=val;renderVfxJobsPublic();}
@@ -3738,11 +3744,14 @@ function vfxCatLabel(cat){
 }
 function renderVfxJobsPublic(){
   const data=vfxJobsState.cache;if(!data)return;
-  const active=(data.jobs||[]).filter(j=>j.status==='active');
+  const active=(data.jobs||[]).filter(j=>j.status==='active'||(vfxJobsState.showUnverified&&j.status==='unverified'));
+  const eligibility=j=>j.spainEligibility||'unknown';
+  const eligibilityLabels={promising:'España posible',review:'Revisar contrato',unknown:'Sin confirmar',restricted:'Restricción geográfica'};
   const atsCounts=data.jobsByAts||{};
   const atsLabels={greenhouse:'Greenhouse',lever:'Lever',teamtailor:'Teamtailor',workday:'Workday',workable:'Workable',ashby:'Ashby',smartrecruiters:'SmartRecruiters',recruitee:'Recruitee',personio:'Personio',custom:'Custom',adzuna:'Adzuna',"adzuna-signal":'Adzuna (señal)'};
 
   let list=active.filter(j=>vfxJobsState.showPossible?true:j.matchType!=='possibleMatch');
+  if(vfxJobsState.filterEligibility!=='all')list=list.filter(j=>eligibility(j)===vfxJobsState.filterEligibility);
   if(vfxJobsState.filterWp!=='all')list=list.filter(j=>j.workplaceType===vfxJobsState.filterWp);
   if(vfxJobsState.filterCat!=='all')list=list.filter(j=>(j.companyCategory||'unknown')===vfxJobsState.filterCat);
   if(vfxJobsState.filterAts!=='all')list=list.filter(j=>j.ats===vfxJobsState.filterAts);
@@ -3801,12 +3810,12 @@ function renderVfxJobsPublic(){
 
   const rowsHtml=list.length?list.map(j=>`
     <div class="vfxp-job ${j.matchType==='possibleMatch'?'possible':''} ${vfxIsNew(j.firstSeen)?'new':''}">
-      <div class="vfxp-co">${j.company}${vfxCatLabel(j.companyCategory)?`<span class="vfx-ats-tag" style="margin-left:6px;">${vfxCatLabel(j.companyCategory)}</span>`:''}</div>
-      <div class="vfxp-title-cell"><a href="${j.url}" target="_blank" rel="noopener" ${j.signalOnly?'style="font-style:italic;"':''}>${j.title}</a>${vfxIsNew(j.firstSeen)?'<span class="vfxp-new-tag">NEW</span>':''}${j.viaAggregator?'<span class="vfxp-aggregator-tag" title="Este enlace pasa primero por la web de Adzuna antes de llegar a la oferta">vía Adzuna</span>':''}${j.signalOnly?'<span class="vfxp-aggregator-tag" title="No pudimos leer esta página directamente, pero Adzuna indica que hay una oferta VFX activa. El enlace lleva directo a la web de la empresa, no a Adzuna.">señal detectada</span>':''}</div>
-      <div class="vfxp-loc">${j.location||'—'}</div>
+      <div class="vfxp-co">${vfxEsc(j.company)}${vfxCatLabel(j.companyCategory)?`<span class="vfx-ats-tag" style="margin-left:6px;">${vfxCatLabel(j.companyCategory)}</span>`:''}</div>
+      <div class="vfxp-title-cell"><a href="${vfxSafeUrl(j.url)}" target="_blank" rel="noopener" ${j.signalOnly?'style="font-style:italic;"':''}>${vfxEsc(j.title)}</a>${vfxIsNew(j.firstSeen)?'<span class="vfxp-new-tag">NEW</span>':''}${j.viaAggregator?'<span class="vfxp-aggregator-tag" title="Este enlace pasa primero por la web de Adzuna antes de llegar a la oferta">vía Adzuna</span>':''}${j.signalOnly?'<span class="vfxp-aggregator-tag" title="No pudimos leer esta página directamente, pero Adzuna indica que hay una oferta VFX activa. El enlace lleva directo a la web de la empresa, no a Adzuna.">señal detectada</span>':''}</div>
+      <div class="vfxp-loc">${vfxEsc(j.location||'—')}</div>
       <div class="vfxp-badge ${j.workplaceType||'unknown'}">${j.workplaceType||'unknown'}</div>
-      <div class="vfxp-scope">${j.remoteScope||'Unknown'}</div>
-      <div class="vfxp-match ${j.matchType}">${j.matchType==='exactMatch'?'Exact':'Possible'}</div>
+      <div class="vfxp-scope">${vfxEsc(j.remoteScope||'Unknown')}</div>
+      <div class="vfxp-match ${j.matchType}" title="${vfxEsc(j.eligibilityReason||'Sin datos suficientes')}">${vfxEsc(eligibilityLabels[eligibility(j)]||eligibility(j))} · ${j.matchType==='exactMatch'?'Exact':'Possible'}</div>
     </div>`).join(''):'<div class="vfxp-state">No hay ofertas que coincidan con los filtros actuales.</div>';
 
   document.getElementById(vfxJobsRenderTargetId).innerHTML=`
@@ -3819,6 +3828,11 @@ function renderVfxJobsPublic(){
     <div class="vfxp-controls">
       ${wpBtn('all','All')}${wpBtn('remote','Remote')}${wpBtn('hybrid','Hybrid')}${wpBtn('onsite','On-site')}
       ${spainTotal?locBtn('spain','🇪🇸 España'):''}
+    </div>
+    <div class="vfxp-controls">
+      <span style="font-size:11px;color:var(--sub)">Compatibilidad España (orientativa):</span>
+      ${['all','promising','review','unknown','restricted'].map(k=>`<button class="vfxp-filter-btn ${vfxJobsState.filterEligibility===k?'active':''}" onclick="setVfxEligibility('${k}')">${k==='all'?'Todas':eligibilityLabels[k]}</button>`).join('')}
+      <label class="vfxp-toggle"><input type="checkbox" ${vfxJobsState.showUnverified?'checked':''} onchange="setVfxUnverified(this.checked)"> Incluir sin verificar</label>
     </div>
     <div class="vfxp-controls">
       ${catBtn('all','All studios')}${catBtn('aaa','AAA')}${catBtn('indie','Indie')}

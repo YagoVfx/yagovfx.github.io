@@ -143,9 +143,9 @@ def upgrade_adzuna_jobs_to_direct_links(adzuna_jobs: list[dict], cache: dict) ->
 
         if discovery:
             job = dict(job)  # don't mutate the original in place
-            job["url"] = discovery["careersUrl"]
-            job["ats"] = discovery["ats"]
-            job["viaAggregator"] = False
+            # A company careers landing page is NOT a verified vacancy link.
+            # Keep the original vacancy URL until an exact job URL is found.
+            job["discoveredCareersUrl"] = discovery["careersUrl"]
             upgraded_count += 1
 
         out.append(job)
@@ -165,6 +165,7 @@ def run():
     existing = load_existing_jobs()
     new_jobs: dict[str, dict] = {}
     statuses = []
+    successful_companies = set()
     succeeded = failed = 0
     needs_review_companies = []
 
@@ -200,6 +201,7 @@ def run():
                 "lastAttempt": now_iso(),
             })
             succeeded += 1
+            successful_companies.add(company["name"])
         except Exception as e:
             logger.error(f"Error scanning {company['name']}: {e}")
             statuses.append({"company": company["name"], "status": "error", "error": str(e), "lastAttempt": now_iso()})
@@ -242,7 +244,7 @@ def run():
     adzuna_jobs = dedupe_adzuna_against_direct_matches(adzuna_jobs, new_jobs)
     adzuna_status["jobsFound"] = len(adzuna_jobs)
     adzuna_status["signalOnlyJobsAdded"] = signal_jobs_added
-    adzuna_status["autoUpgradedToDirectLink"] = auto_upgraded_count
+    adzuna_status["careersPagesDiscovered"] = auto_upgraded_count
     for job in adzuna_jobs:
         preserve_first_seen(existing, job)
         new_jobs[job["id"]] = job
@@ -250,6 +252,19 @@ def run():
 
     for jid, job in existing.items():
         if jid not in new_jobs:
+            # Do not infer closure after an API error or an unreliable HTML scrape.
+            company_name = job.get("company", "")
+            if company_name not in successful_companies or any(
+                st.get("company") == company_name and st.get("needsReview")
+                for st in statuses
+            ):
+                job["status"] = "unverified"
+                new_jobs[jid] = job
+                continue
+            if job.get("viaAggregator") or job.get("ats") == "adzuna":
+                job["status"] = "unverified"
+                new_jobs[jid] = job
+                continue
             job["status"] = "closed"
             job["lastSeen"] = now_iso()
             new_jobs[jid] = job

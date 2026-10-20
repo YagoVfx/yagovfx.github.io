@@ -70,8 +70,8 @@ def is_region_restricted(text):
 def classify_job(title, description=""):
     if EXCLUSIONS.search(title):
         return None
-    if is_region_restricted(f"{title} {description}"):
-        return None
+    # Geographic restrictions are eligibility metadata, not evidence that
+    # a relevant VFX vacancy should disappear from the search index.
     if EXACT_PATTERNS.search(title):
         return "exactMatch"
     if POSSIBLE_TITLE.search(title) and POSSIBLE_DESC.search(description):
@@ -86,8 +86,9 @@ ONSITE_RE = re.compile(r'\b(on[-\s]?site|in[-\s]?office|in\s+person)\b', re.IGNO
 
 def detect_workplace(title, location, extra=None):
     combined = f"{title} {location} {extra or ''}"
-    if REMOTE_RE.search(combined): return "remote"
     if HYBRID_RE.search(combined): return "hybrid"
+    if ONSITE_RE.search(combined) and not REMOTE_RE.search(combined): return "onsite"
+    if REMOTE_RE.search(combined): return "remote"
     if ONSITE_RE.search(combined): return "onsite"
     return "unknown"
 
@@ -102,7 +103,22 @@ SCOPE_MAP = [
 
 def detect_remote_scope(title, location):
     combined = f"{title} {location}"
-    for pattern, label in SCOPE_MAP:
+    # Country restrictions take precedence over broad "global" marketing text.
+    for pattern, label in sorted(SCOPE_MAP, key=lambda x: {"Spain": 0, "UK": 1, "US": 2, "Canada": 3, "EU/Europe": 4, "Worldwide": 5}.get(x[1], 9)):
         if pattern.search(combined):
             return label
     return "Unknown"
+
+
+def evaluate_spain_eligibility(title="", location="", description="", workplace="unknown"):
+    """Conservative job compatibility signal; unknown is NOT incompatible."""
+    text = f"{title} {location} {description}"
+    if is_region_restricted(text):
+        return "restricted", "Requires UK/US residence or work authorization"
+    if re.search(r"\b(freelanc(?:e|er)|b2b|independent contractor|self.employed)\b", text, re.I):
+        return "review", "Freelance/B2B mentioned; verify employment type"
+    if re.search(r"\b(spain|españa)\b", location, re.I) and workplace == "remote":
+        return "promising", "Remote and Spain mentioned; verify employment contract"
+    if re.search(r"\b(worldwide|anywhere in the world|remote globally)\b", location, re.I) and workplace == "remote":
+        return "review", "Worldwide wording; verify Spain employment"
+    return "unknown", "Remote-from-Spain and employment terms not confirmed"
