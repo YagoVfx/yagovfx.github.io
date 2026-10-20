@@ -485,7 +485,7 @@
   },
   "redemption games, inc.": {
     "found": false,
-    "checkedAt": 1791310638.9929516
+    "checkedAt": 1792531821.77395
   },
   "gloss studio": {
     "found": false,
@@ -536,5 +536,15 @@
     "ats": "personio",
     "careersUrl": "https://leonine.jobs.personio.de",
     "checkedAt": 1792448144.3769953
+  },
+  "one of us": {
+    "found": true,
+    "ats": "workable",
+    "careersUrl": "https://apply.workable.com/one-of-us",
+    "checkedAt": 1792531831.2919114
+  },
+  "blockreel": {
+    "found": false,
+    "checkedAt": 1792531836.5699492
   }
 }
