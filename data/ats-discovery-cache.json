@@ -489,7 +489,7 @@
   },
   "gloss studio": {
     "found": false,
-    "checkedAt": 1791310648.6620467
+    "checkedAt": 1792556919.7792363
   },
   "amanotes": {
     "found": true,
@@ -546,5 +546,11 @@
   "blockreel": {
     "found": false,
     "checkedAt": 1792531836.5699492
+  },
+  "jobgether srl": {
+    "found": true,
+    "ats": "lever",
+    "careersUrl": "https://jobs.lever.co/jobgether",
+    "checkedAt": 1792556930.694825
   }
 }
