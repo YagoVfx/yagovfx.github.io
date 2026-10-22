@@ -558,5 +558,11 @@
     "ats": "smartrecruiters",
     "careersUrl": "https://careers.smartrecruiters.com/rodeofx",
     "checkedAt": 1792643208.2937727
+  },
+  "leonine holding": {
+    "found": true,
+    "ats": "personio",
+    "careersUrl": "https://leonine.jobs.personio.de",
+    "checkedAt": 1792669079.0799892
   }
 }
