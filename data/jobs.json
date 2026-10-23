@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-10-23T04:32:06Z",
+  "lastUpdated": "2026-10-23T11:27:56Z",
   "companiesScanned": 23,
   "companiesSucceeded": 19,
   "companiesFailed": 4,
-  "totalVfxJobs": 68,
+  "totalVfxJobs": 67,
   "jobsByAts": {
     "smartrecruiters": 8,
     "massive-wp": 1,
     "custom": 1,
     "adzuna-signal": 5,
-    "adzuna": 53
+    "adzuna": 52
   },
   "jobs": [
     {
@@ -27,7 +27,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-10-14T17:00:31Z",
-      "lastSeen": "2026-10-23T04:31:35Z",
+      "lastSeen": "2026-10-23T11:26:47Z",
       "status": "active"
     },
     {
@@ -45,7 +45,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-10-01T22:35:51Z",
-      "lastSeen": "2026-10-23T04:31:35Z",
+      "lastSeen": "2026-10-23T11:26:47Z",
       "status": "active"
     },
     {
@@ -63,7 +63,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-10-15T16:49:00Z",
-      "lastSeen": "2026-10-23T04:31:48Z",
+      "lastSeen": "2026-10-23T11:26:58Z",
       "status": "active"
     },
     {
@@ -81,7 +81,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-10-08T13:17:07Z",
-      "lastSeen": "2026-10-23T04:31:48Z",
+      "lastSeen": "2026-10-23T11:26:58Z",
       "status": "active"
     },
     {
@@ -99,7 +99,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-10-05T14:23:59Z",
-      "lastSeen": "2026-10-23T04:31:48Z",
+      "lastSeen": "2026-10-23T11:26:58Z",
       "status": "active"
     },
     {
@@ -117,7 +117,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-09-08T21:02:43Z",
-      "lastSeen": "2026-10-23T04:31:48Z",
+      "lastSeen": "2026-10-23T11:26:58Z",
       "status": "active"
     },
     {
@@ -135,7 +135,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-31T22:44:50Z",
-      "lastSeen": "2026-10-23T04:31:48Z",
+      "lastSeen": "2026-10-23T11:26:58Z",
       "status": "active"
     },
     {
@@ -153,7 +153,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-23T04:31:48Z",
+      "lastSeen": "2026-10-23T11:26:58Z",
       "status": "active"
     },
     {
@@ -171,7 +171,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-10-05T14:24:00Z",
-      "lastSeen": "2026-10-23T04:31:50Z",
+      "lastSeen": "2026-10-23T11:27:00Z",
       "status": "active"
     },
     {
@@ -189,7 +189,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-10-09T22:32:50Z",
-      "lastSeen": "2026-10-23T04:31:55Z",
+      "lastSeen": "2026-10-23T11:27:06Z",
       "status": "active"
     },
     {
@@ -206,7 +206,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-10-20T16:47:44Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "active"
     },
     {
@@ -223,7 +223,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:19:41Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "active"
     },
     {
@@ -240,7 +240,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:30:46Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "active"
     },
     {
@@ -257,7 +257,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-08-29T16:39:23Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "active"
     },
     {
@@ -274,7 +274,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-08-27T09:22:59Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "active"
     },
     {
@@ -293,7 +293,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://job-boards.greenhouse.io/airship",
       "firstSeen": "2026-09-09T04:26:40Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5896919229",
@@ -310,7 +310,7 @@
       "postedDate": "2026-09-24T14:54:29Z",
       "status": "active",
       "firstSeen": "2026-09-25T04:45:37Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5921994774",
@@ -327,7 +327,7 @@
       "postedDate": "2026-10-10T11:58:01Z",
       "status": "active",
       "firstSeen": "2026-10-10T12:21:07Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5921994699",
@@ -344,7 +344,7 @@
       "postedDate": "2026-10-10T11:57:58Z",
       "status": "active",
       "firstSeen": "2026-10-10T12:21:07Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5938557691",
@@ -361,13 +361,13 @@
       "postedDate": "2026-10-23T02:39:54Z",
       "status": "active",
       "firstSeen": "2026-10-23T04:32:06Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5920153705",
       "company": "Gloss Studio",
       "title": "Beauty VFX Artist, DaVinci Resolve",
-      "url": "https://www.adzuna.com/land/ad/5920153705?se=0O-nrprO8RGI4JqSWCEq_A&utm_medium=api&utm_source=361fafca&v=F4ADF38ADD4FA5B4A7A42E2441889862D974F971",
+      "url": "https://www.adzuna.com/land/ad/5920153705?se=LF6PrtTO8RG9vuJzTkxKEQ&utm_medium=api&utm_source=361fafca&v=F4ADF38ADD4FA5B4A7A42E2441889862D974F971",
       "location": "US",
       "workplaceType": "unknown",
       "remoteScope": "US",
@@ -378,13 +378,13 @@
       "postedDate": "2026-10-09T01:15:04Z",
       "status": "active",
       "firstSeen": "2026-10-09T13:04:35Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5938767435",
       "company": "Liquid Development",
       "title": "VFX Artist - GameSim - Talent Pipeline",
-      "url": "https://www.adzuna.com/land/ad/5938767435?se=0O-nrprO8RGI4JqSWCEq_A&utm_medium=api&utm_source=361fafca&v=901FD57C27FBF0D05CAF427B1740143CE6EF3126",
+      "url": "https://www.adzuna.com/land/ad/5938767435?se=LF6PrtTO8RG9vuJzTkxKEQ&utm_medium=api&utm_source=361fafca&v=901FD57C27FBF0D05CAF427B1740143CE6EF3126",
       "location": "Orlando, Orange County",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -396,13 +396,13 @@
       "status": "active",
       "discoveredCareersUrl": "https://jobs.ashbyhq.com/liquid",
       "firstSeen": "2026-10-23T04:32:06Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5938768383",
       "company": "Liquid Development",
       "title": "Senior Real-Time VFX Artist — Remote",
-      "url": "https://www.adzuna.com/land/ad/5938768383?se=0O-nrprO8RGI4JqSWCEq_A&utm_medium=api&utm_source=361fafca&v=1AD0519E3D8108DD137000CE788F38FE988B88EA",
+      "url": "https://www.adzuna.com/land/ad/5938768383?se=LF6PrtTO8RG9vuJzTkxKEQ&utm_medium=api&utm_source=361fafca&v=1AD0519E3D8108DD137000CE788F38FE988B88EA",
       "location": "Orlando, Orange County",
       "workplaceType": "remote",
       "remoteScope": "Unknown",
@@ -414,24 +414,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://jobs.ashbyhq.com/liquid",
       "firstSeen": "2026-10-23T04:32:06Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
-    },
-    {
-      "id": "az-5927882963",
-      "company": "Redemption Games, Inc.",
-      "title": "Lead VFX Artist & Animator (United States)",
-      "url": "https://www.adzuna.com/land/ad/5927882963?se=0O-nrprO8RGI4JqSWCEq_A&utm_medium=api&utm_source=361fafca&v=61C2CAC024C4172ECE2E1B63D2E101D0B829A727",
-      "location": "US",
-      "workplaceType": "unknown",
-      "remoteScope": "US",
-      "ats": "adzuna",
-      "matchType": "exactMatch",
-      "companyCategory": "indie",
-      "viaAggregator": true,
-      "postedDate": "2026-10-14T13:48:14Z",
-      "status": "active",
-      "firstSeen": "2026-10-14T21:33:19Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5936366572",
@@ -448,7 +431,7 @@
       "postedDate": "2026-10-21T03:24:43Z",
       "status": "active",
       "firstSeen": "2026-10-22T11:38:09Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5936367324",
@@ -465,7 +448,7 @@
       "postedDate": "2026-10-21T03:24:55Z",
       "status": "active",
       "firstSeen": "2026-10-21T11:37:46Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5936367189",
@@ -482,7 +465,7 @@
       "postedDate": "2026-10-21T03:24:52Z",
       "status": "active",
       "firstSeen": "2026-10-21T11:37:46Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5899523830",
@@ -500,7 +483,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://job-boards.greenhouse.io/naughtydog",
       "firstSeen": "2026-09-26T11:14:40Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5905542549",
@@ -518,7 +501,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://yo.recruitee.com",
       "firstSeen": "2026-10-02T05:23:58Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5877708286",
@@ -536,7 +519,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://apply.workable.com/velanstudios",
       "firstSeen": "2026-09-10T04:24:51Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5896480751",
@@ -554,7 +537,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://job-boards.greenhouse.io/insomniac",
       "firstSeen": "2026-09-24T11:34:39Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5905542550",
@@ -572,7 +555,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://yo.recruitee.com",
       "firstSeen": "2026-10-02T05:23:58Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5889052595",
@@ -589,13 +572,13 @@
       "postedDate": "2026-09-18T06:13:20Z",
       "status": "active",
       "firstSeen": "2026-09-18T11:03:10Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5937523433",
       "company": "LEONINE Holding GmbH",
       "title": "AI / VFX Artist",
-      "url": "https://www.adzuna.de/land/ad/5937523433?se=qF83r5rO8RGiY7N8xe78DA&utm_medium=api&utm_source=361fafca&v=140B1FE1584CB08ADEB3592C99FFD193B900E5C8",
+      "url": "https://www.adzuna.de/land/ad/5937523433?se=8p98r9TO8RG9vuJzTkxKEQ&utm_medium=api&utm_source=361fafca&v=140B1FE1584CB08ADEB3592C99FFD193B900E5C8",
       "location": "München, München (Kreis)",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -607,13 +590,13 @@
       "status": "active",
       "discoveredCareersUrl": "https://leonine.jobs.personio.de",
       "firstSeen": "2026-10-22T11:38:09Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5938089933",
       "company": "LEONINE Holding GmbH",
       "title": "Ai / Vfx Artist",
-      "url": "https://www.adzuna.de/land/ad/5938089933?se=qF83r5rO8RGiY7N8xe78DA&utm_medium=api&utm_source=361fafca&v=A5412C7591BA0B56B0D4A178C3375AE128EF0360",
+      "url": "https://www.adzuna.de/land/ad/5938089933?se=8p98r9TO8RG9vuJzTkxKEQ&utm_medium=api&utm_source=361fafca&v=A5412C7591BA0B56B0D4A178C3375AE128EF0360",
       "location": "Deutschland",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -625,13 +608,13 @@
       "status": "active",
       "discoveredCareersUrl": "https://leonine.jobs.personio.de",
       "firstSeen": "2026-10-23T04:32:06Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5938792118",
       "company": "LEONINE Holding GmbH",
       "title": "AI / VFX Artist",
-      "url": "https://www.adzuna.de/land/ad/5938792118?se=qF83r5rO8RGiY7N8xe78DA&utm_medium=api&utm_source=361fafca&v=5F25FB525C2AF83D31778FF4A8ED9AB73906D8D0",
+      "url": "https://www.adzuna.de/land/ad/5938792118?se=8p98r9TO8RG9vuJzTkxKEQ&utm_medium=api&utm_source=361fafca&v=5F25FB525C2AF83D31778FF4A8ED9AB73906D8D0",
       "location": "Deutschland",
       "workplaceType": "unknown",
       "remoteScope": "Unknown",
@@ -643,7 +626,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://leonine.jobs.personio.de",
       "firstSeen": "2026-10-23T04:32:06Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5936928985",
@@ -661,7 +644,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://leonine.jobs.personio.de",
       "firstSeen": "2026-10-22T11:38:09Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5934252521",
@@ -679,7 +662,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://leonine.jobs.personio.de",
       "firstSeen": "2026-10-19T22:15:54Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5935761706",
@@ -697,7 +680,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://apply.workable.com/one-of-us",
       "firstSeen": "2026-10-20T21:30:42Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5911271406",
@@ -715,7 +698,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://job-boards.greenhouse.io/hasbro",
       "firstSeen": "2026-10-04T12:13:16Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5932112027",
@@ -733,7 +716,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://apply.workable.com/velanstudios",
       "firstSeen": "2026-10-17T15:25:25Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5935621081",
@@ -750,7 +733,7 @@
       "postedDate": "2026-10-20T12:51:04Z",
       "status": "active",
       "firstSeen": "2026-10-20T21:30:42Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5935621172",
@@ -767,7 +750,7 @@
       "postedDate": "2026-10-20T12:51:06Z",
       "status": "active",
       "firstSeen": "2026-10-21T11:37:46Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5911284403",
@@ -785,7 +768,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://job-boards.greenhouse.io/hasbro",
       "firstSeen": "2026-10-05T05:22:52Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5907698461",
@@ -803,7 +786,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://company3.recruitee.com",
       "firstSeen": "2026-10-13T14:03:34Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5907703751",
@@ -821,7 +804,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://company3.recruitee.com",
       "firstSeen": "2026-10-14T11:39:16Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5924124080",
@@ -839,7 +822,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://company3.recruitee.com",
       "firstSeen": "2026-10-13T14:03:34Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5924124358",
@@ -857,7 +840,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://company3.recruitee.com",
       "firstSeen": "2026-10-13T14:03:34Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5930394780",
@@ -875,7 +858,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://careers.smartrecruiters.com/rodeofx",
       "firstSeen": "2026-10-16T11:12:58Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5935870172",
@@ -893,7 +876,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-21T04:29:01Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5918690987",
@@ -910,7 +893,7 @@
       "postedDate": "2026-10-08T10:28:08Z",
       "status": "active",
       "firstSeen": "2026-10-09T05:55:30Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5896083834",
@@ -928,7 +911,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://jobs.lever.co/larian",
       "firstSeen": "2026-09-24T04:32:00Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5911347025",
@@ -946,7 +929,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-04T12:13:16Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5909777529",
@@ -964,7 +947,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-04T05:39:14Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5909781598",
@@ -982,7 +965,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5896092475",
@@ -1000,7 +983,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://job-boards.greenhouse.io/scopely",
       "firstSeen": "2026-09-24T04:32:00Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5909777547",
@@ -1018,7 +1001,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5896082987",
@@ -1036,7 +1019,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://job-boards.greenhouse.io/scopely",
       "firstSeen": "2026-09-24T04:32:00Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5911346904",
@@ -1054,7 +1037,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-05T05:22:52Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5909778593",
@@ -1072,7 +1055,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://careers.smartrecruiters.com/gameloft",
       "firstSeen": "2026-10-03T11:32:15Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5911350472",
@@ -1090,7 +1073,7 @@
       "status": "active",
       "discoveredCareersUrl": "https://careers.smartrecruiters.com/smartrecruiters",
       "firstSeen": "2026-10-05T05:22:52Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5927285707",
@@ -1107,7 +1090,7 @@
       "postedDate": "2026-10-14T12:48:59Z",
       "status": "active",
       "firstSeen": "2026-10-15T11:18:13Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5916784667",
@@ -1124,7 +1107,7 @@
       "postedDate": "2026-10-07T12:33:39Z",
       "status": "active",
       "firstSeen": "2026-10-08T05:50:01Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5916784460",
@@ -1141,7 +1124,7 @@
       "postedDate": "2026-10-07T12:33:36Z",
       "status": "active",
       "firstSeen": "2026-10-08T05:50:01Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5907315899",
@@ -1158,7 +1141,7 @@
       "postedDate": "2026-10-02T06:44:25Z",
       "status": "active",
       "firstSeen": "2026-10-02T12:22:20Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5916783905",
@@ -1175,7 +1158,7 @@
       "postedDate": "2026-10-07T12:33:09Z",
       "status": "active",
       "firstSeen": "2026-10-08T05:50:01Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5916784944",
@@ -1192,7 +1175,7 @@
       "postedDate": "2026-10-07T12:33:50Z",
       "status": "active",
       "firstSeen": "2026-10-08T05:50:01Z",
-      "lastSeen": "2026-10-23T04:32:06Z"
+      "lastSeen": "2026-10-23T11:27:56Z"
     },
     {
       "id": "az-5907315876",
@@ -1209,6 +1192,23 @@
       "postedDate": "2026-10-02T06:44:25Z",
       "status": "active",
       "firstSeen": "2026-10-02T05:23:58Z",
+      "lastSeen": "2026-10-23T11:27:56Z"
+    },
+    {
+      "id": "az-5927882963",
+      "company": "Redemption Games, Inc.",
+      "title": "Lead VFX Artist & Animator (United States)",
+      "url": "https://www.adzuna.com/land/ad/5927882963?se=0O-nrprO8RGI4JqSWCEq_A&utm_medium=api&utm_source=361fafca&v=61C2CAC024C4172ECE2E1B63D2E101D0B829A727",
+      "location": "US",
+      "workplaceType": "unknown",
+      "remoteScope": "US",
+      "ats": "adzuna",
+      "matchType": "exactMatch",
+      "companyCategory": "indie",
+      "viaAggregator": true,
+      "postedDate": "2026-10-14T13:48:14Z",
+      "status": "unverified",
+      "firstSeen": "2026-10-14T21:33:19Z",
       "lastSeen": "2026-10-23T04:32:06Z"
     },
     {
@@ -1243,7 +1243,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-26T19:56:12Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -1261,7 +1261,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-10-01T12:59:56Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -1385,7 +1385,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -1403,7 +1403,7 @@
       "companyCategory": "indie",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:17:29Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -1691,7 +1691,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-31T22:44:50Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -1724,7 +1724,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-09-17T16:49:15Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -3350,7 +3350,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-13T19:13:22Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -3640,7 +3640,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -3656,7 +3656,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -3720,7 +3720,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-10T19:07:27Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -4089,7 +4089,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -4313,7 +4313,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-19T18:46:02Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -4361,7 +4361,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -4682,7 +4682,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-10T19:07:27Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -4826,7 +4826,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -4842,7 +4842,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -4922,7 +4922,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -4938,7 +4938,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-01T09:32:43Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -4954,7 +4954,7 @@
       "companyCategory": "aaa",
       "viaAggregator": false,
       "firstSeen": "2026-08-02T19:43:14Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
@@ -5099,7 +5099,7 @@
       "viaAggregator": false,
       "signalOnly": true,
       "firstSeen": "2026-07-29T21:30:46Z",
-      "lastSeen": "2026-10-23T04:32:06Z",
+      "lastSeen": "2026-10-23T11:27:56Z",
       "status": "closed"
     },
     {
