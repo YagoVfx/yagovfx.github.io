@@ -12,30 +12,30 @@ permissions:
 jobs:
   unit:
     name: Unit tests (Python + JS)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '24'
       - run: pip install -r scanner/requirements.txt pytest
       - run: python -m pytest -q tests --ignore=tests/e2e
-      - run: node --test "tests/js/*.test.js"
+      - run: node scripts/test-js.cjs
 
   e2e:
     name: E2E en navegador (Chromium + axe-core)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '24'
       - run: pip install -r requirements-dev.txt
       - run: python -m playwright install --with-deps chromium
       - run: npm ci

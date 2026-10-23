@@ -454,7 +454,7 @@ class _OffersState extends State<OffersPage> {
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                            'Versión 0.3.0 · Radar global\n\nSolo portales oficiales. Adzuna y otros agregadores estan excluidos. Las ofertas vienen del scanner del portfolio. Guardadas y descartadas se almacenan en este dispositivo. No necesitas iniciar sesión.',
+                            'Versión 0.4.0 · Mapa interactivo\n\nSolo portales oficiales. Adzuna y otros agregadores estan excluidos. Las ofertas vienen del scanner del portfolio. Guardadas y descartadas se almacenan en este dispositivo. No necesitas iniciar sesión.',
                           ),
                           const SizedBox(height: 16),
                           Text(

@@ -2,7 +2,7 @@
 
 ## Radar global: mapa y plataformas
 
-Web: pestaña **Mapa y estadísticas**, tanto pública como del administrador. Android 0.3.0:
+Web: pestaña **Mapa y estadísticas**, tanto pública como del administrador. Android 0.4.0:
 pestaña **Radar**. La gráfica circular agrupa las ofertas oficiales activas por la plataforma
 real de cada fuente configurada (por ejemplo, Room 8 como WordPress aunque su adaptador
 normalice los anuncios como `custom`). Cuenta las coincidencias posibles, excluye agregadores
@@ -25,6 +25,16 @@ sin servicios externos de mapas. La APK incluye la misma cartografía y una copi
 del catálogo; después descarga las ubicaciones actualizadas y conserva caché local.
 Para refrescar la copia que se incluye en una nueva APK, copiar los JSON de empresas y
 ubicaciones a `mobile/assets/` antes de compilar.
+
+La revisión 0.4.0 agrupa marcadores por su proximidad en pantalla. La web admite arrastre,
+rueda, doble clic, pellizco y teclado; pulsar un grupo muestra sus empresas en un panel
+legible y acerca la zona cuando las ubicaciones son distintas. La app permite arrastre,
+pellizco y doble toque, con una lista inferior al pulsar grupos y enfoque al seleccionar
+una empresa. Los nombres ya no se dibujan simultáneamente sobre todos los puntos.
+Una empresa puede aparecer en varias zonas porque tiene más de una ubicación.
+
+El enlace Jobs VFX Scanner en GitHub aparece en la cabecera de todos los paneles web
+y en Radar de Android. Abre el workflow; no ejecuta ni publica nada desde la interfaz.
 
 ## Revisión de pendientes y cobertura española (23-10-2026)
 

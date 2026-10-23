@@ -393,7 +393,7 @@ def test_admin_has_sources_tab_with_scanner_report_and_failures(make_page):
     txt = admin.locator('[data-pane="sources"]').inner_text()
     assert "Peso de agregadores" in txt and "40 %" in txt and "Duplicados fusionados" in txt
     assert "timeout" in txt and "3 fallos seguidos" in txt
-    assert admin.locator('a[href*="actions/workflows"]').count() == 1
+    assert admin.locator('[data-pane="sources"] a[href*="actions/workflows"]').count() == 1
     assert "no puede lanzarla" in txt
     admin.locator(".jp-tab", has_text="Mis candidaturas").click()
     assert "desactivada a propósito" in admin.locator('[data-pane="apps"]').inner_text()

@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'jobs.dart';
+import 'company_map.dart';
 
 String platformName(String type) =>
     const {
@@ -76,20 +77,12 @@ class _InsightsState extends State<InsightsPage> {
   Map<String, dynamic>? world, locations;
   List<dynamic> companies = [];
   String selected = '';
-  bool names = true, loading = true;
+  bool loading = true;
   String? error;
-  final transform = TransformationController();
-  bool mapFit = false;
   @override
   void initState() {
     super.initState();
     load();
-  }
-
-  @override
-  void dispose() {
-    transform.dispose();
-    super.dispose();
   }
 
   Future<void> load() async {
@@ -172,6 +165,16 @@ class _InsightsState extends State<InsightsPage> {
       padding: const EdgeInsets.all(16),
       children: [
         Text('Radar global', style: Theme.of(context).textTheme.headlineMedium),
+        OutlinedButton.icon(
+          onPressed: () => launchUrl(
+            Uri.parse(
+              'https://github.com/YagoVfx/yagovfx.github.io/actions/workflows/vfx-jobs-scanner.yml',
+            ),
+            mode: LaunchMode.externalApplication,
+          ),
+          icon: const Icon(Icons.open_in_new),
+          label: const Text('Jobs VFX Scanner en GitHub'),
+        ),
         if (loading) const LinearProgressIndicator(),
         if (error != null)
           Text(error!, style: const TextStyle(color: Colors.amber)),
@@ -224,6 +227,7 @@ class _InsightsState extends State<InsightsPage> {
         ),
         const SizedBox(height: 12),
         DropdownButtonFormField<String>(
+          key: ValueKey('company-picker-$selected'),
           initialValue: selected,
           isExpanded: true,
           decoration: const InputDecoration(labelText: 'Empresa'),
@@ -241,39 +245,21 @@ class _InsightsState extends State<InsightsPage> {
           ],
           onChanged: (v) => setState(() => selected = v ?? ''),
         ),
-        SwitchListTile(
-          title: const Text('Mostrar nombres'),
-          value: names,
-          onChanged: (v) => setState(() => names = v),
+        const Padding(
+          padding: EdgeInsets.symmetric(vertical: 12),
+          child: Text(
+            'Pulsa un grupo para ver sus empresas y selecciona un nombre para enfocarlo, sin etiquetas superpuestas.',
+          ),
         ),
         if (world != null)
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: SizedBox(
               height: 340,
-              child: LayoutBuilder(
-                builder: (context, box) {
-                  if (!mapFit) {
-                    final scale = box.maxWidth / 2000;
-                    transform.value = Matrix4.diagonal3Values(scale, scale, 1);
-                    mapFit = true;
-                  }
-                  return InteractiveViewer(
-                    constrained: false,
-                    minScale: .1,
-                    maxScale: 4,
-                    boundaryMargin: const EdgeInsets.all(80),
-                    transformationController: transform,
-                    child: CustomPaint(
-                      size: const Size(2000, 1000),
-                      painter: WorldPainter(
-                        world!['polygons'] as List,
-                        visible,
-                        names,
-                      ),
-                    ),
-                  );
-                },
+              child: CompanyWorldMap(
+                polygons: world!['polygons'] as List,
+                companies: visible,
+                onSelected: (name) => setState(() => selected = name),
               ),
             ),
           ),
@@ -282,7 +268,7 @@ class _InsightsState extends State<InsightsPage> {
         ),
         ExpansionTile(
           initiallyExpanded: selected.isNotEmpty,
-          key: ValueKey(selected),
+          key: ValueKey('company-details-$selected'),
           title: const Text('Ubicaciones y fuentes'),
           children: visible
               .map(
@@ -352,73 +338,4 @@ class DonutPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant DonutPainter oldDelegate) => true;
-}
-
-class WorldPainter extends CustomPainter {
-  final List polygons;
-  final List<Map<String, dynamic>> companies;
-  final bool names;
-  WorldPainter(this.polygons, this.companies, this.names);
-  @override
-  void paint(Canvas canvas, Size size) {
-    canvas.drawRect(
-      Offset.zero & size,
-      Paint()..color = const Color(0xff0d1727),
-    );
-    final sx = size.width / 1000, sy = size.height / 500;
-    for (final polygon in polygons) {
-      final path = Path();
-      var first = true;
-      for (final point in polygon) {
-        final x = (point[0] as num).toDouble() * sx,
-            y = (point[1] as num).toDouble() * sy;
-        if (first) {
-          path.moveTo(x, y);
-          first = false;
-        } else {
-          path.lineTo(x, y);
-        }
-      }
-      path.close();
-      canvas.drawPath(path, Paint()..color = const Color(0xff293b51));
-      canvas.drawPath(
-        path,
-        Paint()
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = .6
-          ..color = const Color(0xff496079),
-      );
-    }
-    final offsets = <String, int>{};
-    for (final c in companies) {
-      for (final p in c['locations'] as List) {
-        final x = ((p['lon'] as num) + 180) / 360 * size.width,
-            y = (90 - (p['lat'] as num)) / 180 * size.height;
-        canvas.drawCircle(
-          Offset(x, y),
-          5,
-          Paint()..color = const Color(0xff63e1ca),
-        );
-        final key = '${p['lat']},${p['lon']}', index = offsets[key] ?? 0;
-        offsets[key] = index + 1;
-        if (names) {
-          final text = TextPainter(
-            text: TextSpan(
-              text: c['name'] as String,
-              style: const TextStyle(
-                fontSize: 15,
-                color: Colors.white,
-                backgroundColor: Color(0xcc101725),
-              ),
-            ),
-            textDirection: TextDirection.ltr,
-          )..layout();
-          text.paint(canvas, Offset(x + 8, y + index * 18));
-        }
-      }
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant WorldPainter oldDelegate) => true;
 }

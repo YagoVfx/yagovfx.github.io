@@ -6,7 +6,7 @@ navegador interceptan Firebase y `data/*.json` con los fixtures de `tests/fixtur
 | Capa | Qué cubre | Comando |
 |------|-----------|---------|
 | Python (scanner) | clasificación, ciclo de vida, deduplicación, adaptadores, registro, `run()` completo | `python -m pytest -q tests --ignore=tests/e2e` |
-| JavaScript (lógica pura) | modelo de filtros, ordenación, saneado, migración de registros | `node --test "tests/js/*.test.js"` |
+| JavaScript (lógica pura) | modelo de filtros, ordenación, saneado, migración de registros y agrupación del mapa | `npm run test:js` |
 | E2E en Chromium | filtros UI-01…UI-12, seguridad del admin, móvil 360 px, accesibilidad (axe-core) | `python -m pytest -q tests/e2e` |
 
 ## Preparación (una vez)

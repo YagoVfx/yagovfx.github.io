@@ -113,6 +113,7 @@
     this.el.setAttribute('data-mode', this.admin ? 'admin' : 'public');
     this.el.innerHTML =
       '<div class="jp-head"><h2 class="jp-title">Empleo VFX</h2><p class="jp-updated" data-ref="updated">Cargando…</p></div>' +
+      '<p class="jp-scanner-link"><a class="jp-btn" href="' + WORKFLOW_URL + '" target="_blank" rel="noopener noreferrer">Jobs VFX Scanner en GitHub ↗</a></p>' +
       '<div class="jp-banner" data-ref="banner" hidden></div>' +
       '<div class="jp-tabs" role="tablist" aria-label="Secciones del panel de empleo">' + tabBtns + '</div>' +
 

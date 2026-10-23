@@ -3,7 +3,7 @@
   "private": true,
   "description": "Solo dependencias de prueba (accesibilidad con axe-core). La web en producción no usa npm.",
   "scripts": {
-    "test:js": "node --test \"tests/js/*.test.js\"",
+    "test:js": "node scripts/test-js.cjs",
     "test:e2e": "python -m pytest -q tests/e2e",
     "test:py": "python -m pytest -q tests --ignore=tests/e2e"
   },
