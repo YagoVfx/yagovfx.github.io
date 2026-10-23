@@ -248,7 +248,7 @@ class _InsightsState extends State<InsightsPage> {
         const Padding(
           padding: EdgeInsets.symmetric(vertical: 12),
           child: Text(
-            'Pulsa un grupo para ver sus empresas y selecciona un nombre para enfocarlo, sin etiquetas superpuestas.',
+            'Morado: varias empresas. Verde: una empresa. Pulsa un punto verde para ver esa ubicación sin mover el mapa. Usa «Ver todas sus sedes» para cambiar la vista.',
           ),
         ),
         if (world != null)

@@ -147,6 +147,10 @@ class _CompanyMapState extends State<CompanyWorldMap> {
   void openCluster(MapCluster group) {
     final companies = group.companies
       ..sort((a, b) => (a['name'] as String).compareTo(b['name'] as String));
+    if (companies.length == 1) {
+      openCompany(group, companies.first);
+      return;
+    }
     showModalBottomSheet(
       context: context,
       showDragHandle: true,
@@ -183,12 +187,51 @@ class _CompanyMapState extends State<CompanyWorldMap> {
                           trailing: const Icon(Icons.chevron_right),
                           onTap: () {
                             Navigator.pop(context);
-                            widget.onSelected(c['name'] as String);
+                            openCompany(group, c);
                           },
                         ),
                       )
                       .toList(),
                 ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void openCompany(MapCluster group, Map<String, dynamic> company) {
+    final cities = group.points
+        .where((p) => p.company['name'] == company['name'])
+        .map((p) => p.city)
+        .toSet()
+        .join(' · ');
+    showModalBottomSheet(
+      context: context,
+      showDragHandle: true,
+      builder: (sheetContext) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                company['name'] as String,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              const SizedBox(height: 12),
+              Text('Ubicación seleccionada: $cities'),
+              const SizedBox(height: 20),
+              FilledButton.icon(
+                icon: const Icon(Icons.public),
+                label: const Text('Ver todas sus sedes'),
+                onPressed: () {
+                  Navigator.pop(sheetContext);
+                  widget.onSelected(company['name'] as String);
+                  scheduleFit();
+                },
               ),
             ],
           ),

@@ -3,9 +3,9 @@ import pytest
 from conftest import open_public
 
 
-def radar_page(make_page,width=1280):
+def radar_page(make_page,width=1280,locations=None):
     page=make_page(viewport={'width':width,'height':900})
-    locations={'companies':[
+    locations=locations or {'companies':[
       {'name':'Room8','locations':[{'city':'London','lat':51.5,'lon':-.1,'evidence':'https://room8group.com/contact-us/'}]},
       {'name':'Hexworks','sharedSource':'CI Games','locations':[{'city':'Barcelona','lat':41.39,'lon':2.17,'evidence':'https://cigames.com/en/contact/'}]},
       {'name':'Unlocated','locations':[]},
@@ -17,6 +17,25 @@ def radar_page(make_page,width=1280):
     radar=box.locator('[data-pane="insights"]')
     radar.locator('[data-map-cluster]').first.wait_for()
     return page,radar
+
+
+@pytest.mark.parametrize('width',[390,1280])
+def test_green_marker_keeps_camera_until_all_offices_requested(make_page,width):
+    locations={'companies':[{'name':'Room8','locations':[
+        {'city':'London','lat':51.5,'lon':-.1,'evidence':'https://room8group.com/contact-us/'},
+        {'city':'Tokyo','lat':35.68,'lon':139.69,'evidence':'https://room8group.com/contact-us/'},
+    ]}]}
+    page,radar=radar_page(make_page,width,locations)
+    camera=radar.locator('[data-map-svg]>g').first.get_attribute('transform')
+    radar.locator('[data-map-cluster]').first.click()
+    assert radar.locator('[data-map-svg]>g').first.get_attribute('transform')==camera
+    detail=radar.locator('[data-map-detail]')
+    assert 'London' in detail.inner_text() and 'Tokyo' not in detail.inner_text()
+    assert radar.locator('[data-map-company]').input_value()==''
+    detail.get_by_role('button',name='Ver todas sus sedes').click()
+    assert radar.locator('[data-map-svg]>g').first.get_attribute('transform')!=camera
+    assert radar.locator('[data-map-company]').input_value()=='Room8'
+    assert 'London' in detail.inner_text() and 'Tokyo' in detail.inner_text()
 
 
 @pytest.mark.parametrize('width',[390,1280])

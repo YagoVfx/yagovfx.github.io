@@ -33,6 +33,10 @@ pellizco y doble toque, con una lista inferior al pulsar grupos y enfoque al sel
 una empresa. Los nombres ya no se dibujan simultáneamente sobre todos los puntos.
 Una empresa puede aparecer en varias zonas porque tiene más de una ubicación.
 
+Desde 0.4.1, pulsar un punto verde muestra únicamente las ubicaciones de ese marcador
+sin cambiar la cámara ni filtrar el mapa a todas las sedes de la empresa. La acción
+«Ver todas sus sedes» realiza ese enfoque explícitamente en web y Android.
+
 El enlace Jobs VFX Scanner en GitHub aparece en la cabecera de todos los paneles web
 y en Radar de Android. Abre el workflow; no ejecuta ni publica nada desde la interfaz.
 

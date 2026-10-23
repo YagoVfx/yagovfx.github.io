@@ -53,7 +53,54 @@ void main() {
       expect(find.text('2 empresas en esta zona'), findsOneWidget);
       await tester.tap(find.text('Beta'));
       await tester.pumpAndSettle();
+      expect(selected, isNull);
+      expect(find.text('Ubicación seleccionada: London'), findsOneWidget);
+      await tester.tap(find.text('Ver todas sus sedes'));
+      await tester.pumpAndSettle();
       expect(selected, 'Beta');
+      expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets(
+    'Un punto verde no mueve la cámara ni selecciona todas las sedes',
+    (tester) async {
+      String? selected;
+      final company = <String, dynamic>{
+        'name': 'Global Studio',
+        'locations': [
+          {'city': 'London', 'lat': 51.5, 'lon': -.1},
+          {'city': 'Tokyo', 'lat': 35.68, 'lon': 139.69},
+        ],
+      };
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: SizedBox(
+              width: 390,
+              height: 360,
+              child: CompanyWorldMap(
+                polygons: const [],
+                companies: [company],
+                onSelected: (name) => selected = name,
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      final controller = tester
+          .widget<InteractiveViewer>(find.byType(InteractiveViewer))
+          .transformationController!;
+      final before = List<double>.of(controller.value.storage);
+      await tester.tap(find.byTooltip('Global Studio').first);
+      await tester.pumpAndSettle();
+      expect(controller.value.storage, orderedEquals(before));
+      expect(selected, isNull);
+      expect(find.text('Ubicación seleccionada: London'), findsOneWidget);
+      await tester.tap(find.text('Ver todas sus sedes'));
+      await tester.pumpAndSettle();
+      expect(selected, 'Global Studio');
       expect(tester.takeException(), isNull);
     },
   );

@@ -23,7 +23,7 @@
     var byName={}; config.forEach(function(c){byName[c.name]=c;});
     var paths=data.world.polygons.map(function(poly){return '<path d="M'+poly.map(function(p){return Number(p[0])+','+Number(p[1]);}).join('L')+'Z"/>';}).join('');
     el.innerHTML='<div class="ji-controls"><label>Buscar empresa o ciudad<input type="search" data-map-search placeholder="Por ejemplo: Hexworks, Barcelona…"></label><label>Empresa<select data-map-company><option value="">Todas las empresas</option>'+located.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).map(function(c){return '<option>'+esc(c.name)+'</option>';}).join('')+'</select></label><button class="jp-btn" data-map-reset>Ver todo el mundo</button></div>'+
-      '<p class="ji-map-help">Arrastra para explorar · rueda o pellizco para ampliar · pulsa un grupo para ver sus empresas. También puedes usar las flechas y las teclas + y −.</p>'+
+      '<p class="ji-map-help">Morado: varias empresas · Verde: una empresa. El punto verde abre su ubicación sin mover el mapa. Arrastra para explorar y usa rueda o pellizco para ampliar. También puedes usar las flechas y las teclas + y −.</p>'+
       '<div class="ji-map-layout"><div class="ji-map-stage"><div class="ji-map-surface" tabindex="0" role="region" aria-label="Mapa interactivo de empresas"><svg data-map-svg role="group" aria-label="Empresas agrupadas por ubicación"></svg></div><div class="ji-map-tools"><button class="jp-btn" data-map-zoom="1" aria-label="Ampliar mapa">+</button><button class="jp-btn" data-map-zoom="-1" aria-label="Reducir mapa">−</button></div><span class="ji-map-scale" data-map-scale></span></div><div class="ji-map-selection" id="'+id+'" data-map-detail aria-live="polite"></div></div>'+
       '<p>'+located.length+' empresas localizadas · '+missing.length+' sin ubicación verificada.</p><details><summary>Sin ubicación verificada</summary><p>'+missing.map(function(c){return esc(c.name);}).join(' · ')+'</p></details>';
     var surface=el.querySelector('.ji-map-surface'), svg=el.querySelector('[data-map-svg]'), panel=el.querySelector('[data-map-detail]');
@@ -38,9 +38,10 @@
       list=Object.keys(unique).sort().map(function(n){return unique[n];});
       panel.innerHTML='<h4>'+esc(title)+'</h4><p>'+list.length+' empresa'+(list.length===1?'':'s')+'</p>'+ (list.length?'<ul class="ji-map-results">'+list.map(function(c){var offers=companyJobs(c);return '<li><button class="ji-company-pick" data-pick-company="'+esc(c.name)+'"><strong>'+esc(c.name)+'</strong><span>'+esc(c.locations.map(function(p){return p.city;}).filter(function(p,i,a){return a.indexOf(p)===i;}).join(' · '))+'</span><span>'+offers.length+' ofertas VFX activas</span></button></li>';}).join('')+'</ul>':'<p>No hay empresas que coincidan.</p>');
     }
-    function showCompany(c) {
+    function showCompany(c, locations) {
+      locations=locations||c.locations;
       var cfg=byName[c.name]||byName[c.sharedSource]||{}, offers=companyJobs(c), url=C.safeUrl(cfg.careersUrl);
-      panel.innerHTML='<h4>'+esc(c.name)+'</h4><p>'+esc(c.locations.map(function(p){return p.city;}).join(' · '))+'</p>'+(c.sharedSource?'<p>Portal compartido con '+esc(c.sharedSource)+'</p>':'')+'<p><strong>'+offers.length+'</strong> ofertas VFX activas</p>'+ (url?'<a class="jp-btn" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Portal de empleo ↗</a>':'')+'<ul class="ji-map-results">'+offers.map(function(j){var u=C.safeUrl(j.url);return u?'<li><a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">'+esc(j.title)+'</a></li>':'';}).join('')+'</ul><details><summary>Fuente de las ubicaciones</summary>'+c.locations.map(function(p){var u=C.safeUrl(p.evidence);return u?'<p><a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">'+esc(p.city)+' ↗</a></p>':'';}).join('')+'</details>';
+      panel.innerHTML='<h4>'+esc(c.name)+'</h4><p>'+esc(locations.map(function(p){return p.city;}).join(' · '))+'</p><button class="jp-btn" data-show-offices="'+esc(c.name)+'">Ver todas sus sedes</button>'+(c.sharedSource?'<p>Portal compartido con '+esc(c.sharedSource)+'</p>':'')+'<p><strong>'+offers.length+'</strong> ofertas VFX activas</p>'+ (url?'<a class="jp-btn" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Portal de empleo ↗</a>':'')+'<ul class="ji-map-results">'+offers.map(function(j){var u=C.safeUrl(j.url);return u?'<li><a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">'+esc(j.title)+'</a></li>':'';}).join('')+'</ul><details><summary>Fuente de las ubicaciones</summary>'+locations.map(function(p){var u=C.safeUrl(p.evidence);return u?'<p><a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">'+esc(p.city)+' ↗</a></p>':'';}).join('')+'</details>';
     }
     function limitPan() {
       var scale=base*zoom, mapWidth=1000*scale, mapHeight=500*scale;
@@ -82,7 +83,7 @@
     function openCluster(index) {
       var g=groups[index]; if(!g)return;
       var companies=g.points.map(function(p){return p.company;}), names=new Set(companies.map(function(c){return c.name;}));
-      if(names.size===1) {pick(companies[0].name);return;}
+      if(names.size===1) {showCompany(companies[0],g.points.map(function(p){return p.location;}));return;}
       var points=g.points.map(function(p){return p.world;});
       showCompanies(companies,'Empresas en esta zona');
       if(points.some(function(p){return Math.hypot(p.x-points[0].x,p.y-points[0].y)>1;}))focusPoints(points);
@@ -111,7 +112,7 @@
     el.querySelector('[data-map-search]').oninput=function(e){selected='';query=e.target.value.trim().toLocaleLowerCase();el.querySelector('[data-map-company]').value='';resize(true);showCompanies(matching(),query?'Resultados de búsqueda':'Explora las empresas');};
     el.querySelector('[data-map-reset]').onclick=reset;
     el.querySelectorAll('[data-map-zoom]').forEach(function(b){b.onclick=function(){zoomAt(Number(b.dataset.mapZoom)>0?1.5:1/1.5,width/2,height/2);};});
-    panel.onclick=function(e){var b=e.target.closest('[data-pick-company]');if(b)pick(b.dataset.pickCompany);};
+    panel.onclick=function(e){var b=e.target.closest('[data-pick-company]'), offices=e.target.closest('[data-show-offices]');if(b)pick(b.dataset.pickCompany);if(offices)pick(offices.dataset.showOffices);};
     resize(true);showCompanies(located,'Explora las empresas');
     resizeObserver=new ResizeObserver(function(){if(el.isConnected&&surface.clientWidth)resize(false);});resizeObserver.observe(surface);
     return function(){resizeObserver.disconnect();};
