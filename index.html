@@ -3476,13 +3476,22 @@ async function checkPw(){
   const btn=document.getElementById('gateGo');btn.disabled=true;
   try{
     const cred=await signInWithEmailAndPassword(_auth,email,pw);
-    if(!isAdminUser(cred.user)){await signOut(_auth);throw new Error('auth/unauthorized');}
+    if(!isAdminUser(cred.user)){await signOut(_auth);throw Object.assign(new Error('auth/unauthorized'),{code:'auth/unauthorized'});}
     _adminUser=cred.user;_gateFails=0;
     closeGate();openAdmin();
   }catch(e){
     _gateFails++;if(_gateFails>=5){_gateLockUntil=Date.now()+30000;_gateFails=0;}
     document.getElementById('gateIn').value='';
-    show('Credenciales incorrectas.'); /* mensaje genérico: no revela si el email existe */
+    const authErrors={
+      'auth/operation-not-allowed':'Activa Correo electrónico/contraseña en Firebase Authentication.',
+      'auth/network-request-failed':'No se pudo conectar con Firebase. Revisa la conexión o los bloqueadores del navegador.',
+      'auth/too-many-requests':'Firebase ha bloqueado temporalmente los intentos. Espera unos minutos.',
+      'auth/unauthorized-domain':'Este dominio no está autorizado en Firebase Authentication.',
+      'auth/invalid-api-key':'La configuración de Firebase contiene una clave API no válida.',
+      'auth/app-not-authorized':'Firebase no autoriza esta web. Revisa las restricciones de la clave API.',
+      'auth/unauthorized':'La cuenta ha iniciado sesión, pero no es el usuario administrador configurado.'
+    };
+    show(authErrors[e.code]||'Credenciales incorrectas.'); /* no revela si el email existe */
   }finally{btn.disabled=false;}
 }
 async function logoutAdmin(){try{await signOut(_auth);}catch(e){}_adminUser=null;document.getElementById('admin-overlay').classList.remove('on');renderVisitor();toast('Sesión cerrada');}
