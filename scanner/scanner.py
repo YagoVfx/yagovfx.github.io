@@ -15,6 +15,9 @@ from scanner.adapters.recruitee import RecruiteeAdapter
 from scanner.adapters.personio import PersonioAdapter
 from scanner.adapters.massive_wp import MassiveWPAdapter
 from scanner.adapters.official_sites import MundfishAdapter, AxiomVfxAdapter
+from scanner.adapters.ea import EaAdapter
+from scanner.adapters.epic import EpicAdapter
+from scanner.adapters.company_feeds import BambooAdapter, PinpointAdapter, Room8Adapter
 from scanner.companies import detect_ats, dedupe_companies
 from scanner.normalizer import preserve_first_seen, now_iso
 from scanner.classify import enrich_job, SOURCE_LABEL
@@ -50,6 +53,11 @@ ATS_MAP = {
     "massive-wp": MassiveWPAdapter,
     "mundfish": MundfishAdapter,
     "axiomvfx": AxiomVfxAdapter,
+    "ea": EaAdapter,
+    "epic": EpicAdapter,
+    "bamboo": BambooAdapter,
+    "pinpoint": PinpointAdapter,
+    "room8": Room8Adapter,
 }
 
 
@@ -276,12 +284,14 @@ def scan_companies(companies: list[dict], existing: dict, adapters: dict, previo
                 seen[job["id"]] = job
             total_seen = getattr(adapter, "total_seen", None)
             reliable = getattr(adapter, "uses_reliable_api", True)
-            needs_review = (len(found) == 0) and not reliable
+            listing_verified = bool(getattr(adapter, "listing_verified", False))
+            needs_review = (len(found) == 0) and not reliable and not listing_verified
             if needs_review:
                 needs_review_companies.append(company)
             outcomes[key] = {"ok": True, "reliable": reliable, "complete": not incomplete}
             statuses.append({
                 "company": name, "status": "ok", "ats": ats, "reliable": reliable,
+                "listingVerified": listing_verified or reliable,
                 "incomplete": incomplete, "jobsFound": len(found), "totalPostingsSeen": total_seen,
                 "needsReview": needs_review, "metadataComplete": _metadata_completeness(found),
                 "durationMs": int((time.monotonic() - t0) * 1000),

@@ -82,3 +82,20 @@ def test_registry_is_reproducible_from_sources():
     fresh = build_registry.build(DATA)
     assert fresh["totals"] == REG["totals"]
     assert [e["name"] for e in fresh["companies"]] == [e["name"] for e in REG["companies"]]
+
+
+def test_rejected_candidates_are_not_linked_as_employer_sources():
+    by = {e["name"]: e for e in REG["companies"]}
+    for name in ("Cactus Punch", "Company3", "Genius Game Fzco", "Airship", "Jobgether Srl"):
+        assert by[name]["candidateRejected"]
+        assert by[name]["state"] != "active"
+        assert by[name]["careersUrl"] is None
+
+
+def test_specific_reported_broken_sources_have_verified_integrations():
+    by = {c["name"]: c for c in COMPANIES}
+    assert by["2K"]["careersUrl"] == "https://job-boards.greenhouse.io/2k"
+    assert by["Respawn"]["type"] == "ea" and by["Respawn"]["studioFilter"] == "Respawn"
+    assert by["Gram Games"]["careersUrl"].endswith("/gramgamescareers")
+    assert by["Ember Lab"]["type"] == "bamboo"
+    assert "Respawn" in by["EA"]["excludeStudios"]

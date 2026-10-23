@@ -1,5 +1,11 @@
 # Empresas y fuentes
 
+> Actualización del 23-10-2026: la integración se ha ampliado a 59 fuentes configuradas y
+> comprobadas en vivo, con 64 ofertas activas oficiales (52 por defecto y 12 coincidencias posibles).
+> Se han reparado 2K, Respawn/EA, Epic, Room 8, Gram Games y Ember Lab, entre otras.
+> Los apartados siguientes conservan la investigación anterior; para el estado actual consulta
+> `SCANNER_DIRECTO.md`, `data/companies-registry.json` y `data/source-audit.json`.
+
 Regla de oro (especificación §4): **no inventar identificadores ATS ni endpoints, y distinguir «evaluada» de «conectada»**.
 
 ## Cifras reales del registro (`data/companies-registry.json`)

@@ -6,7 +6,7 @@ from ..filters import classify_job, detect_workplace, detect_remote_scope
 
 logger = logging.getLogger(__name__)
 
-JOB_LINK_PATTERNS = [r'/jobs/\d+', r'/jobs/[a-z0-9-]+', r'/en/jobs/']
+JOB_LINK_PATTERNS = [r'/(?:en/)?jobs/\d+(?:[-/?#]|$)']
 
 
 class TeamtailorAdapter(BaseAdapter):
@@ -73,4 +73,5 @@ class TeamtailorAdapter(BaseAdapter):
             }))
 
         self.total_seen = candidates_seen
+        self.listing_verified = candidates_seen > 0
         return jobs

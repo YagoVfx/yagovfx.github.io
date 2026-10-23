@@ -525,7 +525,7 @@
     var arr = Object.keys(rows).map(function (n) {
       var o = rows[n], s = statusBy[n];
       o.conn = o.state || 'pending';
-      if (s) { o.conn = s.status === 'ok' ? 'active' : s.status === 'disabled' ? 'pending' : (s.errorKind === 'blocked' ? 'blocked' : 'error'); o.lastOk = s.lastSuccess; o.err = s.error; o.needsReview = s.needsReview; }
+      if (s) { o.conn = s.status === 'ok' ? (s.needsReview ? 'pending' : 'active') : s.status === 'disabled' ? 'pending' : (s.errorKind === 'blocked' ? 'blocked' : 'error'); o.lastOk = s.lastSuccess; o.err = s.error; o.needsReview = s.needsReview; }
       var jc = jobsBy[n] || { all: 0, ver: 0 }; o.jobs = jc.all; o.verJobs = jc.ver;
       return o;
     }).sort(function (a, b) { return b.jobs - a.jobs || a.name.localeCompare(b.name); });

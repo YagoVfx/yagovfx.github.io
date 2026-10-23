@@ -1,5 +1,46 @@
 # Catálogo de portales directos
 
+## Ampliación de cobertura del 23-10-2026
+
+La segunda revisión amplía las fuentes configuradas de 30 a 59. El escaneo real final
+consultó las 59 sin errores ni resultados truncados: 64 ofertas activas oficiales, 52
+visibles por defecto y otras 12 al activar coincidencias posibles. Son anuncios de fuentes
+directas; esa verificación no garantiza que se pueda trabajar desde España.
+
+- 2K pasa del scraper genérico a Greenhouse. Se conectan también 31st Union, Cloud Chamber,
+  Hangar 13 y Gearbox con identificadores enlazados o embebidos por sus webs oficiales.
+- Respawn se consulta en el portal EA, con búsqueda paginada y verificación de estudio tanto
+  en el listado como en la ficha. El escaneo final encontró tres vacantes de Respawn.
+- Epic usa su API pública real, con paginación `limit/skip` y validación del total. No encontró
+  puestos VFX en sus 171 anuncios actuales; no se añaden vacantes antiguas del agregador.
+- Room 8 usa los feeds WordPress de sus dos webs, y Ember Lab su feed BambooHR. Sus listas
+  actuales no tienen coincidencias VFX; la conexión funciona aunque no haya vacantes relevantes.
+- Build A Rocket Boy usa el JSON de su portal Pinpoint; devuelve una lista vacía válida.
+- Entre las nuevas fuentes: Riot, Naughty Dog, Digital Extremes, Deck13, Blackbird, Velan,
+  Liquid Development, Believer, Voodoo, Hasbro, Insomniac, Asobo, Homa, Cloud Imperium y Gram Games.
+- La identidad de las candidatas restantes se documenta en `data/source-audit.json`. Se retiran
+  enlaces a empresas homónimas y al agregador Jobgether, y se distinguen los bloqueos HTTP 403.
+
+### Qué significa la cifra antigua
+
+La revisión del JSON anterior en Git encontró 317 registros de agregadores: 57 activos,
+259 con estado `unverified` y uno cerrado. No eran 317 vacantes oficiales confirmadas.
+Incluían duplicados de empresa, agencias, empresas ajenas al perfil y puestos que ya no
+aparecen en los portales actuales. La recuperación consulta el portal de cada empleador;
+no convierte automáticamente los registros antiguos en ofertas oficiales.
+
+### Web y APK
+
+Ambas consumen `https://yagovfx.github.io/data/jobs.json`. Al publicar los datos y el scanner
+actualizados, la APK 0.2.0 recibe las nuevas ofertas al actualizar: no necesita recompilarse
+para añadir empresas. Los cambios de interfaz/filtros de la web no modifican automáticamente
+los widgets de Flutter. Guardadas y descartadas siguen siendo locales en cada dispositivo.
+
+Las empresas se configuran para el scanner en `data/companies.json`; editar una lista en
+el admin de Firebase no modifica ese archivo de GitHub por sí solo.
+
+---
+
 Desde el 23 de octubre de 2026, `scanner.run()` usa por defecto `sourcePolicy: direct-only`.
 No consulta Adzuna ni ejecuta el descubrimiento de ATS basado en agregadores. El workflow
 ya no necesita sus claves. El modo mixto se conserva únicamente como opción explícita de
