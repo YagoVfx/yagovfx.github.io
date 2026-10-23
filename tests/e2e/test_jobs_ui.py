@@ -24,7 +24,7 @@ def test_default_view_shows_only_verified_with_hidden_count(make_page):
     box = open_public(make_page())
     assert ids(box) == DEFAULT
     assert "3 ocultas" in summary(box)                 # az-1, az-3, az-up sin verificar
-    assert box.locator(".jp-tab").all_inner_texts() == ["Ofertas", "Guardadas", "Empresas", "Ajustes"]
+    assert box.locator(".jp-tab").all_inner_texts() == ["Ofertas", "Guardadas", "Empresas", "Mapa y estadísticas", "Ajustes"]
 
 
 # UI-01 / UI-02 — defecto #3 reproducido en el original: España no se podía desactivar

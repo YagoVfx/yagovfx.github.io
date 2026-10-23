@@ -113,3 +113,16 @@
 #adm-gate .gate-go:disabled{opacity:.6;cursor:wait}
 
 .jp-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:14px 0}
+/* Radar global: map stays inside its own scrolling surface on narrow screens. */
+.ji-chart{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin:20px 0}
+.ji-chart>svg{width:220px;max-width:100%;flex-shrink:0;color:#eee8ff}
+.ji-ranking{list-style:none;padding:0;margin:0;flex:1;min-width:210px}
+.ji-ranking li{display:grid;grid-template-columns:1fr 40px 45px;gap:10px;padding:7px 0;border-bottom:1px solid #ffffff15}
+.ji-ranking li span:last-child{color:#b5bed0;text-align:right}
+.ji-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:15px 0}
+.ji-controls select{max-width:100%;background:#172234;color:#f4efff;border:1px solid #63718b;border-radius:8px;padding:8px}
+.ji-controls>label:first-child{display:flex;flex-direction:column;gap:5px;max-width:100%}
+.ji-map-scroll{overflow:auto;max-height:600px;border:1px solid #42516c;border-radius:12px;background:#0d1727}
+.ji-map-scroll:focus-visible{outline:3px solid #b39aff;outline-offset:3px}
+.ji-map-scroll>div{min-width:0}
+[data-map-detail] a{color:#c7b6ff;text-decoration:underline}

@@ -2,10 +2,10 @@
   "generatedAt": "2026-10-23T18:00:20Z",
   "note": "Evaluada = evidencia directa del portal o su identidad (scanner-run o web-research). Conectada = consulta correcta con listado reconocido; no implica vacantes VFX ni elegibilidad para España.",
   "totals": {
-    "registered": 90,
-    "withDirectEvidence": 85,
+    "registered": 91,
+    "withDirectEvidence": 86,
     "byState": {
-      "active": 70,
+      "active": 71,
       "blocked": 4,
       "pending": 10,
       "unsupported": 6
@@ -67,7 +67,7 @@
     {
       "name": "CI Games",
       "country": null,
-      "officialUrl": null,
+      "officialUrl": "https://cigames.com/en/contact/",
       "careersUrl": "https://cigames.teamtailor.com",
       "ats": "teamtailor",
       "method": "html-adapter",
@@ -89,6 +89,33 @@
         "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
+    },
+    {
+      "name": "Hexworks",
+      "country": null,
+      "officialUrl": "https://cigames.com/en/contact/",
+      "careersUrl": "https://cigames.teamtailor.com",
+      "ats": "teamtailor",
+      "method": "html-adapter",
+      "reliability": "baja",
+      "state": "active",
+      "reason": "Portal compartido con CI Games; se consulta una sola vez. Portal directo consultado: 0 ofertas VFX; 1 anuncios examinados.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": false,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "sharedSource": "CI Games"
     },
     {
       "name": "Respawn",

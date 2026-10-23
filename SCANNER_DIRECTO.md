@@ -1,5 +1,31 @@
 # Catálogo de portales directos
 
+## Radar global: mapa y plataformas
+
+Web: pestaña **Mapa y estadísticas**, tanto pública como del administrador. Android 0.3.0:
+pestaña **Radar**. La gráfica circular agrupa las ofertas oficiales activas por la plataforma
+real de cada fuente configurada (por ejemplo, Room 8 como WordPress aunque su adaptador
+normalice los anuncios como `custom`). Cuenta las coincidencias posibles, excluye agregadores
+y cerradas y no depende de los filtros personales. Las plataformas configuradas con cero
+ofertas siguen visibles; las sedes que comparten portal no duplican los anuncios.
+
+Room 8 ya estaba integrado: el JavaScript público de su web consulta los mismos feeds
+`/wp-json/wp/v2/talent` de room8group.com y room8studio.com que usa el adaptador. Hexworks
+figura como estudio de CI Games con portal compartido, sin otra consulta ni anuncios duplicados.
+Fuentes: https://room8group.com/join-the-team/ y https://cigames.com/en/contact/.
+
+`scanner.map_locations` genera `data/company-locations.json` desde ubicaciones estructuradas
+de portales públicos, ofertas y páginas oficiales de contacto. Esta revisión localiza **50 de
+85 empresas del catálogo**; las demás se listan sin ubicación verificada. Son puntos urbanos
+aproximados, no domicilios exactos, un censo completo de sedes ni una prueba de trabajo remoto.
+El workflow actualiza estos datos tras cada escaneo. No utiliza geolocalización del usuario.
+
+`data/world-map.json` contiene la cartografía Natural Earth (dominio público), proyectada
+sin servicios externos de mapas. La APK incluye la misma cartografía y una copia inicial
+del catálogo; después descarga las ubicaciones actualizadas y conserva caché local.
+Para refrescar la copia que se incluye en una nueva APK, copiar los JSON de empresas y
+ubicaciones a `mobile/assets/` antes de compilar.
+
 ## Revisión de pendientes y cobertura española (23-10-2026)
 
 El catálogo pasa de 59 a **70 fuentes configuradas**. Se incorporan Highdive,

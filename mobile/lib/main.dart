@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'jobs.dart';
+import 'insights.dart';
 
 void main() => runApp(const TrackerApp());
 
@@ -417,228 +418,244 @@ class _OffersState extends State<OffersPage> {
             icon: Icon(Icons.settings_outlined),
             label: 'Ajustes',
           ),
+          NavigationDestination(icon: Icon(Icons.public), label: 'Radar'),
         ],
       ),
-      body: SafeArea(
-        child: Column(
-          children: [
-            if (loading) const LinearProgressIndicator(),
-            if (error != null)
-              Padding(
-                padding: const EdgeInsets.all(12),
-                child: Text(
-                  error!,
-                  style: const TextStyle(color: Colors.orangeAccent),
-                ),
-              ),
-            if (old)
-              const Padding(
-                padding: EdgeInsets.all(12),
-                child: Text(
-                  'Datos de hace más de 13 horas. Revisa el scanner.',
-                  style: TextStyle(color: Colors.amber),
-                ),
-              ),
-            if (tab == 2)
-              Expanded(
-                child: ListView(
-                  padding: const EdgeInsets.all(24),
-                  children: [
-                    Text(
-                      'Tu radar de empleo VFX',
-                      style: Theme.of(context).textTheme.headlineSmall,
-                    ),
-                    const SizedBox(height: 16),
-                    const Text(
-                      'Versión 0.2.0 · Primera versión de prueba\n\nSolo portales oficiales. Adzuna y otros agregadores estan excluidos. Las ofertas vienen del scanner del portfolio. Guardadas y descartadas se almacenan en este dispositivo. No necesitas iniciar sesión.',
-                    ),
-                    const SizedBox(height: 16),
-                    Text('Fuente actualizada: ${updated ?? 'No disponible'}'),
-                    Text('Ofertas cargadas: ${jobs.length}'),
-                    TextButton(
-                      onPressed: refresh,
-                      child: const Text('Actualizar ahora'),
-                    ),
-                    TextButton(
-                      onPressed: () => change(() => discarded.clear()),
+      body: tab == 3
+          ? SafeArea(child: InsightsPage(jobs: jobs))
+          : SafeArea(
+              child: Column(
+                children: [
+                  if (loading) const LinearProgressIndicator(),
+                  if (error != null)
+                    Padding(
+                      padding: const EdgeInsets.all(12),
                       child: Text(
-                        'Restaurar descartadas (${discarded.length})',
+                        error!,
+                        style: const TextStyle(color: Colors.orangeAccent),
                       ),
                     ),
-                    const Text(
-                      'Sin notificaciones ni sincronización entre dispositivos en esta versión.\n\nDesconocido no significa incompatible. Revisa las condiciones de cada oferta.',
+                  if (old)
+                    const Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Text(
+                        'Datos de hace más de 13 horas. Revisa el scanner.',
+                        style: TextStyle(color: Colors.amber),
+                      ),
                     ),
-                  ],
-                ),
-              )
-            else ...[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-                child: TextField(
-                  controller: search,
-                  onChanged: (v) => change(() => filters.query = v),
-                  decoration: InputDecoration(
-                    hintText: 'Cargo, estudio, ubicación…',
-                    prefixIcon: const Icon(Icons.search),
-                    suffixIcon: IconButton(
-                      onPressed: advanced,
-                      tooltip: 'Filtros',
-                      icon: const Icon(Icons.tune),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  ),
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  children: [
-                    for (final e in {
-                      'all': 'Todas',
-                      'compatible': 'Compatibles',
-                      'review': 'Para revisar',
-                    }.entries)
-                      Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: ChoiceChip(
-                          label: Text(e.value),
-                          selected: filters.view == e.key,
-                          onSelected: (_) => change(() => filters.view = e.key),
+                  if (tab == 2)
+                    Expanded(
+                      child: ListView(
+                        padding: const EdgeInsets.all(24),
+                        children: [
+                          Text(
+                            'Tu radar de empleo VFX',
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                          const SizedBox(height: 16),
+                          const Text(
+                            'Versión 0.3.0 · Radar global\n\nSolo portales oficiales. Adzuna y otros agregadores estan excluidos. Las ofertas vienen del scanner del portfolio. Guardadas y descartadas se almacenan en este dispositivo. No necesitas iniciar sesión.',
+                          ),
+                          const SizedBox(height: 16),
+                          Text(
+                            'Fuente actualizada: ${updated ?? 'No disponible'}',
+                          ),
+                          Text('Ofertas cargadas: ${jobs.length}'),
+                          TextButton(
+                            onPressed: refresh,
+                            child: const Text('Actualizar ahora'),
+                          ),
+                          TextButton(
+                            onPressed: () => change(() => discarded.clear()),
+                            child: Text(
+                              'Restaurar descartadas (${discarded.length})',
+                            ),
+                          ),
+                          const Text(
+                            'Sin notificaciones ni sincronización entre dispositivos en esta versión.\n\nDesconocido no significa incompatible. Revisa las condiciones de cada oferta.',
+                          ),
+                        ],
+                      ),
+                    )
+                  else ...[
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                      child: TextField(
+                        controller: search,
+                        onChanged: (v) => change(() => filters.query = v),
+                        decoration: InputDecoration(
+                          hintText: 'Cargo, estudio, ubicación…',
+                          prefixIcon: const Icon(Icons.search),
+                          suffixIcon: IconButton(
+                            onPressed: advanced,
+                            tooltip: 'Filtros',
+                            icon: const Icon(Icons.tune),
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(18),
+                          ),
                         ),
                       ),
-                    FilterChip(
-                      label: const Text('España'),
-                      selected: filters.spain,
-                      onSelected: (v) => change(() => filters.spain = v),
                     ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 8,
-                ),
-                child: Row(
-                  children: [
-                    Text('${visible.length} ofertas'),
-                    const Spacer(),
-                    TextButton(
-                      onPressed: () {
-                        change(() => filters = JobFilters());
-                        search.clear();
-                      },
-                      child: const Text('Limpiar filtros'),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: RefreshIndicator(
-                  onRefresh: refresh,
-                  child: visible.isEmpty
-                      ? ListView(
-                          physics: const AlwaysScrollableScrollPhysics(),
-                          padding: const EdgeInsets.all(32),
-                          children: [
-                            const Icon(Icons.manage_search, size: 56),
-                            const SizedBox(height: 16),
-                            Text(
-                              loading
-                                  ? 'Cargando ofertas…'
-                                  : tab == 1
-                                  ? 'No hay guardadas con estos filtros.'
-                                  : 'No hay resultados. Limpia los filtros o incluye ofertas sin verificar.',
-                              textAlign: TextAlign.center,
-                            ),
-                            if (!loading)
-                              TextButton(
-                                onPressed: refresh,
-                                child: const Text('Reintentar actualización'),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Row(
+                        children: [
+                          for (final e in {
+                            'all': 'Todas',
+                            'compatible': 'Compatibles',
+                            'review': 'Para revisar',
+                          }.entries)
+                            Padding(
+                              padding: const EdgeInsets.only(right: 8),
+                              child: ChoiceChip(
+                                label: Text(e.value),
+                                selected: filters.view == e.key,
+                                onSelected: (_) =>
+                                    change(() => filters.view = e.key),
                               ),
-                          ],
-                        )
-                      : ListView.builder(
-                          physics: const AlwaysScrollableScrollPhysics(),
-                          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                          itemCount: visible.length,
-                          itemBuilder: (ctx, i) {
-                            final j = visible[i];
-                            return Card(
-                              margin: const EdgeInsets.only(bottom: 12),
-                              child: InkWell(
-                                borderRadius: BorderRadius.circular(12),
-                                onTap: () => detail(j),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(16),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              j.company,
-                                              style: TextStyle(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .primary,
+                            ),
+                          FilterChip(
+                            label: const Text('España'),
+                            selected: filters.spain,
+                            onSelected: (v) => change(() => filters.spain = v),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 8,
+                      ),
+                      child: Row(
+                        children: [
+                          Text('${visible.length} ofertas'),
+                          const Spacer(),
+                          TextButton(
+                            onPressed: () {
+                              change(() => filters = JobFilters());
+                              search.clear();
+                            },
+                            child: const Text('Limpiar filtros'),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: RefreshIndicator(
+                        onRefresh: refresh,
+                        child: visible.isEmpty
+                            ? ListView(
+                                physics: const AlwaysScrollableScrollPhysics(),
+                                padding: const EdgeInsets.all(32),
+                                children: [
+                                  const Icon(Icons.manage_search, size: 56),
+                                  const SizedBox(height: 16),
+                                  Text(
+                                    loading
+                                        ? 'Cargando ofertas…'
+                                        : tab == 1
+                                        ? 'No hay guardadas con estos filtros.'
+                                        : 'No hay resultados. Limpia los filtros o incluye ofertas sin verificar.',
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  if (!loading)
+                                    TextButton(
+                                      onPressed: refresh,
+                                      child: const Text(
+                                        'Reintentar actualización',
+                                      ),
+                                    ),
+                                ],
+                              )
+                            : ListView.builder(
+                                physics: const AlwaysScrollableScrollPhysics(),
+                                padding: const EdgeInsets.fromLTRB(
+                                  16,
+                                  0,
+                                  16,
+                                  16,
+                                ),
+                                itemCount: visible.length,
+                                itemBuilder: (ctx, i) {
+                                  final j = visible[i];
+                                  return Card(
+                                    margin: const EdgeInsets.only(bottom: 12),
+                                    child: InkWell(
+                                      borderRadius: BorderRadius.circular(12),
+                                      onTap: () => detail(j),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(16),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                  child: Text(
+                                                    j.company,
+                                                    style: TextStyle(
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .primary,
+                                                    ),
+                                                  ),
+                                                ),
+                                                IconButton(
+                                                  onPressed: () =>
+                                                      toggleSaved(j),
+                                                  tooltip: 'Guardar',
+                                                  icon: Icon(
+                                                    saved.contains(j.id)
+                                                        ? Icons.bookmark
+                                                        : Icons.bookmark_border,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Text(
+                                              j.title,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .titleLarge,
+                                            ),
+                                            const SizedBox(height: 8),
+                                            Text(
+                                              j.str(
+                                                'location',
+                                                'Ubicación no indicada',
                                               ),
                                             ),
-                                          ),
-                                          IconButton(
-                                            onPressed: () => toggleSaved(j),
-                                            tooltip: 'Guardar',
-                                            icon: Icon(
-                                              saved.contains(j.id)
-                                                  ? Icons.bookmark
-                                                  : Icons.bookmark_border,
+                                            Wrap(
+                                              spacing: 6,
+                                              children: [
+                                                pill(
+                                                  label(j.str('workplaceType')),
+                                                ),
+                                                pill(label(j.compatibility)),
+                                                pill(
+                                                  j.verified
+                                                      ? 'Verificada'
+                                                      : 'Sin verificar',
+                                                ),
+                                              ],
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      Text(
-                                        j.title,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleLarge,
-                                      ),
-                                      const SizedBox(height: 8),
-                                      Text(
-                                        j.str(
-                                          'location',
-                                          'Ubicación no indicada',
+                                          ],
                                         ),
                                       ),
-                                      Wrap(
-                                        spacing: 6,
-                                        children: [
-                                          pill(label(j.str('workplaceType'))),
-                                          pill(label(j.compatibility)),
-                                          pill(
-                                            j.verified
-                                                ? 'Verificada'
-                                                : 'Sin verificar',
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                    ),
+                                  );
+                                },
                               ),
-                            );
-                          },
-                        ),
-                ),
+                      ),
+                    ),
+                  ],
+                ],
               ),
-            ],
-          ],
-        ),
-      ),
+            ),
     );
   }
 }

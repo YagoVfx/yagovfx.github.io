@@ -1,0 +1,1459 @@
+{
+  "schemaVersion": 1,
+  "note": "Centros urbanos aproximados de ubicaciones publicadas; no son domicilios exactos ni garantizan empleo remoto. Las empresas sin evidencia se muestran sin localizar.",
+  "companies": [
+    {
+      "name": "Build A Rocket Boy",
+      "locations": []
+    },
+    {
+      "name": "CD Project",
+      "locations": [
+        {
+          "city": "Warsaw",
+          "lat": 52.23,
+          "lon": 21.01,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
+        },
+        {
+          "city": "Boston",
+          "lat": 42.36,
+          "lon": -71.06,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
+        },
+        {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
+        }
+      ]
+    },
+    {
+      "name": "CI Games",
+      "locations": [
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
+          "evidence": "https://cigames.com/en/contact/"
+        },
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
+          "evidence": "https://cigames.com/en/contact/"
+        },
+        {
+          "city": "New York",
+          "lat": 40.71,
+          "lon": -74.01,
+          "evidence": "https://cigames.com/en/contact/"
+        },
+        {
+          "city": "Warsaw",
+          "lat": 52.23,
+          "lon": 21.01,
+          "evidence": "https://cigames.com/en/contact/"
+        },
+        {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
+          "evidence": "https://cigames.com/en/contact/"
+        }
+      ]
+    },
+    {
+      "name": "Respawn",
+      "locations": [
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
+          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/Senior-VFX-Artist-Apex-Legends/216460"
+        },
+        {
+          "city": "Vancouver",
+          "lat": 49.28,
+          "lon": -123.12,
+          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216274"
+        }
+      ]
+    },
+    {
+      "name": "Epic Games",
+      "locations": [
+        {
+          "city": "Porto",
+          "lat": 41.16,
+          "lon": -8.63,
+          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
+        },
+        {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
+        },
+        {
+          "city": "Cary",
+          "lat": 35.79,
+          "lon": -78.78,
+          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
+        },
+        {
+          "city": "Vancouver",
+          "lat": 49.28,
+          "lon": -123.12,
+          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
+        },
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
+          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
+        },
+        {
+          "city": "Bellevue",
+          "lat": 47.61,
+          "lon": -122.2,
+          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
+        },
+        {
+          "city": "Shanghai",
+          "lat": 31.23,
+          "lon": 121.47,
+          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
+        }
+      ]
+    },
+    {
+      "name": "Frontier",
+      "locations": [
+        {
+          "city": "Cambridge",
+          "lat": 52.21,
+          "lon": 0.12,
+          "evidence": "https://api.eu.lever.co/v0/postings/frontier?mode=json"
+        }
+      ]
+    },
+    {
+      "name": "Embark Studios",
+      "locations": [
+        {
+          "city": "Stockholm",
+          "lat": 59.33,
+          "lon": 18.07,
+          "evidence": "https://careers.embark-studios.com/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Jagex",
+      "locations": [
+        {
+          "city": "Cambridge",
+          "lat": 52.21,
+          "lon": 0.12,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/jagex-limited?details=true"
+        }
+      ]
+    },
+    {
+      "name": "PTW",
+      "locations": [
+        {
+          "city": "Manila",
+          "lat": 14.6,
+          "lon": 120.98,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Bengaluru",
+          "lat": 12.97,
+          "lon": 77.59,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Kuala Lumpur",
+          "lat": 3.14,
+          "lon": 101.69,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Warsaw",
+          "lat": 52.23,
+          "lon": 21.01,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Berlin",
+          "lat": 52.52,
+          "lon": 13.41,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Madrid",
+          "lat": 40.42,
+          "lon": -3.7,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Stockholm",
+          "lat": 59.33,
+          "lon": 18.07,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "São Paulo",
+          "lat": -23.55,
+          "lon": -46.63,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Mexico City",
+          "lat": 19.43,
+          "lon": -99.13,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Guadalajara",
+          "lat": 20.67,
+          "lon": -103.35,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Buenos Aires",
+          "lat": -34.6,
+          "lon": -58.38,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Tel Aviv",
+          "lat": 32.09,
+          "lon": 34.78,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Dubai",
+          "lat": 25.2,
+          "lon": 55.27,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "San Francisco",
+          "lat": 37.77,
+          "lon": -122.42,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Shanghai",
+          "lat": 31.23,
+          "lon": 121.47,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Vancouver",
+          "lat": 49.28,
+          "lon": -123.12,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Ottawa",
+          "lat": 45.42,
+          "lon": -75.7,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        }
+      ]
+    },
+    {
+      "name": "Guerrilla",
+      "locations": []
+    },
+    {
+      "name": "Rebellion",
+      "locations": [
+        {
+          "city": "Oxford",
+          "lat": 51.75,
+          "lon": -1.26,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/rebellion?details=true"
+        }
+      ]
+    },
+    {
+      "name": "Room8",
+      "locations": [
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
+          "evidence": "https://room8group.com/contact-us/"
+        },
+        {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://room8group.com/contact-us/"
+        },
+        {
+          "city": "Warsaw",
+          "lat": 52.23,
+          "lon": 21.01,
+          "evidence": "https://room8group.com/contact-us/"
+        },
+        {
+          "city": "Limassol",
+          "lat": 34.68,
+          "lon": 33.04,
+          "evidence": "https://room8group.com/contact-us/"
+        },
+        {
+          "city": "Recife",
+          "lat": -8.05,
+          "lon": -34.88,
+          "evidence": "https://room8group.com/contact-us/"
+        }
+      ]
+    },
+    {
+      "name": "EA",
+      "locations": []
+    },
+    {
+      "name": "Ubisoft",
+      "locations": [
+        {
+          "city": "Paris",
+          "lat": 48.86,
+          "lon": 2.35,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Bordeaux",
+          "lat": 44.84,
+          "lon": -0.58,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Pune",
+          "lat": 18.52,
+          "lon": 73.86,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Malmö",
+          "lat": 55.61,
+          "lon": 13.0,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Lyon",
+          "lat": 45.76,
+          "lon": 4.84,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Shanghai",
+          "lat": 31.23,
+          "lon": 121.47,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Newcastle",
+          "lat": 54.98,
+          "lon": -1.61,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Kyiv",
+          "lat": 50.45,
+          "lon": 30.52,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "São Paulo",
+          "lat": -23.55,
+          "lon": -46.63,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Berlin",
+          "lat": 52.52,
+          "lon": 13.41,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        }
+      ]
+    },
+    {
+      "name": "Sumo Digital",
+      "locations": []
+    },
+    {
+      "name": "Massive",
+      "locations": [
+        {
+          "city": "Malmö",
+          "lat": 55.61,
+          "lon": 13.0,
+          "evidence": "https://www.massive.se/job/senior-vfx-artist-744000153412618/"
+        }
+      ]
+    },
+    {
+      "name": "Blizzard",
+      "locations": [
+        {
+          "city": "Irvine",
+          "lat": 33.68,
+          "lon": -117.83,
+          "evidence": "https://xboxgaming.wd1.myworkdayjobs.com/Blizzard_External_Careers/job/Irvine---Blizzard---Blizzard-Way/Senior-II-VFX-Artist---Unannounced-Game---Irvine--CA_R028002"
+        }
+      ]
+    },
+    {
+      "name": "2K",
+      "locations": [
+        {
+          "city": "Montréal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Novato",
+          "lat": 38.11,
+          "lon": -122.57,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Tokyo",
+          "lat": 35.68,
+          "lon": 139.69,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Seoul",
+          "lat": 37.57,
+          "lon": 126.98,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Bangalore",
+          "lat": 12.97,
+          "lon": 77.59,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Austin",
+          "lat": 30.27,
+          "lon": -97.74,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "San Mateo",
+          "lat": 37.56,
+          "lon": -122.33,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Madrid",
+          "lat": 40.42,
+          "lon": -3.7,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Tel Aviv",
+          "lat": 32.09,
+          "lon": 34.78,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Brighton",
+          "lat": 50.82,
+          "lon": -0.14,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Prague",
+          "lat": 50.08,
+          "lon": 14.44,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Brno",
+          "lat": 49.2,
+          "lon": 16.61,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Activision",
+      "locations": [
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
+          "evidence": "https://xboxgaming.wd1.myworkdayjobs.com/External/job/Barcelona---Digital-Legends---Plaa-Catalunya/Senior-Lead-VFX-Artist_R026554-1"
+        },
+        {
+          "city": "Warsaw",
+          "lat": 52.23,
+          "lon": 21.01,
+          "evidence": "https://xboxgaming.wd1.myworkdayjobs.com/External/job/Warsaw/Senior-VFX-Artist---Gameplay_R027861"
+        }
+      ]
+    },
+    {
+      "name": "Bungie",
+      "locations": []
+    },
+    {
+      "name": "EidosMontreal",
+      "locations": []
+    },
+    {
+      "name": "Roblox",
+      "locations": [
+        {
+          "city": "San Mateo",
+          "lat": 37.56,
+          "lon": -122.33,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/roblox/jobs"
+        },
+        {
+          "city": "Amsterdam",
+          "lat": 52.37,
+          "lon": 4.9,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/roblox/jobs"
+        },
+        {
+          "city": "Singapore",
+          "lat": 1.35,
+          "lon": 103.82,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/roblox/jobs"
+        },
+        {
+          "city": "São Paulo",
+          "lat": -23.55,
+          "lon": -46.63,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/roblox/jobs"
+        },
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/roblox/jobs"
+        },
+        {
+          "city": "Vancouver",
+          "lat": 49.28,
+          "lon": -123.12,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/roblox/jobs"
+        },
+        {
+          "city": "Seoul",
+          "lat": 37.57,
+          "lon": 126.98,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/roblox/jobs"
+        }
+      ]
+    },
+    {
+      "name": "LightHouseGames",
+      "locations": [
+        {
+          "city": "Leamington",
+          "lat": 52.29,
+          "lon": -1.54,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/lighthousegames?details=true"
+        }
+      ]
+    },
+    {
+      "name": "Mundfish",
+      "locations": []
+    },
+    {
+      "name": "AXIOM VFX",
+      "locations": []
+    },
+    {
+      "name": "Larian Studios",
+      "locations": [
+        {
+          "city": "Kuala Lumpur",
+          "lat": 3.14,
+          "lon": 101.69,
+          "evidence": "https://api.lever.co/v0/postings/larian?mode=json"
+        },
+        {
+          "city": "Guildford",
+          "lat": 51.24,
+          "lon": -0.57,
+          "evidence": "https://api.lever.co/v0/postings/larian?mode=json"
+        },
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
+          "evidence": "https://api.lever.co/v0/postings/larian?mode=json"
+        },
+        {
+          "city": "Warsaw",
+          "lat": 52.23,
+          "lon": 21.01,
+          "evidence": "https://api.lever.co/v0/postings/larian?mode=json"
+        }
+      ]
+    },
+    {
+      "name": "Saber Interactive Spain",
+      "locations": []
+    },
+    {
+      "name": "Keywords Studios",
+      "locations": [
+        {
+          "city": "Tokyo",
+          "lat": 35.68,
+          "lon": 139.69,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/keywordsstudios/postings?limit=100"
+        },
+        {
+          "city": "Manila",
+          "lat": 14.6,
+          "lon": 120.98,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/keywordsstudios/postings?limit=100"
+        },
+        {
+          "city": "Melbourne",
+          "lat": -37.81,
+          "lon": 144.96,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/keywordsstudios/postings?limit=100"
+        }
+      ]
+    },
+    {
+      "name": "Scopely",
+      "locations": [
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Bangalore",
+          "lat": 12.97,
+          "lon": 77.59,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Tokyo",
+          "lat": 35.68,
+          "lon": 139.69,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Shanghai",
+          "lat": 31.23,
+          "lon": 121.47,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Culver City",
+          "lat": 34.02,
+          "lon": -118.4,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Mexico City",
+          "lat": 19.43,
+          "lon": -99.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Seville",
+          "lat": 37.39,
+          "lon": -5.98,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Bellevue",
+          "lat": 47.61,
+          "lon": -122.2,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "San Francisco",
+          "lat": 37.77,
+          "lon": -122.42,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Dundee",
+          "lat": 56.46,
+          "lon": -2.97,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Tel Aviv",
+          "lat": 32.09,
+          "lon": 34.78,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Gameloft",
+      "locations": [
+        {
+          "city": "Hanoi",
+          "lat": 21.03,
+          "lon": 105.83,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Ho Chi Minh",
+          "lat": 10.82,
+          "lon": 106.63,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Paris",
+          "lat": 48.86,
+          "lon": 2.35,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Seattle",
+          "lat": 47.61,
+          "lon": -122.33,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        }
+      ]
+    },
+    {
+      "name": "2K Valencia / 31st Union",
+      "locations": [
+        {
+          "city": "San Mateo",
+          "lat": 37.56,
+          "lon": -122.33,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/31stunion/jobs"
+        }
+      ]
+    },
+    {
+      "name": "2K Cloud Chamber",
+      "locations": [
+        {
+          "city": "Montréal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/cloudchamberen/jobs"
+        },
+        {
+          "city": "Novato",
+          "lat": 38.11,
+          "lon": -122.57,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/cloudchamberen/jobs"
+        }
+      ]
+    },
+    {
+      "name": "IO Interactive",
+      "locations": [
+        {
+          "city": "København",
+          "lat": 55.68,
+          "lon": 12.58,
+          "evidence": "https://apply.ioi.dk/jobs"
+        },
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.16,
+          "evidence": "https://apply.ioi.dk/jobs"
+        },
+        {
+          "city": "Brighton",
+          "lat": 50.82,
+          "lon": -0.15,
+          "evidence": "https://apply.ioi.dk/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Escape Velocity Entertainment",
+      "locations": []
+    },
+    {
+      "name": "Aesir Interactive",
+      "locations": []
+    },
+    {
+      "name": "Deck 13",
+      "locations": []
+    },
+    {
+      "name": "Blackbird Interactive",
+      "locations": [
+        {
+          "city": "Vancouver",
+          "lat": 49.28,
+          "lon": -123.12,
+          "evidence": "https://api.lever.co/v0/postings/blackbirdinteractive?mode=json"
+        }
+      ]
+    },
+    {
+      "name": "Digital Extremes",
+      "locations": [
+        {
+          "city": "London (Ontario)",
+          "lat": 42.98,
+          "lon": -81.25,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/digitalextremes/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Naughty Dog",
+      "locations": [
+        {
+          "city": "Santa Monica",
+          "lat": 34.02,
+          "lon": -118.49,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/naughtydog/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Riot Games",
+      "locations": [
+        {
+          "city": "Shanghai",
+          "lat": 31.23,
+          "lon": 121.47,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
+        },
+        {
+          "city": "Seoul",
+          "lat": 37.57,
+          "lon": 126.98,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
+        },
+        {
+          "city": "Berlin",
+          "lat": 52.52,
+          "lon": 13.41,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
+        },
+        {
+          "city": "Singapore",
+          "lat": 1.35,
+          "lon": 103.82,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
+        },
+        {
+          "city": "Sydney",
+          "lat": -33.87,
+          "lon": 151.21,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
+        },
+        {
+          "city": "Tokyo",
+          "lat": 35.68,
+          "lon": 139.69,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Mob Entertainment",
+      "locations": []
+    },
+    {
+      "name": "Velan Studios",
+      "locations": [
+        {
+          "city": "Toronto",
+          "lat": 43.65,
+          "lon": -79.38,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/velanstudios?details=true"
+        },
+        {
+          "city": "Troy",
+          "lat": 42.73,
+          "lon": -73.69,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/velanstudios?details=true"
+        }
+      ]
+    },
+    {
+      "name": "Liquid Development",
+      "locations": [
+        {
+          "city": "Mexico City",
+          "lat": 19.43,
+          "lon": -99.13,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/liquid-development?details=true"
+        }
+      ]
+    },
+    {
+      "name": "Magic Media",
+      "locations": [
+        {
+          "city": "Kyiv",
+          "lat": 50.45,
+          "lon": 30.52,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/magic-media?details=true"
+        }
+      ]
+    },
+    {
+      "name": "Believer",
+      "locations": []
+    },
+    {
+      "name": "Voodoo",
+      "locations": [
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
+          "evidence": "https://jobs.ashbyhq.com/voodoo/8f86c74e-7d06-447d-bd1b-ad268e46bb3e"
+        }
+      ]
+    },
+    {
+      "name": "Hasbro",
+      "locations": [
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
+          "city": "Boston",
+          "lat": 42.36,
+          "lon": -71.06,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
+          "city": "Montréal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
+          "city": "Tokyo",
+          "lat": 35.68,
+          "lon": 139.69,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
+          "city": "Austin",
+          "lat": 30.27,
+          "lon": -97.74,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
+          "city": "Singapore",
+          "lat": 1.35,
+          "lon": 103.82,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Insomniac Games",
+      "locations": [
+        {
+          "city": "Burbank",
+          "lat": 34.18,
+          "lon": -118.31,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/insomniac/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Turtle Rock Studios",
+      "locations": []
+    },
+    {
+      "name": "Kabam",
+      "locations": [
+        {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://api.lever.co/v0/postings/kabam?mode=json"
+        },
+        {
+          "city": "Vancouver",
+          "lat": 49.28,
+          "lon": -123.12,
+          "evidence": "https://api.lever.co/v0/postings/kabam?mode=json"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
+          "evidence": "https://api.lever.co/v0/postings/kabam?mode=json"
+        }
+      ]
+    },
+    {
+      "name": "Amanotes",
+      "locations": [
+        {
+          "city": "Ho Chi Minh",
+          "lat": 10.82,
+          "lon": 106.63,
+          "evidence": "https://api.lever.co/v0/postings/amanotes?mode=json"
+        }
+      ]
+    },
+    {
+      "name": "Weltenbauer",
+      "locations": []
+    },
+    {
+      "name": "Asobo Studio",
+      "locations": [
+        {
+          "city": "Bordeaux",
+          "lat": 44.84,
+          "lon": -0.58,
+          "evidence": "https://api.eu.lever.co/v0/postings/asobostudio?mode=json"
+        }
+      ]
+    },
+    {
+      "name": "Homa",
+      "locations": [
+        {
+          "city": "Paris",
+          "lat": 48.86,
+          "lon": 2.35,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/homa-games?details=true"
+        }
+      ]
+    },
+    {
+      "name": "2K Hangar 13",
+      "locations": [
+        {
+          "city": "Prague",
+          "lat": 50.08,
+          "lon": 14.44,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hangar13/jobs"
+        },
+        {
+          "city": "Brighton",
+          "lat": 50.82,
+          "lon": -0.14,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hangar13/jobs"
+        },
+        {
+          "city": "Brno",
+          "lat": 49.2,
+          "lon": 16.61,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hangar13/jobs"
+        }
+      ]
+    },
+    {
+      "name": "2K Gearbox",
+      "locations": [
+        {
+          "city": "Montréal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/gearbox/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Cloud Imperium Games",
+      "locations": []
+    },
+    {
+      "name": "Gram Games",
+      "locations": [
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/gramgamescareers/jobs"
+        },
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/gramgamescareers/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Ember Lab",
+      "locations": []
+    },
+    {
+      "name": "Highdive",
+      "locations": [
+        {
+          "city": "Toronto",
+          "lat": 43.65,
+          "lon": -79.38,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/highdive/jobs"
+        },
+        {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/highdive/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Mobilityware",
+      "locations": [
+        {
+          "city": "Irvine",
+          "lat": 33.68,
+          "lon": -117.83,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/mobilityware/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Socialpoint",
+      "locations": [
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
+          "evidence": "https://www.socialpoint.es/join-us/"
+        }
+      ]
+    },
+    {
+      "name": "King",
+      "locations": []
+    },
+    {
+      "name": "Rockstar Games",
+      "locations": [
+        {
+          "city": "New York",
+          "lat": 40.71,
+          "lon": -74.01,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Manhattan",
+          "lat": 40.78,
+          "lon": -73.97,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Dundee",
+          "lat": 56.46,
+          "lon": -2.97,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Sydney",
+          "lat": -33.87,
+          "lon": 151.21,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Bengaluru",
+          "lat": 12.97,
+          "lon": 77.59,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Edinburgh",
+          "lat": 55.95,
+          "lon": -3.19,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Leeds",
+          "lat": 53.8,
+          "lon": -1.55,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Carlsbad",
+          "lat": 33.16,
+          "lon": -117.35,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Oakville",
+          "lat": 43.47,
+          "lon": -79.69,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Funcom",
+      "locations": [
+        {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
+          "evidence": "https://jobs.funcom.com/jobs"
+        },
+        {
+          "city": "Raleigh",
+          "lat": 35.78,
+          "lon": -78.64,
+          "evidence": "https://jobs.funcom.com/jobs"
+        },
+        {
+          "city": "Oslo",
+          "lat": 59.91,
+          "lon": 10.75,
+          "evidence": "https://jobs.funcom.com/jobs"
+        },
+        {
+          "city": "Lisbon",
+          "lat": 38.72,
+          "lon": -9.14,
+          "evidence": "https://jobs.funcom.com/jobs"
+        }
+      ]
+    },
+    {
+      "name": "Arrowhead Game Studios",
+      "locations": []
+    },
+    {
+      "name": "Fatshark",
+      "locations": [
+        {
+          "city": "Stockholm",
+          "lat": 59.33,
+          "lon": 18.07,
+          "evidence": "https://jobs.fatsharkgames.com/jobs"
+        }
+      ]
+    },
+    {
+      "name": "People Can Fly",
+      "locations": [
+        {
+          "city": "Warszawa",
+          "lat": 52.23,
+          "lon": 21.01,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/PeopleCanFly/postings?limit=100"
+        },
+        {
+          "city": "Montréal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/PeopleCanFly/postings?limit=100"
+        }
+      ]
+    },
+    {
+      "name": "Infinite Plus",
+      "locations": []
+    },
+    {
+      "name": "MercurySteam",
+      "locations": [
+        {
+          "city": "Madrid",
+          "lat": 40.42,
+          "lon": -3.7,
+          "evidence": "https://www.mercurysteam.com/"
+        }
+      ]
+    },
+    {
+      "name": "Hexworks",
+      "sharedSource": "CI Games",
+      "locations": [
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
+          "evidence": "https://cigames.com/en/contact/"
+        },
+        {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
+          "evidence": "https://cigames.com/en/contact/"
+        }
+      ]
+    },
+    {
+      "name": "Digital Sun Games",
+      "locations": []
+    },
+    {
+      "name": "Airship",
+      "locations": []
+    },
+    {
+      "name": "Cactus Punch",
+      "locations": []
+    },
+    {
+      "name": "Company3",
+      "locations": []
+    },
+    {
+      "name": "Genius Game Fzco",
+      "locations": []
+    },
+    {
+      "name": "Iris Games",
+      "locations": []
+    },
+    {
+      "name": "Leonine Holding",
+      "locations": []
+    },
+    {
+      "name": "One Of Us",
+      "locations": []
+    },
+    {
+      "name": "Rodeo Fx",
+      "locations": []
+    },
+    {
+      "name": "Sandbox Interactive",
+      "locations": []
+    },
+    {
+      "name": "The Game Kitchen",
+      "locations": []
+    },
+    {
+      "name": "Secret 6",
+      "locations": []
+    },
+    {
+      "name": "Nomada Studio",
+      "locations": []
+    },
+    {
+      "name": "BlitWorks",
+      "locations": []
+    }
+  ]
+}

@@ -1,14 +1,20 @@
-# Yago VFX Jobs — Android 0.2.0
+# Yago VFX Jobs — Android 0.3.0
 
 App Flutter personal que consume `https://yagovfx.github.io/data/jobs.json`.
 El scanner sigue ejecutándose en GitHub Actions; la app no contiene credenciales de Firebase ni Adzuna.
 
 Desde 0.2.0 solo admite fuentes ATS y webs oficiales. Adzuna, sus señales y los registros
 antiguos de agregadores quedan fuera, también en caché y guardadas.
-APK de prueba: `dist/yago-vfx-jobs-0.2.0.apk` (no versionada).
+APK de prueba: `dist/yago-vfx-jobs-0.3.0.apk` (no versionada).
 
 ## Incluido
 
+- Pestaña Radar: mapamundi con nombres, zoom y desplazamiento táctil, selector de empresa,
+  ciudades y enlaces a la evidencia. Hexworks figura con el portal compartido de CI Games.
+- Gráfica circular de ofertas VFX activas por plataforma, ranking, cantidades y porcentajes;
+  incluye plataformas con cero ofertas y las coincidencias posibles, sin filtros personales.
+- Cartografía Natural Earth de dominio público incluida localmente. Ubicaciones y catálogo
+  se actualizan desde la misma web; se incluye una copia inicial y caché para usar sin conexión.
 - Búsqueda por palabras, sin distinguir acentos; vistas Todas / Compatibles / Para revisar.
 - España, modalidad, elegibilidad, contrato, verificación, coincidencias posibles y ordenación.
 - Detalle con evidencia, origen, relevancia y apertura de enlaces http/https en navegador externo.
@@ -43,5 +49,5 @@ Los tests usan el fixture de la web y comprueban los mismos conjuntos de IDs par
 defecto, España, elegibilidad, búsqueda, compatibles, revisión y guardadas. También verifican
 la migración de Adzuna, enlaces inseguros, caché, versión del formato y arranque de widgets.
 
-El proyecto se mantiene dentro de `mobile/`; no modifica el portfolio ni el scanner.
+El proyecto se mantiene dentro de `mobile/`; consume los datos publicados por el scanner.
 No subir `build/`, `.dart_tool/`, `android/local.properties` ni claves de firma a Git.

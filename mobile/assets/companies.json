@@ -1,0 +1,591 @@
+[
+  {
+    "name": "Build A Rocket Boy",
+    "careersUrl": "https://buildarocketboy.pinpointhq.com/en",
+    "type": "pinpoint",
+    "officialUrl": "https://www.buildarocketboy.com/join-us/opportunities",
+    "sourceEvidence": {
+      "url": "https://buildarocketboy.pinpointhq.com/en",
+      "verifiedAt": "2026-10-23",
+      "method": "Employer career site embeds /en/postings.json"
+    }
+  },
+  {
+    "name": "CD Project",
+    "careersUrl": "https://jobs.smartrecruiters.com/CDPROJEKTRED",
+    "type": "smartrecruiters"
+  },
+  {
+    "name": "CI Games",
+    "careersUrl": "https://cigames.teamtailor.com",
+    "type": "teamtailor",
+    "studios": [
+      "Hexworks"
+    ],
+    "officialUrl": "https://cigames.com/en/contact/"
+  },
+  {
+    "name": "Respawn",
+    "careersUrl": "https://jobs.ea.com/en_US/careers/SearchJobs/?4538=8378&4538_format=3021&listFilterMode=1",
+    "type": "ea",
+    "studioFilter": "Respawn",
+    "officialUrl": "https://www.ea.com/careers/teams/ea-studios",
+    "sourceEvidence": "EA studio page links Respawn to filter 4538=8378; checked again per vacancy"
+  },
+  {
+    "name": "Epic Games",
+    "careersUrl": "https://www.epicgames.com/site/en-US/careers/jobs",
+    "type": "epic",
+    "sourceEvidence": "Public careers JS uses greenhouse-service api/job with limit/skip; verified 2026-10-23"
+  },
+  {
+    "name": "Frontier",
+    "careersUrl": "https://jobs.eu.lever.co/frontier",
+    "type": "custom"
+  },
+  {
+    "name": "Embark Studios",
+    "careersUrl": "https://careers.embark-studios.com/jobs",
+    "type": "teamtailor"
+  },
+  {
+    "name": "Jagex",
+    "careersUrl": "https://apply.workable.com/jagex-limited/",
+    "type": "workable"
+  },
+  {
+    "name": "PTW",
+    "careersUrl": "https://apply.workable.com/sideinc/",
+    "type": "workable"
+  },
+  {
+    "name": "Guerrilla",
+    "careersUrl": "https://job-boards.greenhouse.io/guerrilla-games",
+    "type": "custom"
+  },
+  {
+    "name": "Rebellion",
+    "careersUrl": "https://apply.workable.com/rebellion/",
+    "type": "workable"
+  },
+  {
+    "name": "Room8",
+    "careersUrl": "https://room8group.com/join-the-team/",
+    "type": "room8",
+    "sourceEvidence": {
+      "url": "https://room8group.com/join-the-team/",
+      "verifiedAt": "2026-10-23",
+      "method": "Career JS queries wp/v2/talent on room8group.com and room8studio.com"
+    }
+  },
+  {
+    "name": "EA",
+    "careersUrl": "https://jobs.ea.com/en_US/careers/SearchJobs/",
+    "type": "ea",
+    "excludeStudios": [
+      "Respawn"
+    ],
+    "officialUrl": "https://www.ea.com/careers/"
+  },
+  {
+    "name": "Ubisoft",
+    "careersUrl": "https://jobs.smartrecruiters.com/Ubisoft2",
+    "type": "smartrecruiters"
+  },
+  {
+    "name": "Sumo Digital",
+    "careersUrl": "https://www.sumo-digital.com/careers/",
+    "type": "custom"
+  },
+  {
+    "name": "Massive",
+    "careersUrl": "https://www.massive.se/career/",
+    "type": "massive-wp"
+  },
+  {
+    "name": "Blizzard",
+    "careersUrl": "https://xboxgaming.wd1.myworkdayjobs.com/Blizzard_External_Careers",
+    "type": "workday"
+  },
+  {
+    "name": "2K",
+    "careersUrl": "https://job-boards.greenhouse.io/2k",
+    "type": "greenhouse",
+    "officialUrl": "https://2k.com/careers/",
+    "sourceEvidence": "Official page embeds boardName=2k; verified 2026-10-23"
+  },
+  {
+    "name": "Activision",
+    "careersUrl": "https://xboxgaming.wd1.myworkdayjobs.com/External",
+    "type": "workday"
+  },
+  {
+    "name": "Bungie",
+    "careersUrl": "https://boards.greenhouse.io/bungie",
+    "type": "greenhouse"
+  },
+  {
+    "name": "EidosMontreal",
+    "careersUrl": "https://www.eidosmontreal.com/careers",
+    "type": "custom"
+  },
+  {
+    "name": "Roblox",
+    "careersUrl": "https://boards.greenhouse.io/roblox",
+    "type": "greenhouse"
+  },
+  {
+    "name": "LightHouseGames",
+    "careersUrl": "https://apply.workable.com/lighthousegames/",
+    "type": "workable"
+  },
+  {
+    "name": "Mundfish",
+    "careersUrl": "https://mundfish.com/en/careers",
+    "type": "custom"
+  },
+  {
+    "name": "AXIOM VFX",
+    "careersUrl": "https://www.axiomvfx.com/career",
+    "type": "custom"
+  },
+  {
+    "name": "Larian Studios",
+    "careersUrl": "https://jobs.lever.co/larian",
+    "type": "lever"
+  },
+  {
+    "name": "Saber Interactive Spain",
+    "careersUrl": "https://saber-interactive-spain.jobs.personio.de",
+    "type": "personio"
+  },
+  {
+    "name": "Keywords Studios",
+    "careersUrl": "https://careers.smartrecruiters.com/keywordsstudios",
+    "type": "smartrecruiters"
+  },
+  {
+    "name": "Scopely",
+    "careersUrl": "https://job-boards.greenhouse.io/scopely",
+    "type": "greenhouse"
+  },
+  {
+    "name": "Gameloft",
+    "careersUrl": "https://careers.smartrecruiters.com/gameloft",
+    "type": "smartrecruiters"
+  },
+  {
+    "name": "2K Valencia / 31st Union",
+    "careersUrl": "https://job-boards.greenhouse.io/31stunion",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://thirtyfirstunion.com/careers/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "2K Cloud Chamber",
+    "careersUrl": "https://job-boards.greenhouse.io/cloudchamberen",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://2k.com/studios/cloud-chamber/careers/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "IO Interactive",
+    "careersUrl": "https://apply.ioi.dk/jobs",
+    "type": "teamtailor",
+    "sourceEvidence": {
+      "url": "https://ioi.dk/careers",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Escape Velocity Entertainment",
+    "careersUrl": "https://job-boards.greenhouse.io/escapevelocityentertainmentinc",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://eve.games/home/careers/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Aesir Interactive",
+    "careersUrl": "https://aesir.jobs.personio.de",
+    "type": "personio",
+    "sourceEvidence": {
+      "url": "https://aesir-interactive.com/careers",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Deck 13",
+    "careersUrl": "https://deck13.jobs.personio.de",
+    "type": "personio",
+    "sourceEvidence": {
+      "url": "https://www.deck13.com/jobs/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Blackbird Interactive",
+    "careersUrl": "https://jobs.lever.co/blackbirdinteractive",
+    "type": "lever",
+    "sourceEvidence": {
+      "url": "https://blackbirdinteractive.com/careers/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Digital Extremes",
+    "careersUrl": "https://job-boards.greenhouse.io/digitalextremes",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://www.digitalextremes.com/careers/list",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Naughty Dog",
+    "careersUrl": "https://job-boards.greenhouse.io/naughtydog",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://www.naughtydog.com/openings",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Riot Games",
+    "careersUrl": "https://job-boards.greenhouse.io/riotgames",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://www.riotgames.com/en/j/8148791",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Mob Entertainment",
+    "careersUrl": "https://job-boards.greenhouse.io/mobentertainment",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://www.mobentertainment.com/careers",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Velan Studios",
+    "careersUrl": "https://apply.workable.com/velanstudios/",
+    "type": "workable",
+    "sourceEvidence": {
+      "url": "https://www.velanstudios.com/careers",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Liquid Development",
+    "careersUrl": "https://apply.workable.com/liquid-development/",
+    "type": "workable",
+    "sourceEvidence": {
+      "url": "https://www.liquiddevelopment.com/careers",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Magic Media",
+    "careersUrl": "https://apply.workable.com/magic-media/",
+    "type": "workable",
+    "sourceEvidence": {
+      "url": "https://apply.workable.com/api/v1/widget/accounts/magic-media?details=true",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Believer",
+    "careersUrl": "https://jobs.ashbyhq.com/believer",
+    "type": "ashby",
+    "sourceEvidence": {
+      "url": "https://api.ashbyhq.com/posting-api/job-board/believer",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Voodoo",
+    "careersUrl": "https://jobs.ashbyhq.com/voodoo",
+    "type": "ashby",
+    "sourceEvidence": {
+      "url": "https://api.ashbyhq.com/posting-api/job-board/voodoo",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Hasbro",
+    "careersUrl": "https://job-boards.greenhouse.io/hasbro",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://job-boards.greenhouse.io/hasbro",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Insomniac Games",
+    "careersUrl": "https://job-boards.greenhouse.io/insomniac",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://insomniac.games/careers/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Turtle Rock Studios",
+    "careersUrl": "https://job-boards.greenhouse.io/turtlerockstudios",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://turtlerockstudios.com/careers/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Kabam",
+    "careersUrl": "https://jobs.lever.co/kabam",
+    "type": "lever",
+    "sourceEvidence": {
+      "url": "https://jobs.lever.co/kabam",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Amanotes",
+    "careersUrl": "https://jobs.lever.co/amanotes",
+    "type": "lever",
+    "sourceEvidence": {
+      "url": "https://jobs.lever.co/amanotes",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Weltenbauer",
+    "careersUrl": "https://weltenbauer-software-entwicklung-gmbh.jobs.personio.de",
+    "type": "personio",
+    "sourceEvidence": {
+      "url": "https://weltenbauer-software-entwicklung-gmbh.jobs.personio.de",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer page, embedded board identifier, or employer identity in ATS postings verified live"
+    }
+  },
+  {
+    "name": "Asobo Studio",
+    "careersUrl": "https://jobs.eu.lever.co/asobostudio",
+    "type": "lever",
+    "sourceEvidence": {
+      "url": "https://www.asobostudio.com/fr/carriere",
+      "verifiedAt": "2026-10-23",
+      "method": "Board linked or embedded by the employer"
+    }
+  },
+  {
+    "name": "Homa",
+    "careersUrl": "https://apply.workable.com/homa-games/",
+    "type": "workable",
+    "sourceEvidence": {
+      "url": "https://www.homagames.com/careers",
+      "verifiedAt": "2026-10-23",
+      "method": "Board linked or embedded by the employer"
+    }
+  },
+  {
+    "name": "2K Hangar 13",
+    "careersUrl": "https://job-boards.greenhouse.io/hangar13",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://2k.com/studios/hangar-13/careers/",
+      "verifiedAt": "2026-10-23",
+      "method": "Board linked or embedded by the employer"
+    }
+  },
+  {
+    "name": "2K Gearbox",
+    "careersUrl": "https://job-boards.greenhouse.io/gearbox",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://2k.com/studios/gearbox/careers/",
+      "verifiedAt": "2026-10-23",
+      "method": "Board linked or embedded by the employer"
+    }
+  },
+  {
+    "name": "Cloud Imperium Games",
+    "careersUrl": "https://cloudimperiumgames.wd503.myworkdayjobs.com/CIG_Global_Careers",
+    "type": "workday",
+    "officialUrl": "https://cloudimperiumgames.com/jobs",
+    "sourceEvidence": {
+      "url": "https://cloudimperiumgames.com/jobs",
+      "verifiedAt": "2026-10-23",
+      "method": "Employer listing links vacancies to this Workday tenant/site"
+    }
+  },
+  {
+    "name": "Gram Games",
+    "careersUrl": "https://job-boards.greenhouse.io/gramgamescareers",
+    "type": "greenhouse",
+    "sourceEvidence": {
+      "url": "https://gramgames.net/join-us.html",
+      "verifiedAt": "2026-10-23",
+      "method": "Official careers link; gram is an unrelated company"
+    }
+  },
+  {
+    "name": "Ember Lab",
+    "careersUrl": "https://emberlab.bamboohr.com/careers",
+    "type": "bamboo",
+    "sourceEvidence": {
+      "url": "https://emberlab.com/careers/",
+      "verifiedAt": "2026-10-23",
+      "method": "Employer embeds BambooHR for emberlab.bamboohr.com; not ember.recruitee.com"
+    }
+  },
+  {
+    "name": "Highdive",
+    "type": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/highdive",
+    "officialUrl": "https://job-boards.greenhouse.io/highdive",
+    "sourceEvidence": {
+      "url": "https://job-boards.greenhouse.io/highdive",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Mobilityware",
+    "type": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/mobilityware",
+    "officialUrl": "https://www.mobilityware.com/jobs/",
+    "sourceEvidence": {
+      "url": "https://www.mobilityware.com/jobs/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Socialpoint",
+    "type": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/spcareers",
+    "officialUrl": "https://www.socialpoint.es/join-us/",
+    "sourceEvidence": {
+      "url": "https://www.socialpoint.es/join-us/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    },
+    "country": "ES"
+  },
+  {
+    "name": "King",
+    "type": "workday",
+    "careersUrl": "https://xboxgaming.wd1.myworkdayjobs.com/King_External_Careers",
+    "officialUrl": "https://careers.king.com/us/en/search-results",
+    "sourceEvidence": {
+      "url": "https://careers.king.com/us/en/search-results",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Rockstar Games",
+    "type": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/rockstargames",
+    "officialUrl": "https://www.rockstargames.com/careers",
+    "sourceEvidence": {
+      "url": "https://www.rockstargames.com/careers",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Funcom",
+    "type": "teamtailor",
+    "careersUrl": "https://jobs.funcom.com/jobs",
+    "officialUrl": "https://jobs.funcom.com/",
+    "sourceEvidence": {
+      "url": "https://jobs.funcom.com/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Arrowhead Game Studios",
+    "type": "teamtailor",
+    "careersUrl": "https://jobs.arrowheadgamestudios.com/jobs",
+    "officialUrl": "https://jobs.arrowheadgamestudios.com/",
+    "sourceEvidence": {
+      "url": "https://jobs.arrowheadgamestudios.com/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Fatshark",
+    "type": "teamtailor",
+    "careersUrl": "https://jobs.fatsharkgames.com/jobs",
+    "officialUrl": "https://www.fatshark.se/",
+    "sourceEvidence": {
+      "url": "https://www.fatshark.se/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "People Can Fly",
+    "type": "smartrecruiters",
+    "careersUrl": "https://careers.smartrecruiters.com/PeopleCanFly",
+    "officialUrl": "https://peoplecanfly.com/career/",
+    "sourceEvidence": {
+      "url": "https://peoplecanfly.com/career/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Infinite Plus",
+    "type": "infiniteplus",
+    "careersUrl": "https://infinite-plus.io/careers",
+    "officialUrl": "https://infinite-plus.io/",
+    "sourceEvidence": {
+      "url": "https://infinite-plus.io/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "MercurySteam",
+    "type": "mercurysteam",
+    "careersUrl": "https://www.mercurysteam.com/talento/",
+    "officialUrl": "https://www.mercurysteam.com/",
+    "sourceEvidence": {
+      "url": "https://www.mercurysteam.com/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    },
+    "country": "ES"
+  }
+]

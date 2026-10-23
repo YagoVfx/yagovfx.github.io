@@ -18,7 +18,11 @@
   {
     "name": "CI Games",
     "careersUrl": "https://cigames.teamtailor.com",
-    "type": "teamtailor"
+    "type": "teamtailor",
+    "studios": [
+      "Hexworks"
+    ],
+    "officialUrl": "https://cigames.com/en/contact/"
   },
   {
     "name": "Respawn",

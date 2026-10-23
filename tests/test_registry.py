@@ -37,6 +37,16 @@ def test_required_studios_are_configured():
     assert {"Mundfish", "AXIOM VFX"} <= names
 
 
+def test_hexworks_uses_parent_source_without_duplicate_scan():
+    by={c['name']:c for c in COMPANIES}
+    assert 'Hexworks' in by['CI Games']['studios']
+    assert 'Hexworks' not in by
+    studio=next(c for c in REG['companies'] if c['name']=='Hexworks')
+    parent=next(c for c in REG['companies'] if c['name']=='CI Games')
+    assert studio['sharedSource']=='CI Games'
+    assert studio['state']==parent['state'] and studio['careersUrl']==parent['careersUrl']
+
+
 def test_registry_schema_and_enums():
     allowed_state = {"active", "unsupported", "blocked", "pending"}
     for e in REG["companies"]:

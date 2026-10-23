@@ -21,7 +21,8 @@
   var PREF_KEY = 'vfxjobs-v2';
   var DATA = {
     jobs: 'data/jobs.json', companies: 'data/companies.json', status: 'data/scanner-status.json',
-    report: 'data/scanner-report.json', registry: 'data/companies-registry.json'
+    report: 'data/scanner-report.json', registry: 'data/companies-registry.json',
+    world: 'data/world-map.json', locations: 'data/company-locations.json'
   };
   var WORKFLOW_URL = 'https://github.com/YagoVfx/yagovfx.github.io/actions/workflows/vfx-jobs-scanner.yml';
   var PAGE = 50;
@@ -83,7 +84,7 @@
 
   Panel.prototype.build = function () {
     var u = this.id.bind(this);
-    var tabs = [['offers', 'Ofertas'], ['saved', 'Guardadas'], ['companies', 'Empresas']];
+    var tabs = [['offers', 'Ofertas'], ['saved', 'Guardadas'], ['companies', 'Empresas'], ['insights', 'Mapa y estadísticas']];
     if (this.admin) tabs.push(['apps', 'Mis candidaturas'], ['sources', 'Fuentes y scanner']);
     tabs.push(['settings', 'Ajustes']);
     this.tabIds = tabs.map(function (t) { return t[0]; });
@@ -153,6 +154,7 @@
 
       '<section class="jp-pane" role="tabpanel" id="' + u('panel-saved') + '" aria-labelledby="' + u('tab-saved') + '" data-pane="saved" hidden></section>' +
       '<section class="jp-pane" role="tabpanel" id="' + u('panel-companies') + '" aria-labelledby="' + u('tab-companies') + '" data-pane="companies" hidden></section>' +
+      '<section class="jp-pane" role="tabpanel" id="' + u('panel-insights') + '" aria-labelledby="' + u('tab-insights') + '" data-pane="insights" hidden></section>' +
       (this.admin ? '<section class="jp-pane" role="tabpanel" id="' + u('panel-apps') + '" aria-labelledby="' + u('tab-apps') + '" data-pane="apps" hidden></section>' +
         '<section class="jp-pane" role="tabpanel" id="' + u('panel-sources') + '" aria-labelledby="' + u('tab-sources') + '" data-pane="sources" hidden></section>' : '') +
       '<section class="jp-pane" role="tabpanel" id="' + u('panel-settings') + '" aria-labelledby="' + u('tab-settings') + '" data-pane="settings" hidden></section>';
@@ -282,7 +284,21 @@
     if (focus) this.el.querySelector('#' + this.id('tab-' + name)).focus();
     this.renderAll();
     if (name === 'companies') this.loadCompaniesData();
+    if (name === 'insights') this.loadInsightsData();
     if (name === 'sources') this.loadSourcesData();
+  };
+
+  Panel.prototype.loadInsightsData = function () {
+    var self = this, p = this.pane('insights');
+    if (this.extra.insights) { this.renderInsights(); return; }
+    p.innerHTML = '<div class="jp-state">Cargando mapa y estadísticas…</div>';
+    Promise.all([loadJson('world'), loadJson('locations'), loadJson('companies')]).then(function(r) {
+      self.extra.insights = {world:r[0],locations:r[1],companies:r[2]}; self.renderInsights();
+    }).catch(function() { p.innerHTML='<div class="jp-state">No se pudo cargar el mapa. Vuelve a abrir esta pestaña para reintentar.</div>'; });
+  };
+  Panel.prototype.renderInsights = function () {
+    var d=this.extra.insights;
+    if(d && root.VfxJobsInsights) root.VfxJobsInsights.mount(this.pane('insights'),d,this.jobs,d.companies);
   };
 
   Panel.prototype.toggleAdv = function () {
@@ -348,6 +364,7 @@
     this.render();
     if (this.tab === 'saved') this.renderSaved();
     if (this.tab === 'companies') this.renderCompanies();
+    if (this.tab === 'insights') this.renderInsights();
     if (this.tab === 'sources') this.renderSources();
     if (this.tab === 'apps') this.renderApps();
     if (this.tab === 'settings') this.renderSettings();
@@ -521,6 +538,7 @@
       var r = regBy[n]; var o = rows[n] || (rows[n] = { name: n, monitored: false });
       o.country = r.country; o.official = r.officialUrl; o.careers = o.careers || r.careersUrl; o.ats = o.ats || r.ats;
       o.state = r.state; o.reason = r.reason; o.priority = r.priority; o.spain = r.spainCompat; o.method = r.method; o.reliability = r.reliability; o.checked = r.lastChecked;
+      if (r.sharedSource) { o.monitored = true; o.lastOk = r.lastChecked; }
     });
     var arr = Object.keys(rows).map(function (n) {
       var o = rows[n], s = statusBy[n];

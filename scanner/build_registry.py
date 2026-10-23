@@ -137,6 +137,10 @@ def build(data_dir: Path = DATA) -> dict:
                     if name == "AXIOM VFX":
                         e["reason"] += " contratación laboral NO acreditada: anuncio ambiguo, full-time or contract."
         out.append(e); seen.add(name.lower())
+        for studio in c.get("studios", []):
+            child = dict(e, name=studio, configured=False, sharedSource=name,
+                         reason=f"Portal compartido con {name}; se consulta una sola vez. " + e["reason"])
+            out.append(child); seen.add(studio.lower())
 
     # Investigadas a mano pero aún no configuradas en el scanner
     for name, r in RESEARCHED.items():
