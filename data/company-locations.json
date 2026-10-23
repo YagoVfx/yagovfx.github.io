@@ -68,16 +68,16 @@
       "name": "Respawn",
       "locations": [
         {
-          "city": "Los Angeles",
-          "lat": 34.05,
-          "lon": -118.24,
-          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/Senior-VFX-Artist-Apex-Legends/216460"
-        },
-        {
           "city": "Vancouver",
           "lat": 49.28,
           "lon": -123.12,
           "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216274"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
+          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/Senior-VFX-Artist-Apex-Legends/216460"
         }
       ]
     },
@@ -350,15 +350,21 @@
       "name": "Ubisoft",
       "locations": [
         {
-          "city": "Paris",
-          "lat": 48.86,
-          "lon": 2.35,
+          "city": "Quebec City",
+          "lat": 46.81,
+          "lon": -71.21,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
           "city": "Montreal",
           "lat": 45.5,
           "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Paris",
+          "lat": 48.86,
+          "lon": 2.35,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -761,15 +767,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         },
         {
-          "city": "Dundee",
-          "lat": 56.46,
-          "lon": -2.97,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
-        },
-        {
           "city": "Tel Aviv",
           "lat": 32.09,
           "lon": 34.78,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Dundee",
+          "lat": 56.46,
+          "lon": -2.97,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         }
       ]
