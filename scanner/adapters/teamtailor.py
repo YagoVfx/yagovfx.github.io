@@ -73,5 +73,9 @@ class TeamtailorAdapter(BaseAdapter):
             }))
 
         self.total_seen = candidates_seen
-        self.listing_verified = candidates_seen > 0
+        # Teamtailor explicitly distinguishes its empty board from a loading
+        # shell. Require both its platform link and published empty message.
+        explicit_empty = (soup.select_one('a[href*="teamtailor.com"]') is not None
+                          and "No open positions right now" in soup.get_text(" ", strip=True))
+        self.listing_verified = candidates_seen > 0 or explicit_empty
         return jobs

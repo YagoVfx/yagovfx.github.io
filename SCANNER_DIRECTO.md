@@ -1,5 +1,41 @@
 # Catálogo de portales directos
 
+## Revisión de pendientes y cobertura española (23-10-2026)
+
+El catálogo pasa de 59 a **70 fuentes configuradas**. Se incorporan Highdive,
+MobilityWare, Socialpoint, King, Rockstar Games, Funcom, Arrowhead Game Studios,
+Fatshark, People Can Fly, Infinite Plus y MercurySteam. La primera ejecución
+consultó las 70 sin errores y obtuvo **65 ofertas activas oficiales**; Highdive
+aportó una vacante de Principal VFX Artist. Conectar una fuente no significa
+que tenga puestos de VFX actuales ni que admita trabajar desde España.
+
+- **MobilityWare:** el HTML bloquea al bot, pero su API pública Greenhouse funciona.
+- **Infinite Plus:** seis descripciones publicadas en su web propia, ninguna de VFX.
+  El adaptador conserva que son anuncios inline sin inventar URLs de detalle.
+- **MercurySteam:** su página de talento declara explícitamente que no hay posiciones
+  abiertas. Si desaparece esa declaración, se pide revisar el nuevo listado en lugar
+  de interpretar cualquier HTML como una lista vacía.
+- **Funcom:** Teamtailor publica explícitamente «No open positions right now».
+  Se distingue esa declaración de una página que simplemente no carga sus anuncios.
+- **Digital Sun y Cactus Punch:** siguen bloqueadas (403/401); no hay una conexión
+  recuperada mientras sus datos no se puedan consultar. El índice WordPress público
+  de Digital Sun no implica acceso a sus rutas de datos, que devuelven 401.
+- **Company 3:** portal oficial JazzHR localizado; integración pendiente de separar
+  puestos de tiempo real de cine/postproducción. Se descarta la candidata Recruitee.
+- **Airship Syndicate y Genius Game FZCO:** web oficial identificada, sin listado
+  público de vacantes verificable. **Iris Games:** identidad aún sin acreditar.
+
+En España se añaden Socialpoint y MercurySteam; King se consulta globalmente y la
+ubicación se comprueba por anuncio. Ubisoft, Activision/Digital Legends, IOI, Larian,
+Scopely, Gameloft, Saber y 2K/31st Union ya estaban cubiertas por sus fuentes actuales;
+no se duplica un tablero por cada sede. Se registran también **The Game Kitchen** y
+**Secret 6** (bloqueadas), **Nomada Studio** (sin vacantes según su web, integración
+pendiente) y **BlitWorks** (contacto manual, sin listado público verificable).
+
+No es un censo exhaustivo de estudios españoles o internacionales. El registro incluye
+también estudios investigados sin ATS conocido; cada uno conserva el motivo concreto.
+Los apartados siguientes documentan la ampliación anterior de 30 a 59 fuentes.
+
 ## Ampliación de cobertura del 23-10-2026
 
 La segunda revisión amplía las fuentes configuradas de 30 a 59. El escaneo real final

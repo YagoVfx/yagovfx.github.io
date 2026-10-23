@@ -66,7 +66,9 @@ def test_registry_never_claims_connected_without_real_run_and_counts_are_honest(
 def test_registry_has_no_emails_tokens_or_secrets():
     blob = json.dumps(REG) + json.dumps(COMPANIES)
     assert not re.search(r"[\w.+-]+@[\w-]+\.[\w.]+", blob), "no deben publicarse emails"
-    assert not re.search(r"ghp_|github_pat_|api[_-]?key|secret|token", blob, re.I)
+    # Studio names such as Secret 6 are not credentials. Check actual
+    # credential assignments and recognizable access-token prefixes.
+    assert not re.search(r"ghp_|github_pat_|(?:api[_-]?key|secret|token)\"?\s*[:=]", blob, re.I)
 
 
 def test_researched_studios_are_in_registry_with_their_evidence():
@@ -86,10 +88,30 @@ def test_registry_is_reproducible_from_sources():
 
 def test_rejected_candidates_are_not_linked_as_employer_sources():
     by = {e["name"]: e for e in REG["companies"]}
+    audits = {a["name"]: a for a in json.loads((DATA / "source-audit.json").read_text(encoding="utf-8"))["companies"]}
     for name in ("Cactus Punch", "Company3", "Genius Game Fzco", "Airship", "Jobgether Srl"):
         assert by[name]["candidateRejected"]
         assert by[name]["state"] != "active"
-        assert by[name]["careersUrl"] is None
+        assert by[name]["careersUrl"] != audits[name]["candidateUrl"]
+
+
+def test_audited_studios_without_discoverable_ats_remain_visible():
+    by = {e["name"]: e for e in REG["companies"]}
+    for name in ("The Game Kitchen", "Secret 6", "Nomada Studio", "BlitWorks"):
+        assert by[name]["country"] == "ES"
+        assert not by[name]["configured"]
+        assert by[name]["evidence"]["kind"] == "web-research"
+
+
+def test_new_verified_employer_sources_are_configured():
+    by = {c["name"]: c for c in COMPANIES}
+    expected = {"Highdive": "greenhouse", "Mobilityware": "greenhouse", "Socialpoint": "greenhouse",
+                "King": "workday", "Rockstar Games": "greenhouse", "Funcom": "teamtailor",
+                "Arrowhead Game Studios": "teamtailor", "Fatshark": "teamtailor",
+                "People Can Fly": "smartrecruiters", "Infinite Plus": "infiniteplus", "MercurySteam": "mercurysteam"}
+    for name, adapter in expected.items():
+        assert by[name]["type"] == adapter
+        assert by[name]["sourceEvidence"]["verifiedAt"] == "2026-10-23"
 
 
 def test_specific_reported_broken_sources_have_verified_integrations():

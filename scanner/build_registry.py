@@ -89,10 +89,10 @@ def build(data_dir: Path = DATA) -> dict:
         detected = detect_ats(url)
         ats = detected if declared == "custom" else declared
         r = RESEARCHED.get(name, {})
-        e = dict(name=name, country=r.get("country"), officialUrl=r.get("officialUrl"), careersUrl=url,
+        e = dict(name=name, country=c.get("country", r.get("country")), officialUrl=c.get("officialUrl", r.get("officialUrl")), careersUrl=url,
                  ats=None if ats in ("custom", "mundfish", "axiomvfx") else ats,
-                 method="api" if ats not in ("custom", "mundfish", "axiomvfx", "teamtailor", "ea") else "html-adapter",
-                 reliability="alta" if ats not in ("custom", "mundfish", "axiomvfx", "teamtailor", "ea") else "baja",
+                 method="api" if ats not in ("custom", "mundfish", "axiomvfx", "teamtailor", "ea", "infiniteplus", "mercurysteam") else "html-adapter",
+                 reliability="alta" if ats not in ("custom", "mundfish", "axiomvfx", "teamtailor", "ea", "infiniteplus", "mercurysteam") else "baja",
                  state="pending", reason="", priority=r.get("priority", "media"), spainCompat=r.get("spainCompat"),
                  configured=True, lastChecked=None, evidence=dict(kind="none", date=None, source=None))
         if name in RESEARCHED:
@@ -177,6 +177,17 @@ def build(data_dir: Path = DATA) -> dict:
         out.append(dict(name=name, country=None, officialUrl=None, careersUrl=None, ats=None, method="none", reliability="desconocida",
                         state="pending", reason=why, priority="media", spainCompat=None, configured=False, lastChecked=None,
                         evidence=dict(kind="none", date=None, source=None)))
+    # Audited studios may have no discovered ATS at all. Keep them visible
+    # with their actual public site and the precise remaining limitation.
+    listed = {entry["name"].lower() for entry in out}
+    for key, audit in audits.items():
+        if key in listed or audit.get("canonicalCompany", "").lower() in listed:
+            continue
+        out.append(dict(name=audit["name"], country=audit.get("country"), officialUrl=audit.get("officialUrl"),
+                        careersUrl=None, ats=None, method="none", reliability="desconocida",
+                        state="pending", reason=audit["reason"], priority="media", spainCompat=None,
+                        configured=False, lastChecked=None, evidence=dict(kind="none", date=None, source=None)))
+        listed.add(key)
     for entry in out:
         audit = audits.get(entry["name"].lower())
         if audit and not entry.get("configured"):
@@ -184,6 +195,10 @@ def build(data_dir: Path = DATA) -> dict:
                          careersUrl=audit.get("replacementCareersUrl"),
                          candidateRejected=audit.get("candidateRejected", False),
                          evidence=dict(kind="web-research", date="2026-10-23", source=audit["candidateUrl"]))
+            if audit.get("officialUrl"):
+                entry["officialUrl"] = audit["officialUrl"]
+            if audit.get("country"):
+                entry["country"] = audit["country"]
     states = {}
     for e in out:
         states[e["state"]] = states.get(e["state"], 0) + 1

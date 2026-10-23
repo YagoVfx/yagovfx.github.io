@@ -2,20 +2,162 @@
   "auditedAt": "2026-10-23",
   "note": "Identity checks of previously guessed ATS candidates. A company-name slug alone is not proof of ownership.",
   "companies": [
-    {"name":"Liquid Development, Llc","canonicalCompany":"Liquid Development","state":"pending","candidateRejected":true,"candidateUrl":"https://jobs.ashbyhq.com/liquid","reason":"Duplicado del empleador Liquid Development. El portal oficial enlaza apply.workable.com/liquid-development; la candidata Ashby liquid no acredita esa relación."},
-    {"name":"Cactus Punch","state":"pending","candidateRejected":true,"candidateUrl":"https://cactus.jobs.personio.de","reason":"El tablero candidato pertenece a Cactus GmbH / Cactus Service und Vertriebs GmbH / Cactus Cards GmbH (tarjetas y servicios), no a Cactus Punch. Falta localizar el portal real."},
-    {"name":"Company3","state":"pending","candidateRejected":true,"candidateUrl":"https://company3.recruitee.com","reason":"El tablero candidato muestra Company 3 y puestos de ejemplo como Senior Marketer (Muster). No acredita la identidad del estudio Company 3; no se conecta."},
-    {"name":"Genius Game Fzco","state":"pending","candidateRejected":true,"candidateUrl":"https://job-boards.greenhouse.io/genius","reason":"El candidato muestra Invite-Only Job Board y no acredita relación con Genius Game. No se conecta por coincidencia parcial del nombre."},
-    {"name":"Airship","state":"unsupported","candidateRejected":true,"candidateUrl":"https://job-boards.greenhouse.io/airship","reason":"El candidato corresponde a Airship, empresa de software de interacción móvil, no a Airship Syndicate. No es una conexión válida al estudio de videojuegos."},
-    {"name":"Trove Brands","state":"unsupported","candidateRejected":true,"candidateUrl":"https://job-boards.greenhouse.io/trovebrands","reason":"Empresa de productos de consumo; no es un estudio de videojuegos ni una fuente del perfil de empleo buscado."},
-    {"name":"Jobgether Srl","state":"unsupported","candidateRejected":true,"candidateUrl":"https://jobs.lever.co/jobgether","reason":"Jobgether es intermediario/agregador. Su tablero no es el portal directo de los empleadores y queda excluido de la política direct-only."},
-    {"name":"Sandbox Interactive","state":"pending","candidateRejected":true,"candidateUrl":"https://sandbox.jobs.personio.de","reason":"El tablero candidato no acredita Sandbox Interactive; la web oficial redirige a Albion Online y bloquea la consulta automatizada. Pendiente de localizar y verificar el portal correcto."},
-    {"name":"Infinite Plus","state":"pending","candidateRejected":true,"candidateUrl":"https://jobs.ashbyhq.com/infinite","reason":"El tablero se identifica como Infinite. No se ha verificado que corresponda a Infinite Plus; no se conecta por un slug parcial."},
-    {"name":"Iris Games","state":"pending","candidateRejected":true,"candidateUrl":"https://job-boards.greenhouse.io/iris","reason":"No se ha acreditado la identidad del estudio en este candidato. Pendiente de una referencia oficial; no se conecta por un slug parcial."},
-    {"name":"Highdive","state":"pending","candidateRejected":true,"candidateUrl":"https://job-boards.greenhouse.io/highdive","reason":"No se ha acreditado que este tablero corresponda a un estudio de videojuegos del perfil buscado. Pendiente de verificar identidad y sector."},
-    {"name":"Digital Sun Games","state":"blocked","candidateRejected":false,"candidateUrl":"https://digitalsungames.com/jobs/","replacementCareersUrl":"https://digitalsungames.com/jobs/","reason":"La página oficial de empleo devuelve HTTP 403 al scanner. Fuente real identificada; conexión bloqueada, sin inventar un ATS alternativo."},
-    {"name":"Mobilityware","state":"blocked","candidateRejected":false,"candidateUrl":"https://www.mobilityware.com/jobs/","replacementCareersUrl":"https://www.mobilityware.com/jobs/","reason":"La página oficial y el candidato Greenhouse devuelven HTTP 403. Pendiente de acceso público verificable; no se presenta como conectada."},
-    {"name":"One Of Us","state":"pending","candidateRejected":false,"candidateUrl":"https://apply.workable.com/one-of-us/","replacementCareersUrl":"https://apply.workable.com/one-of-us/","reason":"Portal Workable real verificado. Las ofertas examinadas son principalmente cine/postproducción; integración pendiente de separar puestos de VFX en tiempo real del resto."},
-    {"name":"Rodeo Fx","state":"pending","candidateRejected":false,"candidateUrl":"https://careers.smartrecruiters.com/rodeofx","replacementCareersUrl":"https://careers.smartrecruiters.com/rodeofx","reason":"Portal SmartRecruiters real verificado. Integración pendiente de separar vacantes de tiempo real/videojuegos de cine, producción y postproducción."}
+    {
+      "name": "Liquid Development, Llc",
+      "canonicalCompany": "Liquid Development",
+      "state": "pending",
+      "candidateRejected": true,
+      "candidateUrl": "https://jobs.ashbyhq.com/liquid",
+      "reason": "Duplicado del empleador Liquid Development. El portal oficial enlaza apply.workable.com/liquid-development; la candidata Ashby liquid no acredita esa relación."
+    },
+    {
+      "name": "Cactus Punch",
+      "state": "blocked",
+      "candidateRejected": true,
+      "candidateUrl": "https://cactus.jobs.personio.de",
+      "reason": "Estudio identificado en cactuspunch.pro; el sitio devuelve HTTP 401. El candidato Personio era Cactus GmbH, otra empresa. No hay un portal público de empleo verificable para automatizar.",
+      "replacementCareersUrl": "https://cactuspunch.pro/"
+    },
+    {
+      "name": "Company3",
+      "state": "pending",
+      "candidateRejected": true,
+      "candidateUrl": "https://company3.recruitee.com",
+      "reason": "Portal oficial identificado: Company 3 enlaza company3.applytojob.com (JazzHR). Las vacantes revisadas son de cine/postproducción; falta separar puestos de tiempo real. El candidato Recruitee era incorrecto.",
+      "replacementCareersUrl": "https://www.company3.com/careers/1000/"
+    },
+    {
+      "name": "Genius Game Fzco",
+      "state": "pending",
+      "candidateRejected": true,
+      "candidateUrl": "https://job-boards.greenhouse.io/genius",
+      "reason": "Identidad verificada en la web oficial de Genius Game FZCO / Zenkai. No publica un listado de empleo o ATS verificable. El candidato Greenhouse genius no pertenecía al estudio.",
+      "replacementCareersUrl": "https://genius-game.com/"
+    },
+    {
+      "name": "Airship",
+      "state": "pending",
+      "candidateRejected": true,
+      "candidateUrl": "https://job-boards.greenhouse.io/airship",
+      "reason": "La web del estudio Airship Syndicate está identificada, pero no publica un portal de empleo verificable. El candidato Greenhouse airship pertenece a una empresa de software ajena al estudio.",
+      "replacementCareersUrl": "https://www.airshipsyndicate.com/"
+    },
+    {
+      "name": "Trove Brands",
+      "state": "unsupported",
+      "candidateRejected": true,
+      "candidateUrl": "https://job-boards.greenhouse.io/trovebrands",
+      "reason": "Empresa de productos de consumo; no es un estudio de videojuegos ni una fuente del perfil de empleo buscado."
+    },
+    {
+      "name": "Jobgether Srl",
+      "state": "unsupported",
+      "candidateRejected": true,
+      "candidateUrl": "https://jobs.lever.co/jobgether",
+      "reason": "Jobgether es intermediario/agregador. Su tablero no es el portal directo de los empleadores y queda excluido de la política direct-only."
+    },
+    {
+      "name": "Sandbox Interactive",
+      "state": "pending",
+      "candidateRejected": true,
+      "candidateUrl": "https://sandbox.jobs.personio.de",
+      "reason": "El tablero candidato no acredita Sandbox Interactive; la web oficial redirige a Albion Online y bloquea la consulta automatizada. Pendiente de localizar y verificar el portal correcto."
+    },
+    {
+      "name": "Infinite Plus",
+      "state": "pending",
+      "candidateRejected": true,
+      "candidateUrl": "https://jobs.ashbyhq.com/infinite",
+      "reason": "Portal propio verificado e integrado mediante su listado HTML. El antiguo candidato Ashby infinite no pertenece a este empleador.",
+      "replacementCareersUrl": "https://infinite-plus.io/careers"
+    },
+    {
+      "name": "Iris Games",
+      "state": "pending",
+      "candidateRejected": true,
+      "candidateUrl": "https://job-boards.greenhouse.io/iris",
+      "reason": "Identidad del estudio sin verificar: hay varias entidades con nombres similares. Falta una referencia oficial; el candidato Greenhouse iris no acredita ninguna relación.",
+      "replacementCareersUrl": null
+    },
+    {
+      "name": "Highdive",
+      "state": "pending",
+      "candidateRejected": false,
+      "candidateUrl": "https://job-boards.greenhouse.io/highdive",
+      "reason": "Identidad confirmada: estudio de videojuegos NetEase / Thunderfire en Montreal. Greenhouse highdive y su API pública están verificados e integrados.",
+      "replacementCareersUrl": "https://job-boards.greenhouse.io/highdive"
+    },
+    {
+      "name": "Digital Sun Games",
+      "state": "blocked",
+      "candidateRejected": false,
+      "candidateUrl": "https://digitalsungames.com/jobs/",
+      "replacementCareersUrl": "https://digitalsungames.com/jobs/",
+      "reason": "La página oficial de empleo devuelve HTTP 403. El índice WordPress es público, pero las rutas de datos devuelven HTTP 401; todavía no se pueden verificar vacantes desde el scanner."
+    },
+    {
+      "name": "Mobilityware",
+      "state": "pending",
+      "candidateRejected": false,
+      "candidateUrl": "https://www.mobilityware.com/jobs/",
+      "replacementCareersUrl": "https://job-boards.greenhouse.io/mobilityware",
+      "reason": "La web y el HTML del tablero bloquean el scanner, pero la API pública oficial Greenhouse responde correctamente. Se ha integrado esa API."
+    },
+    {
+      "name": "One Of Us",
+      "state": "pending",
+      "candidateRejected": false,
+      "candidateUrl": "https://apply.workable.com/one-of-us/",
+      "replacementCareersUrl": "https://apply.workable.com/one-of-us/",
+      "reason": "Portal Workable real verificado. Las ofertas examinadas son principalmente cine/postproducción; integración pendiente de separar puestos de VFX en tiempo real del resto."
+    },
+    {
+      "name": "Rodeo Fx",
+      "state": "pending",
+      "candidateRejected": false,
+      "candidateUrl": "https://careers.smartrecruiters.com/rodeofx",
+      "replacementCareersUrl": "https://careers.smartrecruiters.com/rodeofx",
+      "reason": "Portal SmartRecruiters real verificado. Integración pendiente de separar vacantes de tiempo real/videojuegos de cine, producción y postproducción."
+    },
+    {
+      "name": "The Game Kitchen",
+      "country": "ES",
+      "officialUrl": "https://thegamekitchen.com/jobs/",
+      "state": "blocked",
+      "candidateRejected": false,
+      "candidateUrl": "https://thegamekitchen.com/jobs/",
+      "replacementCareersUrl": "https://thegamekitchen.com/jobs/",
+      "reason": "La página oficial de empleo devuelve HTTP 401 al scanner. Estudio español identificado; no se importan resultados de buscadores como vacantes verificadas."
+    },
+    {
+      "name": "Secret 6",
+      "country": "ES",
+      "officialUrl": "https://secret6.com/careers",
+      "state": "blocked",
+      "candidateRejected": false,
+      "candidateUrl": "https://secret6.com/careers",
+      "replacementCareersUrl": "https://secret6.com/careers",
+      "reason": "El portal oficial devuelve HTTP 403 (Sucuri). Fuente identificada, acceso automatizado bloqueado."
+    },
+    {
+      "name": "Nomada Studio",
+      "country": "ES",
+      "officialUrl": "https://nomada.studio/careers/",
+      "state": "pending",
+      "candidateRejected": false,
+      "candidateUrl": "https://nomada.studio/careers/",
+      "replacementCareersUrl": "https://nomada.studio/careers/",
+      "reason": "Portal oficial identificado. Actualmente declara no tener posiciones abiertas; pendiente de incorporar su listado propio al scanner."
+    },
+    {
+      "name": "BlitWorks",
+      "country": "ES",
+      "officialUrl": "https://blitworks.com/contact/",
+      "state": "pending",
+      "candidateRejected": false,
+      "candidateUrl": "https://blitworks.com/contact/",
+      "replacementCareersUrl": "https://blitworks.com/contact/",
+      "reason": "La página oficial publica contacto para empleo, sin listado de vacantes o ATS verificable. Seguimiento manual."
+    }
   ]
 }

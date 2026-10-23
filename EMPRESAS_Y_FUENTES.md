@@ -1,14 +1,20 @@
 # Empresas y fuentes
 
-> Actualización del 23-10-2026: la integración se ha ampliado a 59 fuentes configuradas y
-> comprobadas en vivo, con 64 ofertas activas oficiales (52 por defecto y 12 coincidencias posibles).
+> Actualización del 23-10-2026: la integración se ha ampliado a 70 fuentes configuradas y
+> comprobadas en vivo, con 65 ofertas activas oficiales. La última ampliación incorpora
+> Highdive, MobilityWare, Socialpoint, King, Rockstar, Funcom, Arrowhead, Fatshark,
+> People Can Fly, Infinite Plus y MercurySteam.
 > Se han reparado 2K, Respawn/EA, Epic, Room 8, Gram Games y Ember Lab, entre otras.
 > Los apartados siguientes conservan la investigación anterior; para el estado actual consulta
 > `SCANNER_DIRECTO.md`, `data/companies-registry.json` y `data/source-audit.json`.
 
 Regla de oro (especificación §4): **no inventar identificadores ATS ni endpoints, y distinguir «evaluada» de «conectada»**.
 
-## Cifras reales del registro (`data/companies-registry.json`)
+## Cifras de la investigación inicial (históricas)
+
+Las cifras de esta sección corresponden a la primera investigación. El estado actual
+se genera en `data/companies-registry.json`; véase la revisión de pendientes de
+`SCANNER_DIRECTO.md` para las incorporaciones y limitaciones verificadas hoy.
 
 | Concepto | Valor |
 |----------|------:|

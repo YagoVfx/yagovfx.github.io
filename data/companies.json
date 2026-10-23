@@ -460,5 +460,128 @@
       "verifiedAt": "2026-10-23",
       "method": "Employer embeds BambooHR for emberlab.bamboohr.com; not ember.recruitee.com"
     }
+  },
+  {
+    "name": "Highdive",
+    "type": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/highdive",
+    "officialUrl": "https://job-boards.greenhouse.io/highdive",
+    "sourceEvidence": {
+      "url": "https://job-boards.greenhouse.io/highdive",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Mobilityware",
+    "type": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/mobilityware",
+    "officialUrl": "https://www.mobilityware.com/jobs/",
+    "sourceEvidence": {
+      "url": "https://www.mobilityware.com/jobs/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Socialpoint",
+    "type": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/spcareers",
+    "officialUrl": "https://www.socialpoint.es/join-us/",
+    "sourceEvidence": {
+      "url": "https://www.socialpoint.es/join-us/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    },
+    "country": "ES"
+  },
+  {
+    "name": "King",
+    "type": "workday",
+    "careersUrl": "https://xboxgaming.wd1.myworkdayjobs.com/King_External_Careers",
+    "officialUrl": "https://careers.king.com/us/en/search-results",
+    "sourceEvidence": {
+      "url": "https://careers.king.com/us/en/search-results",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Rockstar Games",
+    "type": "greenhouse",
+    "careersUrl": "https://job-boards.greenhouse.io/rockstargames",
+    "officialUrl": "https://www.rockstargames.com/careers",
+    "sourceEvidence": {
+      "url": "https://www.rockstargames.com/careers",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Funcom",
+    "type": "teamtailor",
+    "careersUrl": "https://jobs.funcom.com/jobs",
+    "officialUrl": "https://jobs.funcom.com/",
+    "sourceEvidence": {
+      "url": "https://jobs.funcom.com/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Arrowhead Game Studios",
+    "type": "teamtailor",
+    "careersUrl": "https://jobs.arrowheadgamestudios.com/jobs",
+    "officialUrl": "https://jobs.arrowheadgamestudios.com/",
+    "sourceEvidence": {
+      "url": "https://jobs.arrowheadgamestudios.com/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Fatshark",
+    "type": "teamtailor",
+    "careersUrl": "https://jobs.fatsharkgames.com/jobs",
+    "officialUrl": "https://www.fatshark.se/",
+    "sourceEvidence": {
+      "url": "https://www.fatshark.se/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "People Can Fly",
+    "type": "smartrecruiters",
+    "careersUrl": "https://careers.smartrecruiters.com/PeopleCanFly",
+    "officialUrl": "https://peoplecanfly.com/career/",
+    "sourceEvidence": {
+      "url": "https://peoplecanfly.com/career/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "Infinite Plus",
+    "type": "infiniteplus",
+    "careersUrl": "https://infinite-plus.io/careers",
+    "officialUrl": "https://infinite-plus.io/",
+    "sourceEvidence": {
+      "url": "https://infinite-plus.io/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    }
+  },
+  {
+    "name": "MercurySteam",
+    "type": "mercurysteam",
+    "careersUrl": "https://www.mercurysteam.com/talento/",
+    "officialUrl": "https://www.mercurysteam.com/",
+    "sourceEvidence": {
+      "url": "https://www.mercurysteam.com/",
+      "verifiedAt": "2026-10-23",
+      "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
+    },
+    "country": "ES"
   }
 ]

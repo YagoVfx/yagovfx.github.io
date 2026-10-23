@@ -18,6 +18,7 @@ from scanner.adapters.official_sites import MundfishAdapter, AxiomVfxAdapter
 from scanner.adapters.ea import EaAdapter
 from scanner.adapters.epic import EpicAdapter
 from scanner.adapters.company_feeds import BambooAdapter, PinpointAdapter, Room8Adapter
+from scanner.adapters.studio_pages import InfinitePlusAdapter, MercurySteamAdapter
 from scanner.companies import detect_ats, dedupe_companies
 from scanner.normalizer import preserve_first_seen, now_iso
 from scanner.classify import enrich_job, SOURCE_LABEL
@@ -58,6 +59,8 @@ ATS_MAP = {
     "bamboo": BambooAdapter,
     "pinpoint": PinpointAdapter,
     "room8": Room8Adapter,
+    "infiniteplus": InfinitePlusAdapter,
+    "mercurysteam": MercurySteamAdapter,
 }
 
 

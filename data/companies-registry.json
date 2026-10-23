@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-23T17:32:16Z",
+  "generatedAt": "2026-10-23T18:00:20Z",
   "note": "Evaluada = evidencia directa del portal o su identidad (scanner-run o web-research). Conectada = consulta correcta con listado reconocido; no implica vacantes VFX ni elegibilidad para España.",
   "totals": {
-    "registered": 79,
-    "withDirectEvidence": 74,
+    "registered": 90,
+    "withDirectEvidence": 85,
     "byState": {
-      "active": 59,
-      "blocked": 2,
-      "pending": 11,
-      "unsupported": 7
+      "active": 70,
+      "blocked": 4,
+      "pending": 10,
+      "unsupported": 6
     }
   },
   "companies": [
     {
       "name": "Build A Rocket Boy",
       "country": null,
-      "officialUrl": null,
+      "officialUrl": "https://www.buildarocketboy.com/join-us/opportunities",
       "careersUrl": "https://buildarocketboy.pinpointhq.com/en",
       "ats": "pinpoint",
       "method": "api",
@@ -25,16 +25,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -47,20 +47,20 @@
       "method": "api",
       "reliability": "alta",
       "state": "active",
-      "reason": "Portal directo consultado: 2 ofertas VFX; 46 anuncios examinados.",
+      "reason": "Portal directo consultado: 2 ofertas VFX; 47 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -77,23 +77,23 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
     {
       "name": "Respawn",
       "country": null,
-      "officialUrl": null,
+      "officialUrl": "https://www.ea.com/careers/teams/ea-studios",
       "careersUrl": "https://jobs.ea.com/en_US/careers/SearchJobs/?4538=8378&4538_format=3021&listFilterMode=1",
       "ats": "ea",
       "method": "html-adapter",
@@ -103,16 +103,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -125,20 +125,20 @@
       "method": "api",
       "reliability": "alta",
       "state": "active",
-      "reason": "Portal directo consultado: 0 ofertas VFX; 173 anuncios examinados.",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 175 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -155,16 +155,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -181,16 +181,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -207,16 +207,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -233,16 +233,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -259,16 +259,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -285,16 +285,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -311,23 +311,23 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
     {
       "name": "EA",
       "country": null,
-      "officialUrl": null,
+      "officialUrl": "https://www.ea.com/careers/",
       "careersUrl": "https://jobs.ea.com/en_US/careers/SearchJobs/",
       "ats": "ea",
       "method": "html-adapter",
@@ -337,16 +337,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -363,16 +363,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -389,16 +389,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -415,16 +415,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -441,42 +441,42 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
     {
       "name": "2K",
       "country": null,
-      "officialUrl": null,
+      "officialUrl": "https://2k.com/careers/",
       "careersUrl": "https://job-boards.greenhouse.io/2k",
       "ats": "greenhouse",
       "method": "api",
       "reliability": "alta",
       "state": "active",
-      "reason": "Portal directo consultado: 0 ofertas VFX; 106 anuncios examinados.",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 105 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -489,20 +489,20 @@
       "method": "api",
       "reliability": "alta",
       "state": "active",
-      "reason": "Portal directo consultado: 4 ofertas VFX; 81 anuncios examinados.",
+      "reason": "Portal directo consultado: 4 ofertas VFX; 79 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -519,16 +519,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -545,16 +545,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -567,20 +567,20 @@
       "method": "api",
       "reliability": "alta",
       "state": "active",
-      "reason": "Portal directo consultado: 0 ofertas VFX; 263 anuncios examinados.",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 264 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -597,16 +597,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -623,17 +623,17 @@
       "priority": "alta",
       "spainCompat": "posible: la web declara «global remote work», no nombra España",
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "observed": "Web oficial lista «VFX Artist #remote #senior» (ficha /careers/vfx-artist) y «Technical Artist #remote #middle». Sin tipo de contrato, salario ni fecha.",
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "researchEvidence": {
@@ -656,17 +656,17 @@
       "priority": "media",
       "spainCompat": "posible: oficina en Valencia (España) y trabajo remoto asíncrono; no confirmado para el puesto",
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "observed": "Una ficha abierta «Real-Time VFX Artist» (Niagara/UE5). Sedes: Austin (EE. UU.) y Valencia (España).",
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "researchEvidence": {
@@ -689,17 +689,17 @@
       "priority": "media",
       "spainCompat": "estudio en Barcelona; los puestos VFX vistos exigen trabajo presencial (no remoto)",
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "observed": "Ofertas «Senior VFX Artist» en Dublín, Quebec y Barcelona, a jornada completa y presenciales.",
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "researchEvidence": {
@@ -722,16 +722,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -748,16 +748,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -774,16 +774,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -800,16 +800,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -826,16 +826,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -852,16 +852,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -878,17 +878,17 @@
       "priority": "media",
       "spainCompat": "estudio en Barcelona; ofertas VFX vistas como presenciales/híbridas, remoto no confirmado",
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "observed": "Estudios en Copenhague, Malmö, Barcelona, Brighton y Estambul; VFX Artist (007 First Light) publicado en Barcelona.",
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "researchEvidence": {
@@ -911,17 +911,17 @@
       "priority": "alta",
       "spainCompat": "posible: puestos «Fully Remote» con restricción «North America, Europe» (según agregadores)",
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "observed": "Varias vacantes VFX/Tech Art remotas (Senior VFX Artist, Lead Outsourcing VFX Artist…). Contrato no indicado.",
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "researchEvidence": {
@@ -944,16 +944,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -970,16 +970,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -996,16 +996,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1022,16 +1022,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1048,16 +1048,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1074,16 +1074,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1100,16 +1100,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1126,16 +1126,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1152,16 +1152,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1178,16 +1178,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1204,16 +1204,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1230,16 +1230,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1256,16 +1256,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1282,16 +1282,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1308,16 +1308,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1334,16 +1334,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1360,16 +1360,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1386,16 +1386,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1412,16 +1412,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1438,16 +1438,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1464,16 +1464,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1490,23 +1490,23 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
     {
       "name": "Cloud Imperium Games",
       "country": null,
-      "officialUrl": null,
+      "officialUrl": "https://cloudimperiumgames.com/jobs",
       "careersUrl": "https://cloudimperiumgames.wd503.myworkdayjobs.com/CIG_Global_Careers",
       "ats": "workday",
       "method": "api",
@@ -1516,16 +1516,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1542,16 +1542,16 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -1568,18 +1568,311 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-23T17:32:16Z",
+      "lastChecked": "2026-10-23T18:00:20Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       },
       "configuredNotYetRun": false,
       "runtimeEvidence": {
         "kind": "scanner-run",
-        "date": "2026-10-23T17:32:16Z",
+        "date": "2026-10-23T18:00:20Z",
         "source": "data/scanner-status.json"
       }
+    },
+    {
+      "name": "Highdive",
+      "country": null,
+      "officialUrl": "https://job-boards.greenhouse.io/highdive",
+      "careersUrl": "https://job-boards.greenhouse.io/highdive",
+      "ats": "greenhouse",
+      "method": "api",
+      "reliability": "alta",
+      "state": "active",
+      "reason": "Portal directo consultado: 1 ofertas VFX; 8 anuncios examinados.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": true,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      }
+    },
+    {
+      "name": "Mobilityware",
+      "country": null,
+      "officialUrl": "https://www.mobilityware.com/jobs/",
+      "careersUrl": "https://job-boards.greenhouse.io/mobilityware",
+      "ats": "greenhouse",
+      "method": "api",
+      "reliability": "alta",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 6 anuncios examinados.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": true,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      }
+    },
+    {
+      "name": "Socialpoint",
+      "country": "ES",
+      "officialUrl": "https://www.socialpoint.es/join-us/",
+      "careersUrl": "https://job-boards.greenhouse.io/spcareers",
+      "ats": "greenhouse",
+      "method": "api",
+      "reliability": "alta",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 13 anuncios examinados.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": true,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      }
+    },
+    {
+      "name": "King",
+      "country": null,
+      "officialUrl": "https://careers.king.com/us/en/search-results",
+      "careersUrl": "https://xboxgaming.wd1.myworkdayjobs.com/King_External_Careers",
+      "ats": "workday",
+      "method": "api",
+      "reliability": "alta",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 24 anuncios examinados.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": true,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      }
+    },
+    {
+      "name": "Rockstar Games",
+      "country": null,
+      "officialUrl": "https://www.rockstargames.com/careers",
+      "careersUrl": "https://job-boards.greenhouse.io/rockstargames",
+      "ats": "greenhouse",
+      "method": "api",
+      "reliability": "alta",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 25 anuncios examinados.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": true,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      }
+    },
+    {
+      "name": "Funcom",
+      "country": null,
+      "officialUrl": "https://jobs.funcom.com/",
+      "careersUrl": "https://jobs.funcom.com/jobs",
+      "ats": "teamtailor",
+      "method": "html-adapter",
+      "reliability": "baja",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 0 anuncios examinados.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": true,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      }
+    },
+    {
+      "name": "Arrowhead Game Studios",
+      "country": null,
+      "officialUrl": "https://jobs.arrowheadgamestudios.com/",
+      "careersUrl": "https://jobs.arrowheadgamestudios.com/jobs",
+      "ats": "teamtailor",
+      "method": "html-adapter",
+      "reliability": "baja",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 1 anuncios examinados.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": true,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      }
+    },
+    {
+      "name": "Fatshark",
+      "country": null,
+      "officialUrl": "https://www.fatshark.se/",
+      "careersUrl": "https://jobs.fatsharkgames.com/jobs",
+      "ats": "teamtailor",
+      "method": "html-adapter",
+      "reliability": "baja",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 2 anuncios examinados.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": true,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      }
+    },
+    {
+      "name": "People Can Fly",
+      "country": null,
+      "officialUrl": "https://peoplecanfly.com/career/",
+      "careersUrl": "https://careers.smartrecruiters.com/PeopleCanFly",
+      "ats": "smartrecruiters",
+      "method": "api",
+      "reliability": "alta",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 13 anuncios examinados.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": true,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      }
+    },
+    {
+      "name": "Infinite Plus",
+      "country": null,
+      "officialUrl": "https://infinite-plus.io/",
+      "careersUrl": "https://infinite-plus.io/careers",
+      "ats": "infiniteplus",
+      "method": "html-adapter",
+      "reliability": "baja",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 6 anuncios examinados.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": true,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      }
+    },
+    {
+      "name": "MercurySteam",
+      "country": "ES",
+      "officialUrl": "https://www.mercurysteam.com/",
+      "careersUrl": "https://www.mercurysteam.com/talento/",
+      "ats": "mercurysteam",
+      "method": "html-adapter",
+      "reliability": "baja",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 0 anuncios examinados.",
+      "priority": "baja",
+      "spainCompat": "Madrid (San Sebastián de los Reyes); trabajo presencial",
+      "configured": true,
+      "lastChecked": "2026-10-23T18:00:20Z",
+      "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "observed": "Solicitud por email; sin ATS ni listado oficial verificado.",
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T18:00:20Z",
+        "source": "data/scanner-status.json"
+      },
+      "researchEvidence": {
+        "kind": "web-research",
+        "date": "2026-10-21",
+        "source": null
+      },
+      "historicalResearchReason": "Anunció un proceso de ajuste de plantilla (despidos) en mayo de 2026 según varios medios: baja probabilidad de contratar."
     },
     {
       "name": "Digital Sun Games",
@@ -1590,7 +1883,7 @@
       "method": "none",
       "reliability": "desconocida",
       "state": "blocked",
-      "reason": "La página oficial de empleo devuelve HTTP 403 al scanner. Fuente real identificada; conexión bloqueada, sin inventar un ATS alternativo.",
+      "reason": "La página oficial de empleo devuelve HTTP 403. El índice WordPress es público, pero las rutas de datos devuelven HTTP 401; todavía no se pueden verificar vacantes desde el scanner.",
       "priority": "alta",
       "spainCompat": "Valencia (España); modalidad híbrida, no 100 % remota",
       "configured": false,
@@ -1604,36 +1897,15 @@
       "candidateRejected": false
     },
     {
-      "name": "MercurySteam",
-      "country": "ES",
-      "officialUrl": null,
-      "careersUrl": null,
-      "ats": null,
-      "method": "none",
-      "reliability": "desconocida",
-      "state": "pending",
-      "reason": "Anunció un proceso de ajuste de plantilla (despidos) en mayo de 2026 según varios medios: baja probabilidad de contratar.",
-      "priority": "baja",
-      "spainCompat": "Madrid (San Sebastián de los Reyes); trabajo presencial",
-      "configured": false,
-      "lastChecked": null,
-      "observed": "Solicitud por email; sin ATS ni listado oficial verificado.",
-      "evidence": {
-        "kind": "web-research",
-        "date": "2026-10-21",
-        "source": null
-      }
-    },
-    {
       "name": "Airship",
       "country": null,
       "officialUrl": null,
-      "careersUrl": null,
+      "careersUrl": "https://www.airshipsyndicate.com/",
       "ats": "greenhouse",
       "method": "api",
       "reliability": "alta",
-      "state": "unsupported",
-      "reason": "El candidato corresponde a Airship, empresa de software de interacción móvil, no a Airship Syndicate. No es una conexión válida al estudio de videojuegos.",
+      "state": "pending",
+      "reason": "La web del estudio Airship Syndicate está identificada, pero no publica un portal de empleo verificable. El candidato Greenhouse airship pertenece a una empresa de software ajena al estudio.",
       "priority": "media",
       "spainCompat": null,
       "configured": false,
@@ -1650,12 +1922,12 @@
       "name": "Cactus Punch",
       "country": null,
       "officialUrl": null,
-      "careersUrl": null,
+      "careersUrl": "https://cactuspunch.pro/",
       "ats": "personio",
       "method": "api",
       "reliability": "media",
-      "state": "pending",
-      "reason": "El tablero candidato pertenece a Cactus GmbH / Cactus Service und Vertriebs GmbH / Cactus Cards GmbH (tarjetas y servicios), no a Cactus Punch. Falta localizar el portal real.",
+      "state": "blocked",
+      "reason": "Estudio identificado en cactuspunch.pro; el sitio devuelve HTTP 401. El candidato Personio era Cactus GmbH, otra empresa. No hay un portal público de empleo verificable para automatizar.",
       "priority": "media",
       "spainCompat": null,
       "configured": false,
@@ -1672,12 +1944,12 @@
       "name": "Company3",
       "country": null,
       "officialUrl": null,
-      "careersUrl": null,
+      "careersUrl": "https://www.company3.com/careers/1000/",
       "ats": "recruitee",
       "method": "api",
       "reliability": "alta",
       "state": "pending",
-      "reason": "El tablero candidato muestra Company 3 y puestos de ejemplo como Senior Marketer (Muster). No acredita la identidad del estudio Company 3; no se conecta.",
+      "reason": "Portal oficial identificado: Company 3 enlaza company3.applytojob.com (JazzHR). Las vacantes revisadas son de cine/postproducción; falta separar puestos de tiempo real. El candidato Recruitee era incorrecto.",
       "priority": "media",
       "spainCompat": null,
       "configured": false,
@@ -1694,12 +1966,12 @@
       "name": "Genius Game Fzco",
       "country": null,
       "officialUrl": null,
-      "careersUrl": null,
+      "careersUrl": "https://genius-game.com/",
       "ats": "greenhouse",
       "method": "api",
       "reliability": "media",
       "state": "pending",
-      "reason": "El candidato muestra Invite-Only Job Board y no acredita relación con Genius Game. No se conecta por coincidencia parcial del nombre.",
+      "reason": "Identidad verificada en la web oficial de Genius Game FZCO / Zenkai. No publica un listado de empleo o ATS verificable. El candidato Greenhouse genius no pertenecía al estudio.",
       "priority": "media",
       "spainCompat": null,
       "configured": false,
@@ -1713,50 +1985,6 @@
       "candidateRejected": true
     },
     {
-      "name": "Highdive",
-      "country": null,
-      "officialUrl": null,
-      "careersUrl": null,
-      "ats": "greenhouse",
-      "method": "api",
-      "reliability": "alta",
-      "state": "pending",
-      "reason": "No se ha acreditado que este tablero corresponda a un estudio de videojuegos del perfil buscado. Pendiente de verificar identidad y sector.",
-      "priority": "media",
-      "spainCompat": null,
-      "configured": false,
-      "lastChecked": null,
-      "evidence": {
-        "kind": "web-research",
-        "date": "2026-10-23",
-        "source": "https://job-boards.greenhouse.io/highdive"
-      },
-      "slugMatch": "exacta",
-      "candidateRejected": true
-    },
-    {
-      "name": "Infinite Plus",
-      "country": null,
-      "officialUrl": null,
-      "careersUrl": null,
-      "ats": "ashby",
-      "method": "api",
-      "reliability": "media",
-      "state": "pending",
-      "reason": "El tablero se identifica como Infinite. No se ha verificado que corresponda a Infinite Plus; no se conecta por un slug parcial.",
-      "priority": "media",
-      "spainCompat": null,
-      "configured": false,
-      "lastChecked": null,
-      "evidence": {
-        "kind": "web-research",
-        "date": "2026-10-23",
-        "source": "https://jobs.ashbyhq.com/infinite"
-      },
-      "slugMatch": "parcial",
-      "candidateRejected": true
-    },
-    {
       "name": "Iris Games",
       "country": null,
       "officialUrl": null,
@@ -1765,7 +1993,7 @@
       "method": "api",
       "reliability": "media",
       "state": "pending",
-      "reason": "No se ha acreditado la identidad del estudio en este candidato. Pendiente de una referencia oficial; no se conecta por un slug parcial.",
+      "reason": "Identidad del estudio sin verificar: hay varias entidades con nombres similares. Falta una referencia oficial; el candidato Greenhouse iris no acredita ninguna relación.",
       "priority": "media",
       "spainCompat": null,
       "configured": false,
@@ -1820,28 +2048,6 @@
         "source": "data/ats-discovery-cache.json"
       },
       "slugMatch": "parcial"
-    },
-    {
-      "name": "Mobilityware",
-      "country": null,
-      "officialUrl": null,
-      "careersUrl": "https://www.mobilityware.com/jobs/",
-      "ats": "greenhouse",
-      "method": "api",
-      "reliability": "alta",
-      "state": "blocked",
-      "reason": "La página oficial y el candidato Greenhouse devuelven HTTP 403. Pendiente de acceso público verificable; no se presenta como conectada.",
-      "priority": "media",
-      "spainCompat": null,
-      "configured": false,
-      "lastChecked": null,
-      "evidence": {
-        "kind": "web-research",
-        "date": "2026-10-23",
-        "source": "https://www.mobilityware.com/jobs/"
-      },
-      "slugMatch": "exacta",
-      "candidateRejected": false
     },
     {
       "name": "Nextgen Skills Academy",
@@ -2010,6 +2216,90 @@
         "date": null,
         "source": "data/ats-discovery-cache.json"
       }
+    },
+    {
+      "name": "The Game Kitchen",
+      "country": "ES",
+      "officialUrl": "https://thegamekitchen.com/jobs/",
+      "careersUrl": "https://thegamekitchen.com/jobs/",
+      "ats": null,
+      "method": "none",
+      "reliability": "desconocida",
+      "state": "blocked",
+      "reason": "La página oficial de empleo devuelve HTTP 401 al scanner. Estudio español identificado; no se importan resultados de buscadores como vacantes verificadas.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": false,
+      "lastChecked": null,
+      "evidence": {
+        "kind": "web-research",
+        "date": "2026-10-23",
+        "source": "https://thegamekitchen.com/jobs/"
+      },
+      "candidateRejected": false
+    },
+    {
+      "name": "Secret 6",
+      "country": "ES",
+      "officialUrl": "https://secret6.com/careers",
+      "careersUrl": "https://secret6.com/careers",
+      "ats": null,
+      "method": "none",
+      "reliability": "desconocida",
+      "state": "blocked",
+      "reason": "El portal oficial devuelve HTTP 403 (Sucuri). Fuente identificada, acceso automatizado bloqueado.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": false,
+      "lastChecked": null,
+      "evidence": {
+        "kind": "web-research",
+        "date": "2026-10-23",
+        "source": "https://secret6.com/careers"
+      },
+      "candidateRejected": false
+    },
+    {
+      "name": "Nomada Studio",
+      "country": "ES",
+      "officialUrl": "https://nomada.studio/careers/",
+      "careersUrl": "https://nomada.studio/careers/",
+      "ats": null,
+      "method": "none",
+      "reliability": "desconocida",
+      "state": "pending",
+      "reason": "Portal oficial identificado. Actualmente declara no tener posiciones abiertas; pendiente de incorporar su listado propio al scanner.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": false,
+      "lastChecked": null,
+      "evidence": {
+        "kind": "web-research",
+        "date": "2026-10-23",
+        "source": "https://nomada.studio/careers/"
+      },
+      "candidateRejected": false
+    },
+    {
+      "name": "BlitWorks",
+      "country": "ES",
+      "officialUrl": "https://blitworks.com/contact/",
+      "careersUrl": "https://blitworks.com/contact/",
+      "ats": null,
+      "method": "none",
+      "reliability": "desconocida",
+      "state": "pending",
+      "reason": "La página oficial publica contacto para empleo, sin listado de vacantes o ATS verificable. Seguimiento manual.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": false,
+      "lastChecked": null,
+      "evidence": {
+        "kind": "web-research",
+        "date": "2026-10-23",
+        "source": "https://blitworks.com/contact/"
+      },
+      "candidateRejected": false
     }
   ]
 }
