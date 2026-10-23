@@ -39,3 +39,12 @@ if __name__ == "__main__":
     test_preserve_first_seen_keeps_old_date_for_existing_job()
     test_preserve_first_seen_sets_new_date_for_new_job()
     print("All tests passed.")
+
+
+def test_fallback_id_is_deterministic_across_processes():
+    import subprocess, sys
+    code = "from scanner.normalizer import generate_job_id; print(generate_job_id('gh', '!!!'))"
+    root = __import__("pathlib").Path(__file__).parent.parent
+    outs = {subprocess.run([sys.executable, "-c", code], cwd=root, capture_output=True, text=True,
+                           env={"PYTHONHASHSEED": str(seed), "PATH": __import__("os").environ["PATH"]}).stdout.strip() for seed in (1, 2, 3)}
+    assert len(outs) == 1, f"IDs distintos entre ejecuciones: {outs}"

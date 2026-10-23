@@ -48,6 +48,7 @@ class SmartRecruitersAdapter(BaseAdapter):
                 if offset == 0:
                     raise RuntimeError(f"SmartRecruiters request failed for '{company}' ({api_url}): {e}")
                 logger.warning(f"[SmartRecruiters] Later page failed for '{company}': {e} — returning partial results")
+                self.incomplete = True
                 break
 
             content = data.get("content", [])
@@ -102,5 +103,8 @@ class SmartRecruitersAdapter(BaseAdapter):
             offset += PAGE_SIZE
             if total_found is not None and offset >= total_found:
                 break
+        else:
+            # Se agotó MAX_PAGES sin llegar a totalFound: resultado truncado.
+            self.incomplete = True
 
         return jobs

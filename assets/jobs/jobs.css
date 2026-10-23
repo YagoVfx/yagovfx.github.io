@@ -1,0 +1,115 @@
+/* Colores derivados del tema activo que garantizan contraste WCAG AA (≥4,5:1) en temas oscuros y
+   claros. --sub y --accent son variables globales del sitio y NO se tocan (auditoría axe: 4,13:1 y 4,38:1). */
+.jp,#adm-gate{--jp-sub:color-mix(in srgb,var(--txt) 74%,var(--bg));--jp-accent:color-mix(in srgb,var(--accent) 76%,#000);--jp-link:color-mix(in srgb,var(--accent2) 45%,var(--txt))}
+#adm-gate .gate-sub{color:var(--jp-sub);font-size:10px}
+/* Panel de empleo V2 — todo bajo .jp para no interferir con el resto del portfolio.
+   Usa las variables del tema activo (--bg, --txt, --accent...), así respeta skins y temas. */
+.jp{color:var(--txt);font-family:var(--sans);font-size:14px;line-height:1.45;max-width:100%}
+.jp *,.jp *::before,.jp *::after{box-sizing:border-box;min-width:0}
+.jp h2,.jp h3{margin:0}
+.jp-vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.jp :focus-visible{outline:2px solid var(--accent2);outline-offset:2px;border-radius:3px}
+
+.jp-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin-bottom:10px}
+.jp-title{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.jp-updated{margin:0;font-size:12px;color:var(--jp-sub)}
+.jp-banner{margin:0 0 12px;padding:10px 12px;border:1px solid rgba(212,167,44,.5);background:rgba(212,167,44,.1);border-radius:var(--radius);font-size:12.5px}
+.jp-banner[hidden]{display:none}
+
+/* pestañas */
+.jp-tabs{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--line);margin-bottom:14px;scrollbar-width:thin}
+.jp-tab{flex:0 0 auto;min-height:40px;padding:8px 14px;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--jp-sub);font:600 13px var(--sans);cursor:pointer}
+.jp-tab:hover{color:var(--txt)}
+.jp-tab[aria-selected="true"]{color:var(--txt);border-bottom-color:var(--accent)}
+.jp-pane[hidden]{display:none}
+
+/* controles */
+.jp-search input,.jp-field select,.jp-field input{width:100%;min-height:40px;padding:8px 12px;background:var(--bg2);color:var(--txt);border:1px solid var(--line);border-radius:var(--radius);font:13px var(--sans)}
+.jp-search input{font-size:14px}
+.jp-search input::placeholder{color:var(--jp-sub);opacity:1}
+.jp-field label,.jp-grouplabel{display:block;margin-bottom:4px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--jp-sub)}
+.jp-main,.jp-adv{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:10px 0}
+.jp-adv[hidden]{display:none}
+.jp-adv{padding:12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg2)}
+.jp-group{margin:10px 0}
+.jp-segs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.jp-group .jp-segs{margin:0}
+.jp-seg,.jp-chip,.jp-btn{min-height:36px;padding:6px 12px;background:var(--bg2);color:var(--txt);border:1px solid var(--line);border-radius:20px;font:600 12px var(--sans);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.jp-btn{border-radius:var(--radius)}
+.jp-seg:hover,.jp-chip:hover,.jp-btn:hover{border-color:var(--accent)}
+.jp-seg.on,.jp-seg[aria-checked="true"],.jp-chip.on,.jp-chip[aria-pressed="true"],.jp-btn[aria-pressed="true"]{background:var(--jp-accent);border-color:var(--jp-accent);color:#fff}
+.jp-btn-primary{background:var(--jp-accent);border-color:var(--jp-accent);color:#fff}
+.jp-btn-ghost{background:transparent}
+.jp-toggles{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:10px 0}
+.jp-check{display:inline-flex;align-items:center;gap:8px;min-height:36px;font-size:13px;cursor:pointer}
+.jp-check input{width:18px;height:18px;accent-color:var(--accent)}
+.jp-advtoggle{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.jp-link{background:none;border:0;padding:0;color:var(--jp-link);font:inherit;text-decoration:underline;cursor:pointer}
+
+/* resumen y chips */
+.jp-summary{margin:10px 0;font-size:13px;color:var(--txt)}
+.jp-chips{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0}
+.jp-chips:empty{display:none}
+.jp-chipcount{font-size:12px;color:var(--jp-sub)}
+.jp-appliedchip{display:inline-flex;align-items:center;gap:4px;padding:3px 4px 3px 10px;border:1px solid var(--accent);border-radius:20px;font-size:12px;background:var(--accentglow,rgba(124,92,252,.15))}
+.jp-appliedchip button{min-width:28px;min-height:28px;border:0;border-radius:50%;background:transparent;color:var(--txt);font-size:16px;line-height:1;cursor:pointer}
+.jp-appliedchip button:hover{background:var(--jp-accent);color:#fff}
+
+/* tarjetas */
+.jp-list{list-style:none;margin:12px 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.jp-card{padding:14px;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius)}
+.jp-card:hover{border-color:var(--accent)}
+.jp-card.unv{border-style:dashed}
+.jp-card.disc{opacity:.6}
+.jp-card-title{font-size:16px;font-weight:700;overflow-wrap:anywhere}
+.jp-card-title a{color:var(--txt);text-decoration:none}
+.jp-card-title a:hover{color:var(--jp-link);text-decoration:underline}
+.jp-new{margin-left:6px;padding:2px 6px;border-radius:2px;background:var(--jp-accent);color:#fff;font:700 9px var(--mono);letter-spacing:.1em;vertical-align:middle}
+.jp-card-sub{margin:4px 0 8px;font-size:12.5px;color:var(--jp-sub);overflow-wrap:anywhere}
+.jp-card-sub strong{color:var(--txt)}
+.jp-src{font-weight:600}.jp-src.ok::before,.jp-src.warn::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;background:#d4a72c}.jp-src.ok::before{background:var(--green)}
+.jp-badges,.jp-tags,.jp-actions{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.jp-badge{padding:3px 9px;border-radius:3px;border:1px solid var(--line);background:var(--bg3);font:600 11px var(--sans);overflow-wrap:anywhere}
+.jp-badge.plain{color:var(--jp-sub);font-weight:400}
+.jp-badge.wp-remote,.jp-badge.el-confirmed,.jp-badge.ct.good,.jp-badge.conn-active{background:rgba(46,204,113,.14);border-color:rgba(46,204,113,.45)}
+.jp-badge.el-possible,.jp-badge.wp-hybrid,.jp-badge.el-contradiction{background:rgba(212,167,44,.14);border-color:rgba(212,167,44,.5)}
+.jp-badge.el-restricted,.jp-badge.ct.bad,.jp-badge.wp-onsite,.jp-badge.conn-error,.jp-badge.conn-blocked{background:rgba(231,76,60,.13);border-color:rgba(231,76,60,.5)}
+.jp-tag{padding:2px 8px;border-radius:20px;background:var(--bg3);font-size:11px;color:var(--jp-sub)}
+.jp-warn{margin:6px 0;padding-left:8px;border-left:3px solid #d4a72c;font-size:12.5px;color:var(--txt)}
+.jp-why{margin:8px 0;font-size:12.5px}
+.jp-why summary{cursor:pointer;color:var(--jp-link);min-height:28px;display:flex;align-items:center}
+.jp-why div{padding:8px 0 0}
+.jp-why ul{margin:6px 0 6px 18px;padding:0}
+
+/* estados */
+.jp-state{padding:24px 12px;text-align:center;color:var(--jp-sub);list-style:none}
+.jp-state strong{color:var(--txt)}
+.jp-empty ul{display:inline-block;text-align:left;margin:4px 0}
+.jp-error{color:var(--txt);border:1px solid var(--red);border-radius:var(--radius)}
+.jp-more{text-align:center;margin:8px 0}
+.jp-note{margin:0 0 12px;font-size:12.5px;color:var(--jp-sub)}
+.jp-h3{margin:18px 0 8px;font-size:15px}
+.jp-plain{margin:0;padding-left:18px;font-size:13px}
+
+/* empresas / fuentes */
+.jp-colist{list-style:none;margin:10px 0;padding:0;display:grid;gap:8px}
+.jp-co{padding:12px;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius)}
+.jp-co-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.jp-co-m{margin:6px 0 0;font-size:12.5px;color:var(--jp-sub);overflow-wrap:anywhere}
+.jp-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:10px 0}
+.jp-stat{padding:10px;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius)}
+.jp-stat span{display:block;font-size:11px;color:var(--jp-sub)}
+.jp-stat strong{font-size:18px}
+
+@media (max-width:640px){
+  .jp-main,.jp-adv{grid-template-columns:1fr}
+  .jp-card{padding:12px}
+  .jp-actions .jp-btn{flex:1 1 auto}
+}
+
+/* Botón del gate de administrador: mismo criterio de contraste que el resto del panel. */
+#adm-gate .gate-go{background:var(--jp-accent);font-size:10px}
+#adm-gate .gate-go:hover{background:color-mix(in srgb,var(--jp-accent) 85%,#000)}
+#adm-gate .gate-go:disabled{opacity:.6;cursor:wait}
+
+.jp-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:14px 0}

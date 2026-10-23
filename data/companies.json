@@ -113,5 +113,40 @@
     "name": "LightHouseGames",
     "careersUrl": "https://jobs.workable.com/company/9NdGchEYkMTDejHGaa9eHJ/jobs-at-lighthouse-games",
     "type": "workable"
+  },
+  {
+    "name": "Mundfish",
+    "careersUrl": "https://mundfish.com/en/careers",
+    "type": "custom"
+  },
+  {
+    "name": "AXIOM VFX",
+    "careersUrl": "https://www.axiomvfx.com/career",
+    "type": "custom"
+  },
+  {
+    "name": "Larian Studios",
+    "careersUrl": "https://jobs.lever.co/larian",
+    "type": "lever"
+  },
+  {
+    "name": "Saber Interactive Spain",
+    "careersUrl": "https://saber-interactive-spain.jobs.personio.de",
+    "type": "personio"
+  },
+  {
+    "name": "Keywords Studios",
+    "careersUrl": "https://careers.smartrecruiters.com/keywordsstudios",
+    "type": "smartrecruiters"
+  },
+  {
+    "name": "Scopely",
+    "careersUrl": "https://job-boards.greenhouse.io/scopely",
+    "type": "greenhouse"
+  },
+  {
+    "name": "Gameloft",
+    "careersUrl": "https://careers.smartrecruiters.com/gameloft",
+    "type": "smartrecruiters"
   }
 ]

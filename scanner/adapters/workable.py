@@ -132,6 +132,7 @@ class WorkableAdapter(BaseAdapter):
                 "workplaceType": wt,
                 "remoteScope": rs,
                 "matchType": match,
+                "description": description,
             }))
         return jobs
 
@@ -172,5 +173,6 @@ class WorkableAdapter(BaseAdapter):
                 "workplaceType": wt,
                 "remoteScope": rs,
                 "matchType": match,
+                "description": description,
             }))
         return jobs

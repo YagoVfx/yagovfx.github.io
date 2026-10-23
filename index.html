@@ -430,7 +430,14 @@ option{background:var(--bg2);}
 .gate-in:focus{outline:none;}
 .gate-go{padding:10px 16px;background:var(--accent);border:none;color:#fff;font-family:var(--mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;}
 .gate-go:hover{background:var(--accent2);}
-.gate-err{font-family:var(--mono);font-size:8.5px;color:var(--red);letter-spacing:.1em;display:none;}
+.gate-err{font-family:var(--mono);font-size:10px;color:var(--red);letter-spacing:.06em;display:none;max-width:320px;text-align:center;}
+.gate-box{display:flex;flex-direction:column;gap:8px;width:min(320px,86vw);}
+.gate-box .gate-in{width:100%;border:1px solid var(--line);border-radius:var(--radius);box-sizing:border-box;}
+.gate-box .gate-in:focus-visible{outline:2px solid var(--accent2);outline-offset:1px;}
+.gate-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--jp-sub,var(--sub));}
+.gate-row{display:flex;gap:8px;margin-top:6px;}
+.gate-row .gate-go{flex:1;border-radius:var(--radius);padding:11px 16px;}
+.gate-cancel{padding:11px 16px;background:transparent;border:1px solid var(--line);color:var(--txt);font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:var(--radius);}
 .modal-bg{display:none;position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);align-items:center;justify-content:center;}
 .modal-bg.on{display:flex;}
 .modal{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:22px;width:500px;max-width:94vw;max-height:85vh;overflow-y:auto;}
@@ -480,7 +487,7 @@ option{background:var(--bg2);}
 #postOverlay .po-title{font-size:13px;font-weight:800;}
 
 /* ══ VFX JOBS — OVERLAY SHELL ══ */
-#vfxJobsOverlay{display:none;position:fixed;inset:0;z-index:85;background:var(--bg);overflow-y:auto;}
+#vfxJobsOverlay{display:none;position:fixed;inset:0;z-index:101;background:var(--bg);overflow-y:auto;} /* >100: en móvil la cabecera sticky (z 100) tapaba el botón Back */
 #vfxJobsOverlay.open{display:block;}
 #vfxJobsOverlay .vjo-header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;z-index:5;}
 #vfxJobsOverlay .vjo-back{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);cursor:pointer;background:none;border:none;display:flex;align-items:center;gap:6px;transition:color .2s;padding:0;}
@@ -1107,17 +1114,24 @@ option{background:var(--bg2);}
 }
 
 </style>
+<link rel="stylesheet" href="assets/jobs/jobs.css">
+<script src="assets/jobs/jobs-core.js"></script>
+<script src="assets/jobs/jobs-ui.js"></script>
 </head>
 <body>
 
-<div id="adm-gate">
-  <div class="gate-title">Admin Access</div>
-  <div class="gate-sub">Enter password</div>
-  <div class="gate-form">
-    <input class="gate-in" type="password" id="gateIn" autocomplete="off">
-    <button class="gate-go" onclick="checkPw()">Enter</button>
-  </div>
-  <div class="gate-err" id="gateErr">Incorrect password</div>
+<div id="adm-gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-title" id="gateTitle">Admin Access</div>
+  <div class="gate-sub">Inicia sesión con tu cuenta de administrador</div>
+  <form class="gate-box" id="gateForm" autocomplete="on">
+    <label class="gate-lbl" for="gateEmail">Email</label>
+    <input class="gate-in" type="email" id="gateEmail" name="email" autocomplete="username" required>
+    <label class="gate-lbl" for="gateIn">Contraseña</label>
+    <input class="gate-in" type="password" id="gateIn" name="password" autocomplete="current-password" required>
+    <div class="gate-row"><button class="gate-go" type="submit" id="gateGo">Entrar</button>
+    <button class="gate-cancel" type="button" onclick="closeGate()">Cancelar</button></div>
+  </form>
+  <div class="gate-err" id="gateErr" role="alert"></div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -1157,7 +1171,7 @@ option{background:var(--bg2);}
 <div id="vfxJobsOverlay">
   <div class="vjo-header">
     <button class="vjo-back" onclick="closeVfxJobsPublic()">Back</button>
-    <div class="vjo-title">VFX Jobs</div>
+    <div class="vjo-title">Empleo VFX</div>
     <div style="width:60px;"></div>
   </div>
   <div class="vjo-body" id="vfxJobsBody"></div>
@@ -1196,8 +1210,8 @@ option{background:var(--bg2);}
       <div class="adm-nav-item" onclick="showSec('skin')" data-s="skin"><span class="adm-icon">📚</span>Skin</div>
       <div class="adm-nav-sec">System</div>
       <div class="adm-nav-item" onclick="showSec('posts')" data-s="posts"><span class="adm-icon">✍️</span>Devlog Posts</div>
-      <div class="adm-nav-item" onclick="showSec('vfxjobs')" data-s="vfxjobs"><span class="adm-icon">🕹️</span>VFX Jobs — Config</div>
-      <div class="adm-nav-item" onclick="showSec('vfxjobsview')" data-s="vfxjobsview"><span class="adm-icon">📋</span>VFX Jobs — Ver ofertas</div>
+      <div class="adm-nav-item" onclick="showSec('vfxjobs')" data-s="vfxjobs"><span class="adm-icon">🕹️</span>Empleo VFX — Empresas (config)</div>
+      <div class="adm-nav-item" onclick="showSec('vfxjobsview')" data-s="vfxjobsview"><span class="adm-icon">📋</span>Empleo VFX — Panel</div>
       <div class="adm-nav-item" onclick="showSec('links')" data-s="links"><span class="adm-icon">🔗</span>Links</div>
       <div class="adm-nav-item" onclick="showSec('import')" data-s="import"><span class="adm-icon">⬆</span>Import</div>
       <div class="adm-nav-item" onclick="showSec('seo')" data-s="seo"><span class="adm-icon">🔍</span>SEO</div>
@@ -1370,8 +1384,8 @@ https://otraempresa.com/careers"></textarea>
 
       <!-- VFX JOBS VIEW (separado de la configuración del tracker) -->
       <div class="adm-sec" id="sec-vfxjobsview">
-        <div class="a-title">VFX Jobs — Ver ofertas</div>
-        <div class="a-sub">Listado completo de ofertas detectadas, igual que lo vería un visitante en la pestaña pública (esté o no activada). Esto es solo para ti, aquí en el admin.</div>
+        <div class="a-title">Empleo VFX — Panel</div>
+        <div class="a-sub">Ofertas, guardadas, empresas y estado del scanner. Las pestañas «Mis candidaturas» y «Fuentes y scanner» solo existen aquí, en el admin.</div>
         <div class="f-actions" style="margin-bottom:10px;"><button class="ab" onclick="refreshVfxJobsAdminView()">🔄 Actualizar (recargar data/jobs.json)</button></div>
         <div id="vfxJobsAdminView"></div>
       </div>
@@ -1577,7 +1591,7 @@ https://otraempresa.com/careers"></textarea>
         <div class="a-title">Settings</div>
         <div class="fb-notice" style="background:rgba(46,204,113,.07);border-color:rgba(46,204,113,.25);"><strong style="color:var(--green);">☁ Firebase connected.</strong> Todos los cambios se sincronizan en Firestore en tiempo real.</div>
         <div class="a-form">
-          <div class="fg"><label class="fl">New admin password</label><input class="fi" type="password" id="newPw" placeholder="Leave blank to keep current"></div>
+          <div class="fg"><label class="fl">Acceso de administrador</label><div class="a-sub" style="margin:0 0 8px;">La contraseña ya no se guarda en esta página: se gestiona en Firebase Authentication (consola de Firebase → Authentication → Users).</div><button class="ab" type="button" onclick="logoutAdmin()">Cerrar sesión de administrador</button></div>
           <div class="fg"><label class="fl">Language</label>
             <select class="fsel" id="langSel" onchange="setLang(this.value)">
               <option value="en">English</option><option value="es">Español</option>
@@ -1706,21 +1720,39 @@ https://otraempresa.com/careers"></textarea>
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 const firebaseConfig={apiKey:"AIzaSyCQWuMtoQrIMuP99jemn5BpjX18LEChaWY",authDomain:"portfolio-44b20.firebaseapp.com",projectId:"portfolio-44b20",storageBucket:"portfolio-44b20.firebasestorage.app",messagingSenderId:"1074424066814",appId:"1:1074424066814:web:34862ef3ebbdc824a26baf",measurementId:"G-QYRZSTTX7X"};
 const _fbApp=initializeApp(firebaseConfig);
 const _fdb=getFirestore(_fbApp);
 try{getAnalytics(_fbApp);}catch(e){}
 const PORTFOLIO_DOC=doc(_fdb,'portfolio','main');
+/* ══ ADMIN AUTH (Firebase Authentication) ══
+   Antes: contraseña 'admin123' comparada en el navegador y guardada EN CLARO dentro del
+   documento público de Firestore. Ahora: la identidad la valida Firebase; esta página no
+   conoce ninguna contraseña. La protección real de escritura son las reglas de Firestore
+   (firestore.rules): este chequeo del cliente es solo defensa en profundidad. */
+const _auth=getAuth(_fbApp);
+let _adminUser=null;
+const ADMIN_UID='ylQ3m3XoCHTd0cwP7UQet7cSRpt1';
+function isAdminUser(u){return !!u && u.uid===ADMIN_UID;}
+onAuthStateChanged(_auth,u=>{_adminUser=isAdminUser(u)?u:null;if(!_adminUser){clearTimeout(DB._t);const o=document.getElementById('admin-overlay');if(o&&o.classList.contains('on')){o.classList.remove('on');}}});
+function isAdminAuthed(){return !!_adminUser;}
+/* Estado que se persiste/publica: NUNCA incluye secretos heredados. */
+function publicState(d){const c=Object.assign({},d);delete c.password;return c;}
 const DB={
   _t:null,_l:null,_skip:0,
   get(){return JSON.parse(localStorage.getItem('vfx-v6')||'null');},
   set(d){
-    localStorage.setItem('vfx-v6',JSON.stringify(d));
+    const pub=publicState(d);
+    localStorage.setItem('vfx-v6',JSON.stringify(pub));
+    /* Visitantes (p. ej. al cambiar de idioma): solo estado local; jamás escriben en Firestore. */
+    if(!isAdminAuthed())return;
     clearTimeout(this._t);
     this._skip=1;
     this._lastWrite=Date.now();
     this._t=setTimeout(async()=>{
-      try{await setDoc(PORTFOLIO_DOC,{data:JSON.stringify(d)});}
+      if(!isAdminAuthed()){this._skip=0;return;}
+      try{await setDoc(PORTFOLIO_DOC,{data:JSON.stringify(pub)});}
       catch(e){console.warn('[FB] write failed:',e);this._skip=0;}
     },600);
   },
@@ -1733,7 +1765,8 @@ const DB={
       if(this._lastWrite&&Date.now()-this._lastWrite<5000){return;}
       try{
         const r=JSON.parse(snap.data().data||'null');if(!r)return;
-        if(JSON.stringify(r)===JSON.stringify(D))return;
+        delete r.password;
+        if(JSON.stringify(r)===JSON.stringify(publicState(D)))return;
         Object.assign(D,r);
         localStorage.setItem('vfx-v6',JSON.stringify(D));
         renderVisitor();
@@ -1744,7 +1777,7 @@ const DB={
     },e=>console.warn('[FB] listener error',e));
   },
   async loadRemote(){
-    try{const snap=await getDoc(PORTFOLIO_DOC);if(snap.exists()){const r=JSON.parse(snap.data().data||'null');if(r){localStorage.setItem('vfx-v6',JSON.stringify(r));return r;}}}catch(e){console.warn('[FB] load failed:',e);}return null;
+    try{const snap=await getDoc(PORTFOLIO_DOC);if(snap.exists()){const r=JSON.parse(snap.data().data||'null');if(r){if('password' in r){DB._remoteHadPassword=true;delete r.password;}localStorage.setItem('vfx-v6',JSON.stringify(r));return r;}}}catch(e){console.warn('[FB] load failed:',e);}return null;
   }
 };
 
@@ -1765,7 +1798,7 @@ const COLOR_THEMES=[
 
 /* ══ DEFAULTS ══ */
 const DEFAULTS={
-  password:'admin123',lang:'en',layout:'la',coverBg:true,playerSize:'medium',
+  lang:'en',layout:'la',coverBg:true,playerSize:'medium',
   font:'Sora',fontSize:'1',colorTheme:'violet',toolSize:'medium',lightMode:false,expCards:true,
   skin:'classic',
   anim:{speed:'0.35s',ease:'cubic-bezier(0.4,0,0.2,1)'},
@@ -1831,6 +1864,7 @@ const DEFAULTS={
 };
 
 let D=DB.get()||JSON.parse(JSON.stringify(DEFAULTS));
+delete D.password; /* limpia contraseñas heredadas de versiones anteriores */
 if(!D.reel){D.reel=JSON.parse(JSON.stringify(DEFAULTS.reel));}
 if(D.reel.enabled===undefined)D.reel.enabled=true;
 if(!D.customPages)D.customPages=[];
@@ -3424,17 +3458,40 @@ ${cvContent}
 }
 
 /* ══ GATE ══ */
-function openGate(){document.getElementById('adm-gate').classList.add('on');document.getElementById('gateIn').focus();}
-document.getElementById('gateIn').addEventListener('keydown',e=>{if(e.key==='Enter')checkPw();});
-function checkPw(){
-  if(document.getElementById('gateIn').value===D.password){
-    document.getElementById('adm-gate').classList.remove('on');document.getElementById('gateIn').value='';document.getElementById('gateErr').style.display='none';openAdmin();
-  }else{document.getElementById('gateErr').style.display='block';document.getElementById('gateIn').value='';}
+function openGate(){
+  if(isAdminAuthed()){openAdmin();return;}
+  const g=document.getElementById('adm-gate');g.classList.add('on');
+  document.getElementById('gateErr').style.display='none';
+  document.getElementById('gateEmail').focus();
 }
+function closeGate(){document.getElementById('adm-gate').classList.remove('on');document.getElementById('gateIn').value='';}
+let _gateFails=0,_gateLockUntil=0;
+document.getElementById('gateForm').addEventListener('submit',e=>{e.preventDefault();checkPw();});
+document.getElementById('adm-gate').addEventListener('keydown',e=>{if(e.key==='Escape')closeGate();});
+async function checkPw(){
+  const err=document.getElementById('gateErr'),show=m=>{err.textContent=m;err.style.display='block';};
+  if(Date.now()<_gateLockUntil){show('Demasiados intentos. Espera unos segundos.');return;}
+  const email=document.getElementById('gateEmail').value.trim(),pw=document.getElementById('gateIn').value;
+  if(!email||!pw){show('Introduce email y contraseña.');return;}
+  const btn=document.getElementById('gateGo');btn.disabled=true;
+  try{
+    const cred=await signInWithEmailAndPassword(_auth,email,pw);
+    if(!isAdminUser(cred.user)){await signOut(_auth);throw new Error('auth/unauthorized');}
+    _adminUser=cred.user;_gateFails=0;
+    closeGate();openAdmin();
+  }catch(e){
+    _gateFails++;if(_gateFails>=5){_gateLockUntil=Date.now()+30000;_gateFails=0;}
+    document.getElementById('gateIn').value='';
+    show('Credenciales incorrectas.'); /* mensaje genérico: no revela si el email existe */
+  }finally{btn.disabled=false;}
+}
+async function logoutAdmin(){try{await signOut(_auth);}catch(e){}_adminUser=null;document.getElementById('admin-overlay').classList.remove('on');renderVisitor();toast('Sesión cerrada');}
 
 /* ══ ADMIN ══ */
 function openAdmin(){
+  if(!isAdminAuthed())return; /* defensa en profundidad: sin sesión no se abre el admin */
   document.getElementById('admin-overlay').classList.add('on');showSec('reel');
+  if(DB._remoteHadPassword){DB._remoteHadPassword=false;save();toast('Contraseña antigua eliminada del documento público');}
   renderAdminCos();renderVidCoSel();renderProfileForm();renderLayGrid();renderThemeGrid();
   renderSizeGrid();renderToolsAdmin();renderLinksAdmin();renderPostsAdmin();renderCvForm();renderSeoAdmin();renderVfxCompaniesAdmin();
   const te=document.getElementById('togExpCards');if(te)te.checked=!!D.expCards;
@@ -3629,12 +3686,14 @@ async function openVfxDiagnostics(){
     const statuses=await r.json();
     if(!statuses.length){document.getElementById('mBody').innerHTML='<div class="vfx-empty">Sin datos todavía. Ejecuta el GitHub Action al menos una vez.</div>';return;}
     document.getElementById('mBody').innerHTML=statuses.map(s=>{
-      const cls=s.status!=='ok'?'error':(s.needsReview?'review':'ok');
-      const label=s.status!=='ok'?'error':(s.needsReview?'review':'ok');
+      const _e=v=>window.VfxJobsCore?VfxJobsCore.escapeHtml(v):String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      const cls=s.status==='disabled'?'review':(s.status!=='ok'?'error':(s.needsReview?'review':'ok'));
+      const label=s.status!=='ok'?_e(s.status):(s.needsReview?'review':'ok');
       const seenTxt=(s.status==='ok'&&s.totalPostingsSeen!=null)?`<span class="vfx-diag-err">${s.totalPostingsSeen} posting(s) seen · ${s.jobsFound} VFX match${s.signalOnlyJobsAdded?` · ${s.signalOnlyJobsAdded} señal(es) enlazadas directamente`:''}</span>`:'';
       const co=D.vfxCompanies.find(c=>c.name===s.company);
-      const nameHtml=co?`<a href="${co.careersUrl}" target="_blank" rel="noopener" class="vfx-diag-co-link">${s.company}</a>`:s.company;
-      return `<div class="vfx-diag-row"><span class="vfx-diag-co">${nameHtml}</span><span class="vfx-diag-status ${cls}">${label}</span>${seenTxt}${s.error?`<span class="vfx-diag-err">${s.error}</span>`:''}</div>`;
+      const _u=window.VfxJobsCore?VfxJobsCore.safeUrl(co&&co.careersUrl):(co&&co.careersUrl)||'';
+      const nameHtml=(co&&_u)?`<a href="${_e(_u)}" target="_blank" rel="noopener noreferrer" class="vfx-diag-co-link">${_e(s.company)}</a>`:_e(s.company||s.source);
+      return `<div class="vfx-diag-row"><span class="vfx-diag-co">${nameHtml}</span><span class="vfx-diag-status ${cls}">${label}</span>${seenTxt}${s.error?`<span class="vfx-diag-err">${_e(s.error)}</span>`:''}</div>`;
     }).join('')+'<div class="vfx-block-sub" style="margin-top:10px;">⚠ "review" = esta empresa usa un scraper heurístico (no una API oficial) y no encontró ninguna oferta VFX — puede ser porque la página no tiene ninguna abierta, porque carga por JavaScript, o porque nuestro filtro no reconoció el título. Cuando esto pasa, el sistema comprueba en Adzuna si hay señales de una oferta VFX activa para esa empresa; si las hay, aparecerá en el listado enlazando directamente a la web de la empresa (no a Adzuna). El nombre de la empresa aquí enlaza directamente a su careers URL para que la revises tú mismo.</div>';
   }catch(e){
     document.getElementById('mBody').innerHTML='<div class="vfx-empty">No se pudo leer data/scanner-status.json (¿el Action aún no se ha ejecutado?)</div>';
@@ -3642,88 +3701,26 @@ async function openVfxDiagnostics(){
 }
 
 /* ══ VFX JOBS TRACKER — PUBLIC PAGE ══ */
-// State lives in one object (not loose top-level `let`s) and is only ever
-// mutated through the setter functions below, which are exposed to
-// `window`. This matters because the page script runs as a module: a
-// top-level `let` is NOT the same thing as a `window` property, so an
-// inline onclick like `vfxJobsFilterWp='remote'` used to silently create an
-// unrelated global instead of touching the variable this file actually
-// reads — every filter/search/sort control looked wired up but did nothing.
-// Routing every change through a function call (already how the rest of
-// the admin panel talks to inline handlers) avoids that trap entirely.
-const vfxJobsState={
-  cache:null,
-  filterEligibility:'all', // all | promising | review | unknown | restricted
-  showUnverified:false,
-  filterWp:'all',       // all | remote | hybrid | onsite
-  filterCat:'all',      // all | aaa | indie
-  filterAts:'all',      // all | greenhouse | lever | teamtailor | workday | workable | ashby | smartrecruiters | recruitee | personio | custom | adzuna | adzuna-signal
-  filterCompany:'all',  // all | <company name>
-  filterLocation:'all', // all | spain | <location string>
-  showPossible:false,
-  sort:'newest',        // newest | company | title
-  search:'',
-};
-// Which DOM node renderVfxJobsPublic() writes into — el overlay público
-// (visitantes, y el botón de la topbar) o la sección dedicada solo-admin
-// "Ver ofertas" (una categoría de nav izquierdo separada, aparte de la
-// sección CONFIG del tracker a propósito, según cómo se usa esto en el
-// día a día: configurar empresas vs. simplemente revisar el listado
-// actual son dos tareas distintas).
-let vfxJobsRenderTargetId='vfxJobsBody';
-
-function setVfxEligibility(val){vfxJobsState.filterEligibility=val;renderVfxJobsPublic();}
-function setVfxUnverified(val){vfxJobsState.showUnverified=val;renderVfxJobsPublic();}
-function vfxEsc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function vfxSafeUrl(v){try{const u=new URL(v,location.href);return ['http:','https:'].includes(u.protocol)?vfxEsc(u.href):'#';}catch(_){return '#';}}
-function setVfxWpFilter(val){vfxJobsState.filterWp=val;renderVfxJobsPublic();}
-function setVfxCatFilter(val){vfxJobsState.filterCat=val;renderVfxJobsPublic();}
-function setVfxAtsFilter(val){vfxJobsState.filterAts=val;renderVfxJobsPublic();}
-function setVfxCompanyFilter(val){vfxJobsState.filterCompany=val;renderVfxJobsPublic();}
-function setVfxLocationFilter(val){vfxJobsState.filterLocation=val;renderVfxJobsPublic();}
-function setVfxSearch(val){vfxJobsState.search=val;renderVfxJobsPublic();}
-function setVfxSort(val){vfxJobsState.sort=val;renderVfxJobsPublic();}
-function setVfxShowPossible(checked){vfxJobsState.showPossible=checked;renderVfxJobsPublic();}
-
-async function ensureVfxJobsLoaded(force){
-  if(vfxJobsState.cache&&!force)return true;
-  try{
-    const r=await fetch('data/jobs.json',{cache:'no-store'});
-    if(!r.ok)throw new Error('not found');
-    vfxJobsState.cache=await r.json();
-    return true;
-  }catch(e){
-    return false;
-  }
-}
-function closeVfxJobsPublic(){
-  document.getElementById('vfxJobsOverlay').classList.remove('open');
-}
-async function openVfxJobsPublic(){
-  vfxJobsRenderTargetId='vfxJobsBody';
-  document.getElementById('vfxJobsBody').innerHTML='<div class="vfxp-state">Cargando ofertas…</div>';
+/* ══ EMPLEO VFX (V2) — la lógica vive en assets/jobs/ (jobs-core.js + jobs-ui.js) ══
+   Cada vista (overlay público y sección admin) monta su PROPIO panel con su propio contenedor
+   y estado: ya no hay un «renderTarget» global compartido. */
+function closeVfxJobsPublic(){document.getElementById('vfxJobsOverlay').classList.remove('open');}
+function openVfxJobsPublic(){
   document.getElementById('vfxJobsOverlay').classList.add('open');
-  const ok=await ensureVfxJobsLoaded();
-  if(!ok){
-    document.getElementById('vfxJobsBody').innerHTML='<div class="vfxp-state">Todavía no hay datos de ofertas. El scanner automático (GitHub Action) generará <code>data/jobs.json</code> en su próxima ejecución.</div>';
-    return;
-  }
-  renderVfxJobsPublic();
+  const box=document.getElementById('vfxJobsBody');
+  if(!window.VfxJobsUI){box.innerHTML='<div class="vfxp-state">No se pudo cargar el panel de empleo (assets/jobs/*.js).</div>';return;}
+  VfxJobsUI.mount(box,{admin:false});
 }
-async function renderVfxJobsAdminView(force){
-  vfxJobsRenderTargetId='vfxJobsAdminView';
-  const container=document.getElementById('vfxJobsAdminView');
-  if(!container)return;
-  container.innerHTML='<div class="vfxp-state">Cargando ofertas…</div>';
-  const ok=await ensureVfxJobsLoaded(force);
-  if(!ok){
-    container.innerHTML='<div class="vfxp-state">Todavía no hay datos de ofertas. El scanner automático (GitHub Action) generará <code>data/jobs.json</code> en su próxima ejecución.</div>';
-    return;
-  }
-  renderVfxJobsPublic();
+function renderVfxJobsAdminView(force){
+  if(!isAdminAuthed())return;
+  const c=document.getElementById('vfxJobsAdminView');if(!c)return;
+  if(!window.VfxJobsUI){c.innerHTML='<div class="vfxp-state">No se pudo cargar el panel de empleo (assets/jobs/*.js).</div>';return;}
+  VfxJobsUI.mount(c,{admin:true,reload:!!force});
   if(force)toast('Datos recargados desde data/jobs.json');
 }
 function refreshVfxJobsAdminView(){renderVfxJobsAdminView(true);}
+/* Compatibilidad con código antiguo que llamaba a renderVfxJobsPublic(): repinta los paneles montados. */
+function renderVfxJobsPublic(){if(window.VfxJobsUI)VfxJobsUI.panels.forEach(p=>p.renderAll());}
 function vfxTimeAgo(iso){
   if(!iso)return'unknown';
   const diffMs=Date.now()-new Date(iso).getTime();
@@ -3736,119 +3733,6 @@ function vfxTimeAgo(iso){
 function vfxIsNew(iso){
   if(!iso)return false;
   return(Date.now()-new Date(iso).getTime())<7*24*3600000;
-}
-function vfxCatLabel(cat){
-  if(cat==='aaa')return'AAA';
-  if(cat==='indie')return'Indie';
-  return'';
-}
-function renderVfxJobsPublic(){
-  const data=vfxJobsState.cache;if(!data)return;
-  const active=(data.jobs||[]).filter(j=>j.status==='active'||(vfxJobsState.showUnverified&&j.status==='unverified'));
-  const eligibility=j=>j.spainEligibility||'unknown';
-  const eligibilityLabels={promising:'España posible',review:'Revisar contrato',unknown:'Sin confirmar',restricted:'Restricción geográfica'};
-  const atsCounts=data.jobsByAts||{};
-  const atsLabels={greenhouse:'Greenhouse',lever:'Lever',teamtailor:'Teamtailor',workday:'Workday',workable:'Workable',ashby:'Ashby',smartrecruiters:'SmartRecruiters',recruitee:'Recruitee',personio:'Personio',custom:'Custom',adzuna:'Adzuna',"adzuna-signal":'Adzuna (señal)'};
-
-  let list=active.filter(j=>vfxJobsState.showPossible?true:j.matchType!=='possibleMatch');
-  if(vfxJobsState.filterEligibility!=='all')list=list.filter(j=>eligibility(j)===vfxJobsState.filterEligibility);
-  if(vfxJobsState.filterWp!=='all')list=list.filter(j=>j.workplaceType===vfxJobsState.filterWp);
-  if(vfxJobsState.filterCat!=='all')list=list.filter(j=>(j.companyCategory||'unknown')===vfxJobsState.filterCat);
-  if(vfxJobsState.filterAts!=='all')list=list.filter(j=>j.ats===vfxJobsState.filterAts);
-  if(vfxJobsState.filterCompany!=='all')list=list.filter(j=>j.company===vfxJobsState.filterCompany);
-  if(vfxJobsState.filterLocation==='spain')list=list.filter(j=>/españa|spain/i.test(j.location||''));
-  else if(vfxJobsState.filterLocation!=='all')list=list.filter(j=>(j.location||'Unknown')===vfxJobsState.filterLocation);
-  if(vfxJobsState.search.trim()){
-    const q=vfxJobsState.search.trim().toLowerCase();
-    list=list.filter(j=>j.company.toLowerCase().includes(q)||j.title.toLowerCase().includes(q));
-  }
-  if(vfxJobsState.sort==='company')list=[...list].sort((a,b)=>a.company.localeCompare(b.company)||a.title.localeCompare(b.title));
-  else if(vfxJobsState.sort==='title')list=[...list].sort((a,b)=>a.title.localeCompare(b.title)||a.company.localeCompare(b.company));
-  else list=[...list].sort((a,b)=>new Date(b.firstSeen||0)-new Date(a.firstSeen||0));
-
-  // Estos tres números del resumen se calculan SIEMPRE sobre `list` (ya con
-  // todos los filtros aplicados), nunca sobre `active` — así lo que se ve
-  // en el resumen coincide exactamente con las filas que aparecen debajo.
-  // Antes se calculaban sobre el total sin filtrar y podían no cuadrar con
-  // el listado real al combinar varios filtros a la vez.
-  const studios=new Set(list.map(j=>j.company)).size;
-  const euCount=list.filter(j=>/eu|europe/i.test(j.remoteScope||'')).length;
-
-  const wpBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsState.filterWp===val?'active':''}" onclick="setVfxWpFilter('${val}')">${label}</button>`;
-  const catBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsState.filterCat===val?'active':''}" onclick="setVfxCatFilter('${val}')">${label}</button>`;
-  const locBtn=(val,label)=>`<button class="vfxp-filter-btn ${vfxJobsState.filterLocation===val?'active':''}" onclick="setVfxLocationFilter('${val}')">${label}</button>`;
-  const atsOptions=Object.keys(atsCounts).sort((a,b)=>atsCounts[b]-atsCounts[a]);
-  const atsSelectHtml=`<select class="fsel" style="max-width:210px;" onchange="setVfxAtsFilter(this.value)">
-    <option value="all" ${vfxJobsState.filterAts==='all'?'selected':''}>Todos los adapters (${active.length})</option>
-    ${atsOptions.map(k=>`<option value="${k}" ${vfxJobsState.filterAts===k?'selected':''}>${atsLabels[k]||k} (${atsCounts[k]})</option>`).join('')}
-  </select>`;
-  const companyCounts={};
-  active.forEach(j=>{companyCounts[j.company]=(companyCounts[j.company]||0)+1;});
-  const companyOptions=Object.keys(companyCounts).sort((a,b)=>companyCounts[b]-companyCounts[a]||a.localeCompare(b));
-  const companySelectHtml=`<select class="fsel" style="max-width:210px;" onchange="setVfxCompanyFilter(this.value)">
-    <option value="all" ${vfxJobsState.filterCompany==='all'?'selected':''}>Todas las empresas (${active.length})</option>
-    ${companyOptions.map(k=>`<option value="${k.replace(/"/g,'&quot;')}" ${vfxJobsState.filterCompany===k?'selected':''}>${k} (${companyCounts[k]})</option>`).join('')}
-  </select>`;
-  // Filtro de ubicación: las que contienen España/Spain van primero
-  // (es lo que más le interesa al admin), el resto ordenado por nº de
-  // ofertas. Es texto libre tal cual llega del scanner, no un país
-  // normalizado, así que agrupamos por coincidencia de texto.
-  const locationCounts={};
-  active.forEach(j=>{const loc=j.location||'Unknown';locationCounts[loc]=(locationCounts[loc]||0)+1;});
-  const isSpainLoc=s=>/españa|spain/i.test(s);
-  const locationOptions=Object.keys(locationCounts).sort((a,b)=>{
-    const aEs=isSpainLoc(a),bEs=isSpainLoc(b);
-    if(aEs!==bEs)return aEs?-1:1;
-    return locationCounts[b]-locationCounts[a]||a.localeCompare(b);
-  });
-  const spainTotal=active.filter(j=>isSpainLoc(j.location||'')).length;
-  const locationSelectHtml=`<select class="fsel" style="max-width:220px;" onchange="setVfxLocationFilter(this.value)">
-    <option value="all" ${vfxJobsState.filterLocation==='all'?'selected':''}>Todas las ubicaciones (${active.length})</option>
-    ${spainTotal?`<option value="spain" ${vfxJobsState.filterLocation==='spain'?'selected':''}>🇪🇸 España — todas (${spainTotal})</option>`:''}
-    ${locationOptions.map(k=>`<option value="${k.replace(/"/g,'&quot;')}" ${vfxJobsState.filterLocation===k?'selected':''}>${isSpainLoc(k)?'🇪🇸 ':''}${k} (${locationCounts[k]})</option>`).join('')}
-  </select>`;
-
-  const rowsHtml=list.length?list.map(j=>`
-    <div class="vfxp-job ${j.matchType==='possibleMatch'?'possible':''} ${vfxIsNew(j.firstSeen)?'new':''}">
-      <div class="vfxp-co">${vfxEsc(j.company)}${vfxCatLabel(j.companyCategory)?`<span class="vfx-ats-tag" style="margin-left:6px;">${vfxCatLabel(j.companyCategory)}</span>`:''}</div>
-      <div class="vfxp-title-cell"><a href="${vfxSafeUrl(j.url)}" target="_blank" rel="noopener" ${j.signalOnly?'style="font-style:italic;"':''}>${vfxEsc(j.title)}</a>${vfxIsNew(j.firstSeen)?'<span class="vfxp-new-tag">NEW</span>':''}${j.viaAggregator?'<span class="vfxp-aggregator-tag" title="Este enlace pasa primero por la web de Adzuna antes de llegar a la oferta">vía Adzuna</span>':''}${j.signalOnly?'<span class="vfxp-aggregator-tag" title="No pudimos leer esta página directamente, pero Adzuna indica que hay una oferta VFX activa. El enlace lleva directo a la web de la empresa, no a Adzuna.">señal detectada</span>':''}</div>
-      <div class="vfxp-loc">${vfxEsc(j.location||'—')}</div>
-      <div class="vfxp-badge ${j.workplaceType||'unknown'}">${j.workplaceType||'unknown'}</div>
-      <div class="vfxp-scope">${vfxEsc(j.remoteScope||'Unknown')}</div>
-      <div class="vfxp-match ${j.matchType}" title="${vfxEsc(j.eligibilityReason||'Sin datos suficientes')}">${vfxEsc(eligibilityLabels[eligibility(j)]||eligibility(j))} · ${j.matchType==='exactMatch'?'Exact':'Possible'}</div>
-    </div>`).join(''):'<div class="vfxp-state">No hay ofertas que coincidan con los filtros actuales.</div>';
-
-  document.getElementById(vfxJobsRenderTargetId).innerHTML=`
-    <div class="vfxp-summary">
-      <div class="vfxp-count"><span>${list.length}</span> open position${list.length===1?'':'s'}</div>
-      <div class="vfxp-meta"><strong>${studios}</strong> studio${studios===1?'':'s'} hiring</div>
-      <div class="vfxp-meta">Last scan: ${vfxTimeAgo(data.lastUpdated)}</div>
-      ${euCount?`<span class="vfxp-eu-badge">${euCount} Remote EU position${euCount===1?'':'s'}</span>`:''}
-    </div>
-    <div class="vfxp-controls">
-      ${wpBtn('all','All')}${wpBtn('remote','Remote')}${wpBtn('hybrid','Hybrid')}${wpBtn('onsite','On-site')}
-      ${spainTotal?locBtn('spain','🇪🇸 España'):''}
-    </div>
-    <div class="vfxp-controls">
-      <span style="font-size:11px;color:var(--sub)">Compatibilidad España (orientativa):</span>
-      ${['all','promising','review','unknown','restricted'].map(k=>`<button class="vfxp-filter-btn ${vfxJobsState.filterEligibility===k?'active':''}" onclick="setVfxEligibility('${k}')">${k==='all'?'Todas':eligibilityLabels[k]}</button>`).join('')}
-      <label class="vfxp-toggle"><input type="checkbox" ${vfxJobsState.showUnverified?'checked':''} onchange="setVfxUnverified(this.checked)"> Incluir sin verificar</label>
-    </div>
-    <div class="vfxp-controls">
-      ${catBtn('all','All studios')}${catBtn('aaa','AAA')}${catBtn('indie','Indie')}
-      ${atsSelectHtml}
-      ${companySelectHtml}
-      ${locationSelectHtml}
-      <input class="fi vfxp-search" placeholder="Search company or title…" value="${vfxJobsState.search}" oninput="setVfxSearch(this.value)">
-      <select class="fsel" style="max-width:190px;" onchange="setVfxSort(this.value)">
-        <option value="newest" ${vfxJobsState.sort==='newest'?'selected':''}>Newest detected</option>
-        <option value="company" ${vfxJobsState.sort==='company'?'selected':''}>Company (A-Z)</option>
-        <option value="title" ${vfxJobsState.sort==='title'?'selected':''}>Job title (A-Z)</option>
-      </select>
-      <label class="vfxp-toggle"><input type="checkbox" ${vfxJobsState.showPossible?'checked':''} onchange="setVfxShowPossible(this.checked)"> Show possible matches</label>
-    </div>
-    <div class="vfxp-list">${rowsHtml}</div>
-  `;
 }
 function showSec(name){
   document.querySelectorAll('.adm-sec').forEach(s=>s.classList.remove('active'));
@@ -4053,7 +3937,7 @@ function confirmEditLink(id){const l=D.links.find(x=>x.id===id);const hdr=docume
 function deleteLink(id){D.links=D.links.filter(x=>x.id!==id);save();renderLinksAdmin();renderHdrLinks();renderMobLinks();toast('Deleted');}
 
 /* settings */
-function saveSettings(){const np=document.getElementById('newPw').value;if(np)D.password=np;save();toast('Saved');}
+function saveSettings(){save();toast('Saved');}
 function exportData(){const blob=new Blob([JSON.stringify(D,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='portfolio.json';a.click();}
 function resetData(){if(!confirm('Reset ALL data?'))return;D=JSON.parse(JSON.stringify(DEFAULTS));save();closeAdmin();renderVisitor();toast('Reset done');}
 
@@ -4496,7 +4380,7 @@ function deletePost(id){if(!confirm('Delete this post?'))return;D.posts=(D.posts
 
 /* ══ EXPOSE GLOBALS — must run synchronously before any onclick fires ══ */
 Object.assign(window,{
-  checkPw,openGate,closeAdmin,openAdmin,showSec,
+  checkPw,openGate,closeGate,logoutAdmin,closeAdmin,showSec,
   saveReel,clearReel,setReelEnabled,
   openAddCo,openEditCo,deleteCo,confirmAddCo,confirmEditCo,
   openAddVid,openEditVid,deleteVid,confirmAddVid,confirmEditVid,renderVidMgr,
@@ -4623,7 +4507,7 @@ Object.assign(window,{
   getActiveSkin, setSkin, renderCleanSkin, openCleanDetail, closeCleanDetail, playCleanClip, renderReelSkin, playReelClip, setReelFx, setReelFxOn, setReelFxSection, resetReelFx, copyReelFxToAll, loadReelFxForm,
   exportData, exportVfxCompanies, fetchVideoMeta, generateCvPdf, gv, importPosts, importVfxBulk, loadLiveCompanies,
   openAddCo, openAddEdu, openAddLang, openAddLink, openAddPost, openAddProject, openAddSkill, openAddTool,
-  openAddVid, openAdmin, openDevlog, openEditCo, openEditEdu, openEditLink, openEditPost, openEditProject,
+  openAddVid, openDevlog, openEditCo, openEditEdu, openEditLink, openEditPost, openEditProject,
   openEditSkill, openEditTool, openEditVfxCompany, openEditVid, openGate, openModal, openVfxDiagnostics, openVfxJobsPublic,
   playClip, refreshCover, renderAdminCos, renderCurrentCompanyInfo, renderCvForm, renderEduList, renderExpList,
   renderVfxJobsAdminView, refreshVfxJobsAdminView,
@@ -4631,7 +4515,6 @@ Object.assign(window,{
   renderProfileForm, renderReelForm, renderSeoAdmin, renderSizeGrid, renderSkillList, renderThemeGrid, renderToolsAdmin, renderToolsGrid,
   renderVfxCompaniesAdmin, renderVfxJobsPublic, renderVidCoSel, renderVidMgr, renderVisitor, resetData, save, saveCvData,
   savePost, saveProfile, saveReel, saveSeo, saveSettings, selectCo, setCoverBg, setExpCards,
-  setVfxWpFilter, setVfxCatFilter, setVfxAtsFilter, setVfxCompanyFilter, setVfxLocationFilter, setVfxSearch, setVfxSort, setVfxShowPossible,
   setLang, setReelEnabled, setVfxJobsPublicVisible, showSec, syncMobileBlocks, syncVfxCompanyFromLive, t, toast, toggleLang,
   togglePostVisible, uid, vfxDedupeCompanies, vfxDetectAts, vfxGuessName, vfxIsNew, vfxNormalizeUrl, vfxTimeAgo
 });

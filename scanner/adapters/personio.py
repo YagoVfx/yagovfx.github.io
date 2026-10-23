@@ -80,5 +80,6 @@ class PersonioAdapter(BaseAdapter):
                 "workplaceType": wt,
                 "remoteScope": rs,
                 "matchType": match,
+                "description": description,
             }))
         return jobs

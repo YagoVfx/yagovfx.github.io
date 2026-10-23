@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Optional
 import requests, time, logging
 from ..company_category import classify_company_category
-from ..filters import evaluate_spain_eligibility
+from ..classify import enrich_job
 
 logger = logging.getLogger(__name__)
 
@@ -46,6 +46,11 @@ class BaseAdapter(ABC):
     # them" — so it's still worth a "needsReview" flag in that case.
     uses_reliable_api: bool = True
 
+    # True si la última llamada a fetch_jobs() devolvió un resultado parcial
+    # (paginación cortada, páginas posteriores fallidas...). Un resultado
+    # incompleto NUNCA puede usarse para cerrar ofertas (ver lifecycle.py).
+    incomplete: bool = False
+
     def __init__(self, company: dict):
         self.company = company["name"]
         self.careers_url = company["careersUrl"]
@@ -58,10 +63,7 @@ class BaseAdapter(ABC):
         pass
 
     def normalize(self, raw: dict) -> dict:
-        eligibility, reason = evaluate_spain_eligibility(raw.get("title", ""), raw.get("location", ""), raw.get("description", ""), raw.get("workplaceType", "unknown"))
-        return {
-            "spainEligibility": eligibility,
-            "eligibilityReason": reason,
+        job = {
             "id": raw.get("id", ""),
             "company": self.company,
             "title": raw.get("title", ""),
@@ -77,3 +79,6 @@ class BaseAdapter(ABC):
             "lastSeen": raw.get("lastSeen", ""),
             "status": "active",
         }
+        # La descripción oficial (si el adaptador la tiene) solo sirve para
+        # extraer evidencia de contrato/elegibilidad; no se guarda en el JSON.
+        return enrich_job(job, raw.get("description", ""))

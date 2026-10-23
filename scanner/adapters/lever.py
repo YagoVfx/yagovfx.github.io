@@ -5,8 +5,14 @@ from ..filters import classify_job, detect_workplace, detect_remote_scope
 logger = logging.getLogger(__name__)
 
 def extract_lever_company(url: str) -> str | None:
-    m = re.search(r'jobs\.lever\.co/([^/?#]+)', url)
+    m = re.search(r'jobs\.(?:eu\.)?lever\.co/([^/?#]+)', url)
     return m.group(1) if m else None
+
+
+def lever_api_base(url: str) -> str:
+    """Los tableros europeos (jobs.eu.lever.co/<slug>) se sirven desde api.eu.lever.co; el host
+    global devuelve un tablero vacío para ellos (por eso Frontier daba «ok» con 0 ofertas)."""
+    return "https://api.eu.lever.co" if re.search(r'jobs\.eu\.lever\.co', url) else "https://api.lever.co"
 
 
 class LeverAdapter(BaseAdapter):
@@ -15,10 +21,10 @@ class LeverAdapter(BaseAdapter):
     def fetch_jobs(self) -> list[dict]:
         company = extract_lever_company(self.careers_url)
         if not company:
-            logger.error(f"[Lever] Cannot parse company from {self.careers_url}")
-            return []
+            # Antes devolvía [] y el estado quedaba «ok»: un fallo de configuración parecía «0 ofertas».
+            raise RuntimeError(f"[Lever] Cannot parse company from {self.careers_url}")
 
-        api_url = f"https://api.lever.co/v0/postings/{company}?mode=json"
+        api_url = f"{lever_api_base(self.careers_url)}/v0/postings/{company}?mode=json"
         r = http_get(api_url)
         if not r:
             raise RuntimeError(f"No response from Lever API for company '{company}' ({api_url})")
@@ -48,5 +54,6 @@ class LeverAdapter(BaseAdapter):
                 "workplaceType": wt,
                 "remoteScope": rs,
                 "matchType": match,
+                "description": j.get("descriptionPlain", ""),
             }))
         return jobs

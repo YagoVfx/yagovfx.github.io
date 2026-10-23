@@ -15,8 +15,7 @@ class GreenhouseAdapter(BaseAdapter):
     def fetch_jobs(self) -> list[dict]:
         board = extract_greenhouse_board(self.careers_url)
         if not board:
-            logger.error(f"[Greenhouse] Cannot parse board from {self.careers_url}")
-            return []
+            raise RuntimeError(f"[Greenhouse] Cannot parse board from {self.careers_url}")
 
         api_url = f"https://boards-api.greenhouse.io/v1/boards/{board}/jobs?content=true"
         r = http_get(api_url)
@@ -50,5 +49,6 @@ class GreenhouseAdapter(BaseAdapter):
                 "workplaceType": wt,
                 "remoteScope": rs,
                 "matchType": match,
+                "description": j.get("content", ""),
             }))
         return jobs

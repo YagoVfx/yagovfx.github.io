@@ -8,6 +8,7 @@ Workplace-type and remote-scope detection live in scanner/filters.py
 re-exported here for convenience so callers only need one import when
 they want "everything normalization-related".
 """
+import hashlib
 import re
 from datetime import datetime, timezone
 
@@ -38,7 +39,7 @@ def generate_job_id(prefix: str, unique_str: str) -> str:
 
 def uid_fallback(seed: str) -> str:
     # Extremely unlikely path (empty/garbage input); keeps generate_job_id total.
-    return str(abs(hash(seed)))[:10]
+    return hashlib.sha1(seed.encode("utf-8")).hexdigest()[:10]  # determinista (hash() cambia entre ejecuciones)
 
 
 def preserve_first_seen(existing_jobs: dict, job: dict, now: str | None = None) -> dict:

@@ -31,6 +31,11 @@ def detect_ats(url: str) -> str:
         return "recruitee"
     if re.search(r"jobs\.personio\.(?:de|com)", url, re.IGNORECASE):
         return "personio"
+    # Webs oficiales sin ATS con adaptador propio (ver adapters/official_sites.py)
+    if re.search(r"(?:^|//|\.)mundfish\.com", url, re.IGNORECASE):
+        return "mundfish"
+    if re.search(r"(?:^|//|\.)axiomvfx\.com", url, re.IGNORECASE):
+        return "axiomvfx"
     return "custom"
 
 

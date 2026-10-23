@@ -1,0 +1,6 @@
+[
+ {"name":"Alpha Games","careersUrl":"https://boards.greenhouse.io/alpha","type":"greenhouse"},
+ {"name":"Beta Studio","careersUrl":"https://boards.greenhouse.io/beta","type":"greenhouse"},
+ {"name":"Broken Co","careersUrl":"https://broken.test/careers","type":"custom"},
+ {"name":"Off Studio","careersUrl":"https://off.test/careers","type":"lever","enabled":false}
+]

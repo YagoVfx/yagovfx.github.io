@@ -11,7 +11,7 @@ JOB_LINK_PATTERNS = [r'/jobs/\d+', r'/jobs/[a-z0-9-]+', r'/en/jobs/']
 
 class TeamtailorAdapter(BaseAdapter):
     ats_type = "teamtailor"
-    uses_reliable_api = False
+    uses_reliable_api = False  # scraping HTML heurístico: 0 resultados es ambiguo
 
     def _get_jobs_page(self) -> str | None:
         candidates = [

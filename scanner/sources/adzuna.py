@@ -35,6 +35,7 @@ from datetime import datetime, timezone, timedelta
 from ..filters import classify_job, detect_workplace, detect_remote_scope
 from ..adapters.base import HEADERS, TIMEOUT
 from ..company_category import classify_company_category
+from ..classify import enrich_job
 
 logger = logging.getLogger(__name__)
 
@@ -112,6 +113,8 @@ def fetch_adzuna_jobs(query: str = "VFX artist", countries: list[str] | None = N
     jobs: list[dict] = []
     total_seen = 0
     seen_ids = set()
+    failed_requests = 0
+    truncated = False
 
     for country in countries:
         for page in range(1, MAX_PAGES_PER_COUNTRY + 1):
@@ -129,6 +132,7 @@ def fetch_adzuna_jobs(query: str = "VFX artist", countries: list[str] | None = N
                 data = r.json()
             except Exception as e:
                 logger.warning(f"[Adzuna] Request failed for {country} page {page}: {e}")
+                failed_requests += 1
                 break
 
             results = data.get("results", [])
@@ -159,7 +163,7 @@ def fetch_adzuna_jobs(query: str = "VFX artist", countries: list[str] | None = N
                 wt = detect_workplace(title, loc, description[:200])
                 rs = detect_remote_scope(title, loc)
 
-                jobs.append({
+                jobs.append(enrich_job({
                     "id": f"az-{jid}",
                     "company": company,
                     "title": title,
@@ -173,18 +177,24 @@ def fetch_adzuna_jobs(query: str = "VFX artist", countries: list[str] | None = N
                     "viaAggregator": True,
                     "postedDate": created or None,
                     "status": "active",
-                })
+                }, description[:2000]))
 
             if len(results) < RESULTS_PER_PAGE:
                 break
+            if page == MAX_PAGES_PER_COUNTRY:
+                truncated = True  # había más resultados que no se leyeron
 
     return jobs, {
         "source": "Adzuna",
         "company": "(Adzuna — broad keyword search, not one company)",
-        "status": "ok",
+        # «ok» solo si no falló ninguna petición; si no, «partial» (no se
+        # puede usar para cerrar ofertas).
+        "status": "ok" if failed_requests == 0 else "partial",
         "countriesQueried": len(countries),
         "totalPostingsSeen": total_seen,
         "jobsFound": len(jobs),
+        "failedRequests": failed_requests,
+        "truncated": truncated,
     }
 
 

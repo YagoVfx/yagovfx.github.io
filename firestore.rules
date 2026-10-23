@@ -1,0 +1,21 @@
+rules_version = '2';
+
+// Reglas de seguridad de Firestore para yagovfx.github.io
+// DESPLIEGUE (manual, solo tú puedes hacerlo): Firebase Console → Firestore Database → Rules → pegar → Publish.
+// Administrador identificado por el UID de Authentication → Usuarios.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Documento público del portfolio: lo lee cualquier visitante, SOLO el administrador autenticado lo escribe.
+    match /portfolio/main {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.auth.uid == 'ylQ3m3XoCHTd0cwP7UQet7cSRpt1';
+    }
+
+    // Todo lo demás, denegado.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

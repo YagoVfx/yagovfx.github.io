@@ -1,0 +1,4 @@
+# Dependencias de desarrollo para las pruebas (no se usan en producción).
+-r scanner/requirements.txt
+pytest>=8
+playwright>=1.48

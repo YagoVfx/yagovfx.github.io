@@ -1,0 +1,7 @@
+[
+ {"company":"Alpha Games","status":"ok","ats":"greenhouse","reliable":true,"jobsFound":1,"durationMs":420,"metadataComplete":60.0,"lastAttempt":"2026-10-19T06:00:00Z","lastSuccess":"2026-10-19T06:00:00Z","consecutiveFailures":0},
+ {"company":"Beta Studio","status":"ok","ats":"greenhouse","reliable":true,"jobsFound":1,"durationMs":380,"lastAttempt":"2026-10-19T06:00:00Z","lastSuccess":"2026-10-19T06:00:00Z"},
+ {"company":"Broken Co","status":"error","ats":"custom","error":"No response from https://broken.test/careers","errorKind":"timeout","consecutiveFailures":3,"lastAttempt":"2026-10-19T06:00:00Z","lastSuccess":"2026-10-10T06:00:00Z"},
+ {"company":"Off Studio","status":"disabled","ats":"lever"},
+ {"source":"Adzuna","company":"(Adzuna)","status":"partial","jobsFound":3,"failedRequests":2,"truncated":true}
+]

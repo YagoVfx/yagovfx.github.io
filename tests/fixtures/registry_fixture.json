@@ -1,0 +1,4 @@
+{"generatedAt":"2026-10-19T06:00:00Z","companies":[
+ {"name":"Alpha Games","country":"ES","officialUrl":"https://alpha.test","careersUrl":"https://boards.greenhouse.io/alpha","ats":"greenhouse","method":"api","reliability":"alta","state":"active","priority":"alta","spainCompat":"posible","lastChecked":"2026-10-19T06:00:00Z"},
+ {"name":"Mundfish","country":"CY","officialUrl":"https://mundfish.test","state":"pending","reason":"Pendiente de verificar fuente oficial","priority":"alta"}
+]}
