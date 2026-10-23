@@ -81,4 +81,6 @@ class BaseAdapter(ABC):
         }
         # La descripción oficial (si el adaptador la tiene) solo sirve para
         # extraer evidencia de contrato/elegibilidad; no se guarda en el JSON.
+        if raw.get("postedDate"):
+            job["postedDate"] = raw["postedDate"]
         return enrich_job(job, raw.get("description", ""))

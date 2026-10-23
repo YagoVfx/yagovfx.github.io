@@ -50,8 +50,7 @@ class WorkdayAdapter(BaseAdapter):
     def fetch_jobs(self) -> list[dict]:
         parsed = parse_workday_url(self.careers_url)
         if not parsed:
-            logger.error(f"[Workday] Cannot parse tenant/site from {self.careers_url}")
-            return []
+            raise RuntimeError(f"[Workday] Cannot parse tenant/site from {self.careers_url}")
         tenant, wd_host, site = parsed
         base_host = f"https://{tenant}.{wd_host}.myworkdayjobs.com"
         api_url = f"{base_host}/wday/cxs/{tenant}/{site}/jobs"
@@ -87,6 +86,7 @@ class WorkdayAdapter(BaseAdapter):
                     # not "this company just has 0 postings".
                     raise RuntimeError(f"Workday request failed for {api_url}: {e}{body_snippet}")
                 logger.warning(f"[Workday] Request failed on a later page for {api_url}: {e} — returning partial results")
+                self.incomplete = True
                 break
 
             postings = data.get("jobPostings", [])
@@ -121,5 +121,8 @@ class WorkdayAdapter(BaseAdapter):
             offset += PAGE_SIZE
             if total is not None and offset >= total:
                 break
+
+        if total is not None and self.total_seen < total:
+            self.incomplete = True
 
         return jobs

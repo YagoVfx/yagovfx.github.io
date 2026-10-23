@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-21T00:00:00Z",
+  "generatedAt": "2026-10-23T13:41:12Z",
   "note": "Evaluada = evidencia directa (scanner-run o web-research). El resto son candidatas pendientes.",
   "totals": {
-    "registered": 72,
-    "withDirectEvidence": 30,
+    "registered": 73,
+    "withDirectEvidence": 34,
     "byState": {
-      "pending": 62,
-      "active": 6,
+      "pending": 46,
+      "active": 23,
       "unsupported": 4
     }
   },
@@ -20,14 +20,20 @@
       "method": "html-adapter",
       "reliability": "baja",
       "state": "pending",
-      "reason": "Scraper HTML genérico: 0 resultados no distingue «sin vacantes» de «página con JavaScript»; revisar a mano.",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 0 anuncios examinados. Revisar scraper HTML sin resultados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:32Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -40,14 +46,20 @@
       "method": "api",
       "reliability": "alta",
       "state": "active",
-      "reason": "API fiable; último escaneo correcto con 2 oferta(s) VFX.",
+      "reason": "Portal directo consultado: 2 ofertas VFX; 46 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:32Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -60,14 +72,20 @@
       "method": "html-adapter",
       "reliability": "baja",
       "state": "pending",
-      "reason": "Scraper HTML genérico: 0 resultados no distingue «sin vacantes» de «página con JavaScript»; revisar a mano.",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 1 anuncios examinados. Revisar scraper HTML sin resultados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:33Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -84,7 +102,7 @@
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:38Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
         "date": "2026-10-08",
@@ -100,14 +118,20 @@
       "method": "html-adapter",
       "reliability": "baja",
       "state": "pending",
-      "reason": "Scraper HTML genérico: 0 resultados no distingue «sin vacantes» de «página con JavaScript»; revisar a mano.",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 0 anuncios examinados. Revisar scraper HTML sin resultados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:38Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -119,15 +143,21 @@
       "ats": "lever",
       "method": "api",
       "reliability": "alta",
-      "state": "pending",
-      "reason": "Estaba como «custom» pese a ser un tablero lever; V2 usa su adaptador oficial. Pendiente de primera ejecución.",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 6 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:39Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -135,19 +165,25 @@
       "name": "Embark Studios",
       "country": null,
       "officialUrl": null,
-      "careersUrl": "https://careers.embark-studios.com",
-      "ats": null,
+      "careersUrl": "https://careers.embark-studios.com/jobs",
+      "ats": "teamtailor",
       "method": "html-adapter",
       "reliability": "baja",
-      "state": "pending",
-      "reason": "Scraper HTML genérico: 0 resultados no distingue «sin vacantes» de «página con JavaScript»; revisar a mano.",
+      "state": "active",
+      "reason": "Portal directo consultado: 1 ofertas VFX; 19 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:39Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -155,19 +191,25 @@
       "name": "Jagex",
       "country": null,
       "officialUrl": null,
-      "careersUrl": "https://www.jagex.com",
-      "ats": null,
-      "method": "html-adapter",
-      "reliability": "baja",
-      "state": "pending",
-      "reason": "Scraper HTML genérico: 0 resultados no distingue «sin vacantes» de «página con JavaScript»; revisar a mano.",
+      "careersUrl": "https://apply.workable.com/jagex-limited/",
+      "ats": "workable",
+      "method": "api",
+      "reliability": "alta",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 13 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:39Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -175,19 +217,25 @@
       "name": "PTW",
       "country": null,
       "officialUrl": null,
-      "careersUrl": "https://side.inc",
-      "ats": null,
-      "method": "html-adapter",
-      "reliability": "baja",
-      "state": "pending",
-      "reason": "Scraper HTML genérico: 0 resultados no distingue «sin vacantes» de «página con JavaScript»; revisar a mano.",
+      "careersUrl": "https://apply.workable.com/sideinc/",
+      "ats": "workable",
+      "method": "api",
+      "reliability": "alta",
+      "state": "active",
+      "reason": "Portal directo consultado: 4 ofertas VFX; 371 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:39Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -199,15 +247,21 @@
       "ats": "greenhouse",
       "method": "api",
       "reliability": "alta",
-      "state": "pending",
-      "reason": "Estaba como «custom» pese a ser un tablero greenhouse; V2 usa su adaptador oficial. Pendiente de primera ejecución.",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 0 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:40Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -215,19 +269,25 @@
       "name": "Rebellion",
       "country": null,
       "officialUrl": null,
-      "careersUrl": "https://careers.rebellion.com/#vacancies",
-      "ats": null,
-      "method": "html-adapter",
-      "reliability": "baja",
-      "state": "pending",
-      "reason": "Scraper HTML genérico: 0 resultados no distingue «sin vacantes» de «página con JavaScript»; revisar a mano.",
+      "careersUrl": "https://apply.workable.com/rebellion/",
+      "ats": "workable",
+      "method": "api",
+      "reliability": "alta",
+      "state": "active",
+      "reason": "Portal directo consultado: 2 ofertas VFX; 37 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:40Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -240,14 +300,20 @@
       "method": "html-adapter",
       "reliability": "baja",
       "state": "pending",
-      "reason": "Scraper HTML genérico: 0 resultados no distingue «sin vacantes» de «página con JavaScript»; revisar a mano.",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 0 anuncios examinados. Revisar scraper HTML sin resultados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:41Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -260,14 +326,20 @@
       "method": "html-adapter",
       "reliability": "baja",
       "state": "pending",
-      "reason": "Scraper HTML genérico: 0 resultados no distingue «sin vacantes» de «página con JavaScript»; revisar a mano.",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 20 anuncios examinados. Revisar scraper HTML sin resultados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:42Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -280,14 +352,20 @@
       "method": "api",
       "reliability": "alta",
       "state": "active",
-      "reason": "API fiable; último escaneo correcto con 8 oferta(s) VFX.",
+      "reason": "Portal directo consultado: 6 ofertas VFX; 335 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:22:44Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -295,19 +373,25 @@
       "name": "Sumo Digital",
       "country": null,
       "officialUrl": null,
-      "careersUrl": "https://www.sumo-digital.com",
+      "careersUrl": "https://www.sumo-digital.com/careers/",
       "ats": null,
       "method": "html-adapter",
       "reliability": "baja",
-      "state": "pending",
-      "reason": "Último escaneo falló: No response from https://www.sumo-digital.com",
+      "state": "active",
+      "reason": "Portal directo consultado: 1 ofertas VFX; 12 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:23:33Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -320,14 +404,20 @@
       "method": "api",
       "reliability": "alta",
       "state": "active",
-      "reason": "API fiable; último escaneo correcto con 3 oferta(s) VFX.",
+      "reason": "Portal directo consultado: 1 ofertas VFX; 23 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:23:35Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -335,19 +425,25 @@
       "name": "Blizzard",
       "country": null,
       "officialUrl": null,
-      "careersUrl": "https://activision.wd1.myworkdayjobs.com/Blizzard_External_Careers",
+      "careersUrl": "https://xboxgaming.wd1.myworkdayjobs.com/Blizzard_External_Careers",
       "ats": "workday",
       "method": "api",
       "reliability": "alta",
-      "state": "pending",
-      "reason": "Último escaneo falló: Workday request failed for https://activision.wd1.myworkdayjobs.com/wday/cxs/activision/Blizzard_External_Careers/jobs: 422 Client Error: Un",
+      "state": "active",
+      "reason": "Portal directo consultado: 2 ofertas VFX; 46 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:23:35Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -360,14 +456,20 @@
       "method": "html-adapter",
       "reliability": "baja",
       "state": "pending",
-      "reason": "Último escaneo falló: No response from https://2k.com/careers",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 2 anuncios examinados. Revisar scraper HTML sin resultados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:23:40Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -375,19 +477,25 @@
       "name": "Activision",
       "country": null,
       "officialUrl": null,
-      "careersUrl": "https://activision.wd1.myworkdayjobs.com/External",
+      "careersUrl": "https://xboxgaming.wd1.myworkdayjobs.com/External",
       "ats": "workday",
       "method": "api",
       "reliability": "alta",
-      "state": "pending",
-      "reason": "Último escaneo falló: Workday request failed for https://activision.wd1.myworkdayjobs.com/wday/cxs/activision/External/jobs: 422 Client Error: Unprocessable Entit",
+      "state": "active",
+      "reason": "Portal directo consultado: 4 ofertas VFX; 81 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:23:40Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -400,14 +508,20 @@
       "method": "api",
       "reliability": "alta",
       "state": "active",
-      "reason": "API fiable; último escaneo correcto con 0 oferta(s) VFX.",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 5 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:23:40Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -419,15 +533,21 @@
       "ats": null,
       "method": "html-adapter",
       "reliability": "baja",
-      "state": "pending",
-      "reason": "Scraper HTML genérico: 0 resultados no distingue «sin vacantes» de «página con JavaScript»; revisar a mano.",
+      "state": "active",
+      "reason": "Portal directo consultado: 1 ofertas VFX; 7 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:23:41Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -440,14 +560,20 @@
       "method": "api",
       "reliability": "alta",
       "state": "active",
-      "reason": "API fiable; último escaneo correcto con 0 oferta(s) VFX.",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 262 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:23:41Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -455,19 +581,25 @@
       "name": "LightHouseGames",
       "country": null,
       "officialUrl": null,
-      "careersUrl": "https://jobs.workable.com/company/9NdGchEYkMTDejHGaa9eHJ/jobs-at-lighthouse-games",
+      "careersUrl": "https://apply.workable.com/lighthousegames/",
       "ats": "workable",
       "method": "api",
       "reliability": "alta",
       "state": "active",
-      "reason": "API fiable; último escaneo correcto con 0 oferta(s) VFX.",
+      "reason": "Portal directo consultado: 3 ofertas VFX; 21 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": "2026-10-20T11:23:41Z",
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
         "kind": "scanner-run",
-        "date": "2026-10-08",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
         "source": "data/scanner-status.json"
       }
     },
@@ -479,19 +611,29 @@
       "ats": null,
       "method": "html-adapter",
       "reliability": "baja",
-      "state": "pending",
-      "reason": "Sin ATS (solicitud por email/Telegram). Adaptador propio probado con HTML de muestra; falta la primera ejecución real.",
+      "state": "active",
+      "reason": "Portal directo consultado: 1 ofertas VFX; 5 anuncios examinados. Sin ATS (solicitud por email/Telegram). Adaptador propio probado con HTML de muestra; falta la primera ejecución real.",
       "priority": "alta",
       "spainCompat": "posible: la web declara «global remote work», no nombra España",
       "configured": true,
-      "lastChecked": null,
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "observed": "Web oficial lista «VFX Artist #remote #senior» (ficha /careers/vfx-artist) y «Technical Artist #remote #middle». Sin tipo de contrato, salario ni fecha.",
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "researchEvidence": {
         "kind": "web-research",
         "date": "2026-10-21",
         "source": "https://mundfish.com/en/careers"
-      },
-      "observed": "Web oficial lista «VFX Artist #remote #senior» (ficha /careers/vfx-artist) y «Technical Artist #remote #middle». Sin tipo de contrato, salario ni fecha.",
-      "configuredNotYetRun": true
+      }
     },
     {
       "name": "AXIOM VFX",
@@ -501,19 +643,29 @@
       "ats": null,
       "method": "html-adapter",
       "reliability": "baja",
-      "state": "pending",
-      "reason": "Estudio de servicios; el anuncio ofrece «Remote, flexible engagement — full-time or contract»: contratación laboral NO acreditada.",
+      "state": "active",
+      "reason": "Portal directo consultado: 1 ofertas VFX; 1 anuncios examinados. Estudio de servicios; el anuncio ofrece «Remote, flexible engagement — full-time or contract»: contratación laboral NO acreditada.",
       "priority": "media",
       "spainCompat": "posible: oficina en Valencia (España) y trabajo remoto asíncrono; no confirmado para el puesto",
       "configured": true,
-      "lastChecked": null,
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "observed": "Una ficha abierta «Real-Time VFX Artist» (Niagara/UE5). Sedes: Austin (EE. UU.) y Valencia (España).",
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "researchEvidence": {
         "kind": "web-research",
         "date": "2026-10-21",
         "source": "https://www.axiomvfx.com/career"
-      },
-      "observed": "Una ficha abierta «Real-Time VFX Artist» (Niagara/UE5). Sedes: Austin (EE. UU.) y Valencia (España).",
-      "configuredNotYetRun": true
+      }
     },
     {
       "name": "Larian Studios",
@@ -523,19 +675,29 @@
       "ats": "lever",
       "method": "api",
       "reliability": "alta",
-      "state": "pending",
-      "reason": "Tablero Lever visto en una oferta real y sondeado por el scanner; falta la primera ejecución real con el adaptador V2.",
+      "state": "active",
+      "reason": "Portal directo consultado: 1 ofertas VFX; 77 anuncios examinados. Tablero Lever visto en una oferta real y sondeado por el scanner; falta la primera ejecución real con el adaptador V2.",
       "priority": "media",
       "spainCompat": "estudio en Barcelona; los puestos VFX vistos exigen trabajo presencial (no remoto)",
       "configured": true,
-      "lastChecked": null,
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "observed": "Ofertas «Senior VFX Artist» en Dublín, Quebec y Barcelona, a jornada completa y presenciales.",
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      },
+      "researchEvidence": {
         "kind": "web-research",
         "date": "2026-10-21",
         "source": "https://jobs.lever.co/larian"
-      },
-      "observed": "Ofertas «Senior VFX Artist» en Dublín, Quebec y Barcelona, a jornada completa y presenciales.",
-      "configuredNotYetRun": true
+      }
     },
     {
       "name": "Saber Interactive Spain",
@@ -545,18 +707,23 @@
       "ats": "personio",
       "method": "api",
       "reliability": "alta",
-      "state": "pending",
-      "reason": "Configurada en V2 sin ejecución real todavía.",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 0 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": null,
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
-        "kind": "discovery-cache",
-        "date": null,
-        "source": "data/ats-discovery-cache.json"
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
       },
-      "configuredNotYetRun": true
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      }
     },
     {
       "name": "Keywords Studios",
@@ -566,18 +733,23 @@
       "ats": "smartrecruiters",
       "method": "api",
       "reliability": "alta",
-      "state": "pending",
-      "reason": "Configurada en V2 sin ejecución real todavía.",
+      "state": "active",
+      "reason": "Portal directo consultado: 2 ofertas VFX; 34 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": null,
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
-        "kind": "discovery-cache",
-        "date": null,
-        "source": "data/ats-discovery-cache.json"
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
       },
-      "configuredNotYetRun": true
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      }
     },
     {
       "name": "Scopely",
@@ -587,18 +759,23 @@
       "ats": "greenhouse",
       "method": "api",
       "reliability": "alta",
-      "state": "pending",
-      "reason": "Configurada en V2 sin ejecución real todavía.",
+      "state": "active",
+      "reason": "Portal directo consultado: 0 ofertas VFX; 182 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": null,
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
-        "kind": "discovery-cache",
-        "date": null,
-        "source": "data/ats-discovery-cache.json"
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
       },
-      "configuredNotYetRun": true
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      }
     },
     {
       "name": "Gameloft",
@@ -608,18 +785,23 @@
       "ats": "smartrecruiters",
       "method": "api",
       "reliability": "alta",
-      "state": "pending",
-      "reason": "Configurada en V2 sin ejecución real todavía.",
+      "state": "active",
+      "reason": "Portal directo consultado: 1 ofertas VFX; 58 anuncios examinados.",
       "priority": "media",
       "spainCompat": null,
       "configured": true,
-      "lastChecked": null,
+      "lastChecked": "2026-10-23T13:41:12Z",
       "evidence": {
-        "kind": "discovery-cache",
-        "date": null,
-        "source": "data/ats-discovery-cache.json"
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
       },
-      "configuredNotYetRun": true
+      "configuredNotYetRun": false,
+      "runtimeEvidence": {
+        "kind": "scanner-run",
+        "date": "2026-10-23T13:41:12Z",
+        "source": "data/scanner-status.json"
+      }
     },
     {
       "name": "IO Interactive",
@@ -1063,6 +1245,27 @@
       "slugMatch": "parcial"
     },
     {
+      "name": "Jobgether Srl",
+      "country": null,
+      "officialUrl": null,
+      "careersUrl": "https://jobs.lever.co/jobgether",
+      "ats": "lever",
+      "method": "api",
+      "reliability": "media",
+      "state": "pending",
+      "reason": "Tablero hallado por el sondeo con slug parcial (posible otra empresa); identidad sin verificar. No configurada.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": false,
+      "lastChecked": null,
+      "evidence": {
+        "kind": "discovery-cache",
+        "date": null,
+        "source": "data/ats-discovery-cache.json"
+      },
+      "slugMatch": "parcial"
+    },
+    {
       "name": "Kabam Games Inc. Job On T-Net",
       "country": null,
       "officialUrl": null,
@@ -1084,7 +1287,7 @@
       "slugMatch": "parcial"
     },
     {
-      "name": "Leonine Holding Gmbh",
+      "name": "Leonine Holding",
       "country": null,
       "officialUrl": null,
       "careersUrl": "https://leonine.jobs.personio.de",
@@ -1103,27 +1306,6 @@
         "source": "data/ats-discovery-cache.json"
       },
       "slugMatch": "parcial"
-    },
-    {
-      "name": "Lighthouse Games",
-      "country": null,
-      "officialUrl": null,
-      "careersUrl": "https://apply.workable.com/lighthousegames",
-      "ats": "workable",
-      "method": "api",
-      "reliability": "alta",
-      "state": "pending",
-      "reason": "Tablero hallado por el sondeo del scanner con slug idéntico al nombre; identidad sin verificar. No configurada.",
-      "priority": "media",
-      "spainCompat": null,
-      "configured": false,
-      "lastChecked": null,
-      "evidence": {
-        "kind": "discovery-cache",
-        "date": null,
-        "source": "data/ats-discovery-cache.json"
-      },
-      "slugMatch": "exacta"
     },
     {
       "name": "Liquid Development",
@@ -1249,6 +1431,27 @@
         "date": null,
         "source": "data/ats-discovery-cache.json"
       }
+    },
+    {
+      "name": "One Of Us",
+      "country": null,
+      "officialUrl": null,
+      "careersUrl": "https://apply.workable.com/one-of-us",
+      "ats": "workable",
+      "method": "api",
+      "reliability": "alta",
+      "state": "pending",
+      "reason": "Tablero hallado por el sondeo del scanner con slug idéntico al nombre; identidad sin verificar. No configurada.",
+      "priority": "media",
+      "spainCompat": null,
+      "configured": false,
+      "lastChecked": null,
+      "evidence": {
+        "kind": "discovery-cache",
+        "date": null,
+        "source": "data/ats-discovery-cache.json"
+      },
+      "slugMatch": "exacta"
     },
     {
       "name": "Riot Games",

@@ -297,7 +297,11 @@
     this.error = null; this.loaded = false;
     this.renderAll();
     return loadJson('jobs', force).then(function (data) {
-      self.raw = data; self.jobs = C.normalizeJobs(data && data.jobs); self.loaded = true;
+      self.raw = data; self.jobs = C.normalizeJobs(data && data.jobs);
+      if (data && data.sourcePolicy === 'direct-only') {
+        self.jobs = self.jobs.filter(function (j) { return (j.sourceKind === 'ats' || j.sourceKind === 'official-site') && !/^(az-|sig-)/.test(j.id) && !j.viaAggregator; });
+      }
+      self.loaded = true;
       self.fillDataSelects(); self.renderAll();
     }).catch(function (err) {
       self.error = String(err && err.message || err); self.loaded = true; self.renderAll();

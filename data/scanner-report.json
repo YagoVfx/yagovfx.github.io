@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-10-23T13:41:12Z",
+  "durationSec": 41.2,
+  "summary": {
+    "activeJobs": 33,
+    "officialJobs": 33,
+    "aggregatorJobs": 0,
+    "signalJobs": 0,
+    "aggregatorShare": 0.0,
+    "verifiedJobs": 33,
+    "duplicatesMerged": 0,
+    "unknownWorkplace": 28,
+    "unknownEligibility": 31,
+    "unknownContract": 31,
+    "sourcesOk": 29,
+    "sourcesFailed": 1,
+    "metadataComplete": 26.7
+  },
+  "adzuna": {
+    "status": "disabled",
+    "jobsFound": 0,
+    "reason": "Catalogo limitado a portales oficiales; agregadores desactivados."
+  },
+  "history": [
+    {
+      "ranAt": "2026-10-23T13:41:12Z",
+      "durationSec": 41.2,
+      "sourcesOk": 29,
+      "sourcesFailed": 1,
+      "activeJobs": 33,
+      "officialJobs": 33,
+      "aggregatorJobs": 0
+    }
+  ],
+  "workflowUrl": "https://github.com/YagoVfx/yagovfx.github.io/actions/workflows/vfx-jobs-scanner.yml",
+  "sourcePolicy": "direct-only",
+  "excludedAggregatorRecords": 317
+}

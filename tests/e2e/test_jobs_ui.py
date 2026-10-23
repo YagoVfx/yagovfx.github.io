@@ -6,6 +6,15 @@ import harness
 
 DEFAULT = ["gh-1", "gh-2", "gh-3", "gh-4", "gh-5", "sr-legacy"]
 
+
+def test_direct_only_policy_hides_aggregators_even_if_unverified_enabled(make_page):
+    payload = harness.fixture_jobs()
+    payload["sourcePolicy"] = "direct-only"
+    box = open_public(make_page(jobs=payload))
+    box.locator('input[data-filter="showUnverified"]').check()
+    box.locator('input[data-filter="showPossibleMatches"]').check()
+    assert ids(box) == DEFAULT
+
 def summary(box): return box.locator("[data-ref=summary]").inner_text()
 def pressed(loc): return loc.get_attribute("aria-pressed") == "true"
 def checked(loc): return loc.get_attribute("aria-checked") == "true"

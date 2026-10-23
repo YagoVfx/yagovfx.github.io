@@ -31,18 +31,18 @@
   },
   {
     "name": "Embark Studios",
-    "careersUrl": "https://careers.embark-studios.com",
-    "type": "custom"
+    "careersUrl": "https://careers.embark-studios.com/jobs",
+    "type": "teamtailor"
   },
   {
     "name": "Jagex",
-    "careersUrl": "https://www.jagex.com",
-    "type": "custom"
+    "careersUrl": "https://apply.workable.com/jagex-limited/",
+    "type": "workable"
   },
   {
     "name": "PTW",
-    "careersUrl": "https://side.inc",
-    "type": "custom"
+    "careersUrl": "https://apply.workable.com/sideinc/",
+    "type": "workable"
   },
   {
     "name": "Guerrilla",
@@ -51,8 +51,8 @@
   },
   {
     "name": "Rebellion",
-    "careersUrl": "https://careers.rebellion.com/#vacancies",
-    "type": "custom"
+    "careersUrl": "https://apply.workable.com/rebellion/",
+    "type": "workable"
   },
   {
     "name": "Room8",
@@ -71,7 +71,7 @@
   },
   {
     "name": "Sumo Digital",
-    "careersUrl": "https://www.sumo-digital.com",
+    "careersUrl": "https://www.sumo-digital.com/careers/",
     "type": "custom"
   },
   {
@@ -81,7 +81,7 @@
   },
   {
     "name": "Blizzard",
-    "careersUrl": "https://activision.wd1.myworkdayjobs.com/Blizzard_External_Careers",
+    "careersUrl": "https://xboxgaming.wd1.myworkdayjobs.com/Blizzard_External_Careers",
     "type": "workday"
   },
   {
@@ -91,7 +91,7 @@
   },
   {
     "name": "Activision",
-    "careersUrl": "https://activision.wd1.myworkdayjobs.com/External",
+    "careersUrl": "https://xboxgaming.wd1.myworkdayjobs.com/External",
     "type": "workday"
   },
   {
@@ -111,7 +111,7 @@
   },
   {
     "name": "LightHouseGames",
-    "careersUrl": "https://jobs.workable.com/company/9NdGchEYkMTDejHGaa9eHJ/jobs-at-lighthouse-games",
+    "careersUrl": "https://apply.workable.com/lighthousegames/",
     "type": "workable"
   },
   {

@@ -14,11 +14,8 @@ class TeamtailorAdapter(BaseAdapter):
     uses_reliable_api = False  # scraping HTML heurístico: 0 resultados es ambiguo
 
     def _get_jobs_page(self) -> str | None:
-        candidates = [
-            self.careers_url.rstrip('/'),
-            self.careers_url.rstrip('/') + '/jobs',
-            self.careers_url.rstrip('/') + '/en/jobs',
-        ]
+        base = f"{urlparse(self.careers_url).scheme}://{urlparse(self.careers_url).netloc}"
+        candidates = list(dict.fromkeys([base + '/jobs', self.careers_url.rstrip('/'), base + '/en/jobs']))
         for url in candidates:
             r = http_get(url)
             if r and r.status_code == 200:

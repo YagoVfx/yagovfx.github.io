@@ -32,7 +32,7 @@ def setup(tmp_path, companies):
 
 def go(tmp_path, results, az=None, now=NOW1):
     return sc.run(now=now, data_dir=tmp_path, adapters={"greenhouse": fake_adapter(results)},
-                  adzuna_fetcher=az or az_fetcher([]), discover_cache_loader=lambda: {}, discover_cache_saver=lambda c: None)
+                  adzuna_fetcher=az or az_fetcher([]), discover_cache_loader=lambda: {}, discover_cache_saver=lambda c: None, include_aggregators=True)
 
 COS = [{"name": "A", "careersUrl": "https://boards.greenhouse.io/a", "type": "greenhouse"},
        {"name": "2K", "careersUrl": "https://boards.greenhouse.io/2k", "type": "greenhouse"}]
@@ -118,3 +118,23 @@ def test_error_kind_classification():
     assert _error_kind("No response from https://2k.com/careers") == "timeout"
     assert _error_kind("HTTP 403 Forbidden") == "blocked"
     assert _error_kind("Invalid JSON from API") == "parse"
+
+
+def test_default_policy_never_calls_aggregators_and_removes_legacy_records(tmp_path):
+    setup(tmp_path, COS)
+    (tmp_path / "jobs.json").write_text(json.dumps({"jobs": [
+        {"id": "az-old", "company": "Z", "title": "VFX Artist", "url": "https://x/jobs",
+         "ats": "greenhouse", "status": "active"},
+        {"id": "sig-old", "company": "Z", "title": "VFX Artist", "ats": "adzuna-signal", "status": "active"},
+    ]}))
+    def forbidden(*args):
+        raise AssertionError("Direct-only scanner must not contact aggregators or ATS discovery")
+    out, statuses, report = sc.run(now=NOW1, data_dir=tmp_path,
+        adapters={"greenhouse": fake_adapter({"A": [gh(1)], "2K": []})},
+        adzuna_fetcher=forbidden, discover_cache_loader=forbidden, discover_cache_saver=forbidden)
+    assert [j["id"] for j in out["jobs"]] == ["gh-1"]
+    assert out["sourcePolicy"] == "direct-only"
+    assert report["excludedAggregatorRecords"] == 2
+    assert report["summary"]["aggregatorJobs"] == 0
+    assert report["summary"]["signalJobs"] == 0
+    assert statuses[-1]["status"] == "disabled"

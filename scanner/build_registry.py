@@ -115,6 +115,24 @@ def build(data_dir: Path = DATA) -> dict:
             e["reason"] = "Configurada en V2 sin ejecución real todavía."
             e["configuredNotYetRun"] = True
             e["evidence"] = dict(kind="discovery-cache", date=None, source="data/ats-discovery-cache.json")
+        if s and s.get("lastSuccess") and s.get("ats") == ats:
+            e["configuredNotYetRun"] = False
+            e["lastChecked"] = s.get("lastAttempt")
+            e["runtimeEvidence"] = {"kind": "scanner-run", "date": s.get("lastAttempt"), "source": "data/scanner-status.json"}
+            if e["evidence"]["kind"] == "web-research":
+                e["researchEvidence"] = dict(e["evidence"])
+            e["evidence"] = dict(e["runtimeEvidence"])
+            if s.get("status") == "error":
+                e["state"] = "blocked" if _err_kind(s.get("error")) == "blocked" else "pending"
+                e["reason"] = "Fallo en el ultimo escaneo: " + (s.get("error") or "sin detalle")[:140]
+            elif s.get("status") == "ok":
+                connected = s.get("reliable") or s.get("jobsFound", 0) > 0
+                e["state"] = "active" if connected else "pending"
+                e["reason"] = (f"Portal directo consultado: {s.get('jobsFound', 0)} ofertas VFX; "
+                               f"{s.get('totalPostingsSeen', 0)} anuncios examinados."
+                               + (" Revisar scraper HTML sin resultados." if s.get("needsReview") else ""))
+                if r:
+                    e["reason"] += " " + r["reason"]
         out.append(e); seen.add(name.lower())
 
     # Investigadas a mano pero aún no configuradas en el scanner
@@ -155,7 +173,7 @@ def build(data_dir: Path = DATA) -> dict:
     for e in out:
         states[e["state"]] = states.get(e["state"], 0) + 1
     direct = sum(1 for e in out if e["evidence"]["kind"] in ("scanner-run", "web-research"))
-    return {"generatedAt": RESEARCH_DATE + "T00:00:00Z", "note": "Evaluada = evidencia directa (scanner-run o web-research). El resto son candidatas pendientes.",
+    return {"generatedAt": max([RESEARCH_DATE + "T00:00:00Z"] + [v.get("lastAttempt") or "" for v in status.values()]), "note": "Evaluada = evidencia directa (scanner-run o web-research). El resto son candidatas pendientes.",
             "totals": {"registered": len(out), "withDirectEvidence": direct, "byState": states}, "companies": out}
 
 

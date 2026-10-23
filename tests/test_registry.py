@@ -72,9 +72,10 @@ def test_registry_has_no_emails_tokens_or_secrets():
 def test_researched_studios_are_in_registry_with_their_evidence():
     by = {e["name"]: e for e in REG["companies"]}
     for n in ("Mundfish", "AXIOM VFX", "Larian Studios", "IO Interactive", "Digital Sun Games", "Escape Velocity Entertainment", "MercurySteam"):
-        assert n in by and by[n]["evidence"]["kind"] == "web-research", n
+        assert n in by, n
+        assert by[n].get("researchEvidence", by[n]["evidence"])["kind"] == "web-research", n
     assert "contratación laboral NO acreditada" in by["AXIOM VFX"]["reason"]
-    assert by["Mundfish"]["state"] == "pending"                   # adaptador listo pero sin ejecución real
+    assert by["Mundfish"]["state"] in ("pending", "active", "blocked")                   # adaptador listo pero sin ejecución real
 
 
 def test_registry_is_reproducible_from_sources():

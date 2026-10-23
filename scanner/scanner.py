@@ -331,8 +331,18 @@ def build_report(now, duration_s, statuses, active, history, adzuna_status, merg
     }
 
 
+def is_direct_job(job: dict) -> bool:
+    """El prefijo hist?rico prevalece sobre etiquetas antiguas incorrectas."""
+    return (not str(job.get("id", "")).startswith(("az-", "sig-"))
+            and job.get("ats") not in ("adzuna", "adzuna-signal")
+            and not job.get("viaAggregator") and not job.get("signalOnly")
+            and job.get("sourceKind") not in ("aggregator", "signal")
+            and job.get("ats") in set(ATS_MAP) | {"custom"})
+
+
 def run(now: str | None = None, data_dir: Path | None = None, adapters: dict | None = None,
-        adzuna_fetcher=None, discover_cache_loader=None, discover_cache_saver=None):
+        adzuna_fetcher=None, discover_cache_loader=None, discover_cache_saver=None,
+        include_aggregators: bool = False):
     data_dir = Path(data_dir) if data_dir else DATA_DIR
     data_dir.mkdir(exist_ok=True)
     companies_file, jobs_file = data_dir / "companies.json", data_dir / "jobs.json"
@@ -351,49 +361,63 @@ def run(now: str | None = None, data_dir: Path | None = None, adapters: dict | N
         companies = dedupe_companies(json.load(f))
 
     existing = load_existing_jobs(jobs_file)
+    excluded_aggregators = 0
+    if not include_aggregators:
+        direct = {jid: j for jid, j in existing.items() if is_direct_job(j)}
+        excluded_aggregators = len(existing) - len(direct)
+        existing = direct
     previous_status = {s.get("company"): s for s in _load_json(status_file, []) if isinstance(s, dict)}
     previous_report = _load_json(report_file, {})
 
     seen, statuses, outcomes, needs_review_companies, succeeded, failed = scan_companies(
         companies, existing, adapters, previous_status, now)
 
-    adzuna_jobs, adzuna_status = adzuna_fetcher()
-    adz_ok = adzuna_status.get("status") == "ok"
-    # Adzuna es un índice truncado (nº limitado de páginas): su ausencia es una
-    # evidencia débil -> fuente NO fiable (varias ausencias seguidas para cerrar).
-    outcomes["adzuna"] = {"ok": adz_ok, "reliable": False,
-                          "complete": adz_ok and not adzuna_status.get("truncated"),
-                          "error": None if adz_ok else f"Adzuna {adzuna_status.get('status')}"}
-    if adzuna_status.get("status") in ("partial", "error"):
-        failed += 1
+    if include_aggregators:
+        adzuna_jobs, adzuna_status = adzuna_fetcher()
+        adz_ok = adzuna_status.get("status") == "ok"
+        # Adzuna es un índice truncado (nº limitado de páginas): su ausencia es una
+        # evidencia débil -> fuente NO fiable (varias ausencias seguidas para cerrar).
+        outcomes["adzuna"] = {"ok": adz_ok, "reliable": False,
+                              "complete": adz_ok and not adzuna_status.get("truncated"),
+                              "error": None if adz_ok else f"Adzuna {adzuna_status.get('status')}"}
+        if adzuna_status.get("status") in ("partial", "error"):
+            failed += 1
 
-    signals, matched_adzuna_ids = find_signal_matches(adzuna_jobs, needs_review_companies)
-    matched = set(matched_adzuna_ids)
-    adzuna_jobs = [j for j in adzuna_jobs if j["id"] not in matched]
+        signals, matched_adzuna_ids = find_signal_matches(adzuna_jobs, needs_review_companies)
+        matched = set(matched_adzuna_ids)
+        adzuna_jobs = [j for j in adzuna_jobs if j["id"] not in matched]
 
-    cache = load_cache()
-    adzuna_jobs, careers_attached = attach_company_careers_links(adzuna_jobs, cache)
-    save_cache(cache)
+        cache = load_cache()
+        adzuna_jobs, careers_attached = attach_company_careers_links(adzuna_jobs, cache)
+        save_cache(cache)
 
-    signal_jobs_added = 0
-    for company in needs_review_companies:
-        if signals.get(company["name"]):
-            job = build_signal_job(company, now)
+        signal_jobs_added = 0
+        for company in needs_review_companies:
+            if signals.get(company["name"]):
+                job = build_signal_job(company, now)
+                preserve_first_seen(existing, job, now)
+                seen[job["id"]] = job
+                signal_jobs_added += 1
+
+        before_dedupe = len(adzuna_jobs)
+        adzuna_jobs = dedupe_adzuna_against_direct_matches(adzuna_jobs, seen)
+        merged = before_dedupe - len(adzuna_jobs)
+        adzuna_status["jobsFound"] = len(adzuna_jobs)
+        adzuna_status["signalOnlyJobsAdded"] = signal_jobs_added
+        adzuna_status["companyBoardsLinked"] = careers_attached
+        adzuna_status["duplicatesMerged"] = merged
+        for job in adzuna_jobs:
             preserve_first_seen(existing, job, now)
             seen[job["id"]] = job
-            signal_jobs_added += 1
+        statuses.append(adzuna_status)
 
-    before_dedupe = len(adzuna_jobs)
-    adzuna_jobs = dedupe_adzuna_against_direct_matches(adzuna_jobs, seen)
-    merged = before_dedupe - len(adzuna_jobs)
-    adzuna_status["jobsFound"] = len(adzuna_jobs)
-    adzuna_status["signalOnlyJobsAdded"] = signal_jobs_added
-    adzuna_status["companyBoardsLinked"] = careers_attached
-    adzuna_status["duplicatesMerged"] = merged
-    for job in adzuna_jobs:
-        preserve_first_seen(existing, job, now)
-        seen[job["id"]] = job
-    statuses.append(adzuna_status)
+    else:
+        # Nunca consultar Adzuna ni descubrimiento de ATS en el catalogo directo.
+        merged = 0
+        adzuna_status = {"company": "Adzuna", "status": "disabled", "jobsFound": 0,
+                         "reason": "Catalogo limitado a portales oficiales; agregadores desactivados."}
+        statuses.append(adzuna_status)
+        seen = {jid: j for jid, j in seen.items() if is_direct_job(j)}
 
     final = reconcile(existing, seen, outcomes, now)
     active = [j for j in final.values() if j["status"] == "active"]
@@ -401,6 +425,7 @@ def run(now: str | None = None, data_dir: Path | None = None, adapters: dict | N
 
     output = {
         "schemaVersion": 2,
+        "sourcePolicy": "mixed" if include_aggregators else "direct-only",
         "lastUpdated": now,
         "companiesScanned": len(companies),
         "companiesSucceeded": succeeded,
@@ -414,6 +439,8 @@ def run(now: str | None = None, data_dir: Path | None = None, adapters: dict | N
     _write_json_atomic(jobs_file, output)
     _write_json_atomic(status_file, statuses)
     report = build_report(now, time.monotonic() - t_start, statuses, active, previous_report.get("history"), adzuna_status, merged)
+    report["sourcePolicy"] = output["sourcePolicy"]
+    report["excludedAggregatorRecords"] = excluded_aggregators
     _write_json_atomic(report_file, report)
 
     logger.info(f"Done. {len(active)} active ({report['summary']['officialJobs']} official, "
