@@ -5,7 +5,7 @@
   },
   "unknown": {
     "found": false,
-    "checkedAt": 1790806172.4012046
+    "checkedAt": 1792729920.981545
   },
   "cloud imperium games": {
     "found": false,
@@ -17,7 +17,7 @@
   },
   "cloud imperium games limited": {
     "found": false,
-    "checkedAt": 1791525291.5513682
+    "checkedAt": 1792754838.745868
   },
   "1010 games": {
     "found": false,
@@ -67,11 +67,11 @@
   },
   "local seo tulsa": {
     "found": false,
-    "checkedAt": 1791525298.9520333
+    "checkedAt": 1792754846.684766
   },
   "ht visions": {
     "found": false,
-    "checkedAt": 1791525310.0338197
+    "checkedAt": 1792754856.7083066
   },
   "lakshya digital": {
     "found": false,
@@ -277,7 +277,7 @@
   },
   "digital legends entertainment": {
     "found": false,
-    "checkedAt": 1791525319.9220934
+    "checkedAt": 1792754866.3688705
   },
   "aesir interactive": {
     "found": true,
@@ -405,7 +405,7 @@
   },
   "junkfish": {
     "found": false,
-    "checkedAt": 1791525286.2598977
+    "checkedAt": 1792754833.8813968
   },
   "manpowergroup": {
     "found": false,
@@ -485,11 +485,11 @@
   },
   "redemption games, inc.": {
     "found": false,
-    "checkedAt": 1791310638.9929516
+    "checkedAt": 1792531821.77395
   },
   "gloss studio": {
     "found": false,
-    "checkedAt": 1791310648.6620467
+    "checkedAt": 1792556919.7792363
   },
   "amanotes": {
     "found": true,
@@ -536,5 +536,33 @@
     "ats": "personio",
     "careersUrl": "https://leonine.jobs.personio.de",
     "checkedAt": 1792448144.3769953
+  },
+  "one of us": {
+    "found": true,
+    "ats": "workable",
+    "careersUrl": "https://apply.workable.com/one-of-us",
+    "checkedAt": 1792531831.2919114
+  },
+  "blockreel": {
+    "found": false,
+    "checkedAt": 1792531836.5699492
+  },
+  "jobgether srl": {
+    "found": true,
+    "ats": "lever",
+    "careersUrl": "https://jobs.lever.co/jobgether",
+    "checkedAt": 1792556930.694825
+  },
+  "rodeofx": {
+    "found": true,
+    "ats": "smartrecruiters",
+    "careersUrl": "https://careers.smartrecruiters.com/rodeofx",
+    "checkedAt": 1792643208.2937727
+  },
+  "leonine holding": {
+    "found": true,
+    "ats": "personio",
+    "careersUrl": "https://leonine.jobs.personio.de",
+    "checkedAt": 1792669079.0799892
   }
 }
