@@ -768,15 +768,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         },
         {
-          "city": "Dundee",
-          "lat": 56.46,
-          "lon": -2.97,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
-        },
-        {
           "city": "Tel Aviv",
           "lat": 32.09,
           "lon": 34.78,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Dundee",
+          "lat": 56.46,
+          "lon": -2.97,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         }
       ]
@@ -1287,15 +1287,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
-          "city": "Leeds",
-          "lat": 53.8,
-          "lon": -1.55,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
-        },
-        {
           "city": "London",
           "lat": 51.51,
           "lon": -0.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Leeds",
+          "lat": 53.8,
+          "lon": -1.55,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
