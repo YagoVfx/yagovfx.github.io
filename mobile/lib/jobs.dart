@@ -7,6 +7,14 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 String fold(Object? s) => removeDiacritics('$s').toLowerCase();
+bool withinDays(Object? value, int days, {DateTime? now}) {
+  if (days == 0) return true;
+  final date = DateTime.tryParse('$value');
+  if (date == null) return false;
+  final age = (now ?? DateTime.now()).toUtc().difference(date.toUtc());
+  return !age.isNegative && age < Duration(days: days);
+}
+
 String? safeUrl(Object? s) {
   final u = Uri.tryParse(s is String ? s.trim() : '');
   return u != null && ['http', 'https'].contains(u.scheme) && u.host.isNotEmpty
@@ -114,6 +122,7 @@ class Job {
 }
 
 class JobFilters {
+  int days = 0;
   String query = '',
       view = 'all',
       workplace = 'all',
@@ -123,6 +132,7 @@ class JobFilters {
   bool spain = false, eu = false, unverified = false, possible = false;
   JobFilters();
   JobFilters.fromJson(Map m) {
+    days = [0, 1, 7, 30].contains(m['days']) ? m['days'] : 0;
     query = m['query'] is String ? m['query'] : '';
     view = pick(m['view'], ['all', 'compatible', 'review']);
     workplace = pick(m['workplace'], [
@@ -155,6 +165,7 @@ class JobFilters {
   static String pick(dynamic s, List<String> values) =>
       values.contains(s) ? s : values.first;
   Map<String, dynamic> toJson() => {
+    'days': days,
     'query': query,
     'view': view,
     'workplace': workplace,
@@ -177,6 +188,9 @@ List<Job> filterJobs(
 }) {
   final out = jobs.where((j) {
     if (!j.isDirectSource || j.status == 'closed') return false;
+    if (!withinDays(j.data['postedDate'] ?? j.data['firstSeen'], f.days)) {
+      return false;
+    }
     if (savedOnly) {
       if (!saved.contains(j.id)) return false;
     } else {

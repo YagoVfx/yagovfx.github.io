@@ -16,6 +16,52 @@ const careerCategories = {
   'courses': 'Cursos',
 };
 
+Future<void> showCareerSources(BuildContext context, String category) async {
+  final catalog = jsonDecode(
+    await rootBundle.loadString('assets/career-resources.json'),
+  ) as Map<String, dynamic>;
+  if (!context.mounted) return;
+  await showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    useSafeArea: true,
+    showDragHandle: true,
+    builder: (context) => DraggableScrollableSheet(
+      expand: false,
+      initialChildSize: .75,
+      builder: (context, controller) => ListView(
+        controller: controller,
+        padding: const EdgeInsets.all(16),
+        children: [
+          Text(
+            'Fuentes complementarias',
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          const Text(
+            'Estos enlaces abren buscadores externos. Sus anuncios no se contabilizan como ofertas directas verificadas.',
+          ),
+          for (final r in catalog['sources'] as List)
+            if ((r['categories'] as List).contains(category))
+              ListTile(
+                title: Text(r['name']),
+                subtitle: Text(r['note']),
+                trailing: const Icon(Icons.open_in_new),
+                onTap: () async {
+                  final url = safeUrl(r['url']);
+                  if (url != null) {
+                    await launchUrl(
+                      Uri.parse(url),
+                      mode: LaunchMode.externalApplication,
+                    );
+                  }
+                },
+              ),
+        ],
+      ),
+    ),
+  );
+}
+
 bool expiredCareerOffer(Map<String, dynamic> item, DateTime now) {
   final end = DateTime.tryParse('${item['closingDate'] ?? ''}');
   return end != null &&
@@ -31,6 +77,7 @@ List<Map<String, dynamic>> filterCareerItems(
   required String category,
   String query = '',
   bool includeAdvanced = false,
+  int days = 0,
   String scope = 'all',
   String modality = 'all',
   String topic = 'all',
@@ -52,7 +99,11 @@ List<Map<String, dynamic>> filterCareerItems(
       return false;
     }
     if (category == 'courses') {
-      if (item['modality'] == 'onsite' && item['inVigo'] != true) return false;
+      if (item['modality'] == 'onsite' &&
+          item['inVigo'] != true &&
+          item['inCoruna'] != true) {
+        return false;
+      }
       if (!savedOnly && !includeAdvanced && item['level'] == 'advanced') {
         return false;
       }
@@ -64,20 +115,27 @@ List<Map<String, dynamic>> filterCareerItems(
       }
     } else {
       if (item['category'] != category) return false;
+      if (!withinDays(item['postedDate'], days, now: today)) return false;
       if (!savedOnly && expiredCareerOffer(item, today)) return false;
       if (!savedOnly &&
           !includeAdvanced &&
           item['experience'] == 'experienced') {
         return false;
       }
-      if (category == 'electricity' && item['inVigo'] != true) return false;
+      if (category == 'electricity' &&
+          item['inVigo'] != true &&
+          item['inCoruna'] != true) {
+        return false;
+      }
       if (category == 'programming' &&
           item['inVigo'] != true &&
+          item['inCoruna'] != true &&
           item['workplace'] != 'remote') {
         return false;
       }
       if (scope == 'remote' && item['workplace'] != 'remote') return false;
       if (scope == 'vigo' && item['inVigo'] != true) return false;
+      if (scope == 'coruna' && item['inCoruna'] != true) return false;
     }
     return true;
   }).toList();
@@ -107,7 +165,7 @@ class CareerFeedRepository {
   Map<String, dynamic> decode(String text) {
     final data = jsonDecode(text);
     if (data is! Map<String, dynamic> ||
-        data['schemaVersion'] != 1 ||
+        data['schemaVersion'] != 2 ||
         data['offers'] is! List ||
         data['courses'] is! List) {
       throw const FormatException('Formato de oportunidades no válido');
@@ -159,6 +217,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
   Map<String, String> progress = {};
   bool loading = true, includeAdvanced = false, freeOnly = false;
   String scope = 'all', modality = 'all', topic = 'all';
+  int days = 0;
   String? error;
   @override
   void initState() {
@@ -209,7 +268,11 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       ) as Map<String, dynamic>).map((k, v) => MapEntry(k, '$v'));
     } catch (_) {}
     search.text = p.getString('career.${widget.category}.query') ?? '';
-    includeAdvanced = p.getBool('career.${widget.category}.advanced') ?? false;
+    includeAdvanced =
+        p.getBool('career.${widget.category}.advancedV2') ??
+        widget.category != 'courses';
+    days = p.getInt('career.${widget.category}.days') ?? 0;
+    scope = p.getString('career.${widget.category}.scope') ?? 'all';
     freeOnly = p.getBool('career.courses.freeOnly') ?? false;
     setState(() => loading = false);
     await refresh();
@@ -279,6 +342,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       category: widget.category,
       query: search.text,
       includeAdvanced: includeAdvanced,
+      days: days,
       scope: scope,
       modality: modality,
       topic: topic,
@@ -407,7 +471,13 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             Text(item['title'], style: Theme.of(context).textTheme.titleLarge),
             Text(item['location']),
             Text(
-              '${item['source']} · ${item['sourceKind'] == 'employer' ? 'Portal de empresa' : 'Servicio público de empleo'}',
+              '${item['source']} · ${item['sourceKind'] == 'employer'
+                  ? 'Portal de empresa'
+                  : item['sourceKind'] == 'job-board'
+                  ? 'Portal de empleo · revisar condiciones'
+                  : item['sourceKind'] == 'recruitment-agency'
+                  ? 'Agencia de selección'
+                  : 'Servicio público de empleo'}',
             ),
             Text(
               item['experience'] == 'junior'
@@ -526,10 +596,10 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
           ),
           Text(
             isCourse
-                ? 'Prioridad a formación gratuita o subvencionada. Tope de 800 € para cursos con precio confirmado; revisa programa, fechas y requisitos antes de inscribirte.'
+                ? 'Online o presencial en Vigo y A Coruña. Prioridad a formación gratuita o subvencionada. Tope de 800 € para cursos con precio confirmado; revisa programa, fechas y requisitos antes de inscribirte.'
                 : widget.category == 'electricity'
-                ? 'Ofertas con ubicación en Vigo. Revisa si la empresa exige desplazamientos diarios o viajes; la búsqueda no los considera aceptados automáticamente.'
-                : 'Puestos de programación, QA y software en Vigo o con teletrabajo anunciado. Prioridad junior o reciclaje; no se da por acreditada experiencia profesional.',
+                ? 'Ofertas en Vigo y A Coruña. Revisa si la empresa exige desplazamientos diarios o viajes; no se consideran aceptados automáticamente.'
+                : 'Programación, QA, software y soporte en Vigo, A Coruña o remoto internacional. Revisa país permitido, idioma y experiencia; remoto no garantiza contratación desde España.',
           ),
           if (loading) const LinearProgressIndicator(),
           if (error != null)
@@ -557,7 +627,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             value: includeAdvanced,
             onChanged: (v) {
               setState(() => includeAdvanced = v);
-              prefs?.setBool('career.${widget.category}.advanced', v);
+              prefs?.setBool('career.${widget.category}.advancedV2', v);
             },
           ),
           if (isCourse)
@@ -574,12 +644,39 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             spacing: 12,
             runSpacing: 12,
             children: [
-              if (widget.category == 'programming')
-                picker('Ubicación', scope, {
-                  'all': 'Vigo o remoto',
-                  'vigo': 'Solo Vigo',
-                  'remote': 'Solo remoto',
-                }, (v) => scope = v),
+              if (!isCourse)
+                picker(
+                  'Ubicación',
+                  scope,
+                  {
+                    'all': widget.category == 'programming'
+                        ? 'Vigo, Coruña y remoto'
+                        : 'Vigo y A Coruña',
+                    'vigo': 'Solo Vigo',
+                    'coruna': 'Solo A Coruña',
+                    if (widget.category == 'programming')
+                      'remote': 'Solo remoto',
+                  },
+                  (v) {
+                    scope = v;
+                    prefs?.setString('career.${widget.category}.scope', v);
+                  },
+                ),
+              if (!isCourse)
+                picker(
+                  'Publicación',
+                  '$days',
+                  {
+                    '0': 'Cualquier fecha',
+                    '1': 'Últimas 24 horas',
+                    '7': 'Última semana',
+                    '30': 'Último mes',
+                  },
+                  (v) {
+                    days = int.parse(v);
+                    prefs?.setInt('career.${widget.category}.days', days);
+                  },
+                ),
               if (isCourse)
                 picker('Modalidad', modality, {
                   'all': 'Online y presenciales',
@@ -596,6 +693,10 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             ],
           ),
           const SizedBox(height: 12),
+          if (!isCourse && days != 0)
+            const Text(
+              'Solo ofertas con fecha de publicación conocida. Revisar una oferta hoy no significa que sea nueva.',
+            ),
           Text(
             '${list.length} ${isCourse ? 'formaciones' : 'ofertas'}${widget.savedOnly ? ' guardadas' : ''}',
           ),

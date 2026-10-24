@@ -50,7 +50,8 @@ def classify_offer(title, description, location):
     if re.search(r'\d\+?\s*(?:anos|years).{0,15}experien|experien.{0,20}\d\+?\s*(?:anos|years)', text): flags.append('Revisar años de experiencia exigidos')
     return dict(experience='experienced' if advanced else 'junior' if junior else 'unknown',
                 workplace='hybrid' if hybrid else 'remote' if remote else 'unknown',
-                inVigo=bool(re.search(r'\bvigo\b', fold(location))), requirements=flags)
+                inVigo=bool(re.search(r'\bvigo\b', fold(location))),
+                inCoruna=bool(re.search(r'\b(?:a coruna|coruna \(a\)|la coruna)(?=\W|$)', fold(location))), requirements=flags)
 
 
 def parse_results(html):
@@ -94,13 +95,14 @@ class SneSearch:
         data = dict(idFlujo=flow, palabraBusqueda=term, sectorProfesional='', botonNavegacion='Enviar')
         if local:
             self.get(BASE + 'busquedaOfertas.do?modo=cambiarModo&idFlujo=' + flow)
-            data.update(provincia='36', municipio='', botonNavegacion='Filtrar municipios')
+            province, municipality = ('15', '15030') if local == 'coruna' else ('36', '36057')
+            data.update(provincia=province, municipio='', botonNavegacion='Filtrar municipios')
             response = self.session.post(BASE + 'busquedaOfertas.do?modo=continuar', data=data, timeout=25)
             response.raise_for_status()
             soup = BeautifulSoup(response.text, 'html.parser')
             options = {o.get('value'): o.get_text(' ', strip=True) for o in soup.select('select[name=municipio] option')}
-            if options.get('36057') != 'Vigo': raise RuntimeError('SNE municipality filter not recognized')
-            data.update(idFlujo=soup.select_one('input[name=idFlujo]')['value'], municipio='36057', botonNavegacion='Enviar')
+            if municipality not in options: raise RuntimeError('SNE municipality filter not recognized')
+            data.update(idFlujo=soup.select_one('input[name=idFlujo]')['value'], municipio=municipality, botonNavegacion='Enviar')
         response = self.session.post(BASE + 'busquedaOfertas.do?modo=continuar', data=data, timeout=25)
         response.raise_for_status()
         rows, pages = parse_results(response.text)
@@ -129,12 +131,12 @@ class SneSearch:
             return None
         if not category: return None
         meta = classify_offer(row['title'], description, row['location'])
-        if category == 'electricity' and not meta['inVigo']: return None
-        if category == 'programming' and not meta['inVigo'] and meta['workplace'] != 'remote': return None
+        if category == 'electricity' and not (meta['inVigo'] or meta['inCoruna']): return None
+        if category == 'programming' and not (meta['inVigo'] or meta['inCoruna']) and meta['workplace'] != 'remote': return None
         return dict(id='career-sne-' + row['sourceId'], category=category, title=row['title'],
                     company='Empresa no indicada (SNE)', location=row['location'], url=row['url'],
                     source='Sistema Nacional de Empleo', sourceKind='public-employment-service',
-                    description=description[:4500], postedDate=row['postedDate'],
+                    description=description[:4500], postedDate=datetime.strptime(row['postedDate'], '%d/%m/%Y').date().isoformat(),
                     closingDate=expires.isoformat() if expires else None, **meta)
 
 
@@ -174,7 +176,7 @@ def workable_programming(slug, expected_name, now):
         spanish = [loc for loc in locations if loc.get('countryCode') == 'ES' or loc.get('country') == 'Spain']
         if not spanish: continue
         location = ', '.join(dict.fromkeys(loc.get('city') or 'Spain' for loc in spanish))
-        if not raw.get('telecommuting') and not re.search(r'\bvigo\b', fold(location)): continue
+        if not raw.get('telecommuting') and not re.search(r'\b(?:vigo|a coruna|la coruna)\b', fold(location)): continue
         published = (raw.get('published_on') or '')[:10]
         if published:
             published_date = date.fromisoformat(published)
@@ -182,7 +184,7 @@ def workable_programming(slug, expected_name, now):
         description = BeautifulSoup(raw.get('description') or '', 'html.parser').get_text(' ', strip=True)
         meta = classify_offer(raw['title'], description, location)
         if raw.get('telecommuting') and meta['workplace'] != 'hybrid': meta['workplace'] = 'remote'
-        if not meta['inVigo'] and meta['workplace'] != 'remote': continue
+        if not (meta['inVigo'] or meta['inCoruna']) and meta['workplace'] != 'remote': continue
         if fold(raw.get('experience') or '') in ['senior', 'mid-senior level', 'director', 'executive']: meta['experience'] = 'experienced'
         if fold(raw.get('experience') or '') in ['entry level', 'internship']: meta['experience'] = 'junior'
         education = fold(raw.get('education') or '')
@@ -205,9 +207,10 @@ def run():
     queries = [('electricista', True), ('mantenimiento', True), ('instalador', True),
                ('electromecánico', True), ('programador', True), ('desarrollador', True),
                ('teletrabajo', False), ('remoto', False)]
+    queries += [(term, 'coruna') for term in ['electricista', 'mantenimiento', 'instalador', 'electromecánico', 'programador', 'desarrollador']]
     for term, local in queries:
         search = SneSearch()  # SNE keeps basic/advanced search mode in its session.
-        key = term + (' · Vigo' if local else ' · nacional')
+        key = term + (' · A Coruña' if local == 'coruna' else ' · Vigo' if local else ' · nacional')
         try:
             rows = list(search.search(term, local))
             detail_failures = 0
@@ -243,6 +246,18 @@ def run():
             prefix='career-wk-' + slug + '-'
             for old in previous.get('offers', []):
                 if old['id'].startswith(prefix) and old['id'] not in offers: offers[old['id']]=dict(old,retainedAfterFailure=True)
+    from scanner.mobile_sources import additional_sources
+    for key, label, reader in additional_sources():
+        prefix = 'career-' + key + '-'
+        try:
+            rows = reader(now)
+            offers.update({row['id']: row for row in rows})
+            status.append(dict(name=label, status='ok', examined=len(rows)))
+        except Exception as e:
+            status.append(dict(name=label, status='error', reason=str(e)[:180]))
+            for old in previous.get('offers', []):
+                if old['id'].startswith(prefix) and (not old.get('closingDate') or old['closingDate'] >= now[:10]):
+                    offers.setdefault(old['id'], dict(old, retainedAfterFailure=True))
     try:
         courses = fundae_courses()
         if not courses: raise RuntimeError('eFundae course search has no recognized course cards')
@@ -251,7 +266,7 @@ def run():
     except Exception as e:
         courses = [dict(c, retainedAfterFailure=True) for c in previous.get('courses', [])]
         status.append(dict(name='eFundae', status='error', reason=str(e)[:180]))
-    output = dict(schemaVersion=1, updatedAt=now, offers=list(offers.values()), courses=courses, sources=status,
+    output = dict(schemaVersion=2, updatedAt=now, offers=list(offers.values()), courses=courses, sources=status,
                   note='Fuentes públicas oficiales para categorías móviles. No son el feed VFX ni garantizan encaje, contratación o inscripción.')
     temporary = target.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

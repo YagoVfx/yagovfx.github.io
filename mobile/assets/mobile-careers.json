@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "updatedAt": "2026-10-24T15:58:12.379657Z",
+  "schemaVersion": 2,
+  "updatedAt": "2026-10-24T17:21:48.008024Z",
   "offers": [
     {
       "id": "career-wk-plainconcepts-C698FE1D89",
@@ -14,10 +14,11 @@
       "description": "🚀 We’re Growing Our Research and Innovation Dream Team! Titles? Meh, we’re not big on them, but let’s call this one Graphics AI Software Engineer 😉 As part of our international research squad, you’ll craft tailor-made solutions that wow our clients. We’re hunting for a passionate Graphics AI Soft Engineer with a solid technical background. Your mission? Train, deploy, and put groundbreaking developments into action — and that’s just the beginning. Here’s the deal: Collaborate with both research and applied engineering teams on multiple projects. Your work will involve exploring, designing, and implementing advanced AI solutions focused on computer vision, 3D rendering, and spatial computing. This role is integral to our mission of developing innovative technologies that redefine how AI enhances and interacts with 3D environments . AGILE isn’t just a buzzword here — it’s how we roll. Multidisciplinary teams? Check. Full ownership of projects? Double check. Ready to take on projects that matter, with a team that’s as passionate as you are? Let’s make it happen! 😊 You will be responsible for: Design and Implement AI-Powered 3D Graphics Solutions Develop and deploy advanced AI techniques within Desktop, Web, VR, and AR applications using our proprietary Evergine graphics engine. Your work will harness the power of AI to push the boundaries of 3D graphics performance, realism, and interactivity. Pioneer and Integrate Advanced AI Models for Computer Vision and Spatial Computing : Leverage and go beyond existing models—such as NeRF, Gaussian Splatting, Point Cloud processing techniques, SAMv2, and GroundingDINO or FlorenceV2 —to not only elevate 3D applications but also create novel, next-generation AI models that drive the future of dynamic, responsive, and intelligent 3D environments. Drive AI Innovation in Architectural Design: Lead the architectural vision for AI-driven 3D applications, playing a critical role in designing and integrating both established and newly developed machine learning, deep learning, and computer vision frameworks to achieve groundbreaking results. Develop and Scale Custom AI Solutions for Complex 3D Applications : Design original algorithms and optimize existing machine learning models for performance and scalability, enabling realistic and seamless interactions in sophisticated 3D spaces and simulations. Collaborate in an AGILE, AI-Innovation Environment: Join a multidisciplinary team focused on AGILE methodologies, where you’ll work closely with experts in AI and 3D technology, driving research and development to achieve efficient, transformative outcomes. Requirements Critical Thinking and Problem-Solving Skills: Ability to approach challenges thoughtfully and analytically, with an eagerness to learn through problem-solving. Interest in 3D Engines and Graphics Development: While prior experience with 3D engines like Unity or Unreal is a plus, a strong motivation to learn and apply these tools to create AI-enhanced interactive graphics is what truly matters. Basic Understanding of AI and Machine Learning in 3D Applications: Familiarity with concepts like machine learning, deep learning, or computer vision**, with an enthusiasm for learning how they can enhance 3D environments (e.g., NeRF , Point Cloud techniques ). Collaborative and Growth-Oriented Mindset: A strong willingness to learn, grow, and contribute within a collaborative and supportive team environment. Commitment to Ongoing Learning and Innovation: A genuine curiosity for advancements in AI and 3D technology , paired with the motivation to grow your expertise over time. Willingness to Learn AI Tools and Frameworks: Exposure to PyTorch , TensorFlow , or similar frameworks is beneficial, but the drive to gain practical experience with these tools is what’s most important. Skills to Help You Excel: Proficiency in Python and C# Fundamentals: Basic experience with Python for AI development and C# for graphics programming, with an openness to expanding knowledge in both. Understanding of 3D Graphics and Mathematics: Familiarity with key 3D concepts (e.g., vectors , matrices , coordinate systems ) and a desire to explore their real-world applications. Interest in Prototyping and Software Development: Comfort with trying out ideas through rapid prototyping and embracing disciplined software development practices. Curiosity About Cloud Platforms for AI Deployment: I nterest in learning about cloud platforms like Azure , AWS , or GCP , and th",
       "postedDate": "2026-10-07",
       "closingDate": null,
-      "checkedAt": "2026-10-24T15:58:12.379657Z",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
       "experience": "experienced",
       "workplace": "remote",
       "inVigo": false,
+      "inCoruna": false,
       "requirements": []
     },
     {
@@ -32,12 +33,351 @@
       "description": "We currently have a vacancy for a Full Stack developer fluent in English, to offer his/her services as an expert remotely (within EU) . In the context of the first assignment, the successful candidate will be integrated in the Development team of the company that will closely cooperate with a major client’s IT team. Your tasks: Designing and developing tools to interact with social media platforms and facilitate data collection workflows; Creating user-friendly front-end interfaces for data annotation and analysis purposes using modern frameworks and technologies; Developing back-end APIs and services to store, manage, and process data, and integrate with data analysis tools and pipelines; Writing scripts to automate tasks and workflows, using languages such as Bash and Python; Configuring and maintaining Linux-based systems for development and testing environments Ensuring the scalability, security, and performance of the tools using automation and monitoring tools; Providing technical support, troubleshooting, and maintenance for all developed tools. Requirements Master’s or PhD degree in Computer Science, Computer Engineering, or related field. with relevant IT professional experience of at least 7 years; Minimum 3 years of experience in automation and scripting using languages such as Bash and Python to streamline development workflows and system administration tasks.Experience in Python, JavaScript, and web development technologies (HTML/CSS); Minimum 3 years of professional experience in full-stack web development, including designing and developing tools and applications; Minimum 3 years of experience in designing and implementing front-end interfaces using modern frameworks (such as React) and web technologies (HTML/CSS, JavaScript); Minimum 3 years of experience in developing back-end APIs and services using frameworks such as Flask, including database design and integration; Minimum 3 years of experience in database management systems, including both relational databases (e.g., MySQL) and NoSQL databases (e.g., MongoDB); Minimum 3 years of experience in Linux system administration, including user management, networking, security, and system configuration; Minimum 3 years of experience with containerization technologies (such as Docker) and orchestration tools (such as Kubernetes); Minimum 3 years of experience with agile development methodologies, version control systems (such as Git), and project tracking tools. Experience with automation and scripting using Bash and Python for task and workflow optimisation; Experience with agile development methodologies and version control systems such as Git; Experience with project management software such as JIRA and Microsoft Project; Experience with collaboration platforms such as Confluence and SharePoint; Knowledge of reporting methods; Certifications in web development, front-end or back-end frameworks (e.g., React, Flask, or equivalent platforms), cloud computing platforms (such as AWS, Azure, or Google Cloud), containerization and orchestration technologies (such as Docker, Kubernetes, or equivalent platforms), database management systems, software engineering, DevOps, or related fields will be an asset. Excellent command of the English language. Benefits If you are seeking a career in an exciting and dynamic company, where you will offer your services as part of a team of a major European Institution, operating in an international, multilingual and multicultural environment where you can expect real chances to make a difference, please send us your detailed CV in English, quoting reference: (20648/10/2026) We offer a competitive remuneration (either on contract basis or remuneration with full benefits package), based on qualifications and experience. All applications will be treated as confidential. You may also consider all our other open vacancies by visiting the career section of our web site ( www.eurodyn.com) and follow us on Twitter (@EURODYN_Careers) and LinkedIn. EUROPEAN DYNAMICS ( www.eurodyn.com ) is a leading Software, Information and Communication Technologies company, operating internationally (Athens, Brussels, Luxembourg, Copenhagen, Stockholm, London, Nicosia, Hong-Kong, Valetta, etc). The company employs over 1000 engineers, IT experts and consultants (around 3% PhD, 36% MSc and 53% BSc or equivalent). We design and develop software applications using state-of-the-art technology. The group generates annual revenues in the range of EURO 40 mi",
       "postedDate": "2026-10-06",
       "closingDate": null,
-      "checkedAt": "2026-10-24T15:58:12.379657Z",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
       "experience": "experienced",
       "workplace": "remote",
       "inVigo": false,
+      "inCoruna": false,
       "requirements": [
         "Revisar años de experiencia exigidos"
+      ]
+    },
+    {
+      "id": "career-wwr-79b5e30b508281b42f48",
+      "category": "programming",
+      "title": "Abuse Research Engineer",
+      "company": "Stripe",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Remote from the US Who we are About Stripe Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s largest enterprises to the most ambitious startups—use Stripe to accept payments, grow their revenue, and accelerate new business opportunities. Our mission is to increase the GDP of the internet, and we have a staggering amount of work ahead. That means you have an unprecedented opportunity to put the global economy within everyone’s reach while doing the most important work of your career. About the team Abuse Research Group (ARG) handles proactive threat hunting and adversary behavior analysis across Stripe products. Rather than reacting to alerts, the team maps end-to-end fraud and abuse paths, validates novel attack vectors, and identifies product conditions that enable fraud. Using agentic automated testing and simulation tools, ARG translates research into actionable threat advisories, strategic control recommendations, and regression scenarios to systematically eliminate vulnerabilities. What you’ll do As an Abuse Research Engineer in the Abuse Research Group, you will play a critical role in safeguarding Stripe’s financial ecosystem by proactively hunting for advanced threats, dissecting complex fraud vectors, and extracting actionable adversary intelligence.  Rather than relying solely on reactive alerts, you will develop and execute hypothesis-driven threat hunting operations across internal telemetry and external sources to uncover fraudulent tools, tactics, and techniques (TTPs) before they impact Stripe’s platform. Central to this work is FT3 (Fraud Taxonomy 3.0), Stripe’s multi-layered taxonomy that decomposes monolithic fraud into structured kill chains.  Collaborating cross-functionally with Fraud Ops, Strategy, Risk, Onboarding, and Security, you will integrate threat intelligence, build agentic simulation workflows, and systematically eliminate product vulnerabilities. Responsibilities Proactive Threat Hunting & Kill Chain Analysis: Formulate hypotheses and conduct iterative threat hunting operations across Stripe systems and external data. FT3 Taxonomy: Apply and enrich the FT3 framework across empirical datasets and incidents, standardizing threat intelligence across kill chain phases and targeted API endpoints. Threat Intelligence & Signal Expansion: Partner with teams like Fraud Intelligence to integrate, curate, and automate threat feeds into engineering workflows. Cross-Functional Advisories & Strategic Controls: Translate raw research and retrospective findings into actionable threat advisories and control recommendations (policy, technical systems, support workflows, and detection mechanisms) for stakeholders across Fraud, Risk, Onboarding, and Security. Agentic Testing & Adversary Simulation: Utilize agentic automated testing frameworks to simulate adversary TTPs, validate whether deployed controls interrupt empirical kill chains, and generate regression scenarios to exercise controls. Who you are We’re looking for someone who meets the minimum requirements to be considered for the role. If you meet these requirements, you are encouraged to apply. The preferred qualifications are a bonus, not a requirement. Minimum requirements 5+ years of experience conducting threat intelligence, threat hunting, or technical incident response within cyber security, product abuse, or trust domains. 5+ years of experience analyzing large, complex datasets using data analytics tools to identify anomalies, map behavioral trends, and solve complex fraud problems. B.S. or M.S. in Computer Science, Cybersecurity, or a related technical field, or equivalent practical experience. Expert proficiency in Python and SQL, with demonstrated experience using code and scripting to automate workflows, build investigative tools, or query big data pipelines. Hands-on experience in log analysis (e.g., application logs, API route telemetry, network security events), digital forensics, and cyber investigation methodologies. Strong communication skills with a proven ability to translate complex technical research into clear, actionable recommendations and advisories for cross-functional partners. Preferred qualifications Deep technical understanding of threat actor motivations, infrastructure, and TTPs specific to financial fraud (e.g., ATO, Card Testing, Credential Stuffing). Familiarity with standardized taxonomies such as FT3 or MITRE ATT&CK. Proficiency with engineerin",
+      "url": "https://weworkremotely.com/remote-jobs/stripe-abuse-research-engineer",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos",
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-10-04"
+    },
+    {
+      "id": "career-wwr-7429e136ec7679f5ac19",
+      "category": "programming",
+      "title": "Principal Software Engineer, AI",
+      "company": "Salesloft",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: United States, Remote Job Title: Principal Software Engineer, AI Location : Remote - US Salesloft is building the next era of enterprise revenue — one where teams make confident decisions powered by AI and real signals. By combining our scale, insights, and AI innovation, we're building the industry's first Predictive Revenue System, enabling humans and AI to work together to make smarter decisions and drive consistent growth. With thousands of customers using our platforms every day, we have an unmatched view into how revenue is actually won — the Revenue Context that reveals what happens, when, and with what outcome. This gives us a unique opportunity to transform an entire category and set a new benchmark for how modern revenue teams operate. Join us to help transform how companies around the world run revenue — and build the platform that will guide leading revenue teams into the future. THE OPPORTUNITY At Salesloft, our Principal Engineer for AI sets the technical direction for how machine intelligence works across our Predictive Revenue System. This is the most senior individual-contributor role on our AI engineering team: you will architect the systems that turn LLMs, machine learning models, and agentic workflows into production capabilities that thousands of enterprise revenue teams depend on. This is deep, ambiguous, frontier work. You will make the foundational architectural decisions for AI at Salesloft — how we serve models at scale, how we build reliable systems on top of non-deterministic components, how we evaluate and guardrail agentic behavior, and how we keep pace as the underlying foundation models evolve. You will set the standards other engineers build on and act as a technical multiplier across the AI organization. On a day-to-day basis, you will: Set the technical architecture and direction for AI systems across the platform — model serving, LLM-powered features, agentic workflows, and the infrastructure beneath them. Design production-grade systems that are reliable and observable despite being built on non-deterministic, probabilistic AI components. Architect evaluation frameworks, guardrails, and quality systems that make AI behavior safe, measurable, and trustworthy at enterprise scale. Lead the most complex AI engineering problems end to end — from research-adjacent prototyping through hardened production delivery. Establish engineering standards and best practices for building AI-native systems, and mentor senior engineers across the org. Keep the platform at the frontier by evaluating and integrating advances in foundation models, agent frameworks, and the modern AI stack. This role lives at the heart of how we Lead From the Front: you'll work at the edge of applied AI, prototype rapidly, and make architectural bets ahead of the field. And in the spirit of how we Make Your Mark, you'll set the AI engineering standards and systems that the entire organization builds on — engineered for scale, not for a demo. WHAT WE'RE LOOKING FOR We are looking for an engineer who operates at the highest level of technical authority in AI systems — someone who has architected and shipped production AI at scale and understands the deep challenges of building reliable systems on probabilistic foundations. You lead through technical credibility and make the engineers around you better. You embody what we call Evidence Over Ego — you make architectural decisions from evaluation data and evidence rather than hype, you invite rigorous challenge, and you change direction when the models or the data move. You bring systems thinking to a genuinely unsolved problem space and build for durability. This is the right role if you want to define how AI works on a platform at the center of enterprise revenue. THE TEAM The Salesloft AI Engineering organization builds the machine intelligence at the core of the Predictive Revenue System. The team works at the intersection of applied research and production engineering, in close partnership with Product, Data Science, and Data Platform Engineering. The team Moves as One — AI engineering, product, and data science share ownership of shipping trustworthy AI and make hard technical calls together. And we are relentlessly Customer Inspired: every AI capability is measured against whether it makes revenue teams genuinely more successful and more confident in the system. THE SKILL SET Extensive experience building and architecting production software systems at sc",
+      "url": "https://weworkremotely.com/remote-jobs/salesloft-principal-software-engineer-ai",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-09-30"
+    },
+    {
+      "id": "career-wwr-79911477638fdd95c4ff",
+      "category": "programming",
+      "title": "Analytics Engineer, Data",
+      "company": "Tailscale",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Remote (United States) Thank you for considering Tailscale. If this job description resonates with you, please apply. Frequently cited statistics show that people who identify with historically marginalized groups are likely to apply to jobs only if they meet 100% of the qualifications. We encourage you to help us break that statistic! About Tailscale Tailscale is making safe connection effortless by delivering software that makes it easy to securely interconnect people and their devices, no matter where they are. From hobbyists to multinational corporations, teams of every size use Tailscale each day to protect their networks, share access to internal tools, and more. We're building a future for the Internet that's easy, sensible, and safe, like it used to be. Founded in 2019 and fully distributed, we're backed by Accel, CRV, Insight, Heavybit, and Uncork Capital. About the Role We are looking for an Analytics Engineer who thrives in high-complexity environments—someone excited to bring clarity to chaos, untangle complex models, and lay down the foundation for scalable solutions. This is a hands-on, high-impact role for someone who isn’t afraid to address manual processes, viewing them as opportunities to build scalable solutions that drive meaningful impact. You’ll work closely with stakeholders across the company to build reliable, trusted data models that support reporting, analysis, and decision-making. Key Responsibilities Dive into complex systems and manual workflows to develop an understanding of our tools and constraints. Thoughtfully design and maintain clean, scalable, production-grade dbt models (e.g., ARR, revenue recognition). Work across the full data pipeline, from ingestion to transformation to visualization. Take a pragmatic approach to system challenges, balancing quick fixes with thoughtful long-term design. Collaborate with Finance, Engineering, Sales, and other teams across the company to understand data needs and deliver timely, practical solutions. What We Are Looking For Experience designing and maintaining production-grade data models and pipelines. Deep understanding of modern data modeling principles and best practices. Strong SQL skills and confidence working with complex datasets and schemas. High attention to detail, with high standards for data accuracy and validation. Flexibility and resourcefulness in navigating manual tasks or imperfect systems. Passion for clean code, scalable architecture, and incrementally reducing complexity over time. Ability to manage time, prioritize effectively, and thrive in a fast-moving environment. Clear communication skills with both technical and non-technical collaborators. Willingness to flexibly support other domains (e.g., Product, Marketing, and Engineering) as the team grows. Nice to Have Experience at a high-growth PLG SaaS company. A track record of transforming manual, ad hoc workflows into scalable data pipelines. Familiarity with billing systems, GAAP accounting, revenue recognition, or audit support. Exposure to Stripe, Salesforce, or Orb in billing and finance contexts. Familiarity with financial cycles and the need for fast iteration during month- and quarter-end. Our Tech Stack Snowflake, dbt, Hightouch, Fivetran, Looker, Stripe, Salesforce, Orb. As a company, we strive to maintain fair and equitable compensation practices within our team across all roles and all levels. Tailscale's compensation package includes base salary, equity, and comprehensive benefits. The salary range displayed on each job posting represents the target range for a new hire's base salary. Individual offers may vary based on experience and skill set. US Pay Range $152,000 — $190,000 USD What We Offer An inclusive, flexible environment where you can be your authentic self. We recognize the impact of diverse voices and backgrounds on the growth of our people, product, and company. And that flexibility in how and when you work empowers our team to integrate work and life. A competitive total compensation package. This includes a base salary, an equity incentive plan and variable commission (for quota-based roles). Comprehensive group benefits with no waiting period. Take advantage of coverage for health, vision, dental, and more for you and your family! Remote first company —most of our teams work fully remotely. Enjoy a change of scenery wherever you can get wifi, participate in virtual and in-person social events, and leverage our corporate co-workin",
+      "url": "https://weworkremotely.com/remote-jobs/tailscale-analytics-engineer-data",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-09-30"
+    },
+    {
+      "id": "career-wwr-605cc5626fcc3bdd6957",
+      "category": "programming",
+      "title": "Senior Software Engineer, Card Authorization",
+      "company": "Lithic",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Remote Lithic is the modern card issuing and processing platform empowering ambitious financial companies to build the future of payments. Our infrastructure powers card programs for 100+ innovative clients, from fintechs reimagining credit and digital banking to platforms transforming disbursements and spend management. Companies like Mercury, Flex, and Novo rely on Lithic's developer-friendly APIs, direct network connections, and flawless reconciliation to launch and scale card programs in weeks, not years. We're building a future where access to better financial products materially improves people's lives, free from the constraints of 30-year-old mainframes and legacy processors. We're proud to be backed by world-class investors who share that vision, including Bessemer Venture Partners, Index Ventures, Spark Capital, Stripes, and Mastercard, along with many others. We're a team of 170+ across 26 states and 7 countries, headquartered in New York City. We are hiring a Senior Software Engineer for Lithic’s Card Authorization team, which owns the real-time systems that make every card authorization decision correct, reliable, and fast. The team also owns related fraud tooling, including Lithic’s Rules Engine and 3D Secure integration. You’ll own high-impact projects end-to-end, solve distributed-systems problems at scale, and help build the tools customers use to control fraud and payment risk. What you'll do: Write reliable, secure, scalable code for Lithic’s real-time authorization and fraud-prevention systems with minimal tech debt Build customer-facing features, such as rules improvements, velocity controls, 3DS flows, fraud tooling, and transaction monitoring. Own projects from planning to launch. Improve the reliability of systems in team’s scope and participate in the team on-call rotation Lead efforts to improve systems and processes within the team What you'll bring: 4+ years building production backend systems. Full stack experience is a plus. Experience in or desire to learn Rust; ability to understand Lithic’s system written in other programming languages (Python, Java) Interest and experience in leveraging AI tools to enhance productivity Ability to navigate ambiguity, align diverse perspectives, and drive toward practical solutions Experience or interest in payments, fintech, fraud prevention. Comfort with designing systems from scratch and owning the product development process end-to-end Strong written communication skills and experience working in a remote, async-first team that’s spread across time zones The annual US salary range for this role is $160,000 to $200,000 plus equity. This salary range may be inclusive of several career levels at Lithic and will be narrowed during the interview process based on the candidate’s experience and qualifications. This is a remote position. However, candidates must be located in the United States, Canada (Ontario or British Columbia), Netherlands, Poland, or Czech Republic. We do not offer visa sponsorship or assistance. Crack the code A hidden code is tucked into this application. Find it and enter it below to continue. IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJUaGUgYW5zd2VyIHRvIGxpZmUsIHRoZSB1bml2ZXJzZSwgYW5kIGV2ZXJ5dGhpbmcg4oCUIGVuY3J5cHRlZC4iIiIKCnBhc3N3b3JkID0gYiJceGVkXHhjMSIKX2tleSA9IGIiXHhkOVx4ZjNceGVkXHhmYlx4ODBceGM0flx4YTdcblx4YjhceGZiPFx4ZmJPXlx4ZmIiCgpkZWYgZGVjcnlwdF9wYXNzd29yZCgpIC0+IHN0cjoKICAgIHJldHVybiBieXRlcyhhIF4gYiBmb3IgYSwgYiBpbiB6aXAocGFzc3dvcmQsIF9rZXkpKS5kZWNvZGUoKQoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIHJlc3VsdCA9IGRlY3J5cHRfcGFzc3dvcmQoKQogICAgcHJpbnQoZiJEZWNyeXB0ZWQgcGFzc3dvcmQ6IHtyZXN1bHR9IikKICAgIGFzc2VydCByZXN1bHQgPT0gIjQyIiwgIkRvbid0IHBhbmljIOKAlCBidXQgZGVjcnlwdGlvbiBmYWlsZWQhIgo= Benefits for Full-Time US Employees: Unlimited PTO 12-weeks fully paid parental leave 4-Week Fully Paid Sabbatical (earned at your 5-year anniversary) Work From Anywhere: work from anywhere in the world 4-weeks each year 3% cashback on card purchases with your complimentary Privacy.com employee account Health, vision, and dental insurance; HSA Contribution Match 401(k) match Voluntary Life Insurance and STD/LTD NYC-based employees work from our SoHo office three days a week. Tuesdays and Thursdays are our core days, and you'll choose a third day that works for your schedule and team needs. In-office employees receive: Commuter benefit Catered lunch every Tuesday and Thursday To apply: https://weworkremotely.com/remote-jobs/lithic-senior-softwar",
+      "url": "https://weworkremotely.com/remote-jobs/lithic-senior-software-engineer-card-authorization",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-09-30"
+    },
+    {
+      "id": "career-wwr-863cd36d973ec7bc7355",
+      "category": "programming",
+      "title": "Web Developer (Fresh graduate welcome, WFH policy, on-job-training)",
+      "company": "HR Plus",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Hong Kong, Hong Kong SAR, Hong Kong URL: http://hrplus.tech About the Role: Are you a talented and driven Web Developer looking to join a young and energetic team? Look no further! Our client, a fast-growing firm in the exciting field of web development, is seeking a skilled Web Developer to join their dynamic team. With a focus on innovation and growth, they offer a supportive and collaborative work environment where you can thrive. Here's what you can gain from this opportunity: Hands-on experience in web development for various companies in different settings. Down-to-earth, hands-on training from experienced seniors. A chance to join a rapidly growing industry and build a successful career in web development. Benefits: Competitive salary package based on skills and experience. Young and energetic work environment that fosters collaboration and innovation. 5-Day work week for a healthy work-life balance. Work From Home (WFH) option available one day per week. Responsibilities: Develop and implement web applications and system enhancements. Take ownership of web projects from development to production. Revamp the company's directory website to improve functionality and enhance search engine optimization (SEO) practices. Increase website capabilities, such as advanced searching features and adherence to industry standards. Requirements: 1 year or more of related experience preferred, fresh graduates are also welcomed. Strong knowledge and experience in PHP and WordPress, MySQL, HTML, CSS, and JavaScript. Knowledge of server-side programming and web server configuration/administration is advantageous. Experience in developing web systems, API integration, and data handling. Familiarity with Git/Gitlab is a plus. Experience in UX design is a valuable asset. Self-motivated, independent, highly responsible, and able to work under pressure. Personal data provided by job applicants will be used strictly in accordance with the employer's personal data policies. All information received will be kept in strict confidence and only for employment-related purposes. \"We are an equal opportunity employer and all qualified applicants will receive consideration for employment without regard to race, color, religion, sex, national origin, disability status, protected veteran status, or any other characteristic protected by law.\" To apply: https://weworkremotely.com/remote-jobs/hr-plus-web-developer-fresh-graduate-welcome-wfh-policy-on-job-training",
+      "url": "https://weworkremotely.com/remote-jobs/hr-plus-web-developer-fresh-graduate-welcome-wfh-policy-on-job-training",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-09-29"
+    },
+    {
+      "id": "career-wwr-fa3328aa268575f4c477",
+      "category": "programming",
+      "title": "Engineering Manager, Machine Learning (Safety)",
+      "company": "Discord",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: San Francisco Bay Area (or Remote U.S.) Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that nearly everyone does: play video games. Discord plays a uniquely important role in the future of gaming, and we are focused on making it easier and more fun for people to hang out before, during, and after playing games. Discord's Safety ML team builds the machine learning systems that protect 200M+ users. The team's mission is to make Discord a place where people can build genuine friendships without exposure to harm, at a scale where manual review alone can never keep up. We're looking for a highly technical, hands-on, and mission-driven Engineering Manager to lead our Safety ML team. As the manager responsible for Safety ML, you will own the detection systems that sit between attackers and our users; real-time and batch models for content understanding, account integrity, and platform abuse. What You'll Be Doing Build and lead an exceptional team of highly-engaged ML engineers by hiring, coaching, and instilling a sense of ownership and impact. Drive the technical vision and roadmap for Safety ML by collaborating with your team and partners across Trust & Safety, Product, Policy, Legal, and Data Science. Own the end-to-end lifecycle of production safety models: defining new capabilities, measuring performance, and monitoring the operational health of systems that make millions of enforcement decisions per day. Manage processes and leverage your technical expertise to continually raise the bar and ensure your team delivers extraordinary results. Partner with Trust & Safety on label quality, golden sets, and automating manual investigations. Work with other Engineering Managers to continuously improve the Engineering organization and uphold our workplace philosophy . What you should have You have 5+ years of experience as a Machine Learning Engineer, Data Scientist, or Applied Scientist. You have 3+ years of experience as an Engineering Manager and successfully managed a team of 5+ engineers. You have hands-on depth in at least one of: abuse/fraud detection, content classification, behavioral modeling, graph-based modeling, or LLM-based classification systems. You have strong communication skills and the ability to work well cross-functionally. You thrive in ambiguous environments and get excited about figuring out solutions to complex problems, and then executing on them. You are a first principles thinker that can work with others to come up with pragmatic solutions. You have a proven record of shipping ML systems to production at scale. You are passionate about coaching and leading other engineers, but can roll up your sleeves and get elbow deep in code when needed. You keep up with the industry trends and continuously identify new technologies to leverage to solve technical problems The US base salary range for this full-time position is $272,000 to $340,000 + equity + benefits. Our salary ranges are determined by role and level. Within the range, individual pay is determined by additional factors, including job-related skills, experience, and relevant education or training. Please note that the compensation details listed in US role postings reflect the base salary only, and do not include equity, or benefits. Why Discord? Discord plays a uniquely important role in the future of gaming. We're a multiplatform, multigenerational and multiplayer platform that helps people deepen their friendships around games and shared interests, and helps developers build and grow their businesses. We believe games give us a way to have fun with our favorite people, whether listening to music together or grinding in competitive matches for diamond rank. Join us in our mission! Your future is just a click away! Discord is committed to inclusion and providing reasonable accommodations during the interview process. We want you to feel set up for success, so if you are in need of reasonable accommodations, please let your recruiter know. Please see our Applicant and Candidate Privacy Policy for details regarding Discord’s collection and usage of personal information relating to the application and recruitment process by clicking HERE. To apply: https://weworkremotely.com/remote-jobs/discord-engineering-manager-machine-learning-safety",
+      "url": "https://weworkremotely.com/remote-jobs/discord-engineering-manager-machine-learning-safety",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos",
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-09-29"
+    },
+    {
+      "id": "career-wwr-de579ee8d230a95ed2e2",
+      "category": "programming",
+      "title": "Software Engineer - Developer Experience",
+      "company": "Dremio",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Portugal - Remote Be Part of Building the Future Dremio is the unified lakehouse platform for self-service analytics and AI, serving hundreds of global enterprises, including Maersk, Amazon, Regeneron, NetApp, and S&P Global. Customers rely on Dremio for cloud, hybrid, and on-prem lakehouses to power their data mesh, data warehouse migration, data virtualization, and unified data access use cases. Based on open source technologies, including Apache Iceberg and Apache Arrow, Dremio provides an open lakehouse architecture enabling the fastest time to insight and platform flexibility at a fraction of the cost.  Learn more at www.dremio.com. About the role In this role you will get opportunities to implement and maintain CI/CD systems and developer productivity solutions. You will be responsible for both regularly scheduled work as well as on-demand break-fix work to support Dremio’s CI/CD system, identifying areas of improvement, and implementing changes to increase efficiency and effectiveness of those systems. Bring your industry experience to improve the efficiency and scale of Dremio’s infrastructure via innovation on tooling and methodologies. You should have empathy for developers and a passion for engineering productivity. What you’ll be doing Solve problems for fellow Dremio engineers by: Leveraging and contributing to playbooks to implement solutions to unblock them Identifying short term workarounds and documenting them Automating processes where manual processes exist. Working on infrastructure across all major clouds (AWS, GCP, Azure). Managing access to key infrastructure. Build and maintain CI/CD pipelines and associated systems to increase organizational efficiency. Automate local development workflows. Analyze performance bottlenecks, root cause issues, file defects, follow up with developers, and document resolutions. Clear focus on keeping our development branches ‘green’. Release engineering - automating processes to push software to delivery endpoints. Report out on the status, reliability and robustness of our CI/CD systems. Actively participate in code reviews. What we’re looking for B.S. or M.S in Computer Science or in a related technical field 1+ years of experience on large scale distributed systems Comfortable navigating the fast moving, unstructured nature of a hyper-growth startup. Demonstrable Knowledge and Experience with at least one cloud platform (AWS, Azure, GCP) Basic understanding of cloud networking and cloud architecture. Proficiency in any of Java/C++/Python/Go Knowledge of Maven or similar build environments Hands on experience in pipeline automation using CI/CD tools like Jenkins Experience in Infrastructure as Code Experience with Terraform, BASH, Docker, Jenkins, and Kubernetes Ability to write technical reports, effectively summarizing key data Passion for learning and then delivering solutions using latest technologies Strong Affinity for collaboration and teamwork Bonus points if you have Working knowledge in data lakes and data warehousing Proficient with SQL What we value At Dremio, we hold ourselves to high standards when it comes to People, Thinking, and Action. Our Gnarlies (that's what we call our employees) communicate with clarity, drive accountability, and are respectful towards each other. We confront brutal facts and focus on results while operating with a sense of urgency and building a \"flywheel\". People who like to jump in and drive momentum will thrive in our #GnarlyLife. Dremio is an equal opportunity employer supporting workforce diversity. We do not discriminate on the basis of race, religion, color, national origin, gender identity, sexual orientation, age, marital status, protected veteran status, disability status, or any other unlawful factor. Dremio is committed to providing any necessary accommodations for individuals with disabilities within our application and interview process. To request accommodation due to a disability, please inform your recruiter. Dremio has policies in place to protect the personal information that employees and applicants disclose to us. Please click here to review the privacy notice. Important Security Notice for Candidates At Dremio, we uphold trust and transparency as paramount values in all our interactions with customers, partners, employees, and the general public. We have been targeted by individuals creating fake domains similar to ours to scam prospects and candidates. Please note that all official co",
+      "url": "https://weworkremotely.com/remote-jobs/dremio-software-engineer-developer-experience",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos",
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-09-28"
+    },
+    {
+      "id": "career-wwr-d99b0502e94b3d515421",
+      "category": "programming",
+      "title": "Senior Staff Software Engineer - Query Execution",
+      "company": "Dremio",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Portugal - Remote Be Part of Building the Future Dremio is the unified lakehouse platform for self-service analytics and AI, serving hundreds of global enterprises, including Maersk, Amazon, Regeneron, NetApp, and S&P Global. Customers rely on Dremio for cloud, hybrid, and on-prem lakehouses to power their data mesh, data warehouse migration, data virtualization, and unified data access use cases. Based on open source technologies, including Apache Iceberg and Apache Arrow, Dremio provides an open lakehouse architecture enabling the fastest time to insight and platform flexibility at a fraction of the cost.  Learn more at www.dremio.com. About the role Dremio’s Query Execution team builds the runtime responsible for executing analytical queries at scale. The team sits between query planning and table scans, owning the systems that turn query plans into efficient, reliable execution. As a Senior Staff Software Engineer, you’ll work on query operators, expression evaluation, memory management, execution scheduling, runtime planning, and performance optimization. Your work will directly affect query performance, scalability, and reliability across Dremio’s cloud data platform. What you’ll be doing Build the execution engine: Design, implement, test, and support query operators, expression evaluation, execution scheduling, runtime planning, and resource management. Improve runtime performance: Optimize vectorized processing, concurrency, parallelism, memory usage, data exchange, and disk spilling. Diagnose difficult problems: Investigate query correctness and performance issues using query profiles, profiling tools, telemetry, benchmarks, logs, and production data. Optimize Java and the JVM: Improve CPU utilization, allocation behavior, garbage collection, thread behavior, and other runtime characteristics. Collaborate across the query engine: Work with Query Planner, Datalake, Product, Support, and field engineering teams on end-to-end query improvements. Use AI-assisted development tools: Apply AI tools to code comprehension, debugging, test generation, documentation, and incident analysis. Apply engineering judgment: Validate AI-generated code and recommendations through review, testing, benchmarking, and engineering judgment. Raise the engineering bar: Participate in design and code reviews, contribute to technical direction, and mentor other engineers. What we’re looking for Software engineering experience: 5+ years developing production software, preferably in database systems, query execution, distributed systems, or related areas. Programming skills: Strong Java skills; experience with C++ is a plus. Computer science fundamentals: Strong foundation in data structures, algorithms, concurrency, multithreaded programming, and asynchronous programming. Database and distributed systems knowledge: Understanding of database internals, query processing, distributed execution, and performance optimization. Performance engineering experience: Experience profiling and optimizing CPU, memory, garbage collection, thread behavior, or other runtime characteristics. Problem-solving ability: Ability to solve ambiguous technical problems and work effectively across team boundaries. Engineering judgment: Ability to evaluate tradeoffs, validate solutions rigorously, and make sound decisions when working with unfamiliar or AI-assisted implementations. Communication and ownership: Strong communication skills, a sense of ownership, and a commitment to delivering high-quality software. Bonus points if you have Query engines: Distributed query engines, database engines, or large-scale data processing systems. Execution techniques: Vectorized execution, query operators, expression evaluation, code generation, or runtime optimization. Runtime systems: JVM profiling, memory management, caching, networking, data exchange, execution scheduling, or disk spilling. Data platforms: Apache Arrow, Apache Iceberg, Parquet, Avro, Spark, Hadoop, or cloud object stores. Open source: Contributing to open-source projects. What we value At Dremio, we hold ourselves to high standards when it comes to People, Thinking, and Action. Our Gnarlies (that's what we call our employees) communicate with clarity, drive accountability, and are respectful towards each other. We confront brutal facts and focus on results while operating with a sense of urgency and building a \"flywheel\". People who like to jump in and drive momentum will thrive in our #Gna",
+      "url": "https://weworkremotely.com/remote-jobs/dremio-senior-staff-software-engineer-query-execution",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos",
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-09-28"
+    },
+    {
+      "id": "career-wwr-10fcf7092b01bbc10e7c",
+      "category": "programming",
+      "title": "Senior Full Stack",
+      "company": "Toggl",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Tallinn, Estonia URL: https://toggl.com/jobs/ We are looking for a Senior Full Stack Engineer to join one of our Product Tribes, the cross-functional units that own the end-to-end experience for a specific Toggl user role. You'll join the Tribe building for managers, the people who plan work, protect margins, and keep projects on time and on budget. You own significant parts of that experience end-to-end, working hands-on with product and design to ship work that matters. You'll do this as we build and launch Toggl 2.0, our consolidated planning, time tracking, and time intelligence product. The salary for this position is €83,000 annually. You can work from anywhere in the world as long as your main location is between UTC-4 and UTC+4. The Role As a Senior Full Stack Engineer, you own meaningful parts of the product end-to-end, from the data model and the API to the interface someone actually clicks: the technical approach, the quality of what ships, and whether it actually works for the people using it. You are accountable not for tickets closed, but for clarity, craft, and outcomes. You'll work in the Tribe serving managers, across planning and capacity management, dashboards, and billable work. This is some of the most data-dense, interaction-heavy surface area in the product: schedules and capacity views, reports, and visualizations that have to stay fast and readable at real customer scale. The interesting problems live on both sides of the API here - the query behind a capacity view matters as much as how that view renders. You'll build with React and TypeScript on the frontend and our backend services (mostly Golang) and data layer (Postgres) behind them, alongside a product manager, a designer, and engineers who are used to owning their work and pushing back when something isn't right. In a tribe of 5 other engineers, your impact and visibility are high. Our team meetings are scheduled between 11:00 and 16:00 UTC. Your availability and commitment to participate in these sessions are essential for effective collaboration and team alignment. Your main responsibilities will be: Ownership and delivery Take projects from problem to production. Own the technical approach for major features front to back, break the work down sensibly, sequence it, and ship in slices rather than one big drop. Make the technical calls in your area. Choose between options, name the tradeoffs, and decide without waiting for permission or escalating routine judgment. Keep your work visible without being chased. Flag risks and slips early, keep the Tribe in the loop, and unblock yourself. Craft and quality across the stack Build interfaces people trust with dense, real-world data. Planning views, dashboards, and reports that stay fast, accessible, and readable when the dataset gets ugly. Design the data and API layer those views depend on. Model it so the feature you're building now doesn't make the next three harder. Own performance as a feature, end to end. Profile, measure, and fix the slow query and the slow render instead of hoping the data stays small. Write code others can work in. Sensible components and services, real test coverage where it earns its keep, and a codebase that's easier to change after you touch it. Working with product and design Shape solutions, don't just implement them. Push on the problem, question requirements that don't hold up, and propose simpler paths when you see one. Partner closely with design. Prototype early, spot the edge cases in a flow before it's built, and hold the bar on UX quality with your designer rather than after handoff. Stay close to users and evidence. Join user tests, read the feedback, look at the data, and let it change what you build. Raising the bar Review code with intent. Give precise, actionable feedback that makes the change and the person better. Mentor and interview. Help other engineers grow, and help us hire well. Improve things across team boundaries. Spot shared components and duplicated work between Tribes, and raise it before we build the same thing twice. AI as core leverage Use AI tools extensively in your daily work for exploration, prototyping, code generation and review, debugging, research, and writing. AI fluency is not optional. It's part of how you increase your speed, depth, and impact - and you're expected to help the rest of the Tribe get better at it too. About You You will thrive in this role if you: Have significant experience building and ",
+      "url": "https://weworkremotely.com/remote-jobs/toggl-senior-full-stack",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-08-28"
+    },
+    {
+      "id": "career-imatia-421bcaf4cce9a908656e",
+      "category": "programming",
+      "title": "Desarrollador/a Backend Java - Mid",
+      "company": "Imatia",
+      "location": "A Coruña",
+      "description": "Imatia | Desarrollador/a Backend Java - Mid Volver Volver Iniciar sesión ¡Aplica ahora! A Coruña Desarrollador/a Backend Java - Mid Tu éxito y el nuestro empiezan aquí. En Imatia te ofrecemos la oportunidad de trabajar en proyectos tecnológicos reales, seguir aprendiendo y crecer como profesional sin tener que salir lejos. Somos un equipo de casi 300 personas apasionadas por la tecnología y por hacer que las cosas sucedan. Si buscas un nuevo reto en un entorno donde puedas aportar tu experiencia, aprender nuevas tecnologías y trabajar junto a profesionales con amplia experiencia, ¡queremos conocerte! EL PROYECTO Te incorporarás a un proyecto dinámico y estratégico dentro del ecosistema e-commerce de una empresa internacional, trabajando sobre su plataforma de pagos y participando en la evolución y desarrollo de nuevas funcionalidades. Formarás parte de un entorno técnicamente exigente, en el que conviven soluciones consolidadas con nuevos desarrollos orientados a una arquitectura más moderna. El objetivo es seguir evolucionando la plataforma, construyendo soluciones robustas, escalables y preparadas para responder a las necesidades de un entorno de pagos. Tu trabajo estará principalmente centrado en el desarrollo de aplicaciones y microservicios, participando en la evolución de la arquitectura y en la incorporación de nuevos módulos y funcionalidades. En el proyecto encontrarás un stack tecnológico diverso, con tecnologías consolidadas y otras más actuales: Java 8 + Spring 5 en los módulos actuales. Java 21 + Spring Boot + Thymeleaf en los nuevos desarrollos. Vue 3 para la parte Front. Tomcat en los módulos actuales. Kubernetes (K8s) para el despliegue de los nuevos módulos. RabbitMQ para la integración y comunicación entre componentes. Evolución futura hacia Kafka. Trabajarás en un entorno donde la calidad, la robustez, la trazabilidad y la capacidad de evolución son aspectos clave, teniendo la oportunidad de participar tanto en la evolución de soluciones existentes como en la construcción de nuevos módulos. Y TÚ, ¿CUÁL SERÁ TU PAPEL? Formarás parte de un equipo senior en el que podrás seguir desarrollándote profesionalmente como desarrollador/a. Participarás en el análisis, diseño y desarrollo de nuevas funcionalidades, así como en la evolución y mantenimiento de los diferentes módulos de la plataforma. Tendrás la oportunidad de trabajar con diferentes tecnologías y de conocer de primera mano la evolución de una plataforma de pagos dentro de un entorno e-commerce. Buscamos perfiles con una buena base técnica, pero sobre todo con proactividad, capacidad de adaptación y ganas de seguir aprendiendo. No esperamos que conozcas todo el stack desde el primer día: valoramos especialmente la capacidad para enfrentarte a nuevos retos y evolucionar junto al proyecto. Si te motiva trabajar en un entorno dinámico, con retos tecnológicos y rodeado/a de profesionales con experiencia, ¡este puede ser tu sitio! ¿Y QUÉ TE OFRECEMOS? Tu contribución al #teamimatia no tendría sentido si no conseguimos cuidarte y que te cuides. Retribución competitiva acorde a tu nivel y experiencia, porque queremos remunerarte como te mereces y por eso realizamos revisiones salariales anuales según tu desempeño. Flexibilidad horaria. Si lo necesitas podrás modificar tu horario de entrada y de salida. Nuestro horario estándar es de 9 a 18:30h. (1h. comida) de lunes a jueves y de 8 a 15h. los viernes. ¡Autogestiona tu tiempo! Jornada intensiva los viernes durante TODO el año y dos meses en verano. Teletrabajo para que te organices y encuentres el equilibrio en tu vida. Conciliación familiar. Tenemos un conjunto de medidas encaminadas a desarrollar tu carrera para que no descuides tu vida personal y familiar. ¡Nos preocupamos por ti! Trabajarás en un entorno colaborativo y disfrutarás de un gran ambiente de trabajo donde la comunicación interna y el respeto son clave. Formación interna con tu equipo de la mano de nuestros mejores profesionales. Acceso ilimitado a una plataforma de formación donde podrás escoger libremente los programas que más te gusten y mejor se adapten a tus necesidades. Plan de carrera para garantizar tu desarrollo profesional. Queremos que sigas creciendo con nosotros y para ello te ofrecemos oportunidades para desarrollar e impulsar tu potencial. Posibilidad de seguro privado de salud. Te ayudamos a gestionarlo ofreciéndote precios competitivos. Posibilidad de movilidad entre nuestras diferentes oficinas (Vigo, Coruña y Ourense). L",
+      "url": "https://jobs.imatia.com/jobs/desarrollador-a-backend-java-mid-e6bbc10a-b6c8-45ae-9c15-107b44b50483",
+      "source": "Imatia · Portal de empresa",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "hybrid",
+      "inVigo": false,
+      "inCoruna": true,
+      "requirements": [
+        "Revisar desplazamientos y viajes",
+        "Revisar si exige titulación universitaria",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null
+    },
+    {
+      "id": "career-inprosec-3b5668e7ae0060378fc4",
+      "category": "programming",
+      "title": "Beca Departamento Soporte",
+      "company": "Inprosec",
+      "location": "Vigo",
+      "description": " del puesto (tareas a desarrollar en su formación y prácticas): Actualización de bases de datos y herramientas internas. Preparación de documentación para contratos Participación en tareas relacionadas con controles y procedimientos internos Apoyo en digitalización de procesos Gestión y organización de documentación administrativa. ¿Cómo te imaginamos? Persona dinámica, con ganas de afrontar retos y oportunidades. Orientación a la consecución de resultados. Capacidad de planificación y organización y atención al detalle Conocimientos informáticos Microsoft Office Valorable nivel alto de inglés ¿Qué ofrecemos? 💼 Creemos en el equilibrio adecuado entre trabajo y vida personal, por todo ello ofrecemos flexibilidad horaria ⌚ y opción de teletrabajo con un modelo híbrido. Estamos comprometidos con la formación 🎓 y el desarrollo de nuestro personal, definiendo un plan de carrera y de formación enfocado a los objetivos en el desarrollo del puesto de cada persona. Creemos que es importante descansar , por eso, durante el periodo de beca tendrás un número de días de descanso ✈️ equivalente a los de una persona incorporada en plantilla. Te incorporarás al grupo Inprosec, tendrás la oportunidad de formarte y crecer profesionalmente en un ambiente estimulante. Participarás en eventos internos (“ team building ”), comidas trimestrales 🥘, office con alimentos proporcionados por la empresa, cesta y comida de navidad, clases de inglés in Company... \"Desde INPROSEC, estamos comprometidos con la igualdad de oportunidades y la no discriminación por motivos de sexo, edad, raza, religión, discapacidad, orientación sexual, identidad de género o ideología política. Por ello, evaluamos las candidaturas a nuestras ofertas de empleo únicamente en base a conocimientos, habilidades y experiencias, aplicando en todo momento la normativa vigente relativa a la igualdad de género entre mujeres y hombres.\"",
+      "url": "https://talent.inprosec.com/jobs/beca-departamento-soporte-53a8e021-f69e-41ae-bc92-2e19503528cd",
+      "source": "Inprosec · Portal de empresa",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "hybrid",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [],
+      "postedDate": null
+    },
+    {
+      "id": "career-inprosec-09e3136f1e344b6a1f6a",
+      "category": "programming",
+      "title": "Software Developer (Desarrollador/a)",
+      "company": "Inprosec",
+      "location": "Vigo",
+      "description": "Greinfort | Software Developer (Desarrollador/a) Volver Volver Iniciar sesión ¡Aplica ahora! Vigo Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Híbrido Especialista Otros Software Developer (Desarrollador/a) Publicada 6 de Octubre En Greinfort Solutions , ofrecemos servicios expertos y especializados para la gestión y mejora continua de los niveles de riesgo y seguridad de la información en grandes y medianas organizaciones con un equipo profesional, especializado y experto en lo que hacemos. ¿Nos conocías? Si quieres más información sobre nosotros, echa un vistazo a nuestra web: https://greinfort.com Disponemos de un servicio basado en tecnología fruto del I+D interno llamado Greinfort , para monitorización de redes industriales, inventariado de activos industriales, y detección de anomalías en base a diferentes estrategias como la detección de intrusiones, o algoritmos de inteligencia artificial y machine learning . Buscamos a una persona con experiencia en el ámbito de desarrollo software, dinámica, que disfrute de trabajar en equipo, que quiera crecer a nivel técnico y de gestión, pero también en la relación con cliente y en la aportación al negocio, exponer nuevas ideas y enfoques, mentorizar a personas más junior, participar en reuniones con clientes, realizar demos funcionales y técnicas, colaborar en actividades de preventa, acudir a despliegues en planta, o contribuir al progreso y crecimiento de la compañía generando conocimiento o valor, investigando nuevas tecnologías que incorporar a los desarrollos, apoyando en la identificación de oportunidades de mejora o evolución del servicio, o escribiendo un post para el blog corporativo o participando en eventos y conferencias del sector. Su tarea principal será integrarse en el equipo de I+D actual para dedicarse al desarrollo de software de backend , y contribuir a la mejora del servicio Greinfort u otras líneas de negocio actuales o venideras. Además, se espera que pueda actuar como puente entre el equipo técnico y el cliente, ayudando a trasladar valor de negocio, detectar necesidades y reforzar la adopción de las soluciones. Serás responsable de... • Desarrollo de software : funcionalidades nuevas y ampliación, depuración y modificación o refactorización de las existentes • Diseño y documentación de capacidades implementadas en productos y servicios • Despliegue de nuevas tecnologías (basadas en IA/ML, u otras) • Resolución de bugs/issues en productos existentes • Participar en demostraciones de producto y presentaciones técnico-funcionales ante clientes y potenciales clientes • Colaborar con los equipos de negocio/comercial en actividades de preventa • Recoger feedback de clientes y trasladarlo al equipo para contribuir a la mejora continua del producto y del servicio • Representar a la compañía en reuniones, eventos o conferencias, realizando presentaciones cuando sea necesario • Contribuir a la evolución de la relación con cliente con visión de largo plazo , favoreciendo la adopción, satisfacción y crecimiento de las cuentas ¿Qué es lo que te podemos ofrecer? 📈 Participar en un proyecto en crecimiento, 100% gallego, pero para el mundo. 🎓Tener la oportunidad de desarrollar tu carrera profesional y plan de formación. 🕧4 días de teletrabajo semanales y horario flexible, consideramos que poder conciliar la vida laboral y personal no tiene discusión por lo que podrás decidir la organización de tu tiempo. 📜Obtendrás certificaciones ya que nos preocupamos de nuestro equipo y nosotros nos encargamos del mantenimiento. ☕Poder disfrutar de un buen café mañanero con alimentos proporcionados por la empresa y en buena compañía, incluso participar en eventos internos como comidas trimestrales, cesta, comida de navidad... Si buscas desarrollarte y aportar en un proyecto sólido, en crecimiento, en un ámbito de actividad en fuerte expansión, con presente y vocación de futuro, no dudes en inscribirte y nos pondremos en contacto contigo. Requisitos mínimos Buscamos una persona con … • Formación Universitaria (ingeniería, siendo valorable formación del ámbito industrial) • Experiencia de programación de backend en python • Facilidad para investigación y resolución de problemas • Buena capacidad de documentación y comunicación • Con conocimientos ofimáticos y de herramientas colaborativas (paquete MS/Office365) • Que tenga conocimientos de inglés (nivel mínimo equivalente a B2) • Con disponibilidad para viajar de forma esporád",
+      "url": "https://talent.inprosec.com/jobs/software-developer-desarrollador-a-ecac2162-a977-44fc-ad02-677bc6dacb4a",
+      "source": "Inprosec · Portal de empresa",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "hybrid",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar desplazamientos y viajes",
+        "Revisar si exige titulación universitaria"
+      ],
+      "postedDate": null
+    },
+    {
+      "id": "career-inprosec-2f2b43bac70b125ee05f",
+      "category": "programming",
+      "title": "Beca Junior SAP Consultant",
+      "company": "Inprosec",
+      "location": "Vigo",
+      "description": "Inprosec | Beca Junior SAP Consultant Volver Volver Iniciar sesión ¡Aplica ahora! Vigo Informática y telecomunicaciones ERP, CRM, Business Intelligence Programación, consultoría y otras actividades informáticas Completa Híbrido Empleado Otros Beca Junior SAP Consultant Publicada 25 de Agosto ¿Te entusiasma el mundo de la ciberseguridad y quieres contribuir a un entorno digital más seguro? 🔐 Si tienes la pasión por proteger y mejorar sistemas, este reto es para ti. ¿Nos conocías? Si no es así, no te preocupes, estamos aquí para presentarnos. En Inprosec somos expertos y especializados en consultoría para la gestión y mejora continua de los niveles de riesgo y seguridad SAP, SAP GRC incluido la gestión de la información en grandes y medianas organizaciones de habla hispana e inglesa. Nuestro objetivo es ayudar y convertir a las empresas en organizaciones más seguras de los ataques cibernéticos y para ello contamos con un equipo profesional, formado y capacitado. Si te ha gustado lo que has leído y quieres más información sobre nosotros no dudes en visitar nuestra web http://www.inprosec.com ¿Qué buscamos? 🔍 En Inprosec buscamos talentos apasionados para unirse como Beca Junior SAP Consultant y contribuir a un futuro más seguro. Ofrecemos una oportunidad única para aprender y desarrollarse en el campo de la ciberseguridad en un entorno profesional de alto nivel. Sobre el puesto y las tarreas a desarrollar: Soporte de operaciones: mantenimiento de Usuarios SAP, asignación de accesos SAP, realización de informes de Accesos SAP. Soporte de operaciones: investigación de Incidentes de Seguridad en SAP. Soporte de operaciones: realización de informes sobre análisis de Riesgos en sistemas SAP. Creación de presentaciones e informes ejecutivos sobre el estado de la seguridad, desarrollo de proyectos y acciones de mejora. Elaboración de documentación de procesos, manuales, mejores prácticas en el área de la seguridad SAP. Desarrollo de Proyectos relacionados con el Rediseño de Roles en entornos SAP (principalmente SAP ECC). ¿Cómo te imaginamos? Tienes estudios universitarios o los estás terminando, preferiblemente en el ámbito tecnológico y/o industria. Se valorarán conocimientos y/o experiencia en ciberseguridad, SAP, manejo de BB.DD e incluso en Power BI. Valorable inglés e incluso otros idiomas. Tienes capacidad de orientación hacia los negocios y los resultados. Eres una persona con habilidades para la planificación y organización, con ganas de aprender y afrontar nuevos retos Tu residencia está situada en Galicia o con disponibilidad de cambio de residencia. Requisitos mínimos ¿Cómo te imaginamos? Tienes estudios universitarios o los estás terminando , preferiblemente en el ámbito tecnológico y/o industria . Se valorarán conocimientos y/o experiencia en ciberseguridad, SAP, manejo de BB.DD e incluso en Power BI. Valorable inglés e incluso otros idiomas. Tienes capacidad de orientación hacia los negocios y los resultados . Eres una persona con habilidades para la planificación y organización , con ganas de aprender y afrontar nuevos retos Tu residencia está situada en Galicia o con disponibilidad de cambio de residencia . ¿Qué beneficios te mereces? 🎓Tener la oportunidad de desarrollar tu carrera profesional y plan de formación. 🕒3 días de teletrabajo semanales y horario flexible, consideramos que poder conciliar la vida laboral y personal no tiene discusión por lo que podrás decidir la organización de tu tiempo. 📜Obtendrás certificaciones ya que nos preocupamos de nuestro equipo y nosotros nos encargamos del mantenimiento. 🥐Poder disfrutar de un buen café mañanero con alimentos proporcionados por la empresa y en buena compañía, incluso participar en más eventos internos ( team building ) como comidas trimestrales, cesta, comida de navidad... Si llegas al final y te gusta todo lo que has leído, es tu oportunidad. Aplica y estos serán los siguientes pasos🖱 Aplica a la oferta enviado tu CV a través de nuestra página web y completa los datos solicitados Si encajas en lo que buscamos nos pondremos en contacto contigo para conocerte mejor, en caso contrario también te lo diremos, valoramos el tiempo invertido por lo tanto queremos ser claros con todos los participantes. ¿A que esperar? Empieza una nueva aventura laboral con nosotros🚀 \"Desde INPROSEC, estamos comprometidos con la igualdad de oportunidades y la no discriminación por motivos de sexo, edad, raza, religión, discapacidad, orientación sexual, identidad de género o ideolo",
+      "url": "https://talent.inprosec.com/jobs/beca-junior-sap-consultant-cbcbaf76-e618-462b-a6a8-9df8ec523541",
+      "source": "Inprosec · Portal de empresa",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "junior",
+      "workplace": "hybrid",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [],
+      "postedDate": null
+    },
+    {
+      "id": "career-inprosec-9fb521c385f6f83c5c93",
+      "category": "programming",
+      "title": "Junior SAP Consultant",
+      "company": "Inprosec",
+      "location": "Vigo",
+      "description": "Inprosec | Junior SAP Consultant Volver Volver Iniciar sesión ¡Aplica ahora! Vigo Informática y telecomunicaciones ERP, CRM, Business Intelligence Programación, consultoría y otras actividades informáticas Completa Híbrido Empleado Otros Junior SAP Consultant Publicada 25 de Agosto ¿Te entusiasma el mundo de la ciberseguridad y quieres contribuir a un entorno digital más seguro? Si tienes esa pasión por proteger y mejorar sistemas, quédate con nosotros. ¡Este reto tiene tu nombre! ¿Nos conocías? Si no es así, no te preocupes, estamos aquí para presentarnos En Inprosec somos expertos y especializados en consultoría para la gestión y mejora continua de los niveles de riesgo y seguridad SAP, SAP GRC incluido la gestión de la información en grandes y mediamos organizaciones de habla hispana e inglesa. Nuestro objetivo es ayudar y convertir a las empresas en organizaciones más seguras de los ataques cibernéticos y para ello contamos con un equipo profesional, formado y capacitado. Si te ha gustado lo que has leído y quieres más información sobre nosotros no dudes en visitar nuestra web http://www.inprosec.com ¿Qué buscamos? 🔎 En Inprosec estamos buscando talentos que quieran unirse a nuestro equipo y contribuir a un futuro más seguro, en este caso como Junior SAP Consultant. Sobre el puesto y las tareas a desarrollar: Soporte de operaciones: mantenimiento de Usuarios SAP, asignación de accesos SAP, realización de informes de Accesos SAP. Soporte de operaciones: investigación de Incidentes de Seguridad en SAP. Soporte de operaciones: realización de informes sobre análisis de Riesgos en sistemas SAP. Creación de presentaciones e informes ejecutivos sobre el estado de la seguridad, desarrollo de proyectos y acciones de mejora. Elaboración de documentación de procesos, manuales, mejores prácticas en el área de la seguridad SAP. Desarrollo de Proyectos relacionados con el Rediseño de Roles en entornos SAP (principalmente SAP ECC). Requisitos mínimos ¿Cómo te imaginamos? Tienes formación universitaria, preferiblemente en el ámbito tecnológico y/o industria. Valorable conocimientos y/o experiencia en ciberseguridad. Valorable conocimientos y/o experiencia en SAP. Valorable conocimientos y/o experiencia en manejo de BB.DD. Valorable conocimientos en Power BI. Valorable inglés e incluso otros idiomas. Tienes capacidad de orientación hacia los negocios y los resultados. Eres una persona con habilidades para la planificación y organización, con ganas de aprender y afrontar nuevos retos. Tu residencia está situada en Galicia o con disponibilidad de cambio de residencia. ¿Qué beneficios te mereces? 📈Participar en un proyecto en crecimiento, 100% gallego, pero para el mundo. 💶Comisiones del 1% sobre el margen de los proyectos. 🎓Tener la oportunidad de desarrollar tu carrera profesional y plan de formación. 🕧3 días de teletrabajo semanales y horario flexible, consideramos que poder conciliar la vida laboral y personal no tiene discusión por lo que podrás decidir la organización de tu tiempo. 📜Obtendrás certificaciones ya que nos preocupamos de nuestro equipo y nosotros nos encargamos del mantenimiento. ☕Poder disfrutar de un buen café mañanero con alimentos proporcionados por la empresa y en buena compañía, incluso participar en más eventos internos (team building) como comidas trimestrales, cesta, comida de navidad ... Si llegas al final y te gusta todo lo que has leído, es tu oportunidad. Aplica y estos serán los siguientes pasos 🖱 Aplica a la oferta enviando tu CV a través de nuestra página web y completa los datos solicitados. Si encajas en lo que buscamos nos pondremos en contacto contigo para conocerte mejor, en caso contrario también te lo diremos, valoramos el tiempo invertido por lo tanto queremos ser claros con todos los participantes. ¿A que esperar? Empieza una nueva aventura laboral con nosotros 🚀 \"Desde INPROSEC, estamos comprometidos con la igualdad de oportunidades y la no discriminación por motivos de sexo, edad, raza, religión, discapacidad, orientación sexual, identidad de género o ideología política. Por ello, evaluamos las candidaturas a nuestras ofertas de empleo únicamente en base a conocimientos, habilidades y experiencias, aplicando en todo momento la normativa vigente relativa a la igualdad de género entre mujeres y hombres.\"",
+      "url": "https://talent.inprosec.com/jobs/junior-sap-consultant-2056e807-bfcc-4df5-a01e-f3e46a9e6741",
+      "source": "Inprosec · Portal de empresa",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "junior",
+      "workplace": "hybrid",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [],
+      "postedDate": null
+    },
+    {
+      "id": "career-inprosec-428c93bfd5cfb8c55f75",
+      "category": "programming",
+      "title": "SAP GRC - Process Control Consultant",
+      "company": "Inprosec",
+      "location": "Vigo",
+      "description": "Inprosec | SAP GRC - Process Control Consultant Volver Volver Iniciar sesión ¡Aplica ahora! Vigo Informática y telecomunicaciones ERP, CRM, Business Intelligence Programación, consultoría y otras actividades informáticas Completa Teletrabajo/Remoto Empleado Informática SAP GRC - Process Control Consultant Publicada 14 de Julio ¿Te apasiona el mundo SAP y la ciberseguridad? ¿Quieres formar parte de proyectos desafiantes donde tu conocimiento en SAP GRC Process Control marque la diferencia? Si tienes experiencia consolidada en consultoría y disfrutas mejorando la gestión de controles internos, riesgos y cumplimiento en entornos SAP, ¡este reto está hecho para ti! 🌐¿Nos conocías? Si no es así, no te preocupes, estamos aquí para presentarnos. En Inprosec somos expertos en consultoría para la gestión y mejora continua de los niveles de riesgo y seguridad SAP, incluyendo SAP GRC (Process Control, Risk Management y Access Control) y la gestión integral de la seguridad de la información. Trabajamos con grandes y medianas organizaciones de habla hispana e inglesa, ayudándolas a proteger sus sistemas frente a amenazas cibernéticas y a gestionar sus riesgos y controles de forma eficiente. Si quieres saber más sobre nosotros, visita 👉 www.inprosec.com 🔎 ¿Qué buscamos? En Inprosec buscamos un/a Senior SAP GRC Consultant especializado en Process Control, con experiencia en el diseño, implementación y mantenimiento de soluciones de control interno y cumplimiento normativo en entornos SAP. 🧩 Sobre el puesto y las tareas a desarrollar: • Participar en proyectos de implantación y soporte de SAP GRC Process Control, tanto en clientes nuevos como existentes. • Configurar y optimizar los módulos de Control Design, Continuous Control Monitoring (CCM), Surveys, Policy Management e integraciones con Risk Management. • Diseñar y ejecutar modelos de controles internos, incluyendo control testing y estrategias de monitorización continua. • Realizar integraciones con sistemas SAP y no SAP para la automatización de pruebas de control. • Ejecutar migraciones y upgrades de GRC PC, asegurando la integridad del modelo de controles y compatibilidad con versiones SAP. • Colaborar con equipos de auditoría, compliance y seguridad para garantizar el cumplimiento normativo. • Participar en la definición y mantenimiento de modelos de control, workflows y reglas de monitorización. • Impartir sesiones de formación interna o a clientes sobre SAP GRC Process Control. • Aportar mejoras y recomendaciones sobre automatización y eficiencia de procesos en el área de control interno y cumplimiento. 📍 Modalidad: Híbrida o 100 % remota. Requisitos mínimos 👤 ¿Cómo te imaginamos? • Cuentas con formación universitaria en Ingeniería, Informática o similar. • Posees experiencia en proyectos SAP GRC, especialmente en Process Control. • Tienes sólidos conocimientos en controles internos, compliance, gestión de riesgos y automatización. • Has trabajado en proyectos de auditoría, cumplimiento o ciberseguridad SAP. • Valoras la planificación, la orientación al detalle y la proactividad. • Cuentas con certificaciones SAP GRC o SAP Security (valorable). • Nivel de inglés avanzado, capaz de comunicarte con clientes internacionales. 💼 ¿Qué beneficios te mereces? 📈 Participar en un proyecto en crecimiento constante, 100 % gallego, pero con impacto global. 🎓 Desarrollar tu carrera mediante un plan de formación y certificaciones SAP, financiado por la empresa. 🕧 Disfrutar de teletrabajo y horario flexible (hasta 3 días/semana) y horario adaptable para conciliar tu vida personal y profesional. 💶 Acceder a un paquete retributivo competitivo, con incentivos según resultados de proyecto. ☕ Trabajar en un entorno colaborativo, con cafés, comidas de equipo, eventos trimestrales y actividades de team building. 🖱 ¿Qué sigue ahora? Aplica a la oferta enviando tu CV a través de nuestra web y completa los datos solicitados. Si tu perfil encaja con lo que buscamos, te contactaremos para conocerte mejor. Y si no, también te lo diremos —porque valoramos el tiempo y la transparencia en cada proceso. ¿A qué esperas? 🚀 Únete a Inprosec y conviértete en pieza clave en la gestión de Seguridad, Riesgos y Cumplimiento SAP GRC Process Control . Compromiso con la igualdad \"Desde INPROSEC, estamos comprometidos con la igualdad de oportunidades y la no discriminación por motivos de sexo, edad, raza, religión, discapacidad, orientación sexual, identidad de género o ideología política. Por ello, evaluamos las c",
+      "url": "https://talent.inprosec.com/jobs/sap-grc-process-control-consultant",
+      "source": "Inprosec · Portal de empresa",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar si exige titulación universitaria"
+      ],
+      "postedDate": null
+    },
+    {
+      "id": "career-adecco-282105f449ae2cf5b10490d81d5dd3da",
+      "category": "electricity",
+      "title": "Técnico/a de Instalaciones Eléctricas",
+      "company": "Adecco · empresa cliente no indicada",
+      "location": "Vigo",
+      "url": "https://www.adecco.com/es-es/ofertas-trabajo/tcnico-a-de-instalaciones-elctricas-vigo-pontevedra/282105f449ae2cf5b10490d81d5dd3da",
+      "source": "Adecco",
+      "sourceKind": "recruitment-agency",
+      "description": "Desde Adecco Selección buscamos incorporar un/a Técnico/a de Instalaciones Eléctricas para formar parte de una empresa estable y consolidada, con proyectos industriales de referencia y posibilidades reales de desarrollo profesional. Buscamos un/a profesional con experiencia en montaje e instalación eléctrica en entornos industriales, que quiera seguir creciendo y desarrollándose en un proyecto estable. ¿Qué buscamos?Buscamos una persona responsable, resolutiva y comprometida, con experiencia práctica en instalaciones eléctricas industriales y capacidad para interpretar esquemas, realizar cableados y conexionados y ejecutar el montaje de diferentes equipos e instalaciones. ¿Cuáles serán tus funciones?Participarás en la ejecución de instalaciones eléctricas en entornos industriales y fábricas, realizando funciones como: - Interpretación de planos y esquemas eléctricos. - Cableado y conexionado de equipos e instalaciones. - Montaje y conexionado de cuadros eléctricos. - Instalación de bandejas, tubos y diferentes tipos de canalizaciones. - Montaje de equipos eléctricos. - Instalación y conexionado de variadores y motores. - Instalación de luminarias y tomas de corriente. - Montaje y conexionado de transformadores y celdas. - Ejecución y comprobación de instalaciones eléctricas industriales. - Cumplimiento de los procedimientos de seguridad y calidad establecidos. En Adecco creemos en la igualdad de oportunidades y apostamos por el Talento Sin Etiquetas Requisitos -Experiencia mínima de 1 año en montaje e instalación eléctrica. -Se valorará especialmente experiencia adicional en instalaciones eléctricas industriales. -Conocimientos y experiencia en interpretación de planos y esquemas eléctricos. -Experiencia en cableado, conexionado y montaje de instalaciones. -Carnet de conducir imprescindible. -Disponibilidad para trabajar en entornos industriales. -Persona responsable, organizada y con capacidad para trabajar en equipo. ¿Qué ofrecemos? Ellos valoran el esfuerzo y el compromiso de su equipo, por lo que ofrecen, -Contrato inicial temporal con evolución hacia un contrato indefinido. -El horario laboral es de lunes a jueves de 8:00 a 13:30 y de 15:30 a 18:00, mientras que los viernes disfrutarás de una jornada más corta, de 8:00 a 14:00. -Plan de desarrollo y posibilidades reales de promoción profesional. -Seguro médico/a financiado por la empresa a partir de los 6 meses. -En caso de desplazamiento que implique realizar la comida fuera del domicilio, la empresa se hará cargo de la comida. -Salario fijo: 23.500 € brutos anuales. Variable: aprox. 3.000 € brutos anuales.",
+      "checkedAt": "2026-10-24T17:21:48.008024Z",
+      "closingDate": "2026-11-02",
+      "postedDate": "2026-10-13",
+      "experience": "experienced",
+      "workplace": "unknown",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar permiso de conducir",
+        "Revisar desplazamientos y viajes"
       ]
     }
   ],
@@ -56,7 +396,7 @@
       "level": "review",
       "description": "Lenguajes de Programación Web Itinerario: Lenguajes de Programación Web",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1949",
@@ -72,7 +412,7 @@
       "level": "review",
       "description": "Programación de microcontroladores: Arduino, Intel, Microchip, Raspberry Pi, Pico. Itinerario: Programación de microcontroladores : Arduino, Intel, Microchip, Raspberry Pi, Pico",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1858",
@@ -88,7 +428,7 @@
       "level": "review",
       "description": "Programación de placas robóticas Itinerario: Programación de placas robóticas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1887",
@@ -104,7 +444,7 @@
       "level": "review",
       "description": "Destacado Programación para soluciones de IoT y Smart Cities. Itinerario: Programación para soluciones de IoT y Smart Cities",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-860",
@@ -120,7 +460,7 @@
       "level": "review",
       "description": "Lenguajes de Programación Web Nivel 3: Frontend",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1950",
@@ -136,7 +476,7 @@
       "level": "review",
       "description": "Programación de microcontroladores: Arduino, Intel, Microchip, Raspberry Pi, Pico. Nivel 3: Programación de microcontroladores : Arduino, Intel, Microchip, Raspberry Pi, Pico",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1859",
@@ -152,7 +492,7 @@
       "level": "review",
       "description": "Programación de placas robóticas Nivel 3: Programación de placas robóticas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1883",
@@ -168,7 +508,7 @@
       "level": "review",
       "description": "Programación para soluciones de IoT y Smart Cities. Nivel 3: Programación para soluciones de IoT y Smart Cities",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-894",
@@ -184,7 +524,7 @@
       "level": "review",
       "description": "Lenguajes de Programación Web Nivel 4: Backend",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1951",
@@ -200,7 +540,7 @@
       "level": "review",
       "description": "Programación de microcontroladores: Arduino, Intel, Microchip, Raspberry Pi, Pico. Nivel 4: Programación de microcontroladores : Arduino, Intel, Microchip, Raspberry Pi, Pico",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1860",
@@ -216,7 +556,7 @@
       "level": "review",
       "description": "Programación de placas robóticas Nivel 4: Programación de placas robóticas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1884",
@@ -232,7 +572,7 @@
       "level": "review",
       "description": "Programación para soluciones de IoT y Smart Cities. Nivel 4: Programación para soluciones de IoT y Smart Cities",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-895",
@@ -248,7 +588,7 @@
       "level": "advanced",
       "description": "Lenguajes de Programación Web Nivel 5: Frontend avanzado",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1952",
@@ -264,7 +604,7 @@
       "level": "advanced",
       "description": "Programación de microcontroladores: Arduino, Intel, Microchip, Raspberry Pi, Pico. Nivel 5: Programación de microcontroladores : Arduino, Intel, Microchip, Raspberry Pi, Pico",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1861",
@@ -280,7 +620,7 @@
       "level": "advanced",
       "description": "Programación de placas robóticas Nivel 5: Programación de placas robóticas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1885",
@@ -296,7 +636,7 @@
       "level": "advanced",
       "description": "Programación para soluciones de IoT y Smart Cities. Nivel 5: Programación para soluciones de IoT y Smart Cities",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-896",
@@ -312,7 +652,7 @@
       "level": "advanced",
       "description": "Lenguajes de Programación Web Nivel 6: Backend avanzado",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-2018",
@@ -328,7 +668,7 @@
       "level": "advanced",
       "description": "Mantenimiento de instalaciones automatizadas controladas por autómatas Nivel 6: Mantenimiento de instalaciones automatizadas controladas por autómatas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1953",
@@ -344,7 +684,7 @@
       "level": "advanced",
       "description": "Programación de microcontroladores: Arduino, Intel, Microchip, Raspberry Pi, Pico. Nivel 6: Programación de microcontroladores : Arduino, Intel, Microchip, Raspberry Pi, Pico",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1862",
@@ -360,7 +700,7 @@
       "level": "advanced",
       "description": "Programación de placas robóticas Nivel 6: Programación de placas robóticas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     },
     {
       "id": "course-fundae-1886",
@@ -376,7 +716,7 @@
       "level": "advanced",
       "description": "Programación para soluciones de IoT y Smart Cities. Nivel 6: Programación para soluciones de IoT y Smart Cities",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-10-24T15:58:12.379657Z"
+      "checkedAt": "2026-10-24T17:21:48.008024Z"
     }
   ],
   "sources": [
@@ -421,6 +761,36 @@
       "examined": 5
     },
     {
+      "name": "SNE: electricista · A Coruña",
+      "status": "ok",
+      "examined": 0
+    },
+    {
+      "name": "SNE: mantenimiento · A Coruña",
+      "status": "ok",
+      "examined": 0
+    },
+    {
+      "name": "SNE: instalador · A Coruña",
+      "status": "ok",
+      "examined": 1
+    },
+    {
+      "name": "SNE: electromecánico · A Coruña",
+      "status": "ok",
+      "examined": 0
+    },
+    {
+      "name": "SNE: programador · A Coruña",
+      "status": "ok",
+      "examined": 0
+    },
+    {
+      "name": "SNE: desarrollador · A Coruña",
+      "status": "ok",
+      "examined": 0
+    },
+    {
       "name": "Plain Concepts · Workable",
       "status": "ok",
       "examined": 19
@@ -434,6 +804,31 @@
       "name": "EUROPEAN DYNAMICS · Workable",
       "status": "ok",
       "examined": 189
+    },
+    {
+      "name": "We Work Remotely · RSS público",
+      "status": "ok",
+      "examined": 10
+    },
+    {
+      "name": "Remote OK · API pública",
+      "status": "ok",
+      "examined": 0
+    },
+    {
+      "name": "Imatia · Portal de empresa",
+      "status": "ok",
+      "examined": 1
+    },
+    {
+      "name": "Inprosec · Portal de empresa",
+      "status": "ok",
+      "examined": 5
+    },
+    {
+      "name": "Adecco · fichas originales seleccionadas",
+      "status": "ok",
+      "examined": 1
     },
     {
       "name": "eFundae",

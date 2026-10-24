@@ -6,6 +6,29 @@ import 'package:vfx_jobs_tracker/insights.dart';
 import 'package:vfx_jobs_tracker/company_map.dart';
 
 void main() {
+  testWidgets('Cuatro pestañas superiores visibles en móvil estrecho', (
+    tester,
+  ) async {
+    SharedPreferences.setMockInitialValues({});
+    tester.view.physicalSize = const Size(320, 740);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    await tester.pumpWidget(const TrackerApp());
+    expect(find.text('VFX'), findsOneWidget);
+    expect(find.text('Código'), findsOneWidget);
+    expect(find.text('Electricidad'), findsOneWidget);
+    expect(find.text('Cursos'), findsOneWidget);
+    await tester.tap(find.text('Código'));
+    await tester.pump();
+    await tester.runAsync(() async {
+      await Future<void>.delayed(const Duration(milliseconds: 300));
+    });
+    await tester.pumpAndSettle();
+    expect(find.text('Programación'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    await tester.pumpWidget(const SizedBox());
+  });
   testWidgets('Arranque y navegación sin cuenta', (tester) async {
     SharedPreferences.setMockInitialValues({});
     await tester.pumpWidget(const TrackerApp());
@@ -34,7 +57,11 @@ void main() {
       });
       await tester.pumpAndSettle();
       expect(find.text('Radar global'), findsOneWidget);
-      await tester.scrollUntilVisible(find.byType(CompanyWorldMap),300,scrollable:find.byType(Scrollable).first);
+      await tester.scrollUntilVisible(
+        find.byType(CompanyWorldMap),
+        300,
+        scrollable: find.byType(Scrollable).first,
+      );
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
       expect(find.byType(InteractiveViewer), findsOneWidget);

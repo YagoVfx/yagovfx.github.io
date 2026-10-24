@@ -48,6 +48,10 @@ void main() {
         }
         expect(request.headers['Authorization'], 'Bearer fixture');
         expect(request.url.path, contains('/users/$adminUid/applications'));
+        if (request.method == 'DELETE') {
+          records.remove(request.url.pathSegments.last);
+          return http.Response('', 204);
+        }
         if (request.method == 'PATCH') {
           final id = request.url.pathSegments.last;
           final patch =
@@ -81,6 +85,11 @@ void main() {
     expect(store.records['gh-1']!['status'], 'interview');
     await store.save(job, 'interview', notes: 'Private note');
     expect(records['gh-1']!['fields']['notes']['stringValue'], 'Private note');
+    expect(await store.remove('gh-1'), true);
+    expect(records, isEmpty);
+    expect(store.records, isEmpty);
+    await store.refresh();
+    expect(store.records, isEmpty);
     final session = await store.storage.read(key: 'applications.session');
     expect(session, isNot(contains('do-not-store-this-password')));
     await store.signOut();

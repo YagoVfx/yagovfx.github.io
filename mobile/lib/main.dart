@@ -343,6 +343,20 @@ class _OffersState extends State<OffersPage> {
             children: [
               Text('Filtros', style: Theme.of(context).textTheme.headlineSmall),
               select(
+                'Antigüedad',
+                '${filters.days}',
+                {
+                  '0': 'Cualquier fecha',
+                  '1': 'Últimas 24 horas',
+                  '7': 'Última semana',
+                  '30': 'Último mes',
+                },
+                (v) {
+                  change(() => filters.days = int.parse(v));
+                  update(() {});
+                },
+              ),
+              select(
                 'Modalidad',
                 filters.workplace,
                 {
@@ -445,31 +459,71 @@ class _OffersState extends State<OffersPage> {
         title: const Text('YAGO / VFX JOBS'),
         bottom: tab <= 1
             ? PreferredSize(
-                preferredSize: const Size.fromHeight(72),
+                preferredSize: const Size.fromHeight(76),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 10),
-                  child: DropdownButtonFormField<String>(
-                    key: ValueKey(category),
-                    initialValue: category,
-                    isExpanded: true,
-                    decoration: const InputDecoration(
-                      labelText: 'Categoría',
-                      border: OutlineInputBorder(),
-                    ),
-                    items: careerCategories.entries
-                        .map(
-                          (e) => DropdownMenuItem(
-                            value: e.key,
-                            child: Text(e.value),
+                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
+                  child: Row(
+                    children: [
+                      for (final entry in careerCategories.entries)
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 2),
+                            child: Material(
+                              color: category == entry.key
+                                  ? Theme.of(context)
+                                        .colorScheme
+                                        .primaryContainer
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(16),
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(16),
+                                onTap: () {
+                                  setState(() => category = entry.key);
+                                  prefs?.setString(
+                                    'career.category',
+                                    entry.key,
+                                  );
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 10,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        {
+                                          'vfx': Icons.sports_esports_outlined,
+                                          'programming': Icons.code,
+                                          'electricity': Icons.bolt_outlined,
+                                          'courses': Icons.school_outlined,
+                                        }[entry.key],
+                                        size: 22,
+                                        color: category == entry.key
+                                            ? Theme.of(context)
+                                                  .colorScheme
+                                                  .primary
+                                            : null,
+                                      ),
+                                      const SizedBox(height: 4),
+                                      Text(
+                                        entry.key == 'programming'
+                                            ? 'Código'
+                                            : entry.value,
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        )
-                        .toList(),
-                    onChanged: (value) {
-                      if (value != null) {
-                        setState(() => category = value);
-                        prefs?.setString('career.category', value);
-                      }
-                    },
+                        ),
+                    ],
                   ),
                 ),
               )
@@ -555,7 +609,7 @@ class _OffersState extends State<OffersPage> {
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                            'Versión 0.6.0 · Nuevas categorías móviles\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web. Guardadas y descartadas siguen siendo locales.',
+                            'Versión 0.7.0 · Job Radar\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web. Guardadas y descartadas siguen siendo locales.',
                           ),
                           const SizedBox(height: 16),
                           Text(
@@ -633,6 +687,17 @@ class _OffersState extends State<OffersPage> {
                               if (v) filters.spain = false;
                             }),
                           ),
+                          FilterChip(
+                            label: const Text('Última semana'),
+                            selected: filters.days == 7,
+                            onSelected: (v) =>
+                                change(() => filters.days = v ? 7 : 0),
+                          ),
+                          ActionChip(
+                            label: const Text('Más fuentes'),
+                            avatar: const Icon(Icons.open_in_new, size: 16),
+                            onPressed: () => showCareerSources(context, 'vfx'),
+                          ),
                         ],
                       ),
                     ),
@@ -641,10 +706,10 @@ class _OffersState extends State<OffersPage> {
                         horizontal: 20,
                         vertical: 8,
                       ),
-                      child: Row(
+                      child: Wrap(
+                        alignment: WrapAlignment.spaceBetween,
                         children: [
                           Text('${visible.length} ofertas'),
-                          const Spacer(),
                           TextButton(
                             onPressed: () {
                               change(() => filters = JobFilters());

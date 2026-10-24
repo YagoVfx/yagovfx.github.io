@@ -8,8 +8,51 @@ import 'package:http/testing.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vfx_jobs_tracker/career_categories.dart';
 import 'package:vfx_jobs_tracker/applications.dart';
+import 'package:vfx_jobs_tracker/jobs.dart';
 
 void main() {
+  test('Coruña y publicación reciente: nunca usa la fecha de escaneo como publicación', () {
+    final items = <Map<String, dynamic>>[
+      {
+        'id': 'new',
+        'title': 'Electricista',
+        'category': 'electricity',
+        'inCoruna': true,
+        'postedDate': '2026-10-22',
+      },
+      {
+        'id': 'old',
+        'title': 'Electricista',
+        'category': 'electricity',
+        'inCoruna': true,
+        'postedDate': '2026-09-01',
+        'checkedAt': '2026-10-24',
+      },
+      {
+        'id': 'unknown',
+        'title': 'Electricista',
+        'category': 'electricity',
+        'inCoruna': true,
+        'checkedAt': '2026-10-24',
+      },
+    ];
+    expect(
+      filterCareerItems(
+        items,
+        category: 'electricity',
+        scope: 'coruna',
+        days: 7,
+        now: DateTime.utc(2026, 10, 24),
+      ).single['id'],
+      'new',
+    );
+    expect(
+      filterCareerItems(items, category: 'electricity', scope: 'vigo'),
+      isEmpty,
+    );
+    expect(withinDays('2026-11-01', 7, now: DateTime.utc(2026, 10, 24)), false);
+    expect(JobFilters.fromJson({'days': 7}).toJson()['days'], 7);
+  });
   testWidgets('Cursos carga recursos reales y filtros en un móvil estrecho', (
     tester,
   ) async {
@@ -178,13 +221,13 @@ void main() {
       final good = CareerFeedRepository(
         client: MockClient(
           (_) async => http.Response(
-            jsonEncode({'schemaVersion': 1, 'offers': [], 'courses': []}),
+            jsonEncode({'schemaVersion': 2, 'offers': [], 'courses': []}),
             200,
           ),
         ),
       );
       expect((await good.refresh(prefs))['offers'], isEmpty);
-      expect(jsonDecode(prefs.getString('career.feed')!)['schemaVersion'], 1);
+      expect(jsonDecode(prefs.getString('career.feed')!)['schemaVersion'], 2);
       good.close();
     },
   );

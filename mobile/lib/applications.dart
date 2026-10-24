@@ -179,6 +179,7 @@ class ApplicationsStore extends ChangeNotifier {
   Future<Map<String, dynamic>> request(
     String path, {
     Map<String, dynamic>? body,
+    String? method,
   }) async {
     final jwt = await token();
     final url = Uri.parse(
@@ -189,7 +190,9 @@ class ApplicationsStore extends ChangeNotifier {
       'Content-Type': 'application/json',
     };
     final response =
-        await (body == null
+        await (method == 'DELETE'
+                ? client.delete(url, headers: headers)
+                : body == null
                 ? client.get(url, headers: headers)
                 : client.patch(url, headers: headers, body: jsonEncode(body)))
             .timeout(const Duration(seconds: 25));
@@ -201,12 +204,14 @@ class ApplicationsStore extends ChangeNotifier {
     if (response.statusCode == 401) {
       throw Exception('La sesión ha caducado. Vuelve a iniciar sesión.');
     }
-    if (response.statusCode != 200) {
+    if (response.statusCode != 200 && response.statusCode != 204) {
       throw Exception(
         'No se pudo sincronizar. El cambio no se ha confirmado; comprueba la conexión y reintenta.',
       );
     }
-    return jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
+    return response.bodyBytes.isEmpty
+        ? {}
+        : jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
   }
 
   Future<void> refresh() async {
@@ -309,6 +314,35 @@ class ApplicationsStore extends ChangeNotifier {
     }
   }
 
+  Future<bool> remove(String id) async {
+    if (!signedIn || busy || !records.containsKey(id)) return false;
+    final epoch = _epoch;
+    _version++;
+    busy = true;
+    error = null;
+    emit();
+    try {
+      await request('/${Uri.encodeComponent(id)}', method: 'DELETE');
+      if (epoch == _epoch) {
+        records.remove(id);
+        lastSync = DateTime.now().toUtc().toIso8601String();
+        await storage.write(
+          key: 'applications.cache.$adminUid',
+          value: jsonEncode(records),
+        );
+      }
+      return true;
+    } catch (e) {
+      if (epoch == _epoch) error = e.toString().replaceFirst('Exception: ', '');
+      return false;
+    } finally {
+      if (epoch == _epoch) {
+        busy = false;
+        emit();
+      }
+    }
+  }
+
   @override
   void dispose() {
     _disposed = true;
@@ -327,6 +361,31 @@ class ApplicationsPage extends StatefulWidget {
 
 class _ApplicationsPageState extends State<ApplicationsPage> {
   final email = TextEditingController(), password = TextEditingController();
+  String view = 'all';
+  int days = 0;
+  Future<void> deleteRecord(Map<String, dynamic> record) async {
+    final accepted = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('¿Eliminar candidatura?'),
+        content: Text(
+          'Se eliminará ${record['title']} de tus candidaturas en el móvil y la web. Esto no retira el CV enviado a la empresa. Para conservar el historial, cambia el estado a Retirada o Rechazada.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Cancelar'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: const Text('Eliminar'),
+          ),
+        ],
+      ),
+    );
+    if (accepted == true) await widget.store.remove(record['id']);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -511,11 +570,18 @@ class _ApplicationsPageState extends State<ApplicationsPage> {
             ],
           );
         }
-        final records = store.records.values.toList()
-          ..sort(
-            (a, b) =>
-                (b['appliedAt'] as String).compareTo(a['appliedAt'] as String),
-          );
+        final records =
+            store.records.values.where((r) {
+              final closed = ['rejected', 'withdrawn'].contains(r['status']);
+              if (view == 'active' && closed || view == 'closed' && !closed) {
+                return false;
+              }
+              return days == 0 || withinDays(r['appliedAt'], days);
+            }).toList()..sort(
+              (a, b) => (b['appliedAt'] as String).compareTo(
+                a['appliedAt'] as String,
+              ),
+            );
         return RefreshIndicator(
           onRefresh: store.refresh,
           child: ListView(
@@ -548,6 +614,31 @@ class _ApplicationsPageState extends State<ApplicationsPage> {
                   ),
                 ],
               ),
+              Wrap(
+                spacing: 8,
+                children: [
+                  for (final e in {
+                    'all': 'Todas',
+                    'active': 'En seguimiento',
+                    'closed': 'Cerradas',
+                  }.entries)
+                    ChoiceChip(
+                      label: Text(e.value),
+                      selected: view == e.key,
+                      onSelected: (_) => setState(() => view = e.key),
+                    ),
+                ],
+              ),
+              DropdownButtonFormField<int>(
+                initialValue: days,
+                decoration: const InputDecoration(labelText: 'Fecha de envío'),
+                items: const [
+                  DropdownMenuItem(value: 0, child: Text('Cualquier fecha')),
+                  DropdownMenuItem(value: 7, child: Text('Última semana')),
+                  DropdownMenuItem(value: 30, child: Text('Último mes')),
+                ],
+                onChanged: (v) => setState(() => days = v ?? 0),
+              ),
               if (records.isEmpty)
                 const Text(
                   'Marca «He enviado mi candidatura» en una oferta o añade una candidatura anterior.',
@@ -567,6 +658,11 @@ class _ApplicationsPageState extends State<ApplicationsPage> {
                         Text(
                           'Enviada: ${(r['appliedAt'] as String).substring(0, 10)}',
                         ),
+                        if (!withinDays(r['appliedAt'], 30) &&
+                            r['status'] == 'applied')
+                          const Text(
+                            'Más de 30 días sin cambiar de estado: puedes revisar, cerrar o eliminar esta candidatura.',
+                          ),
                         DropdownButtonFormField<String>(
                           key: ValueKey('${r['id']}-${r['status']}'),
                           initialValue: r['status'],
@@ -594,6 +690,13 @@ class _ApplicationsPageState extends State<ApplicationsPage> {
                             TextButton(
                               onPressed: store.busy ? null : () => editNotes(r),
                               child: const Text('Notas privadas'),
+                            ),
+                            TextButton.icon(
+                              onPressed: store.busy
+                                  ? null
+                                  : () => deleteRecord(r),
+                              icon: const Icon(Icons.delete_outline),
+                              label: const Text('Eliminar'),
                             ),
                             if (safeUrl(r['url']) != null)
                               TextButton(

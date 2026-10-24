@@ -1,23 +1,306 @@
 {
   "reviewedAt": "2026-10-24",
   "sources": [
-    {"name":"Emprego Galicia — ofertas privadas","categories":["programming","electricity"],"url":"https://emprego.xunta.gal/es/demandantes/busca-empleo/busca-trabajo-en-galicia","note":"Selecciona Pontevedra y comprueba que la localidad sea Vigo. El formulario público no permite ahora la consulta automática del scanner."},
-    {"name":"Sistema Nacional de Empleo","categories":["programming","electricity"],"url":"https://www.sistemanacionalempleo.es/OfertaDifusionWEB/busquedaOfertas.do?modo=inicio","note":"Búsqueda oficial por palabra, provincia y municipio. Fuente automática de las fichas SNE de esta app."},
-    {"name":"Imatia — desarrollo de software","categories":["programming"],"url":"https://www.imatia.com/careers/","note":"Empresa con oficinas en Vigo. Revisa cada oferta: no todas permiten trabajar desde Vigo ni son junior."},
-    {"name":"Gradiant — talento tecnológico","categories":["programming"],"url":"https://gradiant.org/","note":"Centro tecnológico de Vigo. Consulta su apartado de empleo y revisa titulación y experiencia exigidas; no se presume compatibilidad con DAM."},
-    {"name":"Plain Concepts — carreras","categories":["programming"],"url":"https://www.plainconcepts.com/careers/","note":"Portal del empleador. Revisa nivel de experiencia, país desde el que se permite remoto y requisitos de cada vacante."},
-    {"name":"Elecnor — empleo","categories":["electricity"],"url":"https://www.elecnor.com/trabaja-con-nosotros","note":"Instalaciones y mantenimiento. Filtra por Vigo y confirma la base del puesto y los desplazamientos."},
-    {"name":"Cofrico — empleo","categories":["electricity"],"url":"https://www.cofrico.com/trabaja-con-nosotros/","note":"Empresa con delegación en Vigo. Algunos puestos son de refrigeración y exigen formación específica; revisa el encaje con electricidad/electrónica."},
-    {"name":"Veolia — empleo","categories":["electricity"],"url":"https://careers.veolia.com/es","note":"Mantenimiento y energía. Comprueba la localidad real: una oferta titulada Vigo puede tener base en Redondela u otra población."},
-    {"name":"Emprego Galicia — formación","categories":["courses"],"url":"https://emprego.xunta.gal/es/demandantes/busca-formacion","note":"Buscador oficial de cursos. Selecciona Vigo, modalidad y situación laboral; comprueba fechas e inscripción de cada convocatoria."},
-    {"name":"eFundae — catálogo gratuito","categories":["courses"],"url":"https://www.efundae.es/course/","note":"Autoformación online gratuita. Registro y requisitos de acceso según la plataforma; las fichas concretas se muestran arriba."},
-    {"name":"CNTG — formación tecnológica en Galicia","categories":["courses"],"url":"https://cntg.xunta.gal/","note":"Consulta las convocatorias y modalidad. Una sede fuera de Vigo no implica que todos los cursos sean presenciales allí."},
-    {"name":"Campus Dual TIC — reciclaje profesional","categories":["courses"],"url":"https://www.imatia.com/careers/","note":"Programa enlazado por Imatia. Consulta convocatoria, modalidad, condiciones de financiación y requisitos; no se da por hecho que sea gratuito o tenga plazas."},
-    {"name":"Fundación Laboral de la Construcción — cursos","categories":["courses"],"url":"https://www.cursosenconstruccion.com/","note":"Consulta PRL e instalaciones en Vigo o en teleformación. Confirma precio, homologación y utilidad para los puestos que te interesan."},
-    {"name":"Epic Developer Community — aprendizaje","categories":["courses"],"url":"https://dev.epicgames.com/community/unreal-engine/learning","note":"Recursos de Unreal y VFX. Busca Niagara, materiales y herramientas; es un catálogo de recursos, no una convocatoria con plazas."}
+    {
+      "name": "Emprego Galicia — ofertas privadas",
+      "categories": [
+        "programming",
+        "electricity"
+      ],
+      "url": "https://emprego.xunta.gal/es/demandantes/busca-empleo/busca-trabajo-en-galicia",
+      "note": "Selecciona Pontevedra y comprueba que la localidad sea Vigo o A Coruña. El formulario público no permite ahora la consulta automática del scanner."
+    },
+    {
+      "name": "Sistema Nacional de Empleo",
+      "categories": [
+        "programming",
+        "electricity"
+      ],
+      "url": "https://www.sistemanacionalempleo.es/OfertaDifusionWEB/busquedaOfertas.do?modo=inicio",
+      "note": "Búsqueda oficial por palabra, provincia y municipio. Fuente automática de las fichas SNE de esta app."
+    },
+    {
+      "name": "Imatia — desarrollo de software",
+      "categories": [
+        "programming"
+      ],
+      "url": "https://www.imatia.com/careers/",
+      "note": "Empresa con oficinas en Vigo. Revisa cada oferta: no todas permiten trabajar desde Vigo ni son junior."
+    },
+    {
+      "name": "Gradiant — talento tecnológico",
+      "categories": [
+        "programming"
+      ],
+      "url": "https://gradiant.org/",
+      "note": "Centro tecnológico de Vigo. Consulta su apartado de empleo y revisa titulación y experiencia exigidas; no se presume compatibilidad con DAM."
+    },
+    {
+      "name": "Plain Concepts — carreras",
+      "categories": [
+        "programming"
+      ],
+      "url": "https://www.plainconcepts.com/careers/",
+      "note": "Portal del empleador. Revisa nivel de experiencia, país desde el que se permite remoto y requisitos de cada vacante."
+    },
+    {
+      "name": "Elecnor — empleo",
+      "categories": [
+        "electricity"
+      ],
+      "url": "https://www.elecnor.com/trabaja-con-nosotros",
+      "note": "Instalaciones y mantenimiento. Filtra por Vigo y confirma la base del puesto y los desplazamientos."
+    },
+    {
+      "name": "Cofrico — empleo",
+      "categories": [
+        "electricity"
+      ],
+      "url": "https://www.cofrico.com/trabaja-con-nosotros/",
+      "note": "Empresa con delegación en Vigo. Algunos puestos son de refrigeración y exigen formación específica; revisa el encaje con electricidad/electrónica."
+    },
+    {
+      "name": "Veolia — empleo",
+      "categories": [
+        "electricity"
+      ],
+      "url": "https://careers.veolia.com/es",
+      "note": "Mantenimiento y energía. Comprueba la localidad real: una oferta titulada Vigo puede tener base en Redondela u otra población."
+    },
+    {
+      "name": "Emprego Galicia — formación",
+      "categories": [
+        "courses"
+      ],
+      "url": "https://emprego.xunta.gal/es/demandantes/busca-formacion",
+      "note": "Buscador oficial de cursos. Selecciona Vigo, modalidad y situación laboral; comprueba fechas e inscripción de cada convocatoria."
+    },
+    {
+      "name": "eFundae — catálogo gratuito",
+      "categories": [
+        "courses"
+      ],
+      "url": "https://www.efundae.es/course/",
+      "note": "Autoformación online gratuita. Registro y requisitos de acceso según la plataforma; las fichas concretas se muestran arriba."
+    },
+    {
+      "name": "CNTG — formación tecnológica en Galicia",
+      "categories": [
+        "courses"
+      ],
+      "url": "https://cntg.xunta.gal/",
+      "note": "Consulta las convocatorias y modalidad. Una sede fuera de Vigo no implica que todos los cursos sean presenciales allí."
+    },
+    {
+      "name": "Campus Dual TIC — reciclaje profesional",
+      "categories": [
+        "courses"
+      ],
+      "url": "https://www.imatia.com/careers/",
+      "note": "Programa enlazado por Imatia. Consulta convocatoria, modalidad, condiciones de financiación y requisitos; no se da por hecho que sea gratuito o tenga plazas."
+    },
+    {
+      "name": "Fundación Laboral de la Construcción — cursos",
+      "categories": [
+        "courses"
+      ],
+      "url": "https://www.cursosenconstruccion.com/",
+      "note": "Consulta PRL e instalaciones en Vigo o en teleformación. Confirma precio, homologación y utilidad para los puestos que te interesan."
+    },
+    {
+      "name": "Epic Developer Community — aprendizaje",
+      "categories": [
+        "courses"
+      ],
+      "url": "https://dev.epicgames.com/community/unreal-engine/learning",
+      "note": "Recursos de Unreal y VFX. Busca Niagara, materiales y herramientas; es un catálogo de recursos, no una convocatoria con plazas."
+    },
+    {
+      "name": "Work With Indies",
+      "categories": [
+        "vfx"
+      ],
+      "url": "https://www.workwithindies.com/",
+      "note": "Estudios indie y arte técnico. Portal complementario: confirmar vigencia y buscar la ficha original del estudio."
+    },
+    {
+      "name": "Hitmarker",
+      "categories": [
+        "vfx"
+      ],
+      "url": "https://hitmarker.net/",
+      "note": "Gaming, VFX y Technical Art. Acceso manual; sus anuncios no se cuentan como verificados por el scanner directo."
+    },
+    {
+      "name": "GamesJobsDirect",
+      "categories": [
+        "vfx"
+      ],
+      "url": "https://www.gamesjobsdirect.com/",
+      "note": "Estudios AAA e internacionales. Revisa país, modalidad y fuente original."
+    },
+    {
+      "name": "ArtStation Jobs",
+      "categories": [
+        "vfx"
+      ],
+      "url": "https://www.artstation.com/jobs",
+      "note": "Arte, VFX y Technical Art. Acceso manual; puede requerir iniciar sesión."
+    },
+    {
+      "name": "Tecnoempleo",
+      "categories": [
+        "programming"
+      ],
+      "url": "https://www.tecnoempleo.com/",
+      "note": "Buscador IT España. Selecciona remoto, Vigo o A Coruña y nivel junior. Acceso manual."
+    },
+    {
+      "name": "InfoJobs",
+      "categories": [
+        "programming",
+        "electricity"
+      ],
+      "url": "https://www.infojobs.net/",
+      "note": "Acceso manual. La API oficial requiere registrar una aplicación y obtener credenciales; todavía no está conectada."
+    },
+    {
+      "name": "Manfred",
+      "categories": [
+        "programming"
+      ],
+      "url": "https://www.getmanfred.com/ofertas-empleo",
+      "note": "Ofertas de tecnología; revisa ubicación, remoto y nivel. Acceso manual."
+    },
+    {
+      "name": "Welcome to the Jungle",
+      "categories": [
+        "programming"
+      ],
+      "url": "https://www.welcometothejungle.com/en",
+      "note": "Software y startups. Acceso manual; confirma países permitidos para remoto."
+    },
+    {
+      "name": "We Work Remotely",
+      "categories": [
+        "programming"
+      ],
+      "url": "https://weworkremotely.com/",
+      "note": "RSS público conectado. Se muestran ofertas remotas con ámbito internacional/Europa; confirma requisitos de residencia."
+    },
+    {
+      "name": "Remote OK",
+      "categories": [
+        "programming"
+      ],
+      "url": "https://remoteok.com/",
+      "note": "API pública conectada. Solo ubicaciones anunciadas compatibles con ámbito global/Europa/España; revisar condiciones."
+    },
+    {
+      "name": "Empléate - SEPE",
+      "categories": [
+        "electricity",
+        "programming"
+      ],
+      "url": "https://empleate.gob.es/",
+      "note": "Buscador oficial complementario. Selecciona Vigo o A Coruña. Acceso manual."
+    },
+    {
+      "name": "EURES",
+      "categories": [
+        "electricity",
+        "programming"
+      ],
+      "url": "https://eures.europa.eu/index_es",
+      "note": "Empleo europeo. Acceso manual: implica revisar movilidad y no se incorpora como empleo local."
+    },
+    {
+      "name": "Adecco",
+      "categories": [
+        "electricity"
+      ],
+      "url": "https://www.adecco.com/es-es/ofertas-trabajo",
+      "note": "Se revisan automáticamente algunas fichas eléctricas originales de Vigo. El buscador completo sigue disponible manualmente."
+    },
+    {
+      "name": "Randstad",
+      "categories": [
+        "electricity"
+      ],
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/",
+      "note": "Buscador industrial y mantenimiento. Acceso manual; la consulta automatizada devuelve bloqueo HTTP 403."
+    },
+    {
+      "name": "Manpower",
+      "categories": [
+        "electricity"
+      ],
+      "url": "https://www.manpower.es/",
+      "note": "Mantenimiento y técnicos. Acceso manual; comprueba localidad real y vigencia."
+    },
+    {
+      "name": "Xunta - AFD 2026-2027",
+      "categories": [
+        "courses"
+      ],
+      "url": "https://emprego.xunta.gal/es/acciones-formativas-2026-2027-dirigidas-prioritariamente-personas-desempleadas-afd",
+      "note": "Plan oficial con enlace a DIPLOS. La planificación no garantiza plazas abiertas; confirma convocatoria y requisitos."
+    },
+    {
+      "name": "Coursera",
+      "categories": [
+        "courses"
+      ],
+      "url": "https://www.coursera.org/",
+      "note": "Catálogo manual. Registro gratuito no significa curso o certificado gratuito; confirma coste total antes de pagar."
+    },
+    {
+      "name": "Udemy",
+      "categories": [
+        "courses"
+      ],
+      "url": "https://www.udemy.com/",
+      "note": "Catálogo manual de cursos técnicos. Los descuentos varían: no se publica un precio sin verificar ni se presume calidad."
+    },
+    {
+      "name": "TodoFP",
+      "categories": [
+        "courses"
+      ],
+      "url": "https://www.todofp.es/",
+      "note": "Información oficial de FP reglada y especializaciones. Consulta acceso y matrícula; no son cursos cortos automáticamente."
+    }
   ],
   "courses": [
-    {"id":"course-ms-csharp","kind":"course","title":"Escribir el primer código con C#","provider":"Microsoft Learn","topic":"programming","url":"https://learn.microsoft.com/es-es/training/paths/get-started-c-sharp-part-1/","sourceUrl":"https://learn.microsoft.com/es-es/training/paths/get-started-c-sharp-part-1/","price":0,"modality":"online","level":"beginner","availability":"Ruta de autoaprendizaje online; consultar acceso en Microsoft Learn","description":"Repaso desde cero de sintaxis, variables, operaciones y decisiones. Un comienzo corto para recuperar hábitos de programación antes de un itinerario mayor. No acredita experiencia profesional ni equivale a una titulación.","checkedAt":"2026-10-24T00:00:00Z"},
-    {"id":"guide-java-official","kind":"guide","title":"Java: primeros pasos y entorno de desarrollo","provider":"Oracle / dev.java","topic":"programming","url":"https://dev.java/learn/getting-started/","sourceUrl":"https://dev.java/learn/","price":0,"modality":"online","level":"beginner","availability":"Guía técnica oficial de consulta abierta","description":"Preparación del entorno y primeros programas en Java, como repaso de una tecnología habitual de DAM. Es una guía, no un curso con certificado o inscripción.","checkedAt":"2026-10-24T00:00:00Z"}
+    {
+      "id": "course-ms-csharp",
+      "kind": "course",
+      "title": "Escribir el primer código con C#",
+      "provider": "Microsoft Learn",
+      "topic": "programming",
+      "url": "https://learn.microsoft.com/es-es/training/paths/get-started-c-sharp-part-1/",
+      "sourceUrl": "https://learn.microsoft.com/es-es/training/paths/get-started-c-sharp-part-1/",
+      "price": 0,
+      "modality": "online",
+      "level": "beginner",
+      "availability": "Ruta de autoaprendizaje online; consultar acceso en Microsoft Learn",
+      "description": "Repaso desde cero de sintaxis, variables, operaciones y decisiones. Un comienzo corto para recuperar hábitos de programación antes de un itinerario mayor. No acredita experiencia profesional ni equivale a una titulación.",
+      "checkedAt": "2026-10-24T00:00:00Z"
+    },
+    {
+      "id": "guide-java-official",
+      "kind": "guide",
+      "title": "Java: primeros pasos y entorno de desarrollo",
+      "provider": "Oracle / dev.java",
+      "topic": "programming",
+      "url": "https://dev.java/learn/getting-started/",
+      "sourceUrl": "https://dev.java/learn/",
+      "price": 0,
+      "modality": "online",
+      "level": "beginner",
+      "availability": "Guía técnica oficial de consulta abierta",
+      "description": "Preparación del entorno y primeros programas en Java, como repaso de una tecnología habitual de DAM. Es una guía, no un curso con certificado o inscripción.",
+      "checkedAt": "2026-10-24T00:00:00Z"
+    }
   ]
 }

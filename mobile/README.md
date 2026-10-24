@@ -1,39 +1,48 @@
-# Yago VFX Jobs — Android 0.6.0
+# Yago VFX Jobs — Android 0.7.0
 
 App Flutter personal que consume `https://yagovfx.github.io/data/jobs.json`.
 El scanner sigue ejecutándose en GitHub Actions. Firebase Authentication protege las candidaturas;
 el APK solo incluye la configuración pública del cliente, nunca la contraseña del usuario.
 
-Desde 0.2.0 solo admite fuentes ATS y webs oficiales. Adzuna, sus señales y los registros
-antiguos de agregadores quedan fuera, también en caché y guardadas.
-APK de prueba: `dist/yago-vfx-jobs-0.6.0.apk` (no versionada).
+El módulo VFX conserva sus fuentes ATS y webs oficiales. Adzuna y sus registros antiguos
+quedan fuera. Programación incorpora además portales remotos, identificados como tales.
+APK de prueba: `dist/yago-vfx-jobs-0.7.0.apk` (no versionada).
 
 ## Categorías adicionales, solo en Android
 
-El selector de categoría añade Programación, Electricidad y Cursos. La web conserva su
+Las cuatro pestañas superiores son VFX, Código, Electricidad y Cursos, con los colores existentes. La web conserva su
 buscador VFX. `scanner/mobile_careers.py` publica `data/mobile-careers.json` cada seis horas
 en el mismo workflow; el APK incluye una copia inicial y conserva la última descarga válida.
 Es necesario subir estos cambios a GitHub para activar las actualizaciones del nuevo feed.
 
-- Programación: Vigo o teletrabajo desde España, prioridad junior y repaso. Los puestos
-  con experiencia alta se ocultan inicialmente y se pueden incluir con el interruptor.
-- Electricidad: localidad Vigo; no acepta automáticamente desplazamientos. Los requisitos
+- Programación: Vigo, A Coruña y remoto internacional. Se muestran todos los niveles por
+  defecto, indicando experiencia; el interruptor permite ocultar los puestos avanzados.
+  Remoto internacional no garantiza que el empleador contrate desde España: se revisan país, idioma y horario.
+- Electricidad: Vigo y A Coruña; no acepta automáticamente desplazamientos. Los requisitos
   PRL, viajes y experiencia aparecen para revisar en la ficha y en su fuente original.
-- Cursos: online o presenciales en Vigo, gratuitos primero y precio confirmado de hasta
+- Cursos: online o presenciales en Vigo/A Coruña, gratuitos primero y precio confirmado de hasta
   800 €. Los niveles avanzados son opcionales. Se distingue un curso de una guía técnica.
 - Las candidaturas se guardan con el mismo contrato privado de Firestore que VFX y aparecen
   también en Solicitudes de la web. No requiere modificar de nuevo las reglas publicadas.
   Las guardadas y el progreso de formación son locales; no se presentan como sincronizados.
+- Filtros de publicación: últimas 24 horas, semana o mes. Fechas desconocidas quedan fuera
+  al activarlos; la fecha de comprobación nunca se usa para aparentar que un anuncio es nuevo.
+- Candidaturas: vistas Todas / En seguimiento / Cerradas y filtro por fecha de envío.
+  Retirada y Rechazada conservan historial; Eliminar borra el registro privado de ambos dispositivos
+  tras confirmación, sin retirar el CV enviado. No se borran automáticamente por antigüedad.
 
 Fuentes automáticas: SNE (servicio público de empleo, no ATS), Workable de Plain Concepts,
-Fabulous y EUROPEAN DYNAMICS, y cursos eFundae. Los demás portales se muestran como enlaces
+Fabulous y EUROPEAN DYNAMICS, Imatia/Inprosec, RSS de We Work Remotely, API Remote OK,
+algunas fichas originales seleccionadas de Adecco y cursos eFundae. Los demás portales se muestran como enlaces
 manuales, sin contabilizarlos como ofertas. Emprego Galicia devuelve un error en su formulario
 al automatizar la consulta. La cobertura es parcial, no una búsqueda exhaustiva de Internet.
 Si una fuente falla, se conserva su copia anterior con aviso y sin actualizar su fecha de revisión.
 
-La consulta inicial del 24/10/2026 encontró dos ofertas de programación con experiencia alta,
-ninguna oferta eléctrica en Vigo en estas fuentes y 21 cursos eFundae. Se incluyen además
+La consulta ampliada del 24/10/2026 encontró 17 ofertas de programación/soporte,
+una eléctrica en Vigo y 21 cursos eFundae. Se incluyen además
 una ruta inicial de C# y una guía Java oficiales. Los recuentos visibles dependen de los filtros.
+El feed móvil usa schemaVersion 2: evita reemplazar la copia ampliada del APK por datos de la versión anterior
+mientras se publican los cambios. Las versiones antiguas conservan su última copia compatible.
 
 ## Incluido
 

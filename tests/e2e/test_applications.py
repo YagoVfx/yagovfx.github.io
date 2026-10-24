@@ -8,7 +8,11 @@ def backend(page,records):
     def handle(route):
         assert route.request.headers.get('authorization')=='Bearer fixture-id-token'
         request=route.request
-        if request.method=='PATCH':
+        if request.method=='DELETE':
+            key=unquote(urlparse(request.url).path.rsplit('/',1)[-1])
+            records.pop(key,None)
+            route.fulfill(json={})
+        elif request.method=='PATCH':
             key=unquote(urlparse(request.url).path.rsplit('/',1)[-1]);fields=request.post_data_json['fields']
             if parse_qs(urlparse(request.url).query).get('updateMask.fieldPaths'):
                 records[key]['fields'].update(fields)
@@ -40,6 +44,12 @@ def test_candidacy_syncs_between_two_devices_and_logout_clears_private_data(make
     second.wait_for_function("VfxApplications.get('gh-1').status==='interview'")
     first.evaluate('VfxApplications.refresh()')
     web.locator('[data-job="gh-1"] [data-action="application-details"]').filter(has_text='Entrevista').wait_for()
+    second.once('dialog',lambda dialog:dialog.accept())
+    mobile.locator('[data-app-delete="gh-1"]').click()
+    second.wait_for_function("!VfxApplications.get('gh-1')")
+    assert 'gh-1' not in records
+    first.evaluate('VfxApplications.refresh()')
+    web.locator('[data-job="gh-1"] [data-action="apply"]').wait_for()
     mobile.locator('[data-app-logout]').click()
     mobile.locator('[data-app-login]').wait_for()
     assert second.evaluate('VfxApplications.get("gh-1")') is None
