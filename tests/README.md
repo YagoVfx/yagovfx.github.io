@@ -14,10 +14,19 @@ navegador interceptan Firebase y `data/*.json` con los fixtures de `tests/fixtur
 ```bash
 pip install -r requirements-dev.txt
 python -m playwright install chromium
-npm install            # solo instala axe-core para las pruebas de accesibilidad
+npm install            # axe-core y SDK de pruebas del emulador Firebase
 ```
 
 Si `axe-core` no está instalado, los tests de accesibilidad se **omiten explícitamente** (no pasan en silencio).
+
+Las reglas de candidaturas se prueban con Java 21 y un proyecto de demostración, sin
+credenciales ni acceso a producción:
+
+```sh
+npx --yes firebase-tools@15.34.1 emulators:exec --project demo-yago-private --config firebase-emulator.json --only firestore "node scripts/test-firestore-rules.cjs"
+```
+
+El workflow Tests ejecuta también estas comprobaciones de autorización y esquema.
 
 ## Notas
 

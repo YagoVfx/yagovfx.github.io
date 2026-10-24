@@ -24,7 +24,7 @@ def test_default_view_shows_only_verified_with_hidden_count(make_page):
     box = open_public(make_page())
     assert ids(box) == DEFAULT
     assert "3 ocultas" in summary(box)                 # az-1, az-3, az-up sin verificar
-    assert box.locator(".jp-tab").all_inner_texts() == ["Ofertas", "Guardadas", "Empresas", "Mapa y estadísticas", "Ajustes"]
+    assert box.locator(".jp-tab").all_inner_texts() == ["Ofertas", "Guardadas", "Empresas", "Mapa y estadísticas", "Mis candidaturas", "Ajustes"]
 
 
 # UI-01 / UI-02 — defecto #3 reproducido en el original: España no se podía desactivar
@@ -326,7 +326,9 @@ def test_companies_tab_separates_monitored_working_and_with_jobs(make_page):
 def test_public_visitor_has_no_admin_tabs(make_page):
     box = open_public(make_page())
     t = box.locator(".jp-tab").all_inner_texts()
-    assert "Fuentes y scanner" not in t and "Mis candidaturas" not in t
+    assert "Fuentes y scanner" not in t and "Mis candidaturas" in t
+    box.get_by_role('tab',name='Mis candidaturas').click()
+    assert box.locator('[data-app-login]').count()==1
 
 
 # Estados de carga / error
@@ -396,7 +398,7 @@ def test_admin_has_sources_tab_with_scanner_report_and_failures(make_page):
     assert admin.locator('[data-pane="sources"] a[href*="actions/workflows"]').count() == 1
     assert "no puede lanzarla" in txt
     admin.locator(".jp-tab", has_text="Mis candidaturas").click()
-    assert "desactivada a propósito" in admin.locator('[data-pane="apps"]').inner_text()
+    assert "Mis candidaturas" in admin.locator('[data-pane="apps"]').inner_text()
 
 
 def test_sources_tab_without_report_file_explains_it(make_page):

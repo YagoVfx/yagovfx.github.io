@@ -3,6 +3,7 @@
   var C=root.VfxJobsCore, esc=C.escapeHtml;
   var colors=['#b39aff','#56d5bd','#ffbb70','#69b9ff','#f391ba','#d8dc73','#adbacf','#ff837c','#61c8df','#cf9cf1','#90cca2','#d5a884','#c1bcff'];
   var labels={custom:'Web propia',greenhouse:'Greenhouse',teamtailor:'Teamtailor',workday:'Workday',workable:'Workable',lever:'Lever',smartrecruiters:'SmartRecruiters',ashby:'Ashby',personio:'Personio',recruitee:'Recruitee','massive-wp':'WordPress',room8:'WordPress',epic:'Greenhouse',ea:'Portal EA',bamboo:'BambooHR',pinpoint:'Pinpoint',infiniteplus:'Web propia',mercurysteam:'Web propia',mundfish:'Web propia',axiomvfx:'Web propia'};
+  labels.capcom='HRMOS';labels.rovio='Web propia';
   function platform(type) {return labels[type]||type||'Sin identificar';}
   function statistics(jobs,companies) {
     var counts={},types={};

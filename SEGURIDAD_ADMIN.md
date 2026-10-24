@@ -1,5 +1,20 @@
 # Seguridad del login de administrador
 
+## Candidaturas privadas (24-10-2026)
+
+Las candidaturas usan una colección separada: `users/{uid}/applications/{jobId}`.
+Sus reglas permiten leer y escribir únicamente al UID administrador y validan los
+campos y estados; nunca se incluyen en `portfolio/main`, los JSON públicos ni Git.
+Las notas y la fecha se sincronizan entre web y Android con Firebase Authentication.
+El móvil guarda la sesión y su caché privada cifradas con Android Keystore, sin guardar
+la contraseña, y desactiva copias Android automáticas de esos datos. Al cerrar sesión
+se borra la sesión y desaparecen las candidaturas de la interfaz.
+
+Las reglas se han comprobado con el emulador (14 verificaciones de autorización y
+esquema) y su ejecución forma parte del workflow Tests. Las pruebas de interfaz usan
+Firebase simulado; no realizan escrituras en producción. Las reglas deben publicarse
+en el proyecto real para habilitar la sincronización.
+
 ## Qué estaba mal (verificado en el código y en Chromium)
 
 1. La contraseña por defecto era **`admin123`**, escrita en el propio `index.html`.

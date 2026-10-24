@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'geography.dart';
+
 import 'package:diacritic/diacritic.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -118,7 +120,7 @@ class JobFilters {
       eligibility = 'all',
       contract = 'all',
       sort = 'relevance';
-  bool spain = false, unverified = false, possible = false;
+  bool spain = false, eu = false, unverified = false, possible = false;
   JobFilters();
   JobFilters.fromJson(Map m) {
     query = m['query'] is String ? m['query'] : '';
@@ -146,6 +148,7 @@ class JobFilters {
     ]);
     sort = pick(m['sort'], ['relevance', 'recent', 'company']);
     spain = m['spain'] == true;
+    eu = m['eu'] == true;
     unverified = m['unverified'] == true;
     possible = m['possible'] == true;
   }
@@ -159,6 +162,7 @@ class JobFilters {
     'contract': contract,
     'sort': sort,
     'spain': spain,
+    'eu': eu,
     'unverified': unverified,
     'possible': possible,
   };
@@ -183,6 +187,7 @@ List<Job> filterJobs(
     }
     if (!f.possible && j.str('matchType') == 'possibleMatch') return false;
     if (f.spain && !j.inSpain) return false;
+    if (f.eu && !isEUJob(j.data)) return false;
     if (f.workplace != 'all' && j.str('workplaceType') != f.workplace) {
       return false;
     }

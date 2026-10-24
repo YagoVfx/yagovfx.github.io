@@ -1,5 +1,40 @@
 # Catálogo de portales directos
 
+## UE, candidaturas privadas y cobertura (24-10-2026)
+
+Web y Android 0.5.0 incorporan un filtro de Unión Europea basado en los 27 países, ciudades
+reconocidas y ámbito UE explícito. «Europa» genérica no basta; Reino Unido, Suiza y Noruega
+no se incluyen como miembros. El filtro es geográfico, no una prueba de permiso de trabajo.
+
+Las candidaturas se almacenan en `users/{uid}/applications/{jobId}`, nunca en el JSON del
+portfolio ni en GitHub. Web y móvil usan el mismo documento por ID de oferta, con fecha,
+estado y notas; también permiten registrar envíos anteriores manualmente. La cuenta debe
+ser la misma cuenta Firebase administradora. Hay sincronización cada 15 segundos, al abrir
+la pantalla y al actualizar. Guardadas y descartadas siguen siendo locales. Las reglas
+`firestore.rules` limitan lectura y escritura al propietario autorizado y validan los campos.
+`scripts/test-firestore-rules.cjs` verifica esas reglas contra un proyecto de emulación.
+
+Se añaden **SNK** (Workable oficial), **Capcom** (HRMOS enlazado por su web) y **Rovio**
+(listado propio, con presencia en Barcelona). Capcom publica un puesto de efectos cuyo
+título japonés se conserva junto a la traducción VFX Artist. SNK y Rovio no presentaron
+coincidencias VFX activas en los feeds examinados. En SNK no se importan roles VFX que
+solo permanecen en comentarios HTML antiguos o menús del sitio.
+
+**Saber Interactive Spain ya está conectado** mediante Personio. Su portal declara no
+tener vacantes; se añade su sede verificada de Alcobendas al mapa y el país ES al catálogo.
+No se convierte por ello en una fuente global de todos los estudios del grupo Saber.
+
+La auditoría española incorpora Piccolo Studio, Abylight, Chibig, Crema, Novarama,
+Péndulo Studios, The Breach Studios y Fictiorama, con la limitación real de cada portal.
+Las primeras webs no ofrecen un feed verificado que permita declararlas conectadas;
+las restantes muestran errores de certificado, página de error o cierre de conexión.
+No es un censo exhaustivo de todos los estudios españoles.
+
+Última pasada: 73 fuentes configuradas, 70 consultas correctas, 66 ofertas activas oficiales.
+Blizzard, Activision y King devolvieron HTML donde su API Workday esperaba JSON; se conserva
+el historial en vez de cerrar ofertas por ese fallo. El registro distingue esos errores.
+El mapa contiene 57 de 96 empresas localizadas, excluidas las entidades fuera de perfil.
+
 ## Radar global: mapa y plataformas
 
 Web: pestaña **Mapa y estadísticas**, tanto pública como del administrador. Android 0.4.0:

@@ -157,7 +157,14 @@
   {
     "name": "Saber Interactive Spain",
     "careersUrl": "https://saber-interactive-spain.jobs.personio.de",
-    "type": "personio"
+    "type": "personio",
+    "country": "ES",
+    "officialUrl": "https://saber-interactive-spain.jobs.personio.com/",
+    "sourceEvidence": {
+      "url": "https://saber-interactive-spain.jobs.personio.com/privacy-policy",
+      "verifiedAt": "2026-10-24",
+      "method": "Employer legal identity and office in Alcobendas verified; no current vacancies on its official board"
+    }
   },
   {
     "name": "Keywords Studios",
@@ -587,5 +594,40 @@
       "method": "Official employer careers listing and public feed checked; no guessed ATS slug"
     },
     "country": "ES"
+  },
+  {
+    "name": "SNK",
+    "type": "workable",
+    "careersUrl": "https://apply.workable.com/snk/",
+    "officialUrl": "https://www.snk-corp.co.jp/us/recruit/dev-recruit/",
+    "sourceEvidence": {
+      "url": "https://www.snk-corp.co.jp/us/recruit/dev-recruit/",
+      "verifiedAt": "2026-10-24",
+      "method": "Official employer website links this public careers listing"
+    },
+    "country": "JP"
+  },
+  {
+    "name": "Capcom",
+    "type": "capcom",
+    "careersUrl": "https://hrmos.co/pages/capcom/jobs",
+    "officialUrl": "https://www.capcom.co.jp/recruit/english/",
+    "sourceEvidence": {
+      "url": "https://www.capcom.co.jp/recruit/english/",
+      "verifiedAt": "2026-10-24",
+      "method": "Official employer website links this public careers listing"
+    },
+    "country": "JP"
+  },
+  {
+    "name": "Rovio",
+    "type": "rovio",
+    "careersUrl": "https://www.rovio.com/open-positions/",
+    "officialUrl": "https://www.rovio.com/game-studios/rovio-barcelona/",
+    "sourceEvidence": {
+      "url": "https://www.rovio.com/game-studios/rovio-barcelona/",
+      "verifiedAt": "2026-10-24",
+      "method": "Official employer website links this public careers listing"
+    }
   }
 ]

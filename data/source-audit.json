@@ -1,5 +1,5 @@
 {
-  "auditedAt": "2026-10-23",
+  "auditedAt": "2026-10-24",
   "note": "Identity checks of previously guessed ATS candidates. A company-name slug alone is not proof of ownership.",
   "companies": [
     {
@@ -158,6 +158,94 @@
       "candidateUrl": "https://blitworks.com/contact/",
       "replacementCareersUrl": "https://blitworks.com/contact/",
       "reason": "La página oficial publica contacto para empleo, sin listado de vacantes o ATS verificable. Seguimiento manual."
+    },
+    {
+      "name": "Piccolo Studio",
+      "country": "ES",
+      "officialUrl": "https://piccolo-studio.com/",
+      "state": "pending",
+      "candidateRejected": false,
+      "candidateUrl": "https://piccolo-studio.com/",
+      "replacementCareersUrl": "https://piccolo-studio.com/",
+      "reason": "Estudio de Barcelona verificado. Su web ofrece contacto para candidaturas espontáneas, sin listado público de vacantes ni ATS; seguimiento manual.",
+      "verifiedAt": "2026-10-24"
+    },
+    {
+      "name": "Abylight",
+      "country": "ES",
+      "officialUrl": "https://abylight.com/",
+      "state": "pending",
+      "candidateRejected": false,
+      "candidateUrl": "https://abylight.com/",
+      "replacementCareersUrl": "https://abylight.com/",
+      "reason": "Estudio de Barcelona verificado. No se ha localizado un listado público de empleo ni un ATS enlazado por su web; seguimiento manual.",
+      "verifiedAt": "2026-10-24"
+    },
+    {
+      "name": "Chibig",
+      "country": "ES",
+      "officialUrl": "https://chibig.com/",
+      "state": "pending",
+      "candidateRejected": false,
+      "candidateUrl": "https://chibig.com/",
+      "replacementCareersUrl": "https://chibig.com/",
+      "reason": "Web oficial del estudio verificada. No publica un listado de empleo o ATS verificable en la web revisada; seguimiento manual.",
+      "verifiedAt": "2026-10-24"
+    },
+    {
+      "name": "Crema",
+      "country": "ES",
+      "officialUrl": "https://crema.gg/careers/",
+      "state": "pending",
+      "candidateRejected": false,
+      "candidateUrl": "https://crema.gg/careers/",
+      "replacementCareersUrl": "https://crema.gg/careers/",
+      "reason": "Página oficial de carreras identificada. Pendiente de adaptar y verificar su listado propio; no se presenta como una conexión activa.",
+      "verifiedAt": "2026-10-24"
+    },
+    {
+      "name": "Novarama",
+      "country": "ES",
+      "officialUrl": "https://www.novarama.com/",
+      "state": "blocked",
+      "candidateRejected": false,
+      "candidateUrl": "https://www.novarama.com/",
+      "replacementCareersUrl": "https://www.novarama.com/",
+      "reason": "El dominio oficial devuelve un error de certificado TLS al scanner. No se desactiva la validación HTTPS ni se inventa un ATS alternativo.",
+      "verifiedAt": "2026-10-24"
+    },
+    {
+      "name": "Péndulo Studios",
+      "verifiedAt": "2026-10-24",
+      "country": "ES",
+      "officialUrl": "https://pendulo-studios.com/",
+      "state": "blocked",
+      "candidateRejected": false,
+      "candidateUrl": "https://pendulo-studios.com/",
+      "replacementCareersUrl": "https://pendulo-studios.com/",
+      "reason": "La web responde HTTP 200 con un mensaje Error. Page cannot be displayed. No hay un listado verificable; no se interpreta como cero vacantes."
+    },
+    {
+      "name": "The Breach Studios",
+      "country": "ES",
+      "officialUrl": "https://thebreachstudios.com/careers/",
+      "state": "blocked",
+      "candidateRejected": false,
+      "candidateUrl": "https://thebreachstudios.com/careers/",
+      "replacementCareersUrl": "https://thebreachstudios.com/careers/",
+      "reason": "El servidor cierra la conexión al consultar su página de empleo. Fuente identificada, acceso automatizado no disponible.",
+      "verifiedAt": "2026-10-24"
+    },
+    {
+      "name": "Fictiorama",
+      "country": "ES",
+      "officialUrl": "https://fictiorama.com/",
+      "state": "blocked",
+      "candidateRejected": false,
+      "candidateUrl": "https://fictiorama.com/",
+      "replacementCareersUrl": "https://fictiorama.com/",
+      "reason": "El servidor cierra la conexión del scanner. No se ha podido comprobar un listado público de empleo.",
+      "verifiedAt": "2026-10-24"
     }
   ]
 }

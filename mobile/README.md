@@ -1,14 +1,22 @@
-# Yago VFX Jobs — Android 0.4.1
+# Yago VFX Jobs — Android 0.5.0
 
 App Flutter personal que consume `https://yagovfx.github.io/data/jobs.json`.
-El scanner sigue ejecutándose en GitHub Actions; la app no contiene credenciales de Firebase ni Adzuna.
+El scanner sigue ejecutándose en GitHub Actions. Firebase Authentication protege las candidaturas;
+el APK solo incluye la configuración pública del cliente, nunca la contraseña del usuario.
 
 Desde 0.2.0 solo admite fuentes ATS y webs oficiales. Adzuna, sus señales y los registros
 antiguos de agregadores quedan fuera, también en caché y guardadas.
-APK de prueba: `dist/yago-vfx-jobs-0.4.1.apk` (no versionada).
+APK de prueba: `dist/yago-vfx-jobs-0.5.0.apk` (no versionada).
 
 ## Incluido
 
+- Filtro Unión Europea: los 27 países, ciudades reconocidas y ámbito UE explícito. No confunde
+  Europa genérica, Reino Unido, Noruega o Suiza con la UE; no acredita permiso de trabajo.
+- Solicitudes: misma cuenta Firebase que la web, estados Enviada / Entrevista / Oferta recibida /
+  Rechazada / Retirada, notas privadas, fecha de envío y registro manual de candidaturas anteriores.
+  Se sincronizan mediante Firestore cada 15 segundos y al abrir la pantalla o actualizarla.
+  La sesión y la copia privada se cifran con Android Keystore; no se almacena la contraseña.
+  Un fallo de escritura no marca una solicitud como guardada. Sin sesión se pueden consultar ofertas.
 - Pestaña Radar: mapamundi con grupos pulsables, zoom por pellizco, doble toque y arrastre.
   Los grupos abren nombres legibles; seleccionar una empresa enfoca sus ubicaciones y
   muestra sus fuentes. Se evita dibujar etiquetas superpuestas. Hexworks comparte CI Games.
@@ -26,7 +34,8 @@ APK de prueba: `dist/yago-vfx-jobs-0.4.1.apk` (no versionada).
 - Caché local, refresco manual y al abrir, ETag y aviso de datos antiguos (>13 horas).
 - Compatibilidad con registros antiguos; formatos posteriores a schemaVersion 2 se rechazan con aviso.
 
-No incluye todavía notificaciones, pantalla de empresas, candidaturas ni sincronización entre dispositivos.
+Guardadas, descartadas y filtros son locales. La sincronización entre dispositivos cubre candidaturas.
+No incluye todavía notificaciones ni recordatorios automáticos.
 Las guardadas siguen los filtros de búsqueda/modalidad/contrato, pero permiten fuentes sin verificar.
 Las ofertas cerradas nunca aparecen, tampoco en guardadas.
 

@@ -1,7 +1,8 @@
 # Empresas y fuentes
 
-> Actualización del 23-10-2026: la integración se ha ampliado a 70 fuentes configuradas y
-> comprobadas en vivo, con 65 ofertas activas oficiales. La última ampliación incorpora
+> Actualización del 24-10-2026: hay 73 fuentes configuradas; la última pasada consultó
+> correctamente 70 y conserva 66 ofertas activas oficiales. Se añaden SNK, Capcom y Rovio,
+> y se amplía la auditoría de estudios españoles. La ampliación anterior incorporó
 > Highdive, MobilityWare, Socialpoint, King, Rockstar, Funcom, Arrowhead, Fatshark,
 > People Can Fly, Infinite Plus y MercurySteam.
 > Se han reparado 2K, Respawn/EA, Epic, Room 8, Gram Games y Ember Lab, entre otras.

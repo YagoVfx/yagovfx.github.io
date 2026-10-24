@@ -8,6 +8,11 @@
     "test:py": "python -m pytest -q tests --ignore=tests/e2e"
   },
   "devDependencies": {
-    "axe-core": "^4.10.0"
+    "@firebase/rules-unit-testing": "^6.0.0",
+    "axe-core": "^4.10.0",
+    "firebase": "^13.1.0"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "1.14.6"
   }
 }

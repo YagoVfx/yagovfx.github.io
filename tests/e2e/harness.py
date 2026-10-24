@@ -26,7 +26,7 @@ FB_AN = "export function getAnalytics(){return {};}"
 FB_AUTH = """
 const S=(window.__fb=window.__fb||{writes:[],remote:null,authed:false,authCalls:[]});
 const L=[];
-export function getAuth(){return {get currentUser(){return S.authed?{email:S.email||'admin@test',uid:S.uid||'ylQ3m3XoCHTd0cwP7UQet7cSRpt1'}:null;}};}
+export function getAuth(){return {get currentUser(){return S.authed?{email:S.email||'admin@test',uid:S.uid||'ylQ3m3XoCHTd0cwP7UQet7cSRpt1',getIdToken:async()=>"fixture-id-token"}:null;}};}
 export async function signInWithEmailAndPassword(a,e,p){S.authCalls.push([e,p]);
   if(e===(S.okEmail||'admin@test')&&p===(S.okPass||'good-pass')){S.authed=true;S.email=e;L.forEach(f=>f(a.currentUser));return {user:a.currentUser};}
   const err=new Error('auth/invalid-credential');err.code='auth/invalid-credential';throw err;}

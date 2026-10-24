@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'jobs.dart';
 import 'insights.dart';
+import 'applications.dart';
 
 void main() => runApp(const TrackerApp());
 
@@ -32,6 +33,7 @@ class OffersPage extends StatefulWidget {
 }
 
 class _OffersState extends State<OffersPage> {
+  final applications = ApplicationsStore();
   SharedPreferences? prefs;
   List<Job> jobs = [];
   Set<String> saved = {}, discarded = {};
@@ -43,11 +45,19 @@ class _OffersState extends State<OffersPage> {
   @override
   void initState() {
     super.initState();
+    applications.addListener(applicationsChanged);
+    applications.restore();
     init();
+  }
+
+  void applicationsChanged() {
+    if (mounted) setState(() {});
   }
 
   @override
   void dispose() {
+    applications.removeListener(applicationsChanged);
+    applications.dispose();
     search.dispose();
     super.dispose();
   }
@@ -225,6 +235,38 @@ class _OffersState extends State<OffersPage> {
                     : () => open(j.data['url']),
                 icon: const Icon(Icons.open_in_new),
                 label: const Text('Abrir oferta'),
+              ),
+              FilledButton.tonalIcon(
+                icon: const Icon(Icons.send),
+                label: Text(
+                  applications.records.containsKey(j.id)
+                      ? 'Candidatura: ${applicationLabels[applications.records[j.id]!['status']]}'
+                      : 'He enviado mi candidatura',
+                ),
+                onPressed: applications.busy
+                    ? null
+                    : () async {
+                        if (!applications.signedIn ||
+                            applications.records.containsKey(j.id)) {
+                          Navigator.pop(ctx);
+                          setState(() => tab = 4);
+                          return;
+                        }
+                        final ok = await applications.save(j, 'applied');
+                        if (!mounted || !ctx.mounted) return;
+                        if (ok) {
+                          Navigator.pop(ctx);
+                          setState(() => tab = 4);
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                applications.error ?? 'No se pudo guardar.',
+                              ),
+                            ),
+                          );
+                        }
+                      },
               ),
               if (safeUrl(j.data['companyCareersUrl']) != null)
                 TextButton(
@@ -419,9 +461,15 @@ class _OffersState extends State<OffersPage> {
             label: 'Ajustes',
           ),
           NavigationDestination(icon: Icon(Icons.public), label: 'Radar'),
+          NavigationDestination(
+            icon: Icon(Icons.send_outlined),
+            label: 'Solicitudes',
+          ),
         ],
       ),
-      body: tab == 3
+      body: tab == 4
+          ? SafeArea(child: ApplicationsPage(store: applications))
+          : tab == 3
           ? SafeArea(child: InsightsPage(jobs: jobs))
           : SafeArea(
               child: Column(
@@ -454,7 +502,7 @@ class _OffersState extends State<OffersPage> {
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                          'Versión 0.4.1 · Mapa interactivo\n\nSolo portales oficiales. Adzuna y otros agregadores estan excluidos. Las ofertas vienen del scanner del portfolio. Guardadas y descartadas se almacenan en este dispositivo. No necesitas iniciar sesión.',
+                            'Versión 0.5.0 · Candidaturas sincronizadas\n\nSolo portales oficiales. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web. Guardadas y descartadas siguen siendo locales.',
                           ),
                           const SizedBox(height: 16),
                           Text(
@@ -472,7 +520,7 @@ class _OffersState extends State<OffersPage> {
                             ),
                           ),
                           const Text(
-                            'Sin notificaciones ni sincronización entre dispositivos en esta versión.\n\nDesconocido no significa incompatible. Revisa las condiciones de cada oferta.',
+                            'Las candidaturas se sincronizan con tu cuenta Firebase. Guardadas y descartadas siguen siendo locales.\n\nDesconocido no significa incompatible. Revisa las condiciones de cada oferta.',
                           ),
                         ],
                       ),
@@ -519,7 +567,18 @@ class _OffersState extends State<OffersPage> {
                           FilterChip(
                             label: const Text('España'),
                             selected: filters.spain,
-                            onSelected: (v) => change(() => filters.spain = v),
+                            onSelected: (v) => change(() {
+                              filters.spain = v;
+                              if (v) filters.eu = false;
+                            }),
+                          ),
+                          FilterChip(
+                            label: const Text('Unión Europea'),
+                            selected: filters.eu,
+                            onSelected: (v) => change(() {
+                              filters.eu = v;
+                              if (v) filters.spain = false;
+                            }),
                           ),
                         ],
                       ),
@@ -641,6 +700,11 @@ class _OffersState extends State<OffersPage> {
                                                       ? 'Verificada'
                                                       : 'Sin verificar',
                                                 ),
+                                                if (applications.records
+                                                    .containsKey(j.id))
+                                                  pill(
+                                                    'Candidatura: ${applicationLabels[applications.records[j.id]!['status']]}',
+                                                  ),
                                               ],
                                             ),
                                           ],

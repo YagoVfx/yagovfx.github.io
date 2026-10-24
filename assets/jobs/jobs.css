@@ -147,3 +147,6 @@
 .ji-controls input[type=search]{max-width:100%;width:310px;padding:10px;border:1px solid #63718b;border-radius:8px;background:#172234;color:#f4efff}
 .ji-controls label{display:flex;flex-direction:column;gap:5px;max-width:100%}
 @media(max-width:800px){.ji-map-layout{grid-template-columns:minmax(0,1fr)}.ji-map-surface{height:360px}.ji-map-selection{max-height:310px}.ji-controls{align-items:end}.ji-controls label{width:100%}.ji-controls input[type=search],.ji-controls select{width:100%}}
+.jp [data-app-login],.jp [data-app-manual],.jp [data-app-notes]{display:grid;gap:12px;max-width:650px;padding:15px 0}
+.jp [data-app-login] label,.jp [data-app-manual] label{display:flex;flex-direction:column;gap:6px}
+.jp [data-app-login] input,.jp [data-app-manual] input,.jp [data-app-notes] textarea,.jp [data-app-status]{padding:10px;background:#172234;color:#f4efff;border:1px solid #657089;border-radius:8px;max-width:100%}

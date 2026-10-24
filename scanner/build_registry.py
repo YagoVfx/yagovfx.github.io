@@ -91,8 +91,8 @@ def build(data_dir: Path = DATA) -> dict:
         r = RESEARCHED.get(name, {})
         e = dict(name=name, country=c.get("country", r.get("country")), officialUrl=c.get("officialUrl", r.get("officialUrl")), careersUrl=url,
                  ats=None if ats in ("custom", "mundfish", "axiomvfx") else ats,
-                 method="api" if ats not in ("custom", "mundfish", "axiomvfx", "teamtailor", "ea", "infiniteplus", "mercurysteam") else "html-adapter",
-                 reliability="alta" if ats not in ("custom", "mundfish", "axiomvfx", "teamtailor", "ea", "infiniteplus", "mercurysteam") else "baja",
+                 method="api" if ats not in ("custom", "mundfish", "axiomvfx", "teamtailor", "ea", "infiniteplus", "mercurysteam", "capcom", "rovio") else "html-adapter",
+                 reliability="alta" if ats not in ("custom", "mundfish", "axiomvfx", "teamtailor", "ea", "infiniteplus", "mercurysteam", "capcom", "rovio") else "baja",
                  state="pending", reason="", priority=r.get("priority", "media"), spainCompat=r.get("spainCompat"),
                  configured=True, lastChecked=None, evidence=dict(kind="none", date=None, source=None))
         if name in RESEARCHED:
@@ -198,7 +198,7 @@ def build(data_dir: Path = DATA) -> dict:
             entry.update(state=audit["state"], reason=audit["reason"],
                          careersUrl=audit.get("replacementCareersUrl"),
                          candidateRejected=audit.get("candidateRejected", False),
-                         evidence=dict(kind="web-research", date="2026-10-23", source=audit["candidateUrl"]))
+                         evidence=dict(kind="web-research", date=audit.get("verifiedAt", "2026-10-23"), source=audit["candidateUrl"]))
             if audit.get("officialUrl"):
                 entry["officialUrl"] = audit["officialUrl"]
             if audit.get("country"):

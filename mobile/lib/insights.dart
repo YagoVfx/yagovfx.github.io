@@ -32,6 +32,8 @@ String platformName(String type) =>
       'mercurysteam': 'Web propia',
       'mundfish': 'Web propia',
       'axiomvfx': 'Web propia',
+      'capcom': 'HRMOS',
+      'rovio': 'Web propia',
     }[type] ??
     type;
 

@@ -1116,6 +1116,7 @@ option{background:var(--bg2);}
 </style>
 <link rel="stylesheet" href="assets/jobs/jobs.css">
 <script src="assets/jobs/jobs-core.js"></script>
+<script src="assets/jobs/jobs-applications.js"></script>
 <script src="assets/jobs/jobs-map.js"></script>
 <script src="assets/jobs/jobs-insights.js"></script>
 <script src="assets/jobs/jobs-ui.js"></script>
@@ -1738,6 +1739,13 @@ let _adminUser=null;
 const ADMIN_UID='ylQ3m3XoCHTd0cwP7UQet7cSRpt1';
 function isAdminUser(u){return !!u && u.uid===ADMIN_UID;}
 onAuthStateChanged(_auth,u=>{_adminUser=isAdminUser(u)?u:null;if(!_adminUser){clearTimeout(DB._t);const o=document.getElementById('admin-overlay');if(o&&o.classList.contains('on')){o.classList.remove('on');}}});
+window.VfxPrivateAuth={
+  get user(){return isAdminUser(_auth.currentUser)?_auth.currentUser:null;},
+  async signIn(email,password){const cred=await signInWithEmailAndPassword(_auth,email,password);if(!isAdminUser(cred.user)){await signOut(_auth);throw new Error('Cuenta no autorizada');}},
+  signOut(){return signOut(_auth);},
+  async token(){if(!isAdminUser(_auth.currentUser))throw new Error('Inicia sesión');return _auth.currentUser.getIdToken();}
+};
+onAuthStateChanged(_auth,()=>window.dispatchEvent(new Event('vfx-auth-change')));
 function isAdminAuthed(){return !!_adminUser;}
 /* Estado que se persiste/publica: NUNCA incluye secretos heredados. */
 function publicState(d){const c=Object.assign({},d);delete c.password;return c;}

@@ -40,3 +40,18 @@ jobs:
       - run: python -m playwright install --with-deps chromium
       - run: npm ci
       - run: python -m pytest -q tests/e2e
+
+  private-rules:
+    name: Firestore private access rules
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+      - run: npm ci
+      - run: npx --yes firebase-tools@15.34.1 emulators:exec --project demo-yago-private --config firebase-emulator.json --only firestore "node scripts/test-firestore-rules.cjs"

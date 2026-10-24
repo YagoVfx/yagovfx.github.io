@@ -78,6 +78,7 @@
     this.bind();
     this.load(false);
     panels.push(this);
+    if(root.VfxApplications){var panel=this;root.VfxApplications.subscribe(function(){panel.renderList();if(panel.tab==='apps')panel.renderApps();});}
   }
 
   Panel.prototype.id = function (n) { return this.uid + '-' + n; };
@@ -85,7 +86,8 @@
   Panel.prototype.build = function () {
     var u = this.id.bind(this);
     var tabs = [['offers', 'Ofertas'], ['saved', 'Guardadas'], ['companies', 'Empresas'], ['insights', 'Mapa y estadísticas']];
-    if (this.admin) tabs.push(['apps', 'Mis candidaturas'], ['sources', 'Fuentes y scanner']);
+    tabs.push(['apps', 'Mis candidaturas']);
+    if (this.admin) tabs.push(['sources', 'Fuentes y scanner']);
     tabs.push(['settings', 'Ajustes']);
     this.tabIds = tabs.map(function (t) { return t[0]; });
 
@@ -132,6 +134,7 @@
           '<div class="jp-segs" role="radiogroup" aria-labelledby="' + u('elig-l') + '">' + elig + '</div></div>' +
         '<div class="jp-toggles">' +
           '<button type="button" class="jp-chip" data-action="toggle-spain" aria-pressed="false">🇪🇸 España</button>' +
+          '<button type="button" class="jp-chip" data-action="toggle-eu" aria-pressed="false" title="Ubicación o ámbito de la Unión Europea explícitos; Europa genérica no basta">🇪🇺 Unión Europea</button>' +
           '<label class="jp-check"><input type="checkbox" data-filter="showUnverified"> <span data-ref="lblUnverified">Incluir sin verificar</span></label>' +
           '<label class="jp-check"><input type="checkbox" data-filter="showPossibleMatches"> <span>Incluir coincidencias posibles</span></label>' +
         '</div>' +
@@ -156,7 +159,8 @@
       '<section class="jp-pane" role="tabpanel" id="' + u('panel-saved') + '" aria-labelledby="' + u('tab-saved') + '" data-pane="saved" hidden></section>' +
       '<section class="jp-pane" role="tabpanel" id="' + u('panel-companies') + '" aria-labelledby="' + u('tab-companies') + '" data-pane="companies" hidden></section>' +
       '<section class="jp-pane" role="tabpanel" id="' + u('panel-insights') + '" aria-labelledby="' + u('tab-insights') + '" data-pane="insights" hidden></section>' +
-      (this.admin ? '<section class="jp-pane" role="tabpanel" id="' + u('panel-apps') + '" aria-labelledby="' + u('tab-apps') + '" data-pane="apps" hidden></section>' +
+      '<section class="jp-pane" role="tabpanel" id="' + u('panel-apps') + '" aria-labelledby="' + u('tab-apps') + '" data-pane="apps" hidden></section>' +
+      (this.admin ?
         '<section class="jp-pane" role="tabpanel" id="' + u('panel-sources') + '" aria-labelledby="' + u('tab-sources') + '" data-pane="sources" hidden></section>' : '') +
       '<section class="jp-pane" role="tabpanel" id="' + u('panel-settings') + '" aria-labelledby="' + u('tab-settings') + '" data-pane="settings" hidden></section>';
   };
@@ -200,10 +204,18 @@
   };
 
   Panel.prototype.action = function (a, t) {
-    var id = t.getAttribute('data-id');
+    var id = t.getAttribute('data-id'), self=this;
     switch (a) {
       case 'tab': this.setTab(t.getAttribute('data-tab')); break;
       case 'toggle-spain': this.filters = C.toggleSpain(this.filters); this.afterFilterChange(); break;
+      case 'toggle-eu': this.filters.location = this.filters.location === 'eu' ? 'all' : 'eu'; this.afterFilterChange(); break;
+      case 'apply': {
+        var job=this.jobs.find(function(j){return j.id===id;});
+        if(!root.VfxPrivateAuth||!root.VfxPrivateAuth.user){this.setTab('apps');break;}
+        if(job&&root.VfxApplications)root.VfxApplications.save(job,'applied').catch(function(err){self.setTab('apps');});
+        break;
+      }
+      case 'application-details': this.setTab('apps'); break;
       case 'adv': this.toggleAdv(); break;
       case 'clear-all': this.clearAll(); break;
       case 'clear-chip': this.filters = C.clearFilter(this.filters, t.getAttribute('data-key')); this.afterFilterChange(); break;
@@ -287,6 +299,7 @@
     if (name === 'companies') this.loadCompaniesData();
     if (name === 'insights') this.loadInsightsData();
     if (name === 'sources') this.loadSourcesData();
+    if (name === 'apps' && root.VfxApplications) root.VfxApplications.refresh();
   };
 
   Panel.prototype.loadInsightsData = function () {
@@ -348,9 +361,10 @@
       var s = self.el.querySelector('select[data-filter="' + key + '"]');
       var counts = C.optionCounts(jobs, f, ctx, key, getter);
       var keys = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b); });
-      if (f[key] !== 'all' && keys.indexOf(f[key]) < 0 && !(key === 'location' && f[key] === 'spain')) keys.push(f[key]);
+      if (f[key] !== 'all' && keys.indexOf(f[key]) < 0 && !(key === 'location' && ['spain','eu'].indexOf(f[key])>=0)) keys.push(f[key]);
       var html = '<option value="all">Todas</option>';
       if (key === 'location') html += '<option value="spain">🇪🇸 España — todas (' + jobs.filter(function (j) { return j.status !== 'closed' && C.isSpain(j); }).length + ')</option>';
+      if (key === 'location') html += '<option value="eu">🇪🇺 Unión Europea</option>';
       keys.forEach(function (k) { html += '<option value="' + esc(k) + '">' + esc(labeler ? labeler(k) : k) + ' (' + (counts[k] || 0) + ')</option>'; });
       if (s.getAttribute('data-sig') !== html) { s.innerHTML = html; s.setAttribute('data-sig', html); }
       s.value = f[key];
@@ -385,6 +399,7 @@
     var sp = el.querySelector('[data-action="toggle-spain"]');
     var spOn = f.location === 'spain';
     sp.setAttribute('aria-pressed', spOn ? 'true' : 'false'); sp.classList.toggle('on', spOn);
+    var eu=el.querySelector('[data-action="toggle-eu"]');eu.setAttribute('aria-pressed',f.location==='eu'?'true':'false');eu.classList.toggle('on',f.location==='eu');
   };
 
   Panel.prototype.render = function (typing) {
@@ -455,6 +470,7 @@
   };
 
   Panel.prototype.card = function (j) {
+    var application=root.VfxApplications&&root.VfxApplications.get(j.id);
     var saved = !!this.prefs.saved[j.id], disc = !!this.prefs.discarded[j.id];
     var isNew = j.firstSeen && (Date.now() - Date.parse(j.firstSeen)) < 7 * 86400000;
     var wpLabel = L.workplace[j.workplace];
@@ -499,6 +515,7 @@
       '<div class="jp-actions">' +
         (j.safeUrl ? '<a class="jp-btn jp-btn-primary" href="' + esc(j.safeUrl) + '" target="_blank" rel="noopener noreferrer">' + (j.directUrl ? 'Ver oferta ↗' : 'Ir a la página de empleo ↗') + '</a>' : '<span class="jp-warn">Sin enlace válido</span>') + alt +
         '<button type="button" class="jp-btn" data-action="save" data-id="' + esc(j.id) + '" aria-pressed="' + (saved ? 'true' : 'false') + '">' + (saved ? 'Guardada ✓' : 'Guardar') + '</button>' +
+        '<button type="button" class="jp-btn" data-action="'+(application?'application-details':'apply')+'" data-id="'+esc(j.id)+'">'+(application?'Candidatura: '+esc(root.VfxApplications.labels[application.status]||application.status):'He enviado mi candidatura')+'</button>'+
         (disc ? '<button type="button" class="jp-btn" data-action="restore" data-id="' + esc(j.id) + '">Restaurar</button>'
               : '<button type="button" class="jp-btn jp-btn-ghost" data-action="discard" data-id="' + esc(j.id) + '">Descartar</button>') +
       '</div></article></li>';
@@ -631,9 +648,8 @@
   // ───────────────────────── Mis candidaturas / Ajustes ─────────────────────────
   Panel.prototype.renderApps = function () {
     var p = this.pane('apps'); if (!p) return;
-    p.innerHTML = '<div class="jp-state"><strong>Pendiente: requiere almacenamiento privado seguro</strong>' +
-      '<p>GitHub Pages es un sitio estático público: guardar aquí candidaturas, contactos o notas sería publicarlas. ' +
-      'Esta sección está diseñada pero <strong>desactivada a propósito</strong>. Se activará cuando exista un backend con autenticación real (ver <code>PLAN_APP_ANDROID.md</code>).</p></div>';
+    if(root.VfxPrivateAuth&&root.VfxPrivateAuth.user&&p.contains(document.activeElement)&&document.activeElement.matches('input,textarea'))return;
+    if(root.VfxApplications)root.VfxApplications.mount(p);
   };
 
   Panel.prototype.renderSettings = function () {

@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # City centres, approximate coordinates. Matching a city in an employer's
 # structured location field is evidence of a location, not its headquarters.
 CITIES = {
- 'Barcelona':(41.39,2.17),'Madrid':(40.42,-3.70),'Valencia':(39.47,-0.38),'Seville':(37.39,-5.98),
+ 'Barcelona':(41.39,2.17),'Madrid':(40.42,-3.70),'Alcobendas':(40.54,-3.64),'Valencia':(39.47,-0.38),'Seville':(37.39,-5.98),
  'London':(51.51,-0.13),'Cambridge':(52.21,0.12),'Leeds':(53.80,-1.55),'Edinburgh':(55.95,-3.19),
  'Guildford':(51.24,-0.57),'Nottingham':(52.95,-1.15),'Oxford':(51.75,-1.26),'Newcastle':(54.98,-1.61),
  'Leamington':(52.29,-1.54),'Brighton':(50.82,-0.14),'Dundee':(56.46,-2.97),'Horsham':(51.06,-0.33),
@@ -35,7 +35,7 @@ CITIES = {
  'Brno':(49.20,16.61),'Bratislava':(48.15,17.11),'Bucharest':(44.43,26.10),'Lisbon':(38.72,-9.14),
  'Porto':(41.16,-8.63),'Kyiv':(50.45,30.52),'Kiev':(50.45,30.52),'Limassol':(34.68,33.04),
  'Istanbul':(41.01,28.98),'Dubai':(25.20,55.27),'Tel Aviv':(32.09,34.78),'Singapore':(1.35,103.82),
- 'Tokyo':(35.68,139.69),'Seoul':(37.57,126.98),'Shanghai':(31.23,121.47),'Shenzhen':(22.54,114.06),
+ 'Tokyo':(35.68,139.69),'Osaka':(34.69,135.50),'Seoul':(37.57,126.98),'Shanghai':(31.23,121.47),'Shenzhen':(22.54,114.06),
  'Bengaluru':(12.97,77.59),'Bangalore':(12.97,77.59),'Pune':(18.52,73.86),'Mumbai':(19.08,72.88),
  'Ho Chi Minh':(10.82,106.63),'Hanoi':(21.03,105.83),'Kuala Lumpur':(3.14,101.69),'Manila':(14.60,120.98),
  'Sydney':(-33.87,151.21),'Melbourne':(-37.81,144.96),'Wellington':(-41.29,174.78),
@@ -133,6 +133,13 @@ def main():
       'Room8':('London Recife Montreal Limassol Warsaw','https://room8group.com/contact-us/'),
       'MercurySteam':('Madrid','https://www.mercurysteam.com/'),
       'Socialpoint':('Barcelona','https://www.socialpoint.es/join-us/'),
+      'Saber Interactive Spain':('Alcobendas','https://saber-interactive-spain.jobs.personio.com/privacy-policy'),
+      'Rovio':('Barcelona','https://www.rovio.com/game-studios/rovio-barcelona/'),
+      'Capcom':('Osaka','https://www.capcom.co.jp/recruit/english/'),
+      'SNK':('Osaka','https://www.snk-corp.co.jp/us/recruit/dev-recruit/'),
+      'Piccolo Studio':('Barcelona','https://piccolo-studio.com/'),
+      'Crema':('Madrid','https://crema.gg/careers/'),
+      'Abylight':('Barcelona','https://abylight.com/'),
     }
     for row in rows:
         if row['name'] in official:
@@ -142,7 +149,8 @@ def main():
     names={r['name'] for r in rows}
     for c in registry:
         if c['name'] not in names and c['state']!='unsupported':
-            rows.append(dict(name=c['name'],locations=[]))
+            reference=official.get(c['name'])
+            rows.append(dict(name=c['name'],locations=locate(*reference) if reference else []))
     output=dict(schemaVersion=1,note='Centros urbanos aproximados de ubicaciones publicadas; no son domicilios exactos ni garantizan empleo remoto. Las empresas sin evidencia se muestran sin localizar.',companies=rows)
     (ROOT/'data/company-locations.json').write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'{sum(bool(r["locations"]) for r in rows)}/{len(rows)} companies located')

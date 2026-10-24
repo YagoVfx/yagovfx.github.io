@@ -194,6 +194,18 @@
     return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
   var SPAIN_RE = /espa(n|ñ)a|spain/i;
+  var EU_CODES = 'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE'.split(' ');
+  var EU_NAMES = /\b(austria|belgium|belgica|bulgaria|croatia|croacia|cyprus|chipre|czechia|czech republic|republica checa|denmark|dinamarca|estonia|finland|finlandia|france|francia|germany|alemania|greece|grecia|hungary|hungria|ireland|irlanda|italy|italia|latvia|letonia|lithuania|lituania|luxembourg|luxemburgo|malta|netherlands|paises bajos|poland|polonia|portugal|romania|rumania|slovakia|eslovaquia|slovenia|eslovenia|spain|espana|sweden|suecia|european union|union europea|eu)\b/i;
+  var EU_CITIES = /\b(barcelona|madrid|valencia|sevilla|seville|bilbao|malaga|zaragoza|tenerife|las palmas|alicante|paris|lyon|bordeaux|montpellier|berlin|hamburg|frankfurt|munich|munchen|cologne|dusseldorf|darmstadt|amsterdam|rotterdam|utrecht|eindhoven|warsaw|warszawa|krakow|krakows|wroclaw|poznan|gdansk|bucharest|bucuresti|cluj|lisbon|lisboa|porto|stockholm|uppsala|malmo|gothenburg|helsinki|espoo|tampere|copenhagen|aarhus|dublin|cork|prague|praha|brno|bratislava|budapest|vienna|wien|graz|brussels|bruxelles|ghent|gent|antwerp|athens|thessaloniki|rome|roma|milan|milano|turin|torino|tallinn|riga|vilnius|kaunas|ljubljana|zagreb|sofia|limassol|nicosia|valletta)\b/i;
+  function isEU(j) {
+    var code=String(j.countryCode||j.country||'').toUpperCase();
+    if(EU_CODES.indexOf(code)>=0)return true;
+    if(/^[A-Z]{2}$/.test(code))return false;
+    var location=foldText((j.location||'')+' '+(j.country||'')+' '+(j.remoteScope||''));
+    if(EU_NAMES.test(location)||String(j.remoteScope||'').toLowerCase()==='eu')return true;
+    if(/\b(usa|united states|canada|united kingdom|uk|switzerland|norway|japan|china|india|australia|brazil|mexico|singapore|turkey|serbia|ukraine|georgia)\b/i.test(location))return false;
+    return EU_CITIES.test(location);
+  }
   function isSpain(j) {
     return SPAIN_RE.test(j.location) || j.remoteScope === 'spain' || j.spainEligibility === 'confirmed';
   }
@@ -226,6 +238,7 @@
     if (!s('workplace') && f.workplace !== 'all' && j.workplace !== f.workplace) return false;
     if (!s('location') && f.location !== 'all') {
       if (f.location === 'spain') { if (!isSpain(j)) return false; }
+      else if (f.location === 'eu') { if (!isEU(j)) return false; }
       else if ((j.location || 'Ubicación desconocida') !== f.location) return false;
     }
     if (!s('spainEligibility') && f.spainEligibility !== 'all') {
@@ -309,7 +322,7 @@
       case 'query': return 'Búsqueda: «' + v + '»';
       case 'view': return 'Vista: ' + LABELS.view[v];
       case 'workplace': return 'Modalidad: ' + LABELS.workplace[v];
-      case 'location': return v === 'spain' ? 'España' : 'Ubicación: ' + v;
+      case 'location': return v === 'spain' ? 'España' : v === 'eu' ? 'Unión Europea' : 'Ubicación: ' + v;
       case 'spainEligibility': return 'España: ' + LABELS.spainEligibility[v].toLowerCase();
       case 'contract': return 'Contrato: ' + LABELS.contract[v];
       case 'seniority': return 'Nivel: ' + LABELS.seniority[v];
@@ -379,6 +392,6 @@
     deriveCompatibility: deriveCompatibility, sanitizeFilters: sanitizeFilters, applyFilters: applyFilters,
     passes: passes, sortJobs: sortJobs, computeCounts: computeCounts, optionCounts: optionCounts,
     activeFilterChips: activeFilterChips, clearFilter: clearFilter, toggleSpain: toggleSpain,
-    explainEmpty: explainEmpty, timeAgo: timeAgo, formatDate: formatDate, isSpain: isSpain, chipLabel: chipLabel
+    explainEmpty: explainEmpty, timeAgo: timeAgo, formatDate: formatDate, isSpain: isSpain, isEU: isEU, chipLabel: chipLabel
   };
 });

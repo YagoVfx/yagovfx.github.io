@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vfx_jobs_tracker/main.dart';
 import 'package:vfx_jobs_tracker/insights.dart';
+import 'package:vfx_jobs_tracker/company_map.dart';
 
 void main() {
   testWidgets('Arranque y navegación sin cuenta', (tester) async {
@@ -33,7 +34,7 @@ void main() {
       });
       await tester.pumpAndSettle();
       expect(find.text('Radar global'), findsOneWidget);
-      await tester.drag(find.byType(ListView).first, const Offset(0, -1000));
+      await tester.scrollUntilVisible(find.byType(CompanyWorldMap),300,scrollable:find.byType(Scrollable).first);
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull);
       expect(find.byType(InteractiveViewer), findsOneWidget);
