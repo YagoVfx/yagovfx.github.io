@@ -1086,26 +1086,7 @@
     },
     {
       "name": "Kabam",
-      "locations": [
-        {
-          "city": "Montreal",
-          "lat": 45.5,
-          "lon": -73.57,
-          "evidence": "https://api.lever.co/v0/postings/kabam?mode=json"
-        },
-        {
-          "city": "Vancouver",
-          "lat": 49.28,
-          "lon": -123.12,
-          "evidence": "https://api.lever.co/v0/postings/kabam?mode=json"
-        },
-        {
-          "city": "Los Angeles",
-          "lat": 34.05,
-          "lon": -118.24,
-          "evidence": "https://api.lever.co/v0/postings/kabam?mode=json"
-        }
-      ]
+      "locations": []
     },
     {
       "name": "Amanotes",
