@@ -121,7 +121,7 @@
         "vfx"
       ],
       "url": "https://www.workwithindies.com/",
-      "note": "Estudios indie y arte técnico. Portal complementario: confirmar vigencia y buscar la ficha original del estudio."
+      "note": "RSS y fichas conectados automaticamente en VFX > Portales automaticos. Se comprueba si el aviso de cierre esta realmente visible."
     },
     {
       "name": "Hitmarker",
@@ -129,7 +129,7 @@
         "vfx"
       ],
       "url": "https://hitmarker.net/",
-      "note": "Gaming, VFX y Technical Art. Acceso manual; sus anuncios no se cuentan como verificados por el scanner directo."
+      "note": "Busqueda publica conectada en VFX > Portales automaticos. Cada ficha ofrece tambien el enlace original cuando el portal lo publica."
     },
     {
       "name": "GamesJobsDirect",
@@ -137,7 +137,7 @@
         "vfx"
       ],
       "url": "https://www.gamesjobsdirect.com/",
-      "note": "Estudios AAA e internacionales. Revisa país, modalidad y fuente original."
+      "note": "Busqueda y fichas conectadas en VFX > Portales automaticos. No se confunde este portal con un ATS del estudio."
     },
     {
       "name": "ArtStation Jobs",
@@ -145,7 +145,7 @@
         "vfx"
       ],
       "url": "https://www.artstation.com/jobs",
-      "note": "Arte, VFX y Technical Art. Acceso manual; puede requerir iniciar sesión."
+      "note": "Consulta automatica intentada: HTTP 403. Sigue sin ofertas importadas; el estado del bloqueo aparece en las fuentes."
     },
     {
       "name": "Tecnoempleo",
@@ -269,9 +269,79 @@
       ],
       "url": "https://www.todofp.es/",
       "note": "Información oficial de FP reglada y especializaciones. Consulta acceso y matrícula; no son cursos cortos automáticamente."
+    },
+    {
+      "name": "Indra / Minsait",
+      "categories": [
+        "programming"
+      ],
+      "url": "https://careers.indragroup.com/",
+      "note": "Portal original conectado automaticamente. Revisar experiencia y localidad real de cada puesto."
+    },
+    {
+      "name": "Inditex / Zara",
+      "categories": [
+        "programming"
+      ],
+      "url": "https://zara.recruitee.com/",
+      "note": "Portal original conectado automaticamente. Revisar experiencia y localidad real de cada puesto."
+    },
+    {
+      "name": "Stratos",
+      "categories": [
+        "vfx"
+      ],
+      "url": "https://stratos-ad.com/trabajo",
+      "note": "RSS y listado de trabajo conectados automaticamente en VFX > Portales automaticos. Colaboraciones excluidas; se identifica el trabajo freelance."
     }
   ],
   "courses": [
+    {
+      "id": "course-epic-niagara-intro",
+      "kind": "course",
+      "title": "Niagara Introduction: repaso práctico de VFX en Unreal",
+      "provider": "Epic Education and Training",
+      "topic": "vfx",
+      "url": "https://dev.epicgames.com/community/learning/courses/RlA/unreal-engine-niagara-introduction/qE9o/unreal-engine-creating-your-first-effect",
+      "sourceUrl": "https://dev.epicgames.com/community/learning/paths/8rL/games-essentials-for-unreal-engine",
+      "price": 0,
+      "modality": "online",
+      "level": "beginner",
+      "availability": "Curso de autoaprendizaje de Epic; sin convocatoria presencial",
+      "description": "Selección para repasar Niagara mediante un efecto de humo, materiales y parámetros expuestos. Es introductorio: si ya dominas estos fundamentos, úsalo solo como repaso y pasa a proyectos más exigentes. Contenido en inglés; comprobar versión del motor. No se anuncia un certificado profesional.",
+      "checkedAt": "2026-10-24T00:00:00Z"
+    },
+    {
+      "id": "guide-epic-niagara-quickstart",
+      "kind": "guide",
+      "title": "Niagara Quick Start: efecto de humo en pasos",
+      "provider": "Epic Games · Documentación oficial",
+      "topic": "vfx",
+      "url": "https://dev.epicgames.com/documentation/unreal-engine/quick-start-for-niagara-effects-in-unreal-engine",
+      "sourceUrl": "https://dev.epicgames.com/documentation/unreal-engine/quick-start-for-niagara-effects-in-unreal-engine",
+      "price": 0,
+      "modality": "online",
+      "level": "beginner",
+      "availability": "Guía abierta, sin matrícula ni certificado",
+      "description": "Ejercicio pequeño para recuperar flujo de trabajo: preparar materiales, crear un sistema Niagara y asociarlo al movimiento de un personaje. Complementa el curso introductorio; no es una formación larga ni una certificación.",
+      "checkedAt": "2026-10-24T00:00:00Z"
+    },
+    {
+      "id": "course-sidefx-foundations",
+      "kind": "course",
+      "title": "Houdini Foundations 20.5: Welcome",
+      "provider": "SideFX · Robert Magee",
+      "topic": "vfx",
+      "url": "https://www.sidefx.com/tutorials/h205-foundations-welcome/",
+      "sourceUrl": "https://www.sidefx.com/tutorials/h205-foundations-welcome/",
+      "price": 0,
+      "durationHours": 1.14,
+      "modality": "online",
+      "level": "beginner",
+      "availability": "Lección y PDF abiertos; la página enlaza también una edición posterior",
+      "description": "Repaso del flujo procedural con un proyecto que combina modelado, dinámica, materiales y render. Útil si quieres ampliar herramientas desde VFX en videojuegos. La edición es para Houdini 20.5: revisar diferencias con versiones posteriores. La lección es gratuita; las licencias del software tienen condiciones propias.",
+      "checkedAt": "2026-10-24T00:00:00Z"
+    },
     {
       "id": "course-ms-csharp",
       "kind": "course",

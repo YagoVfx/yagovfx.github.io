@@ -42,6 +42,99 @@ class _OffersState extends State<OffersPage> {
   final search = TextEditingController();
   int tab = 0;
   String category = 'vfx';
+  bool vfxBoards = false;
+  Widget categoryTabs() => Padding(
+    padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Row(
+          children: [
+            for (final entry in careerCategories.entries)
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 2),
+                  child: Material(
+                    color: category == entry.key
+                        ? Theme.of(context).colorScheme.primaryContainer
+                        : Colors.transparent,
+                    borderRadius: BorderRadius.circular(16),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(16),
+                      onTap: () {
+                        setState(() => category = entry.key);
+                        prefs?.setString('career.category', entry.key);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              {
+                                'vfx': Icons.sports_esports_outlined,
+                                'programming': Icons.code,
+                                'electricity': Icons.bolt_outlined,
+                                'courses': Icons.school_outlined,
+                              }[entry.key],
+                              size: 22,
+                              color: category == entry.key
+                                  ? Theme.of(context).colorScheme.primary
+                                  : null,
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              entry.key == 'programming'
+                                  ? 'Código'
+                                  : entry.value,
+                              maxLines: 1,
+                              style: const TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
+        if (category == 'vfx')
+          Row(
+            children: [
+              Expanded(
+                child: ChoiceChip(
+                  label: const Text(
+                    'Estudios directos',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  selected: !vfxBoards,
+                  onSelected: (_) => setState(() => vfxBoards = false),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: ChoiceChip(
+                  label: const Text(
+                    'Portales automáticos',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  selected: vfxBoards,
+                  onSelected: (_) => setState(() => vfxBoards = true),
+                ),
+              ),
+            ],
+          ),
+      ],
+    ),
+  );
   int careerRefresh = 0;
   bool loading = true;
   String? error, updated;
@@ -459,78 +552,13 @@ class _OffersState extends State<OffersPage> {
         title: const Text('YAGO / VFX JOBS'),
         bottom: tab <= 1
             ? PreferredSize(
-                preferredSize: const Size.fromHeight(76),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
-                  child: Row(
-                    children: [
-                      for (final entry in careerCategories.entries)
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 2),
-                            child: Material(
-                              color: category == entry.key
-                                  ? Theme.of(context)
-                                        .colorScheme
-                                        .primaryContainer
-                                  : Colors.transparent,
-                              borderRadius: BorderRadius.circular(16),
-                              child: InkWell(
-                                borderRadius: BorderRadius.circular(16),
-                                onTap: () {
-                                  setState(() => category = entry.key);
-                                  prefs?.setString(
-                                    'career.category',
-                                    entry.key,
-                                  );
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                    vertical: 10,
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        {
-                                          'vfx': Icons.sports_esports_outlined,
-                                          'programming': Icons.code,
-                                          'electricity': Icons.bolt_outlined,
-                                          'courses': Icons.school_outlined,
-                                        }[entry.key],
-                                        size: 22,
-                                        color: category == entry.key
-                                            ? Theme.of(context)
-                                                  .colorScheme
-                                                  .primary
-                                            : null,
-                                      ),
-                                      const SizedBox(height: 4),
-                                      Text(
-                                        entry.key == 'programming'
-                                            ? 'Código'
-                                            : entry.value,
-                                        maxLines: 1,
-                                        style: const TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                    ],
-                  ),
-                ),
+                preferredSize: Size.fromHeight(category == 'vfx' ? 130 : 76),
+                child: categoryTabs(),
               )
             : null,
         actions: [
           IconButton(
-            onPressed: category != 'vfx' && tab <= 1
+            onPressed: (category != 'vfx' || vfxBoards) && tab <= 1
                 ? () => setState(() => careerRefresh++)
                 : loading
                 ? null
@@ -563,7 +591,7 @@ class _OffersState extends State<OffersPage> {
           ),
         ],
       ),
-      body: tab <= 1 && category != 'vfx'
+      body: tab <= 1 && (category != 'vfx' || vfxBoards)
           ? SafeArea(
               child: CareerCategoryPage(
                 key: ValueKey(category),
@@ -609,7 +637,7 @@ class _OffersState extends State<OffersPage> {
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                            'Versión 0.7.0 · Job Radar\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web. Guardadas y descartadas siguen siendo locales.',
+                            'Versión 0.8.0 · Fuentes y formación\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web. Guardadas y descartadas siguen siendo locales.',
                           ),
                           const SizedBox(height: 16),
                           Text(

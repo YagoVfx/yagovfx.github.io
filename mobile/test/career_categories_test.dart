@@ -11,6 +11,53 @@ import 'package:vfx_jobs_tracker/applications.dart';
 import 'package:vfx_jobs_tracker/jobs.dart';
 
 void main() {
+  test('Prioridad de cursos explica encaje y separa especialidades', () {
+    final basic = <String, dynamic>{
+      'id': 'basic',
+      'kind': 'course',
+      'title': 'Electricidad de circuitos',
+      'topic': 'electricity',
+      'price': 0,
+      'modality': 'online',
+      'level': 'beginner',
+      'durationHours': 70,
+    };
+    final advanced = <String, dynamic>{
+      'id': 'advanced',
+      'title': 'Automatización avanzada',
+      'topic': 'electricity',
+      'price': 0,
+      'modality': 'online',
+      'level': 'advanced',
+    };
+    final programming = <String, dynamic>{
+      'id': 'java',
+      'title': 'Java',
+      'topic': 'programming',
+      'price': 0,
+      'modality': 'online',
+    };
+    final closed = <String, dynamic>{
+      ...basic,
+      'id': 'closed',
+      'enrollmentEnd': '2026-10-01',
+    };
+    expect(
+      coursePriority(basic).score,
+      greaterThan(coursePriority(advanced).score),
+    );
+    expect(coursePriority(basic).reasons, isNotEmpty);
+    expect(
+      filterCareerItems(
+        [advanced, programming, basic, closed],
+        category: 'courses',
+        topic: 'electricity',
+        includeAdvanced: true,
+        now: DateTime.utc(2026, 10, 24),
+      ).map((x) => x['id']),
+      ['basic', 'advanced'],
+    );
+  });
   test('Coruña y publicación reciente: nunca usa la fecha de escaneo como publicación', () {
     final items = <Map<String, dynamic>>[
       {
@@ -84,6 +131,25 @@ void main() {
       250,
       scrollable: find.byType(Scrollable).first,
     );
+    expect(tester.takeException(), isNull);
+    tester
+        .state<ScrollableState>(find.byType(Scrollable).first)
+        .position
+        .jumpTo(0);
+    await tester.pump();
+    await tester.ensureVisible(find.text('VFX / Games'));
+    await tester.tap(find.text('VFX / Games'));
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(
+      find.text('Niagara Introduction: repaso práctico de VFX en Unreal'),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    expect(
+      find.text('Niagara Introduction: repaso práctico de VFX en Unreal'),
+      findsOneWidget,
+    );
+    expect(find.text('Escribir el primer código con C#'), findsNothing);
     expect(tester.takeException(), isNull);
     await tester.pumpWidget(const SizedBox());
     applications.dispose();
@@ -221,7 +287,12 @@ void main() {
       final good = CareerFeedRepository(
         client: MockClient(
           (_) async => http.Response(
-            jsonEncode({'schemaVersion': 2, 'offers': [], 'courses': []}),
+            jsonEncode({
+              'schemaVersion': 2,
+              'coverageVersion': 3,
+              'offers': [],
+              'courses': [],
+            }),
             200,
           ),
         ),

@@ -250,9 +250,10 @@ def run():
     for key, label, reader in additional_sources():
         prefix = 'career-' + key + '-'
         try:
+            LOG.info('Consultando %s', label)
             rows = reader(now)
             offers.update({row['id']: row for row in rows})
-            status.append(dict(name=label, status='ok', examined=len(rows)))
+            status.append(dict(name=label, status='ok', matched=len(rows)))
         except Exception as e:
             status.append(dict(name=label, status='error', reason=str(e)[:180]))
             for old in previous.get('offers', []):
@@ -264,10 +265,24 @@ def run():
         courses = [dict(c, checkedAt=now) for c in courses]
         status.append(dict(name='eFundae', status='ok', examined=len(courses)))
     except Exception as e:
-        courses = [dict(c, retainedAfterFailure=True) for c in previous.get('courses', [])]
+        courses = [dict(c, retainedAfterFailure=True) for c in previous.get('courses', []) if c['id'].startswith('course-fundae-')]
         status.append(dict(name='eFundae', status='error', reason=str(e)[:180]))
-    output = dict(schemaVersion=2, updatedAt=now, offers=list(offers.values()), courses=courses, sources=status,
-                  note='Fuentes públicas oficiales para categorías móviles. No son el feed VFX ni garantizan encaje, contratación o inscripción.')
+    from scanner.training_sources import sources as training_sources
+    course_map = {c['id']: c for c in courses}
+    for key, label, reader in training_sources():
+        try:
+            LOG.info('Consultando %s', label)
+            rows = reader(now)
+            course_map.update({row['id']: row for row in rows})
+            status.append(dict(name=label, status='ok', examined=len(rows)))
+        except Exception as e:
+            status.append(dict(name=label,status='error',reason=str(e)[:180]))
+            for old in previous.get('courses',[]):
+                if old['id'].startswith('course-'+key+'-'):
+                    course_map.setdefault(old['id'],dict(old,retainedAfterFailure=True))
+    courses = list(course_map.values())
+    output = dict(schemaVersion=2, coverageVersion=3, updatedAt=now, offers=list(offers.values()), courses=courses, sources=status,
+                  note='Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.')
     temporary = target.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     temporary.replace(target)

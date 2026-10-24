@@ -19,6 +19,14 @@ void main() {
     expect(find.text('Código'), findsOneWidget);
     expect(find.text('Electricidad'), findsOneWidget);
     expect(find.text('Cursos'), findsOneWidget);
+    await tester.tap(find.text('Portales automáticos'));
+    await tester.pump();
+    await tester.runAsync(() async {
+      await Future<void>.delayed(const Duration(milliseconds: 300));
+    });
+    await tester.pumpAndSettle();
+    expect(find.text('VFX / Games · Portales'), findsOneWidget);
+    expect(tester.takeException(), isNull);
     await tester.tap(find.text('Código'));
     await tester.pump();
     await tester.runAsync(() async {

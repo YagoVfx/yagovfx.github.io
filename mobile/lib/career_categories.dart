@@ -8,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'applications.dart';
 import 'jobs.dart';
+import 'geography.dart';
 
 const careerCategories = {
   'vfx': 'VFX',
@@ -15,6 +16,67 @@ const careerCategories = {
   'electricity': 'Electricidad',
   'courses': 'Cursos',
 };
+
+({int score, List<String> reasons}) coursePriority(Map<String, dynamic> item) {
+  var score = 20;
+  final reasons = <String>[];
+  if (item['price'] == 0) {
+    score += 25;
+    reasons.add('Sin coste de matrícula anunciado');
+  }
+  if (item['level'] == 'beginner') {
+    score += 30;
+    reasons.add('Empieza por fundamentos');
+  }
+  if (item['level'] == 'review') {
+    score += 10;
+    reasons.add('Revisar conocimientos previos');
+  }
+  if (item['level'] == 'advanced') {
+    score -= 15;
+    reasons.add('Exige una base avanzada');
+  }
+  final hours = item['durationHours'];
+  if (hours is num && hours > 0 && hours <= 120) {
+    score += 10;
+    reasons.add('Duración acotada para retomar hábitos');
+  }
+  if (hours is num && hours > 300) {
+    reasons.add('Formación larga: comprobar disponibilidad');
+  }
+  if (item['syllabusUrl'] is String) {
+    score += 5;
+    reasons.add('Programa formativo disponible');
+  }
+  if (item['enrollmentStatus'] == 'open') {
+    score += 10;
+    reasons.add('Plazo de solicitud anunciado abierto');
+  }
+  if (RegExp(
+    r'niagara|unreal|houdini|circuitos|electricidad|fotovolta|java|python|c#|backend|frontend',
+  ).hasMatch(fold(item['title']))) {
+    score += 15;
+    reasons.add('Contenido relacionado con tu especialidad');
+  }
+  if (item['kind'] == 'guide') {
+    score -= 5;
+    reasons.add('Guía de repaso, sin equivalencia a un título');
+  }
+  if (item['retainedAfterFailure'] == true) {
+    score -= 20;
+    reasons.add('Vigencia pendiente de renovar');
+  }
+  return (score: score.clamp(0, 100), reasons: reasons);
+}
+
+String coursePriorityLabel(Map<String, dynamic> item) {
+  final score = coursePriority(item).score;
+  return score >= 75
+      ? 'Buen punto de partida'
+      : score >= 55
+      ? 'Para reforzar'
+      : 'Para más adelante / revisar';
+}
 
 Future<void> showCareerSources(BuildContext context, String category) async {
   final catalog = jsonDecode(
@@ -99,6 +161,19 @@ List<Map<String, dynamic>> filterCareerItems(
       return false;
     }
     if (category == 'courses') {
+      if (!savedOnly) {
+        final end = DateTime.tryParse(
+          '${item['enrollmentEnd'] ?? item['endDate'] ?? ''}',
+        );
+        if (end != null &&
+            DateTime(
+              today.year,
+              today.month,
+              today.day,
+            ).isAfter(DateTime(end.year, end.month, end.day))) {
+          return false;
+        }
+      }
       if (item['modality'] == 'onsite' &&
           item['inVigo'] != true &&
           item['inCoruna'] != true) {
@@ -136,11 +211,15 @@ List<Map<String, dynamic>> filterCareerItems(
       if (scope == 'remote' && item['workplace'] != 'remote') return false;
       if (scope == 'vigo' && item['inVigo'] != true) return false;
       if (scope == 'coruna' && item['inCoruna'] != true) return false;
+      if (scope == 'eu' && !isEUJob(item)) return false;
     }
     return true;
   }).toList();
   out.sort((a, b) {
     if (category == 'courses') {
+      final priority = coursePriority(b).score
+          .compareTo(coursePriority(a).score);
+      if (priority != 0) return priority;
       final price = (a['price'] as num).compareTo(b['price'] as num);
       if (price != 0) return price;
       final basic = (a['level'] == 'beginner' ? 0 : 1).compareTo(
@@ -166,6 +245,7 @@ class CareerFeedRepository {
     final data = jsonDecode(text);
     if (data is! Map<String, dynamic> ||
         data['schemaVersion'] != 2 ||
+        (data['coverageVersion'] as num? ?? 0) < 3 ||
         data['offers'] is! List ||
         data['courses'] is! List) {
       throw const FormatException('Formato de oportunidades no válido');
@@ -274,6 +354,9 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
     days = p.getInt('career.${widget.category}.days') ?? 0;
     scope = p.getString('career.${widget.category}.scope') ?? 'all';
     freeOnly = p.getBool('career.courses.freeOnly') ?? false;
+    if (widget.category == 'courses') {
+      topic = p.getString('career.courses.topicV2') ?? 'programming';
+    }
     setState(() => loading = false);
     await refresh();
   }
@@ -388,10 +471,41 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
         children: [
           Text(item['title'], style: Theme.of(context).textTheme.titleLarge),
           Text(
+            coursePriorityLabel(item),
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
             '${item['provider']} · ${item['modality'] == 'online' ? 'Online' : 'Presencial'} · ${item['price'] == 0 ? 'Gratuito' : '${item['price']} €'}',
           ),
           if (item['kind'] == 'guide')
             const Text('Guía práctica; no equivale a un título o certificado'),
+          if (item['location'] is String &&
+              (item['location'] as String).isNotEmpty)
+            Text(item['location']),
+          if (item['durationHours'] != null)
+            Text('${item['durationHours']} horas'),
+          if (item['startDate'] != null) Text('Inicio: ${item['startDate']}'),
+          if (item['enrollmentEnd'] != null)
+            Text('Fin de solicitud: ${item['enrollmentEnd']}'),
+          if (item['qualification'] != null)
+            Text('Acceso: ${item['qualification']}'),
+          if (item['certificate'] != null) Text(item['certificate']),
+          ExpansionTile(
+            title: Text(
+              'Por qué se prioriza · ${coursePriority(item).score}/100 de encaje',
+            ),
+            children: [
+              for (final reason in coursePriority(item).reasons)
+                ListTile(
+                  dense: true,
+                  leading: const Icon(Icons.check, size: 16),
+                  title: Text(reason),
+                ),
+            ],
+          ),
           Text(
             item['availability'] ??
                 'Consulta acceso e inscripción en el proveedor',
@@ -431,6 +545,11 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   saved.contains(item['id']) ? 'Guardado' : 'Guardar',
                 ),
               ),
+              if (safeUrl(item['syllabusUrl']) != null)
+                TextButton(
+                  onPressed: () => open(item['syllabusUrl']),
+                  child: const Text('Ver programa'),
+                ),
             ],
           ),
           if (saved.contains(item['id']))
@@ -534,6 +653,11 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                     saved.contains(item['id']) ? 'Guardada' : 'Guardar',
                   ),
                 ),
+                if (safeUrl(item['originalUrl']) != null)
+                  TextButton(
+                    onPressed: () => open(item['originalUrl']),
+                    child: const Text('Web del empleador'),
+                  ),
               ],
             ),
             TextButton.icon(
@@ -591,7 +715,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            '${careerCategories[widget.category]}${widget.savedOnly ? ' · Guardadas' : ''}',
+            '${widget.category == 'vfx' ? 'VFX / Games · Portales' : careerCategories[widget.category]}${widget.savedOnly ? ' · Guardadas' : ''}',
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           Text(
@@ -599,6 +723,8 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                 ? 'Online o presencial en Vigo y A Coruña. Prioridad a formación gratuita o subvencionada. Tope de 800 € para cursos con precio confirmado; revisa programa, fechas y requisitos antes de inscribirte.'
                 : widget.category == 'electricity'
                 ? 'Ofertas en Vigo y A Coruña. Revisa si la empresa exige desplazamientos diarios o viajes; no se consideran aceptados automáticamente.'
+                : widget.category == 'vfx'
+                ? 'Ofertas recogidas automáticamente de portales VFX. Son complementarias al scanner directo: confirma país, contrato y vigencia en la fuente original.'
                 : 'Programación, QA, software y soporte en Vigo, A Coruña o remoto internacional. Revisa país permitido, idioma y experiencia; remoto no garantiza contratación desde España.',
           ),
           if (loading) const LinearProgressIndicator(),
@@ -606,6 +732,31 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             Text(error!, style: const TextStyle(color: Colors.amber)),
           Text('Último escaneo: ${feed!['updatedAt'] ?? 'Sin fecha'}'),
           const SizedBox(height: 12),
+          if (isCourse) ...[
+            Wrap(
+              spacing: 8,
+              runSpacing: 4,
+              children: [
+                for (final e in {
+                  'vfx': 'VFX / Games',
+                  'electricity': 'Electricidad',
+                  'programming': 'Programación',
+                }.entries)
+                  ChoiceChip(
+                    label: Text(e.value),
+                    selected: topic == e.key,
+                    onSelected: (_) {
+                      setState(() => topic = e.key);
+                      prefs?.setString('career.courses.topicV2', e.key);
+                    },
+                  ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Ordenados por encaje para retomar: nivel, coste, duración, programa y plazo. Esta prioridad no es una valoración de calidad docente ni garantiza empleo o plazas.',
+            ),
+          ],
           TextField(
             controller: search,
             onChanged: (value) {
@@ -644,7 +795,21 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             spacing: 12,
             runSpacing: 12,
             children: [
-              if (!isCourse)
+              if (widget.category == 'vfx')
+                picker(
+                  'Ubicación',
+                  scope,
+                  {
+                    'all': 'Todos los países',
+                    'eu': 'Unión Europea',
+                    'remote': 'Solo remoto',
+                  },
+                  (v) {
+                    scope = v;
+                    prefs?.setString('career.vfx.scope', v);
+                  },
+                ),
+              if (!isCourse && widget.category != 'vfx')
                 picker(
                   'Ubicación',
                   scope,
@@ -683,13 +848,6 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   'online': 'Online',
                   'onsite': 'Presenciales',
                 }, (v) => modality = v),
-              if (isCourse)
-                picker('Tema', topic, {
-                  'all': 'Todos',
-                  'programming': 'Programación',
-                  'electricity': 'Electricidad / automatización',
-                  'vfx': 'VFX / Unreal',
-                }, (v) => topic = v),
             ],
           ),
           const SizedBox(height: 12),
@@ -734,7 +892,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
               const Padding(
                 padding: EdgeInsets.all(12),
                 child: Text(
-                  'Ofertas directas de empresas mediante Workable y de los servicios públicos mediante SNE. Los cursos automáticos proceden de eFundae y las guías seleccionadas de sus proveedores. Emprego Galicia se ofrece como enlace manual porque su formulario no permite completar la consulta automática. No es una búsqueda de todo Internet. Las guardadas y el progreso de cursos se guardan en este móvil; las candidaturas sí se sincronizan con tu cuenta.',
+                  'Empresas: Workable, Indra/Minsait, Inditex/Recruitee, Veolia y otros portales originales. VFX complementario: Hitmarker, Work With Indies y GamesJobsDirect. Formación: eFundae, DIPLOS y CNTG, más recursos oficiales seleccionados. Los errores de ArtStation y del formulario de empleo Xunta aparecen abajo; no se presentan como fuentes funcionando. Las guardadas y el progreso son locales; las candidaturas se sincronizan con tu cuenta.',
                 ),
               ),
               ...((feed!['sources'] as List?) ?? []).map(
@@ -742,7 +900,9 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   title: Text(s['name']),
                   subtitle: Text(
                     s['status'] == 'ok'
-                        ? 'Consulta correcta · ${s['examined'] ?? 0} fichas examinadas'
+                        ? s['matched'] != null
+                              ? 'Consulta correcta · ${s['matched']} coincidencias incorporadas'
+                              : 'Consulta correcta · ${s['examined'] ?? 0} fichas examinadas'
                         : s['reason'] ?? 'Fuente no disponible',
                   ),
                   leading: Icon(
