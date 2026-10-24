@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'jobs.dart';
 import 'insights.dart';
 import 'applications.dart';
+import 'career_categories.dart';
 
 void main() => runApp(const TrackerApp());
 
@@ -40,6 +41,8 @@ class _OffersState extends State<OffersPage> {
   JobFilters filters = JobFilters();
   final search = TextEditingController();
   int tab = 0;
+  String category = 'vfx';
+  int careerRefresh = 0;
   bool loading = true;
   String? error, updated;
   @override
@@ -66,6 +69,10 @@ class _OffersState extends State<OffersPage> {
     final p = await SharedPreferences.getInstance();
     if (!mounted) return;
     prefs = p;
+    final storedCategory = p.getString('career.category');
+    if (careerCategories.containsKey(storedCategory)) {
+      category = storedCategory!;
+    }
     saved = (p.getStringList('saved') ?? []).toSet();
     discarded = (p.getStringList('discarded') ?? []).toSet();
     try {
@@ -436,9 +443,44 @@ class _OffersState extends State<OffersPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('YAGO / VFX JOBS'),
+        bottom: tab <= 1
+            ? PreferredSize(
+                preferredSize: const Size.fromHeight(72),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 10),
+                  child: DropdownButtonFormField<String>(
+                    key: ValueKey(category),
+                    initialValue: category,
+                    isExpanded: true,
+                    decoration: const InputDecoration(
+                      labelText: 'Categoría',
+                      border: OutlineInputBorder(),
+                    ),
+                    items: careerCategories.entries
+                        .map(
+                          (e) => DropdownMenuItem(
+                            value: e.key,
+                            child: Text(e.value),
+                          ),
+                        )
+                        .toList(),
+                    onChanged: (value) {
+                      if (value != null) {
+                        setState(() => category = value);
+                        prefs?.setString('career.category', value);
+                      }
+                    },
+                  ),
+                ),
+              )
+            : null,
         actions: [
           IconButton(
-            onPressed: loading ? null : refresh,
+            onPressed: category != 'vfx' && tab <= 1
+                ? () => setState(() => careerRefresh++)
+                : loading
+                ? null
+                : refresh,
             tooltip: 'Actualizar',
             icon: const Icon(Icons.refresh),
           ),
@@ -467,7 +509,18 @@ class _OffersState extends State<OffersPage> {
           ),
         ],
       ),
-      body: tab == 4
+      body: tab <= 1 && category != 'vfx'
+          ? SafeArea(
+              child: CareerCategoryPage(
+                key: ValueKey(category),
+                category: category,
+                applications: applications,
+                savedOnly: tab == 1,
+                refreshVersion: careerRefresh,
+                openApplications: () => setState(() => tab = 4),
+              ),
+            )
+          : tab == 4
           ? SafeArea(child: ApplicationsPage(store: applications))
           : tab == 3
           ? SafeArea(child: InsightsPage(jobs: jobs))
@@ -502,7 +555,7 @@ class _OffersState extends State<OffersPage> {
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                            'Versión 0.5.0 · Candidaturas sincronizadas\n\nSolo portales oficiales. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web. Guardadas y descartadas siguen siendo locales.',
+                            'Versión 0.6.0 · Nuevas categorías móviles\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web. Guardadas y descartadas siguen siendo locales.',
                           ),
                           const SizedBox(height: 16),
                           Text(
