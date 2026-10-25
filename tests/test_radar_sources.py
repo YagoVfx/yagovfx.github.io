@@ -48,7 +48,7 @@ def test_gamesjobs_invalid_address_punctuation_is_read_without_eval():
 
 
 def test_inditex_imports_specific_roles_not_talent_pools(monkeypatch):
-    def offer(id,title):return dict(id=id,title=title,city='A CORUÑA',careers_url='https://zara.recruitee.com/o/'+str(id),description='Java software',requirements='Experiencia')
+    def offer(id,title):return dict(id=id,title=title,city='A CORUÑA',remote=True,careers_url='https://zara.recruitee.com/o/'+str(id),description='Java software',requirements='Experiencia')
     monkeypatch.setattr(radar,'get',lambda url:Response({'offers':[offer(1,'SENIOR PRODUCT ENGINEER'),offer(2,'INDITEX TECH, JOIN US!'),offer(3,'COMPRADOR TEJIDOS')]}))
     rows=radar.inditex(NOW)
     assert [x['id'] for x in rows]==['career-inditex-1']

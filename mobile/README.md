@@ -1,4 +1,16 @@
-# Yago Job Radar — Android 0.10.0
+# Yago Job Radar — Android 0.11.0
+
+## Novedades 0.11.0
+
+- VFX reúne empresas y portales en una lista por identidad de vacante. Procedencia se convierte en filtro; se conservan filtros de país, UE, modalidad, contrato, fechas, condiciones y guardados.
+- Código y Electricidad: municipios de Vigo y A Coruña, no sus provincias ni áreas metropolitanas. Programación mantiene remoto compatible desde España, incluido el ámbito internacional expresamente permitido. Los datos locales ambiguos de Inditex no se consideran prueba de municipio de A Coruña.
+- Cursos de pago seleccionados y comprobados: tres de Coloso, con precio original USD, equivalencia EUR orientativa del BCE, fecha del cambio, nivel e idioma. No se presentan como precios finales ni valoraciones de calidad.
+- Animum: ficha específica de Máster VFX y Composición con precio por consultar. Está fuera de los cursos con presupuesto confirmado; aparece al activar “Incluir precio por consultar”. El precio desconocido no se trata como gratuito ni como inferior a 800 €.
+- Oposiciones: nueva categoría, por defecto solo municipios de Vigo y A Coruña. El catálogo público proviene de consultas de acceso libre y niveles FP del buscador oficial PAG. Se muestran plazas, titulación, plazo orientativo, referencia y enlaces oficiales, sin presentar solicitudes. Guardar interés es local.
+- La convocatoria PAG 222569 incluye DAM y dos plazas de Técnico/a Superior de Informática de A Coruña. El anuncio BOE-A-2026-20340 está enlazado. El PAG informa fin de plazo 29/10/2026; deben confirmarse las bases y modificaciones.
+- Las convocatorias provinciales o estatales no se incluyen en la vista municipal. Se pueden consultar cambiando el ámbito, con destino estatal por confirmar.
+- El scanner actualiza `data/public-exams.json` junto con los demás datos. Cobertura parcial: el buscador PAG no recoge toda la contratación municipal ni todas las bolsas. Nunca se inventan plazas o fechas no publicadas.
+- Feed móvil coverageVersion 6. APK local: `dist/yago-vfx-jobs-0.11.0.apk`.
 
 ## Novedades 0.10.0
 

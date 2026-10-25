@@ -9,6 +9,7 @@ import 'insights.dart';
 import 'applications.dart';
 import 'career_categories.dart';
 import 'presentation.dart';
+import 'public_exams.dart';
 
 void main() => runApp(const TrackerApp());
 
@@ -63,7 +64,6 @@ class _OffersState extends State<OffersPage> {
   final search = TextEditingController();
   int tab = 0;
   String category = 'vfx';
-  bool vfxBoards = false;
   Widget categoryTabs() => Padding(
     padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
     child: Column(
@@ -71,7 +71,7 @@ class _OffersState extends State<OffersPage> {
       children: [
         Row(
           children: [
-            for (final entry in careerCategories.entries)
+            for (final entry in navigationCategories.entries)
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 2),
@@ -97,6 +97,7 @@ class _OffersState extends State<OffersPage> {
                                 'programming': Icons.code,
                                 'electricity': Icons.bolt_outlined,
                                 'courses': Icons.school_outlined,
+                                'public': Icons.account_balance_outlined,
                               }[entry.key],
                               size: 22,
                               color: category == entry.key
@@ -107,10 +108,12 @@ class _OffersState extends State<OffersPage> {
                             Text(
                               entry.key == 'programming'
                                   ? 'Código'
+                                  : entry.key == 'public'
+                                  ? 'Opos.'
                                   : entry.value,
                               maxLines: 1,
                               style: const TextStyle(
-                                fontSize: 12,
+                                fontSize: 11,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -123,36 +126,6 @@ class _OffersState extends State<OffersPage> {
               ),
           ],
         ),
-        if (category == 'vfx')
-          Row(
-            children: [
-              Expanded(
-                child: ChoiceChip(
-                  label: const Text(
-                    'Empresas',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 12),
-                  ),
-                  selected: !vfxBoards,
-                  onSelected: (_) => setState(() => vfxBoards = false),
-                ),
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: ChoiceChip(
-                  label: const Text(
-                    'Portales',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 12),
-                  ),
-                  selected: vfxBoards,
-                  onSelected: (_) => setState(() => vfxBoards = true),
-                ),
-              ),
-            ],
-          ),
       ],
     ),
   );
@@ -184,7 +157,7 @@ class _OffersState extends State<OffersPage> {
     if (!mounted) return;
     prefs = p;
     final storedCategory = p.getString('career.category');
-    if (careerCategories.containsKey(storedCategory)) {
+    if (navigationCategories.containsKey(storedCategory)) {
       category = storedCategory!;
     }
     saved = {...?p.getStringList('saved'), ...?p.getStringList('career.saved')};
@@ -610,19 +583,16 @@ class _OffersState extends State<OffersPage> {
         title: const Text('YAGO / JOB RADAR'),
         bottom: tab <= 1
             ? PreferredSize(
-                preferredSize: Size.fromHeight(category == 'vfx' ? 130 : 76),
+                preferredSize: const Size.fromHeight(76),
                 child: categoryTabs(),
               )
             : null,
         actions: [
           IconButton(
-            onPressed: tab == 3
-                ? () => setState(() => careerRefresh++)
-                : (category != 'vfx' || vfxBoards) && tab <= 1
-                ? () => setState(() => careerRefresh++)
-                : loading
-                ? null
-                : refresh,
+            onPressed: () {
+              setState(() => careerRefresh++);
+              if (category == 'vfx' || tab == 2) refresh();
+            },
             tooltip: 'Actualizar',
             icon: const Icon(Icons.refresh),
           ),
@@ -651,11 +621,19 @@ class _OffersState extends State<OffersPage> {
           ),
         ],
       ),
-      body: tab <= 1 && (category != 'vfx' || vfxBoards)
+      body: tab <= 1 && category == 'public'
+          ? SafeArea(
+              child: PublicExamsPage(
+                savedOnly: tab == 1,
+                refreshVersion: careerRefresh,
+              ),
+            )
+          : tab <= 1
           ? SafeArea(
               child: CareerCategoryPage(
                 key: ValueKey(category),
                 category: category,
+                directJobs: jobs,
                 applications: applications,
                 savedOnly: tab == 1,
                 refreshVersion: careerRefresh,
@@ -671,7 +649,7 @@ class _OffersState extends State<OffersPage> {
           ? SafeArea(
               child: InsightsPage(
                 jobs: jobs,
-                category: category,
+                category: category == 'public' ? 'programming' : category,
                 refreshVersion: careerRefresh,
               ),
             )
@@ -706,7 +684,7 @@ class _OffersState extends State<OffersPage> {
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                            'Versión 0.10.0 · Fuentes y formación\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web.',
+                            'Versión 0.11.0 · Fuentes y formación\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web.',
                           ),
                           const SizedBox(height: 16),
                           Text('Datos VFX: ${readableDate(updated)}'),

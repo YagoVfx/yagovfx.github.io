@@ -48,10 +48,16 @@ def classify_offer(title, description, location):
     if re.search(r'desplaz|viajar|movilidad', text): flags.append('Revisar desplazamientos y viajes')
     if re.search(r'ingenier|grado universitario', text): flags.append('Revisar si exige titulación universitaria')
     if re.search(r'\d\+?\s*(?:anos|years).{0,15}experien|experien.{0,20}\d\+?\s*(?:anos|years)', text): flags.append('Revisar años de experiencia exigidos')
+    city = re.split(r'[,;/|]|\s+[-–]\s+', fold(location).strip())[0].strip()
+    city = re.sub(r'^municipio de\s+', '', city)
+    in_vigo = bool(re.fullmatch(r'vigo(?:\s*\([^)]*\))?', city))
+    in_coruna = bool(re.fullmatch(r'(?:a coruna|la coruna)(?:\s*\([^)]*\))?|coruna\s*\(a\)', city))
+    nearby = r'\b(?:arteixo|cambre|culleredo|oleiros|bergondo|betanzos|carballo|sada|redondela|porrino|nigran|gondomar|moana|cangas|mos|ponteareas)\b'
+    if re.search(nearby, fold(title)):
+        in_vigo = in_coruna = False
     return dict(experience='experienced' if advanced else 'junior' if junior else 'unknown',
                 workplace='hybrid' if hybrid else 'remote' if remote else 'unknown',
-                inVigo=bool(re.search(r'\bvigo\b', fold(location))),
-                inCoruna=bool(re.search(r'\b(?:a coruna|coruna \(a\)|la coruna)(?=\W|$)', fold(location))), requirements=flags)
+                inVigo=in_vigo, inCoruna=in_coruna, requirements=flags)
 
 
 def parse_results(html):
@@ -289,7 +295,7 @@ def run():
     direct_temporary = direct_path.with_suffix('.json.tmp')
     direct_temporary.write_text(json.dumps(direct, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     direct_temporary.replace(direct_path)
-    output = dict(schemaVersion=2, coverageVersion=5, updatedAt=now, offers=unique_offers, courses=courses, sources=enrich_sources(status),
+    output = dict(schemaVersion=2, coverageVersion=6, updatedAt=now, offers=unique_offers, courses=courses, sources=enrich_sources(status),
                   note='Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.')
     temporary = target.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

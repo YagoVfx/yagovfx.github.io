@@ -64,6 +64,9 @@ def inditex(now):
         if raw.get('remote'): row['workplace'] = 'remote'
         elif raw.get('hybrid'): row['workplace'] = 'hybrid'
         else: row['workplace'] = 'onsite'
+        if row['inCoruna'] and row['workplace'] != 'remote':
+            # The broad Inditex city label may refer to Arteixo. It is not municipal evidence.
+            row['inCoruna'] = False
         if not local_or_remote(row): continue
         row['postedDate'] = (raw.get('published_at') or raw.get('created_at') or '')[:10] or None
         row['requirements'].append('Confirmar sede real: A Coruña puede referirse al entorno de Arteixo')

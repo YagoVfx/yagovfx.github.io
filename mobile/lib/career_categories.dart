@@ -18,6 +18,7 @@ const careerCategories = {
   'electricity': 'Electricidad',
   'courses': 'Cursos',
 };
+const navigationCategories = {...careerCategories, 'public': 'Oposiciones'};
 
 ({int score, List<String> reasons}) coursePriority(
   Map<String, dynamic> item, {
@@ -168,6 +169,7 @@ List<Map<String, dynamic>> filterCareerItems(
   String goal = 'review',
   String profileView = 'all',
   bool freeOnly = false,
+  bool includeUnknownPrice = false,
   double budget = 800,
   bool savedOnly = false,
   Set<String> saved = const {},
@@ -209,7 +211,9 @@ List<Map<String, dynamic>> filterCareerItems(
       if (modality != 'all' && item['modality'] != modality) return false;
       if (topic != 'all' && item['topic'] != topic) return false;
       final price = item['price'];
-      if (price is! num || price > budget || freeOnly && price != 0) {
+      if ((price is! num && (!includeUnknownPrice || freeOnly)) ||
+          (price is num && price > budget) ||
+          freeOnly && price != 0) {
         return false;
       }
     } else {
@@ -258,7 +262,8 @@ List<Map<String, dynamic>> filterCareerItems(
         goal: goal,
       ).score.compareTo(coursePriority(a, goal: goal).score);
       if (priority != 0) return priority;
-      final price = (a['price'] as num).compareTo(b['price'] as num);
+      final price = (a['price'] is num ? a['price'] as num : double.infinity)
+          .compareTo(b['price'] is num ? b['price'] as num : double.infinity);
       if (price != 0) return price;
       final basic = (a['level'] == 'beginner' ? 0 : 1).compareTo(
         b['level'] == 'beginner' ? 0 : 1,
@@ -283,7 +288,7 @@ class CareerFeedRepository {
     final data = jsonDecode(text);
     if (data is! Map<String, dynamic> ||
         data['schemaVersion'] != 2 ||
-        (data['coverageVersion'] as num? ?? 0) < 5 ||
+        (data['coverageVersion'] as num? ?? 0) < 6 ||
         data['offers'] is! List ||
         data['courses'] is! List) {
       throw const FormatException('Formato de oportunidades no válido');
@@ -315,12 +320,16 @@ class CareerCategoryPage extends StatefulWidget {
   final int refreshVersion;
   final VoidCallback openApplications;
   final VoidCallback? onSavedChanged;
+  final List<Job> directJobs;
+  final CareerFeedRepository? feedRepository;
   const CareerCategoryPage({
     super.key,
     required this.category,
     required this.applications,
     required this.openApplications,
     this.onSavedChanged,
+    this.directJobs = const [],
+    this.feedRepository,
     this.savedOnly = false,
     this.refreshVersion = 0,
   });
@@ -329,7 +338,8 @@ class CareerCategoryPage extends StatefulWidget {
 }
 
 class _CareerCategoryState extends State<CareerCategoryPage> {
-  final repository = CareerFeedRepository(), search = TextEditingController();
+  late final CareerFeedRepository repository;
+  final search = TextEditingController();
   SharedPreferences? prefs;
   Map<String, dynamic>? feed, catalog;
   Map<String, Map<String, dynamic>> savedMeta = {};
@@ -339,12 +349,16 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
   final detailChanges = ValueNotifier<int>(0);
   String scope = 'all', modality = 'all', topic = 'all', goal = 'review';
   String profileView = 'entry';
-  bool showFilters = false;
+  bool showFilters = false, includeUnknownPrice = false;
+  String sourceFilter = 'all';
+  JobFilters vfxFilters = JobFilters();
+  Set<String> discarded = {};
   int days = 0;
   String? error;
   @override
   void initState() {
     super.initState();
+    repository = widget.feedRepository ?? CareerFeedRepository();
     load();
   }
 
@@ -402,12 +416,25 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
         widget.category == 'vfx';
     goal = p.getString('career.courses.goal') ?? 'review';
     modality = p.getString('career.courses.modality') ?? 'all';
+    includeUnknownPrice = p.getBool('career.courses.unknownPrice') ?? false;
+    sourceFilter = p.getString('career.vfx.sources') ?? 'all';
+    discarded = (p.getStringList('discarded') ?? []).toSet();
+    try {
+      vfxFilters = JobFilters.fromJson(
+        jsonDecode(p.getString('filters') ?? '{}'),
+      );
+    } catch (_) {}
     profileView = p.getString('career.programming.profileView') ?? 'entry';
     if (widget.category == 'courses' &&
         p.getBool('career.courses.advancedV3') == null) {
       includeAdvanced = goal != 'review';
     }
-    days = p.getInt('career.${widget.category}.days') ?? 0;
+    days =
+        p.getInt('career.${widget.category}.days') ??
+        (widget.category == 'vfx' ? vfxFilters.days : 0);
+    if (widget.category == 'vfx' && search.text.isEmpty) {
+      search.text = vfxFilters.query;
+    }
     scope = p.getString('career.${widget.category}.scope') ?? 'all';
     freeOnly = p.getBool('career.courses.freeOnly') ?? false;
     if (widget.category == 'courses') {
@@ -493,7 +520,66 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       final item = Map<String, dynamic>.from(raw);
       entries[item['id']] = item;
     }
-    return filterCareerItems(
+    if (widget.category == 'vfx') {
+      for (final job in widget.directJobs.where(
+        (j) => j.isDirectSource && j.status == 'active',
+      )) {
+        entries[job.id] = {
+          ...?entries[job.id],
+          ...job.data,
+          'category': 'vfx',
+          'hasPortal': (feed!['offers'] as List).any(
+            (r) => r['category'] == 'vfx' && r['id'] == job.id,
+          ),
+          'hasEmployer': true,
+          'sourceKind': 'employer',
+          'source': job.str('ats'),
+          'workplace': job.str('workplaceType'),
+        };
+      }
+      entries.removeWhere((key, item) {
+        final job = Job(item);
+        if (!widget.savedOnly && discarded.contains(key)) return true;
+        if (sourceFilter == 'employer' &&
+            item['hasEmployer'] != true &&
+            item['sourceKind'] != 'employer') {
+          return true;
+        }
+        if (sourceFilter == 'portal' &&
+            item['hasPortal'] != true &&
+            item['sourceKind'] != 'job-board') {
+          return true;
+        }
+        if (item['hasEmployer'] == true &&
+            !vfxFilters.unverified &&
+            !job.verified) {
+          return true;
+        }
+        if (!vfxFilters.possible && item['matchType'] == 'possibleMatch') {
+          return true;
+        }
+        if (vfxFilters.spain && !job.inSpain) return true;
+        if (vfxFilters.eu && !isEUJob(item)) return true;
+        if (vfxFilters.view != 'all' && job.compatibility != vfxFilters.view) {
+          return true;
+        }
+        if (vfxFilters.eligibility != 'all' &&
+            job.eligibility != vfxFilters.eligibility) {
+          return true;
+        }
+        if (vfxFilters.contract != 'all' &&
+            job.str('contractType') != vfxFilters.contract) {
+          return true;
+        }
+        if (vfxFilters.workplace != 'all' &&
+            (item['workplace'] ?? item['workplaceType']) !=
+                vfxFilters.workplace) {
+          return true;
+        }
+        return false;
+      });
+    }
+    final result = filterCareerItems(
       entries.values.toList(),
       category: widget.category,
       query: search.text,
@@ -505,9 +591,25 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       goal: goal,
       profileView: widget.category == 'programming' ? profileView : 'all',
       freeOnly: freeOnly,
+      includeUnknownPrice: includeUnknownPrice,
       savedOnly: widget.savedOnly,
       saved: saved,
     );
+    if (widget.category == 'vfx') {
+      result.sort((a, b) {
+        if (vfxFilters.sort == 'company') {
+          return '${a['company']}'.compareTo('${b['company']}');
+        }
+        if (vfxFilters.sort == 'recent') {
+          return '${b['postedDate'] ?? ''}'.compareTo(
+            '${a['postedDate'] ?? ''}',
+          );
+        }
+        final score = Job(b).score.compareTo(Job(a).score);
+        return score != 0 ? score : '${a['title']}'.compareTo('${b['title']}');
+      });
+    }
+    return result;
   }
 
   Widget picker(
@@ -556,8 +658,9 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             ),
           ),
           Text(
-            '${item['provider']} · ${item['modality'] == 'online' ? 'Online' : 'Presencial'} · ${item['price'] == 0 ? 'Gratuito' : '${item['price']} €'}',
+            '${item['provider']} · ${item['modality'] == 'online' ? 'Online' : 'Presencial'} · ${coursePrice(item)}',
           ),
+          if (item['language'] != null) Text(item['language']),
           Wrap(
             spacing: 8,
             children: [
@@ -583,6 +686,10 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                 ),
             ],
           ),
+          if (item['sourcePrice'] != null)
+            Text(
+              'Precio original en ${item['sourceCurrency']}; equivalencia en euros orientativa, cambio del ${item['exchangeRateDate']}. Confirma el precio final y posibles impuestos al comprar.',
+            ),
           if (item['kind'] == 'guide')
             const Text('Guía práctica; no equivale a un título o certificado'),
           if (item['location'] is String &&
@@ -709,9 +816,12 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
               icon: const Icon(Icons.info_outline),
               label: const Text('De dónde sale esta oferta'),
             ),
-            const Text(
-              'La titulación y experiencia se comprueban en la fuente; las prácticas pueden exigir matrícula vigente.',
-            ),
+            if (widget.category != 'vfx')
+              const Text(
+                'La titulación y experiencia se comprueban en la fuente; las prácticas pueden exigir matrícula vigente.',
+              ),
+            if (widget.category == 'vfx' && item['spainReason'] != null)
+              Text('${item['spainReason']}'),
             ...((item['requirements'] as List?) ?? []).map((r) => Text('• $r')),
             ExpansionTile(
               title: const Text('Descripción de la fuente'),
@@ -750,6 +860,15 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   ),
               ],
             ),
+            if (widget.category == 'vfx')
+              TextButton(
+                onPressed: () {
+                  setState(() => discarded.add(item['id']));
+                  prefs?.setStringList('discarded', discarded.toList());
+                  Navigator.of(routeContext).pop();
+                },
+                child: const Text('Descartar de mi lista'),
+              ),
             TextButton.icon(
               icon: const Icon(Icons.send_outlined),
               label: Text(
@@ -813,7 +932,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
           const SizedBox(height: 3),
           Text(
             course
-                ? "${item['price'] == 0 ? 'Gratis' : '${item['price']} €'} · ${item['modality'] == 'online' ? 'Online' : 'Presencial'} · ${durationLabel(item['durationHours'])}"
+                ? "${coursePrice(item)} · ${item['modality'] == 'online' ? 'Online' : 'Presencial'} · ${durationLabel(item['durationHours'])}"
                 : "${item['location']} · ${item['workplace'] == 'remote'
                       ? 'Remoto'
                       : item['workplace'] == 'hybrid'
@@ -822,8 +941,20 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             style: const TextStyle(color: mutedColor, fontSize: 12),
           ),
           statusTag(
-            course ? coursePriorityLabel(item, goal: goal) : fitLabel(item),
-            confirmed: !course && educationFit(item) == 'fp',
+            course
+                ? coursePriorityLabel(item, goal: goal)
+                : widget.category == 'vfx'
+                ? item['hasEmployer'] == true
+                      ? Job(item).verified
+                            ? 'Procedencia oficial'
+                            : 'Comprobación pendiente'
+                      : 'Portal · revisar condiciones'
+                : fitLabel(item),
+            confirmed:
+                !course &&
+                (widget.category == 'vfx'
+                    ? item['hasEmployer'] == true && Job(item).verified
+                    : educationFit(item) == 'fp'),
             review: !course,
           ),
           if (!course && widget.applications.find(Job(item)) != null)
@@ -858,7 +989,11 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                       if (!course)
                         Padding(
                           padding: const EdgeInsets.all(12),
-                          child: Text(fitLabel(item)),
+                          child: Text(
+                            widget.category == 'vfx'
+                                ? 'Confirma país, experiencia y contrato en la fuente original'
+                                : fitLabel(item),
+                          ),
                         ),
                       course
                           ? courseDetail(item)
@@ -969,6 +1104,161 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
               if (isCourse)
                 SwitchListTile(
                   contentPadding: EdgeInsets.zero,
+                  title: const Text('Incluir precio por consultar'),
+                  subtitle: const Text(
+                    'Se muestran aparte del presupuesto confirmado; no se consideran gratuitos.',
+                  ),
+                  value: includeUnknownPrice,
+                  onChanged: (v) {
+                    setState(() => includeUnknownPrice = v);
+                    prefs?.setBool('career.courses.unknownPrice', v);
+                    detailChanges.value++;
+                  },
+                ),
+              if (widget.category == 'vfx') ...[
+                picker(
+                  'Orden',
+                  vfxFilters.sort,
+                  {
+                    'relevance': 'Relevancia',
+                    'recent': 'Más recientes',
+                    'company': 'Empresa',
+                  },
+                  (v) {
+                    vfxFilters.sort = v;
+                    prefs?.setString(
+                      'filters',
+                      jsonEncode(vfxFilters.toJson()),
+                    );
+                  },
+                ),
+                picker(
+                  'Elegibilidad en España',
+                  vfxFilters.eligibility,
+                  {
+                    'all': 'Todas',
+                    'confirmed': 'Confirmada por la fuente',
+                    'possible': 'Posible; revisar',
+                    'unknown': 'Sin confirmar',
+                    'restricted': 'Restringida',
+                  },
+                  (v) {
+                    vfxFilters.eligibility = v;
+                    prefs?.setString(
+                      'filters',
+                      jsonEncode(vfxFilters.toJson()),
+                    );
+                  },
+                ),
+
+                picker(
+                  'Procedencia',
+                  sourceFilter,
+                  {
+                    'all': 'Todas las fuentes',
+                    'employer': 'Empresas',
+                    'portal': 'Portales',
+                  },
+                  (v) {
+                    sourceFilter = v;
+                    prefs?.setString('career.vfx.sources', v);
+                  },
+                ),
+                picker(
+                  'Condiciones',
+                  vfxFilters.view,
+                  {
+                    'all': 'Todas',
+                    'compatible': 'Cumplen filtros de condiciones',
+                    'review': 'Por revisar',
+                  },
+                  (v) {
+                    vfxFilters.view = v;
+                    prefs?.setString(
+                      'filters',
+                      jsonEncode(vfxFilters.toJson()),
+                    );
+                  },
+                ),
+                picker(
+                  'Contrato',
+                  vfxFilters.contract,
+                  {
+                    'all': 'Todos',
+                    'employee': 'Asalariado',
+                    'freelance': 'Freelance / B2B',
+                    'temporary': 'Temporal',
+                    'unknown': 'Por confirmar',
+                  },
+                  (v) {
+                    vfxFilters.contract = v;
+                    prefs?.setString(
+                      'filters',
+                      jsonEncode(vfxFilters.toJson()),
+                    );
+                  },
+                ),
+                picker(
+                  'Modalidad VFX',
+                  vfxFilters.workplace,
+                  {
+                    'all': 'Todas',
+                    'remote': 'Remoto',
+                    'hybrid': 'Híbrido',
+                    'onsite': 'Presencial',
+                    'unknown': 'Por confirmar',
+                  },
+                  (v) {
+                    vfxFilters.workplace = v;
+                    prefs?.setString(
+                      'filters',
+                      jsonEncode(vfxFilters.toJson()),
+                    );
+                  },
+                ),
+                SwitchListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: const Text('Solo España'),
+                  value: vfxFilters.spain,
+                  onChanged: (v) {
+                    setState(() => vfxFilters.spain = v);
+                    prefs?.setString(
+                      'filters',
+                      jsonEncode(vfxFilters.toJson()),
+                    );
+                    detailChanges.value++;
+                  },
+                ),
+                SwitchListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: const Text('Incluir coincidencias posibles'),
+                  value: vfxFilters.possible,
+                  onChanged: (v) {
+                    setState(() => vfxFilters.possible = v);
+                    prefs?.setString(
+                      'filters',
+                      jsonEncode(vfxFilters.toJson()),
+                    );
+                    detailChanges.value++;
+                  },
+                ),
+                SwitchListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: const Text('Empresas con comprobación pendiente'),
+                  value: vfxFilters.unverified,
+                  onChanged: (v) {
+                    setState(() => vfxFilters.unverified = v);
+                    prefs?.setString(
+                      'filters',
+                      jsonEncode(vfxFilters.toJson()),
+                    );
+                    detailChanges.value++;
+                  },
+                ),
+              ],
+              if (isCourse)
+                SwitchListTile(
+                  contentPadding: EdgeInsets.zero,
                   title: const Text('Solo gratuitos o subvencionados'),
                   value: freeOnly,
                   onChanged: (v) {
@@ -1054,6 +1344,9 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                     freeOnly = false;
                     includeAdvanced = true;
                     profileView = 'all';
+                    sourceFilter = 'all';
+                    vfxFilters = JobFilters();
+                    includeUnknownPrice = false;
                     showFilters = false;
                   });
                   prefs?.setString('career.${widget.category}.query', '');
@@ -1061,6 +1354,9 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   prefs?.setString('career.${widget.category}.scope', 'all');
                   prefs?.setBool('career.${widget.category}.advancedV3', true);
                   prefs?.setString('career.programming.profileView', 'all');
+                  prefs?.setString('career.vfx.sources', 'all');
+                  prefs?.setString('filters', jsonEncode(vfxFilters.toJson()));
+                  prefs?.setBool('career.courses.unknownPrice', false);
                   prefs?.setBool('career.courses.freeOnly', false);
                   prefs?.setString('career.courses.modality', 'all');
                   Navigator.of(context).pop();
@@ -1081,7 +1377,16 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       return const Center(child: CircularProgressIndicator());
     }
     final list = items(), isCourse = widget.category == 'courses';
-    final total = isCourse
+    final total = widget.category == 'vfx'
+        ? {
+            ...(feed!['offers'] as List)
+                .where((r) => r['category'] == 'vfx')
+                .map((r) => r['id']),
+            ...widget.directJobs
+                .where((j) => j.status == 'active' && j.isDirectSource)
+                .map((j) => j.id),
+          }.length
+        : isCourse
         ? [
             ...feed!['courses'],
             ...catalog!['courses'],
@@ -1098,7 +1403,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            '${widget.category == 'vfx' ? 'VFX / Games · Portales' : careerCategories[widget.category]}${widget.savedOnly ? ' · Guardadas' : ''}',
+            '${widget.category == 'vfx' ? 'VFX / Games' : careerCategories[widget.category]}${widget.savedOnly ? ' · Guardadas' : ''}',
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           if (loading) const LinearProgressIndicator(),

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "coverageVersion": 5,
+  "coverageVersion": 6,
   "updatedAt": "2026-10-25T11:12:27.574085Z",
   "offers": [
     {
@@ -380,72 +380,6 @@
         "Revisar permiso de conducir",
         "Revisar desplazamientos y viajes"
       ]
-    },
-    {
-      "id": "career-inditex-2508111",
-      "category": "programming",
-      "title": "TECH LEAD DISTRIBUTION",
-      "company": "Inditex / Zara",
-      "location": "A CORUÑA",
-      "description": "En Inditex estamos evolucionando nuestra forma de construir tecnología. En una compañía global como Inditex, la tecnología es clave para que el negocio funcione cada día: en tiendas, ecommerce, logística, transporte, distribución, people o finanzas. Por eso estamos cambiando cómo trabajamos: equipo pequeños y autónomos y dando espacio a la responsabilidad técnica, el criterio y la autonomía de los equipos . Creemos que los mejores productos surgen cuando la ingeniería entiende el contexto completo en el que opera: las personas que lo usan, los procesos de negocio, los datos y la tecnología que los conecta. Y buscamos profesionales a los que les motive trabajar con esa visión. El reto Buscamos Tech Leads para acompañar a equipos pequeños y estables que trabajan sobre productos y plataformas críticas para el negocio. El rol de Tech Lead es un rol de referente técnico cercano , responsable de ayudar al equipo a tomar buenas decisiones técnicas hoy sin comprometer el futuro del producto. En este modelo las decisiones técnicas se toman cerca del problema, la arquitectura evoluciona de forma incremental y la calidad y la escalabilidad son parte del trabajo diario. Qué harás en tu día a día: Entender el sistema Comprenderás cómo encaja el producto dentro del ecosistema tecnológico y del negocio. Tendrás contexto de los procesos operativos que dependen de los sistemas que construyes. Ayudarás al equipo a anticipar impactos, dependencias y riesgos técnicos. Diseñar y evolucionar la solución Participarás desde fases tempranas en la definición de la solución técnica. Diseñarás y evolucionarás arquitecturas de servicios distribuidos. Tomarás decisiones sobre: Backend y frontend. Modelado de datos. Integraciones y APIs. Gestionarás la deuda técnica de forma consciente y priorizada. Construir con el equipo Programarás activamente en el día a día. Revisarás código y propondrás mejoras. Acompañarás al equipo en decisiones de diseño e implementación. Impulsarás buenas prácticas de testing, calidad y mantenibilidad. Stack y entorno técnico Backend: Java / Kotlin, Node.js, Python (según dominio). Arquitectura: microservicios, APIs, sistemas event-driven. Datos: bases de datos relacionales y NoSQL. Cloud: entornos cloud (AWS/GCP), infraestructura como código. DevOps: CI/CD, observabilidad, monitorización. IA y datos: integración de modelos y servicios de datos cuando el producto lo requiere. Conectar tecnología y producto Colaborarás estrechamente con personas de producto y negocio. Traducirás objetivos de producto en decisiones técnicas viables. Ayudarás a priorizar el trabajo del equipo en función del impacto y el valor aportado. Qué buscamos Gente que haya liderado técnicamente equipos pequeños. Que tengan un background sólido como ingenieros senior. Que se sientan cómodos programando y tomando decisiones de arquitectura. Que hayan trabajado con sistemas en producción y a escala. Buscamos personas que quieran trabajar cerca del problema, tomar decisiones y construir tecnología con sentido. Es un entorno exigente, con responsabilidad real, pero también con espacio para aprender, mejorar y tener impacto directo en productos que forman parte del día a día de millones de personas. Si este enfoque encaja contigo, nos encantará conocerte.",
-      "url": "https://zara.recruitee.com/o/tech-lead-distribution",
-      "source": "Inditex / Zara · Recruitee",
-      "sourceKind": "employer",
-      "checkedAt": "2026-10-25T11:12:27.574085Z",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "onsite",
-      "inVigo": false,
-      "inCoruna": true,
-      "requirements": [
-        "Revisar si exige titulación universitaria",
-        "Confirmar sede real: A Coruña puede referirse al entorno de Arteixo"
-      ],
-      "postedDate": "2026-02-27"
-    },
-    {
-      "id": "career-inditex-2508108",
-      "category": "programming",
-      "title": "TECH LEAD PEOPLE",
-      "company": "Inditex / Zara",
-      "location": "A CORUÑA",
-      "description": "En Inditex estamos evolucionando nuestra forma de construir tecnología. En una compañía global como Inditex, la tecnología es clave para que el negocio funcione cada día: en tiendas, ecommerce, logística, transporte, distribución, people o finanzas. Por eso estamos cambiando cómo trabajamos: equipo pequeños y autónomos y dando espacio a la responsabilidad técnica, el criterio y la autonomía de los equipos . Creemos que los mejores productos surgen cuando la ingeniería entiende el contexto completo en el que opera: las personas que lo usan, los procesos de negocio, los datos y la tecnología que los conecta. Y buscamos profesionales a los que les motive trabajar con esa visión. El reto Buscamos Tech Leads para acompañar a equipos pequeños y estables que trabajan sobre productos y plataformas críticas para el negocio. El rol de Tech Lead es un rol de referente técnico cercano , responsable de ayudar al equipo a tomar buenas decisiones técnicas hoy sin comprometer el futuro del producto. En este modelo las decisiones técnicas se toman cerca del problema, la arquitectura evoluciona de forma incremental y la calidad y la escalabilidad son parte del trabajo diario. Qué harás en tu día a día: Entender el sistema Comprenderás cómo encaja el producto dentro del ecosistema tecnológico y del negocio. Tendrás contexto de los procesos operativos que dependen de los sistemas que construyes. Ayudarás al equipo a anticipar impactos, dependencias y riesgos técnicos. Diseñar y evolucionar la solución Participarás desde fases tempranas en la definición de la solución técnica. Diseñarás y evolucionarás arquitecturas de servicios distribuidos. Tomarás decisiones sobre: Backend y frontend. Modelado de datos. Integraciones y APIs. Gestionarás la deuda técnica de forma consciente y priorizada. Construir con el equipo Programarás activamente en el día a día. Revisarás código y propondrás mejoras. Acompañarás al equipo en decisiones de diseño e implementación. Impulsarás buenas prácticas de testing, calidad y mantenibilidad. Stack y entorno técnico Backend: Java / Kotlin, Node.js, Python (según dominio). Arquitectura: microservicios, APIs, sistemas event-driven. Datos: bases de datos relacionales y NoSQL. Cloud: entornos cloud (AWS/GCP), infraestructura como código. DevOps: CI/CD, observabilidad, monitorización. IA y datos: integración de modelos y servicios de datos cuando el producto lo requiere. Conectar tecnología y producto Colaborarás estrechamente con personas de producto y negocio. Traducirás objetivos de producto en decisiones técnicas viables. Ayudarás a priorizar el trabajo del equipo en función del impacto y el valor aportado. Qué buscamos Gente que haya liderado técnicamente equipos pequeños. Que tengan un background sólido como ingenieros senior. Que se sientan cómodos programando y tomando decisiones de arquitectura. Que hayan trabajado con sistemas en producción y a escala. Buscamos personas que quieran trabajar cerca del problema, tomar decisiones y construir tecnología con sentido. Es un entorno exigente, con responsabilidad real, pero también con espacio para aprender, mejorar y tener impacto directo en productos que forman parte del día a día de millones de personas. Si este enfoque encaja contigo, nos encantará conocerte.",
-      "url": "https://zara.recruitee.com/o/tech-lead-people",
-      "source": "Inditex / Zara · Recruitee",
-      "sourceKind": "employer",
-      "checkedAt": "2026-10-25T11:12:27.574085Z",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "onsite",
-      "inVigo": false,
-      "inCoruna": true,
-      "requirements": [
-        "Revisar si exige titulación universitaria",
-        "Confirmar sede real: A Coruña puede referirse al entorno de Arteixo"
-      ],
-      "postedDate": "2026-02-27"
-    },
-    {
-      "id": "career-inditex-2460868",
-      "category": "programming",
-      "title": "SENIOR PRODUCT ENGINEER",
-      "company": "Inditex / Zara",
-      "location": "A CORUÑA",
-      "description": "En Inditex estamos evolucionando nuestra forma de construir tecnología. En una compañía global como Inditex, la tecnología es clave para que el negocio funcione cada día: en tiendas, ecommerce, logística, transporte, distribución, people o finanzas. Por eso estamos cambiando cómo trabajamos: equipo pequeños y autónomos y dando espacio a la responsabilidad técnica, el criterio y la autonomía de los equipos . Creemos que los mejores productos surgen cuando la ingeniería entiende el contexto completo en el que opera: las personas que lo usan, los procesos de negocio, los datos y la tecnología que los conecta. Y buscamos profesionales a los que les motive trabajar con esa visión. El reto Estamos formando pequeños equipos autónomos de 2–3 personas que trabajan sobre productos relevantes para distintas áreas del negocio. Equipos estables, con foco claro y capacidad real para tomar decisiones, reduciendo los traspasos entre equipos construyendo los requisitos de forma colaborativa. El rol va más allá de implementar tareas, va de entender el problema, proponer la solución, construirla y mejorarla con el tiempo. Qué harás en tu día a día: Entender el sistema Conocerás cómo funcionan los procesos de negocio más allá de una funcionalidad concreta. Trabajarás en contacto con usuarios reales (tienda, logística, operaciones…) Ayudarás a definir los problemas antes de abordar las soluciones. Diseñar producto desde una mirada técnica Transformarás problemas complejos en soluciones claras y mantenibles. Participarás en decisiones de arquitectura con impacto directo en el producto. Construir con responsabilidad Desarrollarás código claro, cuidado y preparado para evolucionar. Diseñarás servicios, APIs y flujos completos. Acompañarás lo que construyas también en producción. Usar datos e inteligencia como apoyo Trabajarás con datos y modelos de IA cuando tenga sentido. Siempre con un enfoque práctico: mejorar decisiones y procesos reales. Aprender e iterar Analizarás el uso real de las soluciones. Mejorarás el producto de forma continua. Buscamos ingenieros con experiencia que: Han participado en el desarrollo de productos complejos Se sienten cómodos trabajando en distintas capas del sistema Disfrutan entendiendo cómo encajan las piezas dentro de un todo Personas que: Valoran el trabajo bien hecho Buscan soluciones simples y sostenibles Si te motiva trabajar cerca del problema, tomar decisiones y construir tecnología con sentido, nos encantará conocerte.",
-      "url": "https://zara.recruitee.com/o/senior-product-engineer",
-      "source": "Inditex / Zara · Recruitee",
-      "sourceKind": "employer",
-      "checkedAt": "2026-10-25T11:12:27.574085Z",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "onsite",
-      "inVigo": false,
-      "inCoruna": true,
-      "requirements": [
-        "Revisar si exige titulación universitaria",
-        "Confirmar sede real: A Coruña puede referirse al entorno de Arteixo"
-      ],
-      "postedDate": "2026-02-03"
     },
     {
       "id": "career-indra-85558e4282050e20137c",
@@ -6617,6 +6551,95 @@
       "description": "Lección práctica de VFX y Technical Art para Unreal/Houdini. Consultar conocimientos previos, versión y archivos en la página original.",
       "qualification": "Conocimientos de Houdini y Unreal según la lección. Revisar licencias: acceso gratuito al tutorial no incluye licencias de software.",
       "availability": "Autoaprendizaje con vídeos públicos. Sin plazas ni certificado profesional confirmados."
+    },
+    {
+      "id": "course-animum-vfx",
+      "kind": "course",
+      "title": "Máster VFX y Composición",
+      "provider": "Animum",
+      "source": "Animum",
+      "topic": "vfx",
+      "url": "https://www.animum3d.com/vfx-efectos-visuales/master-houdini/",
+      "sourceUrl": "https://www.animum3d.com/vfx-efectos-visuales/",
+      "price": null,
+      "modality": "online",
+      "level": "intermediate",
+      "learningGoal": "new",
+      "description": "Formación de larga duración en VFX y composición. Compara su enfoque de cine/composición con tu objetivo de VFX para videojuegos. No se presupone que entre en 800 €.",
+      "availability": "Precio, admisión y próxima convocatoria por consultar con el centro. No es una inscripción ni una recomendación de compra.",
+      "checkedAt": "2026-10-25T20:13:22.213362+00:00"
+    },
+    {
+      "id": "course-coloso-vfxartist-kisonglee-us",
+      "kind": "course",
+      "title": "Bringing Artistic Game Effects to Life with Niagara",
+      "provider": "Coloso",
+      "source": "Coloso",
+      "topic": "vfx",
+      "url": "https://coloso.global/en/products/vfxartist-kisonglee-us",
+      "sourceUrl": "https://coloso.global/en/products/vfxartist-kisonglee-us",
+      "price": 232.29,
+      "sourcePrice": 260.0,
+      "sourceCurrency": "USD",
+      "priceIsEstimate": true,
+      "exchangeRateDate": "2026-10-23",
+      "exchangeRateSourceUrl": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
+      "durationHours": 26.03,
+      "modality": "online",
+      "level": "intermediate",
+      "learningGoal": "improve",
+      "language": "Audio coreano; subtítulos en inglés y español automático según la ficha",
+      "description": "Mejorar diseño, timing y efectos para videojuegos con Niagara. Audio coreano; revisar subtítulos y requisitos de Unreal.",
+      "availability": "Autoaprendizaje de pago. Precio publicado sujeto a descuentos, impuestos y condiciones de compra.",
+      "checkedAt": "2026-10-25T20:25:14.796316+00:00"
+    },
+    {
+      "id": "course-coloso-vfxartist-kisonglee2-us",
+      "kind": "course",
+      "title": "Unlocking the Magic: Advanced Fantasy-Style FX with Niagara",
+      "provider": "Coloso",
+      "source": "Coloso",
+      "topic": "vfx",
+      "url": "https://coloso.global/en/products/vfxartist-kisonglee2-us",
+      "sourceUrl": "https://coloso.global/en/products/vfxartist-kisonglee2-us",
+      "price": 205.49,
+      "sourcePrice": 230.0,
+      "sourceCurrency": "USD",
+      "priceIsEstimate": true,
+      "exchangeRateDate": "2026-10-23",
+      "exchangeRateSourceUrl": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
+      "durationHours": 21.93,
+      "modality": "online",
+      "level": "advanced",
+      "learningGoal": "improve",
+      "language": "Audio coreano; subtítulos en inglés y español automático según la ficha",
+      "description": "Efectos de fantasía y habilidades con Niagara. Requiere base previa; comprobar idiomas y programa completo.",
+      "availability": "Autoaprendizaje de pago. Precio publicado sujeto a descuentos, impuestos y condiciones de compra.",
+      "checkedAt": "2026-10-25T20:25:14.796316+00:00"
+    },
+    {
+      "id": "course-coloso-vfxartist-heyyo-us",
+      "kind": "course",
+      "title": "Mastering the Mechanics of Advanced Niagara & Material VFX",
+      "provider": "Coloso",
+      "source": "Coloso",
+      "topic": "vfx",
+      "url": "https://coloso.global/en/products/vfxartist-heyyo-us",
+      "sourceUrl": "https://coloso.global/en/products/vfxartist-heyyo-us",
+      "price": 196.55,
+      "sourcePrice": 220.0,
+      "sourceCurrency": "USD",
+      "priceIsEstimate": true,
+      "exchangeRateDate": "2026-10-23",
+      "exchangeRateSourceUrl": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
+      "durationHours": 30.2,
+      "modality": "online",
+      "level": "advanced",
+      "learningGoal": "improve",
+      "language": "Audio japonés; subtítulos en inglés; español no confirmado",
+      "description": "Técnicas avanzadas de Niagara y materiales. Audio japonés y subtítulos según ficha; comprobar idioma antes de comprar.",
+      "availability": "Autoaprendizaje de pago. Precio publicado sujeto a descuentos, impuestos y condiciones de compra.",
+      "checkedAt": "2026-10-25T20:25:14.796316+00:00"
     }
   ],
   "sources": [
@@ -6843,7 +6866,7 @@
     {
       "name": "Inditex / Zara · Recruitee",
       "status": "ok",
-      "matched": 3,
+      "matched": 0,
       "categories": [
         "programming"
       ],
@@ -6970,7 +6993,30 @@
       ],
       "platform": "Formación",
       "sourceKind": "training"
+    },
+    {
+      "name": "Coloso · formación de pago",
+      "status": "ok",
+      "matched": 3,
+      "checkedAt": "2026-10-25T20:13:22.213362+00:00",
+      "categories": [
+        "courses"
+      ],
+      "platform": "Formación",
+      "sourceKind": "training"
+    },
+    {
+      "name": "Animum · formación de pago",
+      "status": "ok",
+      "matched": 1,
+      "checkedAt": "2026-10-25T20:13:22.213362+00:00",
+      "categories": [
+        "courses"
+      ],
+      "platform": "Formación",
+      "sourceKind": "training"
     }
   ],
-  "note": "Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción."
+  "note": "Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.",
+  "lastPartialUpdate": "2026-10-25T20:13:22.213362+00:00"
 }

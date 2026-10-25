@@ -81,3 +81,11 @@ def test_workable_checks_employer_geography_age_and_hybrid(monkeypatch):
     assert count == 4
     assert [o['id'] for o in offers] == ['career-wk-example-valid']
     assert offers[0]['sourceKind'] == 'employer'
+def test_municipal_scope_does_not_accept_surrounding_towns_or_provinces():
+    from scanner.mobile_careers import classify_offer
+    for location in ['Arteixo, A Coruña','Provincia de A Coruña','Nigrán, Vigo','Área de Vigo']:
+        result=classify_offer('Developer','',location)
+        assert not result['inVigo'] and not result['inCoruna']
+    assert classify_offer('Developer','','Vigo, Pontevedra')['inVigo']
+    assert classify_offer('Developer','','A Coruña, Galicia')['inCoruna']
+    assert not classify_offer('Mantenimiento Bergondo','','A Coruña')['inCoruna']

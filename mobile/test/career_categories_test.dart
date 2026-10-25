@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
@@ -11,6 +12,66 @@ import 'package:vfx_jobs_tracker/applications.dart';
 import 'package:vfx_jobs_tracker/jobs.dart';
 
 void main() {
+  setUp(() => rootBundle.clear());
+  testWidgets(
+    'VFX shows a single vacancy when employer and portal share its identity',
+    (tester) async {
+      final row = <String, dynamic>{
+        'id': 'gh-1',
+        'category': 'vfx',
+        'title': 'Unified VFX Artist',
+        'company': 'Studio',
+        'location': 'Madrid',
+        'source': 'Hitmarker',
+        'sourceKind': 'job-board',
+        'foundIn': ['Greenhouse', 'Hitmarker'],
+        'url': 'https://example.test/jobs/1',
+      };
+      SharedPreferences.setMockInitialValues({
+        'career.feed': jsonEncode({
+          'schemaVersion': 2,
+          'coverageVersion': 6,
+          'offers': [row],
+          'courses': [],
+          'sources': [],
+        }),
+      });
+      final store = ApplicationsStore();
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: CareerCategoryPage(
+              category: 'vfx',
+              feedRepository: CareerFeedRepository(
+                client: MockClient((_) async => http.Response('{}', 503)),
+              ),
+              applications: store,
+              openApplications: () {},
+              directJobs: [
+                Job({
+                  ...row,
+                  'sourceKind': 'ats',
+                  'ats': 'greenhouse',
+                  'verification': 'verified',
+                  'status': 'active',
+                  'workplaceType': 'remote',
+                }),
+              ],
+            ),
+          ),
+        ),
+      );
+      await tester.runAsync(() async {
+        await Future<void>.delayed(const Duration(milliseconds: 300));
+      });
+      await tester.pumpAndSettle();
+      expect(find.text('Unified VFX Artist'), findsOneWidget);
+      expect(find.text('Encontrada en 2 fuentes'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      await tester.pumpWidget(const SizedBox());
+      store.dispose();
+    },
+  );
   test('Prioridad de cursos explica encaje y separa especialidades', () {
     final basic = <String, dynamic>{
       'id': 'basic',
@@ -114,15 +175,25 @@ void main() {
         home: Scaffold(
           body: CareerCategoryPage(
             category: 'courses',
+            feedRepository: CareerFeedRepository(
+              client: MockClient((_) async => http.Response('{}', 503)),
+            ),
             applications: applications,
             openApplications: () {},
           ),
         ),
       ),
     );
-    await tester.runAsync(() async {
-      await Future<void>.delayed(const Duration(milliseconds: 300));
-    });
+    for (var attempt = 0; attempt < 15; attempt++) {
+      await tester.runAsync(() async {
+        await Future<void>.delayed(const Duration(milliseconds: 100));
+      });
+      await tester.pump();
+      if (find.byType(CircularProgressIndicator).evaluate().isEmpty &&
+          find.byType(LinearProgressIndicator).evaluate().isEmpty) {
+        break;
+      }
+    }
     await tester.pumpAndSettle();
     expect(find.text('Cursos'), findsOneWidget);
     expect(find.text('Filtros'), findsOneWidget);
@@ -313,7 +384,7 @@ void main() {
           (_) async => http.Response(
             jsonEncode({
               'schemaVersion': 2,
-              'coverageVersion': 5,
+              'coverageVersion': 6,
               'offers': [],
               'courses': [],
             }),

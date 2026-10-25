@@ -104,7 +104,8 @@ def cntg(now):
 
 
 def sources():
-    return [('diplos','Xunta / DIPLOS · formación',diplos),('cntg','CNTG · inscripción abierta',cntg),('sidefx','SideFX · videojuegos y VFX',sidefx)]
+    from scanner.paid_training import sources as paid_sources
+    return [('diplos','Xunta / DIPLOS · formación',diplos),('cntg','CNTG · inscripción abierta',cntg),('sidefx','SideFX · videojuegos y VFX',sidefx),*paid_sources()]
 
 
 def sidefx(now):

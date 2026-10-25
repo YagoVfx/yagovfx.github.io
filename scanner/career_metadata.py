@@ -2,7 +2,7 @@
 def enrich_sources(sources):
     for source in sources:
         name = source['name'].lower()
-        if any(word in name for word in ('fundae', 'diplos', 'cntg', 'sidefx')):
+        if any(word in name for word in ('fundae', 'diplos', 'cntg', 'sidefx', 'coloso', 'animum')):
             categories = ['courses']
         elif any(word in name for word in ('hitmarker', 'indies', 'gamesjobs', 'artstation', 'stratos')):
             categories = ['vfx']

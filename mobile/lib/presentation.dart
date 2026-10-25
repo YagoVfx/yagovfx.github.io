@@ -29,6 +29,9 @@ Widget statusTag(String text, {bool confirmed = false, bool review = true}) {
 String readableDate(Object? raw) {
   final date = DateTime.tryParse('$raw')?.toLocal();
   if (date == null) return 'Sin fecha confirmada';
+  if (RegExp(r'^\d{4}-\d{2}-\d{2}$').hasMatch('$raw')) {
+    return '${date.day}/${date.month}/${date.year}';
+  }
   return '${date.day}/${date.month}/${date.year} · ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}';
 }
 
@@ -37,6 +40,17 @@ String durationLabel(Object? value) {
   final minutes = (value * 60).round();
   return '${minutes ~/ 60 > 0 ? '${minutes ~/ 60} h ' : ''}${minutes % 60 > 0 ? '${minutes % 60} min' : ''}'
       .trim();
+}
+
+String coursePrice(Map<String, dynamic> item) {
+  if (item['sourcePrice'] is num && item['sourceCurrency'] is String) {
+    return '${item['sourcePrice']} ${item['sourceCurrency']}${item['price'] is num ? ' (≈${(item['price'] as num).round()} €)' : ' · cambio por consultar'}';
+  }
+  return item['price'] == 0
+      ? 'Gratis'
+      : item['price'] is num
+      ? '${item['price']} €'
+      : 'Precio por consultar';
 }
 
 Future<void> showProvenance(

@@ -45,11 +45,14 @@ jobs:
       - name: Refresh additional mobile careers and courses
         run: python -m scanner.mobile_careers
 
+      - name: Refresh public employment calls
+        run: python -m scanner.public_exams
+
       - name: Commit updated data if changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/jobs.json data/scanner-status.json data/scanner-report.json data/companies-registry.json data/company-locations.json data/mobile-careers.json
+          git add data/jobs.json data/scanner-status.json data/scanner-report.json data/companies-registry.json data/company-locations.json data/mobile-careers.json data/public-exams.json
           if git diff --staged --quiet; then
             echo "No changes detected — skipping commit"
           else

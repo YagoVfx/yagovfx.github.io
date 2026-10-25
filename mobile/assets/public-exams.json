@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-25T20:34:28.381690+00:00",
+  "calls": [
+    {
+      "id": "pag-222569",
+      "reference": "222569",
+      "title": "TÉCNICO/A SUPERIOR  -  Técnico/a Superior de Informática Grupo B",
+      "organization": "Ayuntamiento de Coruña, A",
+      "location": "LOCAL - GALICIA A CORUÑA",
+      "area": "galicia",
+      "municipality": "coruna",
+      "qualification": "ciclos formativos de Técnico/a Superior en Administración de Sistemas Informáticos en Red (ASIR), Técnico/a Superior en Desarrollo de Aplicaciones Multiplataforma (DAM), Técnico/a Superior en Desarrollo de Aplicaciones Web (DAW), o equivalente.",
+      "fit": "dam",
+      "places": 2,
+      "freePlaces": 2,
+      "closingDate": "2026-10-29",
+      "deadlineEvidence": "Fecha orientativa publicada por el PAG. Confirma las bases y posibles ampliaciones.",
+      "status": "open",
+      "source": "Punto de Acceso General · Empleo público",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20340",
+      "pagDetailUrl": "https://administracion.gob.es/empleopublico/resultados-empleo/detalle-empleo?selectorget=222569&selectorServicio=bolsa_empleo",
+      "searchUrl": "https://administracion.gob.es/empleopublico/resultados-empleo?pag_referencia=222569",
+      "access": "Acceso libre (filtro del buscador oficial)",
+      "checkedAt": "2026-10-25T20:34:28.381690+00:00"
+    },
+    {
+      "id": "pag-222516",
+      "reference": "222516",
+      "title": "TÉCNICA BÁSICA DE LABORATORIOS  -  Informática",
+      "organization": "Universidad Jaume I de Castellón",
+      "location": "LOCAL - COMUNITAT VALENCIANA CASTELLÓN",
+      "area": "other",
+      "municipality": null,
+      "qualification": "Bachiller o Técnico o Técnica de Formación Profesional o equivalente.",
+      "fit": "review",
+      "places": 1,
+      "freePlaces": 1,
+      "closingDate": "2026-10-28",
+      "deadlineEvidence": "Fecha orientativa publicada por el PAG. Confirma las bases y posibles ampliaciones.",
+      "status": "open",
+      "source": "Punto de Acceso General · Empleo público",
+      "url": "https://administracion.gob.es/empleopublico/resultados-empleo?pag_referencia=222516",
+      "pagDetailUrl": "https://administracion.gob.es/empleopublico/resultados-empleo/detalle-empleo?selectorget=222516&selectorServicio=bolsa_empleo",
+      "searchUrl": "https://administracion.gob.es/empleopublico/resultados-empleo?pag_referencia=222516",
+      "access": "Acceso libre (filtro del buscador oficial)",
+      "checkedAt": "2026-10-25T20:34:28.381690+00:00"
+    }
+  ],
+  "sources": [
+    {
+      "name": "PAG · informatica-3",
+      "status": "ok",
+      "examined": 2
+    },
+    {
+      "name": "PAG · informatica-4",
+      "status": "ok",
+      "examined": 2
+    },
+    {
+      "name": "PAG · electric-3",
+      "status": "ok",
+      "examined": 2
+    },
+    {
+      "name": "PAG · electric-4",
+      "status": "ok",
+      "examined": 2
+    },
+    {
+      "name": "PAG · electronic-3",
+      "status": "ok",
+      "examined": 2
+    },
+    {
+      "name": "PAG · electronic-4",
+      "status": "ok",
+      "examined": 2
+    },
+    {
+      "name": "PAG · telecomunicaciones-3",
+      "status": "ok",
+      "examined": 2
+    },
+    {
+      "name": "PAG · telecomunicaciones-4",
+      "status": "ok",
+      "examined": 2
+    },
+    {
+      "name": "PAG · mantenimiento-3",
+      "status": "ok",
+      "examined": 2
+    },
+    {
+      "name": "PAG · mantenimiento-4",
+      "status": "ok",
+      "examined": 2
+    },
+    {
+      "name": "Concello de Vigo · procesos municipales",
+      "status": "ok",
+      "examined": 3,
+      "matched": 0,
+      "note": "Los procesos relacionados revisados están fuera de plazo. En proceso no significa inscripción abierta."
+    }
+  ],
+  "note": "Fuente oficial informativa, cobertura parcial. No implica admisión ni destino garantizado. Las fechas del PAG son orientativas; mandan las bases oficiales."
+}

@@ -161,6 +161,8 @@ class _CareerStatisticsState extends State<CareerStatistics> {
           : 'all',
       goal: personal?.getString('career.courses.goal') ?? 'review',
       freeOnly: personal?.getBool('career.courses.freeOnly') ?? false,
+      includeUnknownPrice:
+          personal?.getBool('career.courses.unknownPrice') ?? false,
       modality: personal?.getString('career.courses.modality') ?? 'all',
     );
     final connected = <String, int>{

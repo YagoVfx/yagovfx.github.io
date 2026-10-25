@@ -93,4 +93,36 @@ void main() {
       'advanced',
     );
   });
+  test(
+    'Unknown paid prices require explicit inclusion and can be sorted safely',
+    () {
+      final unknown = <String, dynamic>{
+        'id': 'paid',
+        'title': 'VFX Master',
+        'topic': 'vfx',
+        'kind': 'course',
+        'price': null,
+        'modality': 'online',
+      };
+      final free = {...unknown, 'id': 'free', 'title': 'Niagara', 'price': 0};
+      expect(filterCareerItems([unknown], category: 'courses'), isEmpty);
+      expect(
+        filterCareerItems(
+          [unknown, free],
+          category: 'courses',
+          includeUnknownPrice: true,
+        ),
+        hasLength(2),
+      );
+      expect(
+        filterCareerItems(
+          [unknown],
+          category: 'courses',
+          includeUnknownPrice: true,
+          freeOnly: true,
+        ),
+        isEmpty,
+      );
+    },
+  );
 }
