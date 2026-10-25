@@ -9,6 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'jobs.dart';
 import 'company_map.dart';
+import 'career_statistics.dart';
 
 String platformName(String type) =>
     const {
@@ -79,6 +80,7 @@ class _InsightsState extends State<InsightsPage> {
   Map<String, dynamic>? world, locations;
   List<dynamic> companies = [];
   String selected = '';
+  String section = 'careers';
   bool loading = true;
   String? error;
   @override
@@ -163,146 +165,192 @@ class _InsightsState extends State<InsightsPage> {
     final visible = placed
         .where((c) => selected.isEmpty || c['name'] == selected)
         .toList();
-    return ListView(
-      padding: const EdgeInsets.all(16),
+    return Column(
       children: [
-        Text('Radar global', style: Theme.of(context).textTheme.headlineMedium),
-        OutlinedButton.icon(
-          onPressed: () => launchUrl(
-            Uri.parse(
-              'https://github.com/YagoVfx/yagovfx.github.io/actions/workflows/vfx-jobs-scanner.yml',
-            ),
-            mode: LaunchMode.externalApplication,
-          ),
-          icon: const Icon(Icons.open_in_new),
-          label: const Text('Jobs VFX Scanner en GitHub'),
-        ),
-        if (loading) const LinearProgressIndicator(),
-        if (error != null)
-          Text(error!, style: const TextStyle(color: Colors.amber)),
-        const SizedBox(height: 20),
-        Text(
-          'Ofertas por plataforma',
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        const Text(
-          'Ofertas VFX activas de portales directos, incluidas coincidencias posibles. Sin filtros personales, cerradas ni agregadores.',
-        ),
-        Semantics(
-          label: '$total ofertas activas por plataforma',
-          child: SizedBox(
-            height: 220,
-            child: CustomPaint(
-              painter: DonutPainter(rows),
-              child: Center(
-                child: Text(
-                  '$total\nofertas activas',
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headlineSmall,
+        Padding(
+          padding: const EdgeInsets.all(8),
+          child: Wrap(
+            spacing: 8,
+            children: [
+              for (final e in {
+                'careers': 'Especialidades',
+                'direct': 'VFX directo',
+                'map': 'Mapa',
+              }.entries)
+                ChoiceChip(
+                  label: Text(e.value),
+                  selected: section == e.key,
+                  onSelected: (_) => setState(() => section = e.key),
                 ),
-              ),
-            ),
+            ],
           ),
         ),
-        ...rows.asMap().entries.map(
-          (entry) => ListTile(
-            dense: true,
-            leading: Icon(
-              Icons.circle,
-              color: chartColors[entry.key % chartColors.length],
-              size: 14,
-            ),
-            title: Text(entry.value.key),
-            trailing: Text(
-              '${entry.value.value} · ${total == 0 ? 0 : (entry.value.value / total * 100).round()}%',
-            ),
-          ),
-        ),
-        if (rows.isNotEmpty)
-          Text(
-            'Más ofertas: ${rows.first.key} (${rows.first.value}). Menos: ${rows.where((r) => r.value == rows.last.value).map((r) => r.key).join(', ')}.',
-          ),
-        const SizedBox(height: 24),
-        Text('Mapa de empresas', style: Theme.of(context).textTheme.titleLarge),
-        const Text(
-          'Ubicaciones publicadas, aproximadas al centro urbano. No son todas las sedes ni la ubicación de cada vacante. Pellizca para ampliar y arrastra para desplazarte.',
-        ),
-        const SizedBox(height: 12),
-        DropdownButtonFormField<String>(
-          key: ValueKey('company-picker-$selected'),
-          initialValue: selected,
-          isExpanded: true,
-          decoration: const InputDecoration(labelText: 'Empresa'),
-          items: [
-            DropdownMenuItem(
-              value: '',
-              child: Text('Todas (${placed.length})'),
-            ),
-            ...placed.map(
-              (c) => DropdownMenuItem(
-                value: c['name'] as String,
-                child: Text(c['name'] as String),
-              ),
-            ),
-          ],
-          onChanged: (v) => setState(() => selected = v ?? ''),
-        ),
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 12),
-          child: Text(
-            'Morado: varias empresas. Verde: una empresa. Pulsa un punto verde para ver esa ubicación sin mover el mapa. Usa «Ver todas sus sedes» para cambiar la vista.',
-          ),
-        ),
-        if (world != null)
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: SizedBox(
-              height: 340,
-              child: CompanyWorldMap(
-                polygons: world!['polygons'] as List,
-                companies: visible,
-                onSelected: (name) => setState(() => selected = name),
-              ),
-            ),
-          ),
-        Text(
-          '${placed.length} empresas localizadas · ${missing.length} sin ubicación verificada',
-        ),
-        ExpansionTile(
-          initiallyExpanded: selected.isNotEmpty,
-          key: ValueKey('company-details-$selected'),
-          title: const Text('Ubicaciones y fuentes'),
-          children: visible
-              .map(
-                (c) => ListTile(
-                  title: Text(c['name'] as String),
-                  subtitle: Text(
-                    '${(c['locations'] as List).map((p) => p['city']).join(', ')}${c['sharedSource'] == null ? '' : ' · portal compartido con ${c['sharedSource']}'}',
-                  ),
-                  trailing: const Icon(Icons.open_in_new),
-                  onTap: () async {
-                    final url = safeUrl(
-                      (c['locations'] as List).first['evidence'],
-                    );
-                    if (url != null) {
-                      await launchUrl(
-                        Uri.parse(url),
-                        mode: LaunchMode.externalApplication,
-                      );
-                    }
-                  },
+        Expanded(
+          child: section == 'careers'
+              ? const CareerStatistics()
+              : ListView(
+                  padding: const EdgeInsets.all(16),
+                  children: [
+                    if (section == 'direct') ...[
+                      Text(
+                        'Radar global',
+                        style: Theme.of(context).textTheme.headlineMedium,
+                      ),
+                      OutlinedButton.icon(
+                        onPressed: () => launchUrl(
+                          Uri.parse(
+                            'https://github.com/YagoVfx/yagovfx.github.io/actions/workflows/vfx-jobs-scanner.yml',
+                          ),
+                          mode: LaunchMode.externalApplication,
+                        ),
+                        icon: const Icon(Icons.open_in_new),
+                        label: const Text('Jobs VFX Scanner en GitHub'),
+                      ),
+                      if (loading) const LinearProgressIndicator(),
+                      if (error != null)
+                        Text(
+                          error!,
+                          style: const TextStyle(color: Colors.amber),
+                        ),
+                      const SizedBox(height: 20),
+                      Text(
+                        'Ofertas por plataforma',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      const Text(
+                        'Ofertas VFX activas de portales directos, incluidas coincidencias posibles. Sin filtros personales, cerradas ni agregadores.',
+                      ),
+                      Semantics(
+                        label: '$total ofertas activas por plataforma',
+                        child: SizedBox(
+                          height: 220,
+                          child: CustomPaint(
+                            painter: DonutPainter(rows),
+                            child: Center(
+                              child: Text(
+                                '$total\nofertas activas',
+                                textAlign: TextAlign.center,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineSmall,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      ...rows.asMap().entries.map(
+                        (entry) => ListTile(
+                          dense: true,
+                          leading: Icon(
+                            Icons.circle,
+                            color: chartColors[entry.key % chartColors.length],
+                            size: 14,
+                          ),
+                          title: Text(entry.value.key),
+                          trailing: Text(
+                            '${entry.value.value} · ${total == 0 ? 0 : (entry.value.value / total * 100).round()}%',
+                          ),
+                        ),
+                      ),
+                      if (rows.isNotEmpty)
+                        Text(
+                          'Más ofertas: ${rows.first.key} (${rows.first.value}). Menos: ${rows.where((r) => r.value == rows.last.value).map((r) => r.key).join(', ')}.',
+                        ),
+                      const SizedBox(height: 24),
+                    ],
+                    if (section == 'map') ...[
+                      Text(
+                        'Mapa de empresas',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      const Text(
+                        'Ubicaciones publicadas, aproximadas al centro urbano. No son todas las sedes ni la ubicación de cada vacante. Pellizca para ampliar y arrastra para desplazarte.',
+                      ),
+                      const SizedBox(height: 12),
+                      DropdownButtonFormField<String>(
+                        key: ValueKey('company-picker-$selected'),
+                        initialValue: selected,
+                        isExpanded: true,
+                        decoration: const InputDecoration(labelText: 'Empresa'),
+                        items: [
+                          DropdownMenuItem(
+                            value: '',
+                            child: Text('Todas (${placed.length})'),
+                          ),
+                          ...placed.map(
+                            (c) => DropdownMenuItem(
+                              value: c['name'] as String,
+                              child: Text(c['name'] as String),
+                            ),
+                          ),
+                        ],
+                        onChanged: (v) => setState(() => selected = v ?? ''),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        child: Text(
+                          'Morado: varias empresas. Verde: una empresa. Pulsa un punto verde para ver esa ubicación sin mover el mapa. Usa «Ver todas sus sedes» para cambiar la vista.',
+                        ),
+                      ),
+                      if (world != null)
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: SizedBox(
+                            height: 340,
+                            child: CompanyWorldMap(
+                              polygons: world!['polygons'] as List,
+                              companies: visible,
+                              onSelected: (name) =>
+                                  setState(() => selected = name),
+                            ),
+                          ),
+                        ),
+                      Text(
+                        '${placed.length} empresas localizadas · ${missing.length} sin ubicación verificada',
+                      ),
+                      ExpansionTile(
+                        initiallyExpanded: selected.isNotEmpty,
+                        key: ValueKey('company-details-$selected'),
+                        title: const Text('Ubicaciones y fuentes'),
+                        children: visible
+                            .map(
+                              (c) => ListTile(
+                                title: Text(c['name'] as String),
+                                subtitle: Text(
+                                  '${(c['locations'] as List).map((p) => p['city']).join(', ')}${c['sharedSource'] == null ? '' : ' · portal compartido con ${c['sharedSource']}'}',
+                                ),
+                                trailing: const Icon(Icons.open_in_new),
+                                onTap: () async {
+                                  final url = safeUrl(
+                                    (c['locations'] as List).first['evidence'],
+                                  );
+                                  if (url != null) {
+                                    await launchUrl(
+                                      Uri.parse(url),
+                                      mode: LaunchMode.externalApplication,
+                                    );
+                                  }
+                                },
+                              ),
+                            )
+                            .toList(),
+                      ),
+                      ExpansionTile(
+                        title: Text(
+                          'Sin ubicación verificada (${missing.length})',
+                        ),
+                        children: missing
+                            .map(
+                              (c) => ListTile(title: Text(c['name'] as String)),
+                            )
+                            .toList(),
+                      ),
+                      const Text(
+                        'Cartografía: Natural Earth, dominio público. Ubicaciones: portales de empleo y páginas oficiales.',
+                      ),
+                    ],
+                  ],
                 ),
-              )
-              .toList(),
-        ),
-        ExpansionTile(
-          title: Text('Sin ubicación verificada (${missing.length})'),
-          children: missing
-              .map((c) => ListTile(title: Text(c['name'] as String)))
-              .toList(),
-        ),
-        const Text(
-          'Cartografía: Natural Earth, dominio público. Ubicaciones: portales de empleo y páginas oficiales.',
         ),
       ],
     );

@@ -281,7 +281,8 @@ def run():
                 if old['id'].startswith('course-'+key+'-'):
                     course_map.setdefault(old['id'],dict(old,retainedAfterFailure=True))
     courses = list(course_map.values())
-    output = dict(schemaVersion=2, coverageVersion=3, updatedAt=now, offers=list(offers.values()), courses=courses, sources=status,
+    from scanner.career_metadata import enrich_sources
+    output = dict(schemaVersion=2, coverageVersion=4, updatedAt=now, offers=list(offers.values()), courses=courses, sources=enrich_sources(status),
                   note='Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.')
     temporary = target.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

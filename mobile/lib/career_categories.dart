@@ -9,6 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'applications.dart';
 import 'jobs.dart';
 import 'geography.dart';
+import 'profile_fit.dart';
 
 const careerCategories = {
   'vfx': 'VFX',
@@ -17,7 +18,10 @@ const careerCategories = {
   'courses': 'Cursos',
 };
 
-({int score, List<String> reasons}) coursePriority(Map<String, dynamic> item) {
+({int score, List<String> reasons}) coursePriority(
+  Map<String, dynamic> item, {
+  String goal = 'review',
+}) {
   var score = 20;
   final reasons = <String>[];
   if (item['price'] == 0) {
@@ -25,7 +29,7 @@ const careerCategories = {
     reasons.add('Sin coste de matrícula anunciado');
   }
   if (item['level'] == 'beginner') {
-    score += 30;
+    score += goal == 'review' ? 30 : 5;
     reasons.add('Empieza por fundamentos');
   }
   if (item['level'] == 'review') {
@@ -33,13 +37,25 @@ const careerCategories = {
     reasons.add('Revisar conocimientos previos');
   }
   if (item['level'] == 'advanced') {
-    score -= 15;
+    score += goal == 'improve'
+        ? 25
+        : goal == 'new'
+        ? 10
+        : -15;
     reasons.add('Exige una base avanzada');
+  }
+  if (goal == 'new' && item['learningGoal'] == 'new') {
+    score += 30;
+    reasons.add('Nueva herramienta o especialidad');
+  }
+  if (item['level'] == 'intermediate') {
+    score += goal == 'improve' ? 25 : 10;
+    reasons.add('Desarrolla técnicas sobre una base previa');
   }
   final hours = item['durationHours'];
   if (hours is num && hours > 0 && hours <= 120) {
     score += 10;
-    reasons.add('Duración acotada para retomar hábitos');
+    reasons.add('Duración acotada');
   }
   if (hours is num && hours > 300) {
     reasons.add('Formación larga: comprobar disponibilidad');
@@ -69,8 +85,13 @@ const careerCategories = {
   return (score: score.clamp(0, 100), reasons: reasons);
 }
 
-String coursePriorityLabel(Map<String, dynamic> item) {
-  final score = coursePriority(item).score;
+String coursePriorityLabel(
+  Map<String, dynamic> item, {
+  String goal = 'review',
+}) {
+  final score = coursePriority(item, goal: goal).score;
+  if (goal == 'improve' && score >= 55) return 'Para progresar';
+  if (goal == 'new' && score >= 55) return 'Explorar especialidad';
   return score >= 75
       ? 'Buen punto de partida'
       : score >= 55
@@ -143,6 +164,8 @@ List<Map<String, dynamic>> filterCareerItems(
   String scope = 'all',
   String modality = 'all',
   String topic = 'all',
+  String goal = 'review',
+  String profileView = 'all',
   bool freeOnly = false,
   double budget = 800,
   bool savedOnly = false,
@@ -190,11 +213,23 @@ List<Map<String, dynamic>> filterCareerItems(
       }
     } else {
       if (item['category'] != category) return false;
+      if (category == 'programming' &&
+          !savedOnly &&
+          profileView != 'all' &&
+          entryProfile(item) != (profileView == 'entry')) {
+        return false;
+      }
       if (!withinDays(item['postedDate'], days, now: today)) return false;
       if (!savedOnly && expiredCareerOffer(item, today)) return false;
       if (!savedOnly &&
           !includeAdvanced &&
           item['experience'] == 'experienced') {
+        return false;
+      }
+      if (!savedOnly &&
+          !includeAdvanced &&
+          category != 'vfx' &&
+          educationFit(item) == 'university') {
         return false;
       }
       if (category == 'electricity' &&
@@ -217,8 +252,10 @@ List<Map<String, dynamic>> filterCareerItems(
   }).toList();
   out.sort((a, b) {
     if (category == 'courses') {
-      final priority = coursePriority(b).score
-          .compareTo(coursePriority(a).score);
+      final priority = coursePriority(
+        b,
+        goal: goal,
+      ).score.compareTo(coursePriority(a, goal: goal).score);
       if (priority != 0) return priority;
       final price = (a['price'] as num).compareTo(b['price'] as num);
       if (price != 0) return price;
@@ -245,7 +282,7 @@ class CareerFeedRepository {
     final data = jsonDecode(text);
     if (data is! Map<String, dynamic> ||
         data['schemaVersion'] != 2 ||
-        (data['coverageVersion'] as num? ?? 0) < 3 ||
+        (data['coverageVersion'] as num? ?? 0) < 4 ||
         data['offers'] is! List ||
         data['courses'] is! List) {
       throw const FormatException('Formato de oportunidades no válido');
@@ -296,7 +333,10 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
   Set<String> saved = {};
   Map<String, String> progress = {};
   bool loading = true, includeAdvanced = false, freeOnly = false;
-  String scope = 'all', modality = 'all', topic = 'all';
+  final detailChanges = ValueNotifier<int>(0);
+  String scope = 'all', modality = 'all', topic = 'all', goal = 'review';
+  String profileView = 'entry';
+  bool showFilters = false;
   int days = 0;
   String? error;
   @override
@@ -313,6 +353,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
 
   @override
   void dispose() {
+    detailChanges.dispose();
     repository.close();
     search.dispose();
     super.dispose();
@@ -349,8 +390,14 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
     } catch (_) {}
     search.text = p.getString('career.${widget.category}.query') ?? '';
     includeAdvanced =
-        p.getBool('career.${widget.category}.advancedV2') ??
-        widget.category != 'courses';
+        p.getBool('career.${widget.category}.advancedV3') ??
+        widget.category == 'vfx';
+    goal = p.getString('career.courses.goal') ?? 'review';
+    profileView = p.getString('career.programming.profileView') ?? 'entry';
+    if (widget.category == 'courses' &&
+        p.getBool('career.courses.advancedV3') == null) {
+      includeAdvanced = goal != 'review';
+    }
     days = p.getInt('career.${widget.category}.days') ?? 0;
     scope = p.getString('career.${widget.category}.scope') ?? 'all';
     freeOnly = p.getBool('career.courses.freeOnly') ?? false;
@@ -394,6 +441,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
     });
     prefs?.setStringList('career.saved', saved.toList());
     prefs?.setString('career.savedMeta', jsonEncode(savedMeta));
+    detailChanges.value++;
   }
 
   Future<void> open(Object? raw) async {
@@ -429,6 +477,8 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       scope: scope,
       modality: modality,
       topic: topic,
+      goal: goal,
+      profileView: widget.category == 'programming' ? profileView : 'all',
       freeOnly: freeOnly,
       savedOnly: widget.savedOnly,
       saved: saved,
@@ -463,7 +513,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       },
     ),
   );
-  Widget courseCard(Map<String, dynamic> item) => Card(
+  Widget courseDetail(Map<String, dynamic> item) => Card(
     child: Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -471,7 +521,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
         children: [
           Text(item['title'], style: Theme.of(context).textTheme.titleLarge),
           Text(
-            coursePriorityLabel(item),
+            coursePriorityLabel(item, goal: goal),
             style: TextStyle(
               color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.bold,
@@ -495,10 +545,10 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
           if (item['certificate'] != null) Text(item['certificate']),
           ExpansionTile(
             title: Text(
-              'Por qué se prioriza · ${coursePriority(item).score}/100 de encaje',
+              'Por qué se prioriza · ${coursePriority(item, goal: goal).score}/100 de encaje',
             ),
             children: [
-              for (final reason in coursePriority(item).reasons)
+              for (final reason in coursePriority(item, goal: goal).reasons)
                 ListTile(
                   dense: true,
                   leading: const Icon(Icons.check, size: 16),
@@ -571,6 +621,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                 if (v != null) {
                   setState(() => progress[item['id']] = v);
                   prefs?.setString('career.progress', jsonEncode(progress));
+                  detailChanges.value++;
                 }
               },
             ),
@@ -578,7 +629,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       ),
     ),
   );
-  Widget offerCard(Map<String, dynamic> item) {
+  Widget offerDetail(Map<String, dynamic> item, BuildContext routeContext) {
     final application = widget.applications.records[item['id']];
     final expired = expiredCareerOffer(item, DateTime.now());
     return Card(
@@ -622,6 +673,9 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                     : 'Datos conservados tras un fallo; revisar vigencia',
                 style: const TextStyle(color: Colors.amber),
               ),
+            const Text(
+              'La titulación y experiencia se comprueban en la fuente; las prácticas pueden exigir matrícula vigente.',
+            ),
             ...((item['requirements'] as List?) ?? []).map((r) => Text('• $r')),
             ExpansionTile(
               title: const Text('Descripción de la fuente'),
@@ -672,6 +726,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   : () async {
                       if (!widget.applications.signedIn ||
                           application != null) {
+                        Navigator.of(routeContext).pop();
                         widget.openApplications();
                         return;
                       }
@@ -679,8 +734,9 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                         Job(item),
                         'applied',
                       );
-                      if (!mounted) return;
+                      if (!mounted || !routeContext.mounted) return;
                       if (ok) {
+                        Navigator.of(routeContext).pop();
                         widget.openApplications();
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -700,6 +756,52 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
     );
   }
 
+  Widget summaryCard(Map<String, dynamic> item, bool course) => Card(
+    child: ListTile(
+      contentPadding: const EdgeInsets.all(16),
+      title: Text('${item['title']}'),
+      subtitle: Text(
+        course
+            ? "${item['provider']} · ${item['price'] == 0 ? 'Gratis' : '${item['price']} €'} · ${item['modality']}"
+            : "${item['company']} · ${item['location']}\n${fitLabel(item)}",
+      ),
+      trailing: IconButton(
+        tooltip: 'Guardar',
+        icon: Icon(
+          saved.contains(item['id']) ? Icons.bookmark : Icons.bookmark_border,
+        ),
+        onPressed: () => toggleSaved(item),
+      ),
+      onTap: () => Navigator.of(context)
+          .push(
+            MaterialPageRoute<void>(
+              builder: (context) => ValueListenableBuilder<int>(
+                valueListenable: detailChanges,
+                builder: (detailContext, version, child) => Scaffold(
+                  appBar: AppBar(title: Text(course ? 'Formación' : 'Oferta')),
+                  body: ListView(
+                    padding: const EdgeInsets.all(12),
+                    children: [
+                      if (!course)
+                        Padding(
+                          padding: const EdgeInsets.all(12),
+                          child: Text(fitLabel(item)),
+                        ),
+                      course
+                          ? courseDetail(item)
+                          : offerDetail(item, detailContext),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          )
+          .then((_) {
+            if (mounted) setState(() {});
+          }),
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     if (feed == null || catalog == null) {
@@ -718,19 +820,10 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             '${widget.category == 'vfx' ? 'VFX / Games · Portales' : careerCategories[widget.category]}${widget.savedOnly ? ' · Guardadas' : ''}',
             style: Theme.of(context).textTheme.headlineSmall,
           ),
-          Text(
-            isCourse
-                ? 'Online o presencial en Vigo y A Coruña. Prioridad a formación gratuita o subvencionada. Tope de 800 € para cursos con precio confirmado; revisa programa, fechas y requisitos antes de inscribirte.'
-                : widget.category == 'electricity'
-                ? 'Ofertas en Vigo y A Coruña. Revisa si la empresa exige desplazamientos diarios o viajes; no se consideran aceptados automáticamente.'
-                : widget.category == 'vfx'
-                ? 'Ofertas recogidas automáticamente de portales VFX. Son complementarias al scanner directo: confirma país, contrato y vigencia en la fuente original.'
-                : 'Programación, QA, software y soporte en Vigo, A Coruña o remoto internacional. Revisa país permitido, idioma y experiencia; remoto no garantiza contratación desde España.',
-          ),
           if (loading) const LinearProgressIndicator(),
           if (error != null)
             Text(error!, style: const TextStyle(color: Colors.amber)),
-          Text('Último escaneo: ${feed!['updatedAt'] ?? 'Sin fecha'}'),
+
           const SizedBox(height: 12),
           if (isCourse) ...[
             Wrap(
@@ -753,8 +846,20 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text(
-              'Ordenados por encaje para retomar: nivel, coste, duración, programa y plazo. Esta prioridad no es una valoración de calidad docente ni garantiza empleo o plazas.',
+            picker(
+              'Objetivo',
+              goal,
+              {
+                'review': 'Repasar',
+                'improve': 'Mejorar',
+                'new': 'Aprender algo nuevo',
+              },
+              (v) {
+                goal = v;
+                includeAdvanced = v != 'review';
+                prefs?.setString('career.courses.goal', v);
+                prefs?.setBool('career.courses.advancedV3', includeAdvanced);
+              },
             ),
           ],
           TextField(
@@ -768,95 +873,136 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
               prefixIcon: Icon(Icons.search),
             ),
           ),
-          SwitchListTile(
-            contentPadding: EdgeInsets.zero,
-            title: Text(
-              isCourse
-                  ? 'Incluir nivel avanzado'
-                  : 'Incluir puestos con experiencia alta',
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton.icon(
+              icon: const Icon(Icons.tune),
+              label: Text(showFilters ? 'Cerrar filtros' : 'Filtros'),
+              onPressed: () => setState(() => showFilters = !showFilters),
             ),
-            value: includeAdvanced,
-            onChanged: (v) {
-              setState(() => includeAdvanced = v);
-              prefs?.setBool('career.${widget.category}.advancedV2', v);
-            },
           ),
-          if (isCourse)
+          if (showFilters) ...[
+            if (widget.category == 'programming')
+              picker(
+                'Encaje',
+                profileView,
+                {
+                  'entry': 'Entrada / FP',
+                  'review': 'Por revisar',
+                  'all': 'Todos',
+                },
+                (v) {
+                  profileView = v;
+                  includeAdvanced = v != 'entry';
+                  prefs?.setString('career.programming.profileView', v);
+                  prefs?.setBool(
+                    'career.programming.advancedV3',
+                    includeAdvanced,
+                  );
+                },
+              ),
+            if (!isCourse && widget.category != 'vfx')
+              const Text(
+                'Perfil: FP DAM, electricidad/electrónica y telecomunicaciones. Requisitos desconocidos requieren revisión.',
+              ),
+            if (isCourse)
+              const Text(
+                'Presupuesto máximo: 800 €. La prioridad expresa encaje con el objetivo, no calidad docente ni plazas disponibles.',
+              ),
             SwitchListTile(
               contentPadding: EdgeInsets.zero,
-              title: const Text('Solo gratuitos o subvencionados'),
-              value: freeOnly,
+              title: Text(
+                isCourse
+                    ? 'Incluir nivel avanzado'
+                    : 'Incluir experiencia alta o universidad obligatoria',
+              ),
+              value: includeAdvanced,
               onChanged: (v) {
-                setState(() => freeOnly = v);
-                prefs?.setBool('career.courses.freeOnly', v);
+                setState(() => includeAdvanced = v);
+                prefs?.setBool('career.${widget.category}.advancedV3', v);
               },
             ),
-          Wrap(
-            spacing: 12,
-            runSpacing: 12,
-            children: [
-              if (widget.category == 'vfx')
-                picker(
-                  'Ubicación',
-                  scope,
-                  {
-                    'all': 'Todos los países',
-                    'eu': 'Unión Europea',
-                    'remote': 'Solo remoto',
-                  },
-                  (v) {
-                    scope = v;
-                    prefs?.setString('career.vfx.scope', v);
-                  },
-                ),
-              if (!isCourse && widget.category != 'vfx')
-                picker(
-                  'Ubicación',
-                  scope,
-                  {
-                    'all': widget.category == 'programming'
-                        ? 'Vigo, Coruña y remoto'
-                        : 'Vigo y A Coruña',
-                    'vigo': 'Solo Vigo',
-                    'coruna': 'Solo A Coruña',
-                    if (widget.category == 'programming')
+            if (isCourse)
+              SwitchListTile(
+                contentPadding: EdgeInsets.zero,
+                title: const Text('Solo gratuitos o subvencionados'),
+                value: freeOnly,
+                onChanged: (v) {
+                  setState(() => freeOnly = v);
+                  prefs?.setBool('career.courses.freeOnly', v);
+                },
+              ),
+            Wrap(
+              spacing: 12,
+              runSpacing: 12,
+              children: [
+                if (widget.category == 'vfx')
+                  picker(
+                    'Ubicación',
+                    scope,
+                    {
+                      'all': 'Todos los países',
+                      'eu': 'Unión Europea',
                       'remote': 'Solo remoto',
-                  },
-                  (v) {
-                    scope = v;
-                    prefs?.setString('career.${widget.category}.scope', v);
-                  },
-                ),
-              if (!isCourse)
-                picker(
-                  'Publicación',
-                  '$days',
-                  {
-                    '0': 'Cualquier fecha',
-                    '1': 'Últimas 24 horas',
-                    '7': 'Última semana',
-                    '30': 'Último mes',
-                  },
-                  (v) {
-                    days = int.parse(v);
-                    prefs?.setInt('career.${widget.category}.days', days);
-                  },
-                ),
-              if (isCourse)
-                picker('Modalidad', modality, {
-                  'all': 'Online y presenciales',
-                  'online': 'Online',
-                  'onsite': 'Presenciales',
-                }, (v) => modality = v),
-            ],
-          ),
+                    },
+                    (v) {
+                      scope = v;
+                      prefs?.setString('career.vfx.scope', v);
+                    },
+                  ),
+                if (!isCourse && widget.category != 'vfx')
+                  picker(
+                    'Ubicación',
+                    scope,
+                    {
+                      'all': widget.category == 'programming'
+                          ? 'Vigo, Coruña y remoto'
+                          : 'Vigo y A Coruña',
+                      'vigo': 'Solo Vigo',
+                      'coruna': 'Solo A Coruña',
+                      if (widget.category == 'programming')
+                        'remote': 'Solo remoto',
+                    },
+                    (v) {
+                      scope = v;
+                      prefs?.setString('career.${widget.category}.scope', v);
+                    },
+                  ),
+                if (!isCourse)
+                  picker(
+                    'Publicación',
+                    '$days',
+                    {
+                      '0': 'Cualquier fecha',
+                      '1': 'Últimas 24 horas',
+                      '7': 'Última semana',
+                      '30': 'Último mes',
+                    },
+                    (v) {
+                      days = int.parse(v);
+                      prefs?.setInt('career.${widget.category}.days', days);
+                    },
+                  ),
+                if (isCourse)
+                  picker('Modalidad', modality, {
+                    'all': 'Online y presenciales',
+                    'online': 'Online',
+                    'onsite': 'Presenciales',
+                  }, (v) => modality = v),
+              ],
+            ),
+          ],
           const SizedBox(height: 12),
           if (!isCourse && days != 0)
             const Text(
               'Solo ofertas con fecha de publicación conocida. Revisar una oferta hoy no significa que sea nueva.',
             ),
           Text(
-            '${list.length} ${isCourse ? 'formaciones' : 'ofertas'}${widget.savedOnly ? ' guardadas' : ''}',
+            '${list.length} ${isCourse ? 'formaciones' : 'ofertas'}${widget.savedOnly ? ' guardadas' : ''}${widget.category == 'programming' && !widget.savedOnly ? ' · ${profileView == 'entry'
+                      ? 'Entrada / FP'
+                      : profileView == 'review'
+                      ? 'Por revisar'
+                      : 'Todos los perfiles'}' : ''}',
           ),
           if (list.isEmpty)
             Padding(
@@ -867,10 +1013,10 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                     : 'No hay resultados que cumplan estos filtros en la última consulta. Revisa también las fuentes oficiales de abajo; una búsqueda sin resultados no significa que no haya oportunidades.',
               ),
             ),
-          ...list.map(isCourse ? courseCard : offerCard),
+          ...list.map((item) => summaryCard(item, isCourse)),
           if (!widget.savedOnly)
             ExpansionTile(
-              initiallyExpanded: list.isEmpty,
+              initiallyExpanded: false,
               title: const Text('Más fuentes y buscadores oficiales'),
               subtitle: const Text(
                 'Son enlaces de búsqueda, no ofertas ni plazas confirmadas',
@@ -887,7 +1033,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   .toList(),
             ),
           ExpansionTile(
-            title: const Text('Estado y alcance de las fuentes'),
+            title: const Text('Detalles de cobertura y actualización'),
             children: [
               const Padding(
                 padding: EdgeInsets.all(12),
@@ -895,23 +1041,29 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   'Empresas: Workable, Indra/Minsait, Inditex/Recruitee, Veolia y otros portales originales. VFX complementario: Hitmarker, Work With Indies y GamesJobsDirect. Formación: eFundae, DIPLOS y CNTG, más recursos oficiales seleccionados. Los errores de ArtStation y del formulario de empleo Xunta aparecen abajo; no se presentan como fuentes funcionando. Las guardadas y el progreso son locales; las candidaturas se sincronizan con tu cuenta.',
                 ),
               ),
-              ...((feed!['sources'] as List?) ?? []).map(
-                (s) => ListTile(
-                  title: Text(s['name']),
-                  subtitle: Text(
-                    s['status'] == 'ok'
-                        ? s['matched'] != null
-                              ? 'Consulta correcta · ${s['matched']} coincidencias incorporadas'
-                              : 'Consulta correcta · ${s['examined'] ?? 0} fichas examinadas'
-                        : s['reason'] ?? 'Fuente no disponible',
+              ...((feed!['sources'] as List?) ?? [])
+                  .where(
+                    (s) => (s['categories'] as List? ?? []).contains(
+                      widget.category,
+                    ),
+                  )
+                  .map(
+                    (s) => ListTile(
+                      title: Text(s['name']),
+                      subtitle: Text(
+                        s['status'] == 'ok'
+                            ? s['matched'] != null
+                                  ? 'Consulta correcta · ${s['matched']} coincidencias incorporadas'
+                                  : 'Consulta correcta · ${s['examined'] ?? 0} fichas examinadas'
+                            : s['reason'] ?? 'Fuente no disponible',
+                      ),
+                      leading: Icon(
+                        s['status'] == 'ok'
+                            ? Icons.check_circle_outline
+                            : Icons.warning_amber,
+                      ),
+                    ),
                   ),
-                  leading: Icon(
-                    s['status'] == 'ok'
-                        ? Icons.check_circle_outline
-                        : Icons.warning_amber,
-                  ),
-                ),
-              ),
             ],
           ),
         ],

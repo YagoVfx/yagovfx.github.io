@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "coverageVersion": 3,
+  "coverageVersion": 4,
   "updatedAt": "2026-10-24T21:37:28.477095Z",
   "offers": [
     {
@@ -5276,181 +5276,439 @@
       "qualification": "Revisar conocimientos previos, situación laboral, selección y horario de aula virtual",
       "certificate": "La ficha indica certificación; confirmar examen, asistencia y condiciones",
       "checkedAt": "2026-10-24T21:37:28.477095Z"
+    },
+    {
+      "id": "course-sidefx-fluid-fx-for-realtime",
+      "kind": "tutorial",
+      "title": "Fluid FX for Realtime",
+      "provider": "SideFX",
+      "source": "SideFX",
+      "topic": "vfx",
+      "url": "https://www.sidefx.com/tutorials/fluid-fx-for-realtime/",
+      "sourceUrl": "https://www.sidefx.com/tutorials/fluid-fx-for-realtime/",
+      "price": 0,
+      "modality": "online",
+      "level": "intermediate",
+      "learningGoal": "improve",
+      "durationHours": 2.55,
+      "checkedAt": "2026-10-25T09:20:51.322311+00:00",
+      "description": "Lección práctica de VFX y Technical Art para Unreal/Houdini. Consultar conocimientos previos, versión y archivos en la página original.",
+      "qualification": "Conocimientos de Houdini y Unreal según la lección. Revisar licencias: acceso gratuito al tutorial no incluye licencias de software.",
+      "availability": "Autoaprendizaje con vídeos públicos. Sin plazas ni certificado profesional confirmados."
+    },
+    {
+      "id": "course-sidefx-realtime-destruction-techniques",
+      "kind": "tutorial",
+      "title": "Realtime Destruction Techniques",
+      "provider": "SideFX",
+      "source": "SideFX",
+      "topic": "vfx",
+      "url": "https://www.sidefx.com/tutorials/realtime-destruction-techniques/",
+      "sourceUrl": "https://www.sidefx.com/tutorials/realtime-destruction-techniques/",
+      "price": 0,
+      "modality": "online",
+      "level": "intermediate",
+      "learningGoal": "improve",
+      "durationHours": 1.73,
+      "checkedAt": "2026-10-25T09:20:51.322311+00:00",
+      "description": "Lección práctica de VFX y Technical Art para Unreal/Houdini. Consultar conocimientos previos, versión y archivos en la página original.",
+      "qualification": "Conocimientos de Houdini y Unreal según la lección. Revisar licencias: acceso gratuito al tutorial no incluye licencias de software.",
+      "availability": "Autoaprendizaje con vídeos públicos. Sin plazas ni certificado profesional confirmados."
+    },
+    {
+      "id": "course-sidefx-how-to-export-to-pcg-in-unreal",
+      "kind": "tutorial",
+      "title": "How to Export to PCG in Unreal",
+      "provider": "SideFX",
+      "source": "SideFX",
+      "topic": "vfx",
+      "url": "https://www.sidefx.com/tutorials/how-to-export-to-pcg-in-unreal/",
+      "sourceUrl": "https://www.sidefx.com/tutorials/how-to-export-to-pcg-in-unreal/",
+      "price": 0,
+      "modality": "online",
+      "level": "intermediate",
+      "learningGoal": "new",
+      "durationHours": 0.85,
+      "checkedAt": "2026-10-25T09:20:51.322311+00:00",
+      "description": "Lección práctica de VFX y Technical Art para Unreal/Houdini. Consultar conocimientos previos, versión y archivos en la página original.",
+      "qualification": "Conocimientos de Houdini y Unreal según la lección. Revisar licencias: acceso gratuito al tutorial no incluye licencias de software.",
+      "availability": "Autoaprendizaje con vídeos públicos. Sin plazas ni certificado profesional confirmados."
+    },
+    {
+      "id": "course-sidefx-foundations-procedural-assets-for-unreal",
+      "kind": "tutorial",
+      "title": "Procedural Assets for Unreal",
+      "provider": "SideFX",
+      "source": "SideFX",
+      "topic": "vfx",
+      "url": "https://www.sidefx.com/tutorials/foundations-procedural-assets-for-unreal/",
+      "sourceUrl": "https://www.sidefx.com/tutorials/foundations-procedural-assets-for-unreal/",
+      "price": 0,
+      "modality": "online",
+      "level": "beginner",
+      "learningGoal": "new",
+      "durationHours": 0.67,
+      "checkedAt": "2026-10-25T09:20:51.322311+00:00",
+      "description": "Lección práctica de VFX y Technical Art para Unreal/Houdini. Consultar conocimientos previos, versión y archivos en la página original.",
+      "qualification": "Conocimientos de Houdini y Unreal según la lección. Revisar licencias: acceso gratuito al tutorial no incluye licencias de software.",
+      "availability": "Autoaprendizaje con vídeos públicos. Sin plazas ni certificado profesional confirmados."
     }
   ],
   "sources": [
     {
       "name": "SNE: electricista · Vigo",
       "status": "ok",
-      "examined": 0
+      "examined": 0,
+      "categories": [
+        "electricity"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: mantenimiento · Vigo",
       "status": "ok",
-      "examined": 0
+      "examined": 0,
+      "categories": [
+        "electricity"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: instalador · Vigo",
       "status": "ok",
-      "examined": 0
+      "examined": 0,
+      "categories": [
+        "electricity"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: electromecánico · Vigo",
       "status": "ok",
-      "examined": 0
+      "examined": 0,
+      "categories": [
+        "electricity"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: programador · Vigo",
       "status": "ok",
-      "examined": 0
+      "examined": 0,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: desarrollador · Vigo",
       "status": "ok",
-      "examined": 0
+      "examined": 0,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: teletrabajo · nacional",
       "status": "ok",
-      "examined": 13
+      "examined": 13,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: remoto · nacional",
       "status": "ok",
-      "examined": 5
+      "examined": 5,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: electricista · A Coruña",
       "status": "ok",
-      "examined": 0
+      "examined": 0,
+      "categories": [
+        "electricity"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: mantenimiento · A Coruña",
       "status": "ok",
-      "examined": 0
+      "examined": 0,
+      "categories": [
+        "electricity"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: instalador · A Coruña",
       "status": "ok",
-      "examined": 1
+      "examined": 1,
+      "categories": [
+        "electricity"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: electromecánico · A Coruña",
       "status": "ok",
-      "examined": 0
+      "examined": 0,
+      "categories": [
+        "electricity"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: programador · A Coruña",
       "status": "ok",
-      "examined": 0
+      "examined": 0,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "SNE: desarrollador · A Coruña",
       "status": "ok",
-      "examined": 0
+      "examined": 0,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "Plain Concepts · Workable",
       "status": "ok",
-      "examined": 19
+      "examined": 19,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Workable",
+      "sourceKind": "ats"
     },
     {
       "name": "Fabulous · Workable",
       "status": "ok",
-      "examined": 30
+      "examined": 30,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Workable",
+      "sourceKind": "ats"
     },
     {
       "name": "EUROPEAN DYNAMICS · Workable",
       "status": "ok",
-      "examined": 189
+      "examined": 189,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Workable",
+      "sourceKind": "ats"
     },
     {
       "name": "We Work Remotely · RSS público",
       "status": "ok",
-      "matched": 10
+      "matched": 10,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "Remote OK · API pública",
       "status": "ok",
-      "matched": 0
+      "matched": 0,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "Imatia · Portal de empresa",
       "status": "ok",
-      "matched": 1
+      "matched": 1,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "Inprosec · Portal de empresa",
       "status": "ok",
-      "matched": 5
+      "matched": 5,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "Adecco · fichas originales seleccionadas",
       "status": "ok",
-      "matched": 1
+      "matched": 1,
+      "categories": [
+        "electricity"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "Inditex / Zara · Recruitee",
       "status": "ok",
-      "matched": 3
+      "matched": 3,
+      "categories": [
+        "programming"
+      ],
+      "platform": "Recruitee",
+      "sourceKind": "ats"
     },
     {
       "name": "Indra / Minsait · SuccessFactors",
       "status": "ok",
-      "matched": 3
+      "matched": 3,
+      "categories": [
+        "programming"
+      ],
+      "platform": "SuccessFactors",
+      "sourceKind": "ats"
     },
     {
       "name": "Veolia · SmartRecruiters",
       "status": "ok",
-      "matched": 1
+      "matched": 1,
+      "categories": [
+        "electricity"
+      ],
+      "platform": "SmartRecruiters",
+      "sourceKind": "ats"
     },
     {
       "name": "Work With Indies · RSS + ficha",
       "status": "ok",
-      "matched": 1
+      "matched": 1,
+      "categories": [
+        "vfx"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "Hitmarker · búsqueda pública",
       "status": "ok",
-      "matched": 148
+      "matched": 148,
+      "categories": [
+        "vfx"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "GamesJobsDirect · fichas",
       "status": "ok",
-      "matched": 30
+      "matched": 30,
+      "categories": [
+        "vfx"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "ArtStation · consulta automática",
       "status": "error",
-      "reason": "403 Client Error: Forbidden for url: https://www.artstation.com/jobs/search.json?query=vfx&page=1"
+      "reason": "403 Client Error: Forbidden for url: https://www.artstation.com/jobs/search.json?query=vfx&page=1",
+      "categories": [
+        "vfx"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "Xunta · ofertas privadas",
       "status": "error",
-      "reason": "El formulario oficial devuelve HTTP 400: host no válido. Cursos DIPLOS/CNTG y ofertas SNE se consultan por separado."
+      "reason": "El formulario oficial devuelve HTTP 400: host no válido. Cursos DIPLOS/CNTG y ofertas SNE se consultan por separado.",
+      "categories": [
+        "programming",
+        "electricity"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     },
     {
       "name": "eFundae",
       "status": "ok",
-      "examined": 21
+      "examined": 21,
+      "categories": [
+        "courses"
+      ],
+      "platform": "Formación",
+      "sourceKind": "training"
     },
     {
       "name": "Xunta / DIPLOS · formación",
       "status": "ok",
-      "examined": 16
+      "examined": 16,
+      "categories": [
+        "courses"
+      ],
+      "platform": "Formación",
+      "sourceKind": "training"
     },
     {
       "name": "CNTG · inscripción abierta",
       "status": "ok",
-      "examined": 1
+      "examined": 1,
+      "categories": [
+        "courses"
+      ],
+      "platform": "Formación",
+      "sourceKind": "training"
     },
     {
       "name": "Stratos · RSS + listado público",
       "status": "ok",
       "matched": 3,
-      "checkedAt": "2026-10-24T21:57:27.197818Z"
+      "checkedAt": "2026-10-24T21:57:27.197818Z",
+      "categories": [
+        "vfx"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
+    },
+    {
+      "name": "SideFX · videojuegos y VFX",
+      "status": "ok",
+      "matched": 4,
+      "checkedAt": "2026-10-25T09:20:51.322311+00:00",
+      "categories": [
+        "courses"
+      ],
+      "platform": "Formación",
+      "sourceKind": "training"
     }
   ],
   "note": "Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.",
-  "lastPartialUpdate": "2026-10-24T21:57:27.197818Z"
+  "lastPartialUpdate": "2026-10-25T09:20:51.322311+00:00"
 }

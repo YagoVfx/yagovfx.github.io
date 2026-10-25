@@ -1,0 +1,38 @@
+import 'jobs.dart';
+
+/// A job title is not evidence of a mandatory university qualification.
+String educationFit(Map<String, dynamic> item) {
+  final text = fold('${item['description'] ?? ''}');
+  final fp = RegExp(
+    r'formacion profesional|ciclo.{0,20}superior|\bfp2?\b|\bdam\b',
+  ).hasMatch(text);
+  final alternative = RegExp(
+    r'(?:degree|bachelor|universitari|ingenieria).{0,100}(?:or equivalent|equivalent experience|o experiencia equivalente|o fp|o formacion profesional)',
+  ).hasMatch(text);
+  final university = RegExp(
+    r'(?:required|must have|mandatory|looking for).{0,60}(?:bachelor|degree|b\.s\.)|(?:bachelor|university degree).{0,35}(?:required|mandatory)|(?:imprescindible|obligatori[oa]|requisito).{0,60}(?:ingenieria|grado universitario)|(?:ingenieria|grado universitario).{0,35}(?:obligatori|imprescindible)',
+  ).hasMatch(text);
+  if (university && !alternative) return 'university';
+  if (fp || alternative) return 'fp';
+  return 'unknown';
+}
+
+bool entryProfile(Map<String, dynamic> item) =>
+    item['experience'] != 'experienced' &&
+    educationFit(item) != 'university' &&
+    (educationFit(item) == 'fp' ||
+        item['experience'] == 'junior' ||
+        RegExp(
+          r'junior|fresh graduate|entry.level|trainee|\bbeca|internship|sin experiencia',
+        ).hasMatch(fold('${item['title']}')));
+
+String fitLabel(Map<String, dynamic> item) {
+  if (educationFit(item) == 'university') return 'Exige universidad';
+  if (item['experience'] == 'experienced') return 'Experiencia alta';
+  if (RegExp(r'\bbeca|internship|practicas')
+      .hasMatch(fold('${item['title']}'))) {
+    return 'Prácticas: comprobar acceso';
+  }
+  if (educationFit(item) == 'fp') return 'Admite FP o equivalente';
+  return 'Requisitos por confirmar';
+}

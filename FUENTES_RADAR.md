@@ -76,3 +76,10 @@ del lector seguirá siendo un error y no se convertirá en una búsqueda vacía.
 Los ATS se usan también fuera de VFX: Workable, Recruitee (Inditex) y SuccessFactors (Indra/Minsait) en
 programación, y SmartRecruiters (Veolia) en electricidad. El siguiente aumento de cobertura requiere
 conectar más empleadores concretos; no existe un feed ATS universal de todos los electricistas o programadores.
+# Actualización 0.9.0 — 25/10/2026
+
+Los conectores publican categorías y plataforma en el estado de fuentes. La app permite consultar estadísticas de programación, electricidad y cursos, además del scanner VFX directo. Los recuentos de importación no se presentan como ofertas compatibles ni como número de vacantes de todo un ATS.
+
+La formación incorpora comprobación automática de cuatro lecciones seleccionadas de SideFX: Fluid FX for Realtime, Realtime Destruction Techniques, How to Export to PCG in Unreal y Procedural Assets for Unreal. Se conserva la distinción entre cursos, tutoriales y guías. La prioridad depende del objetivo Repasar / Mejorar / Aprender algo nuevo, sin puntuaciones inventadas de calidad docente.
+
+Las fichas de empleo móvil diferencian grado universitario obligatorio, FP/experiencia equivalente y requisitos no confirmados. La detección es conservadora y no sustituye la lectura del anuncio; el título “Software Engineer” por sí solo no requiere universidad.

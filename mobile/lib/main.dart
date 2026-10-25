@@ -637,7 +637,7 @@ class _OffersState extends State<OffersPage> {
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                            'Versión 0.8.0 · Fuentes y formación\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web. Guardadas y descartadas siguen siendo locales.',
+                            'Versión 0.9.0 · Fuentes y formación\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web. Guardadas y descartadas siguen siendo locales.',
                           ),
                           const SizedBox(height: 16),
                           Text(
@@ -699,33 +699,6 @@ class _OffersState extends State<OffersPage> {
                                     change(() => filters.view = e.key),
                               ),
                             ),
-                          FilterChip(
-                            label: const Text('España'),
-                            selected: filters.spain,
-                            onSelected: (v) => change(() {
-                              filters.spain = v;
-                              if (v) filters.eu = false;
-                            }),
-                          ),
-                          FilterChip(
-                            label: const Text('Unión Europea'),
-                            selected: filters.eu,
-                            onSelected: (v) => change(() {
-                              filters.eu = v;
-                              if (v) filters.spain = false;
-                            }),
-                          ),
-                          FilterChip(
-                            label: const Text('Última semana'),
-                            selected: filters.days == 7,
-                            onSelected: (v) =>
-                                change(() => filters.days = v ? 7 : 0),
-                          ),
-                          ActionChip(
-                            label: const Text('Más fuentes'),
-                            avatar: const Icon(Icons.open_in_new, size: 16),
-                            onPressed: () => showCareerSources(context, 'vfx'),
-                          ),
                         ],
                       ),
                     ),

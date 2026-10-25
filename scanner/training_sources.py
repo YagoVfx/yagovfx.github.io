@@ -104,4 +104,29 @@ def cntg(now):
 
 
 def sources():
-    return [('diplos','Xunta / DIPLOS · formación',diplos),('cntg','CNTG · inscripción abierta',cntg)]
+    return [('diplos','Xunta / DIPLOS · formación',diplos),('cntg','CNTG · inscripción abierta',cntg),('sidefx','SideFX · videojuegos y VFX',sidefx)]
+
+
+def sidefx(now):
+    """Selected original lessons; recheck the public page every scan."""
+    lessons = [
+        ('fluid-fx-for-realtime', 'Fluid FX for Realtime', 'intermediate', 153, 'improve'),
+        ('realtime-destruction-techniques', 'Realtime Destruction Techniques', 'intermediate', 104, 'improve'),
+        ('how-to-export-to-pcg-in-unreal', 'How to Export to PCG in Unreal', 'intermediate', 51, 'new'),
+        ('foundations-procedural-assets-for-unreal', 'Procedural Assets for Unreal', 'beginner', 40, 'new'),
+    ]
+    out = []
+    for slug, title, level, minutes, goal in lessons:
+        url = 'https://www.sidefx.com/tutorials/' + slug + '/'
+        soup = BeautifulSoup(get(url).content, 'html.parser')
+        heading = soup.find('h1')
+        if not heading or fold(title) not in fold(heading.get_text(' ', strip=True)):
+            raise ValueError('SideFX lesson title changed: ' + slug)
+        out.append(dict(id='course-sidefx-'+slug, kind='tutorial', title=title,
+            provider='SideFX', source='SideFX', topic='vfx', url=url, sourceUrl=url,
+            price=0, modality='online', level=level, learningGoal=goal,
+            durationHours=round(minutes/60,2), checkedAt=now,
+            description='Lección práctica de VFX y Technical Art para Unreal/Houdini. Consultar conocimientos previos, versión y archivos en la página original.',
+            qualification='Conocimientos de Houdini y Unreal según la lección. Revisar licencias: acceso gratuito al tutorial no incluye licencias de software.',
+            availability='Autoaprendizaje con vídeos públicos. Sin plazas ni certificado profesional confirmados.'))
+    return out

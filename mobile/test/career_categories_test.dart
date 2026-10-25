@@ -125,7 +125,8 @@ void main() {
     });
     await tester.pumpAndSettle();
     expect(find.text('Cursos'), findsOneWidget);
-    expect(find.textContaining('800 €'), findsOneWidget);
+    expect(find.text('Filtros'), findsOneWidget);
+    expect(find.text('Solo gratuitos o subvencionados'), findsNothing);
     await tester.scrollUntilVisible(
       find.text('Escribir el primer código con C#'),
       250,
@@ -150,6 +151,21 @@ void main() {
       findsOneWidget,
     );
     expect(find.text('Escribir el primer código con C#'), findsNothing);
+    await tester.tap(
+      find.text('Niagara Introduction: repaso práctico de VFX en Unreal'),
+    );
+    await tester.pumpAndSettle();
+    expect(find.text('Formación'), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.widgetWithText(OutlinedButton, 'Guardar'),
+      250,
+      scrollable: find.byType(Scrollable).last,
+    );
+    await tester.tap(find.widgetWithText(OutlinedButton, 'Guardar'));
+    await tester.pumpAndSettle();
+    expect(find.text('Guardado'), findsOneWidget);
+    await tester.pageBack();
+    await tester.pumpAndSettle();
     expect(tester.takeException(), isNull);
     await tester.pumpWidget(const SizedBox());
     applications.dispose();
@@ -289,7 +305,7 @@ void main() {
           (_) async => http.Response(
             jsonEncode({
               'schemaVersion': 2,
-              'coverageVersion': 3,
+              'coverageVersion': 4,
               'offers': [],
               'courses': [],
             }),

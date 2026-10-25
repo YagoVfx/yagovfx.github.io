@@ -1,4 +1,17 @@
-# Yago VFX Jobs — Android 0.8.0
+# Yago VFX Jobs — Android 0.9.0
+
+## Novedades 0.9.0
+
+- Listados resumidos: título, empresa/proveedor, ubicación/coste y guardar. Pulsar una ficha abre requisitos y acciones de candidatura; los filtros se despliegan bajo demanda.
+- Programación empieza en Entrada / FP; Por revisar y Todos se eligen desde Filtros. Electricidad oculta inicialmente experiencia alta y universidad expresamente obligatoria. Los requisitos desconocidos siguen identificados para revisión. “Engineer” por sí solo no excluye; FP o experiencia equivalente se distinguen de un grado obligatorio. Las prácticas requieren confirmar acceso.
+- Perfil de referencia: DAM, electricidad/electrónica y telecomunicaciones; no se atribuye un grado universitario ni experiencia profesional de programación.
+- Cursos: objetivos Repasar, Mejorar y Aprender algo nuevo cambian la prioridad; ya no se favorece siempre formación inicial. El criterio mide encaje, no calidad docente.
+- Cuatro lecciones originales de SideFX se comprueban en cada escaneo: fluidos en tiempo real, destrucción, PCG y recursos para Unreal. Son autoaprendizaje, no certificaciones; algunas versiones y licencias de software tienen requisitos propios.
+- Radar separa Especialidades, VFX directo y Mapa. Las estadísticas adicionales muestran ATS conectados incluso con cero ofertas, procedencia y experiencia; formación desglosa proveedor, temática, nivel, modalidad, coste y tipo de recurso. Las fuentes se filtran por categoría.
+- Feed coverageVersion 4: incorpora metadatos de categorías y plataformas. La app conserva su copia compatible si el servidor todavía publica una versión anterior.
+- APK local: `dist/yago-vfx-jobs-0.9.0.apk`. Los cambios del scanner y del feed necesitan publicarse mediante GitHub para actualizarse en línea.
+
+Las cifras de versiones anteriores que figuran abajo documentan sus escaneos; no son recuentos en tiempo real.
 
 App Flutter personal que consume `https://yagovfx.github.io/data/jobs.json`.
 El scanner sigue ejecutándose en GitHub Actions. Firebase Authentication protege las candidaturas;

@@ -60,11 +60,13 @@ void main() {
           home: Scaffold(body: InsightsPage(jobs: [])),
         ),
       );
+      await tester.tap(find.text('Mapa'));
+      await tester.pump();
       await tester.runAsync(() async {
         await Future<void>.delayed(const Duration(milliseconds: 300));
       });
       await tester.pumpAndSettle();
-      expect(find.text('Radar global'), findsOneWidget);
+      expect(find.text('Mapa de empresas'), findsOneWidget);
       await tester.scrollUntilVisible(
         find.byType(CompanyWorldMap),
         300,
