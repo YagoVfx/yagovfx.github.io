@@ -127,6 +127,12 @@ void main() {
     expect(find.text('Cursos'), findsOneWidget);
     expect(find.text('Filtros'), findsOneWidget);
     expect(find.text('Solo gratuitos o subvencionados'), findsNothing);
+    await tester.tap(find.text('Filtros'));
+    await tester.pumpAndSettle();
+    expect(find.text('Objetivo'), findsOneWidget);
+    await tester.tap(find.byTooltip('Cerrar filtros'));
+    await tester.pumpAndSettle();
+    expect(find.text('Objetivo'), findsNothing);
     await tester.scrollUntilVisible(
       find.text('Escribir el primer código con C#'),
       250,
@@ -161,6 +167,8 @@ void main() {
       250,
       scrollable: find.byType(Scrollable).last,
     );
+    await tester.ensureVisible(find.widgetWithText(OutlinedButton, 'Guardar'));
+    await tester.pumpAndSettle();
     await tester.tap(find.widgetWithText(OutlinedButton, 'Guardar'));
     await tester.pumpAndSettle();
     expect(find.text('Guardado'), findsOneWidget);
@@ -305,7 +313,7 @@ void main() {
           (_) async => http.Response(
             jsonEncode({
               'schemaVersion': 2,
-              'coverageVersion': 4,
+              'coverageVersion': 5,
               'offers': [],
               'courses': [],
             }),

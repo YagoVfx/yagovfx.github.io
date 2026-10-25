@@ -64,7 +64,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-5234940",
+        "sr-744000155548950"
+      ],
+      "foundIn": [
+        "smartrecruiters",
+        "Hitmarker"
+      ]
     },
     {
       "id": "sr-744000152943445",
@@ -104,7 +112,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-5021258",
+        "sr-744000152943445"
+      ],
+      "foundIn": [
+        "smartrecruiters",
+        "Hitmarker"
+      ]
     },
     {
       "id": "ea-216274",
@@ -148,7 +164,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-5256320",
+        "ea-216274"
+      ],
+      "foundIn": [
+        "custom",
+        "Hitmarker"
+      ]
     },
     {
       "id": "ea-216273",
@@ -192,7 +216,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4931353",
+        "ea-216273"
+      ],
+      "foundIn": [
+        "custom",
+        "Hitmarker"
+      ]
     },
     {
       "id": "tt-bark-studios-com-jobs-7869495-vfx-artist",
@@ -574,7 +606,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-5151255",
+        "sr-744000154392949"
+      ],
+      "foundIn": [
+        "smartrecruiters",
+        "Hitmarker"
+      ]
     },
     {
       "id": "sr-744000153412618",
@@ -691,7 +731,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4651619",
+        "sr-744000146473011"
+      ],
+      "foundIn": [
+        "smartrecruiters",
+        "Hitmarker"
+      ]
     },
     {
       "id": "sr-744000135273552",
@@ -889,7 +937,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4625534",
+        "wd-r028002"
+      ],
+      "foundIn": [
+        "workday",
+        "Hitmarker"
+      ]
     },
     {
       "id": "wd-r026554",
@@ -1131,7 +1187,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4691965",
+        "wk-3722fb8235"
+      ],
+      "foundIn": [
+        "workable",
+        "Hitmarker"
+      ]
     },
     {
       "id": "wk-94db7df519",
@@ -1176,7 +1240,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4691989",
+        "wk-94db7df519"
+      ],
+      "foundIn": [
+        "workable",
+        "Hitmarker"
+      ]
     },
     {
       "id": "wk-aec85f9cb5",
@@ -1220,7 +1292,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4692024",
+        "wk-aec85f9cb5"
+      ],
+      "foundIn": [
+        "workable",
+        "Hitmarker"
+      ]
     },
     {
       "id": "mf-vfx-artist",
@@ -1578,7 +1658,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4502333",
+        "lv-134a5b7d-12c8-4e1f-889d-216b1ceed2d8"
+      ],
+      "foundIn": [
+        "lever",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-5210646007",
@@ -1621,7 +1709,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4508194",
+        "gh-5210646007"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-6205192004",
@@ -1663,7 +1759,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4887562",
+        "gh-6205192004"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-6207151004",
@@ -1702,7 +1806,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4913183",
+        "gh-6207151004"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-7312899",
@@ -1743,7 +1855,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4829960",
+        "gh-7312899"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-7615781",
@@ -1785,7 +1905,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4849647",
+        "gh-7615781"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-8279807",
@@ -1829,7 +1957,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-5243909",
+        "gh-8279807"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-8148791",
@@ -1874,7 +2010,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-5035164",
+        "gh-8148791"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-8073587",
@@ -1917,7 +2061,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4792955",
+        "gh-8073587"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-8287372",
@@ -1961,7 +2113,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-5257096",
+        "gh-8287372"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "wk-d1c808e6f9",
@@ -2007,7 +2167,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4815263",
+        "wk-d1c808e6f9"
+      ],
+      "foundIn": [
+        "workable",
+        "Hitmarker"
+      ]
     },
     {
       "id": "wk-988df1c833",
@@ -2180,7 +2348,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4937290",
+        "ab-fadae54c-240b-428f-a51f-c31a0fe28126"
+      ],
+      "foundIn": [
+        "ashby",
+        "Hitmarker"
+      ]
     },
     {
       "id": "ab-8f86c74e-7d06-447d-bd1b-ad268e46bb3e",
@@ -2221,7 +2397,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-3139284",
+        "ab-8f86c74e-7d06-447d-bd1b-ad268e46bb3e"
+      ],
+      "foundIn": [
+        "ashby",
+        "Hitmarker"
+      ]
     },
     {
       "id": "ab-36027799-383b-49b5-af7c-8653745d2238",
@@ -2261,7 +2445,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-3469761",
+        "ab-36027799-383b-49b5-af7c-8653745d2238"
+      ],
+      "foundIn": [
+        "ashby",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-4417606009",
@@ -2304,7 +2496,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-5042600",
+        "gh-4417606009"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-4417607009",
@@ -2348,7 +2548,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-5042602",
+        "gh-4417607009"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-6192046004",
@@ -2388,7 +2596,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-4887292",
+        "gh-6192046004"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-6228743004",
@@ -2432,7 +2648,15 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-hitmarker-5299488",
+        "gh-6228743004"
+      ],
+      "foundIn": [
+        "greenhouse",
+        "Hitmarker"
+      ]
     },
     {
       "id": "lv-1fe8667a-667f-4c31-901c-f747a06d8fa0",

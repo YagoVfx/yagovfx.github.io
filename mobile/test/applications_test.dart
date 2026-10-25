@@ -85,6 +85,16 @@ void main() {
     expect(store.records['gh-1']!['status'], 'interview');
     await store.save(job, 'interview', notes: 'Private note');
     expect(records['gh-1']!['fields']['notes']['stringValue'], 'Private note');
+    final copy = Job({
+      ...job.data,
+      'id': 'career-portal-1',
+      'sourceIds': ['gh-1'],
+      'url': 'https://example.com/job?utm_source=portal',
+    });
+    expect(store.find(copy)?['id'], 'gh-1');
+    expect(await store.save(copy, 'interview'), true);
+    expect(records, hasLength(1));
+    expect(store.records['gh-1']!['notes'], 'Private note');
     expect(await store.remove('gh-1'), true);
     expect(records, isEmpty);
     expect(store.records, isEmpty);

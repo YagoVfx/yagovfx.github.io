@@ -1,4 +1,19 @@
-# Yago VFX Jobs — Android 0.9.0
+# Yago Job Radar — Android 0.10.0
+
+## Novedades 0.10.0
+
+- Jerarquía visual: títulos destacados, empresa en morado, información secundaria atenuada, verde para datos confirmados/acciones registradas y ámbar para requisitos por revisar. Los colores siempre llevan texto.
+- Filtros en panel independiente; Cursos ocupa menos altura antes de las fichas. El objetivo se resume y se cambia dentro del panel. Se muestra la cantidad visible frente al catálogo de la especialidad.
+- Se retiran las puntuaciones numéricas de encaje. FP mencionada, experiencia equivalente y prácticas se distinguen sin garantizar elegibilidad.
+- Las copias VFX con URL original concreta compartida usan la identidad de la vacante de empresa. Se conservan IDs anteriores y procedencias para reconocer candidaturas históricas y guardados. No se borran registros privados antiguos ni se unen notas automáticamente.
+- Web y Android buscan las candidaturas por identidad, alias y URL concreta antes de crear otro registro; se conservan sus fechas y notas. Las reglas de Firebase no cambian.
+- Radar: Estadísticas / Mapa / Fuentes. Los totales VFX se unifican por identidad; las otras especialidades comparan catálogo y filtros guardados. Se mantiene la gráfica de ATS de empresas VFX.
+- “De dónde sale” muestra origen, publicador, método, comprobación guardada y enlace original. Distingue selección fija de fichas con comprobación automática.
+- Duraciones en horas/minutos y fechas legibles. El guardado local se explica una sola vez; las candidaturas siguen sincronizadas con la cuenta de la web.
+- Feed compatible: coverageVersion 5. La APK incluye la copia actual y rechaza copias anteriores incompatibles hasta publicar el nuevo scanner.
+- APK: `dist/yago-vfx-jobs-0.10.0.apk`. Los cambios están preparados para subir con GitHub Desktop; el APK no se versiona.
+
+La unificación requiere el mismo enlace concreto: no infiere que dos anuncios con URLs diferentes sean la misma vacante ni agrupa páginas generales de empleo.
 
 ## Novedades 0.9.0
 

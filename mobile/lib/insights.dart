@@ -71,7 +71,14 @@ const chartColors = [
 
 class InsightsPage extends StatefulWidget {
   final List<Job> jobs;
-  const InsightsPage({super.key, required this.jobs});
+  final String category;
+  final int refreshVersion;
+  const InsightsPage({
+    super.key,
+    required this.jobs,
+    this.category = 'programming',
+    this.refreshVersion = 0,
+  });
   @override
   State<InsightsPage> createState() => _InsightsState();
 }
@@ -87,6 +94,12 @@ class _InsightsState extends State<InsightsPage> {
   void initState() {
     super.initState();
     load();
+  }
+
+  @override
+  void didUpdateWidget(covariant InsightsPage old) {
+    super.didUpdateWidget(old);
+    if (old.refreshVersion != widget.refreshVersion) load();
   }
 
   Future<void> load() async {
@@ -173,9 +186,9 @@ class _InsightsState extends State<InsightsPage> {
             spacing: 8,
             children: [
               for (final e in {
-                'careers': 'Especialidades',
-                'direct': 'VFX directo',
+                'careers': 'Estadísticas',
                 'map': 'Mapa',
+                'sources': 'Fuentes',
               }.entries)
                 ChoiceChip(
                   label: Text(e.value),
@@ -186,12 +199,24 @@ class _InsightsState extends State<InsightsPage> {
           ),
         ),
         Expanded(
-          child: section == 'careers'
-              ? const CareerStatistics()
+          child: section == 'careers' || section == 'sources'
+              ? CareerStatistics(
+                  key: ValueKey('$section-${widget.refreshVersion}'),
+                  initialCategory: widget.category,
+                  directJobs: widget.jobs,
+                  employers: companies,
+                  sourcesOnly: section == 'sources',
+                  onDirectGraph: () => setState(() => section = 'direct'),
+                )
               : ListView(
                   padding: const EdgeInsets.all(16),
                   children: [
                     if (section == 'direct') ...[
+                      TextButton.icon(
+                        onPressed: () => setState(() => section = 'careers'),
+                        icon: const Icon(Icons.arrow_back),
+                        label: const Text('Volver a estadísticas'),
+                      ),
                       Text(
                         'Radar global',
                         style: Theme.of(context).textTheme.headlineMedium,

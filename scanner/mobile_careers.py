@@ -257,7 +257,7 @@ def run():
         except Exception as e:
             status.append(dict(name=label, status='error', reason=str(e)[:180]))
             for old in previous.get('offers', []):
-                if old['id'].startswith(prefix) and (not old.get('closingDate') or old['closingDate'] >= now[:10]):
+                if any(str(identity).startswith(prefix) for identity in [old['id'], *old.get('sourceIds', [])]) and (not old.get('closingDate') or old['closingDate'] >= now[:10]):
                     offers.setdefault(old['id'], dict(old, retainedAfterFailure=True))
     try:
         courses = fundae_courses()
@@ -282,7 +282,14 @@ def run():
                     course_map.setdefault(old['id'],dict(old,retainedAfterFailure=True))
     courses = list(course_map.values())
     from scanner.career_metadata import enrich_sources
-    output = dict(schemaVersion=2, coverageVersion=4, updatedAt=now, offers=list(offers.values()), courses=courses, sources=enrich_sources(status),
+    from scanner.vacancy_identity import unify
+    direct_path = ROOT / 'data/jobs.json'
+    direct = json.loads(direct_path.read_text(encoding='utf-8'))
+    unique_offers = unify(list(offers.values()), direct['jobs'])
+    direct_temporary = direct_path.with_suffix('.json.tmp')
+    direct_temporary.write_text(json.dumps(direct, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    direct_temporary.replace(direct_path)
+    output = dict(schemaVersion=2, coverageVersion=5, updatedAt=now, offers=unique_offers, courses=courses, sources=enrich_sources(status),
                   note='Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.')
     temporary = target.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

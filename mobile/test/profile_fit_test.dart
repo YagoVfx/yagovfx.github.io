@@ -25,7 +25,7 @@ void main() {
       };
       expect(educationFit(engineer), 'fp');
       expect(educationFit(degree), 'university');
-      expect(educationFit(equivalent), 'fp');
+      expect(educationFit(equivalent), 'experience');
       expect(
         filterCareerItems([
           engineer,

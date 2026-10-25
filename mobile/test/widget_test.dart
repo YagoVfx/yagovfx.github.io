@@ -19,7 +19,7 @@ void main() {
     expect(find.text('Código'), findsOneWidget);
     expect(find.text('Electricidad'), findsOneWidget);
     expect(find.text('Cursos'), findsOneWidget);
-    await tester.tap(find.text('Portales automáticos'));
+    await tester.tap(find.text('Portales'));
     await tester.pump();
     await tester.runAsync(() async {
       await Future<void>.delayed(const Duration(milliseconds: 300));
@@ -40,10 +40,10 @@ void main() {
   testWidgets('Arranque y navegación sin cuenta', (tester) async {
     SharedPreferences.setMockInitialValues({});
     await tester.pumpWidget(const TrackerApp());
-    expect(find.text('YAGO / VFX JOBS'), findsOneWidget);
+    expect(find.text('YAGO / JOB RADAR'), findsOneWidget);
     await tester.tap(find.byIcon(Icons.settings_outlined));
     await tester.pump();
-    expect(find.text('Tu radar de empleo VFX'), findsOneWidget);
+    expect(find.text('Tu radar de empleo'), findsOneWidget);
     await tester.pumpWidget(const SizedBox());
   });
 

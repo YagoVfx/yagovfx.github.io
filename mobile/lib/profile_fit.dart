@@ -13,7 +13,8 @@ String educationFit(Map<String, dynamic> item) {
     r'(?:required|must have|mandatory|looking for).{0,60}(?:bachelor|degree|b\.s\.)|(?:bachelor|university degree).{0,35}(?:required|mandatory)|(?:imprescindible|obligatori[oa]|requisito).{0,60}(?:ingenieria|grado universitario)|(?:ingenieria|grado universitario).{0,35}(?:obligatori|imprescindible)',
   ).hasMatch(text);
   if (university && !alternative) return 'university';
-  if (fp || alternative) return 'fp';
+  if (fp) return 'fp';
+  if (alternative) return 'experience';
   return 'unknown';
 }
 
@@ -33,6 +34,7 @@ String fitLabel(Map<String, dynamic> item) {
       .hasMatch(fold('${item['title']}'))) {
     return 'Prácticas: comprobar acceso';
   }
-  if (educationFit(item) == 'fp') return 'Admite FP o equivalente';
+  if (educationFit(item) == 'fp') return 'FP mencionada; revisar requisitos';
+  if (educationFit(item) == 'experience') return 'Pide experiencia equivalente';
   return 'Requisitos por confirmar';
 }

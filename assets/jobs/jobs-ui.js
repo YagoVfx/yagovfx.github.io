@@ -470,7 +470,7 @@
   };
 
   Panel.prototype.card = function (j) {
-    var application=root.VfxApplications&&root.VfxApplications.get(j.id);
+    var application=root.VfxApplications&&root.VfxApplications.get(j);
     var saved = !!this.prefs.saved[j.id], disc = !!this.prefs.discarded[j.id];
     var isNew = j.firstSeen && (Date.now() - Date.parse(j.firstSeen)) < 7 * 86400000;
     var wpLabel = L.workplace[j.workplace];

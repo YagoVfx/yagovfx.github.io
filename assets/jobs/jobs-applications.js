@@ -27,22 +27,31 @@
       records=next;error=writeError;lastSync=new Date().toISOString();if(changed)notify();
     }catch(e){if(epoch===current){error=message(e);notify();}}
   }
+  function find(job){
+    if(typeof job==='string')return records[job];
+    var ids=[job.id].concat(job.sourceIds||[]),found;
+    ids.some(function(id){found=records[id];return !!found;});
+    if(found)return found;
+    function key(raw){try{var u=new URL(raw);['source','ref'].forEach(function(k){u.searchParams.delete(k);});Array.from(u.searchParams.keys()).forEach(function(k){if(k.indexOf('utm_')===0)u.searchParams.delete(k);});u.searchParams.sort();if(!u.search&&/\/(?:jobs|job|careers|vacancies|open-positions|join-us)?\/?$/.test(u.pathname))return '';return u.host.toLowerCase()+u.pathname.replace(/\/+$/,'')+'?'+u.searchParams.toString();}catch(e){return raw||'';}}
+    var urls=[job.url,job.originalUrl].filter(Boolean).map(key).filter(Boolean);
+    return Object.keys(records).map(function(id){return records[id];}).find(function(r){return r.url&&urls.indexOf(key(r.url))>=0;});
+  }
   async function save(job,status,changes){
     if(!user())throw new Error('Inicia sesión para sincronizar tus candidaturas.');
     if(!labels[status])throw new Error('Estado no válido');
     if(busy)throw new Error('Espera a que termine la sincronización anterior.');
     var current=epoch;version++;busy=true;error='';writeError='';notify();
     try{
-      var old=records[job.id],now=new Date().toISOString();
-      var record=old?Object.assign({},old):{id:job.id,company:String(job.company).slice(0,200),title:String(job.title).slice(0,300),url:C.safeUrl(job.url)||'',location:String(job.location||'').slice(0,500),status:status,appliedAt:now,updatedAt:now,notes:''};
+      var old=find(job),recordId=old?old.id:job.id,now=new Date().toISOString();
+      var record=old?Object.assign({},old):{id:recordId,company:String(job.company).slice(0,200),title:String(job.title).slice(0,300),url:C.safeUrl(job.url)||'',location:String(job.location||'').slice(0,500),status:status,appliedAt:now,updatedAt:now,notes:''};
       record.status=status;record.updatedAt=now;
       if(changes){if(typeof changes.notes==='string')record.notes=changes.notes.slice(0,2000);if(changes.appliedAt)record.appliedAt=changes.appliedAt;}
       // Update only edited fields on existing records, preserving changes from the other device.
       var patch=old?{status:status,updatedAt:now}:record;
       if(old&&changes){if(typeof changes.notes==='string')patch.notes=record.notes;if(changes.appliedAt)patch.appliedAt=record.appliedAt;}
       var mask=old?'?'+Object.keys(patch).map(function(k){return 'updateMask.fieldPaths='+k;}).join('&'):'';
-      await request('/'+encodeURIComponent(job.id)+mask,{method:'PATCH',body:JSON.stringify({fields:fields(patch)})});
-      if(epoch===current){records[job.id]=record;lastSync=now;}
+      await request('/'+encodeURIComponent(recordId)+mask,{method:'PATCH',body:JSON.stringify({fields:fields(patch)})});
+      if(epoch===current){records[recordId]=record;lastSync=now;}
     }catch(e){if(epoch===current){error=message(e);writeError=error;}throw new Error(message(e));}
     finally{if(epoch===current){busy=false;notify();}}
   }
@@ -82,5 +91,5 @@
   root.addEventListener('vfx-auth-change',function(){epoch++;version++;records={};error='';writeError='';busy=false;lastSync='';notify();if(user())refresh();});
   root.addEventListener('focus',function(){if(user())refresh();});
   setInterval(function(){if(user()&&!document.hidden&&!busy)refresh();},15000);
-  root.VfxApplications={mount:mount,save:save,remove:remove,refresh:refresh,labels:labels,get:function(id){return records[id];},subscribe:function(fn){listeners.push(fn);}};
+  root.VfxApplications={mount:mount,save:save,remove:remove,refresh:refresh,labels:labels,get:find,subscribe:function(fn){listeners.push(fn);}};
 })(window);

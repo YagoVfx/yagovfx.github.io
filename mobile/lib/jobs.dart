@@ -7,6 +7,40 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 String fold(Object? s) => removeDiacritics('$s').toLowerCase();
+String vacancyUrl(String raw) {
+  final uri = Uri.tryParse(raw);
+  if (uri == null || uri.host.isEmpty) return '';
+  final keys =
+      uri.queryParametersAll.keys
+          .where(
+            (k) =>
+                !k.toLowerCase().startsWith('utm_') &&
+                !['source', 'ref'].contains(k.toLowerCase()),
+          )
+          .toList()
+        ..sort();
+  final query = [
+    for (final k in keys)
+      for (final v in uri.queryParametersAll[k]!)
+        '${Uri.encodeQueryComponent(k)}=${Uri.encodeQueryComponent(v)}',
+  ].join('&');
+  if (query.isEmpty &&
+      [
+        '',
+        'jobs',
+        'careers',
+        'job',
+        'vacancies',
+        'open-positions',
+        'join-us',
+      ].contains(
+        uri.path.replaceFirst(RegExp(r'/+$'), '').split('/').last.toLowerCase(),
+      )) {
+    return '';
+  }
+  return '${uri.host.toLowerCase()}${uri.path.replaceFirst(RegExp(r'/+$'), '')}?$query';
+}
+
 bool withinDays(Object? value, int days, {DateTime? now}) {
   if (days == 0) return true;
   final date = DateTime.tryParse('$value');

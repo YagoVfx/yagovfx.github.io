@@ -38,6 +38,8 @@ def test_candidacy_syncs_between_two_devices_and_logout_clears_private_data(make
     web.locator('[data-job="gh-1"] [data-action="apply"]').click()
     web.locator('[data-job="gh-1"] [data-action="application-details"]').wait_for()
     assert 'gh-1' in records
+    first.evaluate("async () => { await VfxApplications.save({id:'career-copy',sourceIds:['gh-1'],title:'VFX Artist',company:'Studio',url:'https://example.org/copy'},'applied'); }")
+    assert list(records) == ['gh-1']
     second.evaluate('VfxApplications.refresh()')
     mobile.locator('[data-app-status="gh-1"]').wait_for()
     mobile.locator('[data-app-status="gh-1"]').select_option('interview')
@@ -65,6 +67,15 @@ def test_manual_previous_application_and_private_notes(make_page):
     pane.get_by_text('Notas privadas',exact=True).click();notes=pane.locator('[data-app-notes]');notes.locator('textarea').fill('Follow up Friday');notes.get_by_role('button').click()
     page.wait_for_function("id=>VfxApplications.get(id).notes==='Follow up Friday'",arg=next(iter(records)))
     assert next(iter(records.values()))['fields']['notes']['stringValue']=='Follow up Friday'
+
+
+def test_legacy_portal_application_is_reused_by_canonical_vacancy(make_page):
+    records={};page=make_page();backend(page,records);box=open_public(page);sign_in(box)
+    page.evaluate("async () => { await VfxApplications.save({id:'career-old',company:'Studio',title:'VFX Artist',url:'https://employer.example/vacancies/123'},'applied',{notes:'Keep private note'}); }")
+    page.evaluate("async () => { await VfxApplications.save({id:'gh-123',sourceIds:['career-old'],company:'Studio',title:'VFX Artist',url:'https://employer.example/vacancies/123?utm_source=portal'},'interview'); }")
+    assert list(records) == ['career-old']
+    assert records['career-old']['fields']['notes']['stringValue'] == 'Keep private note'
+    assert records['career-old']['fields']['status']['stringValue'] == 'interview'
 
 def test_failed_write_does_not_mark_candidacy_as_saved(make_page):
     records={};page=make_page();backend(page,records);box=open_public(page);sign_in(box)

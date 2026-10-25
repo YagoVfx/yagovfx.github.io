@@ -39,7 +39,7 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.text('Cursos').last);
       await tester.pumpAndSettle();
-      expect(find.textContaining('automáticos ·'), findsOneWidget);
+      expect(find.textContaining('con consulta automática ·'), findsOneWidget);
       expect(find.text('ATS conectados'), findsNothing);
       expect(tester.takeException(), isNull);
       await tester.pumpWidget(const SizedBox());

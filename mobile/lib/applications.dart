@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 
 import 'jobs.dart';
+import 'presentation.dart';
 
 const applicationLabels = {
   'applied': 'Enviada',
@@ -40,6 +41,20 @@ class ApplicationsStore extends ChangeNotifier {
   int _epoch = 0, _version = 0;
   Timer? _timer;
   bool get signedIn => uid == adminUid;
+  Map<String, dynamic>? find(Job job) {
+    for (final id in [job.id, ...?job.data['sourceIds'] as List?]) {
+      if (records['$id'] != null) return records['$id'];
+    }
+    final urls = [
+      job.data['url'],
+      job.data['originalUrl'],
+    ].whereType<String>().map(vacancyUrl).where((s) => s.isNotEmpty).toSet();
+    for (final record in records.values) {
+      if (urls.contains(vacancyUrl('${record['url']}'))) return record;
+    }
+    return null;
+  }
+
   void emit() {
     if (!_disposed) notifyListeners();
   }
@@ -262,11 +277,11 @@ class ApplicationsStore extends ChangeNotifier {
     error = null;
     emit();
     try {
-      final old = records[job.id],
-          now = DateTime.now().toUtc().toIso8601String();
+      final old = find(job), now = DateTime.now().toUtc().toIso8601String();
+      final recordId = old?['id'] ?? job.id;
       final record = old == null
           ? <String, dynamic>{
-              'id': job.id,
+              'id': recordId,
               'company': job.company,
               'title': job.title,
               'url': safeUrl(job.data['url']) ?? '',
@@ -293,11 +308,11 @@ class ApplicationsStore extends ChangeNotifier {
           ? ''
           : '?${patch.keys.map((k) => 'updateMask.fieldPaths=$k').join('&')}';
       await request(
-        '/${Uri.encodeComponent(job.id)}$mask',
+        '/${Uri.encodeComponent(recordId)}$mask',
         body: {'fields': applicationFields(patch)},
       );
       if (epoch == _epoch) {
-        records[job.id] = record;
+        records[recordId] = record;
         lastSync = now;
         await storage.write(
           key: 'applications.cache.$adminUid',
@@ -542,7 +557,7 @@ class _ApplicationsPageState extends State<ApplicationsPage> {
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               const Text(
-                'Inicia sesión con el mismo email y contraseña de Firebase que usas en la web. Las candidaturas son privadas y se sincronizan entre dispositivos.',
+                'Inicia sesión con la misma cuenta que usas en la web. Las candidaturas son privadas y se sincronizan entre dispositivos.',
               ),
               TextField(
                 controller: email,
@@ -599,7 +614,7 @@ class _ApplicationsPageState extends State<ApplicationsPage> {
               if (store.error != null)
                 Text(store.error!, style: const TextStyle(color: Colors.amber)),
               if (store.lastSync != null)
-                Text('Última sincronización: ${store.lastSync}'),
+                Text('Última sincronización: ${readableDate(store.lastSync)}'),
               Wrap(
                 spacing: 8,
                 children: [

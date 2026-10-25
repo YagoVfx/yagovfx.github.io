@@ -8,6 +8,7 @@ import 'jobs.dart';
 import 'insights.dart';
 import 'applications.dart';
 import 'career_categories.dart';
+import 'presentation.dart';
 
 void main() => runApp(const TrackerApp());
 
@@ -16,11 +17,31 @@ class TrackerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'Yago VFX Jobs',
+    title: 'Yago Job Radar',
     theme: ThemeData(
       brightness: Brightness.dark,
       colorSchemeSeed: const Color(0xFFAA90FF),
       scaffoldBackgroundColor: const Color(0xFF0E1017),
+      cardTheme: CardThemeData(
+        color: const Color(0xff191d29),
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: const BorderSide(color: Color(0xff30374a)),
+        ),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: const Color(0xff191d29),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 14,
+        ),
+      ),
+      navigationBarTheme: const NavigationBarThemeData(
+        backgroundColor: Color(0xff141824),
+      ),
       useMaterial3: true,
     ),
     home: const OffersPage(),
@@ -108,7 +129,7 @@ class _OffersState extends State<OffersPage> {
               Expanded(
                 child: ChoiceChip(
                   label: const Text(
-                    'Estudios directos',
+                    'Empresas',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(fontSize: 12),
@@ -121,7 +142,7 @@ class _OffersState extends State<OffersPage> {
               Expanded(
                 child: ChoiceChip(
                   label: const Text(
-                    'Portales automáticos',
+                    'Portales',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(fontSize: 12),
@@ -166,7 +187,13 @@ class _OffersState extends State<OffersPage> {
     if (careerCategories.containsKey(storedCategory)) {
       category = storedCategory!;
     }
-    saved = (p.getStringList('saved') ?? []).toSet();
+    saved = {...?p.getStringList('saved'), ...?p.getStringList('career.saved')};
+    final links = JobsRepository(p).cached();
+    for (final row in (links?['jobs'] as List? ?? [])) {
+      if ((row['sourceIds'] as List? ?? []).any(saved.contains)) {
+        saved.add(row['id']);
+      }
+    }
     discarded = (p.getStringList('discarded') ?? []).toSet();
     try {
       filters = JobFilters.fromJson(jsonDecode(p.getString('filters') ?? '{}'));
@@ -189,6 +216,11 @@ class _OffersState extends State<OffersPage> {
         .where((job) => job.isDirectSource)
         .toList();
     updated = d['lastUpdated']?.toString();
+    for (final job in jobs) {
+      if ((job.data['sourceIds'] as List? ?? []).any(saved.contains)) {
+        saved.add(job.id);
+      }
+    }
   }
 
   Future<void> refresh() async {
@@ -216,12 +248,30 @@ class _OffersState extends State<OffersPage> {
   void change(VoidCallback action) {
     setState(action);
     prefs?.setStringList('saved', saved.toList());
+    prefs?.setStringList('career.saved', saved.toList());
     prefs?.setStringList('discarded', discarded.toList());
     prefs?.setString('filters', jsonEncode(filters.toJson()));
   }
 
-  void toggleSaved(Job j) =>
-      change(() => saved.contains(j.id) ? saved.remove(j.id) : saved.add(j.id));
+  void toggleSaved(Job j) => change(() {
+    if (saved.remove(j.id)) {
+      for (final alias in (j.data['sourceIds'] as List? ?? [])) {
+        saved.remove(alias);
+      }
+    } else {
+      saved.add(j.id);
+    }
+    if (prefs?.getBool('bookmark.noticeSeen') != true) {
+      prefs?.setBool('bookmark.noticeSeen', true);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            'Guardadas: en este móvil. Solicitudes: sincronizadas con tu cuenta.',
+          ),
+        ),
+      );
+    }
+  });
   Future<void> open(Object? raw) async {
     final url = safeUrl(raw);
     if (url == null) return;
@@ -296,7 +346,11 @@ class _OffersState extends State<OffersPage> {
                 ],
               ),
               const SizedBox(height: 12),
-              Text('Compatibilidad: ${label(j.compatibility)}'),
+              Text(
+                j.compatibility == 'compatible'
+                    ? 'Cumple los filtros de b?squeda; revisa experiencia y requisitos'
+                    : 'Condiciones por revisar',
+              ),
               Text(
                 j.str(
                   'spainReason',
@@ -317,7 +371,11 @@ class _OffersState extends State<OffersPage> {
               if (j.str('contractEvidence', '').isNotEmpty)
                 Text('Evidencia del contrato: ${j.str('contractEvidence')}'),
               const SizedBox(height: 16),
-              Text('Fuente: ${label(j.source)} · ${j.str('ats')}'),
+              TextButton.icon(
+                onPressed: () => showProvenance(context, j.data, open),
+                icon: const Icon(Icons.info_outline),
+                label: const Text('De dónde sale esta oferta'),
+              ),
               Text(
                 'Publicación oficial: ${j.str('postedDate', 'No disponible')}',
               ),
@@ -339,15 +397,15 @@ class _OffersState extends State<OffersPage> {
               FilledButton.tonalIcon(
                 icon: const Icon(Icons.send),
                 label: Text(
-                  applications.records.containsKey(j.id)
-                      ? 'Candidatura: ${applicationLabels[applications.records[j.id]!['status']]}'
+                  applications.find(j) != null
+                      ? 'Candidatura: ${applicationLabels[applications.find(j)!['status']]}'
                       : 'He enviado mi candidatura',
                 ),
                 onPressed: applications.busy
                     ? null
                     : () async {
                         if (!applications.signedIn ||
-                            applications.records.containsKey(j.id)) {
+                            applications.find(j) != null) {
                           Navigator.pop(ctx);
                           setState(() => tab = 4);
                           return;
@@ -549,7 +607,7 @@ class _OffersState extends State<OffersPage> {
     final old = time != null && DateTime.now().difference(time).inHours > 13;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('YAGO / VFX JOBS'),
+        title: const Text('YAGO / JOB RADAR'),
         bottom: tab <= 1
             ? PreferredSize(
                 preferredSize: Size.fromHeight(category == 'vfx' ? 130 : 76),
@@ -558,7 +616,9 @@ class _OffersState extends State<OffersPage> {
             : null,
         actions: [
           IconButton(
-            onPressed: (category != 'vfx' || vfxBoards) && tab <= 1
+            onPressed: tab == 3
+                ? () => setState(() => careerRefresh++)
+                : (category != 'vfx' || vfxBoards) && tab <= 1
                 ? () => setState(() => careerRefresh++)
                 : loading
                 ? null
@@ -600,12 +660,21 @@ class _OffersState extends State<OffersPage> {
                 savedOnly: tab == 1,
                 refreshVersion: careerRefresh,
                 openApplications: () => setState(() => tab = 4),
+                onSavedChanged: () => setState(
+                  () => saved = (prefs?.getStringList('saved') ?? []).toSet(),
+                ),
               ),
             )
           : tab == 4
           ? SafeArea(child: ApplicationsPage(store: applications))
           : tab == 3
-          ? SafeArea(child: InsightsPage(jobs: jobs))
+          ? SafeArea(
+              child: InsightsPage(
+                jobs: jobs,
+                category: category,
+                refreshVersion: careerRefresh,
+              ),
+            )
           : SafeArea(
               child: Column(
                 children: [
@@ -632,21 +701,21 @@ class _OffersState extends State<OffersPage> {
                         padding: const EdgeInsets.all(24),
                         children: [
                           Text(
-                            'Tu radar de empleo VFX',
+                            'Tu radar de empleo',
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                            'Versión 0.9.0 · Fuentes y formación\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web. Guardadas y descartadas siguen siendo locales.',
+                            'Versión 0.10.0 · Fuentes y formación\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web.',
                           ),
                           const SizedBox(height: 16),
+                          Text('Datos VFX: ${readableDate(updated)}'),
                           Text(
-                            'Fuente actualizada: ${updated ?? 'No disponible'}',
+                            'Catálogo VFX cargado: ${jobs.length} anuncios antes de filtros',
                           ),
-                          Text('Ofertas cargadas: ${jobs.length}'),
                           TextButton(
                             onPressed: refresh,
-                            child: const Text('Actualizar ahora'),
+                            child: const Text('Actualizar VFX de empresas'),
                           ),
                           TextButton(
                             onPressed: () => change(() => discarded.clear()),
@@ -655,7 +724,7 @@ class _OffersState extends State<OffersPage> {
                             ),
                           ),
                           const Text(
-                            'Las candidaturas se sincronizan con tu cuenta Firebase. Guardadas y descartadas siguen siendo locales.\n\nDesconocido no significa incompatible. Revisa las condiciones de cada oferta.',
+                            'Las candidaturas se sincronizan con tu cuenta. Guardadas y descartadas siguen siendo locales.\n\nDesconocido no significa incompatible. Revisa las condiciones de cada oferta.',
                           ),
                         ],
                       ),
@@ -687,7 +756,7 @@ class _OffersState extends State<OffersPage> {
                         children: [
                           for (final e in {
                             'all': 'Todas',
-                            'compatible': 'Compatibles',
+                            'compatible': 'Cumplen filtros',
                             'review': 'Para revisar',
                           }.entries)
                             Padding(
@@ -813,16 +882,24 @@ class _OffersState extends State<OffersPage> {
                                                 pill(
                                                   label(j.str('workplaceType')),
                                                 ),
-                                                pill(label(j.compatibility)),
+                                                statusTag(
+                                                  j.compatibility ==
+                                                          'compatible'
+                                                      ? 'Cumple filtros'
+                                                      : 'Revisar condiciones',
+                                                  confirmed:
+                                                      j.compatibility ==
+                                                      'compatible',
+                                                ),
                                                 pill(
                                                   j.verified
-                                                      ? 'Verificada'
-                                                      : 'Sin verificar',
+                                                      ? 'Procedencia oficial'
+                                                      : 'Origen por revisar',
                                                 ),
-                                                if (applications.records
-                                                    .containsKey(j.id))
+                                                if (applications.find(j) !=
+                                                    null)
                                                   pill(
-                                                    'Candidatura: ${applicationLabels[applications.records[j.id]!['status']]}',
+                                                    'Candidatura: ${applicationLabels[applications.find(j)!['status']]}',
                                                   ),
                                               ],
                                             ),
