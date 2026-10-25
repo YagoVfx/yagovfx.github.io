@@ -16,6 +16,7 @@ permissions:
 
 jobs:
   scan:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
@@ -29,35 +30,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r scanner/requirements.txt pytest
 
-      # Gate de calidad: si los tests unitarios fallan NO se escanea ni se sobrescriben los datos.
-      - name: Run unit tests
-        run: python -m pytest -q tests --ignore=tests/e2e
-
-      - name: Run scanner
-        run: python scanner/scanner.py
-
-      - name: Refresh company registry
-        run: python -m scanner.build_registry
-
-      - name: Refresh published company locations
-        run: python -m scanner.map_locations
-
-      - name: Refresh additional mobile careers and courses
-        run: python -m scanner.mobile_careers
-
-      - name: Refresh public employment calls
-        run: python -m scanner.public_exams
-
-      - name: Commit updated data if changed
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/jobs.json data/scanner-status.json data/scanner-report.json data/companies-registry.json data/company-locations.json data/mobile-careers.json data/public-exams.json
-          if git diff --staged --quiet; then
-            echo "No changes detected — skipping commit"
-          else
-            git commit -m "chore: update VFX jobs [automated]"
-            git push
-          fi
+      # Tests and generation run together on the latest main in an isolated worktree.
+      # A concurrent user push triggers a fresh scan instead of rebasing stale JSON.
+      - name: Test, scan and publish with concurrent-update retries
+        run: python scripts/publish_scanner.py
 
 
