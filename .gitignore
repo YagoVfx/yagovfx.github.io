@@ -7,4 +7,9 @@ __pycache__/
 firebase-debug.log*
 firestore-debug.log*
 /debug.log
-/mobile.zip
+# Local archives and compiled installation packages
+*.zip
+*.apk
+*.aab
+*.apks
+*.ipa
