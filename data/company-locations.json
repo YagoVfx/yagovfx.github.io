@@ -350,6 +350,24 @@
       "name": "Ubisoft",
       "locations": [
         {
+          "city": "Paris",
+          "lat": 48.86,
+          "lon": 2.35,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Pune",
+          "lat": 18.52,
+          "lon": 73.86,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Shanghai",
           "lat": 31.23,
           "lon": 121.47,
@@ -368,18 +386,6 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
-          "city": "Paris",
-          "lat": 48.86,
-          "lon": 2.35,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Bucharest",
-          "lat": 44.43,
-          "lon": 26.1,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
           "city": "Barcelona",
           "lat": 41.39,
           "lon": 2.17,
@@ -389,12 +395,6 @@
           "city": "Bordeaux",
           "lat": 44.84,
           "lon": -0.58,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Pune",
-          "lat": 18.52,
-          "lon": 73.86,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -768,15 +768,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         },
         {
-          "city": "Dundee",
-          "lat": 56.46,
-          "lon": -2.97,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
-        },
-        {
           "city": "Tel Aviv",
           "lat": 32.09,
           "lon": 34.78,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Dundee",
+          "lat": 56.46,
+          "lon": -2.97,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         }
       ]
@@ -1005,14 +1005,7 @@
     },
     {
       "name": "Magic Media",
-      "locations": [
-        {
-          "city": "Kyiv",
-          "lat": 50.45,
-          "lon": 30.52,
-          "evidence": "https://apply.workable.com/api/v1/widget/accounts/magic-media?details=true"
-        }
-      ]
+      "locations": []
     },
     {
       "name": "Believer",
@@ -1287,15 +1280,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
-          "city": "Leeds",
-          "lat": 53.8,
-          "lon": -1.55,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
-        },
-        {
           "city": "London",
           "lat": 51.51,
           "lon": -0.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Leeds",
+          "lat": 53.8,
+          "lon": -1.55,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
