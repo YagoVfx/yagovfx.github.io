@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-25T20:34:28.381690+00:00",
+  "updatedAt": "2026-10-26T04:32:25.655127+00:00",
   "calls": [
     {
       "id": "pag-222569",
@@ -22,7 +22,7 @@
       "pagDetailUrl": "https://administracion.gob.es/empleopublico/resultados-empleo/detalle-empleo?selectorget=222569&selectorServicio=bolsa_empleo",
       "searchUrl": "https://administracion.gob.es/empleopublico/resultados-empleo?pag_referencia=222569",
       "access": "Acceso libre (filtro del buscador oficial)",
-      "checkedAt": "2026-10-25T20:34:28.381690+00:00"
+      "checkedAt": "2026-10-26T04:32:25.655127+00:00"
     },
     {
       "id": "pag-222516",
@@ -44,7 +44,7 @@
       "pagDetailUrl": "https://administracion.gob.es/empleopublico/resultados-empleo/detalle-empleo?selectorget=222516&selectorServicio=bolsa_empleo",
       "searchUrl": "https://administracion.gob.es/empleopublico/resultados-empleo?pag_referencia=222516",
       "access": "Acceso libre (filtro del buscador oficial)",
-      "checkedAt": "2026-10-25T20:34:28.381690+00:00"
+      "checkedAt": "2026-10-26T04:32:25.655127+00:00"
     }
   ],
   "sources": [

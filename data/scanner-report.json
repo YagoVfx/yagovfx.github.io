@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-25T15:58:54Z",
-  "durationSec": 39.2,
+  "generatedAt": "2026-10-26T04:28:42Z",
+  "durationSec": 47.4,
   "summary": {
     "activeJobs": 66,
     "officialJobs": 66,
@@ -22,6 +22,15 @@
     "reason": "Catalogo limitado a portales oficiales; agregadores desactivados."
   },
   "history": [
+    {
+      "ranAt": "2026-10-26T04:28:42Z",
+      "durationSec": 47.4,
+      "sourcesOk": 73,
+      "sourcesFailed": 0,
+      "activeJobs": 66,
+      "officialJobs": 66,
+      "aggregatorJobs": 0
+    },
     {
       "ranAt": "2026-10-25T15:58:54Z",
       "durationSec": 39.2,

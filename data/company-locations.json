@@ -350,6 +350,12 @@
       "name": "Ubisoft",
       "locations": [
         {
+          "city": "Shanghai",
+          "lat": 31.23,
+          "lon": 121.47,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Quebec City",
           "lat": 46.81,
           "lon": -71.21,
@@ -404,12 +410,6 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
-          "city": "Shanghai",
-          "lat": 31.23,
-          "lon": 121.47,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
           "city": "Los Angeles",
           "lat": 34.05,
           "lon": -118.24,
@@ -431,12 +431,6 @@
           "city": "São Paulo",
           "lat": -23.55,
           "lon": -46.63,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Berlin",
-          "lat": 52.52,
-          "lon": 13.41,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         }
       ]
@@ -774,15 +768,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         },
         {
-          "city": "Tel Aviv",
-          "lat": 32.09,
-          "lon": 34.78,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
-        },
-        {
           "city": "Dundee",
           "lat": 56.46,
           "lon": -2.97,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Tel Aviv",
+          "lat": 32.09,
+          "lon": 34.78,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         }
       ]
@@ -1293,15 +1287,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
-          "city": "London",
-          "lat": 51.51,
-          "lon": -0.13,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
-        },
-        {
           "city": "Leeds",
           "lat": 53.8,
           "lon": -1.55,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
