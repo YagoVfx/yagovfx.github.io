@@ -37,8 +37,8 @@ def role_category(title):
 
 def classify_offer(title, description, location):
     text = fold(title + ' ' + description)
-    advanced = bool(re.search(r'\b(senior|lead|principal|jefe)\b|oficial.{0,8}(primera|1[ªaº])|(?:minim[oa]|al menos|at least|minimum).{0,25}[3-9]\+?\s*(?:anos|years)', text))
-    junior = bool(re.search(r'\bjunior\b|sin experiencia|no.{0,15}(necesaria|requiere).{0,12}experiencia|formacion a cargo', text))
+    advanced = bool(re.search(r'\b(senior|lead|principal|jefe)\b|oficial.{0,8}(primera|1[ªaº])', fold(title)) or re.search(r'(?:minim[oa]|al menos|at least|minimum).{0,25}[3-9]\+?\s*(?:anos|years)', text))
+    junior = bool(re.search(r'\bjunior\b|trainee|entry.level', fold(title)) or re.search(r'sin experiencia|no.{0,15}(necesaria|requiere).{0,12}experiencia|formacion a cargo', text))
     hybrid = bool(re.search(r'hibrid|teletrabajo.{0,25}(parcial|dias)|presencial.{0,25}teletrabajo|teletrabajo.{0,40}presencial', text))
     remote = not hybrid and bool(re.search(r'teletrabajo|en remoto|100\s*%.{0,15}remoto|fully remote', text))
     if re.search(r'no (?:se )?(?:ofrece|permite|admite).{0,12}teletrabajo|sin teletrabajo', text):
@@ -148,7 +148,7 @@ class SneSearch:
         return dict(id='career-sne-' + row['sourceId'], category=category, title=row['title'],
                     company='Empresa no indicada (SNE)', location=row['location'], url=row['url'],
                     source='Sistema Nacional de Empleo', sourceKind='public-employment-service',
-                    description=description[:4500], postedDate=datetime.strptime(row['postedDate'], '%d/%m/%Y').date().isoformat(),
+                    description=description[:16000], postedDate=datetime.strptime(row['postedDate'], '%d/%m/%Y').date().isoformat(),
                     closingDate=expires.isoformat() if expires else None, **meta)
 
 
@@ -205,7 +205,7 @@ def workable_programming(slug, expected_name, now):
         offers.append(dict(id=f"career-wk-{slug}-{raw['shortcode']}", category='programming',
             title=raw['title'], company=expected_name, location=location + ', Spain',
             url=f"https://apply.workable.com/{slug}/j/{raw['shortcode']}/", source=expected_name + ' · Workable',
-            sourceKind='employer', description=description[:4500], postedDate=published,
+            sourceKind='employer', description=description[:16000], postedDate=published,
             closingDate=None, checkedAt=now, **meta))
     return offers, len(data['jobs'])
 
@@ -308,6 +308,8 @@ def run():
     direct_path = ROOT / 'data/jobs.json'
     direct = json.loads(direct_path.read_text(encoding='utf-8'))
     unique_offers = unify(list(offers.values()), direct['jobs'])
+    from scanner.profile_match import profile_match
+    for row in unique_offers:row.update(profile_match(row))
     direct_temporary = direct_path.with_suffix('.json.tmp')
     direct_temporary.write_text(json.dumps(direct, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     direct_temporary.replace(direct_path)
@@ -316,7 +318,7 @@ def run():
     for source in status:
         source['lastAttemptAt'] = now
         source['lastSuccessAt'] = now if source['status'] == 'ok' else old_sources.get(source['name'], {}).get('lastSuccessAt')
-    output = dict(schemaVersion=2, coverageVersion=9, lastAttemptAt=now, updatedAt=now if successful else previous.get('updatedAt'), offers=unique_offers, courses=courses, sources=enrich_sources(status),
+    output = dict(schemaVersion=2, coverageVersion=10, lastAttemptAt=now, updatedAt=now if successful else previous.get('updatedAt'), offers=unique_offers, courses=courses, sources=enrich_sources(status),
                   note='Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.')
     temporary = target.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

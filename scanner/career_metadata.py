@@ -12,7 +12,7 @@ def enrich_sources(sources):
             categories = ['programming', 'electricity']
         else:
             categories = ['programming']
-        ats = next((label for label in ('Workable', 'Recruitee', 'SuccessFactors', 'SmartRecruiters', 'Viterbit') if label.lower() in name), None)
+        ats = next((label for label in ('Workable', 'Recruitee', 'SuccessFactors', 'SmartRecruiters', 'Viterbit', 'Bizneo') if label.lower() in name), None)
         source.update(categories=categories, platform=ats or ('Formación' if categories == ['courses'] else 'Portal / web pública'),
                       sourceKind='ats' if ats else 'training' if categories == ['courses'] else 'public-portal')
     return sources

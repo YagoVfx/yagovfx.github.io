@@ -1,156 +1,9 @@
 {
   "schemaVersion": 2,
-  "coverageVersion": 9,
+  "coverageVersion": 10,
   "lastAttemptAt": "2026-10-26T12:46:07.532141Z",
   "updatedAt": "2026-10-26T12:46:07.532141Z",
   "offers": [
-    {
-      "id": "career-wk-plainconcepts-C698FE1D89",
-      "category": "programming",
-      "title": "Graphics AI Software Engineer",
-      "company": "Plain Concepts",
-      "location": "Spain, Spain",
-      "url": "https://apply.workable.com/plainconcepts/j/C698FE1D89/",
-      "source": "Plain Concepts · Workable",
-      "sourceKind": "employer",
-      "description": "🚀 We’re Growing Our Research and Innovation Dream Team! Titles? Meh, we’re not big on them, but let’s call this one Graphics AI Software Engineer 😉 As part of our international research squad, you’ll craft tailor-made solutions that wow our clients. We’re hunting for a passionate Graphics AI Soft Engineer with a solid technical background. Your mission? Train, deploy, and put groundbreaking developments into action — and that’s just the beginning. Here’s the deal: Collaborate with both research and applied engineering teams on multiple projects. Your work will involve exploring, designing, and implementing advanced AI solutions focused on computer vision, 3D rendering, and spatial computing. This role is integral to our mission of developing innovative technologies that redefine how AI enhances and interacts with 3D environments . AGILE isn’t just a buzzword here — it’s how we roll. Multidisciplinary teams? Check. Full ownership of projects? Double check. Ready to take on projects that matter, with a team that’s as passionate as you are? Let’s make it happen! 😊 You will be responsible for: Design and Implement AI-Powered 3D Graphics Solutions Develop and deploy advanced AI techniques within Desktop, Web, VR, and AR applications using our proprietary Evergine graphics engine. Your work will harness the power of AI to push the boundaries of 3D graphics performance, realism, and interactivity. Pioneer and Integrate Advanced AI Models for Computer Vision and Spatial Computing : Leverage and go beyond existing models—such as NeRF, Gaussian Splatting, Point Cloud processing techniques, SAMv2, and GroundingDINO or FlorenceV2 —to not only elevate 3D applications but also create novel, next-generation AI models that drive the future of dynamic, responsive, and intelligent 3D environments. Drive AI Innovation in Architectural Design: Lead the architectural vision for AI-driven 3D applications, playing a critical role in designing and integrating both established and newly developed machine learning, deep learning, and computer vision frameworks to achieve groundbreaking results. Develop and Scale Custom AI Solutions for Complex 3D Applications : Design original algorithms and optimize existing machine learning models for performance and scalability, enabling realistic and seamless interactions in sophisticated 3D spaces and simulations. Collaborate in an AGILE, AI-Innovation Environment: Join a multidisciplinary team focused on AGILE methodologies, where you’ll work closely with experts in AI and 3D technology, driving research and development to achieve efficient, transformative outcomes. Requirements Critical Thinking and Problem-Solving Skills: Ability to approach challenges thoughtfully and analytically, with an eagerness to learn through problem-solving. Interest in 3D Engines and Graphics Development: While prior experience with 3D engines like Unity or Unreal is a plus, a strong motivation to learn and apply these tools to create AI-enhanced interactive graphics is what truly matters. Basic Understanding of AI and Machine Learning in 3D Applications: Familiarity with concepts like machine learning, deep learning, or computer vision**, with an enthusiasm for learning how they can enhance 3D environments (e.g., NeRF , Point Cloud techniques ). Collaborative and Growth-Oriented Mindset: A strong willingness to learn, grow, and contribute within a collaborative and supportive team environment. Commitment to Ongoing Learning and Innovation: A genuine curiosity for advancements in AI and 3D technology , paired with the motivation to grow your expertise over time. Willingness to Learn AI Tools and Frameworks: Exposure to PyTorch , TensorFlow , or similar frameworks is beneficial, but the drive to gain practical experience with these tools is what’s most important. Skills to Help You Excel: Proficiency in Python and C# Fundamentals: Basic experience with Python for AI development and C# for graphics programming, with an openness to expanding knowledge in both. Understanding of 3D Graphics and Mathematics: Familiarity with key 3D concepts (e.g., vectors , matrices , coordinate systems ) and a desire to explore their real-world applications. Interest in Prototyping and Software Development: Comfort with trying out ideas through rapid prototyping and embracing disciplined software development practices. Curiosity About Cloud Platforms for AI Deployment: I nterest in learning about cloud platforms like Azure , AWS , or GCP , and th",
-      "postedDate": "2026-10-07",
-      "closingDate": null,
-      "checkedAt": "2026-10-26T12:46:07.532141Z",
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": []
-    },
-    {
-      "id": "career-wk-european-dynamics-2B2EB51B62",
-      "category": "programming",
-      "title": "Full Stack Developer (Python, React)",
-      "company": "EUROPEAN DYNAMICS",
-      "location": "Seville, Spain",
-      "url": "https://apply.workable.com/european-dynamics/j/2B2EB51B62/",
-      "source": "EUROPEAN DYNAMICS · Workable",
-      "sourceKind": "employer",
-      "description": "We currently have a vacancy for a Full Stack developer fluent in English, to offer his/her services as an expert remotely (within EU) . In the context of the first assignment, the successful candidate will be integrated in the Development team of the company that will closely cooperate with a major client’s IT team. Your tasks: Designing and developing tools to interact with social media platforms and facilitate data collection workflows; Creating user-friendly front-end interfaces for data annotation and analysis purposes using modern frameworks and technologies; Developing back-end APIs and services to store, manage, and process data, and integrate with data analysis tools and pipelines; Writing scripts to automate tasks and workflows, using languages such as Bash and Python; Configuring and maintaining Linux-based systems for development and testing environments Ensuring the scalability, security, and performance of the tools using automation and monitoring tools; Providing technical support, troubleshooting, and maintenance for all developed tools. Requirements Master’s or PhD degree in Computer Science, Computer Engineering, or related field. with relevant IT professional experience of at least 7 years; Minimum 3 years of experience in automation and scripting using languages such as Bash and Python to streamline development workflows and system administration tasks.Experience in Python, JavaScript, and web development technologies (HTML/CSS); Minimum 3 years of professional experience in full-stack web development, including designing and developing tools and applications; Minimum 3 years of experience in designing and implementing front-end interfaces using modern frameworks (such as React) and web technologies (HTML/CSS, JavaScript); Minimum 3 years of experience in developing back-end APIs and services using frameworks such as Flask, including database design and integration; Minimum 3 years of experience in database management systems, including both relational databases (e.g., MySQL) and NoSQL databases (e.g., MongoDB); Minimum 3 years of experience in Linux system administration, including user management, networking, security, and system configuration; Minimum 3 years of experience with containerization technologies (such as Docker) and orchestration tools (such as Kubernetes); Minimum 3 years of experience with agile development methodologies, version control systems (such as Git), and project tracking tools. Experience with automation and scripting using Bash and Python for task and workflow optimisation; Experience with agile development methodologies and version control systems such as Git; Experience with project management software such as JIRA and Microsoft Project; Experience with collaboration platforms such as Confluence and SharePoint; Knowledge of reporting methods; Certifications in web development, front-end or back-end frameworks (e.g., React, Flask, or equivalent platforms), cloud computing platforms (such as AWS, Azure, or Google Cloud), containerization and orchestration technologies (such as Docker, Kubernetes, or equivalent platforms), database management systems, software engineering, DevOps, or related fields will be an asset. Excellent command of the English language. Benefits If you are seeking a career in an exciting and dynamic company, where you will offer your services as part of a team of a major European Institution, operating in an international, multilingual and multicultural environment where you can expect real chances to make a difference, please send us your detailed CV in English, quoting reference: (20648/10/2026) We offer a competitive remuneration (either on contract basis or remuneration with full benefits package), based on qualifications and experience. All applications will be treated as confidential. You may also consider all our other open vacancies by visiting the career section of our web site ( www.eurodyn.com) and follow us on Twitter (@EURODYN_Careers) and LinkedIn. EUROPEAN DYNAMICS ( www.eurodyn.com ) is a leading Software, Information and Communication Technologies company, operating internationally (Athens, Brussels, Luxembourg, Copenhagen, Stockholm, London, Nicosia, Hong-Kong, Valetta, etc). The company employs over 1000 engineers, IT experts and consultants (around 3% PhD, 36% MSc and 53% BSc or equivalent). We design and develop software applications using state-of-the-art technology. The group generates annual revenues in the range of EURO 40 mi",
-      "postedDate": "2026-10-06",
-      "closingDate": null,
-      "checkedAt": "2026-10-26T12:46:07.532141Z",
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Revisar años de experiencia exigidos"
-      ]
-    },
-    {
-      "id": "career-wwr-79911477638fdd95c4ff",
-      "category": "programming",
-      "title": "Analytics Engineer, Data",
-      "company": "Tailscale",
-      "location": "Anywhere in the World",
-      "description": "Headquarters: Remote (Canada) Thank you for considering Tailscale. If this job description resonates with you, please apply. Frequently cited statistics show that people who identify with historically marginalized groups are likely to apply to jobs only if they meet 100% of the qualifications. We encourage you to help us break that statistic! About Tailscale Tailscale is making safe connection effortless by delivering software that makes it easy to securely interconnect people and their devices, no matter where they are. From hobbyists to multinational corporations, teams of every size use Tailscale each day to protect their networks, share access to internal tools, and more. We're building a future for the Internet that's easy, sensible, and safe, like it used to be. Founded in 2019 and fully distributed, we're backed by Accel, CRV, Insight, Heavybit, and Uncork Capital. About the Role We are looking for an Analytics Engineer who thrives in high-complexity environments—someone excited to bring clarity to chaos, untangle complex models, and lay down the foundation for scalable solutions. This is a hands-on, high-impact role for someone who isn’t afraid to address manual processes, viewing them as opportunities to build scalable solutions that drive meaningful impact. You’ll work closely with stakeholders across the company to build reliable, trusted data models that support reporting, analysis, and decision-making. Key Responsibilities Dive into complex systems and manual workflows to develop an understanding of our tools and constraints. Thoughtfully design and maintain clean, scalable, production-grade dbt models (e.g., ARR, revenue recognition). Work across the full data pipeline, from ingestion to transformation to visualization. Take a pragmatic approach to system challenges, balancing quick fixes with thoughtful long-term design. Collaborate with Finance, Engineering, Sales, and other teams across the company to understand data needs and deliver timely, practical solutions. What We Are Looking For Experience designing and maintaining production-grade data models and pipelines. Deep understanding of modern data modeling principles and best practices. Strong SQL skills and confidence working with complex datasets and schemas. High attention to detail, with high standards for data accuracy and validation. Flexibility and resourcefulness in navigating manual tasks or imperfect systems. Passion for clean code, scalable architecture, and incrementally reducing complexity over time. Ability to manage time, prioritize effectively, and thrive in a fast-moving environment. Clear communication skills with both technical and non-technical collaborators. Willingness to flexibly support other domains (e.g., Product, Marketing, and Engineering) as the team grows. Nice to Have Experience at a high-growth PLG SaaS company. A track record of transforming manual, ad hoc workflows into scalable data pipelines. Familiarity with billing systems, GAAP accounting, revenue recognition, or audit support. Exposure to Stripe, Salesforce, or Orb in billing and finance contexts. Familiarity with financial cycles and the need for fast iteration during month- and quarter-end. Our Tech Stack Snowflake, dbt, Hightouch, Fivetran, Looker, Stripe, Salesforce, Orb. As a company, we strive to maintain fair and equitable compensation practices within our team across all roles and all levels. Tailscale's compensation package includes base salary, equity, and comprehensive benefits. The salary range displayed on each job posting represents the target range for a new hire's base salary. Individual offers may vary based on experience and skill set. CAN Pay Range $203,680 — $254,600 CAD What We Offer An inclusive, flexible environment where you can be your authentic self. We recognize the impact of diverse voices and backgrounds on the growth of our people, product, and company. And that flexibility in how and when you work empowers our team to integrate work and life. A competitive total compensation package. This includes a base salary, an equity incentive plan and variable commission (for quota-based roles). Comprehensive group benefits with no waiting period. Take advantage of coverage for health, vision, dental, and more for you and your family! Remote first company —most of our teams work fully remotely. Enjoy a change of scenery wherever you can get wifi, participate in virtual and in-person social events, and leverage our corporate co-working prog",
-      "url": "https://weworkremotely.com/remote-jobs/tailscale-analytics-engineer-data",
-      "source": "We Work Remotely",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-10-26T12:46:07.532141Z",
-      "closingDate": null,
-      "experience": "unknown",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Confirmar país de contratación, idioma y horario en la fuente"
-      ],
-      "postedDate": "2026-09-30"
-    },
-    {
-      "id": "career-wwr-605cc5626fcc3bdd6957",
-      "category": "programming",
-      "title": "Senior Software Engineer, Card Authorization",
-      "company": "Lithic",
-      "location": "Anywhere in the World",
-      "description": "Headquarters: Remote Lithic is the modern card issuing and processing platform empowering ambitious financial companies to build the future of payments. Our infrastructure powers card programs for 100+ innovative clients, from fintechs reimagining credit and digital banking to platforms transforming disbursements and spend management. Companies like Mercury, Flex, and Novo rely on Lithic's developer-friendly APIs, direct network connections, and flawless reconciliation to launch and scale card programs in weeks, not years. We're building a future where access to better financial products materially improves people's lives, free from the constraints of 30-year-old mainframes and legacy processors. We're proud to be backed by world-class investors who share that vision, including Bessemer Venture Partners, Index Ventures, Spark Capital, Stripes, and Mastercard, along with many others. We're a team of 170+ across 26 states and 7 countries, headquartered in New York City. We are hiring a Senior Software Engineer for Lithic’s Card Authorization team, which owns the real-time systems that make every card authorization decision correct, reliable, and fast. The team also owns related fraud tooling, including Lithic’s Rules Engine and 3D Secure integration. You’ll own high-impact projects end-to-end, solve distributed-systems problems at scale, and help build the tools customers use to control fraud and payment risk. What you'll do: Write reliable, secure, scalable code for Lithic’s real-time authorization and fraud-prevention systems with minimal tech debt Build customer-facing features, such as rules improvements, velocity controls, 3DS flows, fraud tooling, and transaction monitoring. Own projects from planning to launch. Improve the reliability of systems in team’s scope and participate in the team on-call rotation Lead efforts to improve systems and processes within the team What you'll bring: 4+ years building production backend systems. Full stack experience is a plus. Experience in or desire to learn Rust; ability to understand Lithic’s system written in other programming languages (Python, Java) Interest and experience in leveraging AI tools to enhance productivity Ability to navigate ambiguity, align diverse perspectives, and drive toward practical solutions Experience or interest in payments, fintech, fraud prevention. Comfort with designing systems from scratch and owning the product development process end-to-end Strong written communication skills and experience working in a remote, async-first team that’s spread across time zones The annual US salary range for this role is $160,000 to $200,000 plus equity. This salary range may be inclusive of several career levels at Lithic and will be narrowed during the interview process based on the candidate’s experience and qualifications. This is a remote position. However, candidates must be located in the United States, Canada (Ontario or British Columbia), Netherlands, Poland, or Czech Republic. We do not offer visa sponsorship or assistance. Crack the code A hidden code is tucked into this application. Find it and enter it below to continue. IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJUaGUgYW5zd2VyIHRvIGxpZmUsIHRoZSB1bml2ZXJzZSwgYW5kIGV2ZXJ5dGhpbmcg4oCUIGVuY3J5cHRlZC4iIiIKCnBhc3N3b3JkID0gYiJceGVkXHhjMSIKX2tleSA9IGIiXHhkOVx4ZjNceGVkXHhmYlx4ODBceGM0flx4YTdcblx4YjhceGZiPFx4ZmJPXlx4ZmIiCgpkZWYgZGVjcnlwdF9wYXNzd29yZCgpIC0+IHN0cjoKICAgIHJldHVybiBieXRlcyhhIF4gYiBmb3IgYSwgYiBpbiB6aXAocGFzc3dvcmQsIF9rZXkpKS5kZWNvZGUoKQoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIHJlc3VsdCA9IGRlY3J5cHRfcGFzc3dvcmQoKQogICAgcHJpbnQoZiJEZWNyeXB0ZWQgcGFzc3dvcmQ6IHtyZXN1bHR9IikKICAgIGFzc2VydCByZXN1bHQgPT0gIjQyIiwgIkRvbid0IHBhbmljIOKAlCBidXQgZGVjcnlwdGlvbiBmYWlsZWQhIgo= Benefits for Full-Time US Employees: Unlimited PTO 12-weeks fully paid parental leave 4-Week Fully Paid Sabbatical (earned at your 5-year anniversary) Work From Anywhere: work from anywhere in the world 4-weeks each year 3% cashback on card purchases with your complimentary Privacy.com employee account Health, vision, and dental insurance; HSA Contribution Match 401(k) match Voluntary Life Insurance and STD/LTD NYC-based employees work from our SoHo office three days a week. Tuesdays and Thursdays are our core days, and you'll choose a third day that works for your schedule and team needs. In-office employees receive: Commuter benefit Catered lunch every Tuesday and Thursday To apply: https://weworkremotely.com/remote-jobs/lithic-senior-softwar",
-      "url": "https://weworkremotely.com/remote-jobs/lithic-senior-software-engineer-card-authorization",
-      "source": "We Work Remotely",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-10-26T12:46:07.532141Z",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Confirmar país de contratación, idioma y horario en la fuente"
-      ],
-      "postedDate": "2026-09-30"
-    },
-    {
-      "id": "career-wwr-de579ee8d230a95ed2e2",
-      "category": "programming",
-      "title": "Software Engineer - Developer Experience",
-      "company": "Dremio",
-      "location": "Anywhere in the World",
-      "description": "Headquarters: Portugal - Remote Be Part of Building the Future Dremio is the unified lakehouse platform for self-service analytics and AI, serving hundreds of global enterprises, including Maersk, Amazon, Regeneron, NetApp, and S&P Global. Customers rely on Dremio for cloud, hybrid, and on-prem lakehouses to power their data mesh, data warehouse migration, data virtualization, and unified data access use cases. Based on open source technologies, including Apache Iceberg and Apache Arrow, Dremio provides an open lakehouse architecture enabling the fastest time to insight and platform flexibility at a fraction of the cost.  Learn more at www.dremio.com. About the role In this role you will get opportunities to implement and maintain CI/CD systems and developer productivity solutions. You will be responsible for both regularly scheduled work as well as on-demand break-fix work to support Dremio’s CI/CD system, identifying areas of improvement, and implementing changes to increase efficiency and effectiveness of those systems. Bring your industry experience to improve the efficiency and scale of Dremio’s infrastructure via innovation on tooling and methodologies. You should have empathy for developers and a passion for engineering productivity. What you’ll be doing Solve problems for fellow Dremio engineers by: Leveraging and contributing to playbooks to implement solutions to unblock them Identifying short term workarounds and documenting them Automating processes where manual processes exist. Working on infrastructure across all major clouds (AWS, GCP, Azure). Managing access to key infrastructure. Build and maintain CI/CD pipelines and associated systems to increase organizational efficiency. Automate local development workflows. Analyze performance bottlenecks, root cause issues, file defects, follow up with developers, and document resolutions. Clear focus on keeping our development branches ‘green’. Release engineering - automating processes to push software to delivery endpoints. Report out on the status, reliability and robustness of our CI/CD systems. Actively participate in code reviews. What we’re looking for B.S. or M.S in Computer Science or in a related technical field 1+ years of experience on large scale distributed systems Comfortable navigating the fast moving, unstructured nature of a hyper-growth startup. Demonstrable Knowledge and Experience with at least one cloud platform (AWS, Azure, GCP) Basic understanding of cloud networking and cloud architecture. Proficiency in any of Java/C++/Python/Go Knowledge of Maven or similar build environments Hands on experience in pipeline automation using CI/CD tools like Jenkins Experience in Infrastructure as Code Experience with Terraform, BASH, Docker, Jenkins, and Kubernetes Ability to write technical reports, effectively summarizing key data Passion for learning and then delivering solutions using latest technologies Strong Affinity for collaboration and teamwork Bonus points if you have Working knowledge in data lakes and data warehousing Proficient with SQL What we value At Dremio, we hold ourselves to high standards when it comes to People, Thinking, and Action. Our Gnarlies (that's what we call our employees) communicate with clarity, drive accountability, and are respectful towards each other. We confront brutal facts and focus on results while operating with a sense of urgency and building a \"flywheel\". People who like to jump in and drive momentum will thrive in our #GnarlyLife. Dremio is an equal opportunity employer supporting workforce diversity. We do not discriminate on the basis of race, religion, color, national origin, gender identity, sexual orientation, age, marital status, protected veteran status, disability status, or any other unlawful factor. Dremio is committed to providing any necessary accommodations for individuals with disabilities within our application and interview process. To request accommodation due to a disability, please inform your recruiter. Dremio has policies in place to protect the personal information that employees and applicants disclose to us. Please click here to review the privacy notice. Important Security Notice for Candidates At Dremio, we uphold trust and transparency as paramount values in all our interactions with customers, partners, employees, and the general public. We have been targeted by individuals creating fake domains similar to ours to scam prospects and candidates. Please note that all official co",
-      "url": "https://weworkremotely.com/remote-jobs/dremio-software-engineer-developer-experience",
-      "source": "We Work Remotely",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-10-26T12:46:07.532141Z",
-      "closingDate": null,
-      "experience": "unknown",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Revisar años de experiencia exigidos",
-        "Confirmar país de contratación, idioma y horario en la fuente"
-      ],
-      "postedDate": "2026-09-28"
-    },
-    {
-      "id": "career-wwr-d99b0502e94b3d515421",
-      "category": "programming",
-      "title": "Senior Staff Software Engineer - Query Execution",
-      "company": "Dremio",
-      "location": "Anywhere in the World",
-      "description": "Headquarters: Portugal - Remote Be Part of Building the Future Dremio is the unified lakehouse platform for self-service analytics and AI, serving hundreds of global enterprises, including Maersk, Amazon, Regeneron, NetApp, and S&P Global. Customers rely on Dremio for cloud, hybrid, and on-prem lakehouses to power their data mesh, data warehouse migration, data virtualization, and unified data access use cases. Based on open source technologies, including Apache Iceberg and Apache Arrow, Dremio provides an open lakehouse architecture enabling the fastest time to insight and platform flexibility at a fraction of the cost.  Learn more at www.dremio.com. About the role Dremio’s Query Execution team builds the runtime responsible for executing analytical queries at scale. The team sits between query planning and table scans, owning the systems that turn query plans into efficient, reliable execution. As a Senior Staff Software Engineer, you’ll work on query operators, expression evaluation, memory management, execution scheduling, runtime planning, and performance optimization. Your work will directly affect query performance, scalability, and reliability across Dremio’s cloud data platform. What you’ll be doing Build the execution engine: Design, implement, test, and support query operators, expression evaluation, execution scheduling, runtime planning, and resource management. Improve runtime performance: Optimize vectorized processing, concurrency, parallelism, memory usage, data exchange, and disk spilling. Diagnose difficult problems: Investigate query correctness and performance issues using query profiles, profiling tools, telemetry, benchmarks, logs, and production data. Optimize Java and the JVM: Improve CPU utilization, allocation behavior, garbage collection, thread behavior, and other runtime characteristics. Collaborate across the query engine: Work with Query Planner, Datalake, Product, Support, and field engineering teams on end-to-end query improvements. Use AI-assisted development tools: Apply AI tools to code comprehension, debugging, test generation, documentation, and incident analysis. Apply engineering judgment: Validate AI-generated code and recommendations through review, testing, benchmarking, and engineering judgment. Raise the engineering bar: Participate in design and code reviews, contribute to technical direction, and mentor other engineers. What we’re looking for Software engineering experience: 5+ years developing production software, preferably in database systems, query execution, distributed systems, or related areas. Programming skills: Strong Java skills; experience with C++ is a plus. Computer science fundamentals: Strong foundation in data structures, algorithms, concurrency, multithreaded programming, and asynchronous programming. Database and distributed systems knowledge: Understanding of database internals, query processing, distributed execution, and performance optimization. Performance engineering experience: Experience profiling and optimizing CPU, memory, garbage collection, thread behavior, or other runtime characteristics. Problem-solving ability: Ability to solve ambiguous technical problems and work effectively across team boundaries. Engineering judgment: Ability to evaluate tradeoffs, validate solutions rigorously, and make sound decisions when working with unfamiliar or AI-assisted implementations. Communication and ownership: Strong communication skills, a sense of ownership, and a commitment to delivering high-quality software. Bonus points if you have Query engines: Distributed query engines, database engines, or large-scale data processing systems. Execution techniques: Vectorized execution, query operators, expression evaluation, code generation, or runtime optimization. Runtime systems: JVM profiling, memory management, caching, networking, data exchange, execution scheduling, or disk spilling. Data platforms: Apache Arrow, Apache Iceberg, Parquet, Avro, Spark, Hadoop, or cloud object stores. Open source: Contributing to open-source projects. What we value At Dremio, we hold ourselves to high standards when it comes to People, Thinking, and Action. Our Gnarlies (that's what we call our employees) communicate with clarity, drive accountability, and are respectful towards each other. We confront brutal facts and focus on results while operating with a sense of urgency and building a \"flywheel\". People who like to jump in and drive momentum will thrive in our #Gna",
-      "url": "https://weworkremotely.com/remote-jobs/dremio-senior-staff-software-engineer-query-execution",
-      "source": "We Work Remotely",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-10-26T12:46:07.532141Z",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Revisar años de experiencia exigidos",
-        "Confirmar país de contratación, idioma y horario en la fuente"
-      ],
-      "postedDate": "2026-09-28"
-    },
-    {
-      "id": "career-wwr-10fcf7092b01bbc10e7c",
-      "category": "programming",
-      "title": "Senior Full Stack",
-      "company": "Toggl",
-      "location": "Anywhere in the World",
-      "description": "Headquarters: Tallinn, Estonia URL: https://toggl.com/jobs/ We are looking for a Senior Full Stack Engineer to join one of our Product Tribes, the cross-functional units that own the end-to-end experience for a specific Toggl user role. You'll join the Tribe building for managers, the people who plan work, protect margins, and keep projects on time and on budget. You own significant parts of that experience end-to-end, working hands-on with product and design to ship work that matters. You'll do this as we build and launch Toggl 2.0, our consolidated planning, time tracking, and time intelligence product. The salary for this position is €83,000 annually. You can work from anywhere in the world as long as your main location is between UTC-4 and UTC+4. The Role As a Senior Full Stack Engineer, you own meaningful parts of the product end-to-end, from the data model and the API to the interface someone actually clicks: the technical approach, the quality of what ships, and whether it actually works for the people using it. You are accountable not for tickets closed, but for clarity, craft, and outcomes. You'll work in the Tribe serving managers, across planning and capacity management, dashboards, and billable work. This is some of the most data-dense, interaction-heavy surface area in the product: schedules and capacity views, reports, and visualizations that have to stay fast and readable at real customer scale. The interesting problems live on both sides of the API here - the query behind a capacity view matters as much as how that view renders. You'll build with React and TypeScript on the frontend and our backend services (mostly Golang) and data layer (Postgres) behind them, alongside a product manager, a designer, and engineers who are used to owning their work and pushing back when something isn't right. In a tribe of 5 other engineers, your impact and visibility are high. Our team meetings are scheduled between 11:00 and 16:00 UTC. Your availability and commitment to participate in these sessions are essential for effective collaboration and team alignment. Your main responsibilities will be: Ownership and delivery Take projects from problem to production. Own the technical approach for major features front to back, break the work down sensibly, sequence it, and ship in slices rather than one big drop. Make the technical calls in your area. Choose between options, name the tradeoffs, and decide without waiting for permission or escalating routine judgment. Keep your work visible without being chased. Flag risks and slips early, keep the Tribe in the loop, and unblock yourself. Craft and quality across the stack Build interfaces people trust with dense, real-world data. Planning views, dashboards, and reports that stay fast, accessible, and readable when the dataset gets ugly. Design the data and API layer those views depend on. Model it so the feature you're building now doesn't make the next three harder. Own performance as a feature, end to end. Profile, measure, and fix the slow query and the slow render instead of hoping the data stays small. Write code others can work in. Sensible components and services, real test coverage where it earns its keep, and a codebase that's easier to change after you touch it. Working with product and design Shape solutions, don't just implement them. Push on the problem, question requirements that don't hold up, and propose simpler paths when you see one. Partner closely with design. Prototype early, spot the edge cases in a flow before it's built, and hold the bar on UX quality with your designer rather than after handoff. Stay close to users and evidence. Join user tests, read the feedback, look at the data, and let it change what you build. Raising the bar Review code with intent. Give precise, actionable feedback that makes the change and the person better. Mentor and interview. Help other engineers grow, and help us hire well. Improve things across team boundaries. Spot shared components and duplicated work between Tribes, and raise it before we build the same thing twice. AI as core leverage Use AI tools extensively in your daily work for exploration, prototyping, code generation and review, debugging, research, and writing. AI fluency is not optional. It's part of how you increase your speed, depth, and impact - and you're expected to help the rest of the Tribe get better at it too. About You You will thrive in this role if you: Have significant experience building and ",
-      "url": "https://weworkremotely.com/remote-jobs/toggl-senior-full-stack",
-      "source": "We Work Remotely",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-10-26T12:46:07.532141Z",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Confirmar país de contratación, idioma y horario en la fuente"
-      ],
-      "postedDate": "2026-08-28"
-    },
     {
       "id": "career-adecco-282105f449ae2cf5b10490d81d5dd3da",
       "category": "electricity",
@@ -171,7 +24,9 @@
       "requirements": [
         "Revisar permiso de conducir",
         "Revisar desplazamientos y viajes"
-      ]
+      ],
+      "profileMatch": "current",
+      "profileReason": "Instalaciones o mantenimiento eléctrico; comprobar PRL, permisos y experiencia concreta"
     },
     {
       "id": "career-indra-bd7b8e2f997fdd83c1a2",
@@ -192,7 +47,9 @@
       "requirements": [
         "Revisar años de experiencia exigidos"
       ],
-      "postedDate": null
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
     },
     {
       "id": "career-indra-85558e4282050e20137c",
@@ -213,7 +70,9 @@
       "requirements": [
         "Revisar años de experiencia exigidos"
       ],
-      "postedDate": null
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Especialización de datos, sistemas, consultoría o arquitectura; no es desarrollo DAM de entrada"
     },
     {
       "id": "career-indra-2b99a39596a6272530f8",
@@ -235,7 +94,9 @@
         "Revisar si exige titulación universitaria",
         "Revisar años de experiencia exigidos"
       ],
-      "postedDate": null
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
     },
     {
       "id": "career-veolia-744000153724914",
@@ -257,7 +118,9 @@
         "Revisar formación PRL requerida",
         "Revisar permiso de conducir"
       ],
-      "postedDate": "2026-10-06"
+      "postedDate": "2026-10-06",
+      "profileMatch": "current",
+      "profileReason": "Instalaciones o mantenimiento eléctrico; comprobar PRL, permisos y experiencia concreta"
     },
     {
       "id": "career-vfx-d9711df4a6c991f6ec65",
@@ -5589,86 +5452,6 @@
       ]
     },
     {
-      "id": "career-sopra-744000146667080",
-      "category": "programming",
-      "title": "Senior Frontend React",
-      "company": "Sopra Steria",
-      "location": "Madrid, España",
-      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! ¿Qué reto proponemos? Se necesita a un/a desarrollador/a Frontend experto/a en React para un importante cliente del sector bancario. El proyecto permite un modelo remoto de trabajo. ¿Qué buscamos? - Lenguajes de programación (React obligatorio y deseable Angular) - Experiencia en desarrollo web. - Experiencia en desarrollo de APIs del lado del cliente en entorno empresarial. - Experiencia trabajando en equipo, con software de control de versiones. - HTML + CSS3 - JavaScript - Gestión y revisión de código: Git, SVN - Integración y despliegue continuo: Jenkins, CloudBees - Provisionamiento y empaquetado: Docker, Kubernetes, Azure/AWS - Formatos de intercambio de datos (JSON/XML) - SQL - Herramientas Colaborativas: Jira, Confluence ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua: competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club, donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it En Sopra Steria estamos comprometidos con la creación de un entorno diverso e inclusivo, evaluando cada candidatura de forma objetiva, en base a sus competencias y experiencia. Creemos firmemente que la diversidad de experiencias y perspectivas es lo que impulsa nuestra innovación. ",
-      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000146667080-senior-frontend-react?oga=true",
-      "source": "Sopra Steria · SmartRecruiters",
-      "sourceKind": "employer",
-      "checkedAt": "2026-10-26T12:46:01.287521+00:00",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [],
-      "postedDate": "2026-09-01"
-    },
-    {
-      "id": "career-sopra-744000143285629",
-      "category": "programming",
-      "title": "Desarrollador/a Apis con Apigee",
-      "company": "Sopra Steria",
-      "location": "Madrid, España",
-      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! ¿Qué reto proponemos? Buscamos un/a Desarrollador/a Apis con Apigee para un importante cliente del sector bancario. El proyecto es en formato 100% remoto. Las funciones serán las siguientes: • Diseñar, desarrollar y desplegar proxies de APIs en Apigee Hybrid • Construir y mantener Shared Flows reutilizables y políticas de APIs • Definir especificaciones OpenAPI y asegurar la calidad de los contratos de APIs • Crear pruebas automatizadas para APIs y apoyar despliegues mediante CI/CD en producción ¿Qué buscamos? •    Al menos 5 años de experiencia trabajando con Java. •    Conocimientos de conceptos de CI/CD/DevOps. •    Experto en MONGODB •    Experiencia en trabajar en entornos CLOUD con AZURE HABILIDADES TÉCNICAS REQUERIDAS: •    Experiencia con Apigee Hybrid: proxies de APIs, aplicaciones, productos, políticas, métricas y despliegues •   Experiencia diseñando y construyendo Shared Flows reutilizables •   Conocimiento sólido de especificaciones OpenAPI (Swagger) y seguridad de APIs (OAuth2, JWT, mTLS) •   Experiencia desarrollando con Node.js (políticas personalizadas, scripts, herramientas) •   Experiencia con GitHub Workflows y GitHub Actions para CI/CD HABILIDADES TÉCNICAS DESEABLES ADICIONALES: •    Arquitecturas de microservicios •    Kubernetes •    AWS ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua: competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club, donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it En Sopra Steria estamos comprometidos con la creación de un entorno diverso e inclusivo, evaluando cada candidatura de forma objetiva, en base a sus competencias y experiencia. Creemos firmemente que la diversidad de experiencias y perspectivas es lo que impulsa nuestra innovación. ",
-      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000143285629-desarrollador-a-apis-con-apigee?oga=true",
-      "source": "Sopra Steria · SmartRecruiters",
-      "sourceKind": "employer",
-      "checkedAt": "2026-10-26T12:46:01.287521+00:00",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Revisar años de experiencia exigidos"
-      ],
-      "postedDate": "2026-08-13"
-    },
-    {
-      "id": "career-sopra-744000129747059",
-      "category": "programming",
-      "title": " Full Stack Developer (java/Angular)",
-      "company": "Sopra Steria",
-      "location": "Barcelona, España",
-      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! ¿Qué reto proponemos? Buscamos un/a Full Stack Developer motivado/a y con experiencia para incorporarse a un equipo dinámico, trabajando en entornos de sistemas distribuidos y bajo metodologías ágiles Descripción posición Diseño, desarrollo y mantenimiento de aplicaciones en entornos complejos e interconectados. Participación en code reviews y contribución a la mejora continua Análisis de la lógica de negocio y estructuras de datos existentes en múltiples sistemas. Colaboración con equipos multidisciplinares para definir, diseñar y desarrollar nuevas funcionalidades. Resolución de incidencias técnicas complejas. ¿Qué buscamos? Perfil Full Stack con al menos 5 años de experiencia consolidada con Java y Angular: Experiencia en tecnologías backend: Java, Spring, Kafka Conocimiento de tecnologías frontend: TypeScript, Angular. Experiencia con bases de datos y sistemas distribuidos Conocimiento de arquitectura de microservicios. Experiencia en testing (unitario e integración) Nivel alto de Inglés (fundamental) Requisitos deseables Conocimientos en herramientas de contenerización y orquestación (Docker, Kubernetes). Experiencia en DevOps Conocimiento de herramientas de migración de bases de datos (como Atlas). Conocimiento de OpenAPI/Swagger y generación de código Conocimientos en inteligencia artificial y machine learning. ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua : competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club , donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it Adquirimos el compromiso de respetar la diversidad, creando un ambiente de trabajo inclusivo y aplicando políticas que favorezcan la inclusión y promuevan el respeto social y cultural en cuestiones de género, edad, funcional, orientación sexual y religión con igualdad de oportunidades. Adquirimos el compromiso de respetar la diversidad, creando un ambiente de trabajo inclusivo y aplicando políticas que favorezcan la inclusión y promuevan el respeto social y cultural en cuestiones de género, edad, funcional, orientación sexual y religión con igualdad de oportunidades.",
-      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000129747059--full-stack-developer-java-angular-?oga=true",
-      "source": "Sopra Steria · SmartRecruiters",
-      "sourceKind": "employer",
-      "checkedAt": "2026-10-26T12:46:01.287521+00:00",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Revisar años de experiencia exigidos"
-      ],
-      "postedDate": "2026-06-02"
-    },
-    {
-      "id": "career-sopra-744000112649865",
-      "category": "programming",
-      "title": "Backend Microservicios con Inglés",
-      "company": "Sopra Steria",
-      "location": "Madrid, España",
-      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! Te incorporarás al equipo de desarrollo de un importante cliente del sector bancario. El cliente tiene distintos equipos donde puedes crecer profesionalmente, el proyecto permite un modelo de 100% teletrabajo. Buscamos un/a desarrollador/a con experiencia en estas tecnologías: o Microservice architecture o APIs composition o RestFul o OpenAPI, Swagger o Java 8, 11 o Spring (Spring-Boot, Spring-Batch, MVC) o Maven o Junit, Mockito, Wiremock, MockMVC o JPA, Oracle, JDBC o Experience working with Azure Devops Además se requiere un buen nivel de inglés para participar en proyectos internacionales. ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua: competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club, donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it Adquirimos el compromiso de respetar la diversidad, creando un ambiente de trabajo inclusivo y aplicando políticas que favorezcan la inclusión y promuevan el respeto social y cultural en cuestiones de género, edad, funcional, orientación sexual y religión con igualdad de oportunidades. ",
-      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000112649865-backend-microservicios-con-ingles?oga=true",
-      "source": "Sopra Steria · SmartRecruiters",
-      "sourceKind": "employer",
-      "checkedAt": "2026-10-26T12:46:01.287521+00:00",
-      "closingDate": null,
-      "experience": "unknown",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [],
-      "postedDate": "2026-03-04"
-    },
-    {
       "id": "career-cofrico-tecnico-a-frigorista-industrial-especialista-en-nh3-amoniaco-KGirln2_wG_bkOr4",
       "category": "electricity",
       "title": "Técnico/a Frigorista Industrial – Especialista en NH₃ (Amoníaco)",
@@ -5690,7 +5473,9 @@
         "Revisar años de experiencia exigidos",
         "Revisar acreditaciones de refrigeración, gases fluorados y especialidad requerida"
       ],
-      "postedDate": null
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Especialidad de electromecánica o refrigeración, distinta de instalaciones eléctricas"
     },
     {
       "id": "career-randstad-dea95ba46a2191f932d1",
@@ -5713,7 +5498,9 @@
         "Revisar años de experiencia exigidos"
       ],
       "postedDate": "2026-10-06",
-      "contractType": "FULL_TIME"
+      "contractType": "FULL_TIME",
+      "profileMatch": "current",
+      "profileReason": "Instalaciones o mantenimiento eléctrico; comprobar PRL, permisos y experiencia concreta"
     },
     {
       "id": "career-randstad-93381efa0e7e6e621ac5",
@@ -5736,7 +5523,9 @@
         "Revisar permiso de conducir"
       ],
       "postedDate": "2026-10-20",
-      "contractType": "FULL_TIME"
+      "contractType": "FULL_TIME",
+      "profileMatch": "current",
+      "profileReason": "Instalaciones o mantenimiento eléctrico; comprobar PRL, permisos y experiencia concreta"
     },
     {
       "id": "career-randstad-8b31abf243170976e47a",
@@ -5760,7 +5549,9 @@
         "Revisar años de experiencia exigidos"
       ],
       "postedDate": "2026-10-20",
-      "contractType": "FULL_TIME"
+      "contractType": "FULL_TIME",
+      "profileMatch": "retrain",
+      "profileReason": "Exige especialización o autonomía avanzada que requiere repaso y experiencia específica"
     },
     {
       "id": "career-randstad-492fa0002024a8fde7f0",
@@ -5785,7 +5576,9 @@
         "Revisar años de experiencia exigidos"
       ],
       "postedDate": "2026-10-06",
-      "contractType": "FULL_TIME"
+      "contractType": "FULL_TIME",
+      "profileMatch": "current",
+      "profileReason": "Instalaciones o mantenimiento eléctrico; comprobar PRL, permisos y experiencia concreta"
     },
     {
       "id": "career-randstad-264a88bc6b56d39572dc",
@@ -5810,7 +5603,9 @@
         "Revisar años de experiencia exigidos"
       ],
       "postedDate": "2026-10-26",
-      "contractType": "FULL_TIME"
+      "contractType": "FULL_TIME",
+      "profileMatch": "outside",
+      "profileReason": "Especialidad de electromecánica o refrigeración, distinta de instalaciones eléctricas"
     },
     {
       "id": "career-randstad-0d5fdd35c2349b5c598f",
@@ -5835,7 +5630,9 @@
         "Revisar años de experiencia exigidos"
       ],
       "postedDate": "2026-10-07",
-      "contractType": "FULL_TIME"
+      "contractType": "FULL_TIME",
+      "profileMatch": "current",
+      "profileReason": "Instalaciones o mantenimiento eléctrico; comprobar PRL, permisos y experiencia concreta"
     },
     {
       "id": "career-randstad-91ffbad130263f2e5a66",
@@ -5858,7 +5655,9 @@
         "Revisar años de experiencia exigidos"
       ],
       "postedDate": "2026-10-23",
-      "contractType": "FULL_TIME"
+      "contractType": "FULL_TIME",
+      "profileMatch": "outside",
+      "profileReason": "No se confirma una función de electricidad relacionada con tu experiencia"
     },
     {
       "id": "career-randstad-fd6a2140a3dd577e503d",
@@ -5880,7 +5679,9 @@
         "Revisar si exige titulación universitaria"
       ],
       "postedDate": "2026-09-10",
-      "contractType": "TEMPORARY"
+      "contractType": "TEMPORARY",
+      "profileMatch": "retrain",
+      "profileReason": "Acepta FP, pero pide oficina técnica, diseño o herramientas que no constan en tu experiencia"
     },
     {
       "id": "career-randstad-419896c4d0bf5c6560fb",
@@ -5904,7 +5705,9 @@
         "Revisar años de experiencia exigidos"
       ],
       "postedDate": "2026-10-13",
-      "contractType": "FULL_TIME"
+      "contractType": "FULL_TIME",
+      "profileMatch": "outside",
+      "profileReason": "Especialidad de electromecánica o refrigeración, distinta de instalaciones eléctricas"
     },
     {
       "id": "career-randstad-fa46b9aa070560378c27",
@@ -5926,7 +5729,9 @@
         "Revisar años de experiencia exigidos"
       ],
       "postedDate": "2026-10-09",
-      "contractType": "FULL_TIME"
+      "contractType": "FULL_TIME",
+      "profileMatch": "retrain",
+      "profileReason": "Exige especialización o autonomía avanzada que requiere repaso y experiencia específica"
     },
     {
       "id": "career-randstad-a08591445f0814255715",
@@ -5950,7 +5755,648 @@
         "Revisar años de experiencia exigidos"
       ],
       "postedDate": "2026-10-02",
-      "contractType": "FULL_TIME"
+      "contractType": "FULL_TIME",
+      "profileMatch": "outside",
+      "profileReason": "Solicita FP de electromecánica, mecatrónica o frío; no se confirma que acepte tu especialidad"
+    },
+    {
+      "id": "career-imatia-421bcaf4cce9a908656e",
+      "category": "programming",
+      "title": "Desarrollador/a Backend Java - Mid",
+      "company": "Imatia",
+      "location": "A Coruña",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! A Coruña Desarrollador/a Backend Java - Mid Tu éxito y el nuestro empiezan aquí. En Imatia te ofrecemos la oportunidad de trabajar en proyectos tecnológicos reales, seguir aprendiendo y crecer como profesional sin tener que salir lejos. Somos un equipo de casi 300 personas apasionadas por la tecnología y por hacer que las cosas sucedan. Si buscas un nuevo reto en un entorno donde puedas aportar tu experiencia, aprender nuevas tecnologías y trabajar junto a profesionales con amplia experiencia, ¡queremos conocerte! EL PROYECTO Te incorporarás a un proyecto dinámico y estratégico dentro del ecosistema e-commerce de una empresa internacional, trabajando sobre su plataforma de pagos y participando en la evolución y desarrollo de nuevas funcionalidades. Formarás parte de un entorno técnicamente exigente, en el que conviven soluciones consolidadas con nuevos desarrollos orientados a una arquitectura más moderna. El objetivo es seguir evolucionando la plataforma, construyendo soluciones robustas, escalables y preparadas para responder a las necesidades de un entorno de pagos. Tu trabajo estará principalmente centrado en el desarrollo de aplicaciones y microservicios, participando en la evolución de la arquitectura y en la incorporación de nuevos módulos y funcionalidades. En el proyecto encontrarás un stack tecnológico diverso, con tecnologías consolidadas y otras más actuales: Java 8 + Spring 5 en los módulos actuales. Java 21 + Spring Boot + Thymeleaf en los nuevos desarrollos. Vue 3 para la parte Front. Tomcat en los módulos actuales. Kubernetes (K8s) para el despliegue de los nuevos módulos. RabbitMQ para la integración y comunicación entre componentes. Evolución futura hacia Kafka. Trabajarás en un entorno donde la calidad, la robustez, la trazabilidad y la capacidad de evolución son aspectos clave, teniendo la oportunidad de participar tanto en la evolución de soluciones existentes como en la construcción de nuevos módulos. Y TÚ, ¿CUÁL SERÁ TU PAPEL? Formarás parte de un equipo senior en el que podrás seguir desarrollándote profesionalmente como desarrollador/a. Participarás en el análisis, diseño y desarrollo de nuevas funcionalidades, así como en la evolución y mantenimiento de los diferentes módulos de la plataforma. Tendrás la oportunidad de trabajar con diferentes tecnologías y de conocer de primera mano la evolución de una plataforma de pagos dentro de un entorno e-commerce. Buscamos perfiles con una buena base técnica, pero sobre todo con proactividad, capacidad de adaptación y ganas de seguir aprendiendo. No esperamos que conozcas todo el stack desde el primer día: valoramos especialmente la capacidad para enfrentarte a nuevos retos y evolucionar junto al proyecto. Si te motiva trabajar en un entorno dinámico, con retos tecnológicos y rodeado/a de profesionales con experiencia, ¡este puede ser tu sitio! ¿Y QUÉ TE OFRECEMOS? Tu contribución al #teamimatia no tendría sentido si no conseguimos cuidarte y que te cuides. Retribución competitiva acorde a tu nivel y experiencia, porque queremos remunerarte como te mereces y por eso realizamos revisiones salariales anuales según tu desempeño. Flexibilidad horaria. Si lo necesitas podrás modificar tu horario de entrada y de salida. Nuestro horario estándar es de 9 a 18:30h. (1h. comida) de lunes a jueves y de 8 a 15h. los viernes. ¡Autogestiona tu tiempo! Jornada intensiva los viernes durante TODO el año y dos meses en verano. Teletrabajo para que te organices y encuentres el equilibrio en tu vida. Conciliación familiar. Tenemos un conjunto de medidas encaminadas a desarrollar tu carrera para que no descuides tu vida personal y familiar. ¡Nos preocupamos por ti! Trabajarás en un entorno colaborativo y disfrutarás de un gran ambiente de trabajo donde la comunicación interna y el respeto son clave. Formación interna con tu equipo de la mano de nuestros mejores profesionales. Acceso ilimitado a una plataforma de formación donde podrás escoger libremente los programas que más te gusten y mejor se adapten a tus necesidades. Plan de carrera para garantizar tu desarrollo profesional. Queremos que sigas creciendo con nosotros y para ello te ofrecemos oportunidades para desarrollar e impulsar tu potencial. Posibilidad de seguro privado de salud. Te ayudamos a gestionarlo ofreciéndote precios competitivos. Posibilidad de movilidad entre nuestras diferentes oficinas (Vigo, Coruña y Ourense). Lo importante no es dónde estés, sino que estés a gusto con nosotros. Y, por supuesto, no todo va a ser trabajar. Somos una empresa joven y nos gusta disfrutar y celebrar los éxitos todos juntos. Cada 6 meses nos reunimos y… ¡Let the party begin! Requisitos mínimos ¿CÓMO TE IMAGINAMOS? Graduado/a en Ingeniería Informática, Telecomunicaciones o formación técnica similar. Experiencia mínima de 3 años trabajando con Java y Spring. Conocimientos de tecnologías web. Perfil proactivo/a, con iniciativa y orientado/a a la calidad. Capacidad de adaptación y aprendizaje. Habilidad para el trabajo en equipo y buenas capacidades de comunicación. Ambición en el plano tecnológico y ganas de seguir aprendiendo y creciendo profesionalmente. Además, valoramos muy positivamente si tienes conocimientos o experiencia con alguna de las siguientes tecnologías: Java 8 / Java 21 Spring 5 / Spring Boot Vue 3 Thymeleaf Tomcat Kubernetes (K8s) RabbitMQ Kafka Desarrollo y arquitectura de microservicios APIs y servicios web Metodologías ágiles No es necesario que seas experto/a en todas ellas. Nos interesa especialmente encontrar personas con una buena base de desarrollo, capacidad de adaptación y motivación por seguir evolucionando técnicamente. Si todo esto te encaja y estás buscando un nuevo reto profesional, ¡no dudes en contactarnos! En Imatia estamos comprometidos con la igualdad de oportunidades y la no discriminación por razón de sexo, promoviendo un entorno laboral inclusivo, diverso y basado en el mérito y la capacidad.",
+      "url": "https://jobs.imatia.com/jobs/desarrollador-a-backend-java-mid-e6bbc10a-b6c8-45ae-9c15-107b44b50483",
+      "source": "Imatia · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "hybrid",
+      "inVigo": false,
+      "inCoruna": true,
+      "requirements": [
+        "Revisar desplazamientos y viajes",
+        "Revisar si exige titulación universitaria",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-inprosec-09e3136f1e344b6a1f6a",
+      "category": "programming",
+      "title": "Software Developer (Desarrollador/a)",
+      "company": "Inprosec / Greinfort",
+      "location": "Vigo",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Vigo Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Híbrido Especialista Otros Software Developer (Desarrollador/a) Publicada 6 de Octubre En Greinfort Solutions , ofrecemos servicios expertos y especializados para la gestión y mejora continua de los niveles de riesgo y seguridad de la información en grandes y medianas organizaciones con un equipo profesional, especializado y experto en lo que hacemos. ¿Nos conocías? Si quieres más información sobre nosotros, echa un vistazo a nuestra web: https://greinfort.com Disponemos de un servicio basado en tecnología fruto del I+D interno llamado Greinfort , para monitorización de redes industriales, inventariado de activos industriales, y detección de anomalías en base a diferentes estrategias como la detección de intrusiones, o algoritmos de inteligencia artificial y machine learning . Buscamos a una persona con experiencia en el ámbito de desarrollo software, dinámica, que disfrute de trabajar en equipo, que quiera crecer a nivel técnico y de gestión, pero también en la relación con cliente y en la aportación al negocio, exponer nuevas ideas y enfoques, mentorizar a personas más junior, participar en reuniones con clientes, realizar demos funcionales y técnicas, colaborar en actividades de preventa, acudir a despliegues en planta, o contribuir al progreso y crecimiento de la compañía generando conocimiento o valor, investigando nuevas tecnologías que incorporar a los desarrollos, apoyando en la identificación de oportunidades de mejora o evolución del servicio, o escribiendo un post para el blog corporativo o participando en eventos y conferencias del sector. Su tarea principal será integrarse en el equipo de I+D actual para dedicarse al desarrollo de software de backend , y contribuir a la mejora del servicio Greinfort u otras líneas de negocio actuales o venideras. Además, se espera que pueda actuar como puente entre el equipo técnico y el cliente, ayudando a trasladar valor de negocio, detectar necesidades y reforzar la adopción de las soluciones. Serás responsable de... • Desarrollo de software : funcionalidades nuevas y ampliación, depuración y modificación o refactorización de las existentes • Diseño y documentación de capacidades implementadas en productos y servicios • Despliegue de nuevas tecnologías (basadas en IA/ML, u otras) • Resolución de bugs/issues en productos existentes • Participar en demostraciones de producto y presentaciones técnico-funcionales ante clientes y potenciales clientes • Colaborar con los equipos de negocio/comercial en actividades de preventa • Recoger feedback de clientes y trasladarlo al equipo para contribuir a la mejora continua del producto y del servicio • Representar a la compañía en reuniones, eventos o conferencias, realizando presentaciones cuando sea necesario • Contribuir a la evolución de la relación con cliente con visión de largo plazo , favoreciendo la adopción, satisfacción y crecimiento de las cuentas ¿Qué es lo que te podemos ofrecer? 📈 Participar en un proyecto en crecimiento, 100% gallego, pero para el mundo. 🎓Tener la oportunidad de desarrollar tu carrera profesional y plan de formación. 🕧4 días de teletrabajo semanales y horario flexible, consideramos que poder conciliar la vida laboral y personal no tiene discusión por lo que podrás decidir la organización de tu tiempo. 📜Obtendrás certificaciones ya que nos preocupamos de nuestro equipo y nosotros nos encargamos del mantenimiento. ☕Poder disfrutar de un buen café mañanero con alimentos proporcionados por la empresa y en buena compañía, incluso participar en eventos internos como comidas trimestrales, cesta, comida de navidad... Si buscas desarrollarte y aportar en un proyecto sólido, en crecimiento, en un ámbito de actividad en fuerte expansión, con presente y vocación de futuro, no dudes en inscribirte y nos pondremos en contacto contigo. Requisitos mínimos Buscamos una persona con … • Formación Universitaria (ingeniería, siendo valorable formación del ámbito industrial) • Experiencia de programación de backend en python • Facilidad para investigación y resolución de problemas • Buena capacidad de documentación y comunicación • Con conocimientos ofimáticos y de herramientas colaborativas (paquete MS/Office365) • Que tenga conocimientos de inglés (nivel mínimo equivalente a B2) • Con disponibilidad para viajar de forma esporádica • Con interés por el ámbito comercial y la interlocución con cliente • Con buenas habilidades interpersonales, empatía, escucha activa y orientación al cliente • Con potencial e interés para evolucionar hacia roles híbridos de preventa, consultoría de cliente o customer success manager Se valorará especialmente  … • Experiencia en proyectos complejos con fuerte componente de backend python • Experiencia en desarrollo de productos o servicios con orientación a cliente • Conocimientos o experiencia en ciberseguridad • Conocimientos de frontend (Angular) • Conocimiento de buenas prácticas de desarrollo seguro (S-SDLC) • Experiencia en automatización y escalabilidad (Ansible, Harbor…) • Conocimientos de sistemas de control de versiones (Git o análogo) • Conocimientos y gestión de bases de datos (SQL y NoSQL) • Conocimiento de tecnologías de contenedores (Docker, Kubernetes) • Conocimiento del stack ELK (Elastic, Logstash, Kibana) y Kafka • Conocimiento de sistemas operativos Linux • Conocimientos de DevOps • Conocimientos de metodologías de gestión de proyectos ágiles • Familiaridad con tecnologías como big data , inteligencia artificial o machine learning • Experiencia en gestión de entornos cloud • Experiencia previa en preventa técnica, demos de producto o acompañamiento comercial • Experiencia en trato directo con cliente, especialmente en contextos consultivos o de acompañamiento postventa • Experiencia realizando presentaciones en eventos, ferias, webinars o conferencias • Capacidad para identificar oportunidades de upselling , mejora de adopción o expansión de servicios en clientes existentes • Experiencia o interés en evolucionar hacia funciones de customer success o gestión de cuentas desde una base técnica \" Desde Greinfort Solutions S.L., estamos comprometidos con la igualdad de oportunidades y la no discriminación por motivos de sexo, edad, raza, religión, discapacidad, orientación sexual, identidad de género o ideología política. Por ello, evaluamos las candidaturas a nuestras ofertas de empleo únicamente en base a conocimientos, habilidades y experiencias, aplicando en todo momento la normativa vigente relativa a la igualdad de género entre mujeres y hombres .\"",
+      "url": "https://talent.inprosec.com/jobs/software-developer-desarrollador-a-ecac2162-a977-44fc-ad02-677bc6dacb4a",
+      "source": "Inprosec / Greinfort · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "hybrid",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar desplazamientos y viajes",
+        "Revisar si exige titulación universitaria"
+      ],
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Exige formación universitaria y no se ha identificado una alternativa de FP"
+    },
+    {
+      "id": "career-infortec-0a850dd633dd1a9e6288",
+      "category": "programming",
+      "title": "Arquitecto Software Senior - AZURE (INGLÉS)",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Arquitectura Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática Arquitecto Software Senior - AZURE (INGLÉS) Publicada 26 de Octubre ¡Buscamos Solutions Architect - Azure / LIMS! ¿Te apasiona diseñar arquitecturas, conectar sistemas y convertir retos tecnológicos en soluciones reales? ¡Este proyecto puede ser para ti! Buscamos un/a Solutions Architect que quiera dejar huella definiendo la arquitectura de una plataforma global, moderna y preparada para el futuro. ¿Cuál será tu misión? Diseñar la arquitectura de la solución y marcar el rumbo tecnológico. Definir arquitecturas basadas en microservicios, APIs y eventos. Liderar la evolución de sistemas legacy hacia soluciones cloud-native. Diseñar integraciones con sistemas corporativos como ERP, eQMS y EMS. Asegurar que la plataforma sea escalable, segura, resiliente y fácil de evolucionar. Guiar a los equipos de Desarrollo, DevOps, Frontend y Data en las decisiones técnicas. Definir estándares, buenas prácticas y documentación arquitectónica. Importante: tu misión será diseñar, decidir y guiar, no pasarte el día programando código de producción. ¿Qué necesitamos de ti? 8-10 años o más de experiencia en arquitectura de software, con al menos 3-5 años liderando arquitecturas en proyectos de gran escala. Experiencia con microservicios, DDD, CQRS, APIs REST y arquitecturas orientadas a eventos. Sólidos conocimientos de Microsoft Azure: AKS o Azure Container Apps, Service Bus, Event Hubs y Azure Functions. Conocimiento arquitectónico de .NET / C#. Experiencia modernizando sistemas legacy y diseñando soluciones cloud-native. Conocimientos de arquitectura de datos, SQL Server, MongoDB, DevSecOps y CI/CD. Familiaridad con seguridad por diseño, RGPD y metodologías Agile. Capacidad para comunicar ideas complejas, conectar negocio y tecnología y orientar a equipos multidisciplinares. Inglés Alto Posibilidad de viajar puntualmente a las oficinas de PORTUGAL ¿Y si además tienes..? Experiencia con LIMS, como LabWare o STARLIMS. Conocimientos de procesos de laboratorio y análisis medioambiental. Experiencia integrando SAP u Oracle. Experiencia en arquitecturas SaaS multi-tenant. ¿Qué te espera? Un reto tecnológico de alcance internacional, una plataforma crítica que modernizar y la oportunidad de influir en decisiones arquitectónicas estratégicas, colaborando con equipos de distintas disciplinas. Contrato Indefinido con INFORTEC CONSULTORES Retribución Flexible (Seguro médico, ticket restaurante.. entre otros) Salario a determinar con el candidato. 23 días de vacaciones Modalidad 90% teletrabajo ( entre 1 y 4 días presencial mensual, aunque existe cierta flexibilidad para gestionarlo.) ¿Te gusta ver el mapa completo, anticiparte a los problemas y construir soluciones que duren? ¡Queremos conocerte!",
+      "url": "https://empleo.infortec.net/jobs/arquitecto-software-senior-azure-ingles",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar desplazamientos y viajes",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Especialización de datos, sistemas, consultoría o arquitectura; no es desarrollo DAM de entrada"
+    },
+    {
+      "id": "career-infortec-def8491fb062cccb6bf7",
+      "category": "programming",
+      "title": "Desarrollador/a Drupal (Remoto)",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Equipos informáticos Completa Teletrabajo/Remoto Empleado Informática Desarrollador/a Drupal (Remoto) Publicada 20 de Octubre ¿Lo tuyo es dar vida a los portales web? ¡Queremos conocerte! ¿Tienes alrededor de 2 años de experiencia desarrollando portales web con Drupal y te gusta convertir ideas en soluciones digitales? 💻 ¿Te manejas entre líneas de código, disfrutas creando funcionalidades y sabes que HTML, CSS, JavaScript y PHP son mucho más que un montón de siglas? ¡Entonces sigue leyendo, porque esta oportunidad puede ser para ti! 👀 🔎 ¿Qué buscamos? Una persona con experiencia en desarrollo web, ganas de seguir aprendiendo y que se mueva con soltura en: 🌐 Drupal: desarrollo y mantenimiento de portales web. 🎨 HTML y CSS: para que cada web tenga su mejor versión. ⚡ JavaScript: para dar interactividad y dinamismo. 🐘 PHP: porque detrás de una buena web también hay mucho código. 🗄️ MariaDB: para que los datos estén donde tienen que estar. 🎁 ¿Qué te ofrecemos? 🏡 Trabajo 100 % remoto. Tu oficina puede estar donde tú quieras, sin desplazamientos ni carreras para llegar a tiempo. 💻 Un proyecto en el que podrás poner en práctica tus conocimientos y seguir creciendo profesionalmente. 🚀 Un entorno donde seguir desarrollando tus habilidades y enfrentarte a nuevos retos tecnológicos. 🎯 ¿Te apuntas al reto?",
+      "url": "https://empleo.infortec.net/jobs/desarrollador-a-drupal-remoto-9382948a-b485-42f1-8f5a-2a6821ba2278",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar desplazamientos y viajes",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null,
+      "profileMatch": "retrain",
+      "profileReason": "Pide experiencia profesional previa; revisar como opción de reciclaje, no como primer empleo"
+    },
+    {
+      "id": "career-infortec-c9eefd74f45fc2154362",
+      "category": "programming",
+      "title": "DESARROLLADOR/A PYTHON - AGENTES IA | 100% REMOTO",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática DESARROLLADOR/A PYTHON - AGENTES IA | 100% REMOTO Publicada 20 de Octubre En Infortec Consultores buscamos un/a Desarrollador/a Python especializado/a en microservicios y agentes de Inteligencia Artificial para incorporarse a un proyecto tecnológico innovador. Buscamos un perfil con experiencia en desarrollo backend, construcción de agentes de IA y automatización de pruebas, que contribuya al desarrollo y mantenimiento de soluciones robustas, escalables y de calidad. Funciones principales Desarrollar y mantener microservicios utilizando Python. Construir agentes de Inteligencia Artificial. Aplicar buenas prácticas de programación, principios SOLID, Clean Code y patrones de diseño. Implementar procesos de integración y despliegue continuo (CI/CD) con Git, Jenkins y GitHub Actions. Desarrollar y ejecutar pruebas unitarias con Pytest. Diseñar y automatizar pruebas end-to-end con Postman y Newman. Analizar la calidad del código, la cobertura de pruebas y la deuda técnica mediante SonarQube. Elaborar documentación técnica y colaborar en los procesos de despliegue y mantenimiento. Trabajar de forma colaborativa en equipos multidisciplinares con metodologías ágiles como Scrum y Kanban. Requisitos imprescindibles Mínimo 3 años de experiencia en desarrollo de software. Experiencia en Python y desarrollo de microservicios. Experiencia en construcción de agentes de Inteligencia Artificial. Conocimientos de herramientas CI/CD, como Git, Jenkins o GitHub Actions. Experiencia con Pytest para pruebas unitarias. Conocimientos de Postman y Newman para pruebas end-to-end. Experiencia con SonarQube para el análisis de calidad del código. Conocimiento de buenas prácticas de desarrollo y patrones de diseño. Condiciones del proyecto Trabajo 100% remoto. Incorporación inmediata. Duración prevista de un año. Horario habitual: de 9:00 a 18:00 h. Jornada de verano: de 8:00 a 15:00 h. Disponibilidad para guardias puntuales. Infortec Benefits Seguro de salud. Seguro dental. Tickets restaurante. Cheque guardería. Plan de formación continua. Si buscas un nuevo reto profesional en desarrollo Python e Inteligencia Artificial, ¡Te estamos esperando! Requisitos mínimos Mínimo 3 años de experiencia en desarrollo de software. Experiencia en Python y desarrollo de microservicios. Experiencia en construcción de agentes de Inteligencia Artificial. Conocimientos de herramientas CI/CD, como Git, Jenkins o GitHub Actions. Experiencia con Pytest para pruebas unitarias. Conocimientos de Postman y Newman para pruebas end-to-end. Experiencia con SonarQube para el análisis de calidad del código. Conocimiento de buenas prácticas de desarrollo y patrones de diseño.",
+      "url": "https://empleo.infortec.net/jobs/desarrollador-a-python-agentes-ia-100-remoto",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-infortec-7749763ff0eab1b5278b",
+      "category": "programming",
+      "title": "Senior Developer (.NET) – 100% REMOTO",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática Senior Developer (.NET) – 100% REMOTO Publicada 5 de Octubre ¿Eres un/a Senior Developer .NET y te gustan los retos técnicos, los proyectos exigentes y trabajar con tecnologías modernas? 💻 En Infortec buscamos incorporar un/a Senior Developer (.NET) para participar en un proyecto internacional de alto nivel: una plataforma de trading basada en Cloud , dentro de un equipo pequeño y especializado, orientado al desarrollo de soluciones de alta calidad para workflows de trading electrónico y pricing. Y sí… 100% REMOTO 🏠💻 🔎 ¿Qué harás en el proyecto? Formarás parte de un equipo de desarrollo con un alto componente técnico, participando en: Diseño y desarrollo de componentes .NET robustos, escalables y de alta calidad. Ser responsable (*ownership*) de componentes y funcionalidades complejas. Aplicar buenas prácticas y criterio de ingeniería de software . Colaborar estrechamente con equipos de Trading y Producto . Desarrollo de soluciones basadas en microservicios y APIs . Implementación de testing automatizado y buenas prácticas de calidad. Participación en procesos de CI/CD y despliegues en entornos productivos. Resolución de retos técnicos en un entorno de alta exigencia y orientación a producción . 🛠️ Tecnologías y conocimientos imprescindibles C# / .NET Core – nivel experto ASP.NET Core Web APIs Multi-threading / programación concurrente SQL / NoSQL Docker Arquitecturas de microservicios Testing automatizado: NUnit, Moq, Cucumber Messaging : RabbitMQ, TIBCO, SignalR CI/CD : Git, TeamCity Experiencia trabajando con entornos productivo s Inglés avanzado – imprescindible 🌟 ¿Qué sería un plus? Además, valoraremos positivamente experiencia o conocimientos en: Fixed Income / mercados financieros Frameworks de JavaScript AWS Observabilidad en entornos Cloud Native Infrastructure as Code (IaC) 🎯 ¿Qué buscamos? Una persona con perfil Senio r, autonomía y criterio técnico, acostumbrada a asumir responsabilidad sobre componentes complejos y a trabajar en equipos pequeños y altamente especializados. Si además te apasionan los sistemas distribuidos, el Cloud y los retos de ingeniería… probablemente tengamos bastantes cosas de las que hablar. 😉 🏡 ¿Qué ofrecemos? 💻 100% remoto 🚀 Proyecto tecnológico de alto nivel y con fuerte componente Cloud. 🌍 Entorno internacional. 🤝 Equipo técnico especializado y metodología orientada a buenas prácticas de ingeniería. 🧠 Participación en un proyecto con importantes retos técnicos y de negocio. 📈 Posibilidad de seguir creciendo profesionalmente en un entorno tecnológico puntero. ¿Te apetece conocer el proyecto? ¡Estamos deseando conocerte! Envía tu candidatura y hablamos. 😊",
+      "url": "https://empleo.infortec.net/jobs/senior-developer-net-100-remoto",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar si exige titulación universitaria"
+      ],
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-infortec-ae9ac0233ea5292eb55b",
+      "category": "programming",
+      "title": "Full Stack Developer Senior",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática Full Stack Developer Senior Publicada 24 de Septiembre En Infortec seguimos creciendo y buscamos incorporar un/a Full Stack Developer con experiencia y ganas de participar en el desarrollo y evolución de una aplicación innovadora. Buscamos un perfil Full Stack con orientación Backend , que disfrute trabajando en entornos tecnológicos, colaborando con cliente y equipo y participando en todo el ciclo de vida del desarrollo. 🔧 ¿Cuáles serán tus funciones? Desarrollo y mantenimiento de la aplicación y sus nuevos módulos. Análisis de requisitos y colaboración con el cliente en la definición de soluciones. Diseño y desarrollo de soluciones. Desarrollo de casos de prueba. Despliegues en producción. Diagnóstico y resolución de incidencias. Uso de repositorios y herramientas de desarrollo. 💻 ¿Qué buscamos? +4 años de experiencia como Full Stack Developer / Software Engineer , preferiblemente con orientación Backend . Java, Spring Boot y Hibernate . Angular, HTML, CSS y JavaScript. Experiencia con bases de datos relacionales y SQL, especialmente Oracle y PostgreSQL . Experiencia en definición y consumo de APIs REST. Git y GitHub . Experiencia con arquitectura de microservicios . Jenkins y entornos/frameworks DevOps. Experiencia trabajando con Agile / Scrum. Inglés B2 fluido : requisito importante. ⭐ Valorable: experiencia con AWS, OpenShift, Docker y otras tecnologías de contenedorización. 📍 ¿Qué ofrecemos? Jornada de 40 horas de septiembre a junio. Jornada de 35 horas durante julio y agosto. 🤝 ¿Te interesa el reto? Si eres una persona con experiencia en desarrollo Full Stack, especialmente en Backend, y quieres seguir creciendo en un entorno tecnológico y colaborativo, ¡nos encantará conocerte!",
+      "url": "https://empleo.infortec.net/jobs/full-stack-developer-senior-f5408560-0c34-4249-843d-c2223d709abf",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-infortec-f39ea592d97cc116b6c7",
+      "category": "programming",
+      "title": "Power Platform Developer | 100% Remoto",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática Power Platform Developer | 100% Remoto Publicada 3 de Septiembre Infortec Consultores busca incorporar 2 Power Platform Developers para participar en proyectos tecnológicos orientados al desarrollo de aplicaciones empresariales, automatización de procesos y soluciones de reporting mediante el ecosistema Microsoft Power Platform. Buscamos profesionales con experiencia sólida en Power Apps, Power BI, Power Automate, SharePoint Online y Dataverse, capaces de trabajar con negocio y equipos técnicos para diseñar soluciones escalables, seguras y eficientes. ¿QUÉ HARÁS? Diseñar, desarrollar y mantener aplicaciones empresariales con Power Apps. Automatizar procesos de negocio utilizando Power Automate. Desarrollar informes y dashboards avanzados con Power BI. Trabajar con Dataverse y SharePoint Online. Diseñar soluciones con SharePoint Lists, Libraries, Content Types y Metadata. Gestionar permisos, seguridad, gobierno y ciclo de vida de las aplicaciones. Realizar modelado de datos y desarrollo de soluciones de reporting. Utilizar Power Query (M) y aplicar buenas prácticas de visualización. Desarrollar soluciones de automatización, ETL, procesamiento y validación de datos mediante Python. Integrar aplicaciones y servicios mediante APIs. Colaborar directamente con stakeholders de negocio para analizar necesidades y transformar requisitos en soluciones tecnológicas. Participar en iniciativas de innovación relacionadas con IA y Microsoft Copilot. ¿QUÉ BUSCAMOS? Requisitos imprescindibles: Mínimo 3 años de experiencia con Microsoft Power Platform. Experiencia sólida y práctica con: Power Apps (Canvas Apps) Power BI Power Automate Power Fx Dataverse Experiencia con SharePoint Online. Conocimientos de listas, bibliotecas, metadatos, tipos de contenido, permisos y gestión documental. Experiencia en seguridad, gobierno y Application Lifecycle Management (ALM). Experiencia avanzada en Power BI: Modelado de datos y relaciones. Power Query / M. Desarrollo de dashboards e informes. Visualización de datos. Experiencia con Python para automatización, ETL, procesamiento y validación de datos e integraciones API. INGLÉS C1 – AVANZADO, IMPRESCINDIBLE. Microsoft Project: nivel avanzado. VALORABLE Microsoft Copilot Studio. AI Builder y Microsoft Copilot. Conocimientos de IA Generativa y Prompt Engineering. Experiencia desarrollando chatbots, asistentes virtuales o soluciones basadas en RAG. Power Pages. Azure Functions y Azure Logic Apps. Azure AI Services / Azure OpenAI. Azure DevOps. PowerShell. Git. SQL Server. ¿QUÉ OFRECEMOS? 100% remoto. Proyecto estable y de larga duración. Contrato indefinido. Jornada intensiva de verano. 23 días laborables de vacaciones. Seguro de salud. Seguro dental. Ticket restaurante. Cheque guardería. Formación continua y plan de desarrollo profesional. Infortec Benefits con descuentos y ventajas exclusivas. ¿TE APETECE EL RETO? Si eres Power Platform Developer, tienes experiencia desarrollando soluciones con Microsoft Power Platform y cuentas con inglés C1, queremos conocerte. Únete a Infortec Consultores y participa en proyectos tecnológicos donde podrás seguir desarrollando todo tu potencial. Requisitos mínimos Mínimo 3 años de experiencia con Microsoft Power Platform. Experiencia sólida y práctica con: Power Apps (Canvas Apps) Power BI Power Automate Power Fx Dataverse Experiencia con SharePoint Online. Conocimientos de listas, bibliotecas, metadatos, tipos de contenido, permisos y gestión documental. Experiencia en seguridad, gobierno y Application Lifecycle Management (ALM). Experiencia avanzada en Power BI: Modelado de datos y relaciones. Power Query / M. Desarrollo de dashboards e informes. Visualización de datos. Experiencia con Python para automatización, ETL, procesamiento y validación de datos e integraciones API. INGLÉS C1 – AVANZADO, IMPRESCINDIBLE. Microsoft Project: nivel avanzado.",
+      "url": "https://empleo.infortec.net/jobs/power-platform-developer-100-remoto",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-infortec-45a237cbb9cd91b99114",
+      "category": "programming",
+      "title": "Full Stack Developer Senior - 100% Remoto",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática Full Stack Developer Senior - 100% Remoto Publicada 2 de Septiembre Infortec Consultores busca incorporar un/a Full Stack Developer Senior para participar en un proyecto tecnológico donde trabajarás con desarrollo orientado a objetos, bases de datos y acceso a Data Lake. Buscamos un perfil con experiencia sólida en desarrollo, inglés alto y ganas de aportar ideas, afrontar retos técnicos y seguir creciendo en un entorno donde la tecnología tiene mucho que decir. ¿Qué harás? •\tDesarrollo de aplicaciones bajo paradigma de Programación Orientada a Objetos (POO). •\tDesarrollo y mantenimiento con Java y JavaScript. •\tRealización de consultas SQL y trabajo con diferentes bases de datos. •\tParticipación en procesos CI/CD y entornos Kubernetes. •\tColaboración con equipos técnicos bajo metodologías ágiles. ¿Qué buscamos? •\tExperiencia senior en Java y JavaScript. •\tOracle / PL-SQL y PostgreSQL. •\tManejo de Git y GitHub. •\tExperiencia con Kubernetes. •\tInglés alto, tanto hablado como escrito. •\tCapacidad para trabajar de forma autónoma y aportar una visión estratégica e innovadora. Valorable •\tSpring Boot, Microservicios y OpenShift. •\tS3, Elastic, Angular y TypeScript. •\tKafka y DevOps. •\tMetodologías Agile y herramientas como Jira y Confluence. •\tConocimientos en Transactional Regulatory Reporting. ¿Qué ofrecemos? •\t100% remoto. •\tProyecto estable y con interesantes retos tecnológicos. •\tEntorno profesional y colaborativo. •\tIncorporación a Infortec Consultores. Si eres de los que disfrutan cuando un código funciona a la primera (y también cuando toca descubrir por qué no), ¡queremos conocerte!",
+      "url": "https://empleo.infortec.net/jobs/full-stack-developer-senior-100-remoto",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [],
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-infortec-165c7235a108b445e832",
+      "category": "programming",
+      "title": "DESARROLLADOR/A MAGNOLIA (REMOTO 100%)",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática DESARROLLADOR/A MAGNOLIA (REMOTO 100%) Publicada 8 de Junio Hay personas que cuando ven un error en producción entran en pánico. Y luego están quienes abren el código, encuentran el problema, lo solucionan y aprovechan para mejorar tres cosas más por el camino. Si te identificas con el segundo grupo, sigue leyendo. En Infortec Consultores buscamos un/a Desarrollador/a Magnolia para incorporarse a un equipo internacional donde participarás en proyectos para diferentes clientes, desarrollando nuevas funcionalidades y manteniendo soluciones ya existentes dentro del ecosistema Magnolia. ¿Qué harás? Resolver incidencias y errores en aplicaciones basadas en Magnolia. Desarrollar nuevos componentes y funcionalidades para distintos proyectos. Mantener y evolucionar desarrollos existentes. Participar en tareas Full Stack utilizando: Freemarker JavaScript SASS Trabajar principalmente con: Magnolia 6.2 + Java 11 Magnolia 6.4 + Java 21 ¿Qué buscamos? Experiencia trabajando con Magnolia CMS. Buen manejo de Java. Conocimientos de Freemarker, JavaScript y SASS. Capacidad para desenvolverse en entornos internacionales. Nivel de inglés avanzado (imprescindible). Lo que ofrecemos 100% remoto. Proyectos internacionales. Tecnologías modernas y entornos colaborativos. Estabilidad y crecimiento profesional. Posibilidad de trabajar desde donde seas más productivo/a (y donde el café sea mejor). Si buscas un proyecto remoto donde seguir creciendo y participar en desarrollos que utilizan Magnolia como pieza clave, queremos conocerte.",
+      "url": "https://empleo.infortec.net/jobs/desarrollador-a-magnolia-remoto-100",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [],
+      "postedDate": null,
+      "profileMatch": "retrain",
+      "profileReason": "Pide dominio práctico o experiencia previa en una tecnología; no se confirma acceso de primer empleo"
+    },
+    {
+      "id": "career-infortec-259b0fa98efa6f6b2fc6",
+      "category": "programming",
+      "title": "Desarrollador/a Fullstack 100% Teletrabajo",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática Desarrollador/a Fullstack 100% Teletrabajo Publicada 5 de Noviembre Buscamos un/a desarrollador/a full stack con experiencia demostrada en backend y frontend, capaz de moverse con soltura entre microservicios, APIs REST y entornos distribuidos. Si disfrutas resolviendo retos técnicos y creando soluciones eficientes que realmente importan, te queremos en el equipo. Funciones principales Diseño y desarrollo de microservicios con Spring Boot Creación de interfaces web responsivas y accesibles con Angular Diseño y consumo de APIs REST para conectar frontend y backend Implementación de métodos CRUD y gestión de datos en PostgreSQL e Informix Integración con sistemas externos y servicios distribuidos como Kafka y Elastic Search Participación en pruebas unitarias e integraciones asegurando una cobertura adecuada Resolución de incidencias durante las fases de pruebas y producción Documentación de componentes, pruebas y guías de usuario Requisitos Experiencia mínima de 2 años en desarrollo full stack Conocimiento sólido en Spring Boot, Angular, Kafka, Elastic Search y bases de datos relacionales Familiaridad con metodologías ágiles (SCRUM, Métrica v3) Conocimientos en seguridad informática y autenticación corporativa (Keycloak) Competencia en Git y control de versiones Capacidad para comunicarse de forma clara y trabajar en equipo multidisciplinar Tecnologías clave Backend: Java (Spring Boot, Spring Cloud, Eureka, Kafka, Redis, Elastic Search) Bases de datos: PostgreSQL, Informix, Oracle, MongoDB Frontend: Angular, Bootstrap, JQuery Móvil: Flutter Infraestructura: Docker, Kubernetes, Nginx, Apache Tomcat, Weblogic Entorno de desarrollo: NetBeans, Eclipse, VS Code, Jenkins Seguridad: Keycloak y cumplimiento de políticas corporativas Ofrecemos Horario de oficina, viernes y verano jornada intensiva Modalidad 100% remoto desde cualquier punto de España Contrato indefinido Plan de retribución flexible Acceso a nuestro club benefits Si te interesa, inscríbete ¡estamos deseando conocerte!",
+      "url": "https://empleo.infortec.net/jobs/desarrollador-a-fullstack-100-teletrabajo-dd5deb03-8c00-477b-92df-5377d73b87de",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null,
+      "profileMatch": "retrain",
+      "profileReason": "Pide experiencia profesional previa; revisar como opción de reciclaje, no como primer empleo"
+    },
+    {
+      "id": "career-infortec-fda0a44ce406434840dc",
+      "category": "programming",
+      "title": "Desarrollador/a Fullstack 100% Teletrabajo",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática Desarrollador/a Fullstack 100% Teletrabajo Publicada 20 de Octubre ¿Eres de los que disfrutan creando microservicios, APIs REST y pantallas que funcionan en todos los dispositivos? Si te suena a plan, sigue leyendo, tenemos un proyecto muy retador Lo que harás Desarrollarás microservicios con Spring Boot y frontends en Angular Diseñarás y consumirás APIs REST para conectar mundos Harás magia con PostgreSQL, Informix y compañía Integrarás sistemas distribuidos (Kafka, Elastic Search) sin perder la calma Escribirás pruebas (porque a veces el código sí necesita supervisión) Documentarás, resolverás incidencias y velarás por la seguridad del código Lo que buscamos 2+ años de experiencia full stack (Java, Spring Boot, Angular) Tecnologías clave Backend: Java con Spring Boot, Spring Cloud, Eureka, Kafka, Redis, Elastic Search. Bases de datos: PostgreSQL, Informix, Oracle, MongoDB Frontend Web: Angular, Bootstrap, JQuery Desarrollo móvil: Flutter Infraestructura: Docker, Kubernetes, Nginx, Apache Tomcat, Weblogic Herramientas de desarrollo: Netbeans, Eclipse, Visual Studio Code, Jenkins Seguridad: Implementación de autenticación corporativa y políticas de seguridad informática. (Keycloak) Lo que ofrecemos Modalidad de trabajo: 100% remoto Contrato indefinido 23 días de vacaciones Plan de retribución flexible Acceso a nuestro club benefits ¿Listo/a para demostrar que el full stack es tu territorio? Envía tu CV y únete a nosotros.",
+      "url": "https://empleo.infortec.net/jobs/desarrollador-a-fullstack-100-teletrabajo",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null,
+      "profileMatch": "retrain",
+      "profileReason": "Pide experiencia profesional previa; revisar como opción de reciclaje, no como primer empleo"
+    },
+    {
+      "id": "career-infortec-a879e1e7145659a693ae",
+      "category": "programming",
+      "title": "Desarrollador/a Salesforce Senior",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática Desarrollador/a Salesforce Senior Publicada 2 de Octubre Desde Infortec estamos buscando a nuestro próximo Desarrollador Salesforce Senior para unirse al equipo en modalidad 100% remota. Si disfrutas resolviendo retos, proponiendo mejoras y sacándole todo el partido a Salesforce, queremos conocerte. Aquí tendrás la oportunidad de trabajar en proyectos variados, con un equipo que combina experiencia, colaboración y ganas de seguir aprendiendo. Responsabilidades Participar en el análisis y diseño de soluciones sobre Salesforce. Desarrollar y mantener funcionalidades personalizadas en la plataforma. Contribuir a la mejora continua de procesos y resolución de incidencias. Asegurar la calidad de las entregas y la documentación de los proyectos. Colaborar en un entorno ágil y dinámico. Requisitos Experiencia sólida en proyectos Salesforce (mínimo 4-5 años). Conocimiento profundo de la plataforma y sus principales funcionalidades. Experiencia trabajando con equipos distribuidos en remoto. Capacidad para comunicar ideas de forma clara y trabajar en equipo. Qué ofrecemos Modalidad 100% remota desde cualquier punto de España. Un entorno flexible y colaborativo donde tu opinión cuenta. Plan de retribución flexible. Acceso a nuestro club benefits, para que disfrutes dentro y fuera del trabajo. Si estás buscando un nuevo desafío y quieres formar parte de un equipo que combina profesionalidad con cercanía, este es tu sitio. ¡Inscríbete y hablemos!",
+      "url": "https://empleo.infortec.net/jobs/desarrollador-a-salesforce-senior",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [],
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-infortec-8688c4bc4ad06d486834",
+      "category": "programming",
+      "title": "Programador/a Java Junior 100% teletrabajo",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática Programador/a Java Junior 100% teletrabajo Publicada 5 de Septiembre La vuelta a la rutina es el momento perfecto para subir de nivel. ¿Te atreves a enfrentarte a un proyecto donde tu experiencia en Java marcará la diferencia? No buscamos conformistas: buscamos a quien vea en cada desafío una oportunidad para crecer y demostrar lo que sabe. Lo que necesitamos de ti (sí o sí) Grado Superior en Desarrollo o Sistemas Experiencia backend y frontend con Java Dominio de tecnologías como Java, JSP/JSTL, Spring Boot, Hibernate, JDBC y JavaScript Lo que nos impresionará aún más Al menos 2 años de experiencia trabajando con las tecnologías indicadas Certificación ITIL Conocimientos y experiencia en: SQL y optimización de consultas Procesos ETL y manejo de orígenes diversos (MySQL, PostgreSQL, Oracle, hojas de cálculo, APIs REST, etc.) Trabajo con múltiples formatos de datos (CSV, XML, JSON, YAML) Linux y gestión segura de datos (cifrado, sesiones, trazabilidad) Git como sistema de control de versiones Docker y despliegue en contenedores Lo que te ofrecemos 100% teletrabajo Jornada completa y jornada intensiva en julio y agosto 23 días de vacaciones Acceso a nuestro club benefits El desafío Este no es un puesto para mantener lo que ya existe. Es para quien quiere transformar, optimizar y dejar huella en cada entrega. Si tu pasión es crear soluciones que funcionen mejor, más rápido y más seguras, aquí tienes el campo de juego que estabas esperando. ¿Aceptas el reto?",
+      "url": "https://empleo.infortec.net/jobs/programador-a-java-junior-100-teletrabajo",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "junior",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null,
+      "profileMatch": "current",
+      "profileReason": "Desarrollo de entrada; repasar tecnologías y confirmar condiciones de acceso"
+    },
+    {
+      "id": "career-infortec-53e4988a515e7840b967",
+      "category": "programming",
+      "title": "Desarrollador/a Backend APX/ASO",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática Desarrollador/a Backend APX/ASO Publicada 13 de Junio ¡Este verano, cambia el calor por un trabajo remoto que sí da gusto! Buscamos talento Backend para unirte a nuestro equipo ¿Te imaginas empezar el día a las 8 y estar libre a las 15 para disfrutar del sol, la piscina o ese chiringuito favorito? Aquí lo hacemos posible. Porque en verano también se puede trabajar a gusto y más si es desde casa. ¿Qué harás en tu día a día? Formarás parte de un equipo que trabaja con metodologías Agile, desarrollando soluciones Backend basadas en Java y microservicios, en un entorno colaborativo y 100 % remoto. Olvídate de los atascos y gana en calidad de vida. ¿Qué necesitamos de ti? Experiencia en desarrollo Backend Conocimientos sólidos en APX y ASO (imprescindibles) Lo que no tendrás que hacer: No hay guardias ni disponibilidad fuera de horario No hay viajes ni desplazamientos Todo desde donde tú quieras Horario que se adapta a ti: Verano: de 8:00 a 15:00 (las tardes son tuyas) Resto del año: de 9:00 a 18:00 (con tiempo para tu café largo al sol) Si estás buscando un equipo cercano, con buen ambiente, estabilidad y flexibilidad real, este es tu sitio. Envíanos tu CV y hablemos.",
+      "url": "https://empleo.infortec.net/jobs/desarrollador-a-backend-apx-aso",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar desplazamientos y viajes"
+      ],
+      "postedDate": null,
+      "profileMatch": "retrain",
+      "profileReason": "Pide dominio práctico o experiencia previa en una tecnología; no se confirma acceso de primer empleo"
+    },
+    {
+      "id": "career-infortec-1d1b575e755d30692cc8",
+      "category": "programming",
+      "title": "Fullstack SENIOR (Angular/Java) 100% REMOTO",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Sistemas Equipos informáticos Completa Teletrabajo/Remoto Empleado Informática Fullstack SENIOR (Angular/Java) 100% REMOTO Publicada 12 de Febrero ¡Lleva tu talento Full Stack al siguiente nivel! El código fluye en tus venas. Angular, NodeJS y SpringBoot no tienen secretos para ti. Eres de los que optimiza, resuelve y transforma problemas en soluciones eficientes. Y si, además, disfrutas de la autonomía en tu trabajo, tenemos la oportunidad perfecta para ti. Tu misión Construir y optimizar aplicaciones con Angular, NodeJS y SpringBoot, desarrollando código limpio, escalable y eficiente. Integrar bases de datos Oracle SQL para asegurar un rendimiento óptimo. Usar Maven y SVN para mantener la estabilidad y gestión del código. Manejar servidores Linux con comandos SSH/SFTP. Trabajar en un equipo ágil donde la excelencia técnica es la clave del éxito. Lo que necesitas para unirte a esta aventura Más de 4 años de experiencia en desarrollo Full Stack. Dominio avanzado de Angular, NodeJS y Java con SpringBoot. Experiencia en Maven, SVN y SQL (Oracle). Conocimientos en entornos Linux para una gestión eficiente de servidores. Autonomía total para gestionar proyectos de principio a fin. Lo que te ofrecemos a cambio 100% Remoto: Trabaja desde donde quieras, sin perder conexión con el equipo. Horario flexible: Empieza entre 8:30 y 9:30 AM y organiza tu jornada con total libertad. Contrato indefinido: Queremos que seas parte de este viaje a largo plazo. Ambiente dinámico y profesional: Un equipo de alto nivel, proyectos retadores y aprendizaje constante. 23 días de vacaciones: Porque desconectar es clave para seguir innovando. Seguro de salud y dental: Porque tu bienestar es nuestra prioridad. Plan de carrera y formación personalizada: No hay límites para tu crecimiento. Si estás listo para el desafío y quieres formar parte de un equipo donde el código es más que líneas en una pantalla, te estamos esperando. Requisitos mínimos 1. Angular (HTML/CSS/TS/JS) (Avanzado) 2. NodeJS (Avanzado) 3. JAVA/SpringBoot (Avanzado) 4. Maven 5. SVN 6. SQL (Oracle) Adicionales: 7. Manejo en linux: SSH/SFPT",
+      "url": "https://empleo.infortec.net/jobs/fullstack-senior-angular-java-100-remoto-6d47fe83-7940-4c9e-9a73-564b633b72d8",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-infortec-72637482611030d9bd45",
+      "category": "programming",
+      "title": "Desarrollador/a Full stack - Java - Angular",
+      "company": "Infortec Consultores",
+      "location": "Madrid",
+      "description": "Volver Volver Iniciar sesión ¡Aplica ahora! Madrid Informática y telecomunicaciones Programación Servicios y tecnología de la información Completa Teletrabajo/Remoto Empleado Informática Desarrollador/a Full stack - Java - Angular Publicada 11 de Febrero ¿Estás listo para un desafío que pondrá a prueba tus habilidades y tu capacidad de adaptación? Estamos buscando un Desarrollador Java FullStack con al menos 3 años de experiencia para embarcarse en un proyecto innovador, lleno de oportunidades y enigmas por resolver. Si eres una persona con una mentalidad analítica, resolutiva y con un espíritu curioso, este puesto podría ser para ti. ¿Qué vas a hacer? Como Desarrollador Java FullStack, serás el arquitecto de nuevas soluciones, programando, implementando desarrollos y gestionando incidencias, mientras navegas por complejos integraciones y servicios web. Tu capacidad para elaborar documentación técnica, escribir propuestas de solución y abordar problemas de manera meticulosa te permitirá liderar tu propio camino en el proyecto. Requisitos imprescindibles: JAVA/JEE en versión 8 o superior Angular Conocimiento medio de SQL Gestión del código con GIT Microservicios (Kubernetes/OpenShift) Pruebas unitarias y de integración Integraciones y servicios web Perfil técnico multidisciplinar y autónomo Capacidad de trabajo en equipo, análisis y resolución de problemas Elaboración de documentación técnica (diseños y propuestas de solución) Mentalidad analítica y metódica Capacidad de aprendizaje y adaptación rápida al cambio Conocimientos deseables: Metodologías Agile Herramientas como Jenkins, Docker Conocimientos en Remedy / Jira Frameworks como Spring Boot, Quartz Control de versiones con Subversion Conocimiento de protocolos SOAP y REST Hibernate ¿Qué ofrecemos? Modalidad 100% remota, trabajando desde cualquier punto de España. Un entorno de trabajo flexible, innovador y colaborativo, donde cada día será una nueva aventura. Oportunidades de desarrollo profesional y formación continua. Trabajar en proyectos complejos, desafiantes y de gran impacto. Si tienes al menos 3 años de experiencia y estás listo para descubrir lo que puede ofrecerte este proyecto, aplica ahora. El desafío está esperando.",
+      "url": "https://empleo.infortec.net/jobs/desarrollador-a-full-stack-java-angular-5d35271e-54ed-47c7-95ff-26d4b4f68c59",
+      "source": "Infortec Consultores · Bizneo",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:24:55.912973+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": null,
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-wwr-79911477638fdd95c4ff",
+      "category": "programming",
+      "title": "Analytics Engineer, Data",
+      "company": "Tailscale",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Remote (Canada) Thank you for considering Tailscale. If this job description resonates with you, please apply. Frequently cited statistics show that people who identify with historically marginalized groups are likely to apply to jobs only if they meet 100% of the qualifications. We encourage you to help us break that statistic! About Tailscale Tailscale is making safe connection effortless by delivering software that makes it easy to securely interconnect people and their devices, no matter where they are. From hobbyists to multinational corporations, teams of every size use Tailscale each day to protect their networks, share access to internal tools, and more. We're building a future for the Internet that's easy, sensible, and safe, like it used to be. Founded in 2019 and fully distributed, we're backed by Accel, CRV, Insight, Heavybit, and Uncork Capital. About the Role We are looking for an Analytics Engineer who thrives in high-complexity environments—someone excited to bring clarity to chaos, untangle complex models, and lay down the foundation for scalable solutions. This is a hands-on, high-impact role for someone who isn’t afraid to address manual processes, viewing them as opportunities to build scalable solutions that drive meaningful impact. You’ll work closely with stakeholders across the company to build reliable, trusted data models that support reporting, analysis, and decision-making. Key Responsibilities Dive into complex systems and manual workflows to develop an understanding of our tools and constraints. Thoughtfully design and maintain clean, scalable, production-grade dbt models (e.g., ARR, revenue recognition). Work across the full data pipeline, from ingestion to transformation to visualization. Take a pragmatic approach to system challenges, balancing quick fixes with thoughtful long-term design. Collaborate with Finance, Engineering, Sales, and other teams across the company to understand data needs and deliver timely, practical solutions. What We Are Looking For Experience designing and maintaining production-grade data models and pipelines. Deep understanding of modern data modeling principles and best practices. Strong SQL skills and confidence working with complex datasets and schemas. High attention to detail, with high standards for data accuracy and validation. Flexibility and resourcefulness in navigating manual tasks or imperfect systems. Passion for clean code, scalable architecture, and incrementally reducing complexity over time. Ability to manage time, prioritize effectively, and thrive in a fast-moving environment. Clear communication skills with both technical and non-technical collaborators. Willingness to flexibly support other domains (e.g., Product, Marketing, and Engineering) as the team grows. Nice to Have Experience at a high-growth PLG SaaS company. A track record of transforming manual, ad hoc workflows into scalable data pipelines. Familiarity with billing systems, GAAP accounting, revenue recognition, or audit support. Exposure to Stripe, Salesforce, or Orb in billing and finance contexts. Familiarity with financial cycles and the need for fast iteration during month- and quarter-end. Our Tech Stack Snowflake, dbt, Hightouch, Fivetran, Looker, Stripe, Salesforce, Orb. As a company, we strive to maintain fair and equitable compensation practices within our team across all roles and all levels. Tailscale's compensation package includes base salary, equity, and comprehensive benefits. The salary range displayed on each job posting represents the target range for a new hire's base salary. Individual offers may vary based on experience and skill set. CAN Pay Range $203,680 — $254,600 CAD What We Offer An inclusive, flexible environment where you can be your authentic self. We recognize the impact of diverse voices and backgrounds on the growth of our people, product, and company. And that flexibility in how and when you work empowers our team to integrate work and life. A competitive total compensation package. This includes a base salary, an equity incentive plan and variable commission (for quota-based roles). Comprehensive group benefits with no waiting period. Take advantage of coverage for health, vision, dental, and more for you and your family! Remote first company —most of our teams work fully remotely. Enjoy a change of scenery wherever you can get wifi, participate in virtual and in-person social events, and leverage our corporate co-working program to visit WeWork (or other similar spaces near you). Some roles require in-office collaboration depending on team needs, which will be clearly noted in the job description. Employer-funded retirement contributions. Tailscale will match your retirement contributions dollar-for-dollar, up to a maximum annual employer contribution equal to 0.75% of your eligible compensation. Connect with other Tailscalars IRL. Attend our annual company retreat, participate in team off-sites, and collaborate in person with teammates across Canada, the United States, the United Kingdom, and Singapore. We support intentional in-person connection through team travel and distributed collaboration. Support for your personal and professional development. Grow your career thoughtfully with $1500 USD annually for professional development, or take advantage of mentorship, coaching, and internal promotion opportunities. Paid time off and a healthy work-life integration. Our flexible, paid time off program supports you for any situation life throws your way, whether moving homes or travelling the world! A build-your-own home office setup. You choose your own company-owned laptop (Mac or PC), receive a monthly home internet reimbursement, and $500 USD to customize your workstation to make it your own. Paid parental leave program . We care about your life outside of work and encourage new parents to take advantage of parental leave top-ups (20 weeks for birthing parents, 16 weeks for non-birthing parents). Tailscale is committed to providing an accessible and inclusive hiring process. If you require an accommodation at any stage of the recruitment process or related to any aspect of this role, please contact your recruiter. Our hiring process uses AI-assisted tools to help screen and assess candidates. All hiring decisions are made by people. Please be aware that legitimate emails from Tailscale's talent team will only originate from @tailscale.com, @greenhouse.io, and @interviews.modernloop.io email addresses. For more information about protecting yourself from impersonators and scams, please visit https://tailscale.com/scam-awareness . To apply: https://weworkremotely.com/remote-jobs/tailscale-analytics-engineer-data",
+      "url": "https://weworkremotely.com/remote-jobs/tailscale-analytics-engineer-data",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-26T13:28:48.308887+00:00",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-09-30",
+      "profileMatch": "outside",
+      "profileReason": "Especialización de datos, sistemas, consultoría o arquitectura; no es desarrollo DAM de entrada"
+    },
+    {
+      "id": "career-wwr-605cc5626fcc3bdd6957",
+      "category": "programming",
+      "title": "Senior Software Engineer, Card Authorization",
+      "company": "Lithic",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Remote Lithic is the modern card issuing and processing platform empowering ambitious financial companies to build the future of payments. Our infrastructure powers card programs for 100+ innovative clients, from fintechs reimagining credit and digital banking to platforms transforming disbursements and spend management. Companies like Mercury, Flex, and Novo rely on Lithic's developer-friendly APIs, direct network connections, and flawless reconciliation to launch and scale card programs in weeks, not years. We're building a future where access to better financial products materially improves people's lives, free from the constraints of 30-year-old mainframes and legacy processors. We're proud to be backed by world-class investors who share that vision, including Bessemer Venture Partners, Index Ventures, Spark Capital, Stripes, and Mastercard, along with many others. We're a team of 170+ across 26 states and 7 countries, headquartered in New York City. We are hiring a Senior Software Engineer for Lithic’s Card Authorization team, which owns the real-time systems that make every card authorization decision correct, reliable, and fast. The team also owns related fraud tooling, including Lithic’s Rules Engine and 3D Secure integration. You’ll own high-impact projects end-to-end, solve distributed-systems problems at scale, and help build the tools customers use to control fraud and payment risk. What you'll do: Write reliable, secure, scalable code for Lithic’s real-time authorization and fraud-prevention systems with minimal tech debt Build customer-facing features, such as rules improvements, velocity controls, 3DS flows, fraud tooling, and transaction monitoring. Own projects from planning to launch. Improve the reliability of systems in team’s scope and participate in the team on-call rotation Lead efforts to improve systems and processes within the team What you'll bring: 4+ years building production backend systems. Full stack experience is a plus. Experience in or desire to learn Rust; ability to understand Lithic’s system written in other programming languages (Python, Java) Interest and experience in leveraging AI tools to enhance productivity Ability to navigate ambiguity, align diverse perspectives, and drive toward practical solutions Experience or interest in payments, fintech, fraud prevention. Comfort with designing systems from scratch and owning the product development process end-to-end Strong written communication skills and experience working in a remote, async-first team that’s spread across time zones The annual US salary range for this role is $160,000 to $200,000 plus equity. This salary range may be inclusive of several career levels at Lithic and will be narrowed during the interview process based on the candidate’s experience and qualifications. This is a remote position. However, candidates must be located in the United States, Canada (Ontario or British Columbia), Netherlands, Poland, or Czech Republic. We do not offer visa sponsorship or assistance. Crack the code A hidden code is tucked into this application. Find it and enter it below to continue. IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJUaGUgYW5zd2VyIHRvIGxpZmUsIHRoZSB1bml2ZXJzZSwgYW5kIGV2ZXJ5dGhpbmcg4oCUIGVuY3J5cHRlZC4iIiIKCnBhc3N3b3JkID0gYiJceGVkXHhjMSIKX2tleSA9IGIiXHhkOVx4ZjNceGVkXHhmYlx4ODBceGM0flx4YTdcblx4YjhceGZiPFx4ZmJPXlx4ZmIiCgpkZWYgZGVjcnlwdF9wYXNzd29yZCgpIC0+IHN0cjoKICAgIHJldHVybiBieXRlcyhhIF4gYiBmb3IgYSwgYiBpbiB6aXAocGFzc3dvcmQsIF9rZXkpKS5kZWNvZGUoKQoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIHJlc3VsdCA9IGRlY3J5cHRfcGFzc3dvcmQoKQogICAgcHJpbnQoZiJEZWNyeXB0ZWQgcGFzc3dvcmQ6IHtyZXN1bHR9IikKICAgIGFzc2VydCByZXN1bHQgPT0gIjQyIiwgIkRvbid0IHBhbmljIOKAlCBidXQgZGVjcnlwdGlvbiBmYWlsZWQhIgo= Benefits for Full-Time US Employees: Unlimited PTO 12-weeks fully paid parental leave 4-Week Fully Paid Sabbatical (earned at your 5-year anniversary) Work From Anywhere: work from anywhere in the world 4-weeks each year 3% cashback on card purchases with your complimentary Privacy.com employee account Health, vision, and dental insurance; HSA Contribution Match 401(k) match Voluntary Life Insurance and STD/LTD NYC-based employees work from our SoHo office three days a week. Tuesdays and Thursdays are our core days, and you'll choose a third day that works for your schedule and team needs. In-office employees receive: Commuter benefit Catered lunch every Tuesday and Thursday To apply: https://weworkremotely.com/remote-jobs/lithic-senior-software-engineer-card-authorization",
+      "url": "https://weworkremotely.com/remote-jobs/lithic-senior-software-engineer-card-authorization",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-26T13:28:48.308887+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-09-30",
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-wwr-de579ee8d230a95ed2e2",
+      "category": "programming",
+      "title": "Software Engineer - Developer Experience",
+      "company": "Dremio",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Portugal - Remote Be Part of Building the Future Dremio is the unified lakehouse platform for self-service analytics and AI, serving hundreds of global enterprises, including Maersk, Amazon, Regeneron, NetApp, and S&P Global. Customers rely on Dremio for cloud, hybrid, and on-prem lakehouses to power their data mesh, data warehouse migration, data virtualization, and unified data access use cases. Based on open source technologies, including Apache Iceberg and Apache Arrow, Dremio provides an open lakehouse architecture enabling the fastest time to insight and platform flexibility at a fraction of the cost.  Learn more at www.dremio.com. About the role In this role you will get opportunities to implement and maintain CI/CD systems and developer productivity solutions. You will be responsible for both regularly scheduled work as well as on-demand break-fix work to support Dremio’s CI/CD system, identifying areas of improvement, and implementing changes to increase efficiency and effectiveness of those systems. Bring your industry experience to improve the efficiency and scale of Dremio’s infrastructure via innovation on tooling and methodologies. You should have empathy for developers and a passion for engineering productivity. What you’ll be doing Solve problems for fellow Dremio engineers by: Leveraging and contributing to playbooks to implement solutions to unblock them Identifying short term workarounds and documenting them Automating processes where manual processes exist. Working on infrastructure across all major clouds (AWS, GCP, Azure). Managing access to key infrastructure. Build and maintain CI/CD pipelines and associated systems to increase organizational efficiency. Automate local development workflows. Analyze performance bottlenecks, root cause issues, file defects, follow up with developers, and document resolutions. Clear focus on keeping our development branches ‘green’. Release engineering - automating processes to push software to delivery endpoints. Report out on the status, reliability and robustness of our CI/CD systems. Actively participate in code reviews. What we’re looking for B.S. or M.S in Computer Science or in a related technical field 1+ years of experience on large scale distributed systems Comfortable navigating the fast moving, unstructured nature of a hyper-growth startup. Demonstrable Knowledge and Experience with at least one cloud platform (AWS, Azure, GCP) Basic understanding of cloud networking and cloud architecture. Proficiency in any of Java/C++/Python/Go Knowledge of Maven or similar build environments Hands on experience in pipeline automation using CI/CD tools like Jenkins Experience in Infrastructure as Code Experience with Terraform, BASH, Docker, Jenkins, and Kubernetes Ability to write technical reports, effectively summarizing key data Passion for learning and then delivering solutions using latest technologies Strong Affinity for collaboration and teamwork Bonus points if you have Working knowledge in data lakes and data warehousing Proficient with SQL What we value At Dremio, we hold ourselves to high standards when it comes to People, Thinking, and Action. Our Gnarlies (that's what we call our employees) communicate with clarity, drive accountability, and are respectful towards each other. We confront brutal facts and focus on results while operating with a sense of urgency and building a \"flywheel\". People who like to jump in and drive momentum will thrive in our #GnarlyLife. Dremio is an equal opportunity employer supporting workforce diversity. We do not discriminate on the basis of race, religion, color, national origin, gender identity, sexual orientation, age, marital status, protected veteran status, disability status, or any other unlawful factor. Dremio is committed to providing any necessary accommodations for individuals with disabilities within our application and interview process. To request accommodation due to a disability, please inform your recruiter. Dremio has policies in place to protect the personal information that employees and applicants disclose to us. Please click here to review the privacy notice. Important Security Notice for Candidates At Dremio, we uphold trust and transparency as paramount values in all our interactions with customers, partners, employees, and the general public. We have been targeted by individuals creating fake domains similar to ours to scam prospects and candidates. Please note that all official communications from us will be from an @dremio.com domain. If you suspect you've been targeted by a scam, it's imperative to report the incident to your local law enforcement agencies. For more information about this type of scam, please refer to Dremio's official statement here . Dremio is not responsible for any fees related to unsolicited resumes and will not pay fees to any third-party agency or company that does not have a signed agreement with the Company. To apply: https://weworkremotely.com/remote-jobs/dremio-software-engineer-developer-experience",
+      "url": "https://weworkremotely.com/remote-jobs/dremio-software-engineer-developer-experience",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-26T13:28:48.308887+00:00",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos",
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-09-28",
+      "profileMatch": "outside",
+      "profileReason": "Exige formación universitaria y no se ha identificado una alternativa de FP"
+    },
+    {
+      "id": "career-wwr-d99b0502e94b3d515421",
+      "category": "programming",
+      "title": "Senior Staff Software Engineer - Query Execution",
+      "company": "Dremio",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Portugal - Remote Be Part of Building the Future Dremio is the unified lakehouse platform for self-service analytics and AI, serving hundreds of global enterprises, including Maersk, Amazon, Regeneron, NetApp, and S&P Global. Customers rely on Dremio for cloud, hybrid, and on-prem lakehouses to power their data mesh, data warehouse migration, data virtualization, and unified data access use cases. Based on open source technologies, including Apache Iceberg and Apache Arrow, Dremio provides an open lakehouse architecture enabling the fastest time to insight and platform flexibility at a fraction of the cost.  Learn more at www.dremio.com. About the role Dremio’s Query Execution team builds the runtime responsible for executing analytical queries at scale. The team sits between query planning and table scans, owning the systems that turn query plans into efficient, reliable execution. As a Senior Staff Software Engineer, you’ll work on query operators, expression evaluation, memory management, execution scheduling, runtime planning, and performance optimization. Your work will directly affect query performance, scalability, and reliability across Dremio’s cloud data platform. What you’ll be doing Build the execution engine: Design, implement, test, and support query operators, expression evaluation, execution scheduling, runtime planning, and resource management. Improve runtime performance: Optimize vectorized processing, concurrency, parallelism, memory usage, data exchange, and disk spilling. Diagnose difficult problems: Investigate query correctness and performance issues using query profiles, profiling tools, telemetry, benchmarks, logs, and production data. Optimize Java and the JVM: Improve CPU utilization, allocation behavior, garbage collection, thread behavior, and other runtime characteristics. Collaborate across the query engine: Work with Query Planner, Datalake, Product, Support, and field engineering teams on end-to-end query improvements. Use AI-assisted development tools: Apply AI tools to code comprehension, debugging, test generation, documentation, and incident analysis. Apply engineering judgment: Validate AI-generated code and recommendations through review, testing, benchmarking, and engineering judgment. Raise the engineering bar: Participate in design and code reviews, contribute to technical direction, and mentor other engineers. What we’re looking for Software engineering experience: 5+ years developing production software, preferably in database systems, query execution, distributed systems, or related areas. Programming skills: Strong Java skills; experience with C++ is a plus. Computer science fundamentals: Strong foundation in data structures, algorithms, concurrency, multithreaded programming, and asynchronous programming. Database and distributed systems knowledge: Understanding of database internals, query processing, distributed execution, and performance optimization. Performance engineering experience: Experience profiling and optimizing CPU, memory, garbage collection, thread behavior, or other runtime characteristics. Problem-solving ability: Ability to solve ambiguous technical problems and work effectively across team boundaries. Engineering judgment: Ability to evaluate tradeoffs, validate solutions rigorously, and make sound decisions when working with unfamiliar or AI-assisted implementations. Communication and ownership: Strong communication skills, a sense of ownership, and a commitment to delivering high-quality software. Bonus points if you have Query engines: Distributed query engines, database engines, or large-scale data processing systems. Execution techniques: Vectorized execution, query operators, expression evaluation, code generation, or runtime optimization. Runtime systems: JVM profiling, memory management, caching, networking, data exchange, execution scheduling, or disk spilling. Data platforms: Apache Arrow, Apache Iceberg, Parquet, Avro, Spark, Hadoop, or cloud object stores. Open source: Contributing to open-source projects. What we value At Dremio, we hold ourselves to high standards when it comes to People, Thinking, and Action. Our Gnarlies (that's what we call our employees) communicate with clarity, drive accountability, and are respectful towards each other. We confront brutal facts and focus on results while operating with a sense of urgency and building a \"flywheel\". People who like to jump in and drive momentum will thrive in our #GnarlyLife. Dremio is an equal opportunity employer supporting workforce diversity. We do not discriminate on the basis of race, religion, color, national origin, gender identity, sexual orientation, age, marital status, protected veteran status, disability status, or any other unlawful factor. Dremio is committed to providing any necessary accommodations for individuals with disabilities within our application and interview process. To request accommodation due to a disability, please inform your recruiter. Dremio has policies in place to protect the personal information that employees and applicants disclose to us. Please click here to review the privacy notice. Important Security Notice for Candidates At Dremio, we uphold trust and transparency as paramount values in all our interactions with customers, partners, employees, and the general public. We have been targeted by individuals creating fake domains similar to ours to scam prospects and candidates. Please note that all official communications from us will be from an @dremio.com domain. If you suspect you've been targeted by a scam, it's imperative to report the incident to your local law enforcement agencies. For more information about this type of scam, please refer to Dremio's official statement here . Dremio is not responsible for any fees related to unsolicited resumes and will not pay fees to any third-party agency or company that does not have a signed agreement with the Company. To apply: https://weworkremotely.com/remote-jobs/dremio-senior-staff-software-engineer-query-execution",
+      "url": "https://weworkremotely.com/remote-jobs/dremio-senior-staff-software-engineer-query-execution",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-26T13:28:48.308887+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos",
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-09-28",
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-wwr-10fcf7092b01bbc10e7c",
+      "category": "programming",
+      "title": "Senior Full Stack",
+      "company": "Toggl",
+      "location": "Anywhere in the World",
+      "description": "Headquarters: Tallinn, Estonia URL: https://toggl.com/jobs/ We are looking for a Senior Full Stack Engineer to join one of our Product Tribes, the cross-functional units that own the end-to-end experience for a specific Toggl user role. You'll join the Tribe building for managers, the people who plan work, protect margins, and keep projects on time and on budget. You own significant parts of that experience end-to-end, working hands-on with product and design to ship work that matters. You'll do this as we build and launch Toggl 2.0, our consolidated planning, time tracking, and time intelligence product. The salary for this position is €83,000 annually. You can work from anywhere in the world as long as your main location is between UTC-4 and UTC+4. The Role As a Senior Full Stack Engineer, you own meaningful parts of the product end-to-end, from the data model and the API to the interface someone actually clicks: the technical approach, the quality of what ships, and whether it actually works for the people using it. You are accountable not for tickets closed, but for clarity, craft, and outcomes. You'll work in the Tribe serving managers, across planning and capacity management, dashboards, and billable work. This is some of the most data-dense, interaction-heavy surface area in the product: schedules and capacity views, reports, and visualizations that have to stay fast and readable at real customer scale. The interesting problems live on both sides of the API here - the query behind a capacity view matters as much as how that view renders. You'll build with React and TypeScript on the frontend and our backend services (mostly Golang) and data layer (Postgres) behind them, alongside a product manager, a designer, and engineers who are used to owning their work and pushing back when something isn't right. In a tribe of 5 other engineers, your impact and visibility are high. Our team meetings are scheduled between 11:00 and 16:00 UTC. Your availability and commitment to participate in these sessions are essential for effective collaboration and team alignment. Your main responsibilities will be: Ownership and delivery Take projects from problem to production. Own the technical approach for major features front to back, break the work down sensibly, sequence it, and ship in slices rather than one big drop. Make the technical calls in your area. Choose between options, name the tradeoffs, and decide without waiting for permission or escalating routine judgment. Keep your work visible without being chased. Flag risks and slips early, keep the Tribe in the loop, and unblock yourself. Craft and quality across the stack Build interfaces people trust with dense, real-world data. Planning views, dashboards, and reports that stay fast, accessible, and readable when the dataset gets ugly. Design the data and API layer those views depend on. Model it so the feature you're building now doesn't make the next three harder. Own performance as a feature, end to end. Profile, measure, and fix the slow query and the slow render instead of hoping the data stays small. Write code others can work in. Sensible components and services, real test coverage where it earns its keep, and a codebase that's easier to change after you touch it. Working with product and design Shape solutions, don't just implement them. Push on the problem, question requirements that don't hold up, and propose simpler paths when you see one. Partner closely with design. Prototype early, spot the edge cases in a flow before it's built, and hold the bar on UX quality with your designer rather than after handoff. Stay close to users and evidence. Join user tests, read the feedback, look at the data, and let it change what you build. Raising the bar Review code with intent. Give precise, actionable feedback that makes the change and the person better. Mentor and interview. Help other engineers grow, and help us hire well. Improve things across team boundaries. Spot shared components and duplicated work between Tribes, and raise it before we build the same thing twice. AI as core leverage Use AI tools extensively in your daily work for exploration, prototyping, code generation and review, debugging, research, and writing. AI fluency is not optional. It's part of how you increase your speed, depth, and impact - and you're expected to help the rest of the Tribe get better at it too. About You You will thrive in this role if you: Have significant experience building and shipping production web applications end to end, and can lead major projects rather than just contribute to them. Are genuinely comfortable on both sides of the stack. You're deep on one side and properly capable on the other, not someone who hands off at the API boundary. Have deep, practical knowledge of JavaScript, TypeScript, React, and modern CSS - including state management and side-effect handling in large applications. Are solid on backend fundamentals: at least one backend language you know well, API design, relational data modelling, and enough instinct for query performance to spot the problem before production does. Prior Golang experience is not mandatory but you have to be willing to adopt it and become comfortable with it fast. Hold an extremely high bar for quality. You know what great looks like, you notice the details others miss, and you don't ship work you wouldn't put your name on. Have a knack for data-heavy product surfaces - performance, readability, and the principles behind a chart that actually communicates something. Care about the user's problem, not just the ticket. You start from what someone is trying to get done and work back to the implementation. Own outcomes, not output. You follow your work into production, watch how it behaves, and fix what needs fixing. Thrive in ambiguity and move fast. You make confident decisions with incomplete information, adapt when things change, and course-correct without drama. Are hands-on with AI tools. You actively use AI as a core part of how you build, not a side experiment, and you have opinions about where it helps and where it doesn't. Don't need to be managed. You set your own direction, keep people in the loop, and ask for help when it matters. Have excellent written and verbal English communication skills. You write clearly, explain technical tradeoffs to non-engineers without jargon, and default to async communication that others can follow. Are eager to contribute to the engineering team's growth - code review, mentoring, and interviewing included. Value transparency, ownership, and speed over perfection. You ship, learn, and improve rather than waiting for the perfect plan. Nice to have: Experience with TanStack is a bonus, and so is a real understanding of frontend caching and eventual consistency, we'd love to hire someone who's dealt with that tradeoff directly. Experience with capacity planning, scheduling, reporting, or other complex B2B SaaS products. Experience working with distributed or microservice systems, a basic understanding of infrastructure and infrastructure as code, and some experience creating, improving, or debugging CI/CD pipelines. This Role Is NOT A ticket-taker role. If you want fully specced work handed to you, this isn't the right fit. A pixel-pusher translating finished designs into code with no say in the problem or the solution. A role where you hand off at the API boundary. If \"that's a backend ticket\" is your instinct, this will frustrate you. A role where quality is someone else's job. Toggl doesn't have a dedicated QA team or layer: there's no separate team that will catch your bugs, write your tests, or own your performance regressions. A place to work in isolation from users. You'll be expected to know who you're building for and why. A role for people who need heavy process, frequent approvals, or top-down direction to do their best work. The Team We are a global team of ~80 awesome people working from over 40 countries around the globe. We hire globally, you work locally—in the heart of London, a beach outside of Río de Janeiro, or a quiet village near Florence, the choice is yours. Every few months we travel to meet up somewhere in the world and spend some quality time together. We place a huge amount of trust in our people, and we measure the outcomes rather than the work itself. Our values fuel our results. What's Happening at Toggl Toggl is at an exciting turning point. We're taking our best-in-class time tracking - trusted and loved by millions of users worldwide - and expanding it into something bigger: Toggl 2.0 . One product that brings together time tracking, planning, capacity management, reporting, and insight. The idea is simple: better time tracking creates better data, which powers everything else. We call it time intelligence. We build with AI throughout, and we think it's a real multiplier for strong engineers rather than a substitute for them. The judgment, the tradeoffs, and the accountability for what ships stay with people. Benefits Freedom to choose when and how much you work—we only measure results 24 days of paid time off a year, plus your local holidays Unlimited sick leave In-person meetups for team-building (expenses covered) 4-6 weeks paid sabbatical (depending on tenure) Laptop budget up to 2,500€ and it renews every 3 years €2,000 budget to set up your home office and an additional €300 every year after 3 years of tenure €3,000 per year for co-working space membership and/or internet service at home €4,000 per year contribution to use for training, workshops, and conferences €2,400 per year contribution for any equipment or services to improve and/or maintain your physical and mental health Support for buying tools you need for doing your best work (even eyeglasses if you need a new pair) To apply: https://weworkremotely.com/remote-jobs/toggl-senior-full-stack",
+      "url": "https://weworkremotely.com/remote-jobs/toggl-senior-full-stack",
+      "source": "We Work Remotely",
+      "sourceKind": "job-board",
+      "checkedAt": "2026-10-26T13:28:48.308887+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Confirmar país de contratación, idioma y horario en la fuente"
+      ],
+      "postedDate": "2026-08-28",
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-sopra-744000146667080",
+      "category": "programming",
+      "title": "Senior Frontend React",
+      "company": "Sopra Steria",
+      "location": "Madrid, España",
+      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! ¿Qué reto proponemos? Se necesita a un/a desarrollador/a Frontend experto/a en React para un importante cliente del sector bancario. El proyecto permite un modelo remoto de trabajo. ¿Qué buscamos? - Lenguajes de programación (React obligatorio y deseable Angular) - Experiencia en desarrollo web. - Experiencia en desarrollo de APIs del lado del cliente en entorno empresarial. - Experiencia trabajando en equipo, con software de control de versiones. - HTML + CSS3 - JavaScript - Gestión y revisión de código: Git, SVN - Integración y despliegue continuo: Jenkins, CloudBees - Provisionamiento y empaquetado: Docker, Kubernetes, Azure/AWS - Formatos de intercambio de datos (JSON/XML) - SQL - Herramientas Colaborativas: Jira, Confluence ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua: competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club, donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it En Sopra Steria estamos comprometidos con la creación de un entorno diverso e inclusivo, evaluando cada candidatura de forma objetiva, en base a sus competencias y experiencia. Creemos firmemente que la diversidad de experiencias y perspectivas es lo que impulsa nuestra innovación. ",
+      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000146667080-senior-frontend-react?oga=true",
+      "source": "Sopra Steria · SmartRecruiters",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:28:48.308887+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [],
+      "postedDate": "2026-09-01",
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-sopra-744000143285629",
+      "category": "programming",
+      "title": "Desarrollador/a Apis con Apigee",
+      "company": "Sopra Steria",
+      "location": "Madrid, España",
+      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! ¿Qué reto proponemos? Buscamos un/a Desarrollador/a Apis con Apigee para un importante cliente del sector bancario. El proyecto es en formato 100% remoto. Las funciones serán las siguientes: • Diseñar, desarrollar y desplegar proxies de APIs en Apigee Hybrid • Construir y mantener Shared Flows reutilizables y políticas de APIs • Definir especificaciones OpenAPI y asegurar la calidad de los contratos de APIs • Crear pruebas automatizadas para APIs y apoyar despliegues mediante CI/CD en producción ¿Qué buscamos? •    Al menos 5 años de experiencia trabajando con Java. •    Conocimientos de conceptos de CI/CD/DevOps. •    Experto en MONGODB •    Experiencia en trabajar en entornos CLOUD con AZURE HABILIDADES TÉCNICAS REQUERIDAS: •    Experiencia con Apigee Hybrid: proxies de APIs, aplicaciones, productos, políticas, métricas y despliegues •   Experiencia diseñando y construyendo Shared Flows reutilizables •   Conocimiento sólido de especificaciones OpenAPI (Swagger) y seguridad de APIs (OAuth2, JWT, mTLS) •   Experiencia desarrollando con Node.js (políticas personalizadas, scripts, herramientas) •   Experiencia con GitHub Workflows y GitHub Actions para CI/CD HABILIDADES TÉCNICAS DESEABLES ADICIONALES: •    Arquitecturas de microservicios •    Kubernetes •    AWS ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua: competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club, donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it En Sopra Steria estamos comprometidos con la creación de un entorno diverso e inclusivo, evaluando cada candidatura de forma objetiva, en base a sus competencias y experiencia. Creemos firmemente que la diversidad de experiencias y perspectivas es lo que impulsa nuestra innovación. ",
+      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000143285629-desarrollador-a-apis-con-apigee?oga=true",
+      "source": "Sopra Steria · SmartRecruiters",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:28:48.308887+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-08-13",
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-sopra-744000129747059",
+      "category": "programming",
+      "title": " Full Stack Developer (java/Angular)",
+      "company": "Sopra Steria",
+      "location": "Barcelona, España",
+      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! ¿Qué reto proponemos? Buscamos un/a Full Stack Developer motivado/a y con experiencia para incorporarse a un equipo dinámico, trabajando en entornos de sistemas distribuidos y bajo metodologías ágiles Descripción posición Diseño, desarrollo y mantenimiento de aplicaciones en entornos complejos e interconectados. Participación en code reviews y contribución a la mejora continua Análisis de la lógica de negocio y estructuras de datos existentes en múltiples sistemas. Colaboración con equipos multidisciplinares para definir, diseñar y desarrollar nuevas funcionalidades. Resolución de incidencias técnicas complejas. ¿Qué buscamos? Perfil Full Stack con al menos 5 años de experiencia consolidada con Java y Angular: Experiencia en tecnologías backend: Java, Spring, Kafka Conocimiento de tecnologías frontend: TypeScript, Angular. Experiencia con bases de datos y sistemas distribuidos Conocimiento de arquitectura de microservicios. Experiencia en testing (unitario e integración) Nivel alto de Inglés (fundamental) Requisitos deseables Conocimientos en herramientas de contenerización y orquestación (Docker, Kubernetes). Experiencia en DevOps Conocimiento de herramientas de migración de bases de datos (como Atlas). Conocimiento de OpenAPI/Swagger y generación de código Conocimientos en inteligencia artificial y machine learning. ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua : competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club , donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it Adquirimos el compromiso de respetar la diversidad, creando un ambiente de trabajo inclusivo y aplicando políticas que favorezcan la inclusión y promuevan el respeto social y cultural en cuestiones de género, edad, funcional, orientación sexual y religión con igualdad de oportunidades. Adquirimos el compromiso de respetar la diversidad, creando un ambiente de trabajo inclusivo y aplicando políticas que favorezcan la inclusión y promuevan el respeto social y cultural en cuestiones de género, edad, funcional, orientación sexual y religión con igualdad de oportunidades.",
+      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000129747059--full-stack-developer-java-angular-?oga=true",
+      "source": "Sopra Steria · SmartRecruiters",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:28:48.308887+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-06-02",
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-sopra-744000112649865",
+      "category": "programming",
+      "title": "Backend Microservicios con Inglés",
+      "company": "Sopra Steria",
+      "location": "Madrid, España",
+      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! Te incorporarás al equipo de desarrollo de un importante cliente del sector bancario. El cliente tiene distintos equipos donde puedes crecer profesionalmente, el proyecto permite un modelo de 100% teletrabajo. Buscamos un/a desarrollador/a con experiencia en estas tecnologías: o Microservice architecture o APIs composition o RestFul o OpenAPI, Swagger o Java 8, 11 o Spring (Spring-Boot, Spring-Batch, MVC) o Maven o Junit, Mockito, Wiremock, MockMVC o JPA, Oracle, JDBC o Experience working with Azure Devops Además se requiere un buen nivel de inglés para participar en proyectos internacionales. ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua: competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club, donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it Adquirimos el compromiso de respetar la diversidad, creando un ambiente de trabajo inclusivo y aplicando políticas que favorezcan la inclusión y promuevan el respeto social y cultural en cuestiones de género, edad, funcional, orientación sexual y religión con igualdad de oportunidades. ",
+      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000112649865-backend-microservicios-con-ingles?oga=true",
+      "source": "Sopra Steria · SmartRecruiters",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T13:28:48.308887+00:00",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [],
+      "postedDate": "2026-03-04",
+      "profileMatch": "retrain",
+      "profileReason": "Pide dominio práctico o experiencia previa en una tecnología; no se confirma acceso de primer empleo"
+    },
+    {
+      "id": "career-wk-plainconcepts-C698FE1D89",
+      "category": "programming",
+      "title": "Graphics AI Software Engineer",
+      "company": "Plain Concepts",
+      "location": "Spain, Spain",
+      "url": "https://apply.workable.com/plainconcepts/j/C698FE1D89/",
+      "source": "Plain Concepts · Workable",
+      "sourceKind": "employer",
+      "description": "🚀 We’re Growing Our Research and Innovation Dream Team! Titles? Meh, we’re not big on them, but let’s call this one Graphics AI Software Engineer 😉 As part of our international research squad, you’ll craft tailor-made solutions that wow our clients. We’re hunting for a passionate Graphics AI Soft Engineer with a solid technical background. Your mission? Train, deploy, and put groundbreaking developments into action — and that’s just the beginning. Here’s the deal: Collaborate with both research and applied engineering teams on multiple projects. Your work will involve exploring, designing, and implementing advanced AI solutions focused on computer vision, 3D rendering, and spatial computing. This role is integral to our mission of developing innovative technologies that redefine how AI enhances and interacts with 3D environments . AGILE isn’t just a buzzword here — it’s how we roll. Multidisciplinary teams? Check. Full ownership of projects? Double check. Ready to take on projects that matter, with a team that’s as passionate as you are? Let’s make it happen! 😊 You will be responsible for: Design and Implement AI-Powered 3D Graphics Solutions Develop and deploy advanced AI techniques within Desktop, Web, VR, and AR applications using our proprietary Evergine graphics engine. Your work will harness the power of AI to push the boundaries of 3D graphics performance, realism, and interactivity. Pioneer and Integrate Advanced AI Models for Computer Vision and Spatial Computing : Leverage and go beyond existing models—such as NeRF, Gaussian Splatting, Point Cloud processing techniques, SAMv2, and GroundingDINO or FlorenceV2 —to not only elevate 3D applications but also create novel, next-generation AI models that drive the future of dynamic, responsive, and intelligent 3D environments. Drive AI Innovation in Architectural Design: Lead the architectural vision for AI-driven 3D applications, playing a critical role in designing and integrating both established and newly developed machine learning, deep learning, and computer vision frameworks to achieve groundbreaking results. Develop and Scale Custom AI Solutions for Complex 3D Applications : Design original algorithms and optimize existing machine learning models for performance and scalability, enabling realistic and seamless interactions in sophisticated 3D spaces and simulations. Collaborate in an AGILE, AI-Innovation Environment: Join a multidisciplinary team focused on AGILE methodologies, where you’ll work closely with experts in AI and 3D technology, driving research and development to achieve efficient, transformative outcomes. Requirements Critical Thinking and Problem-Solving Skills: Ability to approach challenges thoughtfully and analytically, with an eagerness to learn through problem-solving. Interest in 3D Engines and Graphics Development: While prior experience with 3D engines like Unity or Unreal is a plus, a strong motivation to learn and apply these tools to create AI-enhanced interactive graphics is what truly matters. Basic Understanding of AI and Machine Learning in 3D Applications: Familiarity with concepts like machine learning, deep learning, or computer vision**, with an enthusiasm for learning how they can enhance 3D environments (e.g., NeRF , Point Cloud techniques ). Collaborative and Growth-Oriented Mindset: A strong willingness to learn, grow, and contribute within a collaborative and supportive team environment. Commitment to Ongoing Learning and Innovation: A genuine curiosity for advancements in AI and 3D technology , paired with the motivation to grow your expertise over time. Willingness to Learn AI Tools and Frameworks: Exposure to PyTorch , TensorFlow , or similar frameworks is beneficial, but the drive to gain practical experience with these tools is what’s most important. Skills to Help You Excel: Proficiency in Python and C# Fundamentals: Basic experience with Python for AI development and C# for graphics programming, with an openness to expanding knowledge in both. Understanding of 3D Graphics and Mathematics: Familiarity with key 3D concepts (e.g., vectors , matrices , coordinate systems ) and a desire to explore their real-world applications. Interest in Prototyping and Software Development: Comfort with trying out ideas through rapid prototyping and embracing disciplined software development practices. Curiosity About Cloud Platforms for AI Deployment: I nterest in learning about cloud platforms like Azure , AWS , or GCP , and their potential for scalable AI solutions, including MLOps practices (model deployment, monitoring, and lifecycle management). Basic Proficiency in English: Ability to engage effectively in discussions with an international, English-speaking team Benefits Salary determined by the market and your experience 🤑 Flexible schedule 35 Hours / Week 😎 Fully remote work (optional) 🌍 Flexible compensation (restaurant, transport, and childcare) ✌ Medical and dental insurance (completely free of charge for the employee) 🚑 Individual budget for training or equipment and free Microsoft certifications 📚 English lessons 🗽 Birthday day off 🌴🥳 Monthly bonus for electricity and Internet expenses at home 💻 Discount on gym plan and sports activities 🔝 Plain Camp (annual team-building event) 🎪 Extra perks: events attendance and speakers, welcome pack, baby basket, Christmas basket, discount portal for employees ➕ The pleasure of always working with the latest technological tools! Will you let us know you better? The selection process: Simple Phone screen 1st interview (adding presentation of a case study to be carried out) Team interview to meet colleagues Final interview with management (also to talk and review the case study) What is Plain Concepts? Plain Concepts is a global company of over 500 people passionate about technology and innovation. Since our founding, we have grown through technical proficiency and confidence in ideas that others might consider risky, creating custom solutions for our clients. With offices in more than 6 countries, our mission is to continue to drive cutting-edge projects around the world. We are highly committed to technical excellence. We are known for developing highly customized projects, offering specialized technical consultancy and training. Thanks to the great work of our technicians, we have been recognized for our ability to lead innovative projects that generate value, from artificial intelligence to blockchain, driving solutions that help companies optimize their performance. What we do at Plain Concepts? We pride ourselves on being a 100% technical team, dedicated to crafting custom projects from scratch, offering expert technical consultancy, and providing top-tier training. Our approach goes beyond traditional outsourcing; we focus on creating value together with our clients. Our teams are diverse and multidisciplinary, operating in a flat, collaborative structure. We live and breathe AGILE principles, ensuring flexibility and efficiency in everything we do. Knowledge-sharing is at our core: from supporting each other internally to contributing to the broader tech community through conferences, events, and talks. Innovation drives us — even the boldest ideas are welcome here. Transparency underpins all our relationships, fostering trust and long-term partnerships. Want to learn more? Check out our website! ➡ plainconcepts.com At Plain Concepts, we certainly seek to provide equal opportunities. We want diverse applicants regardless of race, colour, gender, religion, national origin, citizenship, disability, age, sexual orientation, or any other characteristic protected by law.",
+      "postedDate": "2026-10-07",
+      "closingDate": null,
+      "checkedAt": "2026-10-26T13:28:48.308887+00:00",
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [],
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
+    },
+    {
+      "id": "career-wk-european-dynamics-2B2EB51B62",
+      "category": "programming",
+      "title": "Full Stack Developer (Python, React)",
+      "company": "EUROPEAN DYNAMICS",
+      "location": "Seville, Spain",
+      "url": "https://apply.workable.com/european-dynamics/j/2B2EB51B62/",
+      "source": "EUROPEAN DYNAMICS · Workable",
+      "sourceKind": "employer",
+      "description": "We currently have a vacancy for a Full Stack developer fluent in English, to offer his/her services as an expert remotely (within EU) . In the context of the first assignment, the successful candidate will be integrated in the Development team of the company that will closely cooperate with a major client’s IT team. Your tasks: Designing and developing tools to interact with social media platforms and facilitate data collection workflows; Creating user-friendly front-end interfaces for data annotation and analysis purposes using modern frameworks and technologies; Developing back-end APIs and services to store, manage, and process data, and integrate with data analysis tools and pipelines; Writing scripts to automate tasks and workflows, using languages such as Bash and Python; Configuring and maintaining Linux-based systems for development and testing environments Ensuring the scalability, security, and performance of the tools using automation and monitoring tools; Providing technical support, troubleshooting, and maintenance for all developed tools. Requirements Master’s or PhD degree in Computer Science, Computer Engineering, or related field. with relevant IT professional experience of at least 7 years; Minimum 3 years of experience in automation and scripting using languages such as Bash and Python to streamline development workflows and system administration tasks.Experience in Python, JavaScript, and web development technologies (HTML/CSS); Minimum 3 years of professional experience in full-stack web development, including designing and developing tools and applications; Minimum 3 years of experience in designing and implementing front-end interfaces using modern frameworks (such as React) and web technologies (HTML/CSS, JavaScript); Minimum 3 years of experience in developing back-end APIs and services using frameworks such as Flask, including database design and integration; Minimum 3 years of experience in database management systems, including both relational databases (e.g., MySQL) and NoSQL databases (e.g., MongoDB); Minimum 3 years of experience in Linux system administration, including user management, networking, security, and system configuration; Minimum 3 years of experience with containerization technologies (such as Docker) and orchestration tools (such as Kubernetes); Minimum 3 years of experience with agile development methodologies, version control systems (such as Git), and project tracking tools. Experience with automation and scripting using Bash and Python for task and workflow optimisation; Experience with agile development methodologies and version control systems such as Git; Experience with project management software such as JIRA and Microsoft Project; Experience with collaboration platforms such as Confluence and SharePoint; Knowledge of reporting methods; Certifications in web development, front-end or back-end frameworks (e.g., React, Flask, or equivalent platforms), cloud computing platforms (such as AWS, Azure, or Google Cloud), containerization and orchestration technologies (such as Docker, Kubernetes, or equivalent platforms), database management systems, software engineering, DevOps, or related fields will be an asset. Excellent command of the English language. Benefits If you are seeking a career in an exciting and dynamic company, where you will offer your services as part of a team of a major European Institution, operating in an international, multilingual and multicultural environment where you can expect real chances to make a difference, please send us your detailed CV in English, quoting reference: (20648/10/2026) We offer a competitive remuneration (either on contract basis or remuneration with full benefits package), based on qualifications and experience. All applications will be treated as confidential. You may also consider all our other open vacancies by visiting the career section of our web site ( www.eurodyn.com) and follow us on Twitter (@EURODYN_Careers) and LinkedIn. EUROPEAN DYNAMICS ( www.eurodyn.com ) is a leading Software, Information and Communication Technologies company, operating internationally (Athens, Brussels, Luxembourg, Copenhagen, Stockholm, London, Nicosia, Hong-Kong, Valetta, etc). The company employs over 1000 engineers, IT experts and consultants (around 3% PhD, 36% MSc and 53% BSc or equivalent). We design and develop software applications using state-of-the-art technology. The group generates annual revenues in the range of EURO 40 million, with an EBITDA in the range of 20%. The value of our contract portfolio exceeds EURO 300 million. EUROPEAN DYNAMICS is a renowned supplier of IT services to government institutions, multinational corporations, public administrations and multinational companies, research and academic institutes. As part of our dedication to the diversity of our workforce, we are committed to Equal Employment Opportunity without regard for race, color, national origin, ethnicity, gender, disability, sexual orientation, gender identity, or religion EUROPEAN DYNAMICS (ED) adheres to the General Data Protection Regulation principles by applying its Privacy Policy as published in www.eurodyn.com/privacy. By submitting an application to this position and by sharing your personal data with ED, you acknowledge and accept its Policy and authorize ED to process your personal data for the purposes of the company's recruitment opportunities, in line to the Policy.",
+      "postedDate": "2026-10-06",
+      "closingDate": null,
+      "checkedAt": "2026-10-26T13:28:48.308887+00:00",
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "profileMatch": "outside",
+      "profileReason": "Requiere experiencia profesional de desarrollo que todavía no tienes"
     }
   ],
   "courses": [
@@ -7064,67 +7510,7 @@
       "sourceKind": "public-portal"
     },
     {
-      "name": "Plain Concepts · Workable",
-      "status": "ok",
-      "examined": 19,
-      "categories": [
-        "programming"
-      ],
-      "platform": "Workable",
-      "sourceKind": "ats"
-    },
-    {
-      "name": "Fabulous · Workable",
-      "status": "ok",
-      "examined": 30,
-      "categories": [
-        "programming"
-      ],
-      "platform": "Workable",
-      "sourceKind": "ats"
-    },
-    {
-      "name": "EUROPEAN DYNAMICS · Workable",
-      "status": "ok",
-      "examined": 189,
-      "categories": [
-        "programming"
-      ],
-      "platform": "Workable",
-      "sourceKind": "ats"
-    },
-    {
-      "name": "We Work Remotely · RSS público",
-      "status": "ok",
-      "matched": 10,
-      "categories": [
-        "programming"
-      ],
-      "platform": "Portal / web pública",
-      "sourceKind": "public-portal"
-    },
-    {
       "name": "Remote OK · API pública",
-      "status": "ok",
-      "matched": 0,
-      "categories": [
-        "programming"
-      ],
-      "platform": "Portal / web pública",
-      "sourceKind": "public-portal"
-    },
-    {
-      "name": "Imatia · Portal de empresa",
-      "status": "ok",
-      "matched": 0,
-      "categories": [
-        "programming"
-      ],
-      "platform": "Portal / web pública",
-      "sourceKind": "public-portal"
-    },
-    {
-      "name": "Inprosec · Portal de empresa",
       "status": "ok",
       "matched": 0,
       "categories": [
@@ -7303,18 +7689,6 @@
       "sourceKind": "training"
     },
     {
-      "name": "Sopra Steria · SmartRecruiters",
-      "status": "ok",
-      "matched": 4,
-      "lastSuccessAt": "2026-10-26T12:46:01.287521+00:00",
-      "lastAttemptAt": "2026-10-26T12:50:24.926086+00:00",
-      "categories": [
-        "programming"
-      ],
-      "platform": "SmartRecruiters",
-      "sourceKind": "ats"
-    },
-    {
       "name": "Cofrico · Viterbit",
       "status": "ok",
       "matched": 1,
@@ -7337,8 +7711,104 @@
       ],
       "platform": "Portal / web pública",
       "sourceKind": "public-portal"
+    },
+    {
+      "name": "Imatia · Bizneo",
+      "status": "ok",
+      "matched": 1,
+      "lastSuccessAt": "2026-10-26T13:24:55.912973+00:00",
+      "lastAttemptAt": "2026-10-26T13:31:26.057959+00:00",
+      "categories": [
+        "programming"
+      ],
+      "platform": "Bizneo",
+      "sourceKind": "ats"
+    },
+    {
+      "name": "Inprosec / Greinfort · Bizneo",
+      "status": "ok",
+      "matched": 1,
+      "lastSuccessAt": "2026-10-26T13:24:55.912973+00:00",
+      "lastAttemptAt": "2026-10-26T13:31:26.057959+00:00",
+      "categories": [
+        "programming"
+      ],
+      "platform": "Bizneo",
+      "sourceKind": "ats"
+    },
+    {
+      "name": "Infortec Consultores · Bizneo",
+      "status": "ok",
+      "matched": 15,
+      "lastSuccessAt": "2026-10-26T13:24:55.912973+00:00",
+      "lastAttemptAt": "2026-10-26T13:31:26.057959+00:00",
+      "categories": [
+        "programming"
+      ],
+      "platform": "Bizneo",
+      "sourceKind": "ats"
+    },
+    {
+      "name": "We Work Remotely · RSS público",
+      "status": "ok",
+      "matched": 5,
+      "lastSuccessAt": "2026-10-26T13:28:48.308887+00:00",
+      "lastAttemptAt": "2026-10-26T13:31:26.057959+00:00",
+      "categories": [
+        "programming"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
+    },
+    {
+      "name": "Sopra Steria · SmartRecruiters",
+      "status": "ok",
+      "matched": 4,
+      "lastSuccessAt": "2026-10-26T13:28:48.308887+00:00",
+      "lastAttemptAt": "2026-10-26T13:31:26.057959+00:00",
+      "categories": [
+        "programming"
+      ],
+      "platform": "SmartRecruiters",
+      "sourceKind": "ats"
+    },
+    {
+      "name": "Plain Concepts · Workable",
+      "status": "ok",
+      "matched": 1,
+      "lastSuccessAt": "2026-10-26T13:28:48.308887+00:00",
+      "lastAttemptAt": "2026-10-26T13:31:26.057959+00:00",
+      "categories": [
+        "programming"
+      ],
+      "platform": "Workable",
+      "sourceKind": "ats"
+    },
+    {
+      "name": "Fabulous · Workable",
+      "status": "ok",
+      "matched": 0,
+      "lastSuccessAt": "2026-10-26T13:31:26.057959+00:00",
+      "lastAttemptAt": "2026-10-26T13:31:26.057959+00:00",
+      "categories": [
+        "programming"
+      ],
+      "platform": "Workable",
+      "sourceKind": "ats"
+    },
+    {
+      "name": "EUROPEAN DYNAMICS · Workable",
+      "status": "ok",
+      "matched": 1,
+      "lastSuccessAt": "2026-10-26T13:28:48.308887+00:00",
+      "lastAttemptAt": "2026-10-26T13:31:26.057959+00:00",
+      "categories": [
+        "programming"
+      ],
+      "platform": "Workable",
+      "sourceKind": "ats"
     }
   ],
   "note": "Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.",
-  "lastPartialUpdate": "2026-10-26T12:50:24.926086+00:00"
+  "lastPartialUpdate": "2026-10-26T13:31:26.057959+00:00"
 }

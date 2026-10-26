@@ -48,7 +48,7 @@ def base_offer(key, identifier, title, company, location, description, url, now,
     if re.search(r'\bmid\b|[3-9]\+?\s*(?:years|anos).{0,20}experien', fold(title + ' ' + description)):
         meta['experience'] = 'experienced'
     return dict(id=f'career-{key}-{identifier}', category='programming', title=title,
-                company=company, location=location, description=description[:4500], url=url,
+                company=company, location=location, description=description[:16000], url=url,
                 source=source, sourceKind=kind, checkedAt=now, closingDate=None, **meta)
 
 
@@ -102,6 +102,11 @@ def remoteok(now):
 
 
 def employer_html(host, company, key, now):
+    from scanner.bizneo_sources import read_board
+    return read_board(host, company, key, now)
+
+
+def legacy_employer_html(host, company, key, now):
     soup = BeautifulSoup(get(host + '/jobs').content, 'html.parser')
     links = {urljoin(host, a['href']): a.get_text(' ', strip=True) for a in soup.select('a[href]') if '/jobs/' in a['href']}
     if not links: raise ValueError(company + ': job list not recognized')
@@ -166,10 +171,12 @@ def adecco(now):
 def additional_sources():
     from scanner.radar_sources import sources
     from scanner.local_employers import sources as local_sources
+    from scanner.bizneo_sources import infortec
     return [
         ('wwr', 'We Work Remotely · RSS público', wwr),
         ('remoteok', 'Remote OK · API pública', remoteok),
-        ('imatia', 'Imatia · Portal de empresa', lambda now: employer_html('https://jobs.imatia.com', 'Imatia', 'imatia', now)),
-        ('inprosec', 'Inprosec · Portal de empresa', lambda now: employer_html('https://talent.inprosec.com', 'Inprosec', 'inprosec', now)),
+        ('imatia', 'Imatia · Bizneo', lambda now: employer_html('https://jobs.imatia.com', 'Imatia', 'imatia', now)),
+        ('inprosec', 'Inprosec / Greinfort · Bizneo', lambda now: employer_html('https://talent.inprosec.com', 'Inprosec / Greinfort', 'inprosec', now)),
         ('adecco', 'Adecco · fichas originales seleccionadas', adecco),
+        ('infortec','Infortec Consultores · Bizneo',infortec),
     ] + sources() + local_sources()

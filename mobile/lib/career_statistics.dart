@@ -152,6 +152,10 @@ class _CareerStatisticsState extends State<CareerStatistics> {
     final selected = filterCareerItems(
       rows,
       category: category,
+      profileScope:
+          personal?.getString('career.$category.profileScope') ?? 'current',
+      includeUnknownDates:
+          personal?.getBool('career.$category.unknownDates') ?? false,
       query: personal?.getString('career.$category.query') ?? '',
       includeAdvanced:
           personal?.getBool('career.$category.advancedV3') ?? category == 'vfx',

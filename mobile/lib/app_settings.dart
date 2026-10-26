@@ -128,7 +128,7 @@ class AppSettingsPage extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         const Text(
-          'Job Radar · 0.15.0',
+          'Job Radar · 0.16.0',
           style: TextStyle(color: mutedColor, fontSize: 12),
         ),
       ],

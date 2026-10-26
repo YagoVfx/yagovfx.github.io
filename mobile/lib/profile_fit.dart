@@ -36,6 +36,20 @@ bool entryProfile(Map<String, dynamic> item) =>
         ).hasMatch(fold('${item['title']}')));
 
 String fitLabel(Map<String, dynamic> item) {
+  if (item['profileMatch'] == 'outside') {
+    return 'Fuera de tu especialidad o nivel';
+  }
+  if (item['profileMatch'] == 'retrain') {
+    return 'Requiere reciclaje o experiencia previa';
+  }
+  if (item['profileMatch'] == 'review') {
+    return 'Confirmar acceso sin experiencia';
+  }
+  if (item['profileMatch'] == 'current') {
+    return item['category'] == 'electricity'
+        ? 'Instalaciones y mantenimiento eléctrico'
+        : 'Desarrollo de entrada · revisar requisitos';
+  }
   if (educationFit(item) == 'university') return 'Exige universidad';
   if (item['experience'] == 'experienced') return 'Experiencia alta';
   if (RegExp(r'\bbeca|internship|practicas')

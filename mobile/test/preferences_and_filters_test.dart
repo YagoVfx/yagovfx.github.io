@@ -6,6 +6,72 @@ import 'package:vfx_jobs_tracker/public_exams.dart';
 import 'package:vfx_jobs_tracker/feed_freshness.dart';
 
 void main() {
+  test('Unrelated specialties stay out of the main view but saved records remain accessible', () {
+    final outside = <String, dynamic>{
+      'id': 'a',
+      'title': 'Analytics Engineer',
+      'category': 'programming',
+      'workplace': 'remote',
+      'profileMatch': 'outside',
+    };
+    final retrain = {...outside, 'id': 'b', 'profileMatch': 'retrain'};
+    final current = {
+      ...outside,
+      'id': 'c',
+      'title': 'Junior Developer',
+      'profileMatch': 'current',
+    };
+    expect(
+      filterCareerItems([
+        outside,
+        retrain,
+        current,
+      ], category: 'programming').map((r) => r['id']),
+      ['c'],
+    );
+    expect(
+      filterCareerItems(
+        [outside, retrain, current],
+        category: 'programming',
+        profileScope: 'retrain',
+      ).map((r) => r['id']),
+      ['b'],
+    );
+    expect(
+      filterCareerItems(
+        [outside],
+        category: 'programming',
+        savedOnly: true,
+        saved: {'a'},
+      ),
+      hasLength(1),
+    );
+  });
+  test(
+    'Unknown dates can be included explicitly without being labelled recent',
+    () {
+      final row = <String, dynamic>{
+        'id': 'a',
+        'title': 'Java Developer',
+        'category': 'programming',
+        'workplace': 'remote',
+        'postedDate': null,
+      };
+      expect(
+        filterCareerItems([row], category: 'programming', days: 30),
+        isEmpty,
+      );
+      expect(
+        filterCareerItems(
+          [row],
+          category: 'programming',
+          days: 30,
+          includeUnknownDates: true,
+        ),
+        hasLength(1),
+      );
+    },
+  );
   test(
     'A newer bundled partial update cannot be replaced by an older cache',
     () {

@@ -173,6 +173,8 @@ List<Map<String, dynamic>> filterCareerItems(
   String query = '',
   String organization = 'all',
   String origin = 'all',
+  String profileScope = 'current',
+  bool includeUnknownDates = false,
   bool includeAdvanced = false,
   int days = 0,
   String scope = 'all',
@@ -190,6 +192,15 @@ List<Map<String, dynamic>> filterCareerItems(
   final today = now ?? DateTime.now();
   final words = fold(query).trim().split(RegExp(r'\s+'));
   final out = items.where((item) {
+    if (!savedOnly && category != 'vfx' && category != 'courses') {
+      if (profileScope == 'current' &&
+          ['outside', 'retrain'].contains(item['profileMatch'])) {
+        return false;
+      }
+      if (profileScope == 'retrain' && item['profileMatch'] != 'retrain') {
+        return false;
+      }
+    }
     if (organization != 'all' &&
         '${item['company'] ?? item['provider']}' != organization) {
       return false;
@@ -254,7 +265,11 @@ List<Map<String, dynamic>> filterCareerItems(
           entryProfile(item) != (profileView == 'entry')) {
         return false;
       }
-      if (!withinDays(item['postedDate'], days, now: today)) return false;
+      if (!(includeUnknownDates &&
+              DateTime.tryParse('${item['postedDate'] ?? ''}') == null) &&
+          !withinDays(item['postedDate'], days, now: today)) {
+        return false;
+      }
       if (!savedOnly && expiredCareerOffer(item, today)) return false;
       if (!savedOnly &&
           !includeAdvanced &&
@@ -319,7 +334,7 @@ class CareerFeedRepository {
     final data = jsonDecode(text);
     if (data is! Map<String, dynamic> ||
         data['schemaVersion'] != 2 ||
-        (data['coverageVersion'] as num? ?? 0) < 9 ||
+        (data['coverageVersion'] as num? ?? 0) < 10 ||
         data['offers'] is! List ||
         data['courses'] is! List) {
       throw const FormatException('Formato de oportunidades no válido');
@@ -390,6 +405,8 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
   bool showFilters = false, includeUnknownPrice = false;
   String sourceFilter = 'all';
   String organization = 'all', origin = 'all';
+  String profileScope = 'current';
+  bool includeUnknownDates = false;
   JobFilters vfxFilters = JobFilters();
   Set<String> discarded = {};
   int days = 0;
@@ -459,6 +476,11 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
     organization =
         p.getString('career.${widget.category}.organization') ?? 'all';
     origin = p.getString('career.courses.origin') ?? 'all';
+    profileScope =
+        p.getString('career.${widget.category}.profileScope') ?? 'current';
+    if (profileScope != 'current') includeAdvanced = true;
+    includeUnknownDates =
+        p.getBool('career.${widget.category}.unknownDates') ?? false;
     includeAdvanced =
         p.getBool('career.${widget.category}.advancedV3') ??
         widget.category == 'vfx';
@@ -632,6 +654,8 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       category: widget.category,
       query: search.text,
       organization: organization,
+      profileScope: profileScope,
+      includeUnknownDates: includeUnknownDates,
       origin: widget.category == 'courses' ? origin : 'all',
       includeAdvanced: includeAdvanced,
       days: days,
@@ -1014,6 +1038,19 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             ),
           ),
           const SizedBox(height: 3),
+          if (!course && item['profileReason'] != null)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Text(
+                '${item['profileReason']}',
+                style: const TextStyle(color: mutedColor, fontSize: 12),
+              ),
+            ),
+          if (!course && item['postedDate'] == null)
+            const Text(
+              'Fecha de publicación no confirmada',
+              style: TextStyle(color: reviewColor, fontSize: 12),
+            ),
           if (item['retainedAfterFailure'] == true)
             const Text(
               'Vigencia sin confirmar · última consulta fallida',
@@ -1026,6 +1063,8 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                       ? 'Remoto'
                       : item['workplace'] == 'hybrid'
                       ? 'Híbrido'
+                      : item['workplace'] == 'onsite'
+                      ? 'Presencial'
                       : 'Modalidad por confirmar'}",
             style: const TextStyle(color: mutedColor, fontSize: 12),
           ),
@@ -1051,6 +1090,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   : fitLabel(item),
               confirmed:
                   !course &&
+                  !['outside', 'retrain'].contains(item['profileMatch']) &&
                   (widget.category == 'vfx'
                       ? item['hasEmployer'] == true && Job(item).verified
                       : educationFit(item) == 'fp'),
@@ -1237,6 +1277,42 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   },
                 ),
               ],
+              if (!isCourse && widget.category != 'vfx')
+                picker(
+                  'Ajuste a tu experiencia',
+                  profileScope,
+                  {
+                    'current': 'Mi especialidad y nivel',
+                    'retrain': 'Opciones de reciclaje',
+                    'all': 'Todo, incluso fuera de perfil',
+                  },
+                  (v) {
+                    profileScope = v;
+                    includeAdvanced = v != 'current';
+                    prefs?.setString(
+                      'career.${widget.category}.profileScope',
+                      v,
+                    );
+                    prefs?.setBool(
+                      'career.${widget.category}.advancedV3',
+                      includeAdvanced,
+                    );
+                  },
+                ),
+              if (!isCourse)
+                SwitchListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: const Text('Incluir ofertas sin fecha de publicación'),
+                  subtitle: const Text(
+                    'Se distinguen de las publicadas en el período elegido. No se presentan como nuevas.',
+                  ),
+                  value: includeUnknownDates,
+                  onChanged: (v) {
+                    setState(() => includeUnknownDates = v);
+                    prefs?.setBool('career.${widget.category}.unknownDates', v);
+                    detailChanges.value++;
+                  },
+                ),
               if (widget.category == 'programming')
                 picker(
                   'Encaje',
@@ -1659,7 +1735,13 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             children: [
               Expanded(
                 child: Text(
-                  '${list.length} ${isCourse ? 'recursos' : 'ofertas'}',
+                  '${list.length} ${isCourse
+                      ? list.length == 1
+                            ? 'recurso'
+                            : 'recursos'
+                      : list.length == 1
+                      ? 'oferta'
+                      : 'ofertas'}',
                   style: const TextStyle(
                     fontSize: 21,
                     fontWeight: FontWeight.w800,
@@ -1675,8 +1757,18 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
           ),
           const SizedBox(height: 12),
           if (!isCourse && days != 0)
-            const Text(
-              'Solo ofertas con fecha de publicación conocida. Revisar una oferta hoy no significa que sea nueva.',
+            Text(
+              includeUnknownDates
+                  ? 'También se incluyen ofertas sin fecha: no se consideran publicadas en el período elegido.'
+                  : 'Solo ofertas con fecha de publicación conocida. Las ofertas sin fecha están ocultas.',
+            ),
+          if (!isCourse && days != 0 && !includeUnknownDates)
+            TextButton(
+              onPressed: () {
+                setState(() => includeUnknownDates = true);
+                prefs?.setBool('career.${widget.category}.unknownDates', true);
+              },
+              child: const Text('Ver también las ofertas sin fecha'),
             ),
           Padding(
             padding: const EdgeInsets.only(bottom: 12),
