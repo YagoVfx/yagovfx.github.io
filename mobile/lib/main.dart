@@ -10,44 +10,62 @@ import 'applications.dart';
 import 'career_categories.dart';
 import 'presentation.dart';
 import 'public_exams.dart';
+import 'app_settings.dart';
 
-void main() => runApp(const TrackerApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await appSettings.load();
+  runApp(const TrackerApp());
+}
 
 class TrackerApp extends StatelessWidget {
   const TrackerApp({super.key});
   @override
-  Widget build(BuildContext context) => MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Yago Job Radar',
-    theme: ThemeData(
-      brightness: Brightness.dark,
-      colorSchemeSeed: const Color(0xFFAA90FF),
-      scaffoldBackgroundColor: const Color(0xFF0E1017),
-      cardTheme: CardThemeData(
-        color: const Color(0xff191d29),
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-          side: const BorderSide(color: Color(0xff30374a)),
+  Widget build(BuildContext context) => ListenableBuilder(
+    listenable: appSettings,
+    builder: (context, _) => MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Yago Job Radar',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        colorSchemeSeed: const Color(0xFFAA90FF),
+        scaffoldBackgroundColor: const Color(0xFF0E1017),
+        cardTheme: CardThemeData(
+          color: const Color(0xff191d29),
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+            side: const BorderSide(color: Color(0xff30374a)),
+          ),
         ),
-      ),
-      inputDecorationTheme: InputDecorationTheme(
-        filled: true,
-        fillColor: const Color(0xff191d29),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 14,
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: const Color(0xff191d29),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 14,
+          ),
         ),
+        navigationBarTheme: const NavigationBarThemeData(
+          backgroundColor: Color(0xff141824),
+          height: 72,
+          indicatorColor: Color(0xff393052),
+        ),
+        useMaterial3: true,
       ),
-      navigationBarTheme: const NavigationBarThemeData(
-        backgroundColor: Color(0xff141824),
-        height: 72,
-        indicatorColor: Color(0xff393052),
+      builder: (context, child) => MediaQuery(
+        data: MediaQuery.of(context).copyWith(
+          textScaler: TextScaler.linear(
+            MediaQuery.textScalerOf(context).scale(16) /
+                16 *
+                appSettings.textSize,
+          ),
+        ),
+        child: child!,
       ),
-      useMaterial3: true,
+      home: const OffersPage(),
     ),
-    home: const OffersPage(),
   );
 }
 
@@ -158,7 +176,9 @@ class _OffersState extends State<OffersPage> {
     final p = await SharedPreferences.getInstance();
     if (!mounted) return;
     prefs = p;
-    final storedCategory = p.getString('career.category');
+    final storedCategory = appSettings.startCategory == 'last'
+        ? p.getString('career.category')
+        : appSettings.startCategory;
     if (navigationCategories.containsKey(storedCategory)) {
       category = storedCategory!;
       revealCategory();
@@ -182,7 +202,7 @@ class _OffersState extends State<OffersPage> {
       accept(cache);
       setState(() => loading = false);
     }
-    await refresh();
+    if (appSettings.autoRefresh) await refresh();
   }
 
   void accept(Map<String, dynamic> d) {
@@ -691,6 +711,15 @@ class _OffersState extends State<OffersPage> {
                       refreshVersion: careerRefresh,
                     ),
             )
+          : tab == 2
+          ? SafeArea(
+              child: AppSettingsPage(
+                refresh: () {
+                  refresh();
+                  setState(() => careerRefresh++);
+                },
+              ),
+            )
           : SafeArea(
               child: Column(
                 children: [
@@ -723,7 +752,7 @@ class _OffersState extends State<OffersPage> {
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                            'Versión 0.14.0 · Tu radar personal',
+                            'Versión 0.14.1 · Tu radar personal',
                             style: TextStyle(color: mutedColor, fontSize: 12),
                           ),
                           const SizedBox(height: 16),
@@ -903,7 +932,7 @@ class _OffersState extends State<OffersPage> {
                                                 statusTag(
                                                   j.compatibility ==
                                                           'compatible'
-                                                      ? 'Cumple filtros'
+                                                      ? 'Sin restricciones detectadas'
                                                       : 'Revisar condiciones',
                                                   confirmed:
                                                       j.compatibility ==

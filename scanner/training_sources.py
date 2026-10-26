@@ -63,7 +63,7 @@ def diplos(now):
                         url='https://diplos.xunta.gal/diplos/curso?'+urlencode(dict(accion=code)),sourceUrl=url,
                         price=0,priceEvidence='Formación del catálogo subvencionado de Xunta / DIPLOS; confirmar condiciones en la convocatoria',
                         modality='online' if online else 'onsite',location=place,inVigo=meta['inVigo'],inCoruna=meta['inCoruna'],
-                        level='beginner' if level=='1' or re.search(r'fundament|circuitos de corriente',fold(title)) else 'advanced' if level in ['3','4','5'] else 'review',
+                        level='beginner' if re.search(r'fundament|circuitos de corriente|introdu',fold(title)) else 'advanced' if re.search(r'avanzad|expert',fold(title)) else 'intermediate',
                         description=description,durationHours=int(float(action.get('horasCurso') or 0)) or None,
                         startDate=start,endDate=end,enrollmentStatus='consult',
                         availability='Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS',

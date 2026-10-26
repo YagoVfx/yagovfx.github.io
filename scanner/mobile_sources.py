@@ -165,10 +165,11 @@ def adecco(now):
 
 def additional_sources():
     from scanner.radar_sources import sources
+    from scanner.local_employers import sources as local_sources
     return [
         ('wwr', 'We Work Remotely · RSS público', wwr),
         ('remoteok', 'Remote OK · API pública', remoteok),
         ('imatia', 'Imatia · Portal de empresa', lambda now: employer_html('https://jobs.imatia.com', 'Imatia', 'imatia', now)),
         ('inprosec', 'Inprosec · Portal de empresa', lambda now: employer_html('https://talent.inprosec.com', 'Inprosec', 'inprosec', now)),
         ('adecco', 'Adecco · fichas originales seleccionadas', adecco),
-    ] + sources()
+    ] + sources() + local_sources()

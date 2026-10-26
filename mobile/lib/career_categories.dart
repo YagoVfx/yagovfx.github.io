@@ -11,6 +11,8 @@ import 'jobs.dart';
 import 'geography.dart';
 import 'profile_fit.dart';
 import 'presentation.dart';
+import 'app_settings.dart';
+import 'feed_freshness.dart';
 
 const careerCategories = {
   'vfx': 'VFX',
@@ -20,6 +22,7 @@ const careerCategories = {
 };
 const navigationCategories = {...careerCategories, 'public': 'Oposiciones'};
 const courseTopics = {
+  'all': 'Todas las especialidades',
   'vfx': 'VFX / Games',
   'programming': 'Programación',
   'electricity': 'Electricidad',
@@ -168,6 +171,8 @@ List<Map<String, dynamic>> filterCareerItems(
   List<Map<String, dynamic>> items, {
   required String category,
   String query = '',
+  String organization = 'all',
+  String origin = 'all',
   bool includeAdvanced = false,
   int days = 0,
   String scope = 'all',
@@ -185,6 +190,13 @@ List<Map<String, dynamic>> filterCareerItems(
   final today = now ?? DateTime.now();
   final words = fold(query).trim().split(RegExp(r'\s+'));
   final out = items.where((item) {
+    if (organization != 'all' &&
+        '${item['company'] ?? item['provider']}' != organization) {
+      return false;
+    }
+    if (origin != 'all' && '${item['source'] ?? item['provider']}' != origin) {
+      return false;
+    }
     if (savedOnly && !saved.contains(item['id'])) return false;
     if (!words.every(
       fold(
@@ -307,7 +319,7 @@ class CareerFeedRepository {
     final data = jsonDecode(text);
     if (data is! Map<String, dynamic> ||
         data['schemaVersion'] != 2 ||
-        (data['coverageVersion'] as num? ?? 0) < 8 ||
+        (data['coverageVersion'] as num? ?? 0) < 9 ||
         data['offers'] is! List ||
         data['courses'] is! List) {
       throw const FormatException('Formato de oportunidades no válido');
@@ -324,8 +336,15 @@ class CareerFeedRepository {
         'El feed móvil todavía no está disponible (${response.statusCode}).',
       );
     }
-    final raw = utf8.decode(response.bodyBytes), data = decode(raw);
-    await prefs.setString('career.feed', raw);
+    final raw = utf8.decode(response.bodyBytes);
+    var data = newerFeed(
+      decode(await rootBundle.loadString('assets/mobile-careers.json')),
+      decode(raw),
+    );
+    try {
+      data = newerFeed(data, decode(prefs.getString('career.feed') ?? ''));
+    } catch (_) {}
+    await prefs.setString('career.feed', jsonEncode(data));
     return data;
   }
 
@@ -367,9 +386,10 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
   bool loading = true, includeAdvanced = false, freeOnly = false;
   final detailChanges = ValueNotifier<int>(0);
   String scope = 'all', modality = 'all', topic = 'all', goal = 'review';
-  String profileView = 'entry';
+  String profileView = 'all';
   bool showFilters = false, includeUnknownPrice = false;
   String sourceFilter = 'all';
+  String organization = 'all', origin = 'all';
   JobFilters vfxFilters = JobFilters();
   Set<String> discarded = {};
   int days = 0;
@@ -377,8 +397,13 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
   @override
   void initState() {
     super.initState();
+    appSettings.addListener(preferencesChanged);
     repository = widget.feedRepository ?? CareerFeedRepository();
     load();
+  }
+
+  void preferencesChanged() {
+    if (mounted) setState(() {});
   }
 
   @override
@@ -389,6 +414,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
 
   @override
   void dispose() {
+    appSettings.removeListener(preferencesChanged);
     detailChanges.dispose();
     repository.close();
     search.dispose();
@@ -406,7 +432,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
     Map<String, dynamic> data = bundled;
     try {
       final cache = p.getString('career.feed');
-      if (cache != null) data = repository.decode(cache);
+      if (cache != null) data = newerFeed(bundled, repository.decode(cache));
     } catch (_) {}
     if (!mounted) return;
     prefs = p;
@@ -430,6 +456,9 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       ) as Map<String, dynamic>).map((k, v) => MapEntry(k, '$v'));
     } catch (_) {}
     search.text = p.getString('career.${widget.category}.query') ?? '';
+    organization =
+        p.getString('career.${widget.category}.organization') ?? 'all';
+    origin = p.getString('career.courses.origin') ?? 'all';
     includeAdvanced =
         p.getBool('career.${widget.category}.advancedV3') ??
         widget.category == 'vfx';
@@ -443,7 +472,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
         jsonDecode(p.getString('filters') ?? '{}'),
       );
     } catch (_) {}
-    profileView = p.getString('career.programming.profileView') ?? 'entry';
+    profileView = p.getString('career.programming.profileView') ?? 'all';
     if (widget.category == 'courses' &&
         p.getBool('career.courses.advancedV3') == null) {
       includeAdvanced = goal != 'review';
@@ -457,10 +486,10 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
     scope = p.getString('career.${widget.category}.scope') ?? 'all';
     freeOnly = p.getBool('career.courses.freeOnly') ?? false;
     if (widget.category == 'courses') {
-      topic = p.getString('career.courses.topicV2') ?? 'programming';
+      topic = p.getString('career.courses.topicV3') ?? 'all';
     }
     setState(() => loading = false);
-    await refresh();
+    if (appSettings.autoRefresh) await refresh();
   }
 
   Future<void> refresh() async {
@@ -602,6 +631,8 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       entries.values.toList(),
       category: widget.category,
       query: search.text,
+      organization: organization,
+      origin: widget.category == 'courses' ? origin : 'all',
       includeAdvanced: includeAdvanced,
       days: days,
       scope: scope,
@@ -636,30 +667,54 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
     String value,
     Map<String, String> options,
     ValueChanged<String> update,
-  ) => SizedBox(
-    width: double.infinity,
-    child: DropdownButtonFormField<String>(
-      initialValue: value,
-      isExpanded: true,
-      decoration: InputDecoration(labelText: title),
-      items: options.entries
-          .map(
-            (e) => DropdownMenuItem(
-              value: e.key,
-              child: Text(
-                e.value,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
+  ) => Padding(
+    padding: const EdgeInsets.only(bottom: 18),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.w600,
+            color: mutedColor,
+          ),
+        ),
+        const SizedBox(height: 8),
+        DropdownButtonFormField<String>(
+          initialValue: value,
+          isExpanded: true,
+          decoration: const InputDecoration(
+            contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          ),
+          items: options.entries
+              .map(
+                (e) => DropdownMenuItem(
+                  value: e.key,
+                  child: Text(
+                    e.value,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              )
+              .toList(),
+          onChanged: (v) {
+            if (v != null) {
+              setState(() => update(v));
+              detailChanges.value++;
+            }
+          },
+        ),
+        if (title == 'Revisión de condiciones')
+          const Padding(
+            padding: EdgeInsets.only(top: 8),
+            child: Text(
+              'Señal automática sobre país, contrato y jornada. Puede faltar información; no evalúa tus estudios ni experiencia.',
+              style: TextStyle(color: mutedColor, fontSize: 12),
             ),
-          )
-          .toList(),
-      onChanged: (v) {
-        if (v != null) {
-          setState(() => update(v));
-          detailChanges.value++;
-        }
-      },
+          ),
+      ],
     ),
   );
   Widget courseDetail(Map<String, dynamic> item) => Card(
@@ -936,9 +991,9 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
   }
 
   Widget summaryCard(Map<String, dynamic> item, bool course) => Card(
-    margin: const EdgeInsets.only(bottom: 12),
+    margin: EdgeInsets.only(bottom: appSettings.compact ? 6 : 12),
     child: ListTile(
-      contentPadding: const EdgeInsets.all(16),
+      contentPadding: EdgeInsets.all(appSettings.compact ? 10 : 16),
       title: Text(
         '${item['title']}',
         style: const TextStyle(
@@ -1088,6 +1143,21 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
   );
 
   Future<void> openFilters(bool isCourse) async {
+    final rawItems = isCourse
+        ? [...?feed?['courses'] as List?, ...?catalog?['courses'] as List?]
+        : [
+            ...(feed?['offers'] as List? ?? []).where(
+              (r) => r['category'] == widget.category,
+            ),
+            if (widget.category == 'vfx')
+              ...widget.directJobs.map((j) => j.data),
+          ];
+    final organizations =
+        rawItems.map((r) => '${r['company'] ?? r['provider']}').toSet().toList()
+          ..sort();
+    final origins =
+        rawItems.map((r) => '${r['source'] ?? r['provider']}').toSet().toList()
+          ..sort();
     setState(() => showFilters = true);
     await showModalBottomSheet<void>(
       context: context,
@@ -1116,6 +1186,36 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   ),
                 ],
               ),
+              picker(
+                isCourse ? 'Centro o plataforma de formación' : 'Empresa',
+                organization,
+                {
+                  'all': isCourse ? 'Todos los centros' : 'Todas las empresas',
+                  if (organization != 'all' &&
+                      !organizations.contains(organization))
+                    organization: organization,
+                  for (final name in organizations) name: name,
+                },
+                (v) {
+                  organization = v;
+                  prefs?.setString('career.${widget.category}.organization', v);
+                },
+              ),
+              if (isCourse)
+                picker(
+                  'Dónde se ha encontrado',
+                  origin,
+                  {
+                    'all': 'Todas las fuentes',
+                    if (origin != 'all' && !origins.contains(origin))
+                      origin: origin,
+                    for (final name in origins) name: name,
+                  },
+                  (v) {
+                    origin = v;
+                    prefs?.setString('career.courses.origin', v);
+                  },
+                ),
 
               if (isCourse) ...[
                 picker(
@@ -1164,20 +1264,21 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                 const Text(
                   'Presupuesto máximo: 800 €. La prioridad expresa encaje con el objetivo, no calidad docente ni plazas disponibles.',
                 ),
-              SwitchListTile(
-                contentPadding: EdgeInsets.zero,
-                title: Text(
-                  isCourse
-                      ? 'Incluir nivel avanzado'
-                      : 'Mostrar también requisitos fuera de mi perfil',
+              if (widget.category != 'vfx')
+                SwitchListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(
+                    isCourse
+                        ? 'Incluir nivel avanzado'
+                        : 'Mostrar también requisitos fuera de mi perfil',
+                  ),
+                  value: includeAdvanced,
+                  onChanged: (v) {
+                    setState(() => includeAdvanced = v);
+                    prefs?.setBool('career.${widget.category}.advancedV3', v);
+                    detailChanges.value++;
+                  },
                 ),
-                value: includeAdvanced,
-                onChanged: (v) {
-                  setState(() => includeAdvanced = v);
-                  prefs?.setBool('career.${widget.category}.advancedV3', v);
-                  detailChanges.value++;
-                },
-              ),
               if (isCourse)
                 SwitchListTile(
                   contentPadding: EdgeInsets.zero,
@@ -1242,12 +1343,13 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   },
                 ),
                 picker(
-                  'Condiciones',
+                  'Revisión de condiciones',
                   vfxFilters.view,
                   {
                     'all': 'Todas',
-                    'compatible': 'Cumplen filtros de condiciones',
-                    'review': 'Por revisar',
+                    'compatible': 'Sin restricciones detectadas',
+                    'review': 'Necesitan revisión',
+                    'incompatible': 'Con restricciones detectadas',
                   },
                   (v) {
                     vfxFilters.view = v;
@@ -1422,6 +1524,9 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                     includeAdvanced = true;
                     profileView = 'all';
                     sourceFilter = 'all';
+                    topic = 'all';
+                    organization = 'all';
+                    origin = 'all';
                     vfxFilters = JobFilters();
                     includeUnknownPrice = false;
                     showFilters = false;
@@ -1432,6 +1537,9 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   prefs?.setBool('career.${widget.category}.advancedV3', true);
                   prefs?.setString('career.programming.profileView', 'all');
                   prefs?.setString('career.vfx.sources', 'all');
+                  prefs?.remove('career.${widget.category}.organization');
+                  prefs?.remove('career.courses.origin');
+                  prefs?.setString('career.courses.topicV3', 'all');
                   prefs?.setString('filters', jsonEncode(vfxFilters.toJson()));
                   prefs?.setBool('career.courses.unknownPrice', false);
                   prefs?.setBool('career.courses.freeOnly', false);
@@ -1467,7 +1575,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
         ? [
             ...feed!['courses'],
             ...catalog!['courses'],
-          ].where((r) => r['topic'] == topic).length
+          ].where((r) => topic == 'all' || r['topic'] == topic).length
         : (feed!['offers'] as List)
               .where((r) => r['category'] == widget.category)
               .length;
@@ -1516,7 +1624,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
               ],
               onChanged: (value) {
                 setState(() => topic = value!);
-                prefs?.setString('career.courses.topicV2', value!);
+                prefs?.setString('career.courses.topicV3', value!);
               },
             ),
             const SizedBox(height: 8),

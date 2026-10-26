@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "coverageVersion": 8,
+  "coverageVersion": 9,
   "updatedAt": "2026-10-26T04:29:32.594853Z",
   "offers": [
     {
@@ -5451,6 +5451,370 @@
       "foundIn": [
         "Stratos · Trabajo"
       ]
+    },
+    {
+      "id": "career-sopra-744000146667080",
+      "category": "programming",
+      "title": "Senior Frontend React",
+      "company": "Sopra Steria",
+      "location": "Madrid, España",
+      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! ¿Qué reto proponemos? Se necesita a un/a desarrollador/a Frontend experto/a en React para un importante cliente del sector bancario. El proyecto permite un modelo remoto de trabajo. ¿Qué buscamos? - Lenguajes de programación (React obligatorio y deseable Angular) - Experiencia en desarrollo web. - Experiencia en desarrollo de APIs del lado del cliente en entorno empresarial. - Experiencia trabajando en equipo, con software de control de versiones. - HTML + CSS3 - JavaScript - Gestión y revisión de código: Git, SVN - Integración y despliegue continuo: Jenkins, CloudBees - Provisionamiento y empaquetado: Docker, Kubernetes, Azure/AWS - Formatos de intercambio de datos (JSON/XML) - SQL - Herramientas Colaborativas: Jira, Confluence ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua: competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club, donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it En Sopra Steria estamos comprometidos con la creación de un entorno diverso e inclusivo, evaluando cada candidatura de forma objetiva, en base a sus competencias y experiencia. Creemos firmemente que la diversidad de experiencias y perspectivas es lo que impulsa nuestra innovación. ",
+      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000146667080-senior-frontend-react?oga=true",
+      "source": "Sopra Steria · SmartRecruiters",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T12:46:01.287521+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [],
+      "postedDate": "2026-09-01"
+    },
+    {
+      "id": "career-sopra-744000143285629",
+      "category": "programming",
+      "title": "Desarrollador/a Apis con Apigee",
+      "company": "Sopra Steria",
+      "location": "Madrid, España",
+      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! ¿Qué reto proponemos? Buscamos un/a Desarrollador/a Apis con Apigee para un importante cliente del sector bancario. El proyecto es en formato 100% remoto. Las funciones serán las siguientes: • Diseñar, desarrollar y desplegar proxies de APIs en Apigee Hybrid • Construir y mantener Shared Flows reutilizables y políticas de APIs • Definir especificaciones OpenAPI y asegurar la calidad de los contratos de APIs • Crear pruebas automatizadas para APIs y apoyar despliegues mediante CI/CD en producción ¿Qué buscamos? •    Al menos 5 años de experiencia trabajando con Java. •    Conocimientos de conceptos de CI/CD/DevOps. •    Experto en MONGODB •    Experiencia en trabajar en entornos CLOUD con AZURE HABILIDADES TÉCNICAS REQUERIDAS: •    Experiencia con Apigee Hybrid: proxies de APIs, aplicaciones, productos, políticas, métricas y despliegues •   Experiencia diseñando y construyendo Shared Flows reutilizables •   Conocimiento sólido de especificaciones OpenAPI (Swagger) y seguridad de APIs (OAuth2, JWT, mTLS) •   Experiencia desarrollando con Node.js (políticas personalizadas, scripts, herramientas) •   Experiencia con GitHub Workflows y GitHub Actions para CI/CD HABILIDADES TÉCNICAS DESEABLES ADICIONALES: •    Arquitecturas de microservicios •    Kubernetes •    AWS ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua: competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club, donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it En Sopra Steria estamos comprometidos con la creación de un entorno diverso e inclusivo, evaluando cada candidatura de forma objetiva, en base a sus competencias y experiencia. Creemos firmemente que la diversidad de experiencias y perspectivas es lo que impulsa nuestra innovación. ",
+      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000143285629-desarrollador-a-apis-con-apigee?oga=true",
+      "source": "Sopra Steria · SmartRecruiters",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T12:46:01.287521+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-08-13"
+    },
+    {
+      "id": "career-sopra-744000129747059",
+      "category": "programming",
+      "title": " Full Stack Developer (java/Angular)",
+      "company": "Sopra Steria",
+      "location": "Barcelona, España",
+      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! ¿Qué reto proponemos? Buscamos un/a Full Stack Developer motivado/a y con experiencia para incorporarse a un equipo dinámico, trabajando en entornos de sistemas distribuidos y bajo metodologías ágiles Descripción posición Diseño, desarrollo y mantenimiento de aplicaciones en entornos complejos e interconectados. Participación en code reviews y contribución a la mejora continua Análisis de la lógica de negocio y estructuras de datos existentes en múltiples sistemas. Colaboración con equipos multidisciplinares para definir, diseñar y desarrollar nuevas funcionalidades. Resolución de incidencias técnicas complejas. ¿Qué buscamos? Perfil Full Stack con al menos 5 años de experiencia consolidada con Java y Angular: Experiencia en tecnologías backend: Java, Spring, Kafka Conocimiento de tecnologías frontend: TypeScript, Angular. Experiencia con bases de datos y sistemas distribuidos Conocimiento de arquitectura de microservicios. Experiencia en testing (unitario e integración) Nivel alto de Inglés (fundamental) Requisitos deseables Conocimientos en herramientas de contenerización y orquestación (Docker, Kubernetes). Experiencia en DevOps Conocimiento de herramientas de migración de bases de datos (como Atlas). Conocimiento de OpenAPI/Swagger y generación de código Conocimientos en inteligencia artificial y machine learning. ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua : competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club , donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it Adquirimos el compromiso de respetar la diversidad, creando un ambiente de trabajo inclusivo y aplicando políticas que favorezcan la inclusión y promuevan el respeto social y cultural en cuestiones de género, edad, funcional, orientación sexual y religión con igualdad de oportunidades. Adquirimos el compromiso de respetar la diversidad, creando un ambiente de trabajo inclusivo y aplicando políticas que favorezcan la inclusión y promuevan el respeto social y cultural en cuestiones de género, edad, funcional, orientación sexual y religión con igualdad de oportunidades.",
+      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000129747059--full-stack-developer-java-angular-?oga=true",
+      "source": "Sopra Steria · SmartRecruiters",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T12:46:01.287521+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-06-02"
+    },
+    {
+      "id": "career-sopra-744000112649865",
+      "category": "programming",
+      "title": "Backend Microservicios con Inglés",
+      "company": "Sopra Steria",
+      "location": "Madrid, España",
+      "description": "Porque trabajar en Sopra Steria, también es sentir Sopra Steria . Somos un reconocido líder europeo en consultoría, servicios digitales y desarrollo de software, con cerca de 56.000 empleados en casi 30 países y más de 4.000 en España. Nos enfocamos en las personas, en su formación y desarrollo profesional, lo que nos impulsa a crecer y mejorar constantemente. Tenemos pasión por lo digital y al igual que tú, buscamos la mejor de las aventuras. Queremos que tu día a día se convierta en la mejor de tus inspiraciones. Que aprendas, aportes, te diviertas, crezcas y que, sobre todo, disfrutes al máximo. Si quieres formar parte de un equipo “ Great Place to Work ”, ¡Sigue leyendo! Te incorporarás al equipo de desarrollo de un importante cliente del sector bancario. El cliente tiene distintos equipos donde puedes crecer profesionalmente, el proyecto permite un modelo de 100% teletrabajo. Buscamos un/a desarrollador/a con experiencia en estas tecnologías: o Microservice architecture o APIs composition o RestFul o OpenAPI, Swagger o Java 8, 11 o Spring (Spring-Boot, Spring-Batch, MVC) o Maven o Junit, Mockito, Wiremock, MockMVC o JPA, Oracle, JDBC o Experience working with Azure Devops Además se requiere un buen nivel de inglés para participar en proyectos internacionales. ¿Qué tenemos para ti? Contrato indefinido y jornada completa 23 días de vacaciones Formación continua: competencias técnicas, transversales y de idiomas. Contamos con acceso a certificaciones, formaciones de los principales Partners Tecnológicos, plataformas online y ¡mucho más! Seguro de vida y de accidentes Posibilidad de acogerte a nuestra retribución flexible (seguro médico, cheques guarderías, transporte, comida y formación) Acceso a Privilege Club, donde encontrarás descuentos interesantes en las principales marcas Onboarding personalizado y detallado. Te acompañamos en todo momento para que te sientas #soprano desde el primer momento. Oficina con espacios reservados al ocio. ¡Trabajo y diversión unido! Compañerismo y buen ambiente, el poder de la unión lo tenemos presente. Y lo más importante…Tienes la posibilidad de desarrollar tu carrera profesional con nosotros: Crearemos juntos un plan de carrera personalizado. Te formarás, marcaremos objetivos y llevaremos a cabo un seguimiento para asegurarnos de que lo conseguimos juntos. Escuchamos tus prioridades y luchamos por ellas. ¡Aquí tu voz importa! ¡Únete a nosotros y sé parte de algo más! The world is how we shape it Adquirimos el compromiso de respetar la diversidad, creando un ambiente de trabajo inclusivo y aplicando políticas que favorezcan la inclusión y promuevan el respeto social y cultural en cuestiones de género, edad, funcional, orientación sexual y religión con igualdad de oportunidades. ",
+      "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000112649865-backend-microservicios-con-ingles?oga=true",
+      "source": "Sopra Steria · SmartRecruiters",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T12:46:01.287521+00:00",
+      "closingDate": null,
+      "experience": "unknown",
+      "workplace": "remote",
+      "inVigo": false,
+      "inCoruna": false,
+      "requirements": [],
+      "postedDate": "2026-03-04"
+    },
+    {
+      "id": "career-cofrico-tecnico-a-frigorista-industrial-especialista-en-nh3-amoniaco-KGirln2_wG_bkOr4",
+      "category": "electricity",
+      "title": "Técnico/a Frigorista Industrial – Especialista en NH₃ (Amoníaco)",
+      "company": "Cofrico",
+      "location": "Vigo",
+      "description": "Cofrico. Instalaciones de Refrigeración y Climatización Industrial y Comercial | Técnico/a Frigorista Industrial – Especialista en NH₃ (Amoníaco) Ofertas Trabaja en COFRICO y GRADHOC Ofertas Trabaja en COFRICO y GRADHOC Web Web Técnico/a Frigorista Industrial – Especialista en NH₃ (Amoníaco) OPERACIONES - COFRICO ·                                             Vigo Inscribirme Perfil Técnico Frigorista - Oficial 1º Localización Vigo, Pontevedra, España Experiencia 5\n                                                                            Años de Experiencia Inscribirme OPERACIONES - COFRICO Técnico Frigorista - Oficial 1º hace 10 días 5\n                                                                                            Años de Experiencia Descripción Técnico/a Frigorista Industrial – Especialista en NH₃ (Amoníaco) 📍 Vigo y alrededores | Contrato estable ¿Quiénes somos? En Cofrico somos especialistas en el diseño, instalación y mantenimiento de sistemas de refrigeración industrial, comercial y climatización, con una sólida trayectoria en el desarrollo de soluciones basadas en refrigerantes naturales como el amoníaco (NH₃) y el CO₂ . Trabajamos en proyectos de frío industrial de gran envergadura para sectores como la industria alimentaria, pesquera y logística frigorífica , con instalaciones que incluyen centrales frigoríficas de NH₃, sistemas en cascada NH₃/CO₂, plantas enfriadoras, túneles de congelación, cámaras frigoríficas industriales y sistemas de refrigeración de procesos productivos. Apostamos por la innovación, la eficiencia energética y la sostenibilidad, incorporando tecnologías avanzadas como Gradhoc , nuestra solución de monitorización y optimización energética, que nos permite mejorar el rendimiento de las instalaciones y avanzar hacia un mantenimiento predictivo. ¿A quién buscamos? Queremos incorporar a nuestro equipo de Vigo un/a Técnico/a Frigorista Industrial con experiencia en instalaciones de amoníaco (NH₃) , que disfrute del trabajo técnico, la resolución de averías y los retos que plantean las instalaciones frigoríficas industriales. Buscamos una persona con autonomía, capacidad de diagnóstico y compromiso con la seguridad y la calidad del servicio, que quiera seguir desarrollándose en una empresa especializada en refrigeración industrial. ¿Qué harás en tu día a día? Realizar el mantenimiento preventivo y correctivo de instalaciones frigoríficas industriales , principalmente con refrigerante NH₃. Diagnosticar y resolver averías mecánicas, eléctricas y de funcionamiento en centrales frigoríficas y equipos industriales. Intervenir en instalaciones con compresores industriales, evaporadores, condensadores, bombas, válvulas y sistemas de regulación y control. Supervisar el funcionamiento de las instalaciones, verificando parámetros de operación, rendimiento y condiciones de seguridad. Realizar ajustes y actuaciones técnicas para garantizar la fiabilidad, continuidad operativa y eficiencia energética de los sistemas. Colaborar con el equipo técnico en la identificación de mejoras y optimización de las instalaciones. ¿Qué te ofrecemos? Estabilidad laboral: contrato indefinido y un proyecto profesional a largo plazo. Especialización y desarrollo profesional: trabajarás con instalaciones de frío industrial y tecnologías de refrigeración con refrigerantes naturales, punteras a nivel nacional. Formación continua: contarás con el apoyo de nuestro equipo de soporte técnico SAT, formado por profesionales con amplia experiencia en instalaciones frigoríficas industriales. Horario de lunes a viernes , de 08:00 a 17:30 hrs. Furgoneta de empresa para los desplazamientos laborales. Media dieta diaria y dieta completa, cuando sean necesarias por desplazamientos. Requisitos ¿Qué buscamos en ti? Experiencia previa en mantenimiento de instalaciones de refrigeración industrial con amoníaco (NH₃). Este es el requisito principal de la posición. Conocimientos sólidos de sistemas frigoríficos industriales y sus componentes. Capacidad para diagnosticar averías y trabajar de forma autónoma en instalaciones industriales. Valoraremos especialmente: Experiencia con compresores de tornillo y alternativos, sistemas de NH₃ bombeado, circuitos de glicol y sistemas en cascada NH₃/CO₂. Experiencia en instalaciones frigoríficas de la industria alimentaria, pesquera o logística. Titulación de Técnico Superior en mantenimiento de Instalaciones Térmicas y de Fluidos, ó Técnico en Montaje y Mantenimiento de Instalaciones de Frío, ",
+      "url": "https://cofrico.viterbit.site/tecnico-a-frigorista-industrial-especialista-en-nh3-amoniaco-KGirln2_wG_bkOr4/",
+      "source": "Cofrico · Viterbit",
+      "sourceKind": "employer",
+      "checkedAt": "2026-10-26T12:46:01.287521+00:00",
+      "closingDate": null,
+      "experience": "experienced",
+      "workplace": "onsite",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar permiso de conducir",
+        "Revisar desplazamientos y viajes",
+        "Revisar años de experiencia exigidos",
+        "Revisar acreditaciones de refrigeración, gases fluorados y especialidad requerida"
+      ],
+      "postedDate": null
+    },
+    {
+      "id": "career-randstad-dea95ba46a2191f932d1",
+      "category": "electricity",
+      "title": "Electricista industrial BT",
+      "company": "Randstad · empresa cliente",
+      "location": "Coruña (A)",
+      "description": "-Ejecución de nuevas instalaciones eléctricas de BT y MT\n-Cableado y montaje de cuadros eléctricos,\n-Bandejas, tubo, equipos eléctricos, variadores, motores, canalizaciones, luminarias, tomas de corrientes, transformadores, celdas, etc. Requisitos del puesto: -FP en electricidad y electrónica\n-Disponibilidad para desplazarse a nivel nacional en alguna ocasión\n-Experiencia en puestos similares Formación: FP Grado Medio\n\n Conocimientos: Electricidad, Electrónica\n Experiencia: 3 años\n\nTus beneficios: -Salario por encima de convenio\n-Proyecto estable y con crecimiento profesional\n-Horario; Lunes a Jueves; de 8:00 a 13:30 15:00 a 18:00, Viernes; 8:00 a 14:00\n-Seguro médico",
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/electricista-industrial-bt-3012806/",
+      "source": "Randstad · portal original",
+      "sourceKind": "recruitment-agency",
+      "checkedAt": "2026-10-26T12:47:27.416142+00:00",
+      "closingDate": "2026-11-06",
+      "experience": "unknown",
+      "workplace": "onsite",
+      "inVigo": false,
+      "inCoruna": true,
+      "requirements": [
+        "Revisar desplazamientos y viajes",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-10-06",
+      "contractType": "FULL_TIME"
+    },
+    {
+      "id": "career-randstad-93381efa0e7e6e621ac5",
+      "category": "electricity",
+      "title": "Un/una Electricista Junior (puesto indefinido)",
+      "company": "Randstad · empresa cliente",
+      "location": "Vigo",
+      "description": "* Realizar el montaje, canalización y tendido de cableado en instalaciones de obra nueva industrial y comercial (supermercados, naves e instalaciones logísticas).\n* Ejecutar labores de mantenimiento preventivo y correctivo en redes eléctricas e instalaciones generales.\n* Colaborar en la lectura e interpretación de esquemas y planos eléctricos de obra.\n* Emplear adecuadamente los equipos de medida y herramientas técnicas siguiendo las instrucciones de seguridad.\n* Cumplir de forma rigurosa los protocolos y normas de Prevención de Riesgos Laborales. Requisitos del puesto: Mínimos:\n\n* Formación Profesional de Grado Medio en Electricidad, Electrotecnia o especialidad técnica equivalente.\n* Experiencia mínima de 1 año en funciones de electricidad (instalaciones o mantenimiento).\n* Motivación por el aprendizaje continuo y capacidad de trabajo en equipo.\n* Residencia en Vigo o provincia.\n* Permiso de conducir B (imprescindible para transladarse a obra)\n\nDeseables:\n\n* Formación en Prevención de Riesgos Laborales (PRL) de 60 horas en la especialidad eléctrica o sector construcción.\n* Experiencia previa en obra nueva industrial o retail comercial. Formación: FP Grado Superior\n: Electricidad y Electrónica\n Conocimientos: Electricidad\n Experiencia: 1 año\n\nTus beneficios: * Salario: 24.100 ¿ brutos/año\n* Jornada: Jornada completa\n* Tipo de contrato: Indefinido (Contratación directa por empresa)\n* Formación: Plan de desarrollo y formación técnica a cargo de la empresa\n* Horario flexible: De 08:00 h a 16:00 h de L a V (con posibilidad de trabajar fines de semana muy puntualmente)\n* Ubicacion de trabajo: Obra en Galicia, principalmente Vigo y/alrededores",
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/electricista-junior-puesto-indefinido-3016194/",
+      "source": "Randstad · portal original",
+      "sourceKind": "recruitment-agency",
+      "checkedAt": "2026-10-26T12:47:27.416142+00:00",
+      "closingDate": "2026-11-20",
+      "experience": "junior",
+      "workplace": "onsite",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar formación PRL requerida",
+        "Revisar permiso de conducir"
+      ],
+      "postedDate": "2026-10-20",
+      "contractType": "FULL_TIME"
+    },
+    {
+      "id": "career-randstad-8b31abf243170976e47a",
+      "category": "electricity",
+      "title": "Un/una Electricista Senior (puesto indefinido)",
+      "company": "Randstad · empresa cliente",
+      "location": "Vigo",
+      "description": "* Ejecutar intervenciones complejas de instalación eléctrica, montaje y canalización en proyectos de obra nueva industrial y comercial.\n* Realizar el mantenimiento preventivo y correctivo de instalaciones eléctricas de baja tensión y cuadros de distribución.\n* Diagnosticar y resolver incidencias o averías en cuadros de control y sistemas de automatización comercial e industrial.\n* Interpretar de forma avanzada planos técnicos, esquemas unifilares y documentación de proyecto.\n* Guiar y prestar apoyo técnico al personal de menor experiencia en el desempeño de las tareas diarias en obra.\n* Garantizar el cumplimiento estricto de los estándares de calidad y la normativa de seguridad laboral en cada actuación. Requisitos del puesto: Mínimos:\n\n* Formación Profesional de Grado Medio en Electricidad, Electrotecnia o especialidad técnica equivalente.\n* Experiencia mínima de 5 años en funciones de electricidad (instalaciones o mantenimiento).\n* Motivación por el aprendizaje continuo y capacidad de trabajo en equipo.\n* Dominio en la interpretación de esquemas eléctricos y aplicación del Reglamento Electrotécnico para Baja Tensión/ Media Tensión.\n* Residencia en Vigo o provincia.\n* Permiso de conducir B (imprescindible para transladarse a obra)\n\nDeseables:\n\n* Formación en Prevención de Riesgos Laborales (PRL) de 60 horas en la especialidad eléctrica o sector construcción.\n* Experiencia previa en obra nueva industrial o retail comercial. Formación: FP Grado Medio\n\n Conocimientos: Electricidad\n Experiencia: 5 años\n\nTus beneficios: * Salario: 27.000 ¿ brutos/año\n* Jornada: Jornada completa\n* Tipo de contrato: Indefinido (Contratación directa por empresa)\n* Formación: Plan de desarrollo y formación técnica a cargo de la empresa\n* Horario flexible: De 08:00 h a 16:00 h de L a V (con posibilidad de trabajar fines de semana muy puntualmente)\n* Ubicacion de trabajo: Obra en Galicia, principalmente Vigo y/alrededores",
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/electricista-senior-puesto-indefinido-3016225/",
+      "source": "Randstad · portal original",
+      "sourceKind": "recruitment-agency",
+      "checkedAt": "2026-10-26T12:47:27.416142+00:00",
+      "closingDate": "2026-11-20",
+      "experience": "experienced",
+      "workplace": "onsite",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar formación PRL requerida",
+        "Revisar permiso de conducir",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-10-20",
+      "contractType": "FULL_TIME"
+    },
+    {
+      "id": "career-randstad-492fa0002024a8fde7f0",
+      "category": "electricity",
+      "title": "Un/una electricista para Vigo (indefinido)",
+      "company": "Randstad · empresa cliente",
+      "location": "Vigo",
+      "description": "Tus funciones\nEjecutar nuevas instalaciones eléctricas de Baja Tensión (BT) y Media Tensión (MT).\n\nRealizar el cableado y montaje de cuadros eléctricos, equipos, variadores, motores, luminarias, tomas de corriente, transformadores y celdas.\n\nMontar e instalar canalizaciones, bandejas y tubos respondiendo a las especificaciones técnicas del proyecto.\n\nInterpretar esquemas eléctricos para asegurar una instalación precisa y de máxima calidad. Requisitos del puesto: Mínimos:\n\nFormación académica en Electricidad (Ciclo Formativo Grado Medio/Superior o equivalente).\n\nExperiencia previa en montajes eléctricos dentro del sector industrial.\n\nDominio y solvencia en la interpretación de esquemas eléctricos.\n\nPermiso de conducir en vigor.\n\nDisponibilidad para trabajar de manera puntual los fines de semana y realizar prolongación de la jornada habitual entre semana.\n\nDeseables:\n\nFormación en Prevención de Riesgos Laborales (PRL) específica para el sector del metal/electricidad (20h / 60h).\n\nCertificación o conocimientos para trabajos en altura o en instalaciones de Baja y Media Tensión. Formación: FP Grado Medio\n\n Conocimientos: Electricidad, Neumática, Mecánica de fluidos\n Experiencia: 2 años\n\nTus beneficios: Salario: 26.000 ¿ brutos/año + Plus de jornada flexible (800 ¿/año) + Horas extras + Pluses por condiciones de trabajo.\n\nJornada: Jornada completa.\n\nTipo de contrato: Contrato estable.\n\nTickets comida: Retribución flexible disponible para comidas, transporte y guardería.\n\nAyuda guardería: Acceso a la opción de retribución flexible para guardería.\n\nFormación: Formación continua y oportunidades de desarrollo profesional.\n\nHorario flexible: El horario habitualmente es únicamente en turno de mañana de Lunes a viernes de 7 a 15h, pero se necesita personal que en momentos deteminados puedan realizar horario de lunes a jueves de 8:00 a 13:30 y de 15:00 a 18:00, y viernes de 8:00 a 14:00 (incluye plus por jornada flexible).\n\nOtros beneficios: Muy poca movilidad geográfica (trabajo muy cerca de domiciio sin grandes desplazamientos), seguro de salud al cumplir 6 meses de antigüedad, y descuentos y promociones en marcas comerciales.",
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/electricista-vigo-indefinido-3012909/",
+      "source": "Randstad · portal original",
+      "sourceKind": "recruitment-agency",
+      "checkedAt": "2026-10-26T12:47:27.416142+00:00",
+      "closingDate": "2026-11-06",
+      "experience": "unknown",
+      "workplace": "onsite",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar formación PRL requerida",
+        "Revisar permiso de conducir",
+        "Revisar desplazamientos y viajes",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-10-06",
+      "contractType": "FULL_TIME"
+    },
+    {
+      "id": "career-randstad-264a88bc6b56d39572dc",
+      "category": "electricity",
+      "title": "Frigorista Oficial 1º de Mantenimiento con Furgoneta (Indefinido)",
+      "company": "Randstad · empresa cliente",
+      "location": "Coruña (A)",
+      "description": "- Ejecutar mantenimientos preventivos y correctivos en instalaciones y equipos de climatización y refrigeración (temperatura positiva y negativa).\n- Diagnosticar y reparar averías mecánicas y frigoríficas, incluyendo sustitución de compresores, localización y reparación de fugas, y carga de refrigerante.\n- Realizar soldadura oxiacetilénica/fuerte en tuberías y circuitos frigoríficos.\n- Participar en nuevas instalaciones, obras y reformas de sistemas de climatización, así como en el montaje y fabricación de conductos de fibra.\n- Atender tareas multiservicio e intervenciones técnicas derivadas de las necesidades de mantenimiento en sedes corporativas, entidades bancarias y plantas industriales. Requisitos del puesto: - Formación Académica: Ciclo Formativo de Grado Medio o Superior en Instalaciones Frigoríficas y de Climatización, Mantenimiento Electromecánico o similar.\n- Experiencia: Mínimo 4-5 años de experiencia demostrable como frigorista en el sector terciario o industrial.\n- Conocimientos técnicos: Dominio en cambio de compresores, circuitos de refrigeración (positiva/negativa) y soldadura aplicada a frío; conocimientos sólidos en climatización (se valorará positivamente la capacidad de fabricación y montaje de conductos de fibra).\n- Imprescindible: Carnet de conducir B en vigor.\n- Muy valorable: Carnet RITE, Certificado de Manipulador de Gases Fluorados (cualquier carga) y curso de Prevención de Riesgos Laborales (PRL) de 60 horas (Recurso Preventivo o Convenio del Metal).\n- Disponibilidad: Residencia en A Coruña y disponibilidad para desplazamientos puntuales/excepcionales por la zona y Castilla y León. Formación: FP Grado Medio\n\n Conocimientos: Resolución proactiva de incidencias\n Experiencia: 3 años\n\nTus beneficios: - Contrato: Indefinido desde el primer día, con estabilidad en una empresa líder.\n- Categoría: Oficial 1ª según Convenio del Metal de A Coruña.\n- Retribución salarial: Banda salarial entre 27.295 ¿ y 29.000 ¿ brutos/año (fijado según valía técnica y competencias demostradas).\n- Plus de disponibilidad: 90 ¿/mes (11 meses al año) para cobertura de guardias/avisos locales (tasa de incidencias muy baja y filtrada previamente por gestor).\n- Herramientas de trabajo: Furgoneta de empresa equipada, tarjeta Solred y geolocalización para desplazamientos laborales.\n- Jornada laboral: Jornada continua durante todo el año: De lunes a jueves de 08:00 a 16:00 h. Viernes de 08:00 a 15:00 h (7 horas).",
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/frigorista-oficial-1o-mantenimiento-con-furgoneta-indefinido-3017520/",
+      "source": "Randstad · portal original",
+      "sourceKind": "recruitment-agency",
+      "checkedAt": "2026-10-26T12:47:27.416142+00:00",
+      "closingDate": "2026-11-26",
+      "experience": "experienced",
+      "workplace": "onsite",
+      "inVigo": false,
+      "inCoruna": true,
+      "requirements": [
+        "Revisar formación PRL requerida",
+        "Revisar permiso de conducir",
+        "Revisar desplazamientos y viajes",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-10-26",
+      "contractType": "FULL_TIME"
+    },
+    {
+      "id": "career-randstad-0d5fdd35c2349b5c598f",
+      "category": "electricity",
+      "title": "Técnico/a mantenimiento",
+      "company": "Randstad · empresa cliente",
+      "location": "Vigo",
+      "description": ". Mantenimiento de Sistemas Activos de Extinción (Manuales y Automáticos)\nExtintores y BIEs: Revisión anual de extintores (pesaje, estado de la manguera, manómetro, boquilla) y de las Bocas de Incendio Equipadas (comprobación de presión, estado de la manguera y válvulas).\n\nSistemas de Rociadores (Sprinklers): Verificación visual de los cabezales, limpieza y pruebas de las válvulas de alarma de los puestos de control.\n\n2. Mantenimiento de Sistemas de Detección (Protección Electrónica)\nCentrales de Incendios: Comprobación del correcto funcionamiento de la centralita del cliente, testeo de las baterías de emergencia y verificación de que las señales de alarma se transmiten correctamente (si están conectadas a una Central Receptora de Alarmas).\n\nDetectores y Pulsadores: Limpieza y prueba real de detectores ópticos de humo, detectores térmicos y barreras, así como la activación de los pulsadores manuales de alarma para asegurar que activan las sirenas.\n\n3. Grupos de Presión e Instalaciones Hidráulicas\nRevisión periódica de las bombas de agua contra incendios (junto con el motor diésel y eléctrico) para asegurar que arrancan automáticamente ante una caída de presión en la red y que mantienen el caudal necesario.\n\n4. Sistemas de Evacuación y Ventilación\nAlumbrado de emergencia: Comprobación de que las luces de emergencia se encienden al cortar la corriente y que las baterías tienen la autonomía mínima obligatoria.\n\nSistemas de extracción de humos: Revisión de las compuertas cortafuegos y los sistemas de ventilación mecánica en parkings o naves industriales.\n\n5. Gestión Técnica y Trato con el Cliente\nRutas en la zona de Levante: Organización de las visitas a clientes (fábricas, centros comerciales, oficinas, comunidades) asignados a la delegación de Paterna.\n\nPartes de trabajo digitales: Cumplimentación de las actas de revisión y las listas de comprobación según la norma UNE 23580 en una tablet o dispositivo móvil, informando al cliente de cualquier anomalía o deficiencia que requiera una reparación obligatoria. Requisitos del puesto: ¿ Formación Profesional de grado medio o superior de electricidad, electrónica,\nmecánica o fontanería o en su defecto experiencia.\n\n¿ Muy valorable formación en prevención de riesgos laborales.\n\n¿ Se requiere nivel medio en paquete office y correo electrónico.\n\n¿ Experiencia en revisiones de grupos de presión y reparaciones grupos de\npresión (cambios aceite, cuadros eléctricos, etc).\n\n¿ Experiencia en fontanería, roscar, ranurar o soldar.\n\n¿ Valorable conocimiento de instalaciones de canalizaciones eléctricas en PVC,\nacero, bandejas, uso de polímetro, etc.\n\n¿ Imprescindible carnet de conducir B\n\n¿ Disponibilidad para viajar de manera puntual.\n\n¿ Disponibilidad para realizar trabajos durante el fin de semana.\n\n¿ Disponibilidad para realizar trabajos durante la noche. Formación: FP Grado Superior\n\n Conocimientos: Albañilería, Fontanería, Electricidad\n Experiencia: 2 años\n\nTus beneficios: - Salario: Fijo anual de entre 29,000 y 32,000 euros brutos, negociable según valía.\n\n- Jornada intensiva\n\n- Oportunidad de desarrollo profesional en una empresa importante.\n\n- Ambiente de trabajo agradable y dinámico, con un equipo de profesionales comprometidos.\n\n- Contrato indefinido.",
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/tecnico-a-mantenimiento-3013165/",
+      "source": "Randstad · portal original",
+      "sourceKind": "recruitment-agency",
+      "checkedAt": "2026-10-26T12:47:27.416142+00:00",
+      "closingDate": "2026-11-07",
+      "experience": "unknown",
+      "workplace": "onsite",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar formación PRL requerida",
+        "Revisar permiso de conducir",
+        "Revisar desplazamientos y viajes",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-10-07",
+      "contractType": "FULL_TIME"
+    },
+    {
+      "id": "career-randstad-91ffbad130263f2e5a66",
+      "category": "electricity",
+      "title": "Técnico/a mantenimiento (PUESTO INDEFINIDO - SOLO PARA FIN DE SEMANA 24h)",
+      "company": "Randstad · empresa cliente",
+      "location": "Vigo",
+      "description": "- Mantenimiento de lineas de producción (Correctivo y preventivo)\n- Montaje y desmontaje de lineas de produccion Requisitos del puesto: - FP electromecánica o similar\n- Residir vigo y/o alrededores\n- Carnet conducir vigente\n- Experiencia reciente en un puesto similar Formación: FP Grado Medio\n\n Conocimientos: Electromecánica\n Experiencia: 2 años\n\nTus beneficios: - Convenio del metal. Salario segun convenio\n- Turno fin de semana ( horario de 14:00 a 02:00) - 24h/semana\n- Puesto estable y contrato directo por empresa",
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/tecnico-a-mantenimiento-puesto-indefinido-solo-fin-semana-24h-3017188/",
+      "source": "Randstad · portal original",
+      "sourceKind": "recruitment-agency",
+      "checkedAt": "2026-10-26T12:47:27.416142+00:00",
+      "closingDate": "2026-11-23",
+      "experience": "unknown",
+      "workplace": "onsite",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar permiso de conducir",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-10-23",
+      "contractType": "FULL_TIME"
+    },
+    {
+      "id": "career-randstad-fd6a2140a3dd577e503d",
+      "category": "electricity",
+      "title": "Técnico/A De Oficina Técnica (Ingeniería Eléctrica)",
+      "company": "Randstad · empresa cliente",
+      "location": "Vigo",
+      "description": "Tus funciones serán:\n\n- Desarrollo de esquemas eléctricos y planos de detalle.\n\n- Generación y revisión de la documentación técnica asociada a los proyectos. Requisitos del puesto: - Formación en Ingeniería Eléctrica, Electrónica, Industrial o Grado Superior equivalente.\n\n- Manejo de software de esquemas eléctricos: E3, SEE Electrical (IGE+XAO) o similares.\n\n- Dominio de AutoCAD.\n\n- Experiencia previa en oficina técnica. Formación: Ingeniero Técnico\n\n, Ingeniero Superior\n\n Conocimientos: AutoCAD\n, Diagramas eléctricos\n, E3.series\n, seelec\n Experiencia: 1 año\n\nTus beneficios: -  Jornada continua de 7 a 15h.\n- Formar parte de una empresa multinacional.\n- Plan de carrera atractivo.\n- Formación continua.",
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/tecnico-a-oficina-tecnica-ingenieria-ectrica-3005914/",
+      "source": "Randstad · portal original",
+      "sourceKind": "recruitment-agency",
+      "checkedAt": "2026-10-26T12:47:27.416142+00:00",
+      "closingDate": "2027-03-10",
+      "experience": "unknown",
+      "workplace": "onsite",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar si exige titulación universitaria"
+      ],
+      "postedDate": "2026-09-10",
+      "contractType": "TEMPORARY"
+    },
+    {
+      "id": "career-randstad-419896c4d0bf5c6560fb",
+      "category": "electricity",
+      "title": "Técnico/a de Servicio de Campo - Electromecánico/a de Motores Industriales",
+      "company": "Randstad · empresa cliente",
+      "location": "Coruña (A)",
+      "description": "- Ejecutar el diagnóstico, mantenimiento preventivo y correctivo de motores diésel y de gas de gran tonelaje, tanto en aplicaciones terrestres (plantas de energía/cogeneración) como marinas (buques).\n- Realizar ajustes complejos electromecánicos y calibraciones en los sistemas de control de los equipos.\n- Interpretar planos, diagramas y esquemas mecánicos, eléctricos y electrónicos propios de la tecnología del fabricante.\n- Evaluar el estado técnico de los componentes del motor, emitiendo recomendaciones técnicas de reparación o mejora.\n- Coordinar las intervenciones in situ con el cliente y verificar el cumplimiento riguroso de la normativa de seguridad y HSE (Health, Safety & Environment).\n- Cumplimentar partes de trabajo y reportes técnicos a través de la plataforma interna (SAT-Land), registrando datos de calibración, mediciones e incidencias.\n- Prestar apoyo técnico operativo al equipo en paradas programadas y averías críticas a nivel peninsular e internacional cuando se requiera refuerzo. Requisitos del puesto: - Formación académica: Formación Profesional de Grado Medio o Superior en Electromecánica, Mecatrónica Industrial, Automoción o formación/experiencia equivalente en el sector Náutico/Naval.\n- Experiencia laboral: 3 años de experiencia demostrable en mantenimiento industrial y reparación de motores diésel o de gas de gran tonelaje.\n- Conocimientos técnicos: Dominio de la lectura de esquemas electromecánicos y capacidad para realizar ajustes en sistemas de control.\n- Movilidad y licencias: Carnet de conducir B y vehículo propio inicial. Disponibilidad total para viajar a nivel nacional (base operativa en A Coruña/Galicia y Norte de Portugal) e internacional.\n- Disponibilidad operativa: Flexibilidad para trabajar en régimen de bloques (14 días con 12 de trabajo y 2 de descanso). Formación: Ciclo Formativo Grado Medio\n\n Conocimientos: Actitud optimista, Puntualidad\n Experiencia: 3 años\n\nTus beneficios: - Retribución fija atractiva: Salario base de 28.000 ¿ brutos anuales en 14 pagas.\n- Complementos y pluses:\n            - Plus de disponibilidad inicial de 4.000 ¿/año (cubre los primeros 15 retenes).\n             - Complemento por fin de semana trabajado de 97 ¿ por sábado y 97 ¿ por domingo.\n              - Bolsa de incentivos/objetivos de aprox. 900 ¿ semestrales (a partir del primer año).\n               - Variable grupal del 4% del salario según objetivos de la compañía.\n- Dieta y alojamiento: Sistema de dietas (78 ¿/día en dieta completa nacional, 128 ¿ en Portugal, 158 ¿ en otros destinos internacionales) y alojamiento garantizado en hoteles de 4 estrellas mínimo (habitación individual).\n- Medios de trabajo: Compensación de kilometraje a 0,47 ¿/km inicial en vehículo propio con posterior asignación de coche de empresa. Se facilita ordenador portátil, teléfono móvil y EPIS completos.\n- Plan de acogida y formación: 2 semanas de formación continuada en Tarragona junto a un equipo senior experimentado, además de formación anual en Ciudad Real.\n- Jornada y descanso: Contratación bajo Convenio Colectivo del Metal de Tarragona (1.744 horas/año) con sistema de descanso acumulado inmediatamente.",
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/tecnico-a-servicio-campo-electromecanico-a-motores-industriales-3014542/",
+      "source": "Randstad · portal original",
+      "sourceKind": "recruitment-agency",
+      "checkedAt": "2026-10-26T12:47:27.416142+00:00",
+      "closingDate": "2026-11-13",
+      "experience": "experienced",
+      "workplace": "onsite",
+      "inVigo": false,
+      "inCoruna": true,
+      "requirements": [
+        "Revisar permiso de conducir",
+        "Revisar desplazamientos y viajes",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-10-13",
+      "contractType": "FULL_TIME"
+    },
+    {
+      "id": "career-randstad-fa46b9aa070560378c27",
+      "category": "electricity",
+      "title": "Técnico/a de Soporte Eléctrico y Automatización",
+      "company": "Randstad · empresa cliente",
+      "location": "Vigo",
+      "description": "Brindar soporte técnico en la resolución de incidencias eléctricas, electrónicas y de automatización. \nDiagnosticar y solventar averías en maquinaria industrial, tanto de forma remota como presencial.  \nPrestar apoyo continuo a profesionales del equipo técnico de campo en la resolución de incidencias.  \nAnalizar fallos eléctricos, electrónicos, de control y de comunicaciones industriales. \nColaborar en puestas en marcha, pruebas funcionales y procesos de optimización de equipos.  \nGestionar copias de seguridad, carga, descarga y actualización de programas de PLC y HMI.   \nContribuir a la formación técnica y a la transferencia de conocimiento dentro del equipo de Servicio de Asistencia Técnica (SAT) Requisitos del puesto: - FP Superior en automatización y robótica industrial FINALIZADO\n- En búsqueda de desarrollo y estabilidad\n- Residir en Vigo Formación: FP Grado Superior\n\n Conocimientos: Electricidad\n, Automation Solutions\n Experiencia: 5 años\n\nTus beneficios: Salario: 33.000 ¿ brutos anuales.\n\nTipo de contrato: Indefinido.\n\nJornada: Horario de mañana",
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/tecnico-a-soporte-ectrico-y-automatizacion-3013942/",
+      "source": "Randstad · portal original",
+      "sourceKind": "recruitment-agency",
+      "checkedAt": "2026-10-26T12:47:27.416142+00:00",
+      "closingDate": "2026-11-09",
+      "experience": "unknown",
+      "workplace": "onsite",
+      "inVigo": true,
+      "inCoruna": false,
+      "requirements": [
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-10-09",
+      "contractType": "FULL_TIME"
+    },
+    {
+      "id": "career-randstad-a08591445f0814255715",
+      "category": "electricity",
+      "title": "Técnico mantenimiento con inglés y desplazamientos",
+      "company": "Randstad · empresa cliente",
+      "location": "Coruña (A)",
+      "description": "-Instalación y puesta en marcha de equipos en cliente (on-site).\n-Mantenimiento preventivo y correctivo de maquinaria industrial.\n-Diagnóstico y resolución de averías mecánicas, eléctricas o electrónicas.\n-Elaboración de informes técnicos de intervención.\n-Asistencia técnica remota cuando sea necesario.\n-Formación básica a clientes sobre el uso de equipos.\n-Cumplimiento de normativas de seguridad (industria naval, ATEX, aeronáutica, etc.).\n-Coordinación con departamentos internos (ingeniería, producción, calidad).\n-Gestión de repuestos y herramientas asignadas.\nDisponibilidad para viajes nacionales e internacionales. Requisitos del puesto: -Formación: Ciclo Formativo de Grado Superior (FPII) en Electromecánica, Mecatrónica, Automatización o similar.\n-Idiomas: Nivel de inglés fluido (B2 o superior), indispensable para la comunicación técnica con clientes internacionales.\n-Experiencia: Experiencia previa demostrable en funciones de SAT, preferiblemente en el sector de fluidos, maquinaria industrial o sistemas de vacío.\n-Disponibilidad: Disponibilidad total para viajar a nivel internacional de forma habitual. Formación: FP Grado Superior\n\n Conocimientos: Soporte técnico a usuarios\n Experiencia: 3 años\n\nTus beneficios: -Contrato: Contrato laboral indefinido directamente con la empresa usuaria (estabilidad profesional).\n-Jornada y Horario: Flexibilidad horaria adaptada al tipo de servicio. Cuando trabajes en el taller central, el horario será de 08:00 a 17:00 h (con los descansos establecidos). Para las intervenciones en obra y proyectos internacionales, el horario será a convenir según las necesidades operativas de la instalación.\n-Retribución: Salario competitivo, negociable en función de la experiencia y valores aportados por la persona seleccionada.\n-Beneficios adicionales: Gastos de desplazamiento, dietas y kilometraje totalmente cubiertos durante los viajes internacionales, además de un plan de formación continua en los productos y tecnologías de la compañía.",
+      "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/tecnico-mantenimiento-con-ingles-y-desplazamientos-3012096/",
+      "source": "Randstad · portal original",
+      "sourceKind": "recruitment-agency",
+      "checkedAt": "2026-10-26T12:47:27.416142+00:00",
+      "closingDate": "2026-11-02",
+      "experience": "unknown",
+      "workplace": "onsite",
+      "inVigo": false,
+      "inCoruna": true,
+      "requirements": [
+        "Revisar desplazamientos y viajes",
+        "Revisar si exige titulación universitaria",
+        "Revisar años de experiencia exigidos"
+      ],
+      "postedDate": "2026-10-02",
+      "contractType": "FULL_TIME"
     }
   ],
   "courses": [
@@ -5979,7 +6343,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Sen determinar",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/ELEE004PO.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2025-003563-01",
@@ -5996,7 +6360,7 @@
       "location": "VIGO",
       "inVigo": true,
       "inCoruna": false,
-      "level": "review",
+      "level": "intermediate",
       "description": "Especialidad ELEM0311. Electricidade e Electrónica / MÁQUINAS ELECTROMECÁNICAS. Nivel de acceso: Nivel 2 (Formación cualificada completa). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 580,
       "startDate": "2027-01-07",
@@ -6005,7 +6369,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 2 (Formación cualificada completa)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/ELEM0311.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-004436-01",
@@ -6022,7 +6386,7 @@
       "location": "VIGO",
       "inVigo": true,
       "inCoruna": false,
-      "level": "review",
+      "level": "intermediate",
       "description": "Especialidad ELES0209. Electricidade e Electrónica / INSTALACIÓNS DE TELECOMUNICACIÓNS. Nivel de acceso: Nivel 2 (Formación cualificada completa). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 498,
       "startDate": "2026-10-27",
@@ -6031,7 +6395,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 2 (Formación cualificada completa)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/ELES0209.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2025-003564-01",
@@ -6048,7 +6412,7 @@
       "location": "VIGO",
       "inVigo": true,
       "inCoruna": false,
-      "level": "review",
+      "level": "intermediate",
       "description": "Especialidad ELEM0111. Electricidade e Electrónica / MÁQUINAS ELECTROMECÁNICAS. Nivel de acceso: Nivel 2 (Formación cualificada completa). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 550,
       "startDate": "2026-11-23",
@@ -6057,7 +6421,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 2 (Formación cualificada completa)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/ELEM0111.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2025-003561-01",
@@ -6074,7 +6438,7 @@
       "location": "VIGO",
       "inVigo": true,
       "inCoruna": false,
-      "level": "advanced",
+      "level": "intermediate",
       "description": "Especialidad ELEM0210. Electricidade e Electrónica / MÁQUINAS ELECTROMECÁNICAS. Nivel de acceso: Nivel 3 (Formación no traballo técnico). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 720,
       "startDate": "2026-11-03",
@@ -6083,7 +6447,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 3 (Formación no traballo técnico)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/ELEM0210.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-004822-01",
@@ -6100,7 +6464,7 @@
       "location": "OURENSE",
       "inVigo": false,
       "inCoruna": false,
-      "level": "beginner",
+      "level": "intermediate",
       "description": "Especialidad IFCT0019. Informática e Comunicacións / SISTEMAS E TELEMÁTICA. Nivel de acceso: Nivel 1 (Formación inicial básica). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 290,
       "startDate": "2027-01-11",
@@ -6109,7 +6473,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 1 (Formación inicial básica)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCT0019.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-003764-01",
@@ -6126,7 +6490,7 @@
       "location": "VIGO",
       "inVigo": true,
       "inCoruna": false,
-      "level": "review",
+      "level": "intermediate",
       "description": "Especialidad IFCT153. Informática e Comunicacións / SISTEMAS E TELEMÁTICA. Nivel de acceso: . Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 70,
       "startDate": "2027-01-26",
@@ -6135,7 +6499,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Consultar requisitos de acceso",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCT153.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-004398-01",
@@ -6152,7 +6516,7 @@
       "location": "BILBAO",
       "inVigo": false,
       "inCoruna": false,
-      "level": "review",
+      "level": "intermediate",
       "description": "Especialidad IFCT0049. Informática e Comunicacións / SISTEMAS E TELEMÁTICA. Nivel de acceso: Nivel 2 (Formación cualificada completa). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 70,
       "startDate": "2027-01-07",
@@ -6161,7 +6525,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 2 (Formación cualificada completa)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCT0049.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-004545-01",
@@ -6178,7 +6542,7 @@
       "location": "VIGO",
       "inVigo": true,
       "inCoruna": false,
-      "level": "review",
+      "level": "intermediate",
       "description": "Especialidad IFCT0049. Informática e Comunicacións / SISTEMAS E TELEMÁTICA. Nivel de acceso: Nivel 2 (Formación cualificada completa). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 70,
       "startDate": "2027-01-07",
@@ -6187,7 +6551,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 2 (Formación cualificada completa)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCT0049.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-004534-01",
@@ -6204,7 +6568,7 @@
       "location": "VIGO",
       "inVigo": true,
       "inCoruna": false,
-      "level": "review",
+      "level": "intermediate",
       "description": "Especialidad IFCT0049. Informática e Comunicacións / SISTEMAS E TELEMÁTICA. Nivel de acceso: Nivel 2 (Formación cualificada completa). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 70,
       "startDate": "2027-01-12",
@@ -6213,7 +6577,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 2 (Formación cualificada completa)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCT0049.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-004563-01",
@@ -6230,7 +6594,7 @@
       "location": "VIGO",
       "inVigo": true,
       "inCoruna": false,
-      "level": "review",
+      "level": "intermediate",
       "description": "Especialidad IFCT0049. Informática e Comunicacións / SISTEMAS E TELEMÁTICA. Nivel de acceso: Nivel 2 (Formación cualificada completa). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 70,
       "startDate": "2027-01-12",
@@ -6239,7 +6603,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 2 (Formación cualificada completa)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCT0049.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-004427-01",
@@ -6256,7 +6620,7 @@
       "location": "OURENSE",
       "inVigo": false,
       "inCoruna": false,
-      "level": "review",
+      "level": "advanced",
       "description": "Especialidad IFCT46. Informática e Comunicacións / SISTEMAS E TELEMÁTICA. Nivel de acceso: Nivel 2 (Formación cualificada completa). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 70,
       "startDate": "2027-01-07",
@@ -6265,7 +6629,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 2 (Formación cualificada completa)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCT46.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-004401-01",
@@ -6282,7 +6646,7 @@
       "location": "OURENSE",
       "inVigo": false,
       "inCoruna": false,
-      "level": "beginner",
+      "level": "intermediate",
       "description": "Especialidad IFCT45. Informática e Comunicacións / SISTEMAS E TELEMÁTICA. Nivel de acceso: Nivel 1 (Formación inicial básica). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 70,
       "startDate": "2027-01-08",
@@ -6291,7 +6655,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 1 (Formación inicial básica)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCT45.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-004755-01",
@@ -6308,7 +6672,7 @@
       "location": "OURENSE",
       "inVigo": false,
       "inCoruna": false,
-      "level": "review",
+      "level": "intermediate",
       "description": "Especialidad IFCD0110. Informática e Comunicacións / DESENVOLVEMENTO. Nivel de acceso: Nivel 2 (Formación cualificada completa). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 228,
       "startDate": "2027-01-12",
@@ -6317,7 +6681,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 2 (Formación cualificada completa)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCD0110.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-003759-01",
@@ -6334,7 +6698,7 @@
       "location": "VIGO",
       "inVigo": true,
       "inCoruna": false,
-      "level": "review",
+      "level": "beginner",
       "description": "Especialidad IFCT155PO. Informática e Comunicacións / SISTEMAS E TELEMÁTICA. Nivel de acceso: Sen determinar. Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 190,
       "startDate": "2027-01-19",
@@ -6343,7 +6707,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Sen determinar",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCT155PO.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-004321-01",
@@ -6360,7 +6724,7 @@
       "location": "GUARDA, A",
       "inVigo": false,
       "inCoruna": false,
-      "level": "advanced",
+      "level": "beginner",
       "description": "Especialidad IFCT0138. Informática e Comunicacións / SISTEMAS E TELEMÁTICA. Nivel de acceso: Nivel 3 (Formación no traballo técnico). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 55,
       "startDate": "2027-01-12",
@@ -6369,7 +6733,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 3 (Formación no traballo técnico)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCT0138.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-diplos-2026-003862-01",
@@ -6386,7 +6750,7 @@
       "location": "CORUÑA, A",
       "inVigo": false,
       "inCoruna": true,
-      "level": "beginner",
+      "level": "intermediate",
       "description": "Especialidad IFCT0108. Informática e Comunicacións / SISTEMAS E TELEMÁTICA. Nivel de acceso: Nivel 1 (Formación inicial básica). Confirmar situación laboral, matrícula, plazas y horario en el centro.",
       "durationHours": 448,
       "startDate": "2026-11-02",
@@ -6395,7 +6759,7 @@
       "availability": "Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS",
       "qualification": "Nivel 1 (Formación inicial básica)",
       "syllabusUrl": "https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCT0108.pdf",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "id": "course-cntg-xtifcc2603",
@@ -6410,7 +6774,7 @@
       "modality": "online",
       "location": "",
       "level": "review",
-      "description": "Metodoloxía Virtual + teleformación Tipo de actividade Curso Tipo de edición Edición única (desempregados/as e ocupados/as) Data inicio 26/11/2026 Data fin 21/12/2026 Certificación Sí Examen certificación Cisco Certified Support Technician (CCST) Networking - (100-150 CCST Networking) Exam Data prueba selección 10/11/2026 19:30:00 Criterio de selección Proba técnica presencial no CNTG en Santiago de Compostela Período de rexistro 24/10/2026 - 08/11/2026 Matrícula Gratuíta Horario Virtual: 26 e 30 de novembro; 1, 3, 9, 10, 14, 15, 17 e 21 de decembro;  de 16:30 a 20:30 horas Teleformación: do 27 de novembro ao 18 de decembro de 16:30 a 21:30 horas (horario de referencia) Número de prazas 20 Número de inscritos 15 Tecnoloxías Cisco Inscribirme Ficha Técnico de soporte certificado en redes CISCO Datos xerais Temario Descrición O curso oficial Cisco Certified Support Technician Networking enmárcase no currículo de cursos oficiais do programa Cisco Networking Academy, e os seus contados supoñen unha vía de entrada para o desenvolvemento de habilidades profesionais fundamentais na área de Networking. O curso trata de fundamentos das comunicación en rede, os servizos de asignación de dirección, os aspectos precisos para o dimensionamento da rede, a construción e cableado dunha rede, e a configuración de seguridade básica da mesma. A formación ten unha duración de 70 horas (40 AULA VIRTUAL SINCRONA - 30 TELEFORMACIÓN). HORARIO: Virtual : luns, martes e jxoves de 16:30 a 20:30 horas Teleformación: mércores e venres de 16:30 a 21:30 horas (horario de referencia) Obxectivos Dotar ao alumnado dunha formación e certificación de nivel básico, que o habilita para desenvolver roles de nivel básico como Técnico de Soporte de Rede, Soporte Técnico de nivel básico ou Especialista de Soporte de TI. Dirigido a O curso está dirixido a todos/as aqueles/as profesionais de TI que desexen iniciarse no ámbito das redes informáticas ou precisen reforzar e/ou actualizar os fundamentos da comunicación neste ámbito, consolidando coñecementos con orientación á prestación de servizos de soporte a redes básicas de servizos de resolución de problemas. Para un mellor aproveitamento do curso, é recomendable dispoñer de competencias introdutorias en redes e/ou sistemas operativos -Windows, Linux e/ou dispositivos móbiles-. Perfil do docente Os docentes son instrutores acreditados polo programa Cisco Netacad e certificados nas especialidades que imparten. Temario Conceptos básicos de redes Dispositivos de rede e configuración inicial Direccionamento de rede e resolución de problemas básicos Soporte e seguridad de rede. Horas 70 Beneficios Opción gratuita dun exame de certificación oficial Diploma de asistencia Data fin renuncia 17/11/2026 Data inicio inscripción 24/10/2026 Data fin inscripción 08/11/2026 Horas distancia 40 Horas presenciales 0 Horas teleformación 30 Máximo horas de ausencia 10 horas e 12 minutos Módulos Módulo igualdade (10 horas) Plazo abierto Sí",
+      "description": "Metodoloxía Virtual + teleformación Tipo de actividade Curso Tipo de edición Edición única (desempregados/as e ocupados/as) Data inicio 26/11/2026 Data fin 21/12/2026 Certificación Sí Examen certificación Cisco Certified Support Technician (CCST) Networking - (100-150 CCST Networking) Exam Data prueba selección 10/11/2026 19:30:00 Criterio de selección Proba técnica presencial no CNTG en Santiago de Compostela Período de rexistro 24/10/2026 - 08/11/2026 Matrícula Gratuíta Horario Virtual: 26 e 30 de novembro; 1, 3, 9, 10, 14, 15, 17 e 21 de decembro;  de 16:30 a 20:30 horas Teleformación: do 27 de novembro ao 18 de decembro de 16:30 a 21:30 horas (horario de referencia) Número de prazas 20 Número de inscritos 16 Tecnoloxías Cisco Inscribirme Ficha Técnico de soporte certificado en redes CISCO Datos xerais Temario Descrición O curso oficial Cisco Certified Support Technician Networking enmárcase no currículo de cursos oficiais do programa Cisco Networking Academy, e os seus contados supoñen unha vía de entrada para o desenvolvemento de habilidades profesionais fundamentais na área de Networking. O curso trata de fundamentos das comunicación en rede, os servizos de asignación de dirección, os aspectos precisos para o dimensionamento da rede, a construción e cableado dunha rede, e a configuración de seguridade básica da mesma. A formación ten unha duración de 70 horas (40 AULA VIRTUAL SINCRONA - 30 TELEFORMACIÓN). HORARIO: Virtual : luns, martes e jxoves de 16:30 a 20:30 horas Teleformación: mércores e venres de 16:30 a 21:30 horas (horario de referencia) Obxectivos Dotar ao alumnado dunha formación e certificación de nivel básico, que o habilita para desenvolver roles de nivel básico como Técnico de Soporte de Rede, Soporte Técnico de nivel básico ou Especialista de Soporte de TI. Dirigido a O curso está dirixido a todos/as aqueles/as profesionais de TI que desexen iniciarse no ámbito das redes informáticas ou precisen reforzar e/ou actualizar os fundamentos da comunicación neste ámbito, consolidando coñecementos con orientación á prestación de servizos de soporte a redes básicas de servizos de resolución de problemas. Para un mellor aproveitamento do curso, é recomendable dispoñer de competencias introdutorias en redes e/ou sistemas operativos -Windows, Linux e/ou dispositivos móbiles-. Perfil do docente Os docentes son instrutores acreditados polo programa Cisco Netacad e certificados nas especialidades que imparten. Temario Conceptos básicos de redes Dispositivos de rede e configuración inicial Direccionamento de rede e resolución de problemas básicos Soporte e seguridad de rede. Horas 70 Beneficios Opción gratuita dun exame de certificación oficial Diploma de asistencia Data fin renuncia 17/11/2026 Data inicio inscripción 24/10/2026 Data fin inscripción 08/11/2026 Horas distancia 40 Horas presenciales 0 Horas teleformación 30 Máximo horas de ausencia 10 horas e 12 minutos Módulos Módulo igualdade (10 horas) Plazo abierto Sí",
       "durationHours": 30,
       "startDate": "2026-11-26",
       "enrollmentStart": "2026-10-24",
@@ -6419,7 +6783,7 @@
       "availability": "Inscripción hasta 2026-11-08; confirmar plazas y proceso de selección",
       "qualification": "Revisar conocimientos previos, situación laboral, selección y horario de aula virtual",
       "certificate": "La ficha indica certificación; confirmar examen, asistencia y condiciones",
-      "checkedAt": "2026-10-26T08:53:32.248547+00:00"
+      "checkedAt": "2026-10-26T12:50:24.926086+00:00"
     }
   ],
   "sources": [
@@ -6755,8 +7119,8 @@
       "platform": "Formación",
       "sourceKind": "training",
       "examined": 17,
-      "lastAttemptAt": "2026-10-26T08:55:49.338450+00:00",
-      "lastSuccessAt": "2026-10-26T08:53:32.248547+00:00"
+      "lastAttemptAt": "2026-10-26T12:50:24.926086+00:00",
+      "lastSuccessAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "name": "CNTG · inscripción abierta",
@@ -6767,8 +7131,8 @@
       "platform": "Formación",
       "sourceKind": "training",
       "examined": 1,
-      "lastAttemptAt": "2026-10-26T08:55:49.338450+00:00",
-      "lastSuccessAt": "2026-10-26T08:53:32.248547+00:00"
+      "lastAttemptAt": "2026-10-26T12:50:24.926086+00:00",
+      "lastSuccessAt": "2026-10-26T12:50:24.926086+00:00"
     },
     {
       "name": "SideFX · videojuegos y VFX",
@@ -6799,8 +7163,44 @@
       ],
       "platform": "Formación",
       "sourceKind": "training"
+    },
+    {
+      "name": "Sopra Steria · SmartRecruiters",
+      "status": "ok",
+      "matched": 4,
+      "lastSuccessAt": "2026-10-26T12:46:01.287521+00:00",
+      "lastAttemptAt": "2026-10-26T12:50:24.926086+00:00",
+      "categories": [
+        "programming"
+      ],
+      "platform": "SmartRecruiters",
+      "sourceKind": "ats"
+    },
+    {
+      "name": "Cofrico · Viterbit",
+      "status": "ok",
+      "matched": 1,
+      "lastSuccessAt": "2026-10-26T12:46:01.287521+00:00",
+      "lastAttemptAt": "2026-10-26T12:50:24.926086+00:00",
+      "categories": [
+        "electricity"
+      ],
+      "platform": "Viterbit",
+      "sourceKind": "ats"
+    },
+    {
+      "name": "Randstad · electricidad local",
+      "status": "ok",
+      "matched": 11,
+      "lastSuccessAt": "2026-10-26T12:47:27.416142+00:00",
+      "lastAttemptAt": "2026-10-26T12:50:24.926086+00:00",
+      "categories": [
+        "electricity"
+      ],
+      "platform": "Portal / web pública",
+      "sourceKind": "public-portal"
     }
   ],
   "note": "Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.",
-  "lastPartialUpdate": "2026-10-26T08:55:49.338450+00:00"
+  "lastPartialUpdate": "2026-10-26T12:50:24.926086+00:00"
 }

@@ -44,6 +44,7 @@ void main() {
       SharedPreferences.setMockInitialValues({
         'exams.cache': jsonEncode({
           'schemaVersion': 1,
+          'coverageVersion': 2,
           'calls': [
             {
               'id': 'test',

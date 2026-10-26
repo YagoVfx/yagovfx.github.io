@@ -104,6 +104,16 @@ def parse(html, now):
 
 
 def scan(now):
+    from scanner.pag_export import scan_export
+    try:
+        return scan_export(now)
+    except Exception as error:
+        rows, status = scan_search(now)
+        status.append(dict(name='PAG · exportación XML completa', status='error', reason=str(error)[:180]))
+        return rows, status
+
+
+def scan_search(now):
     rows, status = {}, []
     for query in QUERIES:
         for level in ['3', '4']:
@@ -150,7 +160,7 @@ def run():
     if any(s['status']=='error' for s in status):
         ids = {r['id'] for r in rows}
         rows += [dict(r,retainedAfterFailure=True) for r in previous.get('calls',[]) if r['id'] not in ids and (r.get('closingDate') or '') >= now[:10]]
-    out = dict(schemaVersion=1,lastAttemptAt=now,
+    out = dict(schemaVersion=1,coverageVersion=2,lastAttemptAt=now,
         updatedAt=now if any(s['status']=='ok' for s in status) else previous.get('updatedAt'),calls=rows,sources=status,
         note='Fuente oficial informativa, cobertura parcial. No implica admisión ni destino garantizado. Las fechas del PAG son orientativas; mandan las bases oficiales.')
     temp=path.with_suffix('.json.tmp');temp.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');temp.replace(path)

@@ -8,16 +8,22 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'jobs.dart';
 import 'presentation.dart';
+import 'app_settings.dart';
+import 'feed_freshness.dart';
 
 List<Map<String, dynamic>> filterExams(
   List<Map<String, dynamic>> rows, {
   String area = 'local',
   String query = '',
+  String administration = 'all',
   Set<String>? saved,
   DateTime? now,
 }) {
   final today = (now ?? DateTime.now()).toIso8601String().substring(0, 10);
   return rows.where((r) {
+    if (administration != 'all' && r['adminScope'] != administration) {
+      return false;
+    }
     if (r['closingDate'] is String &&
         (r['closingDate'] as String).compareTo(today) < 0) {
       return false;
@@ -56,7 +62,7 @@ class _PublicExamsState extends State<PublicExamsPage> {
   Map<String, dynamic>? feed;
   SharedPreferences? prefs;
   Set<String> saved = {};
-  String area = 'local', query = '';
+  String area = 'local', query = '', administration = 'all';
   String? error;
   @override
   void initState() {
@@ -74,6 +80,7 @@ class _PublicExamsState extends State<PublicExamsPage> {
     final data = jsonDecode(raw);
     if (data is! Map<String, dynamic> ||
         data['schemaVersion'] != 1 ||
+        (data['coverageVersion'] as num? ?? 0) < 2 ||
         data['calls'] is! List) {
       throw const FormatException('Formato no compatible');
     }
@@ -84,15 +91,17 @@ class _PublicExamsState extends State<PublicExamsPage> {
     prefs = await SharedPreferences.getInstance();
     var data = decode(await rootBundle.loadString('assets/public-exams.json'));
     try {
-      data = decode(prefs!.getString('exams.cache') ?? '');
+      data = newerFeed(data, decode(prefs!.getString('exams.cache') ?? ''));
     } catch (_) {}
     if (!mounted) return;
     setState(() {
       feed = data;
       saved = (prefs!.getStringList('exams.saved') ?? []).toSet();
       area = prefs!.getString('exams.area') ?? 'local';
+      administration = prefs!.getString('exams.administration') ?? 'all';
+      if (area == 'galicia-national') area = 'all';
     });
-    await refresh();
+    if (appSettings.autoRefresh) await refresh();
   }
 
   Future<void> refresh() async {
@@ -102,7 +111,7 @@ class _PublicExamsState extends State<PublicExamsPage> {
           .get(Uri.parse('https://yagovfx.github.io/data/public-exams.json'))
           .timeout(const Duration(seconds: 20));
       if (response.statusCode != 200) throw Exception('No actualizado');
-      final data = decode(utf8.decode(response.bodyBytes));
+      final data = newerFeed(feed!, decode(utf8.decode(response.bodyBytes)));
       await prefs?.setString('exams.cache', jsonEncode(data));
       if (mounted) {
         setState(() {
@@ -200,12 +209,110 @@ class _PublicExamsState extends State<PublicExamsPage> {
       ),
     ),
   );
+  Future<void> openFilters() async {
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      useSafeArea: true,
+      showDragHandle: true,
+      builder: (context) => StatefulBuilder(
+        builder: (context, update) => Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                children: [
+                  const Expanded(
+                    child: Text(
+                      'Filtros de oposiciones',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () => Navigator.pop(context),
+                    tooltip: 'Cerrar filtros',
+                    icon: const Icon(Icons.close),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              DropdownButtonFormField<String>(
+                key: ValueKey(area),
+                initialValue: area,
+                isExpanded: true,
+                decoration: const InputDecoration(labelText: 'Ubicación'),
+                items: [
+                  for (final e in {
+                    'local': 'Vigo y A Coruña (municipios)',
+                    'galicia': 'Solo Galicia',
+                    'all': 'Toda España',
+                  }.entries)
+                    DropdownMenuItem(value: e.key, child: Text(e.value)),
+                ],
+                onChanged: (v) {
+                  setState(() => area = v!);
+                  update(() {});
+                  prefs?.setString('exams.area', v!);
+                },
+              ),
+              const SizedBox(height: 24),
+              DropdownButtonFormField<String>(
+                initialValue: administration,
+                isExpanded: true,
+                decoration: const InputDecoration(
+                  labelText: 'Administración convocante',
+                ),
+                items: [
+                  for (final e in {
+                    'all': 'Todas las administraciones',
+                    'state': 'Estatal',
+                    'autonomous': 'Autonómica',
+                    'local': 'Local',
+                    'university': 'Universidades',
+                    'other': 'Otras',
+                  }.entries)
+                    DropdownMenuItem(value: e.key, child: Text(e.value)),
+                ],
+                onChanged: (v) {
+                  setState(() {
+                    administration = v!;
+                    if (area == 'local' && v != 'all' && v != 'local') {
+                      area = 'all';
+                    }
+                  });
+                  update(() {});
+                  prefs?.setString('exams.administration', v!);
+                  prefs?.setString('exams.area', area);
+                },
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                'El ámbito filtra el catálogo descargado. Cero resultados no significa que no existan otras convocatorias.',
+                style: TextStyle(color: mutedColor, fontSize: 12),
+              ),
+              const SizedBox(height: 16),
+              FilledButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('Ver convocatorias'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     if (feed == null) return const Center(child: CircularProgressIndicator());
     final rows = filterExams(
       (feed!['calls'] as List).cast<Map<String, dynamic>>(),
       area: area,
+      administration: administration,
       query: query,
       saved: widget.savedOnly ? saved : null,
     );
@@ -216,7 +323,12 @@ class _PublicExamsState extends State<PublicExamsPage> {
         children: [
           RadarHeader(
             title: widget.savedOnly ? 'Tus convocatorias' : 'Oposiciones',
-            subtitle: 'Vigo y A Coruña · plazas relacionadas con tus FP',
+            subtitle:
+                '${area == 'local'
+                    ? 'Vigo y A Coruña'
+                    : area == 'galicia'
+                    ? 'Galicia'
+                    : 'Toda España'} · plazas relacionadas con tus FP',
             category: 'public',
           ),
           if (error != null)
@@ -225,23 +337,24 @@ class _PublicExamsState extends State<PublicExamsPage> {
               child: Text(error!, style: const TextStyle(color: reviewColor)),
             ),
           const SizedBox(height: 12),
-          DropdownButtonFormField<String>(
-            initialValue: area,
-            isExpanded: true,
-            decoration: const InputDecoration(labelText: 'Ámbito'),
-            items: [
-              for (final e in {
-                'galicia-national': 'Galicia y convocatorias estatales',
-                'galicia': 'Solo Galicia',
-                'local': 'Vigo y A Coruña (municipios)',
-                'all': 'Toda España',
-              }.entries)
-                DropdownMenuItem(value: e.key, child: Text(e.value)),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  area == 'local'
+                      ? 'Vigo y A Coruña (municipios)'
+                      : area == 'galicia'
+                      ? 'Solo Galicia'
+                      : 'Toda España',
+                  style: const TextStyle(color: mutedColor, fontSize: 12),
+                ),
+              ),
+              OutlinedButton.icon(
+                onPressed: openFilters,
+                icon: const Icon(Icons.tune),
+                label: const Text('Filtrar'),
+              ),
             ],
-            onChanged: (v) {
-              setState(() => area = v!);
-              prefs?.setString('exams.area', v!);
-            },
           ),
           const SizedBox(height: 12),
           TextField(

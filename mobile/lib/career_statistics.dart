@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'career_categories.dart';
+import 'feed_freshness.dart';
 import 'jobs.dart';
 import 'presentation.dart';
 
@@ -59,7 +60,10 @@ class _CareerStatisticsState extends State<CareerStatistics> {
       await rootBundle.loadString('assets/mobile-careers.json'),
     );
     try {
-      data = repository.decode(prefs.getString('career.feed') ?? '');
+      data = newerFeed(
+        data,
+        repository.decode(prefs.getString('career.feed') ?? ''),
+      );
     } catch (_) {}
     final resources = jsonDecode(
       await rootBundle.loadString('assets/career-resources.json'),
@@ -152,14 +156,19 @@ class _CareerStatisticsState extends State<CareerStatistics> {
       includeAdvanced:
           personal?.getBool('career.$category.advancedV3') ?? category == 'vfx',
       profileView: category == 'programming'
-          ? personal?.getString('career.programming.profileView') ?? 'entry'
+          ? personal?.getString('career.programming.profileView') ?? 'all'
           : 'all',
       days: personal?.getInt('career.$category.days') ?? 0,
       scope: personal?.getString('career.$category.scope') ?? 'all',
       topic: courses
-          ? personal?.getString('career.courses.topicV2') ?? 'programming'
+          ? personal?.getString('career.courses.topicV3') ?? 'all'
           : 'all',
       goal: personal?.getString('career.courses.goal') ?? 'review',
+      organization:
+          personal?.getString('career.$category.organization') ?? 'all',
+      origin: courses
+          ? personal?.getString('career.courses.origin') ?? 'all'
+          : 'all',
       freeOnly: personal?.getBool('career.courses.freeOnly') ?? false,
       includeUnknownPrice:
           personal?.getBool('career.courses.unknownPrice') ?? false,

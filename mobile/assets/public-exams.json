@@ -1,110 +1,100 @@
 {
   "schemaVersion": 1,
-  "lastAttemptAt": "2026-10-26T08:58:00.654826+00:00",
-  "updatedAt": "2026-10-26T08:58:00.654826+00:00",
+  "coverageVersion": 2,
+  "lastAttemptAt": "2026-10-26T12:50:28.347933+00:00",
+  "updatedAt": "2026-10-26T12:50:28.347933+00:00",
   "calls": [
+    {
+      "id": "pag-222752",
+      "reference": "222752",
+      "title": "TÉCNICO AUXILIAR · Técnicos Auxiliares de \r\nServicios (Mantenimiento de Material Científico)",
+      "organization": "Universidad de Extremadura",
+      "location": "AUTONÓMICO · EXTREMADURA",
+      "area": "other",
+      "adminScope": "university",
+      "municipality": null,
+      "qualification": "Bachiller o equivalente",
+      "fit": "review",
+      "places": 1,
+      "freePlaces": 1,
+      "closingDate": "2026-11-11",
+      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
+      "status": "open",
+      "source": "PAG · exportación XML oficial",
+      "url": "http://www.unex.es/opopas",
+      "access": "Acceso libre; verificar requisitos específicos en las bases",
+      "checkedAt": "2026-10-26T12:50:28.347933+00:00"
+    },
     {
       "id": "pag-222569",
       "reference": "222569",
-      "title": "TÉCNICO/A SUPERIOR  -  Técnico/a Superior de Informática Grupo B",
+      "title": "TÉCNICO/A SUPERIOR · Técnico/a Superior de Informática Grupo B",
       "organization": "Ayuntamiento de Coruña, A",
-      "location": "LOCAL - GALICIA A CORUÑA",
+      "location": "LOCAL · GALICIA · A CORUÑA",
       "area": "galicia",
+      "adminScope": "local",
       "municipality": "coruna",
       "qualification": "ciclos formativos de Técnico/a Superior en Administración de Sistemas Informáticos en Red (ASIR), Técnico/a Superior en Desarrollo de Aplicaciones Multiplataforma (DAM), Técnico/a Superior en Desarrollo de Aplicaciones Web (DAW), o equivalente.",
       "fit": "dam",
       "places": 2,
       "freePlaces": 2,
       "closingDate": "2026-10-29",
-      "deadlineEvidence": "Fecha orientativa publicada por el PAG. Confirma las bases y posibles ampliaciones.",
+      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
       "status": "open",
-      "source": "Punto de Acceso General · Empleo público",
-      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20340",
-      "pagDetailUrl": "https://administracion.gob.es/empleopublico/resultados-empleo/detalle-empleo?selectorget=222569&selectorServicio=bolsa_empleo",
-      "searchUrl": "https://administracion.gob.es/empleopublico/resultados-empleo?pag_referencia=222569",
-      "access": "Acceso libre (filtro del buscador oficial)",
-      "checkedAt": "2026-10-26T04:32:25.655127+00:00",
-      "retainedAfterFailure": true
+      "source": "PAG · exportación XML oficial",
+      "url": "https://www.boe.es/boe/dias/2026/09/30/pdfs/BOE-A-2026-20340.pdf",
+      "access": "Acceso libre; verificar requisitos específicos en las bases",
+      "checkedAt": "2026-10-26T12:50:28.347933+00:00"
     },
     {
       "id": "pag-222516",
       "reference": "222516",
-      "title": "TÉCNICA BÁSICA DE LABORATORIOS  -  Informática",
+      "title": "TÉCNICA BÁSICA DE LABORATORIOS · Informática",
       "organization": "Universidad Jaume I de Castellón",
-      "location": "LOCAL - COMUNITAT VALENCIANA CASTELLÓN",
+      "location": "LOCAL · COMUNITAT VALENCIANA · CASTELLÓN",
       "area": "other",
+      "adminScope": "university",
       "municipality": null,
       "qualification": "Bachiller o Técnico o Técnica de Formación Profesional o equivalente.",
       "fit": "review",
       "places": 1,
       "freePlaces": 1,
       "closingDate": "2026-10-28",
-      "deadlineEvidence": "Fecha orientativa publicada por el PAG. Confirma las bases y posibles ampliaciones.",
+      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
       "status": "open",
-      "source": "Punto de Acceso General · Empleo público",
-      "url": "https://administracion.gob.es/empleopublico/resultados-empleo?pag_referencia=222516",
-      "pagDetailUrl": "https://administracion.gob.es/empleopublico/resultados-empleo/detalle-empleo?selectorget=222516&selectorServicio=bolsa_empleo",
-      "searchUrl": "https://administracion.gob.es/empleopublico/resultados-empleo?pag_referencia=222516",
-      "access": "Acceso libre (filtro del buscador oficial)",
-      "checkedAt": "2026-10-26T04:32:25.655127+00:00",
-      "retainedAfterFailure": true
+      "source": "PAG · exportación XML oficial",
+      "url": "https://www.boe.es/boe/dias/2026/09/26/pdfs/BOE-A-2026-19983.pdf",
+      "access": "Acceso libre; verificar requisitos específicos en las bases",
+      "checkedAt": "2026-10-26T12:50:28.347933+00:00"
+    },
+    {
+      "id": "pag-216052",
+      "reference": "216052",
+      "title": "TÉCNICO ESPECIALISTA DE SISTEMAS Y TECNOLOGÍAS DE LA INFORMACIÓN",
+      "organization": "Servicio Madrileño de Salud (SERMAS)",
+      "location": "AUTONÓMICO · MADRID, COMUNIDAD DE",
+      "area": "other",
+      "adminScope": "autonomous",
+      "municipality": null,
+      "qualification": "Bachiller, Formación profesional de Grado Superior o equivalente",
+      "fit": "review",
+      "places": 39,
+      "freePlaces": 36,
+      "closingDate": "2026-11-10",
+      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
+      "status": "open",
+      "source": "PAG · exportación XML oficial",
+      "url": "https://www.comunidad.madrid/servicios/salud/seleccion-personal-estatutario-servicio-madrileno-salud",
+      "access": "Acceso libre; verificar requisitos específicos en las bases",
+      "checkedAt": "2026-10-26T12:50:28.347933+00:00"
     }
   ],
   "sources": [
     {
-      "name": "PAG · informatica-3",
+      "name": "PAG · exportación XML completa",
       "status": "ok",
-      "examined": 0
-    },
-    {
-      "name": "PAG · informatica-4",
-      "status": "ok",
-      "examined": 0
-    },
-    {
-      "name": "PAG · electric-3",
-      "status": "ok",
-      "examined": 0
-    },
-    {
-      "name": "PAG · electric-4",
-      "status": "ok",
-      "examined": 0
-    },
-    {
-      "name": "PAG · electronic-3",
-      "status": "ok",
-      "examined": 0
-    },
-    {
-      "name": "PAG · electronic-4",
-      "status": "ok",
-      "examined": 0
-    },
-    {
-      "name": "PAG · telecomunicaciones-3",
-      "status": "ok",
-      "examined": 0
-    },
-    {
-      "name": "PAG · telecomunicaciones-4",
-      "status": "ok",
-      "examined": 0
-    },
-    {
-      "name": "PAG · mantenimiento-3",
-      "status": "ok",
-      "examined": 0
-    },
-    {
-      "name": "PAG · mantenimiento-4",
-      "status": "ok",
-      "examined": 0
-    },
-    {
-      "name": "PAG · comprobación de coherencia",
-      "status": "error",
-      "reason": "Todas las consultas devuelven cero pese a convocatorias previas dentro de plazo. Confirmar en la fuente; se conservan sin renovar su verificación."
+      "examined": 250,
+      "matched": 4
     },
     {
       "name": "Concello de Vigo · procesos municipales",

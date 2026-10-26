@@ -316,7 +316,7 @@ def run():
     for source in status:
         source['lastAttemptAt'] = now
         source['lastSuccessAt'] = now if source['status'] == 'ok' else old_sources.get(source['name'], {}).get('lastSuccessAt')
-    output = dict(schemaVersion=2, coverageVersion=8, lastAttemptAt=now, updatedAt=now if successful else previous.get('updatedAt'), offers=unique_offers, courses=courses, sources=enrich_sources(status),
+    output = dict(schemaVersion=2, coverageVersion=9, lastAttemptAt=now, updatedAt=now if successful else previous.get('updatedAt'), offers=unique_offers, courses=courses, sources=enrich_sources(status),
                   note='Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.')
     temporary = target.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

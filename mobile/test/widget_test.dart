@@ -46,7 +46,8 @@ void main() {
     expect(find.text('Job Radar'), findsOneWidget);
     await tester.tap(find.byIcon(Icons.settings_outlined));
     await tester.pump();
-    expect(find.text('Tu radar de empleo'), findsOneWidget);
+    expect(find.text('A tu manera'), findsOneWidget);
+    expect(find.text('Tarjetas compactas'), findsOneWidget);
     await tester.pumpWidget(const SizedBox());
   });
 
