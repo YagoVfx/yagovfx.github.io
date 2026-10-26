@@ -83,7 +83,16 @@ def test_failed_write_does_not_mark_candidacy_as_saved(make_page):
     box.get_by_role('tab',name='Ofertas',exact=True).click();box.locator('[data-job="gh-1"] [data-action="apply"]').click()
     box.locator('[data-pane=apps] [role=alert]').wait_for()
     assert page.evaluate('VfxApplications.get("gh-1")') is None
-    assert 'reglas privadas' in box.locator('[data-pane=apps]').inner_text()
+    assert 'permisos o validación' in box.locator('[data-pane=apps]').inner_text()
+
+
+def test_workable_trailing_slash_reuses_application_without_alias(make_page):
+    records={};page=make_page();backend(page,records);box=open_public(page);sign_in(box)
+    page.evaluate("async () => { await VfxApplications.save({id:'old',company:'Studio',title:'Developer',url:'https://apply.workable.com/studio/j/C698FE1D89/'},'applied',{notes:'Private note'}); }")
+    page.evaluate("async () => { await VfxApplications.save({id:'new',company:'Studio',title:'Developer',url:'https://apply.workable.com/studio/j/C698FE1D89?utm_source=portal'},'interview'); }")
+    assert list(records) == ['old']
+    assert records['old']['fields']['notes']['stringValue'] == 'Private note'
+    assert records['old']['fields']['status']['stringValue'] == 'interview'
 
 
 def test_private_applications_forms_are_accessible_on_mobile(make_page):

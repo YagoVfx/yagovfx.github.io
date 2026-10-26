@@ -283,7 +283,9 @@ class _PublicExamsState extends State<PublicExamsPage> {
                       '${row['freePlaces'] ?? row['places'] ?? '?'} plazas · Fin: ${readableDate(row['closingDate'])}',
                     ),
                     statusTag(
-                      row['fit'] == 'dam'
+                      row['retainedAfterFailure'] == true
+                          ? 'Vigencia sin confirmar · consulta fallida'
+                          : row['fit'] == 'dam'
                           ? 'Incluye DAM en la titulación'
                           : 'Revisar titulación',
                       confirmed: row['fit'] == 'dam',

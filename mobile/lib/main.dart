@@ -321,7 +321,7 @@ class _OffersState extends State<OffersPage> {
               const SizedBox(height: 12),
               Text(
                 j.compatibility == 'compatible'
-                    ? 'Cumple los filtros de b?squeda; revisa experiencia y requisitos'
+                    ? 'Cumple los filtros de búsqueda; revisa experiencia y requisitos'
                     : 'Condiciones por revisar',
               ),
               Text(
@@ -647,11 +647,20 @@ class _OffersState extends State<OffersPage> {
           ? SafeArea(child: ApplicationsPage(store: applications))
           : tab == 3
           ? SafeArea(
-              child: InsightsPage(
-                jobs: jobs,
-                category: category == 'public' ? 'programming' : category,
-                refreshVersion: careerRefresh,
-              ),
+              child: category == 'public'
+                  ? const Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(24),
+                        child: Text(
+                          'Las plazas y fuentes de oposiciones se consultan en Ofertas. No se mezclan con las estadísticas de empleo.',
+                        ),
+                      ),
+                    )
+                  : InsightsPage(
+                      jobs: jobs,
+                      category: category == 'public' ? 'programming' : category,
+                      refreshVersion: careerRefresh,
+                    ),
             )
           : SafeArea(
               child: Column(

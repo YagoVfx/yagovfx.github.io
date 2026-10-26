@@ -199,6 +199,17 @@ List<Map<String, dynamic>> filterCareerItems(
             ).isAfter(DateTime(end.year, end.month, end.day))) {
           return false;
         }
+        final start = DateTime.tryParse('${item['startDate'] ?? ''}');
+        if (start != null &&
+            DateTime(
+              today.year,
+              today.month,
+              today.day,
+            ).isAfter(DateTime(start.year, start.month, start.day)) &&
+            item['enrollmentEnd'] == null &&
+            !['open', 'continuous'].contains(item['enrollmentStatus'])) {
+          return false;
+        }
       }
       if (item['modality'] == 'onsite' &&
           item['inVigo'] != true &&
@@ -228,6 +239,7 @@ List<Map<String, dynamic>> filterCareerItems(
       if (!savedOnly && expiredCareerOffer(item, today)) return false;
       if (!savedOnly &&
           !includeAdvanced &&
+          category != 'electricity' &&
           item['experience'] == 'experienced') {
         return false;
       }
@@ -288,7 +300,7 @@ class CareerFeedRepository {
     final data = jsonDecode(text);
     if (data is! Map<String, dynamic> ||
         data['schemaVersion'] != 2 ||
-        (data['coverageVersion'] as num? ?? 0) < 6 ||
+        (data['coverageVersion'] as num? ?? 0) < 7 ||
         data['offers'] is! List ||
         data['courses'] is! List) {
       throw const FormatException('Formato de oportunidades no válido');
@@ -730,6 +742,11 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
               'No se ha podido renovar la comprobación de esta ficha',
               style: TextStyle(color: Colors.amber),
             ),
+          if (item['checkedAt'] != null)
+            Text(
+              'Última comprobación: ${readableDate(item['checkedAt'])}',
+              style: const TextStyle(color: mutedColor, fontSize: 12),
+            ),
           if (item['description'] != null)
             ExpansionTile(
               title: const Text('Contenido y encaje'),
@@ -930,6 +947,11 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             ),
           ),
           const SizedBox(height: 3),
+          if (item['retainedAfterFailure'] == true)
+            const Text(
+              'Vigencia sin confirmar · última consulta fallida',
+              style: TextStyle(color: Colors.amber),
+            ),
           Text(
             course
                 ? "${coursePrice(item)} · ${item['modality'] == 'online' ? 'Online' : 'Presencial'} · ${durationLabel(item['durationHours'])}"
@@ -1535,7 +1557,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                             ? s['matched'] != null
                                   ? 'Consulta correcta · ${s['matched']} coincidencias incorporadas'
                                   : 'Consulta correcta · ${s['examined'] ?? 0} fichas examinadas'
-                            : s['reason'] ?? 'Fuente no disponible',
+                            : 'No se pudo consultar esta fuente. Los datos anteriores pueden estar desactualizados.',
                       ),
                       leading: Icon(
                         s['status'] == 'ok'

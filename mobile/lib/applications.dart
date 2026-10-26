@@ -27,7 +27,7 @@ Map<String, dynamic> decodeApplication(Map<String, dynamic> doc) => {
     e.key: e.value['stringValue'] ?? '',
 };
 
-class ApplicationsStore extends ChangeNotifier {
+class ApplicationsStore extends ChangeNotifier with WidgetsBindingObserver {
   final http.Client client;
   final FlutterSecureStorage storage;
   ApplicationsStore({http.Client? client, FlutterSecureStorage? storage})
@@ -60,10 +60,22 @@ class ApplicationsStore extends ChangeNotifier {
   }
 
   void startPolling() {
+    WidgetsBinding.instance.removeObserver(this);
+    WidgetsBinding.instance.addObserver(this);
     _timer?.cancel();
     _timer = Timer.periodic(const Duration(seconds: 15), (_) {
-      if (signedIn && !busy) refresh();
+      final state = WidgetsBinding.instance.lifecycleState;
+      if (signedIn &&
+          !busy &&
+          (state == null || state == AppLifecycleState.resumed)) {
+        refresh();
+      }
     });
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed && signedIn && !busy) refresh();
   }
 
   Future<void> restore() async {
@@ -361,6 +373,7 @@ class ApplicationsStore extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
+    WidgetsBinding.instance.removeObserver(this);
     _timer?.cancel();
     client.close();
     super.dispose();

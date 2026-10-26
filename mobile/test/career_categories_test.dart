@@ -30,7 +30,7 @@ void main() {
       SharedPreferences.setMockInitialValues({
         'career.feed': jsonEncode({
           'schemaVersion': 2,
-          'coverageVersion': 6,
+          'coverageVersion': 7,
           'offers': [row],
           'courses': [],
           'sources': [],
@@ -384,7 +384,7 @@ void main() {
           (_) async => http.Response(
             jsonEncode({
               'schemaVersion': 2,
-              'coverageVersion': 6,
+              'coverageVersion': 7,
               'offers': [],
               'courses': [],
             }),

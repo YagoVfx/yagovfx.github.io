@@ -1,5 +1,6 @@
 """Group public adverts by original vacancy URL, retaining every source ID."""
 import hashlib
+import re
 from urllib.parse import urlsplit, parse_qsl, urlencode
 
 
@@ -12,6 +13,11 @@ def vacancy_url(value):
 
 
 def specific_url(value):
+    parsed = urlsplit(value or '')
+    if parsed.hostname in ('jobs.smartrecruiters.com', 'careers.smartrecruiters.com'):
+        match = re.match(r'^/([^/]+)/(\d+)(?:-[^/]*)?/?$', parsed.path)
+        if match:
+            return 'smartrecruiters:' + match[1].lower() + ':' + match[2]
     key = vacancy_url(value)
     _, _, query = key.partition('?')
     last = urlsplit(value or '').path.rstrip('/').split('/')[-1].lower()

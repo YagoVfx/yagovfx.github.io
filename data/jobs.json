@@ -693,7 +693,16 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-vfx-b43334aa8898b83b0cf4",
+        "career-hitmarker-4732305",
+        "sr-744000148330865"
+      ],
+      "foundIn": [
+        "smartrecruiters",
+        "Hitmarker"
+      ]
     },
     {
       "id": "sr-744000146473011",
@@ -1531,7 +1540,16 @@
           "+10 Fuente oficial con enlace directo"
         ]
       },
-      "missCount": 0
+      "missCount": 0,
+      "sourceIds": [
+        "career-vfx-a1b9c40b585e60b9e6fc",
+        "career-hitmarker-5103480",
+        "sr-744000153759984"
+      ],
+      "foundIn": [
+        "smartrecruiters",
+        "Hitmarker"
+      ]
     },
     {
       "id": "gh-4438551009",

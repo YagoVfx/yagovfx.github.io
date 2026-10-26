@@ -30,6 +30,10 @@ def permitted_remote(region, description):
     if not re.search(r'world|anywhere|global|europe|emea|spain|espana|\beu\b', region):
         return False
     body = fold(description)
+    if re.search(r'\bremote\s*(?:[-:(]\s*|from\s+(?:the\s+)?|(?=u\.s\.))(?:us\b|u\.s\.|united states|hong kong)', body):
+        return False
+    if re.search(r'(?:telework|remote|work from home|teletrabajo).{0,30}(?:one|1|two|2) days? (?:per|a) week', body):
+        return False
     # Structured region metadata is sometimes broader than the actual role.
     restrictions = re.findall(r'(?:must (?:be |currently )?(?:based|reside|live)|only (?:hiring|available)|location\s*:|remote-first\s*\().{0,100}', body)
     foreign = r'argentina|united states|\busa\b|\bu\.s\.|canada|brazil|india|philippines|united kingdom|\buk only\b|australia'

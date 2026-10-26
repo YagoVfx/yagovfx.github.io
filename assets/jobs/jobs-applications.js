@@ -7,7 +7,7 @@
   function auth(){return root.VfxPrivateAuth;}
   function user(){return auth()&&auth().user;}
   function notify(){listeners.forEach(function(fn){fn();});}
-  function message(e){return e.status===403?'Falta publicar las reglas privadas de candidaturas en Firebase (firestore.rules).':e.status===401?'La sesión ha caducado. Vuelve a iniciar sesión.':'No se pudo sincronizar. Comprueba la conexión y reintenta; el cambio no se ha confirmado.';}
+  function message(e){return e.status===403?'No se pudo guardar por un problema de permisos o validación. Revisa la sesión y las reglas de candidaturas.':e.status===401?'La sesión ha caducado. Vuelve a iniciar sesión.':'No se pudo sincronizar. Comprueba la conexión y reintenta; el cambio no se ha confirmado.';}
   function fields(record){var out={};Object.keys(record).forEach(function(k){out[k]={stringValue:String(record[k])};});return out;}
   function decode(doc){var out={};Object.keys(doc.fields||{}).forEach(function(k){out[k]=doc.fields[k].stringValue||'';});return out;}
   async function request(path,options){
@@ -32,7 +32,7 @@
     var ids=[job.id].concat(job.sourceIds||[]),found;
     ids.some(function(id){found=records[id];return !!found;});
     if(found)return found;
-    function key(raw){try{var u=new URL(raw);['source','ref'].forEach(function(k){u.searchParams.delete(k);});Array.from(u.searchParams.keys()).forEach(function(k){if(k.indexOf('utm_')===0)u.searchParams.delete(k);});u.searchParams.sort();if(!u.search&&/\/(?:jobs|job|careers|vacancies|open-positions|join-us)?\/?$/.test(u.pathname))return '';return u.host.toLowerCase()+u.pathname.replace(/\/+$/,'')+'?'+u.searchParams.toString();}catch(e){return raw||'';}}
+    function key(raw){try{var u=new URL(raw);['source','ref'].forEach(function(k){u.searchParams.delete(k);});Array.from(u.searchParams.keys()).forEach(function(k){if(k.indexOf('utm_')===0)u.searchParams.delete(k);});u.searchParams.sort();if(!u.search&&(u.pathname==='/'||/\/(?:jobs|job|careers|vacancies|open-positions|join-us)\/?$/.test(u.pathname)))return '';return u.host.toLowerCase()+u.pathname.replace(/\/+$/,'')+'?'+u.searchParams.toString();}catch(e){return raw||'';}}
     var urls=[job.url,job.originalUrl].filter(Boolean).map(key).filter(Boolean);
     return Object.keys(records).map(function(id){return records[id];}).find(function(r){return r.url&&urls.indexOf(key(r.url))>=0;});
   }

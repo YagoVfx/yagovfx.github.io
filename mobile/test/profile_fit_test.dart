@@ -4,6 +4,66 @@ import 'package:vfx_jobs_tracker/career_categories.dart';
 
 void main() {
   test(
+    'Recognises Spanish qualifications without making preferences mandatory',
+    () {
+      expect(
+        educationFit({'description': 'Formación universitaria en informática'}),
+        'university',
+      );
+      expect(
+        educationFit({'description': 'Estudios universitarios requeridos'}),
+        'university',
+      );
+      expect(
+        educationFit({'description': 'Valorable formación universitaria'}),
+        'unknown',
+      );
+      expect(
+        educationFit({'description': 'Grado medio/superior en Electricidad'}),
+        'fp',
+      );
+    },
+  );
+  test('Electrical experience is visible and closed course intakes expire', () {
+    expect(
+      filterCareerItems([
+        {
+          'id': 'electric',
+          'title': 'Electricista',
+          'category': 'electricity',
+          'experience': 'experienced',
+          'inVigo': true,
+        },
+      ], category: 'electricity'),
+      hasLength(1),
+    );
+    final course = <String, dynamic>{
+      'id': 'course',
+      'title': 'Java',
+      'price': 0,
+      'modality': 'online',
+      'startDate': '2026-10-20',
+    };
+    expect(
+      filterCareerItems(
+        [course],
+        category: 'courses',
+        now: DateTime(2026, 10, 26),
+      ),
+      isEmpty,
+    );
+    expect(
+      filterCareerItems(
+        [
+          {...course, 'enrollmentStatus': 'continuous'},
+        ],
+        category: 'courses',
+        now: DateTime(2026, 10, 26),
+      ),
+      hasLength(1),
+    );
+  });
+  test(
     'Engineer title does not require a degree; explicit mandatory degree does',
     () {
       final engineer = <String, dynamic>{

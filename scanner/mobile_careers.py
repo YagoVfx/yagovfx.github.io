@@ -36,7 +36,7 @@ def role_category(title):
 
 def classify_offer(title, description, location):
     text = fold(title + ' ' + description)
-    advanced = bool(re.search(r'\b(senior|lead|principal|jefe|responsable)\b|oficial.{0,8}(primera|1[ªaº])|(?:minim[oa]|al menos|at least|minimum).{0,25}[3-9]\+?\s*(?:anos|years)', text))
+    advanced = bool(re.search(r'\b(senior|lead|principal|jefe)\b|oficial.{0,8}(primera|1[ªaº])|(?:minim[oa]|al menos|at least|minimum).{0,25}[3-9]\+?\s*(?:anos|years)', text))
     junior = bool(re.search(r'\bjunior\b|sin experiencia|no.{0,15}(necesaria|requiere).{0,12}experiencia|formacion a cargo', text))
     hybrid = bool(re.search(r'hibrid|teletrabajo.{0,25}(parcial|dias)|presencial.{0,25}teletrabajo|teletrabajo.{0,40}presencial', text))
     remote = not hybrid and bool(re.search(r'teletrabajo|en remoto|100\s*%.{0,15}remoto|fully remote', text))
@@ -48,7 +48,10 @@ def classify_offer(title, description, location):
     if re.search(r'desplaz|viajar|movilidad', text): flags.append('Revisar desplazamientos y viajes')
     if re.search(r'ingenier|grado universitario', text): flags.append('Revisar si exige titulación universitaria')
     if re.search(r'\d\+?\s*(?:anos|years).{0,15}experien|experien.{0,20}\d\+?\s*(?:anos|years)', text): flags.append('Revisar años de experiencia exigidos')
-    city = re.split(r'[,;/|]|\s+[-–]\s+', fold(location).strip())[0].strip()
+    location_text = fold(location).strip()
+    location_text = re.sub(r'^coruna,\s*a(?=,|$)', 'a coruna', location_text)
+    location_text = re.sub(r'^(?:teis|bouzas|zona franca|pol\.?\s*ind\.?\s*balaidos)\s*(?:,\s*|\()vigo\)?(?=,|$)', 'vigo', location_text)
+    city = re.split(r'[,;/|]|\s+[-–]\s+', location_text)[0].strip()
     city = re.sub(r'^municipio de\s+', '', city)
     in_vigo = bool(re.fullmatch(r'vigo(?:\s*\([^)]*\))?', city))
     in_coruna = bool(re.fullmatch(r'(?:a coruna|la coruna)(?:\s*\([^)]*\))?|coruna\s*\(a\)', city))
@@ -204,6 +207,16 @@ def workable_programming(slug, expected_name, now):
     return offers, len(data['jobs'])
 
 
+def course_available(course, today):
+    """Keep ongoing open-enrolment resources; reject dated closed intakes."""
+    end = course.get('enrollmentEnd') or course.get('endDate')
+    if end and str(end)[:10] < today:
+        return False
+    start = course.get('startDate')
+    return not (start and str(start)[:10] < today and not course.get('enrollmentEnd')
+                and course.get('enrollmentStatus') not in ('open', 'continuous'))
+
+
 def run():
     now = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
     target = ROOT / 'data/mobile-careers.json'
@@ -286,7 +299,7 @@ def run():
             for old in previous.get('courses',[]):
                 if old['id'].startswith('course-'+key+'-'):
                     course_map.setdefault(old['id'],dict(old,retainedAfterFailure=True))
-    courses = list(course_map.values())
+    courses = [c for c in course_map.values() if course_available(c, now[:10])]
     from scanner.career_metadata import enrich_sources
     from scanner.vacancy_identity import unify
     direct_path = ROOT / 'data/jobs.json'
@@ -295,7 +308,12 @@ def run():
     direct_temporary = direct_path.with_suffix('.json.tmp')
     direct_temporary.write_text(json.dumps(direct, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     direct_temporary.replace(direct_path)
-    output = dict(schemaVersion=2, coverageVersion=6, updatedAt=now, offers=unique_offers, courses=courses, sources=enrich_sources(status),
+    successful = any(s['status'] == 'ok' for s in status)
+    old_sources = {s['name']: s for s in previous.get('sources', [])}
+    for source in status:
+        source['lastAttemptAt'] = now
+        source['lastSuccessAt'] = now if source['status'] == 'ok' else old_sources.get(source['name'], {}).get('lastSuccessAt')
+    output = dict(schemaVersion=2, coverageVersion=7, lastAttemptAt=now, updatedAt=now if successful else previous.get('updatedAt'), offers=unique_offers, courses=courses, sources=enrich_sources(status),
                   note='Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.')
     temporary = target.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

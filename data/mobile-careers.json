@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "coverageVersion": 6,
+  "coverageVersion": 7,
   "updatedAt": "2026-10-26T04:29:32.594853Z",
   "offers": [
     {
@@ -44,70 +44,6 @@
       ]
     },
     {
-      "id": "career-wwr-79b5e30b508281b42f48",
-      "category": "programming",
-      "title": "Abuse Research Engineer",
-      "company": "Stripe",
-      "location": "Anywhere in the World",
-      "description": "Headquarters: Remote from the US Who we are About Stripe Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s largest enterprises to the most ambitious startups—use Stripe to accept payments, grow their revenue, and accelerate new business opportunities. Our mission is to increase the GDP of the internet, and we have a staggering amount of work ahead. That means you have an unprecedented opportunity to put the global economy within everyone’s reach while doing the most important work of your career. About the team Abuse Research Group (ARG) handles proactive threat hunting and adversary behavior analysis across Stripe products. Rather than reacting to alerts, the team maps end-to-end fraud and abuse paths, validates novel attack vectors, and identifies product conditions that enable fraud. Using agentic automated testing and simulation tools, ARG translates research into actionable threat advisories, strategic control recommendations, and regression scenarios to systematically eliminate vulnerabilities. What you’ll do As an Abuse Research Engineer in the Abuse Research Group, you will play a critical role in safeguarding Stripe’s financial ecosystem by proactively hunting for advanced threats, dissecting complex fraud vectors, and extracting actionable adversary intelligence.  Rather than relying solely on reactive alerts, you will develop and execute hypothesis-driven threat hunting operations across internal telemetry and external sources to uncover fraudulent tools, tactics, and techniques (TTPs) before they impact Stripe’s platform. Central to this work is FT3 (Fraud Taxonomy 3.0), Stripe’s multi-layered taxonomy that decomposes monolithic fraud into structured kill chains.  Collaborating cross-functionally with Fraud Ops, Strategy, Risk, Onboarding, and Security, you will integrate threat intelligence, build agentic simulation workflows, and systematically eliminate product vulnerabilities. Responsibilities Proactive Threat Hunting & Kill Chain Analysis: Formulate hypotheses and conduct iterative threat hunting operations across Stripe systems and external data. FT3 Taxonomy: Apply and enrich the FT3 framework across empirical datasets and incidents, standardizing threat intelligence across kill chain phases and targeted API endpoints. Threat Intelligence & Signal Expansion: Partner with teams like Fraud Intelligence to integrate, curate, and automate threat feeds into engineering workflows. Cross-Functional Advisories & Strategic Controls: Translate raw research and retrospective findings into actionable threat advisories and control recommendations (policy, technical systems, support workflows, and detection mechanisms) for stakeholders across Fraud, Risk, Onboarding, and Security. Agentic Testing & Adversary Simulation: Utilize agentic automated testing frameworks to simulate adversary TTPs, validate whether deployed controls interrupt empirical kill chains, and generate regression scenarios to exercise controls. Who you are We’re looking for someone who meets the minimum requirements to be considered for the role. If you meet these requirements, you are encouraged to apply. The preferred qualifications are a bonus, not a requirement. Minimum requirements 5+ years of experience conducting threat intelligence, threat hunting, or technical incident response within cyber security, product abuse, or trust domains. 5+ years of experience analyzing large, complex datasets using data analytics tools to identify anomalies, map behavioral trends, and solve complex fraud problems. B.S. or M.S. in Computer Science, Cybersecurity, or a related technical field, or equivalent practical experience. Expert proficiency in Python and SQL, with demonstrated experience using code and scripting to automate workflows, build investigative tools, or query big data pipelines. Hands-on experience in log analysis (e.g., application logs, API route telemetry, network security events), digital forensics, and cyber investigation methodologies. Strong communication skills with a proven ability to translate complex technical research into clear, actionable recommendations and advisories for cross-functional partners. Preferred qualifications Deep technical understanding of threat actor motivations, infrastructure, and TTPs specific to financial fraud (e.g., ATO, Card Testing, Credential Stuffing). Familiarity with standardized taxonomies such as FT3 or MITRE ATT&CK. Proficiency with engineerin",
-      "url": "https://weworkremotely.com/remote-jobs/stripe-abuse-research-engineer",
-      "source": "We Work Remotely",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-10-26T04:29:32.594853Z",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Revisar años de experiencia exigidos",
-        "Confirmar país de contratación, idioma y horario en la fuente"
-      ],
-      "postedDate": "2026-10-04"
-    },
-    {
-      "id": "career-wwr-7429e136ec7679f5ac19",
-      "category": "programming",
-      "title": "Principal Software Engineer, AI",
-      "company": "Salesloft",
-      "location": "Anywhere in the World",
-      "description": "Headquarters: United States, Remote Job Title: Principal Software Engineer, AI Location : Remote - US Salesloft is building the next era of enterprise revenue — one where teams make confident decisions powered by AI and real signals. By combining our scale, insights, and AI innovation, we're building the industry's first Predictive Revenue System, enabling humans and AI to work together to make smarter decisions and drive consistent growth. With thousands of customers using our platforms every day, we have an unmatched view into how revenue is actually won — the Revenue Context that reveals what happens, when, and with what outcome. This gives us a unique opportunity to transform an entire category and set a new benchmark for how modern revenue teams operate. Join us to help transform how companies around the world run revenue — and build the platform that will guide leading revenue teams into the future. THE OPPORTUNITY At Salesloft, our Principal Engineer for AI sets the technical direction for how machine intelligence works across our Predictive Revenue System. This is the most senior individual-contributor role on our AI engineering team: you will architect the systems that turn LLMs, machine learning models, and agentic workflows into production capabilities that thousands of enterprise revenue teams depend on. This is deep, ambiguous, frontier work. You will make the foundational architectural decisions for AI at Salesloft — how we serve models at scale, how we build reliable systems on top of non-deterministic components, how we evaluate and guardrail agentic behavior, and how we keep pace as the underlying foundation models evolve. You will set the standards other engineers build on and act as a technical multiplier across the AI organization. On a day-to-day basis, you will: Set the technical architecture and direction for AI systems across the platform — model serving, LLM-powered features, agentic workflows, and the infrastructure beneath them. Design production-grade systems that are reliable and observable despite being built on non-deterministic, probabilistic AI components. Architect evaluation frameworks, guardrails, and quality systems that make AI behavior safe, measurable, and trustworthy at enterprise scale. Lead the most complex AI engineering problems end to end — from research-adjacent prototyping through hardened production delivery. Establish engineering standards and best practices for building AI-native systems, and mentor senior engineers across the org. Keep the platform at the frontier by evaluating and integrating advances in foundation models, agent frameworks, and the modern AI stack. This role lives at the heart of how we Lead From the Front: you'll work at the edge of applied AI, prototype rapidly, and make architectural bets ahead of the field. And in the spirit of how we Make Your Mark, you'll set the AI engineering standards and systems that the entire organization builds on — engineered for scale, not for a demo. WHAT WE'RE LOOKING FOR We are looking for an engineer who operates at the highest level of technical authority in AI systems — someone who has architected and shipped production AI at scale and understands the deep challenges of building reliable systems on probabilistic foundations. You lead through technical credibility and make the engineers around you better. You embody what we call Evidence Over Ego — you make architectural decisions from evaluation data and evidence rather than hype, you invite rigorous challenge, and you change direction when the models or the data move. You bring systems thinking to a genuinely unsolved problem space and build for durability. This is the right role if you want to define how AI works on a platform at the center of enterprise revenue. THE TEAM The Salesloft AI Engineering organization builds the machine intelligence at the core of the Predictive Revenue System. The team works at the intersection of applied research and production engineering, in close partnership with Product, Data Science, and Data Platform Engineering. The team Moves as One — AI engineering, product, and data science share ownership of shipping trustworthy AI and make hard technical calls together. And we are relentlessly Customer Inspired: every AI capability is measured against whether it makes revenue teams genuinely more successful and more confident in the system. THE SKILL SET Extensive experience building and architecting production software systems at sc",
-      "url": "https://weworkremotely.com/remote-jobs/salesloft-principal-software-engineer-ai",
-      "source": "We Work Remotely",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-10-26T04:29:32.594853Z",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Confirmar país de contratación, idioma y horario en la fuente"
-      ],
-      "postedDate": "2026-09-30"
-    },
-    {
-      "id": "career-wwr-79911477638fdd95c4ff",
-      "category": "programming",
-      "title": "Analytics Engineer, Data",
-      "company": "Tailscale",
-      "location": "Anywhere in the World",
-      "description": "Headquarters: Remote (United States) Thank you for considering Tailscale. If this job description resonates with you, please apply. Frequently cited statistics show that people who identify with historically marginalized groups are likely to apply to jobs only if they meet 100% of the qualifications. We encourage you to help us break that statistic! About Tailscale Tailscale is making safe connection effortless by delivering software that makes it easy to securely interconnect people and their devices, no matter where they are. From hobbyists to multinational corporations, teams of every size use Tailscale each day to protect their networks, share access to internal tools, and more. We're building a future for the Internet that's easy, sensible, and safe, like it used to be. Founded in 2019 and fully distributed, we're backed by Accel, CRV, Insight, Heavybit, and Uncork Capital. About the Role We are looking for an Analytics Engineer who thrives in high-complexity environments—someone excited to bring clarity to chaos, untangle complex models, and lay down the foundation for scalable solutions. This is a hands-on, high-impact role for someone who isn’t afraid to address manual processes, viewing them as opportunities to build scalable solutions that drive meaningful impact. You’ll work closely with stakeholders across the company to build reliable, trusted data models that support reporting, analysis, and decision-making. Key Responsibilities Dive into complex systems and manual workflows to develop an understanding of our tools and constraints. Thoughtfully design and maintain clean, scalable, production-grade dbt models (e.g., ARR, revenue recognition). Work across the full data pipeline, from ingestion to transformation to visualization. Take a pragmatic approach to system challenges, balancing quick fixes with thoughtful long-term design. Collaborate with Finance, Engineering, Sales, and other teams across the company to understand data needs and deliver timely, practical solutions. What We Are Looking For Experience designing and maintaining production-grade data models and pipelines. Deep understanding of modern data modeling principles and best practices. Strong SQL skills and confidence working with complex datasets and schemas. High attention to detail, with high standards for data accuracy and validation. Flexibility and resourcefulness in navigating manual tasks or imperfect systems. Passion for clean code, scalable architecture, and incrementally reducing complexity over time. Ability to manage time, prioritize effectively, and thrive in a fast-moving environment. Clear communication skills with both technical and non-technical collaborators. Willingness to flexibly support other domains (e.g., Product, Marketing, and Engineering) as the team grows. Nice to Have Experience at a high-growth PLG SaaS company. A track record of transforming manual, ad hoc workflows into scalable data pipelines. Familiarity with billing systems, GAAP accounting, revenue recognition, or audit support. Exposure to Stripe, Salesforce, or Orb in billing and finance contexts. Familiarity with financial cycles and the need for fast iteration during month- and quarter-end. Our Tech Stack Snowflake, dbt, Hightouch, Fivetran, Looker, Stripe, Salesforce, Orb. As a company, we strive to maintain fair and equitable compensation practices within our team across all roles and all levels. Tailscale's compensation package includes base salary, equity, and comprehensive benefits. The salary range displayed on each job posting represents the target range for a new hire's base salary. Individual offers may vary based on experience and skill set. US Pay Range $152,000 — $190,000 USD What We Offer An inclusive, flexible environment where you can be your authentic self. We recognize the impact of diverse voices and backgrounds on the growth of our people, product, and company. And that flexibility in how and when you work empowers our team to integrate work and life. A competitive total compensation package. This includes a base salary, an equity incentive plan and variable commission (for quota-based roles). Comprehensive group benefits with no waiting period. Take advantage of coverage for health, vision, dental, and more for you and your family! Remote first company —most of our teams work fully remotely. Enjoy a change of scenery wherever you can get wifi, participate in virtual and in-person social events, and leverage our corporate co-workin",
-      "url": "https://weworkremotely.com/remote-jobs/tailscale-analytics-engineer-data",
-      "source": "We Work Remotely",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-10-26T04:29:32.594853Z",
-      "closingDate": null,
-      "experience": "unknown",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Confirmar país de contratación, idioma y horario en la fuente"
-      ],
-      "postedDate": "2026-09-30"
-    },
-    {
       "id": "career-wwr-605cc5626fcc3bdd6957",
       "category": "programming",
       "title": "Senior Software Engineer, Card Authorization",
@@ -127,49 +63,6 @@
         "Confirmar país de contratación, idioma y horario en la fuente"
       ],
       "postedDate": "2026-09-30"
-    },
-    {
-      "id": "career-wwr-863cd36d973ec7bc7355",
-      "category": "programming",
-      "title": "Web Developer (Fresh graduate welcome, WFH policy, on-job-training)",
-      "company": "HR Plus",
-      "location": "Anywhere in the World",
-      "description": "Headquarters: Hong Kong, Hong Kong SAR, Hong Kong URL: http://hrplus.tech About the Role: Are you a talented and driven Web Developer looking to join a young and energetic team? Look no further! Our client, a fast-growing firm in the exciting field of web development, is seeking a skilled Web Developer to join their dynamic team. With a focus on innovation and growth, they offer a supportive and collaborative work environment where you can thrive. Here's what you can gain from this opportunity: Hands-on experience in web development for various companies in different settings. Down-to-earth, hands-on training from experienced seniors. A chance to join a rapidly growing industry and build a successful career in web development. Benefits: Competitive salary package based on skills and experience. Young and energetic work environment that fosters collaboration and innovation. 5-Day work week for a healthy work-life balance. Work From Home (WFH) option available one day per week. Responsibilities: Develop and implement web applications and system enhancements. Take ownership of web projects from development to production. Revamp the company's directory website to improve functionality and enhance search engine optimization (SEO) practices. Increase website capabilities, such as advanced searching features and adherence to industry standards. Requirements: 1 year or more of related experience preferred, fresh graduates are also welcomed. Strong knowledge and experience in PHP and WordPress, MySQL, HTML, CSS, and JavaScript. Knowledge of server-side programming and web server configuration/administration is advantageous. Experience in developing web systems, API integration, and data handling. Familiarity with Git/Gitlab is a plus. Experience in UX design is a valuable asset. Self-motivated, independent, highly responsible, and able to work under pressure. Personal data provided by job applicants will be used strictly in accordance with the employer's personal data policies. All information received will be kept in strict confidence and only for employment-related purposes. \"We are an equal opportunity employer and all qualified applicants will receive consideration for employment without regard to race, color, religion, sex, national origin, disability status, protected veteran status, or any other characteristic protected by law.\" To apply: https://weworkremotely.com/remote-jobs/hr-plus-web-developer-fresh-graduate-welcome-wfh-policy-on-job-training",
-      "url": "https://weworkremotely.com/remote-jobs/hr-plus-web-developer-fresh-graduate-welcome-wfh-policy-on-job-training",
-      "source": "We Work Remotely",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-10-26T04:29:32.594853Z",
-      "closingDate": null,
-      "experience": "unknown",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Confirmar país de contratación, idioma y horario en la fuente"
-      ],
-      "postedDate": "2026-09-29"
-    },
-    {
-      "id": "career-wwr-fa3328aa268575f4c477",
-      "category": "programming",
-      "title": "Engineering Manager, Machine Learning (Safety)",
-      "company": "Discord",
-      "location": "Anywhere in the World",
-      "description": "Headquarters: San Francisco Bay Area (or Remote U.S.) Discord has a highly engaged community of millions of daily active users who use the platform for many different reasons, but there’s one thing that nearly everyone does: play video games. Discord plays a uniquely important role in the future of gaming, and we are focused on making it easier and more fun for people to hang out before, during, and after playing games. Discord's Safety ML team builds the machine learning systems that protect 200M+ users. The team's mission is to make Discord a place where people can build genuine friendships without exposure to harm, at a scale where manual review alone can never keep up. We're looking for a highly technical, hands-on, and mission-driven Engineering Manager to lead our Safety ML team. As the manager responsible for Safety ML, you will own the detection systems that sit between attackers and our users; real-time and batch models for content understanding, account integrity, and platform abuse. What You'll Be Doing Build and lead an exceptional team of highly-engaged ML engineers by hiring, coaching, and instilling a sense of ownership and impact. Drive the technical vision and roadmap for Safety ML by collaborating with your team and partners across Trust & Safety, Product, Policy, Legal, and Data Science. Own the end-to-end lifecycle of production safety models: defining new capabilities, measuring performance, and monitoring the operational health of systems that make millions of enforcement decisions per day. Manage processes and leverage your technical expertise to continually raise the bar and ensure your team delivers extraordinary results. Partner with Trust & Safety on label quality, golden sets, and automating manual investigations. Work with other Engineering Managers to continuously improve the Engineering organization and uphold our workplace philosophy . What you should have You have 5+ years of experience as a Machine Learning Engineer, Data Scientist, or Applied Scientist. You have 3+ years of experience as an Engineering Manager and successfully managed a team of 5+ engineers. You have hands-on depth in at least one of: abuse/fraud detection, content classification, behavioral modeling, graph-based modeling, or LLM-based classification systems. You have strong communication skills and the ability to work well cross-functionally. You thrive in ambiguous environments and get excited about figuring out solutions to complex problems, and then executing on them. You are a first principles thinker that can work with others to come up with pragmatic solutions. You have a proven record of shipping ML systems to production at scale. You are passionate about coaching and leading other engineers, but can roll up your sleeves and get elbow deep in code when needed. You keep up with the industry trends and continuously identify new technologies to leverage to solve technical problems The US base salary range for this full-time position is $272,000 to $340,000 + equity + benefits. Our salary ranges are determined by role and level. Within the range, individual pay is determined by additional factors, including job-related skills, experience, and relevant education or training. Please note that the compensation details listed in US role postings reflect the base salary only, and do not include equity, or benefits. Why Discord? Discord plays a uniquely important role in the future of gaming. We're a multiplatform, multigenerational and multiplayer platform that helps people deepen their friendships around games and shared interests, and helps developers build and grow their businesses. We believe games give us a way to have fun with our favorite people, whether listening to music together or grinding in competitive matches for diamond rank. Join us in our mission! Your future is just a click away! Discord is committed to inclusion and providing reasonable accommodations during the interview process. We want you to feel set up for success, so if you are in need of reasonable accommodations, please let your recruiter know. Please see our Applicant and Candidate Privacy Policy for details regarding Discord’s collection and usage of personal information relating to the application and recruitment process by clicking HERE. To apply: https://weworkremotely.com/remote-jobs/discord-engineering-manager-machine-learning-safety",
-      "url": "https://weworkremotely.com/remote-jobs/discord-engineering-manager-machine-learning-safety",
-      "source": "We Work Remotely",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-10-26T04:29:32.594853Z",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Revisar años de experiencia exigidos",
-        "Confirmar país de contratación, idioma y horario en la fuente"
-      ],
-      "postedDate": "2026-09-29"
     },
     {
       "id": "career-wwr-de579ee8d230a95ed2e2",
@@ -249,7 +142,7 @@
       "checkedAt": "2026-10-26T04:29:32.594853Z",
       "closingDate": "2026-11-02",
       "postedDate": "2026-10-13",
-      "experience": "experienced",
+      "experience": "unknown",
       "workplace": "unknown",
       "inVigo": true,
       "inCoruna": false,
@@ -365,6 +258,7 @@
       ],
       "postedDate": "2026-10-14",
       "sourceIds": [
+        "career-vfx-d9711df4a6c991f6ec65",
         "career-wwi-c507956d9893ad24ed4f"
       ],
       "foundIn": [
@@ -394,6 +288,7 @@
       "postedDate": "2026-10-23",
       "originalUrl": "https://fa-exhj-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2330",
       "sourceIds": [
+        "career-vfx-174982c5d8abb31c6635",
         "career-hitmarker-5364635"
       ],
       "foundIn": [
@@ -423,6 +318,7 @@
       "postedDate": "2026-10-21",
       "originalUrl": "https://jobs.workable.com/view/cmchvxZ1WoGvToBbtstLZQ/remote-vfx-artist-in-vietnam-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-6bca358747a4d3b031f0",
         "career-hitmarker-5323941"
       ],
       "foundIn": [
@@ -451,8 +347,8 @@
       "postedDate": "2026-10-19",
       "originalUrl": "https://job-boards.greenhouse.io/insomniac/jobs/6228743004",
       "sourceIds": [
-        "career-hitmarker-5299488",
-        "gh-6228743004"
+        "gh-6228743004",
+        "career-hitmarker-5299488"
       ],
       "foundIn": [
         "Hitmarker"
@@ -480,8 +376,8 @@
       "postedDate": "2026-10-16",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216274",
       "sourceIds": [
-        "career-hitmarker-5256320",
-        "ea-216274"
+        "ea-216274",
+        "career-hitmarker-5256320"
       ],
       "foundIn": [
         "Hitmarker"
@@ -509,8 +405,8 @@
       "postedDate": "2026-10-16",
       "originalUrl": "https://www.riotgames.com/en/work-with-us/job/8287372?gh_jid=8287372",
       "sourceIds": [
-        "career-hitmarker-5257096",
-        "gh-8287372"
+        "gh-8287372",
+        "career-hitmarker-5257096"
       ],
       "foundIn": [
         "Hitmarker"
@@ -538,8 +434,8 @@
       "postedDate": "2026-10-15",
       "originalUrl": "https://www.riotgames.com/en/work-with-us/job/8279807?gh_jid=8279807",
       "sourceIds": [
-        "career-hitmarker-5243909",
-        "gh-8279807"
+        "gh-8279807",
+        "career-hitmarker-5243909"
       ],
       "foundIn": [
         "Hitmarker"
@@ -568,8 +464,8 @@
       "postedDate": "2026-10-14",
       "originalUrl": "https://jobs.smartrecruiters.com/CDPROJEKTRED/744000155548950-lead-vfx-artist",
       "sourceIds": [
-        "career-hitmarker-5234940",
-        "sr-744000155548950"
+        "sr-744000155548950",
+        "career-hitmarker-5234940"
       ],
       "foundIn": [
         "Hitmarker"
@@ -597,6 +493,7 @@
       "postedDate": "2026-10-09",
       "originalUrl": "https://careers.activision.com/job/ACPUUSR026554EXTERNAL/Lead-VFX-Artist",
       "sourceIds": [
+        "career-vfx-b12464bde61b168f6fd8",
         "career-hitmarker-5223103"
       ],
       "foundIn": [
@@ -625,21 +522,21 @@
       "postedDate": "2026-10-08",
       "originalUrl": "https://jobs.smartrecruiters.com/Ubisoft2/744000154392949-vfx-artist-intern",
       "sourceIds": [
-        "career-hitmarker-5151255",
-        "sr-744000154392949"
+        "sr-744000154392949",
+        "career-hitmarker-5151255"
       ],
       "foundIn": [
         "Hitmarker"
       ]
     },
     {
-      "id": "career-vfx-a1b9c40b585e60b9e6fc",
+      "id": "sr-744000153759984",
       "category": "vfx",
       "title": "Lead VFX Artist",
       "company": "Gameloft",
       "location": "Barcelona, Europe, Spain",
       "description": "About Gameloft Here at Gameloft, we create moments of happiness for our players all over the world through exciting gaming experiences. This is our mission, and it has been the same for over 25 years. We are the proud creators of Asphalt, Dungeon Hunter, Modern Combat, and over 200 other great games. There is a game for everyone, and we are now expanding to cross-platform games on PC and consoles, with titles such as Disney Speedstorm and Disney Dreamlight Valley, to provide our players with even more amazing adventures. With more than 3,000 passionate Gamelofters across the globe, we take great pride in our differences and draw on them to create games just as diverse as we are. If you’re looking for a new challenge and want to work with a bold and talented group of people, don’t hesitate to join the game! WHAT YOU WILL BE WORKING ON Main challenge We are looking for a Lead VFX Artist to lead the VFX discipline across our games, combining strong artistic expertise with team coordination, visual direction, and pipeline development. You will work closely with the Art Director and key stakeholders across the studio to ensure a consistent visual and technical quality across all VFX, while supporting project and studio goals. You will oversee the VFX process from initial concepts and prototyping through implementation, iteration, optimisation, and final delivery. Working with our proprietary engine and in-house tools, you will also contribute to the evolution of our VFX workflows, standards, and technology. What it means on a daily basis VFX Team Leadership: Oversee and coordinate the VFX team, establish priorities, and ensure deadlines and quality targets are met. Identify and remove systemic blockers early and proactively adjust resources and scope. Visual Direction & Quality: Work with the Art Director to ensure visual and technical unity across all VFX. Review completed work against artistic, technical, and gameplay requirements and advance VFX quality through regular reviews. Cross-Team Collaboration: Collaborate with Art Leads, Producers, Gameplay, Tech Art, Engineering, and other teams. Provide constructive feedback to internal and external partners. VFX Pipeline: Oversee the entire VFX pipeline, from initial concept and prototyping through implementation, iteration, optimisation, and final delivery. Standards & Workflows: Establish and maintain VFX standards, workflows, tools, and best practices. Ensure effects meet performance and platform requirements. Team Development: Participate in recruitment, mentor VFX artists, and foster team growth and development. What success will look like After 3 months, you will have built a strong understanding of the studio's projects, VFX workflows, team structure, and production requirements. You will have established effective working relationships with the Art Director and key stakeholders across the studio. After 6 months, you will be independently driving VFX priorities, supporting the team in delivering against project goals, and contributing to the evolution of VFX standards, workflows, and quality across the studio. Who you would be working with You will report to the Studio Art Director and work closely with VFX artists, Art Leads, Producers, Gameplay, Tech Art, Engineering, and other art and development teams. You will also collaborate with internal and external partners throughout the production process. Your recruitment journey HR Screen Call Test Second Interview Final Interview Where this role can take you This role can offer opportunities to deepen your expertise in VFX leadership, expand your responsibilities across the wider art discipline, and contribute to the development of VFX standards, workflows, and technology. You will also have access to development opportunities, mentorship, coaching, or internal mobility depending on business and individual opportunities. WHAT YOU NEED TO SUCCEED Demonstrated advanced expertise in real-time VFX for games, supported by a strong portfolio. Strong knowledge of visual effects techniques for creating real-time VFX in a 3D game engine. Strong knowledge of industry-standard game engines such as Unity, Unreal Engine, or CryEngine. Solid understanding of game development and how VFX contribute to gameplay, visual feedback, and the overall player experience. Experience creating particle systems and VFX in 3D packages such as Maya, Houdini, or 3ds Max. Experience with VFX techniques and plugins for 3D software packages such as Ra",
-      "url": "https://hitmarker.net/jobs/gameloft-lead-vfx-artist-5103480",
+      "url": "https://jobs.smartrecruiters.com/gameloft/744000153759984-lead-vfx-artist",
       "source": "Hitmarker",
       "sourceKind": "job-board",
       "checkedAt": "2026-10-26T04:29:32.594853Z",
@@ -654,14 +551,16 @@
       "postedDate": "2026-10-06",
       "originalUrl": "https://jobs.smartrecruiters.com/gameloft/744000153759984",
       "sourceIds": [
-        "career-hitmarker-5103480"
+        "career-vfx-a1b9c40b585e60b9e6fc",
+        "career-hitmarker-5103480",
+        "sr-744000153759984"
       ],
       "foundIn": [
         "Hitmarker"
       ]
     },
     {
-      "id": "career-vfx-9f1de5e75e197a72f66b",
+      "id": "career-vfx-e0f14e2dba4eb0c8f362",
       "category": "vfx",
       "title": "Senior VFX Artist [Tom Clancy's The Division 3]",
       "company": "Ubisoft",
@@ -682,6 +581,7 @@
       "postedDate": "2026-10-05",
       "originalUrl": "https://jobs.smartrecruiters.com/Ubisoft2/744000153410945-senior-vfx-artist-tom-clancy-s-the-division-3-",
       "sourceIds": [
+        "career-vfx-9f1de5e75e197a72f66b",
         "career-hitmarker-5059228"
       ],
       "foundIn": [
@@ -710,8 +610,8 @@
       "postedDate": "2026-10-02",
       "originalUrl": "https://job-boards.greenhouse.io/hasbro/jobs/4417606009",
       "sourceIds": [
-        "career-hitmarker-5042600",
-        "gh-4417606009"
+        "gh-4417606009",
+        "career-hitmarker-5042600"
       ],
       "foundIn": [
         "Hitmarker"
@@ -740,8 +640,8 @@
       "postedDate": "2026-10-02",
       "originalUrl": "https://www.riotgames.com/en/work-with-us/job/8148791?gh_jid=8148791",
       "sourceIds": [
-        "career-hitmarker-5035164",
-        "gh-8148791"
+        "gh-8148791",
+        "career-hitmarker-5035164"
       ],
       "foundIn": [
         "Hitmarker"
@@ -769,8 +669,8 @@
       "postedDate": "2026-10-02",
       "originalUrl": "https://job-boards.greenhouse.io/hasbro/jobs/4417607009",
       "sourceIds": [
-        "career-hitmarker-5042602",
-        "gh-4417607009"
+        "gh-4417607009",
+        "career-hitmarker-5042602"
       ],
       "foundIn": [
         "Hitmarker"
@@ -798,15 +698,15 @@
       "postedDate": "2026-10-01",
       "originalUrl": "https://jobs.smartrecruiters.com/CDPROJEKTRED/744000152943445-senior-vfx-artist",
       "sourceIds": [
-        "career-hitmarker-5021258",
-        "sr-744000152943445"
+        "sr-744000152943445",
+        "career-hitmarker-5021258"
       ],
       "foundIn": [
         "Hitmarker"
       ]
     },
     {
-      "id": "career-vfx-ae37e169501d3747193d",
+      "id": "career-vfx-7a2f2e6ec18040f55633",
       "category": "vfx",
       "title": "Lead VFX Artist",
       "company": "Gameloft",
@@ -828,6 +728,7 @@
       "postedDate": "2026-09-30",
       "originalUrl": "https://jobs.smartrecruiters.com/gameloft/744000152680479",
       "sourceIds": [
+        "career-vfx-ae37e169501d3747193d",
         "career-hitmarker-5011374"
       ],
       "foundIn": [
@@ -856,6 +757,7 @@
       "postedDate": "2026-09-29",
       "originalUrl": "https://beffio.teamtailor.com/jobs/8475413-senior-vfx-engineer-unity3d-remote-stylized-games",
       "sourceIds": [
+        "career-vfx-6bebdf61e854f0c40ce2",
         "career-hitmarker-5116182"
       ],
       "foundIn": [
@@ -884,8 +786,8 @@
       "postedDate": "2026-09-25",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216273",
       "sourceIds": [
-        "career-hitmarker-4931353",
-        "ea-216273"
+        "ea-216273",
+        "career-hitmarker-4931353"
       ],
       "foundIn": [
         "Hitmarker"
@@ -913,8 +815,8 @@
       "postedDate": "2026-09-23",
       "originalUrl": "https://job-boards.greenhouse.io/naughtydog/jobs/6207151004",
       "sourceIds": [
-        "career-hitmarker-4913183",
-        "gh-6207151004"
+        "gh-6207151004",
+        "career-hitmarker-4913183"
       ],
       "foundIn": [
         "Hitmarker"
@@ -942,6 +844,7 @@
       "postedDate": "2026-09-23",
       "originalUrl": "https://job-boards.greenhouse.io/nex/jobs/5432578008",
       "sourceIds": [
+        "career-vfx-21c3c5aba6213b76ba3a",
         "career-hitmarker-4917158"
       ],
       "foundIn": [
@@ -970,6 +873,7 @@
       "postedDate": "2026-09-23",
       "originalUrl": "https://playrix.com/en/job/open/internship/vfx-artist-intern",
       "sourceIds": [
+        "career-vfx-7649d692c53275c482dd",
         "career-hitmarker-4893048"
       ],
       "foundIn": [
@@ -998,8 +902,8 @@
       "postedDate": "2026-09-22",
       "originalUrl": "https://job-boards.greenhouse.io/naughtydog/jobs/6205192004",
       "sourceIds": [
-        "career-hitmarker-4887562",
-        "gh-6205192004"
+        "gh-6205192004",
+        "career-hitmarker-4887562"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1027,8 +931,8 @@
       "postedDate": "2026-09-22",
       "originalUrl": "https://job-boards.greenhouse.io/insomniac/jobs/6192046004",
       "sourceIds": [
-        "career-hitmarker-4887292",
-        "gh-6192046004"
+        "gh-6192046004",
+        "career-hitmarker-4887292"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1056,6 +960,7 @@
       "postedDate": "2026-09-22",
       "originalUrl": "https://job-boards.eu.greenhouse.io/tripledotstudios/jobs/4982056101",
       "sourceIds": [
+        "career-vfx-784a3031849aa121204e",
         "career-hitmarker-4879457"
       ],
       "foundIn": [
@@ -1063,7 +968,7 @@
       ]
     },
     {
-      "id": "career-vfx-74ad138b701a1ac785b4",
+      "id": "career-vfx-560d67c64f383aa1e61e",
       "category": "vfx",
       "title": "Lead VFX Artist",
       "company": "CD PROJEKT RED",
@@ -1085,6 +990,7 @@
       "postedDate": "2026-09-17",
       "originalUrl": "https://jobs.smartrecruiters.com/CDPROJEKTRED/744000150109221-lead-vfx-artist",
       "sourceIds": [
+        "career-vfx-74ad138b701a1ac785b4",
         "career-hitmarker-4841286"
       ],
       "foundIn": [
@@ -1113,6 +1019,7 @@
       "postedDate": "2026-09-16",
       "originalUrl": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Remote/Senior-VFX-Artist---Lightspeed-Studios_JR2024987-1",
       "sourceIds": [
+        "career-vfx-fc48d225c3d0c766a683",
         "career-hitmarker-4831107"
       ],
       "foundIn": [
@@ -1141,6 +1048,7 @@
       "postedDate": "2026-09-14",
       "originalUrl": "https://careers.actiiistudios.com/jobs/8373418-senior-vfx-artist",
       "sourceIds": [
+        "career-vfx-4dd0d98c3ced9e4747be",
         "career-hitmarker-5286819"
       ],
       "foundIn": [
@@ -1169,8 +1077,8 @@
       "postedDate": "2026-09-11",
       "originalUrl": "https://www.riotgames.com/en/work-with-us/job/7615781?gh_jid=7615781",
       "sourceIds": [
-        "career-hitmarker-4849647",
-        "gh-7615781"
+        "gh-7615781",
+        "career-hitmarker-4849647"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1198,8 +1106,8 @@
       "postedDate": "2026-09-10",
       "originalUrl": "https://www.riotgames.com/en/work-with-us/job/8073587?gh_jid=8073587",
       "sourceIds": [
-        "career-hitmarker-4792955",
-        "gh-8073587"
+        "gh-8073587",
+        "career-hitmarker-4792955"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1228,8 +1136,8 @@
       "postedDate": "2026-09-09",
       "originalUrl": "https://www.riotgames.com/en/work-with-us/job/7312899?gh_jid=7312899",
       "sourceIds": [
-        "career-hitmarker-4829960",
-        "gh-7312899"
+        "gh-7312899",
+        "career-hitmarker-4829960"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1257,6 +1165,7 @@
       "postedDate": "2026-09-09",
       "originalUrl": "https://jobs.workable.com/view/sPqCraEvBJxVvKdY6RRUPN/sr.-vfx-artist-in-bengaluru-at-lakshya-digital",
       "sourceIds": [
+        "career-vfx-ffa9e437a2a4c39f1a05",
         "career-hitmarker-4737176"
       ],
       "foundIn": [
@@ -1285,6 +1194,7 @@
       "postedDate": "2026-09-09",
       "originalUrl": "https://jobs.workable.com/view/7ZDJd3bHzd7rtupVtFzdoz/sr.-vfx-artist-in-pune-at-lakshya-digital",
       "sourceIds": [
+        "career-vfx-9fc892900217f7436156",
         "career-hitmarker-4737178"
       ],
       "foundIn": [
@@ -1313,6 +1223,7 @@
       "postedDate": "2026-09-09",
       "originalUrl": "https://jobs.workable.com/view/pDhprgJ8QpqmVnfswVQkME/sr.-vfx-artist-in-gurugram-at-lakshya-digital",
       "sourceIds": [
+        "career-vfx-78e6c6ae670946be0cfe",
         "career-hitmarker-4737180"
       ],
       "foundIn": [
@@ -1341,6 +1252,7 @@
       "postedDate": "2026-09-09",
       "originalUrl": "https://careers.activision.com/job/ACPUUSR028074EXTERNAL/Activision-2027-Summer-Internships-VFX",
       "sourceIds": [
+        "career-vfx-02aafd0802ab189777ef",
         "career-hitmarker-4744518"
       ],
       "foundIn": [
@@ -1369,6 +1281,7 @@
       "postedDate": "2026-09-08",
       "originalUrl": "https://careers.treyarch.com/job/R028074/Activision-2027-Summer-Internships-VFX",
       "sourceIds": [
+        "career-vfx-bd224293a0fb5e834c89",
         "career-hitmarker-4746682"
       ],
       "foundIn": [
@@ -1376,13 +1289,13 @@
       ]
     },
     {
-      "id": "career-vfx-b43334aa8898b83b0cf4",
+      "id": "sr-744000148330865",
       "category": "vfx",
       "title": "VFX Artist (Assassin's Creed Invictus)",
       "company": "Ubisoft",
       "location": "Montréal, North America, Canada, Quebec",
       "description": "Company Description Job Description As a VFX Artist at Ubisoft Montréal , you will create impactful visual moments that enrich gameplay and elevate the player experience. You will help bring immersive worlds to life through environmental effects such as smoke, fire, explosions, snow, water, and other real-time visual effects . In this role, you will combine creativity and technical expertise to design, integrate, and optimize high-quality visual effects directly in the game engine . You will collaborate with multiple teams to deliver a cohesive, performant, and visually engaging experience. What you’ll do Collaborate with creative direction to understand the project vision and define visual effects priorities Create environmental effects using particle systems and original textures Partner with programming teams to assess needs and support tool development Design visual effects that respect technical constraints while maintaining strong artistic impact Integrate visual effects into the game engine and ensure real-time performance Refine and optimize effects based on playtest results Troubleshoot technical issues related to visual effects when needed Adjust effects based on feedback from collaborating teams Consider community feedback post-launch when relevant Qualifications What you bring to the team Demonstrate skills in creating real-time visual effects for games or interactive media Understand 3D production pipelines including modeling, texturing, lighting, or image processing Know 2D art tools , compositing software , 3D software , and game engines Understand art fundamentals such as lighting, composition, proportion, and color theory Apply vector mathematics to visual effects work Receive feedback and adapt your work accordingly Collaborate effectively with cross-functional teams Communicate clearly and maintain strong attention to detail Use procedural tools or shader workflows , considered an asset What to send our way Your CV highlighting relevant skills and experiences A portfolio showcasing your strongest visual effects along with insight into your creative process Contract: PermanentWork flexibility: Office-based",
-      "url": "https://hitmarker.net/jobs/ubisoft-vfx-artist-assassins-creed-invictus-4732305",
+      "url": "https://jobs.smartrecruiters.com/Ubisoft2/744000148330865-vfx-artist-assassin-s-creed-invictus",
       "source": "Hitmarker",
       "sourceKind": "job-board",
       "checkedAt": "2026-10-26T04:29:32.594853Z",
@@ -1397,7 +1310,9 @@
       "postedDate": "2026-09-08",
       "originalUrl": "https://jobs.smartrecruiters.com/Ubisoft2/744000148330865-vfx-artist-assassin-s-creed-invictus-",
       "sourceIds": [
-        "career-hitmarker-4732305"
+        "career-vfx-b43334aa8898b83b0cf4",
+        "career-hitmarker-4732305",
+        "sr-744000148330865"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1426,6 +1341,7 @@
       "postedDate": "2026-09-04",
       "originalUrl": "https://jobs.eu.lever.co/innogames/e6a00553-dec2-4520-8e5f-62427b787be6",
       "sourceIds": [
+        "career-vfx-197a25110c90f8f26c14",
         "career-hitmarker-4788088"
       ],
       "foundIn": [
@@ -1454,8 +1370,8 @@
       "postedDate": "2026-09-03",
       "originalUrl": "https://apply.workable.com/j/D1C808E6F9",
       "sourceIds": [
-        "career-hitmarker-4815263",
-        "wk-d1c808e6f9"
+        "wk-d1c808e6f9",
+        "career-hitmarker-4815263"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1483,6 +1399,7 @@
       "postedDate": "2026-09-01",
       "originalUrl": "https://jobs.ashbyhq.com/hyperhug/f3b8072a-fd81-4b00-a1d6-72b0b7ed199c",
       "sourceIds": [
+        "career-vfx-b7f7b9819608bc6bc13b",
         "career-hitmarker-4737300"
       ],
       "foundIn": [
@@ -1512,6 +1429,7 @@
       "postedDate": "2026-09-01",
       "originalUrl": "https://careers.activision.com/job/ACPUUSR028050EXTERNAL/Lead-VFX-Artist-Raven-Middleton-WI",
       "sourceIds": [
+        "career-vfx-af029c4da168ab222484",
         "career-hitmarker-4670503"
       ],
       "foundIn": [
@@ -1541,6 +1459,7 @@
       "postedDate": "2026-08-31",
       "originalUrl": "https://careers.activisionblizzard.com/job/R028050/Lead-VFX-Artist-Raven-Middleton-WI",
       "sourceIds": [
+        "career-vfx-1d3a2dba34241b017d1d",
         "career-hitmarker-4673178"
       ],
       "foundIn": [
@@ -1569,8 +1488,8 @@
       "postedDate": "2026-08-31",
       "originalUrl": "https://jobs.smartrecruiters.com/Ubisoft2/744000146473011-hr-business-partner-hybride-vfx",
       "sourceIds": [
-        "career-hitmarker-4651619",
-        "sr-744000146473011"
+        "sr-744000146473011",
+        "career-hitmarker-4651619"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1598,6 +1517,7 @@
       "postedDate": "2026-08-27",
       "originalUrl": "https://careers.airshipinteractive.com/jobs/8281776-vfx-artist",
       "sourceIds": [
+        "career-vfx-3a467f7f147d068ca356",
         "career-hitmarker-4986295"
       ],
       "foundIn": [
@@ -1627,8 +1547,8 @@
       "postedDate": "2026-08-27",
       "originalUrl": "https://xboxgaming.wd1.myworkdayjobs.com/Blizzard_External_Careers/job/Irvine---Blizzard---Blizzard-Way/Senior-II-VFX-Artist---Unannounced-Game---Irvine--CA_R028002",
       "sourceIds": [
-        "career-hitmarker-4625534",
-        "wd-r028002"
+        "wd-r028002",
+        "career-hitmarker-4625534"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1656,8 +1576,8 @@
       "postedDate": "2026-08-26",
       "originalUrl": "https://jobs.ashbyhq.com/believer/fadae54c-240b-428f-a51f-c31a0fe28126",
       "sourceIds": [
-        "career-hitmarker-4937290",
-        "ab-fadae54c-240b-428f-a51f-c31a0fe28126"
+        "ab-fadae54c-240b-428f-a51f-c31a0fe28126",
+        "career-hitmarker-4937290"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1685,6 +1605,7 @@
       "postedDate": "2026-08-21",
       "originalUrl": "https://deck13.jobs.personio.de/job/2763224",
       "sourceIds": [
+        "career-vfx-9626d716c56c7b3be8f2",
         "career-hitmarker-5154819"
       ],
       "foundIn": [
@@ -1713,8 +1634,8 @@
       "postedDate": "2026-08-20",
       "originalUrl": "https://apply.workable.com/j/3722FB8235",
       "sourceIds": [
-        "career-hitmarker-4691965",
-        "wk-3722fb8235"
+        "wk-3722fb8235",
+        "career-hitmarker-4691965"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1742,8 +1663,8 @@
       "postedDate": "2026-08-20",
       "originalUrl": "https://apply.workable.com/j/94DB7DF519",
       "sourceIds": [
-        "career-hitmarker-4691989",
-        "wk-94db7df519"
+        "wk-94db7df519",
+        "career-hitmarker-4691989"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1771,8 +1692,8 @@
       "postedDate": "2026-08-20",
       "originalUrl": "https://apply.workable.com/j/AEC85F9CB5",
       "sourceIds": [
-        "career-hitmarker-4692024",
-        "wk-aec85f9cb5"
+        "wk-aec85f9cb5",
+        "career-hitmarker-4692024"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1801,6 +1722,7 @@
       "postedDate": "2026-08-17",
       "originalUrl": "https://careers.activisionblizzard.com/job/R027861/Senior-VFX-Artist-Gameplay",
       "sourceIds": [
+        "career-vfx-85fe9d68d4855ed3b518",
         "career-hitmarker-4547539"
       ],
       "foundIn": [
@@ -1830,8 +1752,8 @@
       "postedDate": "2026-08-17",
       "originalUrl": "https://job-boards.greenhouse.io/digitalextremes/jobs/5210646007",
       "sourceIds": [
-        "career-hitmarker-4508194",
-        "gh-5210646007"
+        "gh-5210646007",
+        "career-hitmarker-4508194"
       ],
       "foundIn": [
         "Hitmarker"
@@ -1859,6 +1781,7 @@
       "postedDate": "2026-08-17",
       "originalUrl": "https://job-boards.greenhouse.io/zyngacareers/jobs/6143053004",
       "sourceIds": [
+        "career-vfx-a9a77c6221b86f2c23b3",
         "career-hitmarker-4500887"
       ],
       "foundIn": [
@@ -1866,7 +1789,7 @@
       ]
     },
     {
-      "id": "career-vfx-e3656f5d64d0162e842b",
+      "id": "career-vfx-6656c9700381b5deda20",
       "category": "vfx",
       "title": "Senior VFX Artist",
       "company": "CD PROJEKT RED",
@@ -1887,6 +1810,7 @@
       "postedDate": "2026-08-13",
       "originalUrl": "https://jobs.smartrecruiters.com/CDPROJEKTRED/744000143352561-senior-vfx-artist",
       "sourceIds": [
+        "career-vfx-e3656f5d64d0162e842b",
         "career-hitmarker-4475022"
       ],
       "foundIn": [
@@ -1894,7 +1818,7 @@
       ]
     },
     {
-      "id": "career-vfx-9df49f38820d3d47f238",
+      "id": "career-vfx-e88fb89a97bc3cf880f0",
       "category": "vfx",
       "title": "Lead VFX Artist",
       "company": "CD PROJEKT RED",
@@ -1916,6 +1840,7 @@
       "postedDate": "2026-08-10",
       "originalUrl": "https://jobs.smartrecruiters.com/CDPROJEKTRED/744000142664350-lead-vfx-artist",
       "sourceIds": [
+        "career-vfx-9df49f38820d3d47f238",
         "career-hitmarker-4426917"
       ],
       "foundIn": [
@@ -1945,6 +1870,7 @@
       "postedDate": "2026-08-07",
       "originalUrl": "https://careers.activision.com/job/ACPUUSR027861EXTERNAL/Senior-VFX-Artist-Gameplay",
       "sourceIds": [
+        "career-vfx-84ecc2f83a9dc41a074f",
         "career-hitmarker-4277709"
       ],
       "foundIn": [
@@ -1973,8 +1899,8 @@
       "postedDate": "2026-08-05",
       "originalUrl": "https://jobs.lever.co/blackbirdinteractive/134a5b7d-12c8-4e1f-889d-216b1ceed2d8",
       "sourceIds": [
-        "career-hitmarker-4502333",
-        "lv-134a5b7d-12c8-4e1f-889d-216b1ceed2d8"
+        "lv-134a5b7d-12c8-4e1f-889d-216b1ceed2d8",
+        "career-hitmarker-4502333"
       ],
       "foundIn": [
         "Hitmarker"
@@ -2002,8 +1928,8 @@
       "postedDate": "2026-07-28",
       "originalUrl": "https://jobs.ashbyhq.com/voodoo/36027799-383b-49b5-af7c-8653745d2238",
       "sourceIds": [
-        "career-hitmarker-3469761",
-        "ab-36027799-383b-49b5-af7c-8653745d2238"
+        "ab-36027799-383b-49b5-af7c-8653745d2238",
+        "career-hitmarker-3469761"
       ],
       "foundIn": [
         "Hitmarker"
@@ -2031,8 +1957,8 @@
       "postedDate": "2026-07-23",
       "originalUrl": "https://jobs.ashbyhq.com/voodoo/8f86c74e-7d06-447d-bd1b-ad268e46bb3e",
       "sourceIds": [
-        "career-hitmarker-3139284",
-        "ab-8f86c74e-7d06-447d-bd1b-ad268e46bb3e"
+        "ab-8f86c74e-7d06-447d-bd1b-ad268e46bb3e",
+        "career-hitmarker-3139284"
       ],
       "foundIn": [
         "Hitmarker"
@@ -2060,6 +1986,7 @@
       "postedDate": "2026-07-21",
       "originalUrl": "https://careers.reality.co/o/technical-vfx-artists",
       "sourceIds": [
+        "career-vfx-e789edc399d8bdee4eb5",
         "career-hitmarker-5187662"
       ],
       "foundIn": [
@@ -2089,6 +2016,7 @@
       "postedDate": "2026-07-16",
       "originalUrl": "https://playrix.com/en/job/open/animation-vfx/junior-vfx-artist",
       "sourceIds": [
+        "career-vfx-ee8d245c17fffb275aa0",
         "career-hitmarker-2426514"
       ],
       "foundIn": [
@@ -2117,6 +2045,7 @@
       "postedDate": "2026-07-10",
       "originalUrl": "https://jobs.workable.com/view/78i91DD5YrptK4aGm43WFf/remote-vfx-artist---gamesim---talent-pipeline-in-mexico-city-at-liquid-development",
       "sourceIds": [
+        "career-vfx-5387966c129bfd167d45",
         "career-hitmarker-4662947"
       ],
       "foundIn": [
@@ -2145,6 +2074,7 @@
       "postedDate": "2026-07-07",
       "originalUrl": "https://jobs.workable.com/view/v4tFaUqTLBsUtudH18MJeK/hybrid-senior-vfx-artist-in-oxford-at-rebellion",
       "sourceIds": [
+        "career-vfx-bc83e7f42cd9304fcf65",
         "career-hitmarker-1919943"
       ],
       "foundIn": [
@@ -2173,6 +2103,7 @@
       "postedDate": "2026-07-07",
       "originalUrl": "https://jobs.workable.com/view/eM5Y2YENHfrYKLNYiwRbF4/hybrid-senior-vfx-artist-in-runcorn-at-rebellion",
       "sourceIds": [
+        "career-vfx-4a2e7395e822bb423ee3",
         "career-hitmarker-1919939"
       ],
       "foundIn": [
@@ -2201,6 +2132,7 @@
       "postedDate": "2026-07-07",
       "originalUrl": "https://jobs.workable.com/view/fmAY7muWg2QnrY8THz126R/hybrid-senior-vfx-artist-in-warwick-at-rebellion",
       "sourceIds": [
+        "career-vfx-5d1dcc0d6aa9e51e8ad9",
         "career-hitmarker-1919941"
       ],
       "foundIn": [
@@ -2208,7 +2140,7 @@
       ]
     },
     {
-      "id": "career-vfx-6ca37526fa4d6e045504",
+      "id": "career-vfx-752482abc5d5d55f2daf",
       "category": "vfx",
       "title": "Senior VFX Artist",
       "company": "CD PROJEKT RED",
@@ -2229,6 +2161,7 @@
       "postedDate": "2026-06-29",
       "originalUrl": "https://jobs.smartrecruiters.com/CDPROJEKTRED/744000134809605-senior-vfx-artist",
       "sourceIds": [
+        "career-vfx-6ca37526fa4d6e045504",
         "career-hitmarker-1751891"
       ],
       "foundIn": [
@@ -2257,6 +2190,7 @@
       "postedDate": "2026-10-21",
       "originalUrl": "https://jobs.workable.com/view/7uMssiC5re3VWrVEmGtk1P/remote-technical-artist-in-vietnam-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-a2376cf8d3a93cd39dff",
         "career-hitmarker-5321128"
       ],
       "foundIn": [
@@ -2285,6 +2219,7 @@
       "postedDate": "2026-10-21",
       "originalUrl": "https://jobs.workable.com/view/ttuCdKHDroCgMJ6uv9X63d/remote-technical-artist-in-indonesia-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-6d2448716b5691d126b4",
         "career-hitmarker-5321132"
       ],
       "foundIn": [
@@ -2313,6 +2248,7 @@
       "postedDate": "2026-10-21",
       "originalUrl": "https://jobs.workable.com/view/mLJH3XVTMzqxuWsLGKYWos/remote-technical-artist-in-malaysia-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-57993d9fcd7c124d8a47",
         "career-hitmarker-5321130"
       ],
       "foundIn": [
@@ -2342,6 +2278,7 @@
       "postedDate": "2026-10-12",
       "originalUrl": "https://www.comeet.com/jobs/superplay/28.003/technical-artist/CC.374",
       "sourceIds": [
+        "career-vfx-625fa87513a6e01a960c",
         "career-hitmarker-5278444"
       ],
       "foundIn": [
@@ -2370,6 +2307,7 @@
       "postedDate": "2026-10-05",
       "originalUrl": "https://jobs.workable.com/view/w2JfJdg1ShNaF7mvmyJoBc/remote-technical-artist-in-madrid-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-a86dcf9f52c2db4cbf9b",
         "career-hitmarker-5063889"
       ],
       "foundIn": [
@@ -2399,6 +2337,7 @@
       "postedDate": "2026-09-25",
       "originalUrl": "https://sega.wd3.myworkdayjobs.com/SEGA_Careers/job/Farnham-GU9-7PT/Technical-Artist_JR100208",
       "sourceIds": [
+        "career-vfx-fe47fa60fa3b9daede4f",
         "career-hitmarker-5142108"
       ],
       "foundIn": [
@@ -2428,6 +2367,7 @@
       "postedDate": "2026-09-07",
       "originalUrl": "https://www.playtika.com/position/?gh_jid=4929765101",
       "sourceIds": [
+        "career-vfx-3c6a1eceff242b08d252",
         "career-hitmarker-4786481"
       ],
       "foundIn": [
@@ -2456,6 +2396,7 @@
       "postedDate": "2026-09-06",
       "originalUrl": "https://apply.workable.com/j/FACACCFB80",
       "sourceIds": [
+        "career-vfx-d7d603d763074deddb95",
         "career-hitmarker-4724523"
       ],
       "foundIn": [
@@ -2484,6 +2425,7 @@
       "postedDate": "2026-09-01",
       "originalUrl": "https://jobs.ashbyhq.com/moonactive/33a48de5-40cd-4a03-beac-5c2833401a2e",
       "sourceIds": [
+        "career-vfx-b9b4138d295f1e91c8eb",
         "career-hitmarker-4674411"
       ],
       "foundIn": [
@@ -2512,6 +2454,7 @@
       "postedDate": "2026-08-27",
       "originalUrl": "https://careers.airshipinteractive.com/jobs/8281210-technical-artist",
       "sourceIds": [
+        "career-vfx-cb0d5b930fa968ba0efc",
         "career-hitmarker-4986281"
       ],
       "foundIn": [
@@ -2540,6 +2483,7 @@
       "postedDate": "2026-07-25",
       "originalUrl": "https://careers.bohemia.net/en/open-positions/senior-technical-artist-mryqmhqz",
       "sourceIds": [
+        "career-vfx-8ed74d9cfe8940bc77d7",
         "career-hitmarker-3187761"
       ],
       "foundIn": [
@@ -2569,6 +2513,7 @@
       "postedDate": "2026-07-17",
       "originalUrl": "https://jobs.lever.co/blackbirdinteractive/23bf52bc-dbed-4fc5-816c-43c920640bfd",
       "sourceIds": [
+        "career-vfx-a38a225a7e3c1fe97269",
         "career-hitmarker-4502339"
       ],
       "foundIn": [
@@ -2597,6 +2542,7 @@
       "postedDate": "2026-07-16",
       "originalUrl": "https://www.kojimaproductions.jp/en/technical-artist",
       "sourceIds": [
+        "career-vfx-1359579c97a20f0a6d63",
         "career-hitmarker-2427099"
       ],
       "foundIn": [
@@ -2625,6 +2571,7 @@
       "postedDate": "2026-10-22",
       "originalUrl": "https://job-boards.greenhouse.io/crystaldynamics/jobs/4746826005",
       "sourceIds": [
+        "career-vfx-a53f4ed93c9280711986",
         "career-hitmarker-5351864"
       ],
       "foundIn": [
@@ -2653,6 +2600,7 @@
       "postedDate": "2026-10-22",
       "originalUrl": "https://job-boards.greenhouse.io/crystaldynamics/jobs/4746824005",
       "sourceIds": [
+        "career-vfx-cdb63ffdf4ca386b4c8d",
         "career-hitmarker-5351743"
       ],
       "foundIn": [
@@ -2682,6 +2630,7 @@
       "postedDate": "2026-10-22",
       "originalUrl": "https://careers.roblox.com/jobs/8304814?gh_jid=8304814",
       "sourceIds": [
+        "career-vfx-7b53c9496c16bd5230a7",
         "career-hitmarker-5351755"
       ],
       "foundIn": [
@@ -2738,6 +2687,7 @@
       "postedDate": "2026-10-19",
       "originalUrl": "https://sunblink.breezy.hr/p/7d354a0b90fd-technical-artist-ai-tools-pipeline",
       "sourceIds": [
+        "career-vfx-9440302ed48196954300",
         "career-hitmarker-5303249"
       ],
       "foundIn": [
@@ -2766,6 +2716,7 @@
       "postedDate": "2026-10-14",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/Technical-Artist-Co-op/216406",
       "sourceIds": [
+        "career-vfx-180183b3f3087ff6b360",
         "career-hitmarker-5225280"
       ],
       "foundIn": [
@@ -2773,7 +2724,7 @@
       ]
     },
     {
-      "id": "career-vfx-2e22c09b8b1e33fbc9ef",
+      "id": "career-vfx-0b390abf9711466d9796",
       "category": "vfx",
       "title": "Senior Technical Artist - Characters (Unreal)",
       "company": "Ubisoft",
@@ -2794,6 +2745,7 @@
       "postedDate": "2026-10-13",
       "originalUrl": "https://jobs.smartrecruiters.com/Ubisoft2/744000155296851-senior-technical-artist-characters-unreal-",
       "sourceIds": [
+        "career-vfx-2e22c09b8b1e33fbc9ef",
         "career-hitmarker-5214135"
       ],
       "foundIn": [
@@ -2801,7 +2753,7 @@
       ]
     },
     {
-      "id": "career-vfx-a127f8339f993d7b27a4",
+      "id": "career-vfx-0f59f83d19fb439bcd7e",
       "category": "vfx",
       "title": "Junior Technical Artist - Rainbow Six  Siege",
       "company": "Ubisoft",
@@ -2822,6 +2774,7 @@
       "postedDate": "2026-10-09",
       "originalUrl": "https://jobs.smartrecruiters.com/Ubisoft2/744000154591320-junior-technical-artist-rainbow-six-siege",
       "sourceIds": [
+        "career-vfx-a127f8339f993d7b27a4",
         "career-hitmarker-5164293"
       ],
       "foundIn": [
@@ -2851,6 +2804,7 @@
       "postedDate": "2026-10-09",
       "originalUrl": "https://jobs.lever.co/skyboxlabs/99da50d1-0e03-451c-a8cf-d69ff30cd3c4",
       "sourceIds": [
+        "career-vfx-9da0424e3142242da0d5",
         "career-hitmarker-5172491"
       ],
       "foundIn": [
@@ -2880,6 +2834,7 @@
       "postedDate": "2026-10-07",
       "originalUrl": "https://jobs.workable.com/view/bxARDYyrM2kT6mAuhRuHQD/technical-artist---ai-%26-3d-pipeline-in-gurugram-at-lakshya-digital",
       "sourceIds": [
+        "career-vfx-b6d23bfea9154c14fd16",
         "career-hitmarker-5113302"
       ],
       "foundIn": [
@@ -2908,6 +2863,7 @@
       "postedDate": "2026-10-02",
       "originalUrl": "https://jobs.workable.com/view/42zmqxSxradzbCdp7G9Krs/remote-senior-technical-artist-in-madrid-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-c268e0b060c14b62c914",
         "career-hitmarker-5026688"
       ],
       "foundIn": [
@@ -2936,6 +2892,7 @@
       "postedDate": "2026-10-01",
       "originalUrl": "https://apply.workable.com/j/AEF24C79BD",
       "sourceIds": [
+        "career-vfx-afc3847032a4b05bc7ea",
         "career-hitmarker-5043062"
       ],
       "foundIn": [
@@ -2943,7 +2900,7 @@
       ]
     },
     {
-      "id": "career-vfx-0a1edac573757a798d81",
+      "id": "career-vfx-29efa04080381598dfa4",
       "category": "vfx",
       "title": "[Disney Dreamlight Valley PC/Console] Artiste technique - Technical Artist",
       "company": "Gameloft",
@@ -2964,6 +2921,7 @@
       "postedDate": "2026-10-01",
       "originalUrl": "https://jobs.smartrecruiters.com/gameloft/744000153024427",
       "sourceIds": [
+        "career-vfx-0a1edac573757a798d81",
         "career-hitmarker-5023517"
       ],
       "foundIn": [
@@ -2992,6 +2950,7 @@
       "postedDate": "2026-10-01",
       "originalUrl": "https://jobs.ashbyhq.com/voodoo/13968523-e0f2-4cdb-81a1-4ac338bd5e0a",
       "sourceIds": [
+        "career-vfx-8c419b0db3b81fb654b2",
         "career-hitmarker-5025101"
       ],
       "foundIn": [
@@ -3020,6 +2979,7 @@
       "postedDate": "2026-09-29",
       "originalUrl": "https://epicgames.com/careers/jobs/6201357004?gh_jid=6201357004",
       "sourceIds": [
+        "career-vfx-02acdc4868e8ed78b929",
         "career-hitmarker-4990221"
       ],
       "foundIn": [
@@ -3048,6 +3008,7 @@
       "postedDate": "2026-09-29",
       "originalUrl": "https://epicgames.com/careers/jobs/6201355004?gh_jid=6201355004",
       "sourceIds": [
+        "career-vfx-97c12b1d97827a3e7d57",
         "career-hitmarker-4990223"
       ],
       "foundIn": [
@@ -3077,6 +3038,7 @@
       "postedDate": "2026-09-29",
       "originalUrl": "https://job-boards.greenhouse.io/2k/jobs/8007755003",
       "sourceIds": [
+        "career-vfx-1d6be9a61db50aa13efb",
         "career-hitmarker-4979972"
       ],
       "foundIn": [
@@ -3106,6 +3068,7 @@
       "postedDate": "2026-09-28",
       "originalUrl": "https://job-boards.greenhouse.io/zyngacareers/jobs/6199619004",
       "sourceIds": [
+        "career-vfx-539a520b10d357c364aa",
         "career-hitmarker-4969539"
       ],
       "foundIn": [
@@ -3134,6 +3097,7 @@
       "postedDate": "2026-09-28",
       "originalUrl": "https://tencent.wd1.myworkdayjobs.com/Lightspeed/job/US-California-Irvine/Senior-Technical-Artist_R108153",
       "sourceIds": [
+        "career-vfx-e32115c1e2caa741ce78",
         "career-hitmarker-4979062"
       ],
       "foundIn": [
@@ -3163,6 +3127,7 @@
       "postedDate": "2026-09-25",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/Technical-Artist-Rigging-and-Animation-EA-SPORTS-F1/216017",
       "sourceIds": [
+        "career-vfx-bd577f53240dfbe61a5e",
         "career-hitmarker-4931340"
       ],
       "foundIn": [
@@ -3191,6 +3156,7 @@
       "postedDate": "2026-09-25",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/UI-Technical-Artist-NHL/215806",
       "sourceIds": [
+        "career-vfx-996a072b8567df7d32c3",
         "career-hitmarker-4931319"
       ],
       "foundIn": [
@@ -3219,6 +3185,7 @@
       "postedDate": "2026-09-24",
       "originalUrl": "https://jobs.lever.co/blackbirdinteractive/fc427213-d70e-4429-9b73-7be6ae4c3e6e",
       "sourceIds": [
+        "career-vfx-3671cd35069e2c3c53ef",
         "career-hitmarker-4931066"
       ],
       "foundIn": [
@@ -3247,6 +3214,7 @@
       "postedDate": "2026-09-24",
       "originalUrl": "https://jobs.lever.co/avalanchestudios/4f61b95e-2bb4-4fa1-a503-b1660a5df114",
       "sourceIds": [
+        "career-vfx-663e3fee83e96704ae4f",
         "career-hitmarker-4931063"
       ],
       "foundIn": [
@@ -3275,6 +3243,7 @@
       "postedDate": "2026-09-24",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/Technical-Artist-Asset-World-Data-Systems/216095",
       "sourceIds": [
+        "career-vfx-b5928e28360377daf5e8",
         "career-hitmarker-4915380"
       ],
       "foundIn": [
@@ -3303,6 +3272,7 @@
       "postedDate": "2026-09-24",
       "originalUrl": "https://supercell.com/en/careers/senior-technical-artist-project-rise/5c0288ab-280c-46cb-844d-297ac2a6ffe8/",
       "sourceIds": [
+        "career-vfx-a860755a727aefa8a7c5",
         "career-hitmarker-4917469"
       ],
       "foundIn": [
@@ -3331,6 +3301,7 @@
       "postedDate": "2026-09-24",
       "originalUrl": "https://jobs.jobvite.com/amberstudiocareers/job/oEVRAfwK",
       "sourceIds": [
+        "career-vfx-12da73ba978cd3faf519",
         "career-hitmarker-4958465"
       ],
       "foundIn": [
@@ -3360,6 +3331,7 @@
       "postedDate": "2026-09-23",
       "originalUrl": "https://careers.ilogos.biz/jobs/8442292-unity-technical-artist",
       "sourceIds": [
+        "career-vfx-f98136aef217bb79dae7",
         "career-hitmarker-4980900"
       ],
       "foundIn": [
@@ -3388,6 +3360,7 @@
       "postedDate": "2026-09-23",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/Technical-Artist-Rigging-EA-SPORTS-Technology/216316",
       "sourceIds": [
+        "career-vfx-e74ced7e2a4647f2b9a3",
         "career-hitmarker-4891959"
       ],
       "foundIn": [
@@ -3395,7 +3368,7 @@
       ]
     },
     {
-      "id": "career-vfx-bbd2baae0f24b38ebe63",
+      "id": "career-vfx-3422296cab89c9059891",
       "category": "vfx",
       "title": "[Disney Dreamlight Valley PC/Console] Artiste technique - Technical Artist",
       "company": "Gameloft",
@@ -3416,6 +3389,7 @@
       "postedDate": "2026-09-22",
       "originalUrl": "https://jobs.smartrecruiters.com/gameloft/744000151075899",
       "sourceIds": [
+        "career-vfx-bbd2baae0f24b38ebe63",
         "career-hitmarker-4892053"
       ],
       "foundIn": [
@@ -3444,6 +3418,7 @@
       "postedDate": "2026-09-15",
       "originalUrl": "https://job-boards.greenhouse.io/neteasegames/jobs/5238470007",
       "sourceIds": [
+        "career-vfx-50781f2c19a8f763c4e9",
         "career-hitmarker-4805439"
       ],
       "foundIn": [
@@ -3472,6 +3447,7 @@
       "postedDate": "2026-09-15",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/Technical-Artist-Character/216143",
       "sourceIds": [
+        "career-vfx-6973845112603dd1c352",
         "career-hitmarker-4802864"
       ],
       "foundIn": [
@@ -3500,6 +3476,7 @@
       "postedDate": "2026-09-15",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/Technical-Artist-Environment/216145",
       "sourceIds": [
+        "career-vfx-5f28308093167a029be9",
         "career-hitmarker-4802868"
       ],
       "foundIn": [
@@ -3529,6 +3506,7 @@
       "postedDate": "2026-09-14",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/216152-Sr-Technical-Artist/216152",
       "sourceIds": [
+        "career-vfx-11d27207941db660f73f",
         "career-hitmarker-4784900"
       ],
       "foundIn": [
@@ -3558,6 +3536,7 @@
       "postedDate": "2026-09-10",
       "originalUrl": "https://jobs.lever.co/vrchat/e9aecc1d-9e3f-4232-95ea-01fff6dfe222",
       "sourceIds": [
+        "career-vfx-d26892034aaf5435f417",
         "career-hitmarker-4807335"
       ],
       "foundIn": [
@@ -3586,6 +3565,7 @@
       "postedDate": "2026-09-09",
       "originalUrl": "https://jobs.vividgames.com/jobs/8351271-senior-technical-artist-remote-hybrid-or-on-site",
       "sourceIds": [
+        "career-vfx-7c253fd0653c5fa16d35",
         "career-hitmarker-5001778"
       ],
       "foundIn": [
@@ -3593,7 +3573,7 @@
       ]
     },
     {
-      "id": "career-vfx-ce85c5b6ea0aeb7351d6",
+      "id": "career-vfx-6973b0f960dc32d6e966",
       "category": "vfx",
       "title": "Senior UI Technical Artist [Tom Clancy's The Division 2: Survivors]",
       "company": "Ubisoft",
@@ -3614,6 +3594,7 @@
       "postedDate": "2026-09-03",
       "originalUrl": "https://jobs.smartrecruiters.com/Ubisoft2/744000147277289-senior-ui-technical-artist-tom-clancy-s-the-division-2-survivors-",
       "sourceIds": [
+        "career-vfx-ce85c5b6ea0aeb7351d6",
         "career-hitmarker-4692467"
       ],
       "foundIn": [
@@ -3642,6 +3623,7 @@
       "postedDate": "2026-08-31",
       "originalUrl": "https://jobs.lever.co/bellotalabs/434656ec-f446-4f23-872d-4a49a6ab473c",
       "sourceIds": [
+        "career-vfx-4c1b558c69d69e884d99",
         "career-hitmarker-5129794"
       ],
       "foundIn": [
@@ -3670,6 +3652,7 @@
       "postedDate": "2026-08-31",
       "originalUrl": "https://job-boards.greenhouse.io/neteasegames/jobs/5226056007",
       "sourceIds": [
+        "career-vfx-69c08b9d8dc3a468667d",
         "career-hitmarker-4647057"
       ],
       "foundIn": [
@@ -3677,7 +3660,7 @@
       ]
     },
     {
-      "id": "career-vfx-c3a7e6e04690152ed5cb",
+      "id": "career-vfx-3c7636b21f4169a8a8bc",
       "category": "vfx",
       "title": "UI Technical Artist (March of Giants)",
       "company": "Ubisoft",
@@ -3698,6 +3681,7 @@
       "postedDate": "2026-08-24",
       "originalUrl": "https://jobs.smartrecruiters.com/Ubisoft2/744000145284701-ui-technical-artist-march-of-giants-",
       "sourceIds": [
+        "career-vfx-c3a7e6e04690152ed5cb",
         "career-hitmarker-4584910"
       ],
       "foundIn": [
@@ -3726,6 +3710,7 @@
       "postedDate": "2026-08-21",
       "originalUrl": "https://11bitstudios.recruitee.com/o/senior-expert-technical-artist-frostpunk-1886",
       "sourceIds": [
+        "career-vfx-956a55748675cafcc65c",
         "career-hitmarker-5272029"
       ],
       "foundIn": [
@@ -3754,6 +3739,7 @@
       "postedDate": "2026-08-21",
       "originalUrl": "https://www.riotgames.com/en/work-with-us/job/8142698?gh_jid=8142698",
       "sourceIds": [
+        "career-vfx-de8ccfb4e480114af031",
         "career-hitmarker-4556350"
       ],
       "foundIn": [
@@ -3782,6 +3768,7 @@
       "postedDate": "2026-08-20",
       "originalUrl": "https://apply.workable.com/j/26DF4756B0",
       "sourceIds": [
+        "career-vfx-304f8b123422a1f6eb54",
         "career-hitmarker-4691961"
       ],
       "foundIn": [
@@ -3810,6 +3797,7 @@
       "postedDate": "2026-08-20",
       "originalUrl": "https://apply.workable.com/j/9715F9A25F",
       "sourceIds": [
+        "career-vfx-290a4ad77975160fec87",
         "career-hitmarker-4692022"
       ],
       "foundIn": [
@@ -3838,6 +3826,7 @@
       "postedDate": "2026-08-20",
       "originalUrl": "https://agbo.breezy.hr/p/33265d3234ce-lead-technical-artist",
       "sourceIds": [
+        "career-vfx-9a019d209fb5f4c1b33e",
         "career-hitmarker-5065318"
       ],
       "foundIn": [
@@ -3866,6 +3855,7 @@
       "postedDate": "2026-08-19",
       "originalUrl": "https://jobs.workable.com/view/3W9d5xrZCz5MsBPUSHTgz1/hybrid-technical-artist-d3t---12-month-contract-in-gateshead-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-4ce96e4cf98f18de7d89",
         "career-hitmarker-4531515"
       ],
       "foundIn": [
@@ -3894,6 +3884,7 @@
       "postedDate": "2026-08-19",
       "originalUrl": "https://jobs.workable.com/view/rkEgbcc4i23BWVgyi6McHj/hybrid-technical-artist-d3t---12-month-contract-in-daresbury-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-705ae9157ac3a41733eb",
         "career-hitmarker-4531518"
       ],
       "foundIn": [
@@ -3922,6 +3913,7 @@
       "postedDate": "2026-08-19",
       "originalUrl": "https://jobs.workable.com/view/sq4caXGy3sVMwncGiZbycA/hybrid-senior-technical-artist-d3t---12-month-contract-in-gateshead-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-cd46909a902b023c3119",
         "career-hitmarker-4531521"
       ],
       "foundIn": [
@@ -3950,6 +3942,7 @@
       "postedDate": "2026-08-19",
       "originalUrl": "https://jobs.workable.com/view/oE6pH4AAL12Vmvt4RppCyS/hybrid-senior-technical-artist-d3t---12-month-contract-in-daresbury-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-f57d435effc7b54bf3c5",
         "career-hitmarker-4531523"
       ],
       "foundIn": [
@@ -3978,6 +3971,7 @@
       "postedDate": "2026-08-15",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/RFT-Technical-Artist-DCC-Tools-EA-SPORTS-Technology/215839",
       "sourceIds": [
+        "career-vfx-a34bdbdc36f4e0617124",
         "career-hitmarker-4486682"
       ],
       "foundIn": [
@@ -4006,6 +4000,7 @@
       "postedDate": "2026-08-14",
       "originalUrl": "https://epicgames.com/careers/jobs/6139762004?gh_jid=6139762004",
       "sourceIds": [
+        "career-vfx-70c539432e4965b6be98",
         "career-hitmarker-4477939"
       ],
       "foundIn": [
@@ -4034,6 +4029,7 @@
       "postedDate": "2026-08-14",
       "originalUrl": "https://epicgames.com/careers/jobs/6143677004?gh_jid=6143677004",
       "sourceIds": [
+        "career-vfx-b77eb56d1dc7f16ace22",
         "career-hitmarker-4477941"
       ],
       "foundIn": [
@@ -4062,6 +4058,7 @@
       "postedDate": "2026-08-13",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/Principal-Technical-Artist/215623",
       "sourceIds": [
+        "career-vfx-cf84bfef2fa7b1ec0735",
         "career-hitmarker-4459017"
       ],
       "foundIn": [
@@ -4090,6 +4087,7 @@
       "postedDate": "2026-08-07",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/Technical-Artist-UFC/215827",
       "sourceIds": [
+        "career-vfx-8b83f68dc9f38076c806",
         "career-hitmarker-4254242"
       ],
       "foundIn": [
@@ -4118,6 +4116,7 @@
       "postedDate": "2026-08-07",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/Senior-Technical-Artist-Rigging-EA-SPORTS-Technology/215840",
       "sourceIds": [
+        "career-vfx-5ea3174816395f272635",
         "career-hitmarker-4254244"
       ],
       "foundIn": [
@@ -4146,6 +4145,7 @@
       "postedDate": "2026-07-31",
       "originalUrl": "https://jobs.lever.co/blackbirdinteractive/56cf2bcb-952d-473a-80a5-8ac0a8c89972",
       "sourceIds": [
+        "career-vfx-5b11454c441223d665b6",
         "career-hitmarker-4502349"
       ],
       "foundIn": [
@@ -4175,6 +4175,7 @@
       "postedDate": "2026-07-30",
       "originalUrl": "https://fa-exhj-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/2202",
       "sourceIds": [
+        "career-vfx-aafa2c1bb4b9a09ee3e8",
         "career-hitmarker-4449976"
       ],
       "foundIn": [
@@ -4204,6 +4205,7 @@
       "postedDate": "2026-07-21",
       "originalUrl": "https://careers.reality.co/o/technical-artist-for-mobile-games",
       "sourceIds": [
+        "career-vfx-92e3e7134ed8d7b8bf02",
         "career-hitmarker-5187666"
       ],
       "foundIn": [
@@ -4232,6 +4234,7 @@
       "postedDate": "2026-07-17",
       "originalUrl": "https://careers.garena.com/global/careers/J02095966",
       "sourceIds": [
+        "career-vfx-194e65f9c9a06a528f04",
         "career-hitmarker-2547458"
       ],
       "foundIn": [
@@ -4260,6 +4263,7 @@
       "postedDate": "2026-07-16",
       "originalUrl": "https://apply.workable.com/j/03982F3B2D",
       "sourceIds": [
+        "career-vfx-f522650365c4d005fdc8",
         "career-hitmarker-4663334"
       ],
       "foundIn": [
@@ -4288,6 +4292,7 @@
       "postedDate": "2026-07-16",
       "originalUrl": "https://apply.workable.com/j/66705A55DF",
       "sourceIds": [
+        "career-vfx-2967b16908add2bd479f",
         "career-hitmarker-4663340"
       ],
       "foundIn": [
@@ -4316,6 +4321,7 @@
       "postedDate": "2026-07-14",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/Technical-Artist-EA-SPORTS-FC/215361",
       "sourceIds": [
+        "career-vfx-18b60ee4dc49d541a242",
         "career-hitmarker-2140409"
       ],
       "foundIn": [
@@ -4344,6 +4350,7 @@
       "postedDate": "2026-07-14",
       "originalUrl": "https://jobs.ea.com/en_US/careers/JobDetail/Senior-Technical-Artist-EA-SPORTS-FC/214777",
       "sourceIds": [
+        "career-vfx-8088da48ce8a0244cb83",
         "career-hitmarker-2139256"
       ],
       "foundIn": [
@@ -4351,7 +4358,7 @@
       ]
     },
     {
-      "id": "career-vfx-fca0112d02cab176f5be",
+      "id": "career-vfx-266d773209dc8d3e6dbc",
       "category": "vfx",
       "title": "Principal Technical Artist (Unreal)",
       "company": "Ubisoft",
@@ -4372,6 +4379,7 @@
       "postedDate": "2026-07-13",
       "originalUrl": "https://jobs.smartrecruiters.com/Ubisoft2/744000137529236-principal-technical-artist-unreal-",
       "sourceIds": [
+        "career-vfx-fca0112d02cab176f5be",
         "career-hitmarker-2071265"
       ],
       "foundIn": [
@@ -4379,7 +4387,7 @@
       ]
     },
     {
-      "id": "career-vfx-d8edce51187db44f668e",
+      "id": "career-vfx-fb1b61b4ad1252759833",
       "category": "vfx",
       "title": "Senior Technical Artist",
       "company": "Gameloft",
@@ -4400,6 +4408,7 @@
       "postedDate": "2026-07-09",
       "originalUrl": "https://jobs.smartrecruiters.com/gameloft/744000136753850",
       "sourceIds": [
+        "career-vfx-d8edce51187db44f668e",
         "career-hitmarker-1957944"
       ],
       "foundIn": [
@@ -4428,6 +4437,7 @@
       "postedDate": "2026-07-09",
       "originalUrl": "https://sega.wd3.myworkdayjobs.com/SEGA_Careers/job/Greater-London-E15-2GW/Senior-Technical-Artist_JR100152",
       "sourceIds": [
+        "career-vfx-7ad9361476ed6c2c567d",
         "career-hitmarker-1991146"
       ],
       "foundIn": [
@@ -4456,6 +4466,7 @@
       "postedDate": "2026-07-09",
       "originalUrl": "https://playdead.breezy.hr/p/929ceca71c9b01-experienced-technical-artist",
       "sourceIds": [
+        "career-vfx-b4f24945c8ceb9653f73",
         "career-hitmarker-4558831"
       ],
       "foundIn": [
@@ -4484,6 +4495,7 @@
       "postedDate": "2026-06-30",
       "originalUrl": "https://jobs.workable.com/view/piN2wRZfGFbhEpriniwgR8/remote-technical-artist---talent-pool-(2026-opportunities)-in-mexico-city-at-liquid-development",
       "sourceIds": [
+        "career-vfx-b768b0ffc168bd996272",
         "career-hitmarker-4662949"
       ],
       "foundIn": [
@@ -4513,6 +4525,7 @@
       "postedDate": "2026-06-29",
       "originalUrl": "https://jobs.workable.com/view/cUUrFMXn1vwnB2Wk6S4niY/hybrid-technical-artist-%7C-artiste-technique---volta-in-qu%C3%A9bec-city-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-8267f91b39cfaa65010d",
         "career-hitmarker-4467395"
       ],
       "foundIn": [
@@ -4542,6 +4555,7 @@
       "postedDate": "2026-06-29",
       "originalUrl": "https://jobs.workable.com/view/2wtVnsffwTk9JJ6AXm9xxp/hybrid-technical-artist-%7C-artiste-technique---volta-in-montreal-at-keywords-studios",
       "sourceIds": [
+        "career-vfx-6647010f486048beb641",
         "career-hitmarker-4467397"
       ],
       "foundIn": [
@@ -4570,6 +4584,7 @@
       "postedDate": "2026-09-29",
       "originalUrl": "https://job-boards.greenhouse.io/scopely/jobs/5433009008?gh_jid=5433009008",
       "sourceIds": [
+        "career-vfx-538e74c84dbf5855b656",
         "career-hitmarker-4983432"
       ],
       "foundIn": [
@@ -4595,6 +4610,7 @@
       "requirements": [],
       "postedDate": "2026-09-15",
       "sourceIds": [
+        "career-vfx-5a02f9044e9d844481d3",
         "career-ggd-642bb09c75c389ff7d9c"
       ],
       "foundIn": [
@@ -4620,6 +4636,7 @@
       "requirements": [],
       "postedDate": "2026-10-06",
       "sourceIds": [
+        "career-vfx-35e5470693fbd3fa2b67",
         "career-ggd-a2a514bb8d33df9ae643"
       ],
       "foundIn": [
@@ -4647,6 +4664,7 @@
       ],
       "postedDate": "2026-09-29",
       "sourceIds": [
+        "career-vfx-b213a7e0f4c59c17c911",
         "career-ggd-de7582b51d991ed9148e"
       ],
       "foundIn": [
@@ -4674,6 +4692,7 @@
       ],
       "postedDate": "2026-10-12",
       "sourceIds": [
+        "career-vfx-a5965cf7211fe31931dd",
         "career-ggd-c05a764383549fc4a58c"
       ],
       "foundIn": [
@@ -4701,6 +4720,7 @@
       ],
       "postedDate": "2026-09-17",
       "sourceIds": [
+        "career-vfx-4b71998f3ba7fc164079",
         "career-ggd-2dcce4fda530d50c9412"
       ],
       "foundIn": [
@@ -4726,6 +4746,7 @@
       "requirements": [],
       "postedDate": "2026-09-09",
       "sourceIds": [
+        "career-vfx-cb85c7dae4f6fe1f11bd",
         "career-ggd-177ce959d6926f13753e"
       ],
       "foundIn": [
@@ -4751,6 +4772,7 @@
       "requirements": [],
       "postedDate": "2026-10-07",
       "sourceIds": [
+        "career-vfx-a48b7dc7e2e7a669508a",
         "career-ggd-81465baafe5c24e75ae9"
       ],
       "foundIn": [
@@ -4778,6 +4800,7 @@
       ],
       "postedDate": "2026-08-29",
       "sourceIds": [
+        "career-vfx-57e71dffe91e09114160",
         "career-ggd-176ced71af7ff529c2f5"
       ],
       "foundIn": [
@@ -4803,6 +4826,7 @@
       "requirements": [],
       "postedDate": "2026-09-30",
       "sourceIds": [
+        "career-vfx-8e4e70049a122411b1c7",
         "career-ggd-9dafb3abd62ead86a5b5"
       ],
       "foundIn": [
@@ -4828,6 +4852,7 @@
       "requirements": [],
       "postedDate": "2026-10-02",
       "sourceIds": [
+        "career-vfx-26e41f75b04fe70c8249",
         "career-ggd-cfa266a6ee0e8a7d582b"
       ],
       "foundIn": [
@@ -4855,6 +4880,7 @@
       ],
       "postedDate": "2026-09-03",
       "sourceIds": [
+        "career-vfx-a3bae6e858084255de78",
         "career-ggd-772959d08319c482a778"
       ],
       "foundIn": [
@@ -4882,6 +4908,7 @@
       ],
       "postedDate": "2026-10-02",
       "sourceIds": [
+        "career-vfx-db648eaf77b2ea546ae2",
         "career-ggd-f9ed5eaa41d83b7227bd"
       ],
       "foundIn": [
@@ -4907,6 +4934,7 @@
       "requirements": [],
       "postedDate": "2026-09-15",
       "sourceIds": [
+        "career-vfx-841976478eceb897b896",
         "career-ggd-d67c9aef33d5ae17e9b5"
       ],
       "foundIn": [
@@ -4932,6 +4960,7 @@
       "requirements": [],
       "postedDate": "2026-09-29",
       "sourceIds": [
+        "career-vfx-be66d00be898a2c97459",
         "career-ggd-063fad820b911eb29ef2"
       ],
       "foundIn": [
@@ -4960,6 +4989,7 @@
       ],
       "postedDate": "2026-08-28",
       "sourceIds": [
+        "career-vfx-588a80dcd078e085e309",
         "career-ggd-4ab1fa92f0f33a6c86c2"
       ],
       "foundIn": [
@@ -4985,6 +5015,7 @@
       "requirements": [],
       "postedDate": "2026-10-11",
       "sourceIds": [
+        "career-vfx-f085540949dcf1b9dc08",
         "career-ggd-95168411245ae0913544"
       ],
       "foundIn": [
@@ -5012,6 +5043,7 @@
       ],
       "postedDate": "2026-09-28",
       "sourceIds": [
+        "career-vfx-c491ed42945a25fb6c9b",
         "career-ggd-3768120db8dcb54e2a0f"
       ],
       "foundIn": [
@@ -5037,6 +5069,7 @@
       "requirements": [],
       "postedDate": "2026-09-17",
       "sourceIds": [
+        "career-vfx-56288c6954e91b2ed731",
         "career-ggd-e51f77081df899292631"
       ],
       "foundIn": [
@@ -5064,6 +5097,7 @@
       ],
       "postedDate": "2026-09-27",
       "sourceIds": [
+        "career-vfx-ccfb5f43e978f2625114",
         "career-ggd-ec4e07b719771431dee0"
       ],
       "foundIn": [
@@ -5089,6 +5123,7 @@
       "requirements": [],
       "postedDate": "2026-09-30",
       "sourceIds": [
+        "career-vfx-b3a1feac9ed6612b7649",
         "career-ggd-1a7525b313e8dccc41c2"
       ],
       "foundIn": [
@@ -5116,6 +5151,7 @@
       ],
       "postedDate": "2026-09-23",
       "sourceIds": [
+        "career-vfx-c4fbd25b78c097bce701",
         "career-ggd-c5270c90275e4003036c"
       ],
       "foundIn": [
@@ -5141,6 +5177,7 @@
       "requirements": [],
       "postedDate": "2026-09-26",
       "sourceIds": [
+        "career-vfx-dc56050aafb137a07248",
         "career-ggd-ce180d861fdcb3f3092f"
       ],
       "foundIn": [
@@ -5166,6 +5203,7 @@
       "requirements": [],
       "postedDate": "2026-10-06",
       "sourceIds": [
+        "career-vfx-bfd70d76cae8bbc48773",
         "career-ggd-7f81b52abe7753246715"
       ],
       "foundIn": [
@@ -5193,6 +5231,7 @@
       ],
       "postedDate": "2026-10-07",
       "sourceIds": [
+        "career-vfx-24e0e15af2e7e0c8480d",
         "career-ggd-74fc43e4f06c4518fc7d"
       ],
       "foundIn": [
@@ -5220,6 +5259,7 @@
       ],
       "postedDate": "2026-10-06",
       "sourceIds": [
+        "career-vfx-9fb793adfc5f966ad1d2",
         "career-ggd-a24f13705b0df0537b45"
       ],
       "foundIn": [
@@ -5245,6 +5285,7 @@
       "requirements": [],
       "postedDate": "2026-10-10",
       "sourceIds": [
+        "career-vfx-f6139dc00a509f4d3663",
         "career-ggd-713c338a2819148fc464"
       ],
       "foundIn": [
@@ -5270,6 +5311,7 @@
       "requirements": [],
       "postedDate": "2026-10-06",
       "sourceIds": [
+        "career-vfx-b12e9b73415b499e573e",
         "career-ggd-06a3e1e6537a6892e797"
       ],
       "foundIn": [
@@ -5295,6 +5337,7 @@
       "requirements": [],
       "postedDate": "2026-09-11",
       "sourceIds": [
+        "career-vfx-552e8833136527e61edd",
         "career-ggd-5ab48918360053279de3"
       ],
       "foundIn": [
@@ -5320,6 +5363,7 @@
       "requirements": [],
       "postedDate": "2026-10-12",
       "sourceIds": [
+        "career-vfx-46669409d54c811106e3",
         "career-ggd-3ffbdf69428e08d80594"
       ],
       "foundIn": [
@@ -5347,6 +5391,7 @@
       ],
       "postedDate": "2026-10-01",
       "sourceIds": [
+        "career-vfx-2ace7f8d9f020f0ffa4c",
         "career-ggd-198de98204fdea655764"
       ],
       "foundIn": [
@@ -5374,6 +5419,7 @@
       ],
       "postedDate": "2026-09-19",
       "sourceIds": [
+        "career-vfx-6688753b2181570d4128",
         "career-stratos-62022"
       ],
       "foundIn": [
@@ -5399,6 +5445,7 @@
       "requirements": [],
       "postedDate": "2026-09-08",
       "sourceIds": [
+        "career-vfx-4e53907c941954e0a116",
         "career-stratos-52811"
       ],
       "foundIn": [

@@ -144,7 +144,8 @@ def run():
     if any(s['status']=='error' for s in status):
         ids = {r['id'] for r in rows}
         rows += [dict(r,retainedAfterFailure=True) for r in previous.get('calls',[]) if r['id'] not in ids and (r.get('closingDate') or '') >= now[:10]]
-    out = dict(schemaVersion=1,updatedAt=now,calls=rows,sources=status,
+    out = dict(schemaVersion=1,lastAttemptAt=now,
+        updatedAt=now if any(s['status']=='ok' for s in status) else previous.get('updatedAt'),calls=rows,sources=status,
         note='Fuente oficial informativa, cobertura parcial. No implica admisión ni destino garantizado. Las fechas del PAG son orientativas; mandan las bases oficiales.')
     temp=path.with_suffix('.json.tmp');temp.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');temp.replace(path)
     print(json.dumps(dict(calls=len(rows),failures=sum(s['status']=='error' for s in status))))

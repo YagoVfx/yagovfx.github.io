@@ -4,7 +4,7 @@ import 'jobs.dart';
 String educationFit(Map<String, dynamic> item) {
   final text = fold('${item['description'] ?? ''}');
   final fp = RegExp(
-    r'formacion profesional|ciclo.{0,20}superior|\bfp2?\b|\bdam\b',
+    r'formacion profesional|ciclo.{0,20}superior|grado (?:medio|superior|medio/superior)|\bfp2?\b|\bdam\b',
   ).hasMatch(text);
   final alternative = RegExp(
     r'(?:degree|bachelor|universitari|ingenieria).{0,100}(?:or equivalent|equivalent experience|o experiencia equivalente|o fp|o formacion profesional)',
@@ -12,7 +12,15 @@ String educationFit(Map<String, dynamic> item) {
   final university = RegExp(
     r'(?:required|must have|mandatory|looking for).{0,60}(?:bachelor|degree|b\.s\.)|(?:bachelor|university degree).{0,35}(?:required|mandatory)|(?:imprescindible|obligatori[oa]|requisito).{0,60}(?:ingenieria|grado universitario)|(?:ingenieria|grado universitario).{0,35}(?:obligatori|imprescindible)',
   ).hasMatch(text);
-  if (university && !alternative) return 'university';
+  final universityTraining = RegExp(
+    r'formacion universitaria|estudios universitarios|titulacion universitaria',
+  ).hasMatch(text);
+  final preferred = RegExp(
+    r'(?:valorable|preferible|preferentemente|se valorara).{0,60}(?:universitari|ingenieria)|(?:universitari\w*|ingenieria).{0,30}(?:valorable|preferible)',
+  ).hasMatch(text);
+  if ((university || universityTraining && !preferred) && !alternative) {
+    return 'university';
+  }
   if (fp) return 'fp';
   if (alternative) return 'experience';
   return 'unknown';
