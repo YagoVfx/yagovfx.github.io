@@ -214,12 +214,10 @@ class _PublicExamsState extends State<PublicExamsPage> {
       child: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          Text(
-            'Oposiciones${widget.savedOnly ? ' guardadas' : ''}',
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          const Text(
-            'Acceso libre relacionado con tus estudios. Confirma titulación y plazos en las bases.',
+          RadarHeader(
+            title: widget.savedOnly ? 'Tus convocatorias' : 'Oposiciones',
+            subtitle: 'Vigo y A Coruña · plazas relacionadas con tus FP',
+            category: 'public',
           ),
           if (error != null)
             Padding(
@@ -256,7 +254,7 @@ class _PublicExamsState extends State<PublicExamsPage> {
           const SizedBox(height: 12),
           Text(
             '${rows.length} convocatorias en tu vista',
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 21),
           ),
           const Text(
             'Fechas orientativas del PAG: confirma siempre las bases. Cobertura parcial de las convocatorias municipales.',
@@ -264,11 +262,15 @@ class _PublicExamsState extends State<PublicExamsPage> {
           ),
           for (final row in rows)
             Card(
+              margin: const EdgeInsets.only(top: 12),
               child: ListTile(
                 contentPadding: const EdgeInsets.all(16),
                 title: Text(
                   row['title'],
-                  style: const TextStyle(fontWeight: FontWeight.w700),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 19,
+                  ),
                 ),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -282,13 +284,20 @@ class _PublicExamsState extends State<PublicExamsPage> {
                     Text(
                       '${row['freePlaces'] ?? row['places'] ?? '?'} plazas · Fin: ${readableDate(row['closingDate'])}',
                     ),
+                    if (deadlineNotice(row['closingDate']) != null)
+                      statusTag(
+                        deadlineNotice(row['closingDate'])!,
+                        tone: reviewColor,
+                      ),
                     statusTag(
                       row['retainedAfterFailure'] == true
                           ? 'Vigencia sin confirmar · consulta fallida'
                           : row['fit'] == 'dam'
                           ? 'Incluye DAM en la titulación'
                           : 'Revisar titulación',
-                      confirmed: row['fit'] == 'dam',
+                      confirmed:
+                          row['fit'] == 'dam' &&
+                          row['retainedAfterFailure'] != true,
                     ),
                   ],
                 ),

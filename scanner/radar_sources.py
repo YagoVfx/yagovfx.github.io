@@ -233,11 +233,17 @@ def gamesjobsdirect(now):
 def artstation(now):
     # The public endpoint currently returns HTTP 403. Surface that failure explicitly;
     # do not silently claim a working integration or try to bypass the challenge.
-    response=get('https://www.artstation.com/jobs/search.json?query=vfx&page=1')
-    raise ValueError(f'ArtStation automatic adapter pending a validated public format ({response.status_code})')
+    from scanner.source_errors import IntegrationPending
+    raise IntegrationPending('ArtStation: integración pendiente de un formato público validado. No se cuenta como fuente operativa.')
 
 
 def xunta_employment(now):
+    from scanner.source_errors import IntegrationPending
+    raise IntegrationPending('Xunta empleo privado: integración pendiente. SNE, DIPLOS y CNTG se consultan por separado.')
+
+
+def probe_xunta_employment():
+    """Manual diagnostic, separate from the scheduled source health check."""
     url='https://emprego.xunta.gal/es/demandantes/busca-empleo/busca-trabajo-en-galicia'
     with requests.Session() as session:
         response=session.get(url,headers=HEADERS,timeout=30);response.raise_for_status()

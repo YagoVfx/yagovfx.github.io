@@ -565,19 +565,23 @@ class _ApplicationsPageState extends State<ApplicationsPage> {
           return ListView(
             padding: const EdgeInsets.all(24),
             children: [
-              Text(
-                'Mis candidaturas',
-                style: Theme.of(context).textTheme.headlineSmall,
+              const RadarHeader(
+                title: 'Mis candidaturas',
+                subtitle: 'Tu seguimiento privado, también en la web',
+                category: 'applications',
               ),
+              const SizedBox(height: 20),
               const Text(
                 'Inicia sesión con la misma cuenta que usas en la web. Las candidaturas son privadas y se sincronizan entre dispositivos.',
               ),
+              const SizedBox(height: 16),
               TextField(
                 controller: email,
                 keyboardType: TextInputType.emailAddress,
                 autofillHints: const [AutofillHints.username],
                 decoration: const InputDecoration(labelText: 'Email'),
               ),
+              const SizedBox(height: 12),
               TextField(
                 controller: password,
                 obscureText: true,
@@ -615,19 +619,22 @@ class _ApplicationsPageState extends State<ApplicationsPage> {
           child: ListView(
             padding: const EdgeInsets.all(16),
             children: [
-              Text(
-                'Mis candidaturas (${records.length})',
-                style: Theme.of(context).textTheme.headlineSmall,
+              RadarHeader(
+                title: 'Mis candidaturas',
+                subtitle:
+                    '${records.length} en tu vista · seguimiento sincronizado',
+                category: 'applications',
               ),
+              const SizedBox(height: 16),
               Text('Cuenta: ${store.email ?? ''}'),
-              const Text(
-                'Sincronización automática cada 15 segundos. Desliza para actualizar.',
-              ),
               if (store.busy) const LinearProgressIndicator(),
               if (store.error != null)
                 Text(store.error!, style: const TextStyle(color: Colors.amber)),
               if (store.lastSync != null)
-                Text('Última sincronización: ${readableDate(store.lastSync)}'),
+                Text(
+                  'Sincronizado: ${readableDate(store.lastSync)}',
+                  style: const TextStyle(color: mutedColor, fontSize: 12),
+                ),
               Wrap(
                 spacing: 8,
                 children: [
@@ -683,6 +690,10 @@ class _ApplicationsPageState extends State<ApplicationsPage> {
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         Text(r['company']),
+                        statusTag(
+                          applicationLabels[r['status']] ?? 'Por revisar',
+                          tone: applicationTone(r['status']),
+                        ),
                         Text(
                           'Enviada: ${(r['appliedAt'] as String).substring(0, 10)}',
                         ),

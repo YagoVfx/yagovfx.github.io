@@ -19,6 +19,13 @@ const careerCategories = {
   'courses': 'Cursos',
 };
 const navigationCategories = {...careerCategories, 'public': 'Oposiciones'};
+const courseTopics = {
+  'vfx': 'VFX / Games',
+  'programming': 'Programación',
+  'electricity': 'Electricidad',
+  'telecom': 'Telecomunicaciones',
+  'digital': 'Herramientas digitales',
+};
 
 ({int score, List<String> reasons}) coursePriority(
   Map<String, dynamic> item, {
@@ -300,7 +307,7 @@ class CareerFeedRepository {
     final data = jsonDecode(text);
     if (data is! Map<String, dynamic> ||
         data['schemaVersion'] != 2 ||
-        (data['coverageVersion'] as num? ?? 0) < 7 ||
+        (data['coverageVersion'] as num? ?? 0) < 8 ||
         data['offers'] is! List ||
         data['courses'] is! List) {
       throw const FormatException('Formato de oportunidades no válido');
@@ -929,11 +936,16 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
   }
 
   Widget summaryCard(Map<String, dynamic> item, bool course) => Card(
+    margin: const EdgeInsets.only(bottom: 12),
     child: ListTile(
       contentPadding: const EdgeInsets.all(16),
       title: Text(
         '${item['title']}',
-        style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
+        style: const TextStyle(
+          fontSize: 19,
+          fontWeight: FontWeight.w700,
+          height: 1.25,
+        ),
       ),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -942,7 +954,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
           Text(
             '${item['company'] ?? item['provider']}',
             style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
+              color: categoryAccent(widget.category),
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -954,7 +966,7 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
             ),
           Text(
             course
-                ? "${coursePrice(item)} · ${item['modality'] == 'online' ? 'Online' : 'Presencial'} · ${durationLabel(item['durationHours'])}"
+                ? "${item['modality'] == 'online' ? 'Online' : 'Presencial'} · ${durationLabel(item['durationHours'])}"
                 : "${item['location']} · ${item['workplace'] == 'remote'
                       ? 'Remoto'
                       : item['workplace'] == 'hybrid'
@@ -962,23 +974,40 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                       : 'Modalidad por confirmar'}",
             style: const TextStyle(color: mutedColor, fontSize: 12),
           ),
-          statusTag(
-            course
-                ? coursePriorityLabel(item, goal: goal)
-                : widget.category == 'vfx'
-                ? item['hasEmployer'] == true
-                      ? Job(item).verified
-                            ? 'Procedencia oficial'
-                            : 'Comprobación pendiente'
-                      : 'Portal · revisar condiciones'
-                : fitLabel(item),
-            confirmed:
-                !course &&
-                (widget.category == 'vfx'
-                    ? item['hasEmployer'] == true && Job(item).verified
-                    : educationFit(item) == 'fp'),
-            review: !course,
-          ),
+          if (course)
+            statusTag(
+              item['price'] == 0 ? 'Gratis / subvencionado' : coursePrice(item),
+              tone: item['price'] == 0
+                  ? confirmedColor
+                  : item['price'] is num
+                  ? categoryAccent('programming')
+                  : reviewColor,
+            ),
+          if (!course)
+            statusTag(
+              course
+                  ? coursePriorityLabel(item, goal: goal)
+                  : widget.category == 'vfx'
+                  ? item['hasEmployer'] == true
+                        ? Job(item).verified
+                              ? 'Procedencia oficial'
+                              : 'Comprobación pendiente'
+                        : 'Portal · revisar condiciones'
+                  : fitLabel(item),
+              confirmed:
+                  !course &&
+                  (widget.category == 'vfx'
+                      ? item['hasEmployer'] == true && Job(item).verified
+                      : educationFit(item) == 'fp'),
+              review:
+                  !course &&
+                  (item['retainedAfterFailure'] == true ||
+                      educationFit(item) == 'university' ||
+                      item['experience'] == 'experienced' ||
+                      widget.category == 'vfx' &&
+                          item['hasEmployer'] == true &&
+                          !Job(item).verified),
+            ),
           if (!course && widget.applications.find(Job(item)) != null)
             statusTag(
               'Candidatura: ${applicationLabels[widget.applications.find(Job(item))!['status']]}',
@@ -989,6 +1018,32 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
               'Encontrada en ${(item['foundIn'] as List).length} fuentes',
               style: const TextStyle(color: mutedColor, fontSize: 12),
             ),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              Icon(
+                course ? Icons.menu_book_outlined : Icons.article_outlined,
+                size: 15,
+                color: categoryAccent(widget.category),
+              ),
+              const SizedBox(width: 6),
+              Expanded(
+                child: Text(
+                  course ? 'Ver programa y acceso' : 'Ver oferta y requisitos',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: categoryAccent(widget.category),
+                  ),
+                ),
+              ),
+              const Icon(
+                Icons.arrow_forward_rounded,
+                size: 16,
+                color: mutedColor,
+              ),
+            ],
+          ),
         ],
       ),
       trailing: IconButton(
@@ -1424,9 +1479,23 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
       child: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          Text(
-            '${widget.category == 'vfx' ? 'VFX / Games' : careerCategories[widget.category]}${widget.savedOnly ? ' · Guardadas' : ''}',
-            style: Theme.of(context).textTheme.headlineSmall,
+          RadarHeader(
+            category: widget.category,
+            title: widget.savedOnly
+                ? 'Tus guardadas'
+                : widget.category == 'vfx'
+                ? 'VFX / Games'
+                : careerCategories[widget.category]!,
+            subtitle: widget.savedOnly
+                ? 'Tu selección para revisar con calma'
+                : {
+                    'vfx': 'Tu próxima oportunidad en videojuegos y efectos',
+                    'programming': 'Vigo, A Coruña y remoto desde España',
+                    'electricity':
+                        'Instalaciones y mantenimiento · Vigo y A Coruña',
+                    'courses':
+                        'Refuerza tu base o aprende una nueva especialidad',
+                  }[widget.category]!,
           ),
           if (loading) const LinearProgressIndicator(),
           if (error != null)
@@ -1434,25 +1503,21 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
 
           const SizedBox(height: 12),
           if (isCourse) ...[
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  for (final e in {
-                    'vfx': 'VFX / Games',
-                    'electricity': 'Electricidad',
-                    'programming': 'Programación',
-                  }.entries)
-                    ChoiceChip(
-                      label: Text(e.value),
-                      selected: topic == e.key,
-                      onSelected: (_) {
-                        setState(() => topic = e.key);
-                        prefs?.setString('career.courses.topicV2', e.key);
-                      },
-                    ),
-                ],
+            DropdownButtonFormField<String>(
+              initialValue: topic,
+              isExpanded: true,
+              decoration: const InputDecoration(
+                labelText: 'Qué quieres aprender',
+                prefixIcon: Icon(Icons.school_outlined),
               ),
+              items: [
+                for (final e in courseTopics.entries)
+                  DropdownMenuItem(value: e.key, child: Text(e.value)),
+              ],
+              onChanged: (value) {
+                setState(() => topic = value!);
+                prefs?.setString('career.courses.topicV2', value!);
+              },
             ),
             const SizedBox(height: 8),
           ],
@@ -1482,13 +1547,23 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                   : 'Presencial'}',
               style: const TextStyle(color: mutedColor, fontSize: 12),
             ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: TextButton.icon(
-              icon: const Icon(Icons.tune),
-              label: Text(showFilters ? 'Cerrar filtros' : 'Filtros'),
-              onPressed: () => openFilters(isCourse),
-            ),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  '${list.length} ${isCourse ? 'recursos' : 'ofertas'}',
+                  style: const TextStyle(
+                    fontSize: 21,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+              OutlinedButton.icon(
+                icon: const Icon(Icons.tune),
+                label: const Text('Filtrar'),
+                onPressed: () => openFilters(isCourse),
+              ),
+            ],
           ),
           const SizedBox(height: 12),
           if (!isCourse && days != 0)
@@ -1496,23 +1571,51 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
               'Solo ofertas con fecha de publicación conocida. Revisar una oferta hoy no significa que sea nueva.',
             ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
+            padding: const EdgeInsets.only(bottom: 12),
             child: Text(
-              '${list.length} de $total ${isCourse
-                  ? 'recursos en tu vista'
-                  : list.length == 1
-                  ? 'oferta en tu vista'
-                  : 'ofertas en tu vista'} · ${widget.category == 'programming' && profileView == 'entry' ? 'Para empezar' : 'Filtros aplicados'}',
-              style: const TextStyle(fontWeight: FontWeight.w600),
+              'De $total en el catálogo · ${widget.category == 'programming' && profileView == 'entry' ? 'Perfil de entrada' : 'Según tus filtros'}',
+              style: const TextStyle(color: mutedColor, fontSize: 12),
             ),
           ),
           if (list.isEmpty)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: Text(
-                widget.savedOnly
-                    ? 'No tienes elementos guardados en esta categoría.'
-                    : 'No hay resultados que cumplan estos filtros en la última consulta. Revisa también las fuentes oficiales de abajo; una búsqueda sin resultados no significa que no haya oportunidades.',
+            Container(
+              padding: const EdgeInsets.all(24),
+              decoration: BoxDecoration(
+                color: surfaceColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Column(
+                children: [
+                  Icon(
+                    widget.savedOnly ? Icons.bookmark_border : Icons.search_off,
+                    size: 36,
+                    color: categoryAccent(widget.category),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    widget.savedOnly
+                        ? 'Tu selección empieza aquí'
+                        : 'Nada con estos filtros',
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    widget.savedOnly
+                        ? 'Guarda lo que te interese para volver después.'
+                        : 'Prueba otros filtros o consulta las fuentes. La cobertura es parcial.',
+                    style: const TextStyle(color: mutedColor),
+                    textAlign: TextAlign.center,
+                  ),
+                  if (!widget.savedOnly)
+                    TextButton(
+                      onPressed: () => openFilters(isCourse),
+                      child: const Text('Revisar filtros'),
+                    ),
+                ],
               ),
             ),
           ...list.map((item) => summaryCard(item, isCourse)),
@@ -1557,6 +1660,8 @@ class _CareerCategoryState extends State<CareerCategoryPage> {
                             ? s['matched'] != null
                                   ? 'Consulta correcta · ${s['matched']} coincidencias incorporadas'
                                   : 'Consulta correcta · ${s['examined'] ?? 0} fichas examinadas'
+                            : s['status'] == 'pending'
+                            ? 'Integración pendiente · no incorpora resultados automáticamente'
                             : 'No se pudo consultar esta fuente. Los datos anteriores pueden estar desactualizados.',
                       ),
                       leading: Icon(

@@ -42,6 +42,8 @@ class TrackerApp extends StatelessWidget {
       ),
       navigationBarTheme: const NavigationBarThemeData(
         backgroundColor: Color(0xff141824),
+        height: 72,
+        indicatorColor: Color(0xff393052),
       ),
       useMaterial3: true,
     ),
@@ -64,68 +66,68 @@ class _OffersState extends State<OffersPage> {
   final search = TextEditingController();
   int tab = 0;
   String category = 'vfx';
-  Widget categoryTabs() => Padding(
-    padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
-    child: Column(
-      mainAxisSize: MainAxisSize.min,
+  final selectedCategoryKey = GlobalKey();
+  void revealCategory() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final selected = selectedCategoryKey.currentContext;
+      if (mounted && selected != null) {
+        final scrollable = Scrollable.of(selected);
+        final target = selected.findRenderObject();
+        final viewport = scrollable.context.findRenderObject();
+        if (target is RenderBox && viewport is RenderBox) {
+          final x = target.localToGlobal(Offset.zero, ancestor: viewport).dx;
+          final position = scrollable.position;
+          position.jumpTo(
+            (position.pixels +
+                    x -
+                    (position.viewportDimension - target.size.width) / 2)
+                .clamp(position.minScrollExtent, position.maxScrollExtent),
+          );
+        }
+      }
+    });
+  }
+
+  Widget categoryTabs() => SingleChildScrollView(
+    scrollDirection: Axis.horizontal,
+    padding: const EdgeInsets.fromLTRB(16, 0, 16, 10),
+    child: Row(
       children: [
-        Row(
-          children: [
-            for (final entry in navigationCategories.entries)
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2),
-                  child: Material(
-                    color: category == entry.key
-                        ? Theme.of(context).colorScheme.primaryContainer
-                        : Colors.transparent,
-                    borderRadius: BorderRadius.circular(16),
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(16),
-                      onTap: () {
-                        setState(() => category = entry.key);
-                        prefs?.setString('career.category', entry.key);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              {
-                                'vfx': Icons.sports_esports_outlined,
-                                'programming': Icons.code,
-                                'electricity': Icons.bolt_outlined,
-                                'courses': Icons.school_outlined,
-                                'public': Icons.account_balance_outlined,
-                              }[entry.key],
-                              size: 22,
-                              color: category == entry.key
-                                  ? Theme.of(context).colorScheme.primary
-                                  : null,
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              entry.key == 'programming'
-                                  ? 'Código'
-                                  : entry.key == 'public'
-                                  ? 'Opos.'
-                                  : entry.value,
-                              maxLines: 1,
-                              style: const TextStyle(
-                                fontSize: 11,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+        for (final entry in navigationCategories.entries)
+          Padding(
+            padding: const EdgeInsets.only(right: 8),
+            child: ChoiceChip(
+              key: category == entry.key ? selectedCategoryKey : null,
+              avatar: Icon(
+                categoryIcon(entry.key),
+                size: 19,
+                color: category == entry.key
+                    ? categoryAccent(entry.key)
+                    : mutedColor,
               ),
-          ],
-        ),
+              label: Text(entry.value),
+              selected: category == entry.key,
+              showCheckmark: false,
+              selectedColor: categoryAccent(entry.key).withValues(alpha: .16),
+              side: BorderSide(
+                color: category == entry.key
+                    ? categoryAccent(entry.key).withValues(alpha: .65)
+                    : const Color(0xff30374a),
+              ),
+              labelStyle: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: category == entry.key
+                    ? categoryAccent(entry.key)
+                    : mutedColor,
+              ),
+              onSelected: (_) {
+                setState(() => category = entry.key);
+                revealCategory();
+                prefs?.setString('career.category', entry.key);
+              },
+            ),
+          ),
       ],
     ),
   );
@@ -159,6 +161,7 @@ class _OffersState extends State<OffersPage> {
     final storedCategory = p.getString('career.category');
     if (navigationCategories.containsKey(storedCategory)) {
       category = storedCategory!;
+      revealCategory();
     }
     saved = {...?p.getStringList('saved'), ...?p.getStringList('career.saved')};
     final links = JobsRepository(p).cached();
@@ -210,7 +213,7 @@ class _OffersState extends State<OffersPage> {
       if (mounted) {
         setState(
           () => error =
-              'No se pudo actualizar. ${jobs.isEmpty ? 'Comprueba tu conexión y reintenta.' : 'Mostrando la última copia guardada.'}\n$e',
+              'No se pudo actualizar. ${jobs.isEmpty ? 'Comprueba tu conexión y reintenta.' : 'Mostrando la última copia guardada.'}',
         );
       }
     } finally {
@@ -580,14 +583,41 @@ class _OffersState extends State<OffersPage> {
     final old = time != null && DateTime.now().difference(time).inHours > 13;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('YAGO / JOB RADAR'),
+        title: Text(
+          tab == 2
+              ? 'Ajustes'
+              : tab == 3
+              ? 'Radar'
+              : 'Job Radar',
+          style: const TextStyle(
+            fontWeight: FontWeight.w800,
+            letterSpacing: -.5,
+          ),
+        ),
+        leading: tab == 2 || tab == 3
+            ? IconButton(
+                tooltip: 'Volver a explorar',
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () => setState(() => tab = 0),
+              )
+            : null,
         bottom: tab <= 1
             ? PreferredSize(
-                preferredSize: const Size.fromHeight(76),
+                preferredSize: const Size.fromHeight(54),
                 child: categoryTabs(),
               )
             : null,
         actions: [
+          IconButton(
+            tooltip: 'Radar y fuentes',
+            icon: const Icon(Icons.radar),
+            onPressed: () => setState(() => tab = 3),
+          ),
+          IconButton(
+            tooltip: 'Ajustes',
+            icon: const Icon(Icons.settings_outlined),
+            onPressed: () => setState(() => tab = 2),
+          ),
           IconButton(
             onPressed: () {
               setState(() => careerRefresh++);
@@ -599,22 +629,21 @@ class _OffersState extends State<OffersPage> {
         ],
       ),
       bottomNavigationBar: NavigationBar(
-        selectedIndex: tab,
-        onDestinationSelected: (v) => setState(() => tab = v),
+        selectedIndex: tab == 4
+            ? 2
+            : tab == 1
+            ? 1
+            : 0,
+        onDestinationSelected: (v) => setState(() => tab = [0, 1, 4][v]),
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.work_outline),
-            label: 'Ofertas',
+            label: 'Explorar',
           ),
           NavigationDestination(
             icon: Icon(Icons.bookmark_border),
             label: 'Guardadas',
           ),
-          NavigationDestination(
-            icon: Icon(Icons.settings_outlined),
-            label: 'Ajustes',
-          ),
-          NavigationDestination(icon: Icon(Icons.public), label: 'Radar'),
           NavigationDestination(
             icon: Icon(Icons.send_outlined),
             label: 'Solicitudes',
@@ -687,13 +716,15 @@ class _OffersState extends State<OffersPage> {
                       child: ListView(
                         padding: const EdgeInsets.all(24),
                         children: [
-                          Text(
-                            'Tu radar de empleo',
-                            style: Theme.of(context).textTheme.headlineSmall,
+                          const RadarHeader(
+                            title: 'Tu radar de empleo',
+                            subtitle: 'Preferencias y datos de tu búsqueda',
+                            category: 'settings',
                           ),
                           const SizedBox(height: 16),
                           const Text(
-                            'Versión 0.11.0 · Fuentes y formación\n\nVFX, programación, electricidad y cursos. Las ofertas y el mapa se pueden consultar sin cuenta. Inicia sesión en Solicitudes para sincronizar tus candidaturas con la web.',
+                            'Versión 0.14.0 · Tu radar personal',
+                            style: TextStyle(color: mutedColor, fontSize: 12),
                           ),
                           const SizedBox(height: 16),
                           Text('Datos VFX: ${readableDate(updated)}'),

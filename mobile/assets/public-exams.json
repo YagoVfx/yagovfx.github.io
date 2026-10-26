@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-25T20:34:28.381690+00:00",
+  "lastAttemptAt": "2026-10-26T08:58:00.654826+00:00",
+  "updatedAt": "2026-10-26T08:58:00.654826+00:00",
   "calls": [
     {
       "id": "pag-222569",
@@ -22,7 +23,8 @@
       "pagDetailUrl": "https://administracion.gob.es/empleopublico/resultados-empleo/detalle-empleo?selectorget=222569&selectorServicio=bolsa_empleo",
       "searchUrl": "https://administracion.gob.es/empleopublico/resultados-empleo?pag_referencia=222569",
       "access": "Acceso libre (filtro del buscador oficial)",
-      "checkedAt": "2026-10-25T20:34:28.381690+00:00"
+      "checkedAt": "2026-10-26T04:32:25.655127+00:00",
+      "retainedAfterFailure": true
     },
     {
       "id": "pag-222516",
@@ -44,59 +46,65 @@
       "pagDetailUrl": "https://administracion.gob.es/empleopublico/resultados-empleo/detalle-empleo?selectorget=222516&selectorServicio=bolsa_empleo",
       "searchUrl": "https://administracion.gob.es/empleopublico/resultados-empleo?pag_referencia=222516",
       "access": "Acceso libre (filtro del buscador oficial)",
-      "checkedAt": "2026-10-25T20:34:28.381690+00:00"
+      "checkedAt": "2026-10-26T04:32:25.655127+00:00",
+      "retainedAfterFailure": true
     }
   ],
   "sources": [
     {
       "name": "PAG · informatica-3",
       "status": "ok",
-      "examined": 2
+      "examined": 0
     },
     {
       "name": "PAG · informatica-4",
       "status": "ok",
-      "examined": 2
+      "examined": 0
     },
     {
       "name": "PAG · electric-3",
       "status": "ok",
-      "examined": 2
+      "examined": 0
     },
     {
       "name": "PAG · electric-4",
       "status": "ok",
-      "examined": 2
+      "examined": 0
     },
     {
       "name": "PAG · electronic-3",
       "status": "ok",
-      "examined": 2
+      "examined": 0
     },
     {
       "name": "PAG · electronic-4",
       "status": "ok",
-      "examined": 2
+      "examined": 0
     },
     {
       "name": "PAG · telecomunicaciones-3",
       "status": "ok",
-      "examined": 2
+      "examined": 0
     },
     {
       "name": "PAG · telecomunicaciones-4",
       "status": "ok",
-      "examined": 2
+      "examined": 0
     },
     {
       "name": "PAG · mantenimiento-3",
       "status": "ok",
-      "examined": 2
+      "examined": 0
     },
     {
       "name": "PAG · mantenimiento-4",
       "status": "ok",
-      "examined": 2
+      "examined": 0
+    },
+    {
+      "name": "PAG · comprobación de coherencia",
+      "status": "error",
+      "reason": "Todas las consultas devuelven cero pese a convocatorias previas dentro de plazo. Confirmar en la fuente; se conservan sin renovar su verificación."
     },
     {
       "name": "Concello de Vigo · procesos municipales",

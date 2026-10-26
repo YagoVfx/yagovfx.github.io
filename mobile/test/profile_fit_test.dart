@@ -1,8 +1,20 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vfx_jobs_tracker/profile_fit.dart';
 import 'package:vfx_jobs_tracker/career_categories.dart';
+import 'package:vfx_jobs_tracker/presentation.dart';
 
 void main() {
+  test('Deadline emphasis uses calendar days and does not mark expired calls as open', () {
+    expect(
+      deadlineNotice('2026-10-29', now: DateTime(2026, 10, 26, 23)),
+      contains('3 días'),
+    );
+    expect(
+      deadlineNotice('2026-10-26', now: DateTime(2026, 10, 26)),
+      contains('Último día'),
+    );
+    expect(deadlineNotice('2026-10-25', now: DateTime(2026, 10, 26)), isNull);
+  });
   test(
     'Recognises Spanish qualifications without making preferences mandatory',
     () {

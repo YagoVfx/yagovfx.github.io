@@ -229,7 +229,7 @@ class _CareerStatisticsState extends State<CareerStatistics> {
               ),
               ...distribution(
                 'Especialidad',
-                rows.map((r) => careerCategories[r['topic']]),
+                rows.map((r) => courseTopics[r['topic']] ?? 'Sin clasificar'),
               ),
               ...distribution('Nivel', rows.map((r) => r['level'])),
               ...distribution('Modalidad', rows.map((r) => r['modality'])),
@@ -304,7 +304,9 @@ class _CareerStatisticsState extends State<CareerStatistics> {
                   title: Text(source['name']),
                   subtitle: Text(
                     source['status'] == 'ok'
-                        ? '${source['matched'] ?? source['examined'] ?? 0} ${source['matched'] != null ? 'anuncios importados antes de unificar' : 'fichas examinadas'} · ${readableDate(source['checkedAt'] ?? feed!['updatedAt'])}'
+                        ? '${source['matched'] ?? source['examined'] ?? 0} ${source['matched'] != null ? 'anuncios importados antes de unificar' : 'fichas examinadas'} · ${readableDate(source['lastSuccessAt'] ?? source['checkedAt'] ?? feed!['updatedAt'])}'
+                        : source['status'] == 'pending'
+                        ? 'Integración pendiente · no es una fuente automática operativa'
                         : 'No se pudo renovar la consulta. Revisa la página original; no significa que no haya oportunidades.',
                   ),
                   leading: Icon(
@@ -319,7 +321,7 @@ class _CareerStatisticsState extends State<CareerStatistics> {
             ],
           ),
           Text(
-            'Datos del catálogo: ${readableDate(feed!['updatedAt'])}',
+            'Última actualización parcial del catálogo: ${readableDate(feed!['lastPartialUpdate'] ?? feed!['updatedAt'])}. Cada ficha conserva su propia fecha.',
             style: const TextStyle(color: mutedColor, fontSize: 12),
           ),
         ],

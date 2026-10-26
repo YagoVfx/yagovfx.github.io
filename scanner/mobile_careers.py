@@ -13,6 +13,7 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse, parse_qs
 import requests
 from bs4 import BeautifulSoup
+from scanner.source_errors import IntegrationPending
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://www.sistemanacionalempleo.es/OfertaDifusionWEB/'
@@ -49,12 +50,12 @@ def classify_offer(title, description, location):
     if re.search(r'ingenier|grado universitario', text): flags.append('Revisar si exige titulación universitaria')
     if re.search(r'\d\+?\s*(?:anos|years).{0,15}experien|experien.{0,20}\d\+?\s*(?:anos|years)', text): flags.append('Revisar años de experiencia exigidos')
     location_text = fold(location).strip()
-    location_text = re.sub(r'^coruna,\s*a(?=,|$)', 'a coruna', location_text)
+    location_text = re.sub(r'^coruna,\s*a(?=\s*(?:\(|,|$))', 'a coruna', location_text)
     location_text = re.sub(r'^(?:teis|bouzas|zona franca|pol\.?\s*ind\.?\s*balaidos)\s*(?:,\s*|\()vigo\)?(?=,|$)', 'vigo', location_text)
     city = re.split(r'[,;/|]|\s+[-–]\s+', location_text)[0].strip()
     city = re.sub(r'^municipio de\s+', '', city)
     in_vigo = bool(re.fullmatch(r'vigo(?:\s*\([^)]*\))?', city))
-    in_coruna = bool(re.fullmatch(r'(?:a coruna|la coruna)(?:\s*\([^)]*\))?|coruna\s*\(a\)', city))
+    in_coruna = bool(re.fullmatch(r'(?:a coruna|la coruna)(?:\s*\(.*\))?|coruna\s*\(a\)', city))
     nearby = r'\b(?:arteixo|cambre|culleredo|oleiros|bergondo|betanzos|carballo|sada|redondela|porrino|nigran|gondomar|moana|cangas|mos|ponteareas)\b'
     if re.search(nearby, fold(title)):
         in_vigo = in_coruna = False
@@ -84,6 +85,8 @@ def parse_results(html):
                          url=BASE + 'detalleOferta.do?modo=inicio&id=' + identifier))
     pages = [urljoin(BASE, a['href']) for a in soup.select('a[href*="listadoOfertas.do"]')
              if 'indice=' in a['href']]
+    if not rows:
+        raise RuntimeError('SNE results have no recognized rows or explicit empty-result message')
     return rows, pages
 
 
@@ -274,7 +277,7 @@ def run():
             offers.update({row['id']: row for row in rows})
             status.append(dict(name=label, status='ok', matched=len(rows)))
         except Exception as e:
-            status.append(dict(name=label, status='error', reason=str(e)[:180]))
+            status.append(dict(name=label, status='pending' if isinstance(e, IntegrationPending) else 'error', reason=str(e)[:180]))
             for old in previous.get('offers', []):
                 if any(str(identity).startswith(prefix) for identity in [old['id'], *old.get('sourceIds', [])]) and (not old.get('closingDate') or old['closingDate'] >= now[:10]):
                     offers.setdefault(old['id'], dict(old, retainedAfterFailure=True))
@@ -313,7 +316,7 @@ def run():
     for source in status:
         source['lastAttemptAt'] = now
         source['lastSuccessAt'] = now if source['status'] == 'ok' else old_sources.get(source['name'], {}).get('lastSuccessAt')
-    output = dict(schemaVersion=2, coverageVersion=7, lastAttemptAt=now, updatedAt=now if successful else previous.get('updatedAt'), offers=unique_offers, courses=courses, sources=enrich_sources(status),
+    output = dict(schemaVersion=2, coverageVersion=8, lastAttemptAt=now, updatedAt=now if successful else previous.get('updatedAt'), offers=unique_offers, courses=courses, sources=enrich_sources(status),
                   note='Empleadores, servicios públicos y portales complementarios para categorías móviles. No garantiza encaje, contratación, plazas ni inscripción.')
     temporary = target.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

@@ -5,13 +5,114 @@ import 'jobs.dart';
 const confirmedColor = Color(0xff78d8b5);
 const reviewColor = Color(0xffffce80);
 const mutedColor = Color(0xffb5b6c4);
+const surfaceColor = Color(0xff181c28);
 
-Widget statusTag(String text, {bool confirmed = false, bool review = true}) {
-  final color = confirmed
-      ? confirmedColor
-      : review
-      ? reviewColor
-      : const Color(0xffbca8ff);
+Color categoryAccent(String category) =>
+    const {
+      'vfx': Color(0xffbca3ff),
+      'programming': Color(0xff7bd8f5),
+      'electricity': Color(0xffffd17a),
+      'courses': Color(0xff78dfc0),
+      'public': Color(0xffffadce),
+    }[category] ??
+    const Color(0xffbca3ff);
+
+IconData categoryIcon(String category) =>
+    const {
+      'vfx': Icons.sports_esports_outlined,
+      'programming': Icons.code_rounded,
+      'electricity': Icons.bolt_rounded,
+      'courses': Icons.school_outlined,
+      'public': Icons.account_balance_outlined,
+      'applications': Icons.send_outlined,
+      'settings': Icons.settings_outlined,
+    }[category] ??
+    Icons.radar;
+
+class RadarHeader extends StatelessWidget {
+  final String title, subtitle, category;
+  const RadarHeader({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.category,
+  });
+  @override
+  Widget build(BuildContext context) {
+    final accent = categoryAccent(category);
+    return Container(
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [accent.withValues(alpha: .16), surfaceColor],
+        ),
+        borderRadius: BorderRadius.circular(22),
+        border: Border.all(color: accent.withValues(alpha: .25)),
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: accent.withValues(alpha: .12),
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Icon(categoryIcon(category), color: accent, size: 28),
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: -.5,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  subtitle,
+                  style: const TextStyle(
+                    color: mutedColor,
+                    fontSize: 12,
+                    height: 1.4,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+Color applicationTone(String state) =>
+    const {
+      'applied': Color(0xffbca3ff),
+      'interview': Color(0xff7bd8f5),
+      'offer': confirmedColor,
+      'rejected': Color(0xffffa4ad),
+      'withdrawn': mutedColor,
+    }[state] ??
+    mutedColor;
+
+Widget statusTag(
+  String text, {
+  bool confirmed = false,
+  bool review = true,
+  Color? tone,
+}) {
+  final color =
+      tone ??
+      (confirmed
+          ? confirmedColor
+          : review
+          ? reviewColor
+          : const Color(0xffbca8ff));
   return Container(
     margin: const EdgeInsets.only(top: 8),
     padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
@@ -33,6 +134,21 @@ String readableDate(Object? raw) {
     return '${date.day}/${date.month}/${date.year}';
   }
   return '${date.day}/${date.month}/${date.year} · ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}';
+}
+
+String? deadlineNotice(Object? raw, {DateTime? now}) {
+  final deadline = DateTime.tryParse('$raw');
+  if (deadline == null) return null;
+  final today = now ?? DateTime.now();
+  final days = DateTime.utc(
+    deadline.year,
+    deadline.month,
+    deadline.day,
+  ).difference(DateTime.utc(today.year, today.month, today.day)).inDays;
+  if (days < 0 || days > 7) return null;
+  return days == 0
+      ? 'Último día publicado · confirmar plazo'
+      : 'Plazo publicado: $days días · confirmar';
 }
 
 String durationLabel(Object? value) {

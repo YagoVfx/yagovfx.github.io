@@ -139,6 +139,12 @@ def run():
     path = ROOT/'data/public-exams.json'
     previous = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
     rows, status = scan(now)
+    old_open = [r for r in previous.get('calls', []) if (r.get('closingDate') or '') >= now[:10]]
+    if not rows and old_open and all(s['status'] == 'ok' and s.get('examined') == 0 for s in status):
+        # The public CDN has returned the same cached empty fragment for unrelated
+        # queries. A sudden global zero is not sufficient evidence of withdrawal.
+        status.append(dict(name='PAG · comprobación de coherencia', status='error',
+            reason='Todas las consultas devuelven cero pese a convocatorias previas dentro de plazo. Confirmar en la fuente; se conservan sin renovar su verificación.'))
     try:status.append(check_vigo())
     except Exception as error:status.append(dict(name='Concello de Vigo · procesos municipales',status='error',reason=str(error)[:180]))
     if any(s['status']=='error' for s in status):

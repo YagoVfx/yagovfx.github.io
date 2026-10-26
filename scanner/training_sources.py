@@ -1,5 +1,6 @@
 """Xunta public training catalogues. No enrolment or private student data."""
 import re
+import json
 from datetime import datetime
 from urllib.parse import urlencode, quote, urljoin
 
@@ -16,8 +17,11 @@ def iso(value):
 def topic_for(title, code=''):
     text=fold(title)
     if re.search(r'animac|videoj|\bvfx\b|unreal|niagara|blender|houdini|3d|unity',text):return 'vfx'
+    if code.startswith('ELES') or re.search(r'telecom|antenas|fibra optica|microinformatic',text):return 'telecom'
     if code.startswith('ELE') or re.search(r'electric|fotovolta|electromecanic|automatiz|domotic|electrotecn|alumbrado|cablead',text):return 'electricity'
-    if code.startswith('IFC') or re.search(r'programa|desenvolvement|desarrollo|python|\bjava\b|javascript|ciberseg|software|bases de datos|linux|redes|github|cloud|aws|azure',text):return 'programming'
+    if re.search(r'excel|power bi|power query|power pivot|chatgpt|competencias (?:dixitais|digitales)|(?:artificial|artificia).{0,20}(?:empresa|negocio)',text):return 'digital'
+    if re.search(r'programa|desenvolvement|desarrollo|python|\bjava\b|javascript|ciberseg|software|bases de datos|linux|redes|github|cloud|aws|azure|paxinas web|paginas web|algoritm',text):return 'programming'
+    if re.search(r'intelixencia artificial|inteligencia artificial|big data',text):return 'digital'
     return None
 
 
@@ -26,10 +30,17 @@ def diplos(now):
     # Family filters are official API parameters. Query all locations and then accept
     # only Vigo/A Coruña or teletraining, not other municipalities in the provinces.
     for family in ['ELE','IFC','IMS','IMA']:
+        seen = set()
+        examined = 0
         for page in range(1,9):
             url='https://diplos.xunta.gal/diplos/api/search?'+urlencode(dict(familia=family,pag=page))
             data=get(url).json()
             if not isinstance(data.get('listItems'),list) or 'totalItems' not in data:raise ValueError('DIPLOS API layout changed')
+            signature = json.dumps(data['listItems'], sort_keys=True)
+            if int(data['totalItems']) > examined and (not data['listItems'] or signature in seen):
+                raise ValueError('DIPLOS pagination did not advance for '+family)
+            seen.add(signature)
+            examined += len(data['listItems'])
             for raw in data['listItems']:
                 title=raw['denominacion'];topic=topic_for(title,raw['codigo'])
                 if not topic:continue
@@ -58,7 +69,7 @@ def diplos(now):
                         availability='Curso planificado: confirmar inscripción, requisitos y plazas en DIPLOS',
                         qualification=raw.get('nivelProfesional') or 'Consultar requisitos de acceso',
                         syllabusUrl=raw.get('programaFormativoPDFUrl'),checkedAt=now)
-            if page*50 >= int(data['totalItems']):break
+            if examined >= int(data['totalItems']):break
         else:raise ValueError('DIPLOS pagination incomplete for '+family)
     return list(out.values())
 

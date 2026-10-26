@@ -22,6 +22,22 @@ def test_failure_page_is_not_an_empty_success():
     with pytest.raises(ValueError):parse('<h1>Error</h1>','2026-10-25T00:00:00Z')
 
 
+def test_sudden_global_zero_does_not_erase_previously_open_calls(tmp_path, monkeypatch):
+    import json
+    from scanner import public_exams as module
+    data = tmp_path / 'data'
+    data.mkdir()
+    call = dict(id='pag-1', closingDate='2099-01-01', checkedAt='2026-10-20T12:00:00Z')
+    (data/'public-exams.json').write_text(json.dumps(dict(calls=[call])), encoding='utf-8')
+    monkeypatch.setattr(module, 'ROOT', tmp_path)
+    monkeypatch.setattr(module, 'scan', lambda now: ([], [dict(name='PAG',status='ok',examined=0)]))
+    monkeypatch.setattr(module, 'check_vigo', lambda: dict(name='Vigo',status='ok',examined=0))
+    result=module.run()
+    assert result['calls'][0]['retainedAfterFailure']
+    assert result['calls'][0]['checkedAt'] == call['checkedAt']
+    assert any(s['status']=='error' for s in result['sources'])
+
+
 def test_vigo_in_progress_is_not_open_for_enrolment(monkeypatch):
     from scanner import public_exams as module
     class Response:

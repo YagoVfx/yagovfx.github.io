@@ -30,7 +30,7 @@ void main() {
       SharedPreferences.setMockInitialValues({
         'career.feed': jsonEncode({
           'schemaVersion': 2,
-          'coverageVersion': 7,
+          'coverageVersion': 8,
           'offers': [row],
           'courses': [],
           'sources': [],
@@ -196,9 +196,9 @@ void main() {
     }
     await tester.pumpAndSettle();
     expect(find.text('Cursos'), findsOneWidget);
-    expect(find.text('Filtros'), findsOneWidget);
+    expect(find.text('Filtrar'), findsOneWidget);
     expect(find.text('Solo gratuitos o subvencionados'), findsNothing);
-    await tester.tap(find.text('Filtros'));
+    await tester.tap(find.text('Filtrar'));
     await tester.pumpAndSettle();
     expect(find.text('Objetivo'), findsOneWidget);
     await tester.tap(find.byTooltip('Cerrar filtros'));
@@ -215,7 +215,8 @@ void main() {
         .position
         .jumpTo(0);
     await tester.pump();
-    await tester.ensureVisible(find.text('VFX / Games'));
+    await tester.tap(find.byType(DropdownButtonFormField<String>).first);
+    await tester.pumpAndSettle();
     await tester.tap(find.text('VFX / Games'));
     await tester.pumpAndSettle();
     await tester.scrollUntilVisible(
@@ -228,6 +229,10 @@ void main() {
       findsOneWidget,
     );
     expect(find.text('Escribir el primer código con C#'), findsNothing);
+    await tester.ensureVisible(
+      find.text('Niagara Introduction: repaso práctico de VFX en Unreal'),
+    );
+    await tester.pumpAndSettle();
     await tester.tap(
       find.text('Niagara Introduction: repaso práctico de VFX en Unreal'),
     );
@@ -384,7 +389,7 @@ void main() {
           (_) async => http.Response(
             jsonEncode({
               'schemaVersion': 2,
-              'coverageVersion': 7,
+              'coverageVersion': 8,
               'offers': [],
               'courses': [],
             }),
