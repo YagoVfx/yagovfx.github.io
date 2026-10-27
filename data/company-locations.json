@@ -10,15 +10,15 @@
       "name": "CD Project",
       "locations": [
         {
-          "city": "Warsaw",
-          "lat": 52.23,
-          "lon": 21.01,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
-        },
-        {
           "city": "Boston",
           "lat": 42.36,
           "lon": -71.06,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
+        },
+        {
+          "city": "Warsaw",
+          "lat": 52.23,
+          "lon": 21.01,
           "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
         },
         {
@@ -71,7 +71,7 @@
           "city": "Vancouver",
           "lat": 49.28,
           "lon": -123.12,
-          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216274"
+          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Artist-II-Apex-Legends/216459"
         }
       ]
     },
@@ -338,6 +338,12 @@
       "name": "Ubisoft",
       "locations": [
         {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Paris",
           "lat": 48.86,
           "lon": 2.35,
@@ -356,12 +362,6 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
-          "city": "Montreal",
-          "lat": 45.5,
-          "lon": -73.57,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
           "city": "Barcelona",
           "lat": 41.39,
           "lon": 2.17,
@@ -371,6 +371,12 @@
           "city": "Malmö",
           "lat": 55.61,
           "lon": 13.0,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Toronto",
+          "lat": 43.65,
+          "lon": -79.38,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -414,18 +420,6 @@
           "lat": 54.98,
           "lon": -1.61,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Kyiv",
-          "lat": 50.45,
-          "lon": 30.52,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "São Paulo",
-          "lat": -23.55,
-          "lon": -46.63,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         }
       ]
     },
@@ -465,12 +459,6 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
-          "city": "Los Angeles",
-          "lat": 34.05,
-          "lon": -118.24,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
-        },
-        {
           "city": "Novato",
           "lat": 38.11,
           "lon": -122.57,
@@ -498,6 +486,12 @@
           "city": "Austin",
           "lat": 30.27,
           "lon": -97.74,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
@@ -779,12 +773,6 @@
       "name": "Gameloft",
       "locations": [
         {
-          "city": "Hanoi",
-          "lat": 21.03,
-          "lon": 105.83,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
-        },
-        {
           "city": "Barcelona",
           "lat": 41.39,
           "lon": 2.17,
@@ -794,6 +782,12 @@
           "city": "Ho Chi Minh",
           "lat": 10.82,
           "lon": 106.63,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Hanoi",
+          "lat": 21.03,
+          "lon": 105.83,
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         },
         {
