@@ -72,12 +72,6 @@
           "lat": 49.28,
           "lon": -123.12,
           "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216274"
-        },
-        {
-          "city": "Los Angeles",
-          "lat": 34.05,
-          "lon": -118.24,
-          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/Senior-VFX-Artist-Apex-Legends/216460"
         }
       ]
     },
@@ -118,12 +112,6 @@
           "city": "Bellevue",
           "lat": 47.61,
           "lon": -122.2,
-          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
-        },
-        {
-          "city": "Shanghai",
-          "lat": 31.23,
-          "lon": 121.47,
           "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
         }
       ]
@@ -362,21 +350,9 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
-          "city": "Bucharest",
-          "lat": 44.43,
-          "lon": 26.1,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Shanghai",
-          "lat": 31.23,
-          "lon": 121.47,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Quebec City",
-          "lat": 46.81,
-          "lon": -71.21,
+          "city": "Berlin",
+          "lat": 52.52,
+          "lon": 13.41,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -392,15 +368,33 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
-          "city": "Bordeaux",
-          "lat": 44.84,
-          "lon": -0.58,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
           "city": "Malmö",
           "lat": 55.61,
           "lon": 13.0,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Shanghai",
+          "lat": 31.23,
+          "lon": 121.47,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Quebec City",
+          "lat": 46.81,
+          "lon": -71.21,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Bordeaux",
+          "lat": 44.84,
+          "lon": -0.58,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -815,15 +809,15 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         },
         {
-          "city": "Montreal",
-          "lat": 45.5,
-          "lon": -73.57,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
-        },
-        {
           "city": "Seattle",
           "lat": 47.61,
           "lon": -122.33,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         }
       ]
