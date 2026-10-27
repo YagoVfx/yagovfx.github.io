@@ -768,15 +768,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         },
         {
-          "city": "Dundee",
-          "lat": 56.46,
-          "lon": -2.97,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
-        },
-        {
           "city": "Tel Aviv",
           "lat": 32.09,
           "lon": 34.78,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Dundee",
+          "lat": 56.46,
+          "lon": -2.97,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         }
       ]
