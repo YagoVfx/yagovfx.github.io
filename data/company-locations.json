@@ -10,15 +10,15 @@
       "name": "CD Project",
       "locations": [
         {
-          "city": "Boston",
-          "lat": 42.36,
-          "lon": -71.06,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
-        },
-        {
           "city": "Warsaw",
           "lat": 52.23,
           "lon": 21.01,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
+        },
+        {
+          "city": "Boston",
+          "lat": 42.36,
+          "lon": -71.06,
           "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
         },
         {
@@ -338,6 +338,12 @@
       "name": "Ubisoft",
       "locations": [
         {
+          "city": "Sydney",
+          "lat": -33.87,
+          "lon": 151.21,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Montreal",
           "lat": 45.5,
           "lon": -73.57,
@@ -414,12 +420,6 @@
           "lat": 34.05,
           "lon": -118.24,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Newcastle",
-          "lat": 54.98,
-          "lon": -1.61,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         }
       ]
     },
@@ -492,6 +492,12 @@
           "city": "Los Angeles",
           "lat": 34.05,
           "lon": -118.24,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Seattle",
+          "lat": 47.61,
+          "lon": -122.33,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
@@ -756,15 +762,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         },
         {
-          "city": "Tel Aviv",
-          "lat": 32.09,
-          "lon": 34.78,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
-        },
-        {
           "city": "Dundee",
           "lat": 56.46,
           "lon": -2.97,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Tel Aviv",
+          "lat": 32.09,
+          "lon": 34.78,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         }
       ]
@@ -773,15 +779,15 @@
       "name": "Gameloft",
       "locations": [
         {
-          "city": "Barcelona",
-          "lat": 41.39,
-          "lon": 2.17,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
-        },
-        {
           "city": "Ho Chi Minh",
           "lat": 10.82,
           "lon": 106.63,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         },
         {
