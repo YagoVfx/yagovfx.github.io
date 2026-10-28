@@ -338,6 +338,12 @@
       "name": "Ubisoft",
       "locations": [
         {
+          "city": "Pune",
+          "lat": 18.52,
+          "lon": 73.86,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Sydney",
           "lat": -33.87,
           "lon": 151.21,
@@ -353,12 +359,6 @@
           "city": "Paris",
           "lat": 48.86,
           "lon": 2.35,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Pune",
-          "lat": 18.52,
-          "lon": 73.86,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -389,6 +389,12 @@
           "city": "Shanghai",
           "lat": 31.23,
           "lon": 121.47,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Kyiv",
+          "lat": 50.45,
+          "lon": 30.52,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -779,15 +785,15 @@
       "name": "Gameloft",
       "locations": [
         {
-          "city": "Ho Chi Minh",
-          "lat": 10.82,
-          "lon": 106.63,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
-        },
-        {
           "city": "Barcelona",
           "lat": 41.39,
           "lon": 2.17,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Ho Chi Minh",
+          "lat": 10.82,
+          "lon": 106.63,
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         },
         {
