@@ -338,15 +338,27 @@
       "name": "Ubisoft",
       "locations": [
         {
-          "city": "Shanghai",
-          "lat": 31.23,
-          "lon": 121.47,
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
           "city": "Paris",
           "lat": 48.86,
           "lon": 2.35,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Toronto",
+          "lat": 43.65,
+          "lon": -79.38,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Shanghai",
+          "lat": 31.23,
+          "lon": 121.47,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -368,12 +380,6 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
-          "city": "Montreal",
-          "lat": 45.5,
-          "lon": -73.57,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
           "city": "Berlin",
           "lat": 52.52,
           "lon": 13.41,
@@ -383,12 +389,6 @@
           "city": "Barcelona",
           "lat": 41.39,
           "lon": 2.17,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Toronto",
-          "lat": 43.65,
-          "lon": -79.38,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -419,12 +419,6 @@
           "city": "Lyon",
           "lat": 45.76,
           "lon": 4.84,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Newcastle",
-          "lat": 54.98,
-          "lon": -1.61,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         }
       ]
@@ -785,15 +779,15 @@
       "name": "Gameloft",
       "locations": [
         {
-          "city": "Montreal",
-          "lat": 45.5,
-          "lon": -73.57,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
-        },
-        {
           "city": "Barcelona",
           "lat": 41.39,
           "lon": 2.17,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         },
         {
