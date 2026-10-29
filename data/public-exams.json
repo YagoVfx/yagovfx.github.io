@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "coverageVersion": 2,
-  "lastAttemptAt": "2026-10-29T12:52:45.919128+00:00",
-  "updatedAt": "2026-10-29T12:52:45.919128+00:00",
+  "lastAttemptAt": "2026-10-29T22:46:01.867063+00:00",
+  "updatedAt": "2026-10-29T22:46:01.867063+00:00",
   "calls": [
     {
       "id": "pag-222968",
@@ -23,7 +23,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22556.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-29T12:52:45.919128+00:00"
+      "checkedAt": "2026-10-29T22:46:01.867063+00:00"
     },
     {
       "id": "pag-222752",
@@ -44,7 +44,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "http://www.unex.es/opopas",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-29T12:52:45.919128+00:00"
+      "checkedAt": "2026-10-29T22:46:01.867063+00:00"
     },
     {
       "id": "pag-222569",
@@ -65,7 +65,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/09/30/pdfs/BOE-A-2026-20340.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-29T12:52:45.919128+00:00"
+      "checkedAt": "2026-10-29T22:46:01.867063+00:00"
     },
     {
       "id": "pag-216052",
@@ -86,7 +86,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.comunidad.madrid/servicios/salud/seleccion-personal-estatutario-servicio-madrileno-salud",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-29T12:52:45.919128+00:00"
+      "checkedAt": "2026-10-29T22:46:01.867063+00:00"
     }
   ],
   "sources": [

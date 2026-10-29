@@ -350,6 +350,30 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
+          "city": "Kyiv",
+          "lat": 50.45,
+          "lon": 30.52,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Lyon",
+          "lat": 45.76,
+          "lon": 4.84,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Pune",
+          "lat": 18.52,
+          "lon": 73.86,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Berlin",
+          "lat": 52.52,
+          "lon": 13.41,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Toronto",
           "lat": 43.65,
           "lon": -79.38,
@@ -359,12 +383,6 @@
           "city": "Shanghai",
           "lat": 31.23,
           "lon": 121.47,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Pune",
-          "lat": 18.52,
-          "lon": 73.86,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -380,21 +398,9 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
-          "city": "Berlin",
-          "lat": 52.52,
-          "lon": 13.41,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
           "city": "Barcelona",
           "lat": 41.39,
           "lon": 2.17,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Kyiv",
-          "lat": 50.45,
-          "lon": 30.52,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -413,12 +419,6 @@
           "city": "Bordeaux",
           "lat": 44.84,
           "lon": -0.58,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Lyon",
-          "lat": 45.76,
-          "lon": 4.84,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         }
       ]
@@ -483,15 +483,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
-          "city": "Austin",
-          "lat": 30.27,
-          "lon": -97.74,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
-        },
-        {
           "city": "Los Angeles",
           "lat": 34.05,
           "lon": -118.24,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Austin",
+          "lat": 30.27,
+          "lon": -97.74,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
@@ -762,15 +762,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         },
         {
-          "city": "Dundee",
-          "lat": 56.46,
-          "lon": -2.97,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
-        },
-        {
           "city": "Tel Aviv",
           "lat": 32.09,
           "lon": 34.78,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Dundee",
+          "lat": 56.46,
+          "lon": -2.97,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         }
       ]
@@ -1020,12 +1020,6 @@
       "name": "Hasbro",
       "locations": [
         {
-          "city": "London",
-          "lat": 51.51,
-          "lon": -0.13,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
-        },
-        {
           "city": "Boston",
           "lat": 42.36,
           "lon": -71.06,
@@ -1035,6 +1029,12 @@
           "city": "Montréal",
           "lat": 45.5,
           "lon": -73.57,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
         },
         {
