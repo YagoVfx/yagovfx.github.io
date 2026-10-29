@@ -338,6 +338,12 @@
       "name": "Ubisoft",
       "locations": [
         {
+          "city": "Shanghai",
+          "lat": 31.23,
+          "lon": 121.47,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Paris",
           "lat": 48.86,
           "lon": 2.35,
@@ -383,12 +389,6 @@
           "city": "Toronto",
           "lat": 43.65,
           "lon": -79.38,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Shanghai",
-          "lat": 31.23,
-          "lon": 121.47,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {

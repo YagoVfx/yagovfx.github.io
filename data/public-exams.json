@@ -1,9 +1,30 @@
 {
   "schemaVersion": 1,
   "coverageVersion": 2,
-  "lastAttemptAt": "2026-10-28T22:32:21.698217+00:00",
-  "updatedAt": "2026-10-28T22:32:21.698217+00:00",
+  "lastAttemptAt": "2026-10-29T05:36:25.490949+00:00",
+  "updatedAt": "2026-10-29T05:36:25.490949+00:00",
   "calls": [
+    {
+      "id": "pag-222968",
+      "reference": "222968",
+      "title": "ADMINISTRATIVO · ADMINISTRATIVO/A DE OBRA Y MANTENIMIENTO",
+      "organization": "Ministerio de Hacienda",
+      "location": "LOCAL · ANDALUCÍA · CÁDIZ",
+      "area": "other",
+      "adminScope": "state",
+      "municipality": null,
+      "qualification": "Estar en posesión, como mínimo del título de \r\nTécnico/a Superior en Administración y Finanzas o titulación equivalente \r\n/ Certificado de profesionalidad nivel 3 de la familia de Administración y \r\nGestión / Bachillerato u otras titulaciones equivalentes.",
+      "fit": "review",
+      "places": 2,
+      "freePlaces": 2,
+      "closingDate": "2026-11-25",
+      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
+      "status": "open",
+      "source": "PAG · exportación XML oficial",
+      "url": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22556.pdf",
+      "access": "Acceso libre; verificar requisitos específicos en las bases",
+      "checkedAt": "2026-10-29T05:36:25.490949+00:00"
+    },
     {
       "id": "pag-222752",
       "reference": "222752",
@@ -23,7 +44,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "http://www.unex.es/opopas",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-28T22:32:21.698217+00:00"
+      "checkedAt": "2026-10-29T05:36:25.490949+00:00"
     },
     {
       "id": "pag-222569",
@@ -44,28 +65,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/09/30/pdfs/BOE-A-2026-20340.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-28T22:32:21.698217+00:00"
-    },
-    {
-      "id": "pag-222516",
-      "reference": "222516",
-      "title": "TÉCNICA BÁSICA DE LABORATORIOS · Informática",
-      "organization": "Universidad Jaume I de Castellón",
-      "location": "LOCAL · COMUNITAT VALENCIANA · CASTELLÓN",
-      "area": "other",
-      "adminScope": "university",
-      "municipality": null,
-      "qualification": "Bachiller o Técnico o Técnica de Formación Profesional o equivalente.",
-      "fit": "review",
-      "places": 1,
-      "freePlaces": 1,
-      "closingDate": "2026-10-28",
-      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
-      "status": "open",
-      "source": "PAG · exportación XML oficial",
-      "url": "https://www.boe.es/boe/dias/2026/09/26/pdfs/BOE-A-2026-19983.pdf",
-      "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-28T22:32:21.698217+00:00"
+      "checkedAt": "2026-10-29T05:36:25.490949+00:00"
     },
     {
       "id": "pag-216052",
@@ -86,14 +86,14 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.comunidad.madrid/servicios/salud/seleccion-personal-estatutario-servicio-madrileno-salud",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-28T22:32:21.698217+00:00"
+      "checkedAt": "2026-10-29T05:36:25.490949+00:00"
     }
   ],
   "sources": [
     {
       "name": "PAG · exportación XML completa",
       "status": "ok",
-      "examined": 252,
+      "examined": 260,
       "matched": 4
     },
     {
