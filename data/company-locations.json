@@ -71,7 +71,7 @@
           "city": "Vancouver",
           "lat": 49.28,
           "lon": -123.12,
-          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Artist-II-Apex-Legends/216459"
+          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216274"
         }
       ]
     },
@@ -779,6 +779,12 @@
       "name": "Gameloft",
       "locations": [
         {
+          "city": "Hanoi",
+          "lat": 21.03,
+          "lon": 105.83,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
           "city": "Barcelona",
           "lat": 41.39,
           "lon": 2.17,
@@ -794,12 +800,6 @@
           "city": "Ho Chi Minh",
           "lat": 10.82,
           "lon": 106.63,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
-        },
-        {
-          "city": "Hanoi",
-          "lat": 21.03,
-          "lon": 105.83,
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         },
         {

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "coverageVersion": 2,
-  "lastAttemptAt": "2026-10-29T22:46:01.867063+00:00",
-  "updatedAt": "2026-10-29T22:46:01.867063+00:00",
+  "lastAttemptAt": "2026-10-30T05:36:54.820697+00:00",
+  "updatedAt": "2026-10-30T05:36:54.820697+00:00",
   "calls": [
     {
       "id": "pag-222968",
@@ -23,7 +23,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22556.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-29T22:46:01.867063+00:00"
+      "checkedAt": "2026-10-30T05:36:54.820697+00:00"
     },
     {
       "id": "pag-222752",
@@ -44,28 +44,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "http://www.unex.es/opopas",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-29T22:46:01.867063+00:00"
-    },
-    {
-      "id": "pag-222569",
-      "reference": "222569",
-      "title": "TÉCNICO/A SUPERIOR · Técnico/a Superior de Informática Grupo B",
-      "organization": "Ayuntamiento de Coruña, A",
-      "location": "LOCAL · GALICIA · A CORUÑA",
-      "area": "galicia",
-      "adminScope": "local",
-      "municipality": "coruna",
-      "qualification": "ciclos formativos de Técnico/a Superior en Administración de Sistemas Informáticos en Red (ASIR), Técnico/a Superior en Desarrollo de Aplicaciones Multiplataforma (DAM), Técnico/a Superior en Desarrollo de Aplicaciones Web (DAW), o equivalente.",
-      "fit": "dam",
-      "places": 2,
-      "freePlaces": 2,
-      "closingDate": "2026-10-29",
-      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
-      "status": "open",
-      "source": "PAG · exportación XML oficial",
-      "url": "https://www.boe.es/boe/dias/2026/09/30/pdfs/BOE-A-2026-20340.pdf",
-      "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-29T22:46:01.867063+00:00"
+      "checkedAt": "2026-10-30T05:36:54.820697+00:00"
     },
     {
       "id": "pag-216052",
@@ -86,15 +65,15 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.comunidad.madrid/servicios/salud/seleccion-personal-estatutario-servicio-madrileno-salud",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-29T22:46:01.867063+00:00"
+      "checkedAt": "2026-10-30T05:36:54.820697+00:00"
     }
   ],
   "sources": [
     {
       "name": "PAG · exportación XML completa",
       "status": "ok",
-      "examined": 260,
-      "matched": 4
+      "examined": 254,
+      "matched": 3
     },
     {
       "name": "Concello de Vigo · procesos municipales",
