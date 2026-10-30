@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "coverageVersion": 2,
-  "lastAttemptAt": "2026-10-30T05:36:54.820697+00:00",
-  "updatedAt": "2026-10-30T05:36:54.820697+00:00",
+  "lastAttemptAt": "2026-10-30T12:45:29.286103+00:00",
+  "updatedAt": "2026-10-30T12:45:29.286103+00:00",
   "calls": [
     {
       "id": "pag-222968",
@@ -23,7 +23,8 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22556.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-30T05:36:54.820697+00:00"
+      "checkedAt": "2026-10-30T05:36:54.820697+00:00",
+      "retainedAfterFailure": true
     },
     {
       "id": "pag-222752",
@@ -44,7 +45,8 @@
       "source": "PAG · exportación XML oficial",
       "url": "http://www.unex.es/opopas",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-30T05:36:54.820697+00:00"
+      "checkedAt": "2026-10-30T05:36:54.820697+00:00",
+      "retainedAfterFailure": true
     },
     {
       "id": "pag-216052",
@@ -65,15 +67,65 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.comunidad.madrid/servicios/salud/seleccion-personal-estatutario-servicio-madrileno-salud",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-10-30T05:36:54.820697+00:00"
+      "checkedAt": "2026-10-30T05:36:54.820697+00:00",
+      "retainedAfterFailure": true
     }
   ],
   "sources": [
     {
+      "name": "PAG · informatica-3",
+      "status": "error",
+      "reason": "PAG result layout not recognized"
+    },
+    {
+      "name": "PAG · informatica-4",
+      "status": "error",
+      "reason": "PAG result layout not recognized"
+    },
+    {
+      "name": "PAG · electric-3",
+      "status": "error",
+      "reason": "PAG result layout not recognized"
+    },
+    {
+      "name": "PAG · electric-4",
+      "status": "error",
+      "reason": "PAG result layout not recognized"
+    },
+    {
+      "name": "PAG · electronic-3",
+      "status": "error",
+      "reason": "PAG result layout not recognized"
+    },
+    {
+      "name": "PAG · electronic-4",
+      "status": "error",
+      "reason": "PAG result layout not recognized"
+    },
+    {
+      "name": "PAG · telecomunicaciones-3",
+      "status": "error",
+      "reason": "PAG result layout not recognized"
+    },
+    {
+      "name": "PAG · telecomunicaciones-4",
+      "status": "error",
+      "reason": "PAG result layout not recognized"
+    },
+    {
+      "name": "PAG · mantenimiento-3",
+      "status": "error",
+      "reason": "PAG result layout not recognized"
+    },
+    {
+      "name": "PAG · mantenimiento-4",
+      "status": "error",
+      "reason": "PAG result layout not recognized"
+    },
+    {
       "name": "PAG · exportación XML completa",
-      "status": "ok",
-      "examined": 254,
-      "matched": 3
+      "status": "error",
+      "reason": "500 Server Error: Internal Server Error for url: https://administracion.gob.es/content/sling/endpoints/pag/front-elastic/empleo-elastic/exportar"
     },
     {
       "name": "Concello de Vigo · procesos municipales",
