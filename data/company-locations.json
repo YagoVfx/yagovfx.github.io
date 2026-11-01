@@ -416,12 +416,6 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
-          "city": "Berlin",
-          "lat": 52.52,
-          "lon": 13.41,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
           "city": "Kyiv",
           "lat": 50.45,
           "lon": 30.52,
