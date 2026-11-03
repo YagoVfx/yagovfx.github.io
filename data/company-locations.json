@@ -271,12 +271,6 @@
           "lat": 49.28,
           "lon": -123.12,
           "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
-        },
-        {
-          "city": "Ottawa",
-          "lat": 45.42,
-          "lon": -75.7,
-          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
         }
       ]
     },
@@ -528,6 +522,12 @@
           "lat": 49.2,
           "lon": 16.61,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Irvine",
+          "lat": 33.68,
+          "lon": -117.83,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         }
       ]
     },
@@ -689,12 +689,6 @@
       "name": "Scopely",
       "locations": [
         {
-          "city": "Barcelona",
-          "lat": 41.39,
-          "lon": 2.17,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
-        },
-        {
           "city": "Bangalore",
           "lat": 12.97,
           "lon": 77.59,
@@ -704,6 +698,12 @@
           "city": "Tokyo",
           "lat": 35.68,
           "lon": 139.69,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Barcelona",
+          "lat": 41.39,
+          "lon": 2.17,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         },
         {
