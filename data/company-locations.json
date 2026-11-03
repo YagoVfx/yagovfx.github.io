@@ -79,15 +79,15 @@
       "name": "Epic Games",
       "locations": [
         {
-          "city": "Porto",
-          "lat": 41.16,
-          "lon": -8.63,
-          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
-        },
-        {
           "city": "Montreal",
           "lat": 45.5,
           "lon": -73.57,
+          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
+        },
+        {
+          "city": "Porto",
+          "lat": 41.16,
+          "lon": -8.63,
           "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
         },
         {
@@ -754,6 +754,12 @@
       "name": "Gameloft",
       "locations": [
         {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
           "city": "Barcelona",
           "lat": 41.39,
           "lon": 2.17,
@@ -781,12 +787,6 @@
           "city": "Paris",
           "lat": 48.86,
           "lon": 2.35,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
-        },
-        {
-          "city": "Bucharest",
-          "lat": 44.43,
-          "lon": 26.1,
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         },
         {
@@ -1329,15 +1329,15 @@
       "name": "People Can Fly",
       "locations": [
         {
-          "city": "Warszawa",
-          "lat": 52.23,
-          "lon": 21.01,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/PeopleCanFly/postings?limit=100"
-        },
-        {
           "city": "Montréal",
           "lat": 45.5,
           "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/PeopleCanFly/postings?limit=100"
+        },
+        {
+          "city": "Warszawa",
+          "lat": 52.23,
+          "lon": 21.01,
           "evidence": "https://api.smartrecruiters.com/v1/companies/PeopleCanFly/postings?limit=100"
         }
       ]
