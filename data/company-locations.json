@@ -97,15 +97,15 @@
           "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
         },
         {
-          "city": "Vancouver",
-          "lat": 49.28,
-          "lon": -123.12,
-          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
-        },
-        {
           "city": "London",
           "lat": 51.51,
           "lon": -0.13,
+          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
+        },
+        {
+          "city": "Vancouver",
+          "lat": 49.28,
+          "lon": -123.12,
           "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
         },
         {
@@ -332,15 +332,15 @@
       "name": "Ubisoft",
       "locations": [
         {
-          "city": "Paris",
-          "lat": 48.86,
-          "lon": 2.35,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
           "city": "Montreal",
           "lat": 45.5,
           "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Paris",
+          "lat": 48.86,
+          "lon": 2.35,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -464,15 +464,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
-          "city": "Austin",
-          "lat": 30.27,
-          "lon": -97.74,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
-        },
-        {
           "city": "Los Angeles",
           "lat": 34.05,
           "lon": -118.24,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Austin",
+          "lat": 30.27,
+          "lon": -97.74,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
@@ -754,6 +754,12 @@
       "name": "Gameloft",
       "locations": [
         {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
           "city": "Barcelona",
           "lat": 41.39,
           "lon": 2.17,
@@ -769,12 +775,6 @@
           "city": "Hanoi",
           "lat": 21.03,
           "lon": 105.83,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
-        },
-        {
-          "city": "Montreal",
-          "lat": 45.5,
-          "lon": -73.57,
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         },
         {
@@ -1001,15 +1001,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
         },
         {
-          "city": "Montréal",
-          "lat": 45.5,
-          "lon": -73.57,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
-        },
-        {
           "city": "London",
           "lat": 51.51,
           "lon": -0.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
+          "city": "Montréal",
+          "lat": 45.5,
+          "lon": -73.57,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
         },
         {
