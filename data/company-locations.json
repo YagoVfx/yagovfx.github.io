@@ -159,15 +159,15 @@
           "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
         },
         {
-          "city": "Bengaluru",
-          "lat": 12.97,
-          "lon": 77.59,
-          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
-        },
-        {
           "city": "Kuala Lumpur",
           "lat": 3.14,
           "lon": 101.69,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Bengaluru",
+          "lat": 12.97,
+          "lon": 77.59,
           "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
         },
         {
@@ -332,6 +332,18 @@
       "name": "Ubisoft",
       "locations": [
         {
+          "city": "Pune",
+          "lat": 18.52,
+          "lon": 73.86,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Shanghai",
+          "lat": 31.23,
+          "lon": 121.47,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Montreal",
           "lat": 45.5,
           "lon": -73.57,
@@ -359,12 +371,6 @@
           "city": "Malmö",
           "lat": 55.61,
           "lon": 13.0,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Pune",
-          "lat": 18.52,
-          "lon": 73.86,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -401,12 +407,6 @@
           "city": "Lyon",
           "lat": 45.76,
           "lon": 4.84,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Shanghai",
-          "lat": 31.23,
-          "lon": 121.47,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         }
       ]
@@ -464,15 +464,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
-          "city": "Los Angeles",
-          "lat": 34.05,
-          "lon": -118.24,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
-        },
-        {
           "city": "Austin",
           "lat": 30.27,
           "lon": -97.74,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
@@ -485,12 +485,6 @@
           "city": "San Mateo",
           "lat": 37.56,
           "lon": -122.33,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
-        },
-        {
-          "city": "Madrid",
-          "lat": 40.42,
-          "lon": -3.7,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
@@ -728,6 +722,12 @@
           "city": "Seville",
           "lat": 37.39,
           "lon": -5.98,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
+        },
+        {
+          "city": "Dundee",
+          "lat": 56.46,
+          "lon": -2.97,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/scopely/jobs"
         },
         {
@@ -1019,6 +1019,12 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
         },
         {
+          "city": "Mexico City",
+          "lat": 19.43,
+          "lon": -99.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
           "city": "Austin",
           "lat": 30.27,
           "lon": -97.74,
@@ -1268,15 +1274,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
-          "city": "Oakville",
-          "lat": 43.47,
-          "lon": -79.69,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
-        },
-        {
           "city": "Carlsbad",
           "lat": 33.16,
           "lon": -117.35,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Oakville",
+          "lat": 43.47,
+          "lon": -79.69,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         }
       ]
