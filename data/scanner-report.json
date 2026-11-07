@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-06T19:15:21Z",
-  "durationSec": 66.7,
+  "generatedAt": "2026-11-07T05:44:49Z",
+  "durationSec": 53.8,
   "summary": {
     "activeJobs": 58,
     "officialJobs": 58,
@@ -22,6 +22,15 @@
     "reason": "Catalogo limitado a portales oficiales; agregadores desactivados."
   },
   "history": [
+    {
+      "ranAt": "2026-11-07T05:44:49Z",
+      "durationSec": 53.8,
+      "sourcesOk": 72,
+      "sourcesFailed": 1,
+      "activeJobs": 58,
+      "officialJobs": 58,
+      "aggregatorJobs": 0
+    },
     {
       "ranAt": "2026-11-06T19:15:21Z",
       "durationSec": 66.7,
@@ -191,15 +200,6 @@
       "sourcesFailed": 0,
       "activeJobs": 65,
       "officialJobs": 65,
-      "aggregatorJobs": 0
-    },
-    {
-      "ranAt": "2026-10-30T12:40:24Z",
-      "durationSec": 79.7,
-      "sourcesOk": 73,
-      "sourcesFailed": 0,
-      "activeJobs": 64,
-      "officialJobs": 64,
       "aggregatorJobs": 0
     }
   ],
