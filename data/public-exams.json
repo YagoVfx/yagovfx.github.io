@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "coverageVersion": 2,
-  "lastAttemptAt": "2026-11-10T14:49:17.711065+00:00",
-  "updatedAt": "2026-11-10T14:49:17.711065+00:00",
+  "lastAttemptAt": "2026-11-10T23:12:43.031505+00:00",
+  "updatedAt": "2026-11-10T23:12:43.031505+00:00",
   "calls": [
     {
       "id": "pag-223145",
@@ -23,7 +23,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.comunidad.madrid",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-10T14:49:17.711065+00:00"
+      "checkedAt": "2026-11-10T23:12:43.031505+00:00"
     },
     {
       "id": "pag-222968",
@@ -44,7 +44,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22556.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-10T14:49:17.711065+00:00"
+      "checkedAt": "2026-11-10T23:12:43.031505+00:00"
     },
     {
       "id": "pag-222752",
@@ -65,36 +65,15 @@
       "source": "PAG · exportación XML oficial",
       "url": "http://www.unex.es/opopas",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-10T14:49:17.711065+00:00"
-    },
-    {
-      "id": "pag-216052",
-      "reference": "216052",
-      "title": "TÉCNICO ESPECIALISTA DE SISTEMAS Y TECNOLOGÍAS DE LA INFORMACIÓN",
-      "organization": "Servicio Madrileño de Salud (SERMAS)",
-      "location": "AUTONÓMICO · MADRID, COMUNIDAD DE",
-      "area": "other",
-      "adminScope": "autonomous",
-      "municipality": null,
-      "qualification": "Bachiller, Formación profesional de Grado Superior o equivalente",
-      "fit": "review",
-      "places": 39,
-      "freePlaces": 36,
-      "closingDate": "2026-11-10",
-      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
-      "status": "open",
-      "source": "PAG · exportación XML oficial",
-      "url": "https://www.comunidad.madrid/servicios/salud/seleccion-personal-estatutario-servicio-madrileno-salud",
-      "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-10T14:49:17.711065+00:00"
+      "checkedAt": "2026-11-10T23:12:43.031505+00:00"
     }
   ],
   "sources": [
     {
       "name": "PAG · exportación XML completa",
       "status": "ok",
-      "examined": 295,
-      "matched": 4
+      "examined": 268,
+      "matched": 3
     },
     {
       "name": "Concello de Vigo · procesos municipales",

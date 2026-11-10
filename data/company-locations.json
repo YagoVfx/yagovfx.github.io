@@ -10,6 +10,12 @@
       "name": "CD Project",
       "locations": [
         {
+          "city": "Boston",
+          "lat": 42.36,
+          "lon": -71.06,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
+        },
+        {
           "city": "Warsaw",
           "lat": 52.23,
           "lon": 21.01,
@@ -19,12 +25,6 @@
           "city": "Vancouver",
           "lat": 49.28,
           "lon": -123.12,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
-        },
-        {
-          "city": "Boston",
-          "lat": 42.36,
-          "lon": -71.06,
           "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
         },
         {
@@ -78,6 +78,12 @@
           "lat": 49.28,
           "lon": -123.12,
           "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Artist-II-Apex-Legends/216459"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
+          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216273"
         }
       ]
     },
@@ -350,6 +356,12 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
+          "city": "Paris",
+          "lat": 48.86,
+          "lon": 2.35,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Malmö",
           "lat": 55.61,
           "lon": 13.0,
@@ -365,12 +377,6 @@
           "city": "Bordeaux",
           "lat": 44.84,
           "lon": -0.58,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Paris",
-          "lat": 48.86,
-          "lon": 2.35,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -476,15 +482,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
-          "city": "Austin",
-          "lat": 30.27,
-          "lon": -97.74,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
-        },
-        {
           "city": "Los Angeles",
           "lat": 34.05,
           "lon": -118.24,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Austin",
+          "lat": 30.27,
+          "lon": -97.74,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
@@ -951,6 +957,12 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
         },
         {
+          "city": "London",
+          "lat": 51.51,
+          "lon": -0.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
+        },
+        {
           "city": "Tokyo",
           "lat": 35.68,
           "lon": 139.69,
@@ -1040,6 +1052,18 @@
           "city": "Mexico City",
           "lat": 19.43,
           "lon": -99.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
+          "city": "São Paulo",
+          "lat": -23.55,
+          "lon": -46.63,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
+          "city": "Amsterdam",
+          "lat": 52.37,
+          "lon": 4.9,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
         },
         {
@@ -1286,15 +1310,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
-          "city": "Oakville",
-          "lat": 43.47,
-          "lon": -79.69,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
-        },
-        {
           "city": "Carlsbad",
           "lat": 33.16,
           "lon": -117.35,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Oakville",
+          "lat": 43.47,
+          "lon": -79.69,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         }
       ]
