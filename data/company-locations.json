@@ -10,15 +10,15 @@
       "name": "CD Project",
       "locations": [
         {
-          "city": "Vancouver",
-          "lat": 49.28,
-          "lon": -123.12,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
-        },
-        {
           "city": "Warsaw",
           "lat": 52.23,
           "lon": 21.01,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
+        },
+        {
+          "city": "Vancouver",
+          "lat": 49.28,
+          "lon": -123.12,
           "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
         },
         {
@@ -85,6 +85,12 @@
       "name": "Epic Games",
       "locations": [
         {
+          "city": "Cary",
+          "lat": 35.79,
+          "lon": -78.78,
+          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
+        },
+        {
           "city": "Montreal",
           "lat": 45.5,
           "lon": -73.57,
@@ -94,12 +100,6 @@
           "city": "Porto",
           "lat": 41.16,
           "lon": -8.63,
-          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
-        },
-        {
-          "city": "Cary",
-          "lat": 35.79,
-          "lon": -78.78,
           "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
         },
         {
@@ -344,15 +344,15 @@
       "name": "Ubisoft",
       "locations": [
         {
-          "city": "Bucharest",
-          "lat": 44.43,
-          "lon": 26.1,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
           "city": "Montreal",
           "lat": 45.5,
           "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -1043,12 +1043,6 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
         },
         {
-          "city": "Austin",
-          "lat": 30.27,
-          "lon": -97.74,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
-        },
-        {
           "city": "Singapore",
           "lat": 1.35,
           "lon": 103.82,
@@ -1292,15 +1286,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
-          "city": "Carlsbad",
-          "lat": 33.16,
-          "lon": -117.35,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
-        },
-        {
           "city": "Oakville",
           "lat": 43.47,
           "lon": -79.69,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Carlsbad",
+          "lat": 33.16,
+          "lon": -117.35,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         }
       ]
