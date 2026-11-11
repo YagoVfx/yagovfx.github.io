@@ -482,15 +482,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
-          "city": "Los Angeles",
-          "lat": 34.05,
-          "lon": -118.24,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
-        },
-        {
           "city": "Austin",
           "lat": 30.27,
           "lon": -97.74,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
@@ -802,12 +802,6 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         },
         {
-          "city": "Hanoi",
-          "lat": 21.03,
-          "lon": 105.83,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
-        },
-        {
           "city": "Paris",
           "lat": 48.86,
           "lon": 2.35,
@@ -817,6 +811,12 @@
           "city": "Seattle",
           "lat": 47.61,
           "lon": -122.33,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
+          "city": "Hanoi",
+          "lat": 21.03,
+          "lon": 105.83,
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         }
       ]
@@ -927,15 +927,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
         },
         {
-          "city": "Seoul",
-          "lat": 37.57,
-          "lon": 126.98,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
-        },
-        {
           "city": "Los Angeles",
           "lat": 34.05,
           "lon": -118.24,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
+        },
+        {
+          "city": "Seoul",
+          "lat": 37.57,
+          "lon": 126.98,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/riotgames/jobs"
         },
         {
@@ -1310,15 +1310,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
-          "city": "Carlsbad",
-          "lat": 33.16,
-          "lon": -117.35,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
-        },
-        {
           "city": "Oakville",
           "lat": 43.47,
           "lon": -79.69,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Carlsbad",
+          "lat": 33.16,
+          "lon": -117.35,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         }
       ]
