@@ -1,9 +1,30 @@
 {
   "schemaVersion": 1,
   "coverageVersion": 2,
-  "lastAttemptAt": "2026-11-12T00:33:13.855734+00:00",
-  "updatedAt": "2026-11-12T00:33:13.855734+00:00",
+  "lastAttemptAt": "2026-11-12T15:05:39.387344+00:00",
+  "updatedAt": "2026-11-12T15:05:39.387344+00:00",
   "calls": [
+    {
+      "id": "pag-223189",
+      "reference": "223189",
+      "title": "AUXILIAR · Auxiliar de Conservación y \r\nMantenimiento (entorno profesional Mantenimiento Jardines) d",
+      "organization": "Universidad de Granada",
+      "location": "LOCAL · ANDALUCÍA · GRANADA",
+      "area": "other",
+      "adminScope": "university",
+      "municipality": null,
+      "qualification": "Graduado en Educación Secundaria Obligatoria o \r\ntitulación equivalente",
+      "fit": "review",
+      "places": 7,
+      "freePlaces": 7,
+      "closingDate": "2026-12-02",
+      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
+      "status": "open",
+      "source": "PAG · exportación XML oficial",
+      "url": "https://www.boe.es/boe/dias/2026/11/11/pdfs/BOE-A-2026-23651.pdf",
+      "access": "Acceso libre; verificar requisitos específicos en las bases",
+      "checkedAt": "2026-11-12T15:05:39.387344+00:00"
+    },
     {
       "id": "pag-223145",
       "reference": "223145",
@@ -23,7 +44,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.comunidad.madrid",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-12T00:33:13.855734+00:00"
+      "checkedAt": "2026-11-12T15:05:39.387344+00:00"
     },
     {
       "id": "pag-222968",
@@ -44,15 +65,15 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22556.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-12T00:33:13.855734+00:00"
+      "checkedAt": "2026-11-12T15:05:39.387344+00:00"
     }
   ],
   "sources": [
     {
       "name": "PAG · exportación XML completa",
       "status": "ok",
-      "examined": 250,
-      "matched": 2
+      "examined": 251,
+      "matched": 3
     },
     {
       "name": "Concello de Vigo · procesos municipales",

@@ -10,15 +10,15 @@
       "name": "CD Project",
       "locations": [
         {
-          "city": "Boston",
-          "lat": 42.36,
-          "lon": -71.06,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
-        },
-        {
           "city": "Warsaw",
           "lat": 52.23,
           "lon": 21.01,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
+        },
+        {
+          "city": "Boston",
+          "lat": 42.36,
+          "lon": -71.06,
           "evidence": "https://api.smartrecruiters.com/v1/companies/CDPROJEKTRED/postings?limit=100"
         },
         {
@@ -350,6 +350,18 @@
       "name": "Ubisoft",
       "locations": [
         {
+          "city": "Kyiv",
+          "lat": 50.45,
+          "lon": 30.52,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Montreal",
           "lat": 45.5,
           "lon": -73.57,
@@ -365,12 +377,6 @@
           "city": "Malmö",
           "lat": 55.61,
           "lon": 13.0,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Bucharest",
-          "lat": 44.43,
-          "lon": 26.1,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -1041,6 +1047,12 @@
           "city": "Mexico City",
           "lat": 19.43,
           "lon": -99.13,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
+          "city": "Shanghai",
+          "lat": 31.23,
+          "lon": 121.47,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
         },
         {
