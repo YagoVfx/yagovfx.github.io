@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "coverageVersion": 2,
-  "lastAttemptAt": "2026-11-11T14:05:13.044399+00:00",
-  "updatedAt": "2026-11-11T14:05:13.044399+00:00",
+  "lastAttemptAt": "2026-11-12T00:33:13.855734+00:00",
+  "updatedAt": "2026-11-12T00:33:13.855734+00:00",
   "calls": [
     {
       "id": "pag-223145",
@@ -23,7 +23,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.comunidad.madrid",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-11T14:05:13.044399+00:00"
+      "checkedAt": "2026-11-12T00:33:13.855734+00:00"
     },
     {
       "id": "pag-222968",
@@ -44,36 +44,15 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22556.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-11T14:05:13.044399+00:00"
-    },
-    {
-      "id": "pag-222752",
-      "reference": "222752",
-      "title": "TÉCNICO AUXILIAR · Técnicos Auxiliares de \r\nServicios (Mantenimiento de Material Científico)",
-      "organization": "Universidad de Extremadura",
-      "location": "AUTONÓMICO · EXTREMADURA",
-      "area": "other",
-      "adminScope": "university",
-      "municipality": null,
-      "qualification": "Bachiller o equivalente",
-      "fit": "review",
-      "places": 1,
-      "freePlaces": 1,
-      "closingDate": "2026-11-11",
-      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
-      "status": "open",
-      "source": "PAG · exportación XML oficial",
-      "url": "http://www.unex.es/opopas",
-      "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-11T14:05:13.044399+00:00"
+      "checkedAt": "2026-11-12T00:33:13.855734+00:00"
     }
   ],
   "sources": [
     {
       "name": "PAG · exportación XML completa",
       "status": "ok",
-      "examined": 270,
-      "matched": 3
+      "examined": 250,
+      "matched": 2
     },
     {
       "name": "Concello de Vigo · procesos municipales",

@@ -77,7 +77,7 @@
           "city": "Vancouver",
           "lat": 49.28,
           "lon": -123.12,
-          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Artist-II-Apex-Legends/216459"
+          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216274"
         },
         {
           "city": "Los Angeles",
@@ -986,7 +986,14 @@
     },
     {
       "name": "Magic Media",
-      "locations": []
+      "locations": [
+        {
+          "city": "Buenos Aires",
+          "lat": -34.6,
+          "lon": -58.38,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/magic-media?details=true"
+        }
+      ]
     },
     {
       "name": "Believer",
@@ -1244,18 +1251,6 @@
       "name": "Rockstar Games",
       "locations": [
         {
-          "city": "New York",
-          "lat": 40.71,
-          "lon": -74.01,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
-        },
-        {
-          "city": "Manhattan",
-          "lat": 40.78,
-          "lon": -73.97,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
-        },
-        {
           "city": "Dundee",
           "lat": 56.46,
           "lon": -2.97,
@@ -1274,21 +1269,27 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
+          "city": "New York",
+          "lat": 40.71,
+          "lon": -74.01,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
+          "city": "Manhattan",
+          "lat": 40.78,
+          "lon": -73.97,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
+        },
+        {
           "city": "Edinburgh",
           "lat": 55.95,
           "lon": -3.19,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
-          "city": "Leeds",
-          "lat": 53.8,
-          "lon": -1.55,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
-        },
-        {
-          "city": "London",
-          "lat": 51.51,
-          "lon": -0.13,
+          "city": "Carlsbad",
+          "lat": 33.16,
+          "lon": -117.35,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
@@ -1298,9 +1299,9 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         },
         {
-          "city": "Carlsbad",
-          "lat": 33.16,
-          "lon": -117.35,
+          "city": "Leeds",
+          "lat": 53.8,
+          "lon": -1.55,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/rockstargames/jobs"
         }
       ]
