@@ -77,7 +77,7 @@
           "city": "Vancouver",
           "lat": 49.28,
           "lon": -123.12,
-          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216274"
+          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Artist-II-Apex-Legends/216459"
         },
         {
           "city": "Los Angeles",
@@ -350,6 +350,12 @@
       "name": "Ubisoft",
       "locations": [
         {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Kyiv",
           "lat": 50.45,
           "lon": 30.52,
@@ -359,12 +365,6 @@
           "city": "Bucharest",
           "lat": 44.43,
           "lon": 26.1,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Montreal",
-          "lat": 45.5,
-          "lon": -73.57,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -482,15 +482,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
-          "city": "Austin",
-          "lat": 30.27,
-          "lon": -97.74,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
-        },
-        {
           "city": "Los Angeles",
           "lat": 34.05,
           "lon": -118.24,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Austin",
+          "lat": 30.27,
+          "lon": -97.74,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
