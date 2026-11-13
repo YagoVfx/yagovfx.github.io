@@ -74,16 +74,16 @@
       "name": "Respawn",
       "locations": [
         {
-          "city": "Vancouver",
-          "lat": 49.28,
-          "lon": -123.12,
-          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Artist-II-Apex-Legends/216459"
-        },
-        {
           "city": "Los Angeles",
           "lat": 34.05,
           "lon": -118.24,
           "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216273"
+        },
+        {
+          "city": "Vancouver",
+          "lat": 49.28,
+          "lon": -123.12,
+          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Artist-II-Apex-Legends/216459"
         }
       ]
     },
