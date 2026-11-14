@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "coverageVersion": 10,
-  "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-  "updatedAt": "2026-11-14T17:55:24.306854Z",
+  "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+  "updatedAt": "2026-11-14T22:16:19.400832Z",
   "offers": [
     {
       "id": "career-sne-122026010700",
@@ -23,7 +23,7 @@
       "requirements": [
         "Revisar permiso de conducir"
       ],
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "profileMatch": "outside",
       "profileReason": "Especialidad de electromecánica o refrigeración, distinta de instalaciones eléctricas"
     },
@@ -47,7 +47,7 @@
         "Revisar formación PRL requerida",
         "Revisar permiso de conducir"
       ],
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "profileMatch": "outside",
       "profileReason": "Especialidad de electromecánica o refrigeración, distinta de instalaciones eléctricas"
     },
@@ -70,7 +70,7 @@
       "requirements": [
         "Revisar si exige titulación universitaria"
       ],
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "profileMatch": "review",
       "profileReason": "Es desarrollo de aplicaciones, pero falta confirmar que admita tu nivel sin experiencia profesional"
     },
@@ -93,7 +93,7 @@
       "requirements": [
         "Revisar permiso de conducir"
       ],
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "profileMatch": "outside",
       "profileReason": "Especialidad de electromecánica o refrigeración, distinta de instalaciones eléctricas"
     },
@@ -109,7 +109,7 @@
       "description": "We currently have a vacancy for a Full Stack developer fluent in English, to offer his/her services as an expert remotely (within EU) . In the context of the first assignment, the successful candidate will be integrated in the Development team of the company that will closely cooperate with a major client’s IT team. Your tasks: Designing and developing tools to interact with social media platforms and facilitate data collection workflows; Creating user-friendly front-end interfaces for data annotation and analysis purposes using modern frameworks and technologies; Developing back-end APIs and services to store, manage, and process data, and integrate with data analysis tools and pipelines; Writing scripts to automate tasks and workflows, using languages such as Bash and Python; Configuring and maintaining Linux-based systems for development and testing environments Ensuring the scalability, security, and performance of the tools using automation and monitoring tools; Providing technical support, troubleshooting, and maintenance for all developed tools. Requirements Master’s or PhD degree in Computer Science, Computer Engineering, or related field. with relevant IT professional experience of at least 7 years; Minimum 3 years of experience in automation and scripting using languages such as Bash and Python to streamline development workflows and system administration tasks.Experience in Python, JavaScript, and web development technologies (HTML/CSS); Minimum 3 years of professional experience in full-stack web development, including designing and developing tools and applications; Minimum 3 years of experience in designing and implementing front-end interfaces using modern frameworks (such as React) and web technologies (HTML/CSS, JavaScript); Minimum 3 years of experience in developing back-end APIs and services using frameworks such as Flask, including database design and integration; Minimum 3 years of experience in database management systems, including both relational databases (e.g., MySQL) and NoSQL databases (e.g., MongoDB); Minimum 3 years of experience in Linux system administration, including user management, networking, security, and system configuration; Minimum 3 years of experience with containerization technologies (such as Docker) and orchestration tools (such as Kubernetes); Minimum 3 years of experience with agile development methodologies, version control systems (such as Git), and project tracking tools. Experience with automation and scripting using Bash and Python for task and workflow optimisation; Experience with agile development methodologies and version control systems such as Git; Experience with project management software such as JIRA and Microsoft Project; Experience with collaboration platforms such as Confluence and SharePoint; Knowledge of reporting methods; Certifications in web development, front-end or back-end frameworks (e.g., React, Flask, or equivalent platforms), cloud computing platforms (such as AWS, Azure, or Google Cloud), containerization and orchestration technologies (such as Docker, Kubernetes, or equivalent platforms), database management systems, software engineering, DevOps, or related fields will be an asset. Excellent command of the English language. Benefits If you are seeking a career in an exciting and dynamic company, where you will offer your services as part of a team of a major European Institution, operating in an international, multilingual and multicultural environment where you can expect real chances to make a difference, please send us your detailed CV in English, quoting reference: (20648/10/2026) We offer a competitive remuneration (either on contract basis or remuneration with full benefits package), based on qualifications and experience. All applications will be treated as confidential. You may also consider all our other open vacancies by visiting the career section of our web site ( www.eurodyn.com) and follow us on Twitter (@EURODYN_Careers) and LinkedIn. EUROPEAN DYNAMICS ( www.eurodyn.com ) is a leading Software, Information and Communication Technologies company, operating internationally (Athens, Brussels, Luxembourg, Copenhagen, Stockholm, London, Nicosia, Hong-Kong, Valetta, etc). The company employs over 1000 engineers, IT experts and consultants (around 3% PhD, 36% MSc and 53% BSc or equivalent). We design and develop software applications using state-of-the-art technology. The group generates annual revenues in the range of EURO 40 million, with an EBITDA in the range of 20%. The value of our contract portfolio exceeds EURO 300 million. EUROPEAN DYNAMICS is a renowned supplier of IT services to government institutions, multinational corporations, public administrations and multinational companies, research and academic institutes. As part of our dedication to the diversity of our workforce, we are committed to Equal Employment Opportunity without regard for race, color, national origin, ethnicity, gender, disability, sexual orientation, gender identity, or religion EUROPEAN DYNAMICS (ED) adheres to the General Data Protection Regulation principles by applying its Privacy Policy as published in www.eurodyn.com/privacy. By submitting an application to this position and by sharing your personal data with ED, you acknowledge and accept its Policy and authorize ED to process your personal data for the purposes of the company's recruitment opportunities, in line to the Policy.",
       "postedDate": "2026-11-02",
       "closingDate": null,
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "experience": "experienced",
       "workplace": "remote",
       "inVigo": false,
@@ -130,7 +130,7 @@
       "url": "https://weworkremotely.com/remote-jobs/vertex-marketing-group-distribution-engineer",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -153,7 +153,7 @@
       "url": "https://weworkremotely.com/remote-jobs/growth-minded-senior-data-engineer",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -176,7 +176,7 @@
       "url": "https://weworkremotely.com/remote-jobs/proxify-ab-senior-fullstack-developer-react-js-node-js-5",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -200,7 +200,7 @@
       "url": "https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-python-11",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -224,7 +224,7 @@
       "url": "https://weworkremotely.com/remote-jobs/proxify-ab-senior-backend-developer-node-js-nest-js-4",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -247,7 +247,7 @@
       "url": "https://weworkremotely.com/remote-jobs/lithic-senior-software-engineer-product-platform",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -270,7 +270,7 @@
       "url": "https://weworkremotely.com/remote-jobs/alloy-founding-forward-deployed-engineer",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -294,7 +294,7 @@
       "url": "https://weworkremotely.com/remote-jobs/airbnb-operations-engineer-biztech",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -318,7 +318,7 @@
       "url": "https://weworkremotely.com/remote-jobs/lithic-senior-software-engineer-processing",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -342,7 +342,7 @@
       "url": "https://weworkremotely.com/remote-jobs/squarespace-staff-software-engineer-revenue-systems",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -365,7 +365,7 @@
       "url": "https://weworkremotely.com/remote-jobs/dremio-staff-software-engineer-connectivity",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -388,7 +388,7 @@
       "url": "https://weworkremotely.com/remote-jobs/twikey-senior-java-developer",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -411,7 +411,7 @@
       "url": "https://weworkremotely.com/remote-jobs/askable-software-engineer-ai-coding-tasks-contract",
       "source": "We Work Remotely",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -434,7 +434,7 @@
       "url": "https://talent.inprosec.com/jobs/software-developer-desarrollador-a-ecac2162-a977-44fc-ad02-677bc6dacb4a",
       "source": "Inprosec / Greinfort · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "hybrid",
@@ -458,7 +458,7 @@
       "source": "Adecco",
       "sourceKind": "recruitment-agency",
       "description": "Desde una Grupo Adecco, buscamos incorporar de forma inmediata un/a Técnico/a de Mantenimiento para una empresa del sector automoción en el entorno de Vigo en turnos rotativos (mañana/tarde noche y/o fin de semana). El contrató será temporal de 3 meses con posibilidad de ampliación. Buscamos una persona proactiva, implicada y acostumbrada a trabajar siguiendo las directrices. ¿Cuáles serán tus funciones? Realizar mantenimiento preventivo y correctivo de maquinaria e instalaciones industriales. Montaje, ajuste, instalación, puesta en marcha y reparación de maquinaria. Diagnóstico y resolución de averías mecánicos/as y eléctricas. Verificación del correcto funcionamiento de sistemas de seguridad. Registro y reporte de averías y preventivos mediante SAP . Control e inventariado del almacén de repuestos. Intervención sobre sistemas eléctricos, neumáticos, hidráulicos y automatizados . Programación básica de trayectorias de robots de soldadura . En Adecco creemos en la igualdad de oportunidades y apostamos por el Talento Sin Etiquetas Requisitos - Formación Profesional (FP II / Grado Medio o Superior) en Mecánico/a, Electricidad o similar. - Experiencia mínima de 1 año en mantenimiento industrial (valorable entorno automoción). - Conocimientos en: Electromecánico/a y neumática Soldadura con electrodo ¿Qué ofrecemos? - Incorporación inmediata - Integración en una empresa consolidada del sector automoción -Salario muy competitivo",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": "2027-10-24",
       "postedDate": "2026-10-29",
       "experience": "unknown",
@@ -479,7 +479,7 @@
       "url": "https://empleo.infortec.net/jobs/arquitecto-a-de-software-java-100-remoto",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -502,7 +502,7 @@
       "url": "https://empleo.infortec.net/jobs/desarrollador-a-python-agentes-ia-100-remoto",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -525,7 +525,7 @@
       "url": "https://empleo.infortec.net/jobs/senior-developer-net-100-remoto",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -548,7 +548,7 @@
       "url": "https://empleo.infortec.net/jobs/full-stack-developer-senior-f5408560-0c34-4249-843d-c2223d709abf",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -571,7 +571,7 @@
       "url": "https://empleo.infortec.net/jobs/power-platform-developer-100-remoto",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -594,7 +594,7 @@
       "url": "https://empleo.infortec.net/jobs/full-stack-developer-senior-100-remoto",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -615,7 +615,7 @@
       "url": "https://empleo.infortec.net/jobs/desarrollador-a-magnolia-remoto-100",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -636,7 +636,7 @@
       "url": "https://empleo.infortec.net/jobs/desarrollador-a-fullstack-100-teletrabajo-dd5deb03-8c00-477b-92df-5377d73b87de",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -659,7 +659,7 @@
       "url": "https://empleo.infortec.net/jobs/desarrollador-a-fullstack-100-teletrabajo",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -682,7 +682,7 @@
       "url": "https://empleo.infortec.net/jobs/desarrollador-a-salesforce-senior",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -703,7 +703,7 @@
       "url": "https://empleo.infortec.net/jobs/programador-a-java-junior-100-teletrabajo",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "junior",
       "workplace": "remote",
@@ -726,7 +726,7 @@
       "url": "https://empleo.infortec.net/jobs/desarrollador-a-backend-apx-aso",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -749,7 +749,7 @@
       "url": "https://empleo.infortec.net/jobs/fullstack-senior-angular-java-100-remoto-6d47fe83-7940-4c9e-9a73-564b633b72d8",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -772,7 +772,7 @@
       "url": "https://empleo.infortec.net/jobs/desarrollador-a-full-stack-java-angular-5d35271e-54ed-47c7-95ff-26d4b4f68c59",
       "source": "Infortec Consultores · Bizneo",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -795,7 +795,7 @@
       "url": "https://careers.indragroup.com/job/Consultora-SAP-Finanzas-Espa%C3%B1a-100-remoto/978346955/",
       "source": "Indra Group · Portal de empresa",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -818,7 +818,7 @@
       "url": "https://careers.indragroup.com/job/Desarrolladora-senior-Power-Platform_-Espa%C3%B1a-%28100-remoto%29/1335750855/",
       "source": "Indra Group · Portal de empresa",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -841,7 +841,7 @@
       "url": "https://careers.indragroup.com/job/QA-Tester-SDET_-Espa%C3%B1a-%28100-remoto%29/978212455/",
       "source": "Indra Group · Portal de empresa",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -865,7 +865,7 @@
       "url": "https://jobs.smartrecruiters.com/VeoliaEnvironnementSA/744000158324594",
       "source": "Veolia · SmartRecruiters",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "unknown",
@@ -889,7 +889,7 @@
       "url": "https://jobs.smartrecruiters.com/VeoliaEnvironnementSA/744000153724914",
       "source": "Veolia · SmartRecruiters",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "unknown",
@@ -913,7 +913,7 @@
       "url": "https://www.workwithindies.com/careers/eleon-co-vfx-artist",
       "source": "Work With Indies",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -940,7 +940,7 @@
       "url": "https://jobs.smartrecruiters.com/Ubisoft2/744000161340439-vfx-artist-assassin-s-creed-invictus",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -969,7 +969,7 @@
       "url": "https://hitmarker.net/jobs/playground-games-vfx-artist-agency-contract-5586843",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -997,7 +997,7 @@
       "url": "https://jobs.smartrecruiters.com/CDPROJEKTRED/744000160860569-lead-vfx-artist",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1027,7 +1027,7 @@
       "url": "https://jobs.smartrecruiters.com/Ubisoft2/744000160696549-texture-lookdev-supervisor-hybride-vfx",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1056,7 +1056,7 @@
       "url": "https://job-boards.greenhouse.io/scopely/jobs/5467727008?gh_jid=5467727008",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -1085,7 +1085,7 @@
       "url": "https://apply.workable.com/j/3422DBF1D7",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1115,7 +1115,7 @@
       "url": "https://hitmarker.net/jobs/grand-games-vfx-artist-5512988",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -1143,7 +1143,7 @@
       "url": "https://jobs.smartrecruiters.com/CDPROJEKTRED/744000159687572-senior-vfx-artist",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1172,7 +1172,7 @@
       "url": "https://hitmarker.net/jobs/miniclip-2d-3d-animation-vfx-artist-mid-senior-5477388",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1200,7 +1200,7 @@
       "url": "https://jobs.smartrecruiters.com/Ubisoft2/744000158771914-senior-vfx-artist-tom-clancy-s-the-division-3",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1229,7 +1229,7 @@
       "url": "https://hitmarker.net/jobs/beffio-studio-senior-vfx-artist-stylized-games-unity3d-europe-5378362",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -1257,7 +1257,7 @@
       "url": "https://hitmarker.net/jobs/virtuos-vfx-artist-5364635",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1286,7 +1286,7 @@
       "url": "https://job-boards.greenhouse.io/insomniac/jobs/6228743004",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -1315,7 +1315,7 @@
       "url": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216274",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -1344,7 +1344,7 @@
       "url": "https://www.riotgames.com/en/work-with-us/job/8287372?gh_jid=8287372",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1373,7 +1373,7 @@
       "url": "https://www.riotgames.com/en/work-with-us/job/8279807?gh_jid=8279807",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1402,7 +1402,7 @@
       "url": "https://hitmarker.net/jobs/cd-projekt-red-lead-vfx-artist-5234940",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1431,7 +1431,7 @@
       "url": "https://jobs.smartrecruiters.com/Ubisoft2/744000154392949-vfx-artist-intern",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -1460,7 +1460,7 @@
       "url": "https://jobs.smartrecruiters.com/gameloft/744000153759984-lead-vfx-artist",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1489,7 +1489,7 @@
       "url": "https://jobs.smartrecruiters.com/Ubisoft2/744000153412618-senior-vfx-artist-tom-clancy-s-the-division-3",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1518,7 +1518,7 @@
       "url": "https://hitmarker.net/jobs/ubisoft-senior-vfx-artist-tom-clancys-the-division-3-5059228",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1546,7 +1546,7 @@
       "url": "https://job-boards.greenhouse.io/hasbro/jobs/4417606009",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1575,7 +1575,7 @@
       "url": "https://www.riotgames.com/en/work-with-us/job/8148791?gh_jid=8148791",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1605,7 +1605,7 @@
       "url": "https://job-boards.greenhouse.io/hasbro/jobs/4417607009",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1634,7 +1634,7 @@
       "url": "https://hitmarker.net/jobs/cd-projekt-red-senior-vfx-artist-5021258",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1662,7 +1662,7 @@
       "url": "https://hitmarker.net/jobs/gameloft-lead-vfx-artist-5011374",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1691,7 +1691,7 @@
       "url": "https://hitmarker.net/jobs/beffio-studio-senior-vfx-engineer-unity3d-remote-stylized-games-5116182",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -1719,7 +1719,7 @@
       "url": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Intern/216273",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -1748,7 +1748,7 @@
       "url": "https://job-boards.greenhouse.io/naughtydog/jobs/6207151004",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -1777,7 +1777,7 @@
       "url": "https://hitmarker.net/jobs/nex-vfx-artist-hong-kong-based-4917158",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -1805,7 +1805,7 @@
       "url": "https://hitmarker.net/jobs/playrix-vfx-artist-intern-4893048",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -1833,7 +1833,7 @@
       "url": "https://job-boards.greenhouse.io/naughtydog/jobs/6205192004",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1862,7 +1862,7 @@
       "url": "https://job-boards.greenhouse.io/insomniac/jobs/6192046004",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -1891,7 +1891,7 @@
       "url": "https://hitmarker.net/jobs/tripledot-studios-vfx-artist-animator-4879457",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -1919,7 +1919,7 @@
       "url": "https://hitmarker.net/jobs/cd-projekt-red-lead-vfx-artist-4841286",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1948,7 +1948,7 @@
       "url": "https://hitmarker.net/jobs/act-iii-senior-vfx-artist-5286819",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -1976,7 +1976,7 @@
       "url": "https://www.riotgames.com/en/work-with-us/job/7615781?gh_jid=7615781",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2005,7 +2005,7 @@
       "url": "https://www.riotgames.com/en/work-with-us/job/8073587?gh_jid=8073587",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2034,7 +2034,7 @@
       "url": "https://www.riotgames.com/en/work-with-us/job/7312899?gh_jid=7312899",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2064,7 +2064,7 @@
       "url": "https://hitmarker.net/jobs/lakshya-digital-sr-vfx-artist-4737176",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2092,7 +2092,7 @@
       "url": "https://hitmarker.net/jobs/lakshya-digital-sr-vfx-artist-4737178",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2120,7 +2120,7 @@
       "url": "https://hitmarker.net/jobs/lakshya-digital-sr-vfx-artist-4737180",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2148,7 +2148,7 @@
       "url": "https://hitmarker.net/jobs/activision-activision-2027-summer-internships-vfx-4744518",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2176,7 +2176,7 @@
       "url": "https://hitmarker.net/jobs/treyarch-activision-2027-summer-internships-vfx-4746682",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2204,7 +2204,7 @@
       "url": "https://hitmarker.net/jobs/ubisoft-vfx-artist-assassins-creed-invictus-4732305",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2232,7 +2232,7 @@
       "url": "https://hitmarker.net/jobs/innogames-senior-vfx-artist-new-mobile-game-4788088",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2261,7 +2261,7 @@
       "url": "https://hitmarker.net/jobs/hyperhug-senior-vfx-artist-4737300",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -2289,7 +2289,7 @@
       "url": "https://hitmarker.net/jobs/activision-lead-vfx-artist-raven-middleton-wi-4670503",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2318,7 +2318,7 @@
       "url": "https://hitmarker.net/jobs/activision-blizzard-lead-vfx-artist-raven-middleton-wi-4673178",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2347,7 +2347,7 @@
       "url": "https://hitmarker.net/jobs/airship-interactive-vfx-artist-4986295",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2375,7 +2375,7 @@
       "url": "https://hitmarker.net/jobs/deck13-interactive-gmbh-lead-vfx-artist-f-m-x-5154819",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -2403,7 +2403,7 @@
       "url": "https://hitmarker.net/jobs/activision-blizzard-senior-vfx-artist-gameplay-4547539",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2432,7 +2432,7 @@
       "url": "https://hitmarker.net/jobs/cd-projekt-red-senior-vfx-artist-4475022",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2460,7 +2460,7 @@
       "url": "https://hitmarker.net/jobs/cd-projekt-red-lead-vfx-artist-4426917",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2489,7 +2489,7 @@
       "url": "https://hitmarker.net/jobs/activision-senior-vfx-artist-gameplay-4277709",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2518,7 +2518,7 @@
       "url": "https://hitmarker.net/jobs/blackbird-interactive-vfx-artist-3-month-contract-4502333",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2546,7 +2546,7 @@
       "url": "https://jobs.ashbyhq.com/voodoo/36027799-383b-49b5-af7c-8653745d2238",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2575,7 +2575,7 @@
       "url": "https://jobs.ashbyhq.com/voodoo/8f86c74e-7d06-447d-bd1b-ad268e46bb3e",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -2604,7 +2604,7 @@
       "url": "https://hitmarker.net/jobs/reality-games-technical-vfx-artist-5187662",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2632,7 +2632,7 @@
       "url": "https://hitmarker.net/jobs/bedrock-robotics-technical-artist-5389355",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2660,7 +2660,7 @@
       "url": "https://hitmarker.net/jobs/keywords-studios-technical-artist-5321128",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2688,7 +2688,7 @@
       "url": "https://hitmarker.net/jobs/keywords-studios-technical-artist-5321130",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2716,7 +2716,7 @@
       "url": "https://hitmarker.net/jobs/keywords-studios-technical-artist-5321132",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2744,7 +2744,7 @@
       "url": "https://hitmarker.net/jobs/superplay-technical-artist-5278444",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2773,7 +2773,7 @@
       "url": "https://hitmarker.net/jobs/machina-games-technical-artist-5393727",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2801,7 +2801,7 @@
       "url": "https://hitmarker.net/jobs/playtika-technical-artist-4786481",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2830,7 +2830,7 @@
       "url": "https://hitmarker.net/jobs/vertigo-games-technical-artist-4724523",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2858,7 +2858,7 @@
       "url": "https://hitmarker.net/jobs/airship-interactive-technical-artist-4986281",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2886,7 +2886,7 @@
       "url": "https://hitmarker.net/jobs/bohemia-interactive-senior-technical-artist-3187761",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2914,7 +2914,7 @@
       "url": "https://hitmarker.net/jobs/blackbird-interactive-technical-artist-4502339",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -2943,7 +2943,7 @@
       "url": "https://hitmarker.net/jobs/electronic-arts-technical-artist-audio-ea-sports-technology-5600269",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -2972,7 +2972,7 @@
       "url": "https://hitmarker.net/jobs/skybox-labs-senior-technical-artist-generalist-5596992",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3000,7 +3000,7 @@
       "url": "https://hitmarker.net/jobs/lightspeed-studios-senior-technical-artist-5604237",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3028,7 +3028,7 @@
       "url": "https://hitmarker.net/jobs/keywords-studios-technical-artist-12-month-contract-madrid-spain-5567869",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3056,7 +3056,7 @@
       "url": "https://hitmarker.net/jobs/11-bit-studios-expert-technical-artist-unannounced-project-5565309",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3084,7 +3084,7 @@
       "url": "https://hitmarker.net/jobs/gameloft-3d-technical-artist-5523327",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -3112,7 +3112,7 @@
       "url": "https://hitmarker.net/jobs/ubisoft-expert-technical-artist-shader-f-h-nb-aaa-project-5514651",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -3140,7 +3140,7 @@
       "url": "https://hitmarker.net/jobs/scopely-technical-artist-pokemon-go-5512685",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -3168,7 +3168,7 @@
       "url": "https://hitmarker.net/jobs/ravenwake-games-senior-environment-technical-artist-5496601",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3196,7 +3196,7 @@
       "url": "https://hitmarker.net/jobs/superplay-senior-technical-artist-5489563",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3225,7 +3225,7 @@
       "url": "https://hitmarker.net/jobs/chimera-entertainment-senior-technical-artist-3d-unity-5485148",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3253,7 +3253,7 @@
       "url": "https://hitmarker.net/jobs/netflix-senior-technical-artist-5496519",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -3282,7 +3282,7 @@
       "url": "https://hitmarker.net/jobs/ubisoft-junior-technical-artist-rainbow-six-siege-5531511",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "junior",
       "workplace": "onsite",
@@ -3310,7 +3310,7 @@
       "url": "https://hitmarker.net/jobs/activision-senior-technical-artist-5483742",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3338,7 +3338,7 @@
       "url": "https://hitmarker.net/jobs/activision-blizzard-associate-technical-artist-contract-5437401",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -3366,7 +3366,7 @@
       "url": "https://hitmarker.net/jobs/activision-blizzard-senior-technical-artist-5447281",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3394,7 +3394,7 @@
       "url": "https://hitmarker.net/jobs/skybox-labs-senior-technical-artist-graphics-5433016",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3422,7 +3422,7 @@
       "url": "https://hitmarker.net/jobs/riot-games-rendering-technical-artist-unpublished-r-d-product-5388605",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3450,7 +3450,7 @@
       "url": "https://hitmarker.net/jobs/nex-technical-artist-contract-5390593",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -3478,7 +3478,7 @@
       "url": "https://hitmarker.net/jobs/beffio-studio-senior-technical-artist-unity3d-shaders-tools-europe-5378360",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3506,7 +3506,7 @@
       "url": "https://hitmarker.net/jobs/beffio-studio-senior-technical-artist-houdini-procedural-game-art-europe-5378358",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3534,7 +3534,7 @@
       "url": "https://hitmarker.net/jobs/beffio-studio-lead-technical-artist-real-time-games-art-engineering-europe-5378355",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3562,7 +3562,7 @@
       "url": "https://hitmarker.net/jobs/activision-associate-technical-artist-contract-5389064",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -3590,7 +3590,7 @@
       "url": "https://hitmarker.net/jobs/crystal-dynamics-technical-artist-environment-optimization-intern-spring-2027-5351864",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -3618,7 +3618,7 @@
       "url": "https://hitmarker.net/jobs/crystal-dynamics-technical-artist-character-optimization-intern-spring-2027-5351743",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3646,7 +3646,7 @@
       "url": "https://hitmarker.net/jobs/roblox-senior-technical-artist-5351755",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3675,7 +3675,7 @@
       "url": "https://hitmarker.net/jobs/atra-senior-technical-artist-characters-5325655",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -3703,7 +3703,7 @@
       "url": "https://hitmarker.net/jobs/ubisoft-senior-technical-artist-characters-unreal-5214135",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3731,7 +3731,7 @@
       "url": "https://hitmarker.net/jobs/ubisoft-junior-technical-artist-rainbow-six-siege-5164293",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "junior",
       "workplace": "onsite",
@@ -3759,7 +3759,7 @@
       "url": "https://hitmarker.net/jobs/skybox-labs-senior-technical-artist-ue5-5172491",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3788,7 +3788,7 @@
       "url": "https://hitmarker.net/jobs/lakshya-digital-technical-artist-ai-3d-pipeline-5113302",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3817,7 +3817,7 @@
       "url": "https://hitmarker.net/jobs/lighthouse-games-ui-technical-artist-5043062",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -3845,7 +3845,7 @@
       "url": "https://hitmarker.net/jobs/gameloft-disney-dreamlight-valley-pc-console-artiste-technique-technical-artist-5023517",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -3873,7 +3873,7 @@
       "url": "https://hitmarker.net/jobs/voodoo-technical-artist-ai---portfolio-games-team---freelance-5025101",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3901,7 +3901,7 @@
       "url": "https://hitmarker.net/jobs/2k-senior-shader-technical-artist-4979972",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3930,7 +3930,7 @@
       "url": "https://hitmarker.net/jobs/zynga-senior-technical-artist-4969539",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3959,7 +3959,7 @@
       "url": "https://hitmarker.net/jobs/electronic-arts-ui-frontend-technical-artist-ea-sports-nhl-4931319",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -3987,7 +3987,7 @@
       "url": "https://hitmarker.net/jobs/blackbird-interactive-senior-technical-artist-7-month-contract-4931066",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4015,7 +4015,7 @@
       "url": "https://hitmarker.net/jobs/avalanche-studios-technical-artist-profiling-fixed-term-4931063",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4043,7 +4043,7 @@
       "url": "https://hitmarker.net/jobs/supercell-senior-technical-artist-project-r-i-s-e-4917469",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4071,7 +4071,7 @@
       "url": "https://hitmarker.net/jobs/electronic-arts-technical-artist-rigging-ea-sports-technology-4891959",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4099,7 +4099,7 @@
       "url": "https://hitmarker.net/jobs/gameloft-disney-dreamlight-valley-pc-console-artiste-technique-technical-artist-4892053",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4127,7 +4127,7 @@
       "url": "https://hitmarker.net/jobs/netease-games-lead-animation-technical-artist-4805439",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4155,7 +4155,7 @@
       "url": "https://hitmarker.net/jobs/electronic-arts-technical-artist-character-4802864",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -4183,7 +4183,7 @@
       "url": "https://hitmarker.net/jobs/electronic-arts-technical-artist-environment-4802868",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -4211,7 +4211,7 @@
       "url": "https://hitmarker.net/jobs/electronic-arts-senior-technical-artist-tech-4784900",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4240,7 +4240,7 @@
       "url": "https://hitmarker.net/jobs/vrchat-inc-unity-technical-artist-event-pipeline-4807335",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -4269,7 +4269,7 @@
       "url": "https://hitmarker.net/jobs/vivid-games-senior-technical-artist-remote-hybrid-or-on-site-5001778",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4297,7 +4297,7 @@
       "url": "https://hitmarker.net/jobs/bellota-labs-senior-technical-artist-5129794",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4325,7 +4325,7 @@
       "url": "https://hitmarker.net/jobs/netease-games-senior-animation-technical-artist-4647057",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4353,7 +4353,7 @@
       "url": "https://hitmarker.net/jobs/ubisoft-ui-technical-artist-march-of-giants-4584910",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -4381,7 +4381,7 @@
       "url": "https://hitmarker.net/jobs/11-bit-studios-senior-expert-technical-artist-frostpunk-1886-5272029",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -4409,7 +4409,7 @@
       "url": "https://hitmarker.net/jobs/riot-games-rendering-technical-artist-ii-league-of-legends-contract-4556350",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4437,7 +4437,7 @@
       "url": "https://hitmarker.net/jobs/lighthouse-games-senior-technical-artist-vehicle-team-4691961",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4465,7 +4465,7 @@
       "url": "https://hitmarker.net/jobs/lighthouse-games-principal-technical-artist-vehicle-team-4692022",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4493,7 +4493,7 @@
       "url": "https://hitmarker.net/jobs/keywords-studios-technical-artist-d3t-12-month-contract-4531515",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -4521,7 +4521,7 @@
       "url": "https://hitmarker.net/jobs/keywords-studios-technical-artist-d3t-12-month-contract-4531518",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -4549,7 +4549,7 @@
       "url": "https://hitmarker.net/jobs/keywords-studios-senior-technical-artist-d3t-12-month-contract-4531521",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4577,7 +4577,7 @@
       "url": "https://hitmarker.net/jobs/keywords-studios-senior-technical-artist-d3t-12-month-contract-4531523",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4605,7 +4605,7 @@
       "url": "https://hitmarker.net/jobs/epic-games-senior-technical-artist-4477939",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4633,7 +4633,7 @@
       "url": "https://hitmarker.net/jobs/epic-games-senior-technical-artist-4477941",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4661,7 +4661,7 @@
       "url": "https://hitmarker.net/jobs/electronic-arts-artiste-technique-principal-e-principal-technical-artist-4459017",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4689,7 +4689,7 @@
       "url": "https://hitmarker.net/jobs/electronic-arts-technical-artist-ufc-4254242",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4717,7 +4717,7 @@
       "url": "https://hitmarker.net/jobs/blackbird-interactive-technical-artist-6-month-contract-4502349",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4745,7 +4745,7 @@
       "url": "https://hitmarker.net/jobs/virtuos-senior-technical-artist-pcg-ue5-4449976",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4774,7 +4774,7 @@
       "url": "https://hitmarker.net/jobs/reality-games-technical-artist-for-mobile-games-5187666",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4803,7 +4803,7 @@
       "url": "https://hitmarker.net/jobs/garena-intern-game-technical-artist-2547458",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "onsite",
@@ -4822,62 +4822,6 @@
       ]
     },
     {
-      "id": "career-vfx-f522650365c4d005fdc8",
-      "category": "vfx",
-      "title": "Technical Artist (Mid - Senior) - Talent Pipeline",
-      "company": "Hardsuit Labs",
-      "location": "Seattle, North America, USA, Washington, Remote (Anywhere)",
-      "description": "ABOUT HARDSUIT LABS Founded in 2015 by industry veterans Andy Kipling and Russell Nelson, we are a Seattle based game developer and co-dev studio who were recently acquired by Keywords Studios in 2023. We believe that great games can only be built with great people and that great people thrive and do their best work in a healthy, collaborative, and positive work environment that values them. We believe in a diverse and inclusive workplace and building equity throughout the organization. At Hardsuit Labs , we are respectful and inclusive, we are problem solvers and efficiency champions, we are curious and collaborative, we are flexible and adaptable and most of all we are always looking to deliver excellence in the experiences and products that we craft! As a studio we have built a reputation as an Unreal Engine focused development house, working in a multitude of genres and games, from support work and work for hire to original development. We have long-standing relationships with some of the largest gaming companies in the industry and are a certified developer across all major platforms. Role Overview We are seeking a talented and versatile Mid to Senior Technical Artist to bridge the gap between our artistic vision and technical execution. In this role, you will collaborate closely with artists, designers, and engineers to optimize workflows, establish high-quality pipelines, and push the visual boundaries of our projects in Unreal Engine 5. The ideal candidate possesses a deep understanding of the 3D art pipeline, a strong grasp of 3D math, and the ability to maintain peak performance across multiple platforms—from high-end AAA environments to optimized mobile devices. Talent Pipeline Posting Notice Please note that this posting is not tied to an immediate vacancy. We are proactively building a pipeline of qualified candidates in anticipation of potential hiring needs over the coming months. Applications will be reviewed and retained for future consideration as opportunities arise. Key Responsibilities Pipeline & Workflow Optimization: Define, build, and enforce technical and quality standards for all in-game art assets. Author comprehensive pipeline documentation to guide and support the art team. Visual Development & Shaders: Develop advanced, optimized materials via node graphs using 3D/vector math. Create stunning real-time visual effects using Niagara FX. Terrain & Procedural Workflows: Author complex, performant landscape and terrain materials (utilizing Runtime Virtual Texturing and layered shader workflows). Implement and leverage procedural generation systems (such as UE5’s PCG framework) to streamline world-building and environment art pipelines. Performance & Rendering: Balance cutting-edge UE5 features (Lumen, Nanite) for AAA experiences while ensuring strict performance optimization and calibration for lower-end and mobile platforms. Cross-Discipline Collaboration: Act as the primary technical liaison between art, design, and engineering to ensure seamless asset integration and clear communication. What You’ll Bring (Requirements) Artistic Foundation: Strong understanding of lighting, color theory, composition, visual balance, and PBR rendering standards/calibration. Software Proficiency: Proven experience authoring high-quality textures using Photoshop and the Substance Suite for games. Technical Scripting: Strong knowledge of object-oriented programming (OOP) using UE5 Blueprint scripting, functions, and data-driven systems. Problem-Solving Mindset: Detail-oriented with a natural talent for troubleshooting, profiling, and debugging complex technical art issues. Autonomy & Communication: Ability to work independently through complex challenges while remaining highly collaborative, approachable, and professional. Bonus Points (Preferred Qualifications) Tooling: Experience designing, developing, and deploying custom toolsets to improve artist workflows. Automation & UI: Proficiency with Python scripting for DCCs (Maya, 3ds Max, Blender) and Unreal Engine, as well as experience with Editor Utility Widgets (EUW) and UMG UI systems. Shipped Titles: Track record of delivering results on previously published or shipped game titles. Hybrid Experience: Past professional experience working directly as a production artist, game designer, or software engineer. Job Details Job Title: Technical Artist Reports to: Studio Art & Animation Director Department: Art Work Location: Fully Remote Employment status: Full Time FLSA: Salaried, Exempt Benefits: Generous PTO, Health, Dental, & Vision coverage; Healthcare and Daycare FSAs, 401k with company match; Life and Disability insurance, Technology Stipend, Paid Sick leave, commuter benefits, paid company holidays and office closures This position is currently open to candidates residing in the following U.S. states only: Arizona (AZ), Connecticut (CT), Florida (FL), lowa (IA), Illinois (IL), Massachusetts (MA), Maine (ME), Michigan (MI), Minnesota (MN), New Hampshire (NH), Nevada (NV), Ohio (OH), Oregon (OR), South Carolina (SC), Tennessee (TN), Texas (TX), Virginia (VA), Wisconsin (WI), Montana (MT), Alabama (AL), Georgia (GA), Indiana (IN), Louisiana (LA), North Carolina (NC), New Jersey (NJ), Oklahoma (OK), Washington (WA), Pennsylvania (PA), Colorado (CO), New York (NY), Nebraska (NE), Kansas (KS), Idaho (ID) and Utah (UT). Applicants must be legally authorized to work in the United States and reside in one of the eligible states listed above. Salary Range: $66,000 to $95,000 USD Primary working language: English ABOUT HARDSUIT LABS We are an independent game developer founded in 2015 in Seattle, Washington. We believe that great games can  only be built with great people and that great people thrive and do their best work in a healthy, collaborative, and  positive work environment that values them. We believe in a diverse and inclusive workplace and building equity  throughout the organization. At Hardsuit Labs, we are respectful and inclusive, we are problem solvers and  efficiency champions, we are curious and collaborative, we are flexible and adaptable, and most of all, we are  always looking to deliver excellence in the experiences and products that we craft! As a studio, we have built a reputation as an Unreal Engine-focused development house, working in a multitude of  genres and games, from support work and engagement for hire to the development of original in-house projects.  We have long standing relationships with some of the largest gaming companies in the industry and are certified  developers across all major platforms. Hardsuit Labs is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not  discriminate based on race, religion, color, national origin, sex (including pregnancy, childbirth, reproductive health  decisions, or related medical conditions), sexual orientation, gender identity, gender expression, age, status as a  protected veteran, status as an individual with a disability, genetic information, political views or activity, or other  applicable legally protected characteristics. You may view our Equal Employment Opportunity notice here. We also  consider qualified applicants with criminal histories consistent with applicable federal, state, and local law. Hardsuit Labs is committed to providing reasonable accommodations for qualified individuals with disabilities and  disabled veterans in our job application procedures. If you need assistance or accommodation due to a disability,  you may contact us at HR@Hardsuitlabs.com Keywords Studios is dedicated to following a well-established Equal Opportunities Policy. We endeavor to create a workplace which provides for equal opportunities for all employees and potential employees. PERSONAL DATA PROTECTION POLICY By providing your information in this application, you understand that we will collect and process your information in accordance with our Applicant Privacy Notice. For more information, please see our Applicant Privacy Notice at https://www.keywordsstudios.com/en/applicant-privacy-notice . E-Verify Notification This Organization Participates in E-Verify Esta Organización Participa en E-Verify Role Information: EN Studio: Hardsuit Labs Location: Americas Area of Work: Game Development Service: Create Employment Type: Full Time, Permanent Working Pattern: Remote",
-      "url": "https://hitmarker.net/jobs/hardsuit-labs-technical-artist-mid-senior-4663334",
-      "source": "Hitmarker",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Revisar países permitidos y modalidad en el anuncio original"
-      ],
-      "postedDate": "2026-07-16",
-      "originalUrl": "https://apply.workable.com/j/03982F3B2D",
-      "sourceIds": [
-        "career-hitmarker-4663334"
-      ],
-      "foundIn": [
-        "Hitmarker"
-      ]
-    },
-    {
-      "id": "career-vfx-2967b16908add2bd479f",
-      "category": "vfx",
-      "title": "Technical Artist (Mid - Senior) - Talent Pipeline",
-      "company": "Hardsuit Labs",
-      "location": "British Columbia, North America, Canada, Ontario, Quebec, Remote (Anywhere)",
-      "description": "\\[English, French to follow\\] ABOUT HARDSUIT LABS Founded in 2015 by industry veterans Andy Kipling and Russell Nelson, we are a Seattle based game developer and co-dev studio who were recently acquired by Keywords Studios in 2023. We believe that great games can only be built with great people and that great people thrive and do their best work in a healthy, collaborative, and positive work environment that values them. We believe in a diverse and inclusive workplace and building equity throughout the organization. At Hardsuit Labs , we are respectful and inclusive, we are problem solvers and efficiency champions, we are curious and collaborative, we are flexible and adaptable and most of all we are always looking to deliver excellence in the experiences and products that we craft! As a studio we have built a reputation as an Unreal Engine focused development house, working in a multitude of genres and games, from support work and work for hire to original development. We have long-standing relationships with some of the largest gaming companies in the industry and are a certified developer across all major platforms. Role Overview We are seeking a talented and versatile Mid to Senior Technical Artist to bridge the gap between our artistic vision and technical execution. In this role, you will collaborate closely with artists, designers, and engineers to optimize workflows, establish high-quality pipelines, and push the visual boundaries of our projects in Unreal Engine 5. The ideal candidate possesses a deep understanding of the 3D art pipeline, a strong grasp of 3D math, and the ability to maintain peak performance across multiple platforms—from high-end AAA environments to optimized mobile devices. Talent Pipeline Posting Notice Please note that this posting is not tied to an immediate vacancy. We are proactively building a pipeline of qualified candidates in anticipation of potential hiring needs over the coming months. Applications will be reviewed and retained for future consideration as opportunities arise. Key Responsibilities Pipeline & Workflow Optimization: Define, build, and enforce technical and quality standards for all in-game art assets. Author comprehensive pipeline documentation to guide and support the art team. Visual Development & Shaders: Develop advanced, optimized materials via node graphs using 3D/vector math. Create stunning real-time visual effects using Niagara FX. Terrain & Procedural Workflows: Author complex, performant landscape and terrain materials (utilizing Runtime Virtual Texturing and layered shader workflows). Implement and leverage procedural generation systems (such as UE5’s PCG framework) to streamline world-building and environment art pipelines. Performance & Rendering: Balance cutting-edge UE5 features (Lumen, Nanite) for AAA experiences while ensuring strict performance optimization and calibration for lower-end and mobile platforms. Cross-Discipline Collaboration: Act as the primary technical liaison between art, design, and engineering to ensure seamless asset integration and clear communication. What You’ll Bring (Requirements) Artistic Foundation: Strong understanding of lighting, color theory, composition, visual balance, and PBR rendering standards/calibration. Software Proficiency: Proven experience authoring high-quality textures using Photoshop and the Substance Suite for games. Technical Scripting: Strong knowledge of object-oriented programming (OOP) using UE5 Blueprint scripting, functions, and data-driven systems. Problem-Solving Mindset: Detail-oriented with a natural talent for troubleshooting, profiling, and debugging complex technical art issues. Autonomy & Communication: Ability to work independently through complex challenges while remaining highly collaborative, approachable, and professional. Bonus Points (Preferred Qualifications) Tooling: Experience designing, developing, and deploying custom toolsets to improve artist workflows. Automation & UI: Proficiency with Python scripting for DCCs (Maya, 3ds Max, Blender) and Unreal Engine, as well as experience with Editor Utility Widgets (EUW) and UMG UI systems. Shipped Titles: Track record of delivering results on previously published or shipped game titles. Hybrid Experience: Past professional experience working directly as a production artist, game designer, or software engineer. This position is currently open to candidates residing in the following Canadian provinces only: Ontario, Quebec, and British Columbia. Applicants must be legally authorized to work in Canada and reside in one of the eligible provinces listed above. Salary Range: $92,500 to $132,500 CAD Primary working language: English Benefits Group Insurance: dental and health care benefits Group RRSP + employer matching contribution Employee and Family Assistance Program Hardsuit Labs is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, sex (including pregnancy, childbirth, reproductive health decisions, or related medical conditions), sexual orientation, gender identity, gender expression, age, status as a protected veteran, status as an individual with a disability, genetic information, political views or activity, or other applicable legally protected characteristics. You may view our Equal Employment Opportunity notice here. We also consider qualified applicants with criminal histories, consistent with applicable federal, provincial, and local law. Hardsuit Labs is committed to providing reasonable accommodations for qualified individuals with disabilities and disabled veterans in our job application procedures. If you need assistance or accommodation due to a disability, you may contact us at HR@Hardsuitlabs.com Keywords Studios is dedicated to following a well-established Equal Opportunities Policy. We endeavor to create a workplace which provides for equal opportunities for all employees and potential employees. PERSONAL DATA PROTECTION POLICY By providing your information in this application, you understand that we will collect and process your information in accordance with our Applicant Privacy Notice. For more information, please see our Applicant Privacy Notice at https://www.keywordsstudios.com/en/applicant-privacy-notice **. ** Role Information: EN Studio: Hardsuit Labs Location: Americas, Canada Area of Work: Game Development Service: Create Employment Type: Full Time, Permanent Working Pattern: Remote \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ Artiste technique (intermédiaire/avancé) À PROPOS DE HARDSUIT LABS Fondé en 2015 par les vétérans du secteur Andy Kipling et Russell Nelson, nous sommes un studio de développement et de codéveloppement de jeux vidéo basé à Seattle, acquis par Keywords Studios en 2023. Nous croyons que les jeux exceptionnels ne peuvent être créés que par des personnes d’exception, et que ces dernières peuvent s’épanouir et se dépasser dans un environnement de travail sain, collaboratif et positif qui les valorise. Nous croyons en un milieu de travail diversifié et inclusif, et en la promotion de l’équité dans l’ensemble de l’organisation. Chez Hardsuit Labs , nous sommes respectueux et inclusifs; nous sommes des solutionnistes et des champions de l’efficacité; nous sommes curieux et collaboratifs; nous sommes flexibles et polyvalents; et surtout, nous cherchons constamment à atteindre l’excellence dans les expériences et les produits que nous façonnons! Nous avons bâti une réputation en tant que studio de développement axé sur Unreal Engine, travaillant dans une multitude de genres et de jeux, des services d’assistance et du travail à la pige jusqu’au développement de projets originaux. Nous entretenons des relations de longue date avec certaines des plus grandes compagnies de jeux vidéo et nous sommes un développeur certifié sur toutes les principales plateformes. Aperçu du poste Nous recherchons un(e) artiste technique polyvalent(e) et talentueux(-se) de niveau intermédiaire à avancé pour rapprocher notre vision artistique et notre exécution technique. À ce poste, vous collaborerez de près avec les artistes, concepteurs et développeurs afin d’optimiser les flux de travail, d’établir des pipelines de haute qualité et de repousser les limites visuelles de nos projets réalisés avec Unreal Engine 5. Notre candidat(e) idéal(e) devrait posséder une profonde compréhension du pipeline artistique 3D, une solide maîtrise des mathématiques 3D et la capacité d’assurer des performances maximales sur plusieurs plateformes, des environnements AAA de pointe aux appareils mobiles optimisés. Avis d’offre d’emploi (vivier de talents) Notez que cette offre d’emploi n’est pas associée à un poste actuellement vacant. Nous étoffons de manière proactive un vivier de candidat(e)s qualifié(e)s afin d’anticiper les embauches nécessaires au cours des mois à venir. Les candidatures seront analysées, conservées et considérées lorsque les occasions se présenteront. Responsabilités clés Optimisation du pipeline et des flux de travail : Définir, bâtir et faire appliquer les normes techniques et de qualité pour tous les éléments artistiques des jeux. Rédiger une documentation exhaustive du pipeline afin de guider et d’appuyer l’équipe artistique. Développement visuel et nuanceurs : Développer des matières avancées et optimisées grâce à des diagrammes de nœuds utilisant des mathématiques 3D/vectorielles. Créer des effets visuels en temps réel saisissants à l’aide de Niagara FX. Terrain et flux de travail procéduraux : Créer des matières complexes et performantes pour le terrain et les paysages (en employant la texturation virtuelle à l’exécution \\[« Runtime Virtual Texturing »\\] et des flux de travail à nuanceurs par couches). Mettre en œuvre et exploiter des systèmes de génération procédurale (tels que le cadre PCG d’UE 5) afin de standardiser les pipelines de création de mondes et d’illustration des environnements. Performance et rendu : Trouver l’équilibre entre l’utilisation des fonctionnalités de pointe d’UE 5 (Lumen, Nanite) pour les expériences AAA d’une part, et l’application d’une stricte optimisation et calibration des performances pour les appareils plus modestes et les plateformes mobiles. Collaboration interdisciplinaire : Servir de principal contact technique entre les services artistiques, de conception et de développement afin de garantir une intégration fluide des éléments produits et une communication claire. Ce que vous apporterez à l’équipe (exigences) Notions artistiques : Grande compréhension de l’éclairage, de la théorie de la couleur, de la composition, de l’équilibre visuel et des normes et de la calibration du rendu physique réaliste (PBR). Compétences logicielles : Expérience démontrée en création de textures de haute qualité dans Photoshop et la suite Substance pour des jeux vidéo. Scriptage technique : Excellente connaissance de la programmation orientée objet (OOP) employant le scriptage UE 5 Blueprint, des fonctions et des systèmes axés sur les données. Esprit de résolution de problèmes : Souci du détail et talent naturel pour la résolution de problèmes, le profilage et le débogage de problèmes techniques complexes dans un contexte artistique. Autonomie et communication : Capacité à travailler de manière autonome face à des défis complexes tout en maintenant un haut degré de collaboration et en demeurant accessible et professionnel(le). Points bonus (compétences souhaitées) Outils : Expérience en conception, développement et déploiement de jeux d’outils sur mesure afin d’améliorer les flux de travail des artistes. Automatisation et interface utilisateur : Aptitude en scriptage Python pour les suites de création de contenu numérique (Maya, 3ds Max, Blender) et Unreal Engine, doublée d’une expérience avec les Editor Utility Widgets (EUW) et les systèmes de création d’interfaces UMG d’Unreal Engine. Titres commercialisés : Historique de résultats livrés avec succès sur des jeux déjà publiés ou terminés. Expérience hybride : Expérience professionnelle directe en tant qu’artiste de production, concepteur(-trice) de jeux ou développeur(-euse) de logiciels. Ce poste est actuellement ouvert seulement aux candidat(e)s résidant dans les provinces canadiennes suivantes : Ontario, Québec et Colombie-Britannique. Les candidat(e)s doivent être légalement autorisé(e)s à travailler au Canada et résider dans l’une des provinces mentionnées ci-dessus. Fourchette salariale : entre 92 500 $ et 132 500 $ CA Langue de travail principale : anglais Avantages sociaux Assurance collective : couverture des soins dentaires et de santé REER collectif et cotisation paritaire de l’employeur Programme d’aide aux employés et à leur famille Hardsuit Labs est fier d’être un employeur prônant l’égalité d’accès à l’emploi et l’action positive. Nous ne pratiquons aucune discrimination fondée sur la race, la religion, la couleur, l’origine nationale, le sexe (y compris la grossesse, l’accouchement, les décisions en matière de santé reproductive ou les conditions médicales connexes), l’orientation sexuelle, l’identité de genre, l’expression de genre, l’âge, le statut d’ancien combattant protégé, le handicap, l’information génétique, les opinions ou activités politiques, ni toute autre caractéristique protégée par les lois en vigueur. Vous pouvez consulter notre avis sur l’équité en matière d’emploi ici. Nous étudions également les candidatures de personnes qualifiées ayant des antécédents judiciaires, conformément aux lois fédérales, provinciales et locales en vigueur. Hardsuit Labs s’engage à fournir des accommodements raisonnables aux personnes qualifiées vivant avec un handicap et aux ancien(ne)s combattant(e)s en situation de handicap durant le processus d’embauche. Si vous avez besoin d’assistance ou d’un accommodement en raison d’un handicap, veuillez nous écrire à HR@Hardsuitlabs.com. Keywords Studios s’engage à respecter une politique d’égalité des chances bien établie. Nous nous efforçons de créer un milieu de travail qui offre des chances égales à chaque employé(e) et candidat(e) potentiel(le). POLITIQUE DE PROTECTION DES DONNÉES PERSONNELLES En fournissant vos informations dans cette candidature, vous comprenez que nous les recueillons et les traitons conformément à notre Avis de confidentialité des candidats. Pour plus d’informations, veuillez vous référer à notre Avis de confidentialité des candidats à l’adresse https://www.keywordsstudios.com/en/applicant-privacy-notice . Renseignements sur le poste : EN Studio : Hardsuit Labs Emplacement : Amériques, Canada Domaine de travail : Développement de jeux Service : Création Type d’emploi : Temps plein, permanent Type de travail : Télétravail",
-      "url": "https://hitmarker.net/jobs/hardsuit-labs-technical-artist-mid-senior-artiste-technique-intermediaire-avance-4663340",
-      "source": "Hitmarker",
-      "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
-      "closingDate": null,
-      "experience": "experienced",
-      "workplace": "remote",
-      "inVigo": false,
-      "inCoruna": false,
-      "requirements": [
-        "Revisar países permitidos y modalidad en el anuncio original"
-      ],
-      "postedDate": "2026-07-16",
-      "originalUrl": "https://apply.workable.com/j/66705A55DF",
-      "sourceIds": [
-        "career-hitmarker-4663340"
-      ],
-      "foundIn": [
-        "Hitmarker"
-      ]
-    },
-    {
       "id": "career-vfx-538e74c84dbf5855b656",
       "category": "vfx",
       "title": "Senior Technical Artist_Monopoly GO",
@@ -4887,7 +4831,7 @@
       "url": "https://hitmarker.net/jobs/scopely-senior-technical-artist-monopoly-go-4983432",
       "source": "Hitmarker",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -4924,11 +4868,13 @@
       "requirements": [],
       "postedDate": "2026-11-12",
       "sourceIds": [
+        "career-vfx-dfc24d9f9e0612d192a4",
         "career-ggd-f5ea3ee9bbeff40faf18"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-46669409d54c811106e3",
@@ -4949,11 +4895,13 @@
       "requirements": [],
       "postedDate": "2026-10-12",
       "sourceIds": [
+        "career-vfx-46669409d54c811106e3",
         "career-ggd-3ffbdf69428e08d80594"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-355b094cbeabb16c1ae9",
@@ -4974,11 +4922,13 @@
       "requirements": [],
       "postedDate": "2026-11-04",
       "sourceIds": [
+        "career-vfx-355b094cbeabb16c1ae9",
         "career-ggd-f231233216ce546ece0e"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-4e369fee4beb336432c2",
@@ -4999,11 +4949,13 @@
       "requirements": [],
       "postedDate": "2026-11-06",
       "sourceIds": [
+        "career-vfx-4e369fee4beb336432c2",
         "career-ggd-30ced6efe56072aa92df"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-53c972724af2e1ad5f8b",
@@ -5024,11 +4976,13 @@
       "requirements": [],
       "postedDate": "2026-10-22",
       "sourceIds": [
+        "career-vfx-53c972724af2e1ad5f8b",
         "career-ggd-3169381c8e1846825bbb"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-4b71998f3ba7fc164079",
@@ -5051,11 +5005,13 @@
       ],
       "postedDate": "2026-09-17",
       "sourceIds": [
+        "career-vfx-4b71998f3ba7fc164079",
         "career-ggd-2dcce4fda530d50c9412"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-2ace7f8d9f020f0ffa4c",
@@ -5078,11 +5034,13 @@
       ],
       "postedDate": "2026-10-01",
       "sourceIds": [
+        "career-vfx-2ace7f8d9f020f0ffa4c",
         "career-ggd-198de98204fdea655764"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-4d0d70053585ee295bdb",
@@ -5103,11 +5061,13 @@
       "requirements": [],
       "postedDate": "2026-10-20",
       "sourceIds": [
+        "career-vfx-4d0d70053585ee295bdb",
         "career-ggd-10147786ee4aaa4b4808"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-f88478d8e9046f1ad0f8",
@@ -5128,11 +5088,13 @@
       "requirements": [],
       "postedDate": "2026-11-10",
       "sourceIds": [
+        "career-vfx-f88478d8e9046f1ad0f8",
         "career-ggd-4e132ef2c683e57403f4"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-6ae4c12b952928cbe3dc",
@@ -5153,11 +5115,13 @@
       "requirements": [],
       "postedDate": "2026-11-06",
       "sourceIds": [
+        "career-vfx-6ae4c12b952928cbe3dc",
         "career-ggd-f3c5987cfe9b12fb5e8d"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-94c9ade6ed2ad8c9038b",
@@ -5178,11 +5142,13 @@
       "requirements": [],
       "postedDate": "2026-10-20",
       "sourceIds": [
+        "career-vfx-94c9ade6ed2ad8c9038b",
         "career-ggd-fdb9753ca815c4a414db"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-26e41f75b04fe70c8249",
@@ -5203,11 +5169,13 @@
       "requirements": [],
       "postedDate": "2026-10-02",
       "sourceIds": [
+        "career-vfx-26e41f75b04fe70c8249",
         "career-ggd-cfa266a6ee0e8a7d582b"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-43de691fdc02212a34db",
@@ -5228,11 +5196,13 @@
       "requirements": [],
       "postedDate": "2026-10-16",
       "sourceIds": [
+        "career-vfx-43de691fdc02212a34db",
         "career-ggd-d960151cb8e06d3010d5"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-f085540949dcf1b9dc08",
@@ -5253,11 +5223,13 @@
       "requirements": [],
       "postedDate": "2026-10-11",
       "sourceIds": [
+        "career-vfx-f085540949dcf1b9dc08",
         "career-ggd-95168411245ae0913544"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-b8478def3b3f010d8417",
@@ -5278,11 +5250,13 @@
       "requirements": [],
       "postedDate": "2026-10-17",
       "sourceIds": [
+        "career-vfx-b8478def3b3f010d8417",
         "career-ggd-3116aa6a3258130d0ec3"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-a1a3e7e0f1578bf18ac1",
@@ -5305,11 +5279,13 @@
       ],
       "postedDate": "2026-10-23",
       "sourceIds": [
+        "career-vfx-a1a3e7e0f1578bf18ac1",
         "career-ggd-8843649d9ac939340efe"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-c4fbd25b78c097bce701",
@@ -5332,11 +5308,13 @@
       ],
       "postedDate": "2026-09-23",
       "sourceIds": [
+        "career-vfx-c4fbd25b78c097bce701",
         "career-ggd-c5270c90275e4003036c"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-877b2a4ec676d3f70457",
@@ -5359,11 +5337,13 @@
       ],
       "postedDate": "2026-10-29",
       "sourceIds": [
+        "career-vfx-877b2a4ec676d3f70457",
         "career-ggd-23d10ff77a6e97f0ff54"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-74b2f427809d11d3c69d",
@@ -5387,11 +5367,13 @@
       ],
       "postedDate": "2026-10-28",
       "sourceIds": [
+        "career-vfx-74b2f427809d11d3c69d",
         "career-ggd-5e42b1fe0db69020ccef"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-f138c73de7928f5945aa",
@@ -5412,11 +5394,13 @@
       "requirements": [],
       "postedDate": "2026-11-13",
       "sourceIds": [
+        "career-vfx-f138c73de7928f5945aa",
         "career-ggd-197698aa708e5af3328d"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-d6e8dfe12ecad99b9803",
@@ -5437,11 +5421,13 @@
       "requirements": [],
       "postedDate": "2026-11-07",
       "sourceIds": [
+        "career-vfx-d6e8dfe12ecad99b9803",
         "career-ggd-dfa6674bf7a6ca40e21d"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-ca37c66aeafa929852c2",
@@ -5462,11 +5448,13 @@
       "requirements": [],
       "postedDate": "2026-10-20",
       "sourceIds": [
+        "career-vfx-ca37c66aeafa929852c2",
         "career-ggd-73d30cc9d5550e0e58f9"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-21da647b44837e34df3d",
@@ -5487,11 +5475,13 @@
       "requirements": [],
       "postedDate": "2026-11-09",
       "sourceIds": [
+        "career-vfx-21da647b44837e34df3d",
         "career-ggd-8e4bc568ef035ff1fe45"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-a5965cf7211fe31931dd",
@@ -5514,11 +5504,13 @@
       ],
       "postedDate": "2026-10-12",
       "sourceIds": [
+        "career-vfx-a5965cf7211fe31931dd",
         "career-ggd-c05a764383549fc4a58c"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-bfd70d76cae8bbc48773",
@@ -5539,11 +5531,13 @@
       "requirements": [],
       "postedDate": "2026-10-06",
       "sourceIds": [
+        "career-vfx-bfd70d76cae8bbc48773",
         "career-ggd-7f81b52abe7753246715"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-d5e9c1d8553b43f43e21",
@@ -5566,11 +5560,13 @@
       ],
       "postedDate": "2026-11-05",
       "sourceIds": [
+        "career-vfx-d5e9c1d8553b43f43e21",
         "career-ggd-d1f056b09c2ffd9e917b"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-24e0e15af2e7e0c8480d",
@@ -5593,11 +5589,13 @@
       ],
       "postedDate": "2026-10-07",
       "sourceIds": [
+        "career-vfx-24e0e15af2e7e0c8480d",
         "career-ggd-74fc43e4f06c4518fc7d"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-db648eaf77b2ea546ae2",
@@ -5620,11 +5618,13 @@
       ],
       "postedDate": "2026-10-02",
       "sourceIds": [
+        "career-vfx-db648eaf77b2ea546ae2",
         "career-ggd-f9ed5eaa41d83b7227bd"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-69a1c5db9ac2fe01634b",
@@ -5645,11 +5645,13 @@
       "requirements": [],
       "postedDate": "2026-11-12",
       "sourceIds": [
+        "career-vfx-69a1c5db9ac2fe01634b",
         "career-ggd-aeae54c92745234a3af2"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-b213a7e0f4c59c17c911",
@@ -5672,11 +5674,13 @@
       ],
       "postedDate": "2026-09-29",
       "sourceIds": [
+        "career-vfx-b213a7e0f4c59c17c911",
         "career-ggd-de7582b51d991ed9148e"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-3245e01678c1c3c88662",
@@ -5697,11 +5701,13 @@
       "requirements": [],
       "postedDate": "2026-10-14",
       "sourceIds": [
+        "career-vfx-3245e01678c1c3c88662",
         "career-ggd-c888ac4476e03e698145"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-841976478eceb897b896",
@@ -5722,11 +5728,13 @@
       "requirements": [],
       "postedDate": "2026-09-15",
       "sourceIds": [
+        "career-vfx-841976478eceb897b896",
         "career-ggd-d67c9aef33d5ae17e9b5"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-c01aff155df3f542cf29",
@@ -5747,11 +5755,13 @@
       "requirements": [],
       "postedDate": "2026-10-15",
       "sourceIds": [
+        "career-vfx-c01aff155df3f542cf29",
         "career-ggd-5858609f324516f70442"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-ccfb5f43e978f2625114",
@@ -5774,11 +5784,13 @@
       ],
       "postedDate": "2026-09-27",
       "sourceIds": [
+        "career-vfx-ccfb5f43e978f2625114",
         "career-ggd-ec4e07b719771431dee0"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-6cfea3546dce74cc0478",
@@ -5799,11 +5811,13 @@
       "requirements": [],
       "postedDate": "2026-10-14",
       "sourceIds": [
+        "career-vfx-6cfea3546dce74cc0478",
         "career-ggd-be75fce6825c96350308"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-56288c6954e91b2ed731",
@@ -5824,11 +5838,13 @@
       "requirements": [],
       "postedDate": "2026-09-17",
       "sourceIds": [
+        "career-vfx-56288c6954e91b2ed731",
         "career-ggd-e51f77081df899292631"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-8e2d0c07fe9128169100",
@@ -5849,11 +5865,13 @@
       "requirements": [],
       "postedDate": "2026-11-08",
       "sourceIds": [
+        "career-vfx-8e2d0c07fe9128169100",
         "career-ggd-ca3fad4833db580543a5"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-25a4fc6ab32a02531abc",
@@ -5874,11 +5892,13 @@
       "requirements": [],
       "postedDate": "2026-10-18",
       "sourceIds": [
+        "career-vfx-25a4fc6ab32a02531abc",
         "career-ggd-9c5803d19d2ac4ccb69d"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-defdf62cc3c3084a0a71",
@@ -5899,11 +5919,13 @@
       "requirements": [],
       "postedDate": "2026-10-19",
       "sourceIds": [
+        "career-vfx-defdf62cc3c3084a0a71",
         "career-ggd-57b1945c6dd77034a51e"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-d22fb99c95643345b06f",
@@ -5924,11 +5946,13 @@
       "requirements": [],
       "postedDate": "2026-11-06",
       "sourceIds": [
+        "career-vfx-d22fb99c95643345b06f",
         "career-ggd-c90511ab32f024b06f6a"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-83d4c4062626372d94a1",
@@ -5951,11 +5975,13 @@
       ],
       "postedDate": "2026-10-23",
       "sourceIds": [
+        "career-vfx-83d4c4062626372d94a1",
         "career-ggd-47a3010724a174854276"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-0a0dacff305063a0b54f",
@@ -5976,11 +6002,13 @@
       "requirements": [],
       "postedDate": "2026-11-13",
       "sourceIds": [
+        "career-vfx-0a0dacff305063a0b54f",
         "career-ggd-97aba360d57833abfbc2"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-c491ed42945a25fb6c9b",
@@ -6003,11 +6031,13 @@
       ],
       "postedDate": "2026-09-28",
       "sourceIds": [
+        "career-vfx-c491ed42945a25fb6c9b",
         "career-ggd-3768120db8dcb54e2a0f"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-a1578cec5c76abca3bec",
@@ -6030,11 +6060,13 @@
       ],
       "postedDate": "2026-10-23",
       "sourceIds": [
+        "career-vfx-a1578cec5c76abca3bec",
         "career-ggd-259d74173f2c036f0312"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-f6139dc00a509f4d3663",
@@ -6055,11 +6087,13 @@
       "requirements": [],
       "postedDate": "2026-10-10",
       "sourceIds": [
+        "career-vfx-f6139dc00a509f4d3663",
         "career-ggd-713c338a2819148fc464"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-4000cbd275a29d848ef9",
@@ -6080,11 +6114,13 @@
       "requirements": [],
       "postedDate": "2026-10-21",
       "sourceIds": [
+        "career-vfx-4000cbd275a29d848ef9",
         "career-ggd-d6cbeee3631569bf1a76"
       ],
       "foundIn": [
         "GamesJobsDirect"
-      ]
+      ],
+      "retainedAfterFailure": true
     },
     {
       "id": "career-vfx-4e53907c941954e0a116",
@@ -6096,7 +6132,7 @@
       "url": "https://stratos-ad.com/trabajo?job=52811",
       "source": "Stratos · Trabajo",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -6121,7 +6157,7 @@
       "url": "https://stratos-ad.com/trabajo?job=61149",
       "source": "Stratos · Trabajo",
       "sourceKind": "job-board",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -6148,7 +6184,7 @@
       "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000161228769-programador-a-cobol-junior-con-frances?oga=true",
       "source": "Sopra Steria · SmartRecruiters",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "junior",
       "workplace": "remote",
@@ -6171,7 +6207,7 @@
       "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000146667080-senior-frontend-react?oga=true",
       "source": "Sopra Steria · SmartRecruiters",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -6192,7 +6228,7 @@
       "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000143285629-desarrollador-a-apis-con-apigee?oga=true",
       "source": "Sopra Steria · SmartRecruiters",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -6215,7 +6251,7 @@
       "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000129747059--full-stack-developer-java-angular-?oga=true",
       "source": "Sopra Steria · SmartRecruiters",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "remote",
@@ -6238,7 +6274,7 @@
       "url": "https://jobs.smartrecruiters.com/SopraSteria1/744000112649865-backend-microservicios-con-ingles?oga=true",
       "source": "Sopra Steria · SmartRecruiters",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "unknown",
       "workplace": "remote",
@@ -6259,7 +6295,7 @@
       "url": "https://cofrico.viterbit.site/tecnico-a-frigorista-industrial-especialista-en-nh3-amoniaco-KGirln2_wG_bkOr4/",
       "source": "Cofrico · Viterbit",
       "sourceKind": "employer",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": null,
       "experience": "experienced",
       "workplace": "onsite",
@@ -6285,7 +6321,7 @@
       "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/electricista-junior-puesto-indefinido-3016194/",
       "source": "Randstad · portal original",
       "sourceKind": "recruitment-agency",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": "2026-11-20",
       "experience": "junior",
       "workplace": "onsite",
@@ -6310,7 +6346,7 @@
       "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/electricista-montaje-cuadros-ectricos-3020956/",
       "source": "Randstad · portal original",
       "sourceKind": "recruitment-agency",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": "2026-12-05",
       "experience": "unknown",
       "workplace": "onsite",
@@ -6332,7 +6368,7 @@
       "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/electricista-obra-a-coruna-3020222/",
       "source": "Randstad · portal original",
       "sourceKind": "recruitment-agency",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": "2026-12-03",
       "experience": "unknown",
       "workplace": "onsite",
@@ -6357,7 +6393,7 @@
       "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/electricista-senior-puesto-indefinido-3016225/",
       "source": "Randstad · portal original",
       "sourceKind": "recruitment-agency",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": "2026-11-20",
       "experience": "experienced",
       "workplace": "onsite",
@@ -6383,7 +6419,7 @@
       "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/frigorista-oficial-1o-mantenimiento-con-furgoneta-indefinido-3017520/",
       "source": "Randstad · portal original",
       "sourceKind": "recruitment-agency",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": "2026-11-26",
       "experience": "experienced",
       "workplace": "onsite",
@@ -6410,7 +6446,7 @@
       "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/operario-a-ectrico-3021041/",
       "source": "Randstad · portal original",
       "sourceKind": "recruitment-agency",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": "2026-12-05",
       "experience": "unknown",
       "workplace": "onsite",
@@ -6432,7 +6468,7 @@
       "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/tecnico-a-mantenimiento-ectrico-3023329/",
       "source": "Randstad · portal original",
       "sourceKind": "recruitment-agency",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": "2026-12-13",
       "experience": "unknown",
       "workplace": "onsite",
@@ -6457,7 +6493,7 @@
       "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/tecnico-a-mantenimiento-puesto-indefinido-solo-fin-semana-24h-3017188/",
       "source": "Randstad · portal original",
       "sourceKind": "recruitment-agency",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": "2026-11-23",
       "experience": "unknown",
       "workplace": "onsite",
@@ -6482,7 +6518,7 @@
       "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/tecnico-a-oficina-tecnica-ingenieria-ectrica-3005914/",
       "source": "Randstad · portal original",
       "sourceKind": "recruitment-agency",
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "closingDate": "2027-03-10",
       "experience": "unknown",
       "workplace": "onsite",
@@ -6512,7 +6548,7 @@
       "level": "review",
       "description": "Lenguajes de Programación Web Itinerario: Lenguajes de Programación Web",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1949",
@@ -6528,7 +6564,7 @@
       "level": "review",
       "description": "Programación de microcontroladores: Arduino, Intel, Microchip, Raspberry Pi, Pico. Itinerario: Programación de microcontroladores : Arduino, Intel, Microchip, Raspberry Pi, Pico",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1858",
@@ -6544,7 +6580,7 @@
       "level": "review",
       "description": "Programación de placas robóticas Itinerario: Programación de placas robóticas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1887",
@@ -6560,7 +6596,7 @@
       "level": "review",
       "description": "Destacado Programación para soluciones de IoT y Smart Cities. Itinerario: Programación para soluciones de IoT y Smart Cities",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-860",
@@ -6576,7 +6612,7 @@
       "level": "review",
       "description": "Lenguajes de Programación Web Nivel 3: Frontend",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1950",
@@ -6592,7 +6628,7 @@
       "level": "review",
       "description": "Programación de microcontroladores: Arduino, Intel, Microchip, Raspberry Pi, Pico. Nivel 3: Programación de microcontroladores : Arduino, Intel, Microchip, Raspberry Pi, Pico",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1859",
@@ -6608,7 +6644,7 @@
       "level": "review",
       "description": "Programación de placas robóticas Nivel 3: Programación de placas robóticas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1883",
@@ -6624,7 +6660,7 @@
       "level": "review",
       "description": "Programación para soluciones de IoT y Smart Cities. Nivel 3: Programación para soluciones de IoT y Smart Cities",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-894",
@@ -6640,7 +6676,7 @@
       "level": "review",
       "description": "Lenguajes de Programación Web Nivel 4: Backend",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1951",
@@ -6656,7 +6692,7 @@
       "level": "review",
       "description": "Programación de microcontroladores: Arduino, Intel, Microchip, Raspberry Pi, Pico. Nivel 4: Programación de microcontroladores : Arduino, Intel, Microchip, Raspberry Pi, Pico",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1860",
@@ -6672,7 +6708,7 @@
       "level": "review",
       "description": "Programación de placas robóticas Nivel 4: Programación de placas robóticas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1884",
@@ -6688,7 +6724,7 @@
       "level": "review",
       "description": "Programación para soluciones de IoT y Smart Cities. Nivel 4: Programación para soluciones de IoT y Smart Cities",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-895",
@@ -6704,7 +6740,7 @@
       "level": "advanced",
       "description": "Lenguajes de Programación Web Nivel 5: Frontend avanzado",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1952",
@@ -6720,7 +6756,7 @@
       "level": "advanced",
       "description": "Programación de microcontroladores: Arduino, Intel, Microchip, Raspberry Pi, Pico. Nivel 5: Programación de microcontroladores : Arduino, Intel, Microchip, Raspberry Pi, Pico",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1861",
@@ -6736,7 +6772,7 @@
       "level": "advanced",
       "description": "Programación de placas robóticas Nivel 5: Programación de placas robóticas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1885",
@@ -6752,7 +6788,7 @@
       "level": "advanced",
       "description": "Programación para soluciones de IoT y Smart Cities. Nivel 5: Programación para soluciones de IoT y Smart Cities",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-896",
@@ -6768,7 +6804,7 @@
       "level": "advanced",
       "description": "Lenguajes de Programación Web Nivel 6: Backend avanzado",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-2018",
@@ -6784,7 +6820,7 @@
       "level": "advanced",
       "description": "Mantenimiento de instalaciones automatizadas controladas por autómatas Nivel 6: Mantenimiento de instalaciones automatizadas controladas por autómatas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1953",
@@ -6800,7 +6836,7 @@
       "level": "advanced",
       "description": "Programación de microcontroladores: Arduino, Intel, Microchip, Raspberry Pi, Pico. Nivel 6: Programación de microcontroladores : Arduino, Intel, Microchip, Raspberry Pi, Pico",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1862",
@@ -6816,7 +6852,7 @@
       "level": "advanced",
       "description": "Programación de placas robóticas Nivel 6: Programación de placas robóticas",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-fundae-1886",
@@ -6832,7 +6868,7 @@
       "level": "advanced",
       "description": "Programación para soluciones de IoT y Smart Cities. Nivel 6: Programación para soluciones de IoT y Smart Cities",
       "availability": "Consultar acceso e inscripción en eFundae",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-diplos-2026-004284-01",
@@ -7226,7 +7262,7 @@
       "level": "intermediate",
       "learningGoal": "improve",
       "durationHours": 2.55,
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "description": "Lección práctica de VFX y Technical Art para Unreal/Houdini. Consultar conocimientos previos, versión y archivos en la página original.",
       "qualification": "Conocimientos de Houdini y Unreal según la lección. Revisar licencias: acceso gratuito al tutorial no incluye licencias de software.",
       "availability": "Autoaprendizaje con vídeos públicos. Sin plazas ni certificado profesional confirmados."
@@ -7245,7 +7281,7 @@
       "level": "intermediate",
       "learningGoal": "improve",
       "durationHours": 1.73,
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "description": "Lección práctica de VFX y Technical Art para Unreal/Houdini. Consultar conocimientos previos, versión y archivos en la página original.",
       "qualification": "Conocimientos de Houdini y Unreal según la lección. Revisar licencias: acceso gratuito al tutorial no incluye licencias de software.",
       "availability": "Autoaprendizaje con vídeos públicos. Sin plazas ni certificado profesional confirmados."
@@ -7264,7 +7300,7 @@
       "level": "intermediate",
       "learningGoal": "new",
       "durationHours": 0.85,
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "description": "Lección práctica de VFX y Technical Art para Unreal/Houdini. Consultar conocimientos previos, versión y archivos en la página original.",
       "qualification": "Conocimientos de Houdini y Unreal según la lección. Revisar licencias: acceso gratuito al tutorial no incluye licencias de software.",
       "availability": "Autoaprendizaje con vídeos públicos. Sin plazas ni certificado profesional confirmados."
@@ -7283,7 +7319,7 @@
       "level": "beginner",
       "learningGoal": "new",
       "durationHours": 0.67,
-      "checkedAt": "2026-11-14T17:55:24.306854Z",
+      "checkedAt": "2026-11-14T22:16:19.400832Z",
       "description": "Lección práctica de VFX y Technical Art para Unreal/Houdini. Consultar conocimientos previos, versión y archivos en la página original.",
       "qualification": "Conocimientos de Houdini y Unreal según la lección. Revisar licencias: acceso gratuito al tutorial no incluye licencias de software.",
       "availability": "Autoaprendizaje con vídeos públicos. Sin plazas ni certificado profesional confirmados."
@@ -7310,7 +7346,7 @@
       "language": "Audio coreano; subtítulos en inglés y español automático según la ficha",
       "description": "Mejorar diseño, timing y efectos para videojuegos con Niagara. Audio coreano; revisar subtítulos y requisitos de Unreal.",
       "availability": "Autoaprendizaje de pago. Precio publicado sujeto a descuentos, impuestos y condiciones de compra.",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-coloso-vfxartist-kisonglee2-us",
@@ -7334,7 +7370,7 @@
       "language": "Audio coreano; subtítulos en inglés y español automático según la ficha",
       "description": "Efectos de fantasía y habilidades con Niagara. Requiere base previa; comprobar idiomas y programa completo.",
       "availability": "Autoaprendizaje de pago. Precio publicado sujeto a descuentos, impuestos y condiciones de compra.",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-coloso-vfxartist-heyyo-us",
@@ -7358,7 +7394,7 @@
       "language": "Audio japonés; subtítulos en inglés; español no confirmado",
       "description": "Técnicas avanzadas de Niagara y materiales. Audio japonés y subtítulos según ficha; comprobar idioma antes de comprar.",
       "availability": "Autoaprendizaje de pago. Precio publicado sujeto a descuentos, impuestos y condiciones de compra.",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     },
     {
       "id": "course-animum-vfx",
@@ -7375,7 +7411,7 @@
       "learningGoal": "new",
       "description": "Formación de larga duración en VFX y composición. Compara su enfoque de cine/composición con tu objetivo de VFX para videojuegos. No se presupone que entre en 800 €.",
       "availability": "Precio, admisión y próxima convocatoria por consultar con el centro. No es una inscripción ni una recomendación de compra.",
-      "checkedAt": "2026-11-14T17:55:24.306854Z"
+      "checkedAt": "2026-11-14T22:16:19.400832Z"
     }
   ],
   "sources": [
@@ -7383,8 +7419,8 @@
       "name": "SNE: electricista · Vigo",
       "status": "ok",
       "examined": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7395,8 +7431,8 @@
       "name": "SNE: mantenimiento · Vigo",
       "status": "ok",
       "examined": 2,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7407,8 +7443,8 @@
       "name": "SNE: instalador · Vigo",
       "status": "ok",
       "examined": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7419,8 +7455,8 @@
       "name": "SNE: electromecánico · Vigo",
       "status": "ok",
       "examined": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7431,8 +7467,8 @@
       "name": "SNE: programador · Vigo",
       "status": "ok",
       "examined": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7443,8 +7479,8 @@
       "name": "SNE: desarrollador · Vigo",
       "status": "ok",
       "examined": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7455,8 +7491,8 @@
       "name": "SNE: teletrabajo · nacional",
       "status": "ok",
       "examined": 10,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7467,8 +7503,8 @@
       "name": "SNE: remoto · nacional",
       "status": "ok",
       "examined": 4,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7479,8 +7515,8 @@
       "name": "SNE: electricista · A Coruña",
       "status": "ok",
       "examined": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7491,8 +7527,8 @@
       "name": "SNE: mantenimiento · A Coruña",
       "status": "ok",
       "examined": 2,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7503,8 +7539,8 @@
       "name": "SNE: instalador · A Coruña",
       "status": "ok",
       "examined": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7515,8 +7551,8 @@
       "name": "SNE: electromecánico · A Coruña",
       "status": "ok",
       "examined": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7527,8 +7563,8 @@
       "name": "SNE: programador · A Coruña",
       "status": "ok",
       "examined": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7539,8 +7575,8 @@
       "name": "SNE: desarrollador · A Coruña",
       "status": "ok",
       "examined": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7551,8 +7587,8 @@
       "name": "Plain Concepts · Workable",
       "status": "ok",
       "examined": 20,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7563,8 +7599,8 @@
       "name": "Fabulous · Workable",
       "status": "ok",
       "examined": 30,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7575,8 +7611,8 @@
       "name": "EUROPEAN DYNAMICS · Workable",
       "status": "ok",
       "examined": 166,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7587,8 +7623,8 @@
       "name": "We Work Remotely · RSS público",
       "status": "ok",
       "matched": 13,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7599,8 +7635,8 @@
       "name": "Remote OK · API pública",
       "status": "ok",
       "matched": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7611,8 +7647,8 @@
       "name": "Imatia · Bizneo",
       "status": "ok",
       "matched": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7623,8 +7659,8 @@
       "name": "Inprosec / Greinfort · Bizneo",
       "status": "ok",
       "matched": 1,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7635,8 +7671,8 @@
       "name": "Adecco · fichas originales seleccionadas",
       "status": "ok",
       "matched": 1,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7647,8 +7683,8 @@
       "name": "Infortec Consultores · Bizneo",
       "status": "ok",
       "matched": 14,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7659,8 +7695,8 @@
       "name": "Inditex / Zara · Recruitee",
       "status": "ok",
       "matched": 0,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7671,8 +7707,8 @@
       "name": "Indra / Minsait · SuccessFactors",
       "status": "ok",
       "matched": 3,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7683,8 +7719,8 @@
       "name": "Veolia · SmartRecruiters",
       "status": "ok",
       "matched": 2,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7695,8 +7731,8 @@
       "name": "Work With Indies · RSS + ficha",
       "status": "ok",
       "matched": 1,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "vfx"
       ],
@@ -7706,9 +7742,9 @@
     {
       "name": "Hitmarker · búsqueda pública",
       "status": "ok",
-      "matched": 140,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "matched": 138,
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "vfx"
       ],
@@ -7717,9 +7753,9 @@
     },
     {
       "name": "GamesJobsDirect · fichas",
-      "status": "ok",
-      "matched": 46,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
+      "status": "error",
+      "reason": "GamesJobsDirect pagination incomplete",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
       "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
       "categories": [
         "vfx"
@@ -7731,8 +7767,8 @@
       "name": "Stratos · RSS + listado público",
       "status": "ok",
       "matched": 2,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "vfx"
       ],
@@ -7743,7 +7779,7 @@
       "name": "ArtStation · consulta automática",
       "status": "pending",
       "reason": "ArtStation: integración pendiente de un formato público validado. No se cuenta como fuente operativa.",
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
       "lastSuccessAt": null,
       "categories": [
         "vfx"
@@ -7755,7 +7791,7 @@
       "name": "Xunta · ofertas privadas",
       "status": "pending",
       "reason": "Xunta empleo privado: integración pendiente. SNE, DIPLOS y CNTG se consultan por separado.",
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
       "lastSuccessAt": null,
       "categories": [
         "programming",
@@ -7768,8 +7804,8 @@
       "name": "Sopra Steria · SmartRecruiters",
       "status": "ok",
       "matched": 5,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "programming"
       ],
@@ -7780,8 +7816,8 @@
       "name": "Cofrico · Viterbit",
       "status": "ok",
       "matched": 1,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7792,8 +7828,8 @@
       "name": "Randstad · electricidad local",
       "status": "ok",
       "matched": 9,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "electricity"
       ],
@@ -7804,8 +7840,8 @@
       "name": "eFundae",
       "status": "ok",
       "examined": 21,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "courses"
       ],
@@ -7816,7 +7852,7 @@
       "name": "Xunta / DIPLOS · formación",
       "status": "error",
       "reason": "HTTPSConnectionPool(host='diplos.xunta.gal', port=443): Max retries exceeded with url: /diplos/api/search?familia=ELE&pag=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='di",
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
       "lastSuccessAt": "2026-10-26T12:50:24.926086+00:00",
       "categories": [
         "courses"
@@ -7828,7 +7864,7 @@
       "name": "CNTG · inscripción abierta",
       "status": "error",
       "reason": "HTTPSConnectionPool(host='cntg.xunta.gal', port=443): Max retries exceeded with url: /gl/actividades/buscar-cursos?field_plazo_abierto_value=1&page=0 (Caused by ConnectTimeoutError",
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
       "lastSuccessAt": "2026-10-26T12:50:24.926086+00:00",
       "categories": [
         "courses"
@@ -7840,8 +7876,8 @@
       "name": "SideFX · videojuegos y VFX",
       "status": "ok",
       "examined": 4,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "courses"
       ],
@@ -7852,8 +7888,8 @@
       "name": "Coloso · formación de pago",
       "status": "ok",
       "examined": 3,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "courses"
       ],
@@ -7864,8 +7900,8 @@
       "name": "Animum · formación de pago",
       "status": "ok",
       "examined": 1,
-      "lastAttemptAt": "2026-11-14T17:55:24.306854Z",
-      "lastSuccessAt": "2026-11-14T17:55:24.306854Z",
+      "lastAttemptAt": "2026-11-14T22:16:19.400832Z",
+      "lastSuccessAt": "2026-11-14T22:16:19.400832Z",
       "categories": [
         "courses"
       ],
