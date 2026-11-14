@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "coverageVersion": 2,
-  "lastAttemptAt": "2026-11-13T19:34:54.159454+00:00",
-  "updatedAt": "2026-11-13T19:34:54.159454+00:00",
+  "lastAttemptAt": "2026-11-14T06:07:46.898450+00:00",
+  "updatedAt": "2026-11-14T06:07:46.898450+00:00",
   "calls": [
     {
       "id": "pag-223189",
@@ -23,7 +23,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/11/11/pdfs/BOE-A-2026-23651.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-13T19:34:54.159454+00:00"
+      "checkedAt": "2026-11-14T06:07:46.898450+00:00"
     },
     {
       "id": "pag-223145",
@@ -44,7 +44,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.comunidad.madrid",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-13T19:34:54.159454+00:00"
+      "checkedAt": "2026-11-14T06:07:46.898450+00:00"
     },
     {
       "id": "pag-222968",
@@ -65,14 +65,14 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22556.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-13T19:34:54.159454+00:00"
+      "checkedAt": "2026-11-14T06:07:46.898450+00:00"
     }
   ],
   "sources": [
     {
       "name": "PAG · exportación XML completa",
       "status": "ok",
-      "examined": 260,
+      "examined": 245,
       "matched": 3
     },
     {
