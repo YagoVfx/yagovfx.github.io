@@ -350,6 +350,24 @@
       "name": "Ubisoft",
       "locations": [
         {
+          "city": "Kyiv",
+          "lat": 50.45,
+          "lon": 30.52,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Paris",
+          "lat": 48.86,
+          "lon": 2.35,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
+          "city": "Bucharest",
+          "lat": 44.43,
+          "lon": 26.1,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Toronto",
           "lat": 43.65,
           "lon": -79.38,
@@ -374,12 +392,6 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
-          "city": "Paris",
-          "lat": 48.86,
-          "lon": 2.35,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
           "city": "Montreal",
           "lat": 45.5,
           "lon": -73.57,
@@ -392,18 +404,6 @@
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
-          "city": "Bucharest",
-          "lat": 44.43,
-          "lon": 26.1,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Kyiv",
-          "lat": 50.45,
-          "lon": 30.52,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
           "city": "Shanghai",
           "lat": 31.23,
           "lon": 121.47,
@@ -413,12 +413,6 @@
           "city": "Singapore",
           "lat": 1.35,
           "lon": 103.82,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "São Paulo",
-          "lat": -23.55,
-          "lon": -46.63,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         }
       ]
@@ -483,15 +477,15 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
-          "city": "Los Angeles",
-          "lat": 34.05,
-          "lon": -118.24,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
-        },
-        {
           "city": "Austin",
           "lat": 30.27,
           "lon": -97.74,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
@@ -1072,6 +1066,12 @@
           "city": "Amsterdam",
           "lat": 52.37,
           "lon": 4.9,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
+        },
+        {
+          "city": "Shenzhen",
+          "lat": 22.54,
+          "lon": 114.06,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/hasbro/jobs"
         },
         {
