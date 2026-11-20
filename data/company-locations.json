@@ -72,14 +72,7 @@
     },
     {
       "name": "Respawn",
-      "locations": [
-        {
-          "city": "Los Angeles",
-          "lat": 34.05,
-          "lon": -118.24,
-          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Artist-II-Apex-Legends/216459"
-        }
-      ]
+      "locations": []
     },
     {
       "name": "Epic Games",
@@ -1130,6 +1123,12 @@
           "city": "Los Angeles",
           "lat": 34.05,
           "lon": -118.24,
+          "evidence": "https://api.lever.co/v0/postings/kabam?mode=json"
+        },
+        {
+          "city": "Culver City",
+          "lat": 34.02,
+          "lon": -118.4,
           "evidence": "https://api.lever.co/v0/postings/kabam?mode=json"
         }
       ]
