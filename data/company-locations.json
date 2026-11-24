@@ -260,15 +260,15 @@
           "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
         },
         {
-          "city": "Los Angeles",
-          "lat": 34.05,
-          "lon": -118.24,
-          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
-        },
-        {
           "city": "Tokyo",
           "lat": 35.68,
           "lon": 139.69,
+          "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
           "evidence": "https://apply.workable.com/api/v1/widget/accounts/sideinc?details=true"
         },
         {
@@ -420,12 +420,6 @@
           "lat": 1.35,
           "lon": 103.82,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "São Paulo",
-          "lat": -23.55,
-          "lon": -46.63,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         }
       ]
     },
@@ -483,21 +477,27 @@
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
+          "city": "Seoul",
+          "lat": 37.57,
+          "lon": 126.98,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
           "city": "Bangalore",
           "lat": 12.97,
           "lon": 77.59,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
-          "city": "Los Angeles",
-          "lat": 34.05,
-          "lon": -118.24,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
-        },
-        {
           "city": "Austin",
           "lat": 30.27,
           "lon": -97.74,
+          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
+        },
+        {
+          "city": "Los Angeles",
+          "lat": 34.05,
+          "lon": -118.24,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
@@ -534,12 +534,6 @@
           "city": "Vancouver",
           "lat": 49.28,
           "lon": -123.12,
-          "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
-        },
-        {
-          "city": "Seoul",
-          "lat": 37.57,
-          "lon": 126.98,
           "evidence": "https://boards-api.greenhouse.io/v1/boards/2k/jobs"
         },
         {
