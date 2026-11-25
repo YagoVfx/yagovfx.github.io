@@ -350,6 +350,12 @@
       "name": "Ubisoft",
       "locations": [
         {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
+        },
+        {
           "city": "Paris",
           "lat": 48.86,
           "lon": 2.35,
@@ -359,12 +365,6 @@
           "city": "Toronto",
           "lat": 43.65,
           "lon": -79.38,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
-        },
-        {
-          "city": "Montreal",
-          "lat": 45.5,
-          "lon": -73.57,
           "evidence": "https://api.smartrecruiters.com/v1/companies/Ubisoft2/postings?limit=100"
         },
         {
@@ -773,6 +773,12 @@
       "name": "Gameloft",
       "locations": [
         {
+          "city": "Montreal",
+          "lat": 45.5,
+          "lon": -73.57,
+          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
+        },
+        {
           "city": "Barcelona",
           "lat": 41.39,
           "lon": 2.17,
@@ -800,12 +806,6 @@
           "city": "Ho Chi Minh",
           "lat": 10.82,
           "lon": 106.63,
-          "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
-        },
-        {
-          "city": "Montreal",
-          "lat": 45.5,
-          "lon": -73.57,
           "evidence": "https://api.smartrecruiters.com/v1/companies/gameloft/postings?limit=100"
         },
         {
