@@ -10,9 +10,9 @@
     "totalPostingsSeen": 0,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 551,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 349,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -26,9 +26,9 @@
     "totalPostingsSeen": 55,
     "needsReview": false,
     "metadataComplete": 20.0,
-    "durationMs": 450,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 400,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -42,9 +42,9 @@
     "totalPostingsSeen": 1,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 873,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 577,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -55,12 +55,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 0,
-    "totalPostingsSeen": 3,
+    "totalPostingsSeen": 4,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 3674,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 2824,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -74,9 +74,9 @@
     "totalPostingsSeen": 161,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 1099,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 117,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -90,9 +90,9 @@
     "totalPostingsSeen": 9,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 806,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 496,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -106,9 +106,9 @@
     "totalPostingsSeen": 17,
     "needsReview": false,
     "metadataComplete": 0.0,
-    "durationMs": 127,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 86,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -122,9 +122,9 @@
     "totalPostingsSeen": 4,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 146,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 75,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -135,12 +135,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 4,
-    "totalPostingsSeen": 388,
+    "totalPostingsSeen": 389,
     "needsReview": false,
     "metadataComplete": 25.0,
-    "durationMs": 1208,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 609,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -154,9 +154,9 @@
     "totalPostingsSeen": 0,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 72,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 42,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -167,12 +167,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 2,
-    "totalPostingsSeen": 40,
+    "totalPostingsSeen": 41,
     "needsReview": false,
     "metadataComplete": 60.0,
-    "durationMs": 306,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 152,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -183,12 +183,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 0,
-    "totalPostingsSeen": 25,
+    "totalPostingsSeen": 24,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 2218,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 1627,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -199,12 +199,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 1,
-    "totalPostingsSeen": 28,
+    "totalPostingsSeen": 30,
     "needsReview": false,
     "metadataComplete": 40.0,
-    "durationMs": 7352,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 7794,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -215,12 +215,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 14,
-    "totalPostingsSeen": 221,
+    "totalPostingsSeen": 226,
     "needsReview": false,
     "metadataComplete": 20.0,
-    "durationMs": 1204,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 1031,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -234,9 +234,9 @@
     "totalPostingsSeen": 17,
     "needsReview": false,
     "metadataComplete": 0.0,
-    "durationMs": 158,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 77,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -247,29 +247,24 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 3,
-    "totalPostingsSeen": 18,
+    "totalPostingsSeen": 25,
     "needsReview": false,
     "metadataComplete": 20.0,
-    "durationMs": 1214,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 686,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
     "company": "Blizzard",
-    "status": "ok",
+    "status": "error",
     "ats": "workday",
-    "reliable": true,
-    "listingVerified": true,
-    "incomplete": false,
-    "jobsFound": 1,
-    "totalPostingsSeen": 45,
-    "needsReview": false,
-    "metadataComplete": 20.0,
-    "durationMs": 1096,
-    "lastAttempt": "2026-11-25T08:12:57Z",
+    "error": "Workday request failed for https://xboxgaming.wd1.myworkdayjobs.com/wday/cxs/xboxgaming/Blizzard_External_Careers/jobs: 429 Client Error: Too Many Requests for url: https://xboxgaming.wd1.myworkdayjobs.com/wday/cxs/xboxgaming/Blizzard_External_Careers/jobs | body: <!DOCTYPE html>\n<html>\n\n<head>\n    ",
+    "errorKind": "http",
+    "durationMs": 49,
+    "lastAttempt": "2026-11-25T21:33:49Z",
     "lastSuccess": "2026-11-25T08:12:57Z",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1
   },
   {
     "company": "2K",
@@ -279,12 +274,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 0,
-    "totalPostingsSeen": 79,
+    "totalPostingsSeen": 83,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 99,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 73,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -293,14 +288,14 @@
     "ats": "workday",
     "reliable": true,
     "listingVerified": true,
-    "incomplete": false,
-    "jobsFound": 3,
-    "totalPostingsSeen": 65,
+    "incomplete": true,
+    "jobsFound": 0,
+    "totalPostingsSeen": 20,
     "needsReview": false,
-    "metadataComplete": 20.0,
-    "durationMs": 2664,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "metadataComplete": null,
+    "durationMs": 569,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -314,9 +309,9 @@
     "totalPostingsSeen": 1,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 94,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 54,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -330,9 +325,9 @@
     "totalPostingsSeen": 2,
     "needsReview": false,
     "metadataComplete": 0.0,
-    "durationMs": 734,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 376,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -346,9 +341,9 @@
     "totalPostingsSeen": 255,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 175,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 114,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -359,12 +354,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 0,
-    "totalPostingsSeen": 19,
+    "totalPostingsSeen": 18,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 222,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 95,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -378,9 +373,9 @@
     "totalPostingsSeen": 6,
     "needsReview": false,
     "metadataComplete": 60.0,
-    "durationMs": 1479,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 1199,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -394,9 +389,9 @@
     "totalPostingsSeen": 1,
     "needsReview": false,
     "metadataComplete": 60.0,
-    "durationMs": 368,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 345,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -407,12 +402,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 1,
-    "totalPostingsSeen": 68,
+    "totalPostingsSeen": 69,
     "needsReview": false,
     "metadataComplete": 20.0,
-    "durationMs": 183,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 386,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -426,9 +421,9 @@
     "totalPostingsSeen": 0,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 675,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 23,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -442,9 +437,9 @@
     "totalPostingsSeen": 28,
     "needsReview": false,
     "metadataComplete": 40.0,
-    "durationMs": 475,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 417,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -455,12 +450,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 2,
-    "totalPostingsSeen": 169,
+    "totalPostingsSeen": 166,
     "needsReview": false,
     "metadataComplete": 30.0,
-    "durationMs": 167,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 113,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -471,12 +466,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 1,
-    "totalPostingsSeen": 47,
+    "totalPostingsSeen": 46,
     "needsReview": false,
     "metadataComplete": 20.0,
-    "durationMs": 494,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 442,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -490,9 +485,9 @@
     "totalPostingsSeen": 14,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 88,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 46,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -506,9 +501,9 @@
     "totalPostingsSeen": 13,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 72,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 46,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -522,9 +517,9 @@
     "totalPostingsSeen": 0,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 95,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 160,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -538,9 +533,9 @@
     "totalPostingsSeen": 8,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 70,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 50,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -554,9 +549,9 @@
     "totalPostingsSeen": 10,
     "needsReview": false,
     "metadataComplete": 20.0,
-    "durationMs": 905,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 35,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -570,9 +565,9 @@
     "totalPostingsSeen": 2,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 33,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 38,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -586,9 +581,9 @@
     "totalPostingsSeen": 2,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 132,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 298,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -602,9 +597,9 @@
     "totalPostingsSeen": 7,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 74,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 49,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -618,9 +613,9 @@
     "totalPostingsSeen": 12,
     "needsReview": false,
     "metadataComplete": 40.0,
-    "durationMs": 112,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 52,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -631,12 +626,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 7,
-    "totalPostingsSeen": 200,
+    "totalPostingsSeen": 198,
     "needsReview": false,
     "metadataComplete": 22.9,
-    "durationMs": 178,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 150,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -650,9 +645,9 @@
     "totalPostingsSeen": 4,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 70,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 44,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -666,9 +661,9 @@
     "totalPostingsSeen": 11,
     "needsReview": false,
     "metadataComplete": 40.0,
-    "durationMs": 125,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 75,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -682,9 +677,9 @@
     "totalPostingsSeen": 19,
     "needsReview": false,
     "metadataComplete": 66.7,
-    "durationMs": 286,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 156,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -698,9 +693,9 @@
     "totalPostingsSeen": 1,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 139,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 70,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -714,9 +709,9 @@
     "totalPostingsSeen": 1,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 118,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 36,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -726,13 +721,13 @@
     "reliable": true,
     "listingVerified": true,
     "incomplete": false,
-    "jobsFound": 2,
-    "totalPostingsSeen": 95,
+    "jobsFound": 3,
+    "totalPostingsSeen": 96,
     "needsReview": false,
-    "metadataComplete": 60.0,
-    "durationMs": 77,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "metadataComplete": 53.3,
+    "durationMs": 68,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -743,12 +738,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 2,
-    "totalPostingsSeen": 97,
+    "totalPostingsSeen": 94,
     "needsReview": false,
     "metadataComplete": 20.0,
-    "durationMs": 130,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 100,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -762,9 +757,9 @@
     "totalPostingsSeen": 5,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 73,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 45,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -778,9 +773,9 @@
     "totalPostingsSeen": 3,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 65,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 43,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -794,9 +789,9 @@
     "totalPostingsSeen": 32,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 187,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 430,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -810,9 +805,9 @@
     "totalPostingsSeen": 13,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 403,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 321,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -826,9 +821,9 @@
     "totalPostingsSeen": 5,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 702,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 26,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -839,12 +834,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 1,
-    "totalPostingsSeen": 5,
+    "totalPostingsSeen": 6,
     "needsReview": false,
     "metadataComplete": 20.0,
-    "durationMs": 784,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 395,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -855,12 +850,12 @@
     "listingVerified": true,
     "incomplete": false,
     "jobsFound": 0,
-    "totalPostingsSeen": 36,
+    "totalPostingsSeen": 30,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 318,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 116,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -874,9 +869,9 @@
     "totalPostingsSeen": 6,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 75,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 54,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -890,9 +885,9 @@
     "totalPostingsSeen": 0,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 72,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 42,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -906,9 +901,9 @@
     "totalPostingsSeen": 54,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 1228,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 1134,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -922,9 +917,9 @@
     "totalPostingsSeen": 3,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 81,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 46,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -938,9 +933,9 @@
     "totalPostingsSeen": 0,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 402,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 175,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -954,9 +949,9 @@
     "totalPostingsSeen": 13,
     "needsReview": false,
     "metadataComplete": 40.0,
-    "durationMs": 81,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 56,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -970,9 +965,9 @@
     "totalPostingsSeen": 8,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 69,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 42,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -986,26 +981,21 @@
     "totalPostingsSeen": 8,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 84,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 47,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
     "company": "King",
-    "status": "ok",
+    "status": "error",
     "ats": "workday",
-    "reliable": true,
-    "listingVerified": true,
-    "incomplete": false,
-    "jobsFound": 0,
-    "totalPostingsSeen": 13,
-    "needsReview": false,
-    "metadataComplete": null,
-    "durationMs": 586,
-    "lastAttempt": "2026-11-25T08:12:57Z",
+    "error": "Workday request failed for https://xboxgaming.wd1.myworkdayjobs.com/wday/cxs/xboxgaming/King_External_Careers/jobs: 429 Client Error: Too Many Requests for url: https://xboxgaming.wd1.myworkdayjobs.com/wday/cxs/xboxgaming/King_External_Careers/jobs | body: <!DOCTYPE html>\n<html>\n\n<head>\n    <style>\n",
+    "errorKind": "http",
+    "durationMs": 38,
+    "lastAttempt": "2026-11-25T21:33:49Z",
     "lastSuccess": "2026-11-25T08:12:57Z",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1
   },
   {
     "company": "Rockstar Games",
@@ -1018,9 +1008,9 @@
     "totalPostingsSeen": 16,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 71,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 46,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -1034,9 +1024,9 @@
     "totalPostingsSeen": 0,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 1116,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 149,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -1050,9 +1040,9 @@
     "totalPostingsSeen": 1,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 202,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 210,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -1066,9 +1056,9 @@
     "totalPostingsSeen": 4,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 1230,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 53,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -1082,9 +1072,9 @@
     "totalPostingsSeen": 10,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 461,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 381,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -1098,9 +1088,9 @@
     "totalPostingsSeen": 6,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 577,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 399,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -1109,10 +1099,10 @@
     "ats": "mercurysteam",
     "error": "MercurySteam no longer confirms an empty board; review new listing",
     "errorKind": "unknown",
-    "durationMs": 526,
-    "lastAttempt": "2026-11-25T08:12:57Z",
+    "durationMs": 196,
+    "lastAttempt": "2026-11-25T21:33:49Z",
     "lastSuccess": "2026-11-03T00:52:29Z",
-    "consecutiveFailures": 51
+    "consecutiveFailures": 52
   },
   {
     "company": "SNK",
@@ -1125,9 +1115,9 @@
     "totalPostingsSeen": 8,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 154,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 89,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -1141,9 +1131,9 @@
     "totalPostingsSeen": 99,
     "needsReview": false,
     "metadataComplete": 20.0,
-    "durationMs": 1225,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 1094,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
@@ -1157,9 +1147,9 @@
     "totalPostingsSeen": 3,
     "needsReview": false,
     "metadataComplete": null,
-    "durationMs": 298,
-    "lastAttempt": "2026-11-25T08:12:57Z",
-    "lastSuccess": "2026-11-25T08:12:57Z",
+    "durationMs": 241,
+    "lastAttempt": "2026-11-25T21:33:49Z",
+    "lastSuccess": "2026-11-25T21:33:49Z",
     "consecutiveFailures": 0
   },
   {
