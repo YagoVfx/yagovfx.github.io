@@ -337,14 +337,7 @@
     },
     {
       "name": "EA",
-      "locations": [
-        {
-          "city": "Shanghai",
-          "lat": 31.23,
-          "lon": 121.47,
-          "evidence": "https://jobs.ea.com/en_US/careers/JobDetail/VFX-Artist/216725"
-        }
-      ]
+      "locations": []
     },
     {
       "name": "Ubisoft",

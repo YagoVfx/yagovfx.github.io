@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "coverageVersion": 2,
-  "lastAttemptAt": "2026-11-25T21:42:48.795796+00:00",
-  "updatedAt": "2026-11-25T21:42:48.795796+00:00",
+  "lastAttemptAt": "2026-11-26T08:03:56.138081+00:00",
+  "updatedAt": "2026-11-26T08:03:56.138081+00:00",
   "calls": [
     {
       "id": "pag-223355",
@@ -23,7 +23,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/11/20/pdfs/BOE-A-2026-24335.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-25T21:42:48.795796+00:00"
+      "checkedAt": "2026-11-26T08:03:56.138081+00:00"
     },
     {
       "id": "pag-223189",
@@ -44,7 +44,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/11/11/pdfs/BOE-A-2026-23651.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-25T21:42:48.795796+00:00"
+      "checkedAt": "2026-11-26T08:03:56.138081+00:00"
     },
     {
       "id": "pag-223145",
@@ -65,36 +65,15 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.comunidad.madrid",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-25T21:42:48.795796+00:00"
-    },
-    {
-      "id": "pag-222968",
-      "reference": "222968",
-      "title": "ADMINISTRATIVO · ADMINISTRATIVO/A DE OBRA Y MANTENIMIENTO",
-      "organization": "Ministerio de Hacienda",
-      "location": "LOCAL · ANDALUCÍA · CÁDIZ",
-      "area": "other",
-      "adminScope": "state",
-      "municipality": null,
-      "qualification": "Estar en posesión, como mínimo del título de \r\nTécnico/a Superior en Administración y Finanzas o titulación equivalente \r\n/ Certificado de profesionalidad nivel 3 de la familia de Administración y \r\nGestión / Bachillerato u otras titulaciones equivalentes.",
-      "fit": "review",
-      "places": 2,
-      "freePlaces": 2,
-      "closingDate": "2026-11-25",
-      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
-      "status": "open",
-      "source": "PAG · exportación XML oficial",
-      "url": "https://www.boe.es/boe/dias/2026/10/28/pdfs/BOE-A-2026-22556.pdf",
-      "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-25T21:42:48.795796+00:00"
+      "checkedAt": "2026-11-26T08:03:56.138081+00:00"
     }
   ],
   "sources": [
     {
       "name": "PAG · exportación XML completa",
       "status": "ok",
-      "examined": 344,
-      "matched": 4
+      "examined": 341,
+      "matched": 3
     },
     {
       "name": "Concello de Vigo · procesos municipales",
