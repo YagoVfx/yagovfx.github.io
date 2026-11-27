@@ -1,9 +1,30 @@
 {
   "schemaVersion": 1,
   "coverageVersion": 2,
-  "lastAttemptAt": "2026-11-26T21:26:45.373949+00:00",
-  "updatedAt": "2026-11-26T21:26:45.373949+00:00",
+  "lastAttemptAt": "2026-11-27T08:06:45.407045+00:00",
+  "updatedAt": "2026-11-27T08:06:45.407045+00:00",
   "calls": [
+    {
+      "id": "pag-223435",
+      "reference": "223435",
+      "title": "TÉCNICOS AUXILIARES DE INFORMÁTICA DE LA ADMINISTRACIÓN DEL ESTADO",
+      "organization": "Ministerio para la Transformación Digital y de la Función Pública",
+      "location": "NACIONAL",
+      "area": "national",
+      "adminScope": "state",
+      "municipality": null,
+      "qualification": "Bachiller o Técnico o equivalente",
+      "fit": "review",
+      "places": 1103,
+      "freePlaces": 920,
+      "closingDate": "2026-12-29",
+      "deadlineEvidence": "Plazo publicado en la exportación oficial PAG; confirma bases y ampliaciones.",
+      "status": "open",
+      "source": "PAG · exportación XML oficial",
+      "url": "https://www.boe.es/boe/dias/2026/11/26/pdfs/BOE-A-2026-24839.pdf",
+      "access": "Acceso libre; verificar requisitos específicos en las bases",
+      "checkedAt": "2026-11-27T08:06:45.407045+00:00"
+    },
     {
       "id": "pag-223355",
       "reference": "223355",
@@ -23,7 +44,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/11/20/pdfs/BOE-A-2026-24335.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-26T21:26:45.373949+00:00"
+      "checkedAt": "2026-11-27T08:06:45.407045+00:00"
     },
     {
       "id": "pag-223189",
@@ -44,7 +65,7 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.boe.es/boe/dias/2026/11/11/pdfs/BOE-A-2026-23651.pdf",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-26T21:26:45.373949+00:00"
+      "checkedAt": "2026-11-27T08:06:45.407045+00:00"
     },
     {
       "id": "pag-223145",
@@ -65,15 +86,15 @@
       "source": "PAG · exportación XML oficial",
       "url": "https://www.comunidad.madrid",
       "access": "Acceso libre; verificar requisitos específicos en las bases",
-      "checkedAt": "2026-11-26T21:26:45.373949+00:00"
+      "checkedAt": "2026-11-27T08:06:45.407045+00:00"
     }
   ],
   "sources": [
     {
       "name": "PAG · exportación XML completa",
       "status": "ok",
-      "examined": 346,
-      "matched": 3
+      "examined": 344,
+      "matched": 4
     },
     {
       "name": "Concello de Vigo · procesos municipales",

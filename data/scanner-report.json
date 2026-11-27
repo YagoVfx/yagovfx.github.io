@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-26T21:21:19Z",
-  "durationSec": 41.6,
+  "generatedAt": "2026-11-27T08:02:11Z",
+  "durationSec": 37.9,
   "summary": {
     "activeJobs": 62,
     "officialJobs": 62,
@@ -12,8 +12,8 @@
     "unknownWorkplace": 49,
     "unknownEligibility": 56,
     "unknownContract": 58,
-    "sourcesOk": 72,
-    "sourcesFailed": 1,
+    "sourcesOk": 71,
+    "sourcesFailed": 2,
     "metadataComplete": 28.4
   },
   "adzuna": {
@@ -22,6 +22,15 @@
     "reason": "Catalogo limitado a portales oficiales; agregadores desactivados."
   },
   "history": [
+    {
+      "ranAt": "2026-11-27T08:02:11Z",
+      "durationSec": 37.9,
+      "sourcesOk": 71,
+      "sourcesFailed": 2,
+      "activeJobs": 62,
+      "officialJobs": 62,
+      "aggregatorJobs": 0
+    },
     {
       "ranAt": "2026-11-26T21:21:19Z",
       "durationSec": 41.6,
@@ -189,15 +198,6 @@
       "durationSec": 43.3,
       "sourcesOk": 69,
       "sourcesFailed": 4,
-      "activeJobs": 67,
-      "officialJobs": 67,
-      "aggregatorJobs": 0
-    },
-    {
-      "ranAt": "2026-11-17T07:43:07Z",
-      "durationSec": 46.2,
-      "sourcesOk": 68,
-      "sourcesFailed": 5,
       "activeJobs": 67,
       "officialJobs": 67,
       "aggregatorJobs": 0
