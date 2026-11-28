@@ -106,12 +106,6 @@
           "lat": 49.28,
           "lon": -123.12,
           "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
-        },
-        {
-          "city": "Bellevue",
-          "lat": 47.61,
-          "lon": -122.2,
-          "evidence": "https://greenhouse-service.debc.live.use1a.on.epicgames.com/api/job?limit=100&skip=0"
         }
       ]
     },
